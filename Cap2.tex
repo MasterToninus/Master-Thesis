@@ -1,0 +1,345 @@
+\documentclass[a4paper,12pt]{scrartcl}    %attenzione! uso scratctl che permette sottotitolo
+
+\input{Preamble.tex}
+
+
+
+
+\begin{document}
+
+%  Titolo
+	\title{Capitolo 2: (versione preliminari)}
+	\subtitle{Geodesic Fields}
+	\author{Tony}
+	\date{\today}
+\maketitle
+
+
+%  Indice
+\tableofcontents
+
+
+\newpage
+% Cio' Che Segue Andrà a finire in un  chapter
+
+%-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+\newpage
+\section{Reprise in Riemannian Geometry}
+In what follows we present a brief review of the most important result in Riemannian geometry necessary for a better understanding of the geodesic problem.
+
+\subsection{Definition of (pseudo)-Riemannian manifold}
+\begin{definition}[(Pseudo-)Riemannian manifold]
+\end{definition}
+
+\begin{notationfix}
+ \emph{Metric signature} \emph{Lorenz manifold}.
+\end{notationfix}
+
+\begin{theorem}
+$\forall M$ is Riemannianizable.
+\end{theorem}
+
+\subsection{Riemannian manifolds as a category.}
+\begin{definition}[Local isometry]
+\end{definition}
+
+\begin{definition}[Isometry]
+\end{definition}
+
+\begin{definition}[Killing fields]
+\end{definition}
+
+\subsection{Riemannian as a metric space.}
+\begin{definition}[Riemannian volume form]
+\end{definition}
+
+\begin{theorem}
+$\forall M$ orientable $\exists1!$ Riemannian volume form.
+\end{theorem}
+
+\begin{observation}
+For an insight on the connection between volume form and measure theory see for example \cite{Abraham1978}.
+\end{observation}
+
+\subsection{Tangent bundle of a Riemannian manifold.}
+\begin{observation}
+$g$ could be seen as a 2-forms (section $\in \Gamma(T^2_0(M))$
+\end{observation}
+
+\begin{definition}[$\flat$ $\sharp$ operator]
+\end{definition}
+
+\begin{theorem}
+ On Riemannian manifold $M$ $TM$ is a structure manifold of structure group $G= O(d)$.
+ \\
+ If $M$ is also orientable $G= SO(d)$.
+\end{theorem}
+\begin{proof}
+ See \cite{Jost2005} Lemma $1.5.2$ and $1.5.3$.
+\end{proof}
+
+\subsection{Riemannian as a metric space.}
+ See \cite{Abate2011} pag $383-385$  and \cite{Jost2005} pag $15-17$.
+
+\subsection{Connection structure on a Riemannian manifold.}
+ Connection is a rather general concept definable on any smooth bundle. \footnote{In this abstract context connection takes the name of \emph{Erhesmann's connection}.}
+ 
+ On vector bundle we can identify a special kind of connection structure compatible with the vector space structure.\footnote{which takes its name from \emph{Koszul} for distinguish it from the above.}
+ There are several equivalent presentation of this concept, each of them stress the importance of one of the many devices carried by this superstructure, for example:
+ \begin{itemize}
+ 	\item Derivative of section.
+ 	\item Parallelism and parallel transportation.
+ 	\item Specification of an unique horizontal lift among all.
+ \end{itemize}
+ 
+ Regarding the Riemannian manifolds we're not interested in connections on general vector bundle but instead to those on the tangent bundle, called \emph{Linear Connection}.
+ There's an infinity of such connection but on (pseudo-)Riemannian manifold it's possible to find a natural prescription that allows us to identify only one among these, called \emph{Levi-Civita Connection}.
+
+Consider $(M,g)$ pseudo-Riemannian manifold.
+
+\begin{definition}[Linear Connection]
+ Map $\nabla : \Gamma^\infty(\tau_M) \times \Gamma^\infty(\tau_M) \rightarrow \Gamma^\infty(\tau_M)$,
+ we write $(X,Y)\mapsto \nabla_X Y \qquad \forall X,Y \in \Gamma^\infty(\tau_M)$.
+ Such that:
+ \begin{enumerate}[(a)]
+  \item $\nabla_X Y $ is $C^\infty(M)-$linear in $X$ variable.
+   \begin{displaymath}
+   \nabla_{f X_1 + g X_2}Y = f\nabla_{X_1} Y + g \nabla_{X_2} Y \qquad \forall f,g \in C^\infty(M)
+   \end{displaymath}
+ 
+  \item
+  
+  \item
+ 
+ \end{enumerate}
+
+
+\end{definition}
+
+\subsection{Curvature on Riemannian manifold.}
+%-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+\newpage
+\section{Geodesic}
+\subsection{Common approach to the Geodesic}
+
+
+%-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+\newpage
+\section{Review of physics application of geodesic problem.}
+Essentially \cite{Abraham1978}.
+\vspace{6mm}
+A lot of mechanics systems can be regard as geodesic problem.
+
+\subsection{Preliminary remarks: Geometrical encoding of classical mechanics.}
+    sistemi hamiltoniani
+
+    sistemi lagrangiani
+    
+\subsection{Particle on Riemannian manifold under a position dependant potential.}	
+	fomm pag 226-228 + 231-233       teo 3.71
+ 
+    
+    
+\subsection{Relativistic particle.}
+
+
+	\footnote{For an extension of this process to costrained, dissipitative or ergodic systems see fom cap 3.7}
+
+
+%-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+\newpage
+\section{Jacobi Fields}
+
+\subsection{Preliminary remarks: Variation of curve.}
+Let $\sigma:[a,b]\rightarrow M$ a piecewise regular curve on smooth manifold $M$.
+
+ \begin{definition}[Variation of Curve]
+  Variation of curve $\sigma$ is a continuous application $\Sigma: (-\varepsilon, \varepsilon) \times [a,b] \rightarrow M$ such that
+  \begin{itemize}
+   \item $\sigma_s = \Sigma(s, \cdot)$ is a piecewise regular curve $\forall s \in  (-\varepsilon, \varepsilon)$.
+   \item $\sigma_0 = \sigma$.
+   \item $\exists$ a partion $ a= t_0 < t_1 < \ldots < t_k=b$ of $[a,b]$ such that 
+   $$ \Sigma \big \vert_{(-\varepsilon, \varepsilon) \times [t_{j-1},t_{j}]}\; \in \; \mathcal{C}^\infty(\mathbb{R}^2; M)$$.
+  \end{itemize}
+ \end{definition}
+ 
+ \begin{notationfix}
+  Regarding one entry as a variable and the other as a parameter we can see that $\Sigma$ determine two family of curves:
+  \begin{itemize}
+   \item $\sigma_s(\cdot)= \Sigma(s, \cdot)$ is a family of piecewise regular curves called \emph{principal curves}.
+   \item $\sigma^t(\cdot)= \Sigma(\cdot , t)$ is a family of regular curves called \emph{transverse curves}.
+  \end{itemize}
+  Curves in a family have a common parametrization.
+ \end{notationfix}
+ 
+ \begin{notationfix}
+  A variation is called \emph{proper} if the endpoints stay fixed, i.e.
+  \begin{displaymath}
+   \sigma_s(a)= \sigma(a) \; \wedge \; \sigma_s(b) = \sigma(b) \qquad \forall s\in (-\varepsilon, \varepsilon)
+  \end{displaymath}
+ \end{notationfix}
+
+Fields over a variation $\Sigma$ of a curve $\sigma$ are defined as follows:
+
+ \begin{definition}[Vector field along a variation]
+  Is a collection $X= \{X_j \}$ of smooth applications $X_j:(-\varepsilon, \varepsilon) \times [t_{j-1},t_{j}]\rightarrow TM$ \footnote{Associate to a subdivision of $ a= t_0 < t_1 < \ldots < t_k=b$ of $[a,b]$. } such that:
+  \begin{displaymath}
+   X_j (s,t) \in T_{\Sigma(s,t)}M \qquad \forall (s,t) \in (-\varepsilon, \varepsilon) \times [t_{j-1},t_{j}]
+   \quad \forall j= 1, \ldots, k
+  \end{displaymath}
+ \end{definition}
+ 
+
+Principal and  transverse curves define two special Vector fields along the variation:
+\begin{definition}[Tangent fields of the variation]\label{Def: Variation Field}
+ \begin{displaymath}
+  S(s,t) = (\sigma^t)'(s) = \textrm{d}\Sigma_{(s,t)} \big( \frac{\partial}{\partial s} \big) = 
+  \frac{\partial \Sigma}{\partial s} (s,t)
+ \end{displaymath}
+ for all $(s,t) \in (-\varepsilon, \varepsilon) \times [a,b] $.
+ \begin{displaymath}
+    T(s,t) = (\sigma_s)'(t) = \textrm{d}\Sigma_{(s,t)} \big( \frac{\partial}{\partial t} \big) = 
+  \frac{\partial \Sigma}{\partial t} (s,t)
+ \end{displaymath}
+ for all $(s,t) \in (-\varepsilon, \varepsilon) \times [t_{j-1},t_{j}] $ and $j=1, \ldots, k-1$ 
+ where we have choose  a subdivision $ a= t_0 < t_1 < \ldots < t_k=b$ associated to $\Sigma$.
+\end{definition}
+ 
+\begin{notationfix}
+ $V= S(0,\cdot) \in \mathfrak{X}(\sigma)$ takes the special name of \emph{variation field of $\Sigma$}.
+\end{notationfix}
+
+There's an importation relation between continuous field on a curve and variation:
+\begin{proposition}
+ For all continuous field $V$ along a piecewise regular curve $\sigma$ can be found a variation 
+ $\Sigma$ with variation field $V$.
+ \footnote{Vice versa follows from the continuity of the variation field.}
+\end{proposition}
+\begin{proof}
+ See \cite{Abate2011} Lemma $7.2.12$ .
+\end{proof}
+
+\vspace{8mm}
+Let now $M$ be a d-dimensional Riemannian manifold with Levi-Civita connections $\nabla$.
+The tangent fields of a variation are strictly connected to the curvature of M.
+We need a lemma:
+
+\begin{lemma}
+ For all rectangle $(-\varepsilon,\varepsilon) \times [t_{j-1}, t_j] \in \mathbb{R}^2$ 
+ on which $\Sigma$ is $\mathcal{C}^{\infty}$ we have:
+ \begin{displaymath}
+   D_S T = D_T S
+ \end{displaymath}
+ where $D_S$ is the covariant derivativa along the transverse curves and $D_T$ over the principal curves.
+\end{lemma}
+\begin{proof}
+ See \cite{Abate2011} Lemma $7.2.13$ .
+\end{proof}
+The crucial result is what follows:
+\begin{proposition}
+ For all vector field $V$ along a variation $\Sigma$ we have:
+ \begin{displaymath}
+   D_S D_T V - D_T D_S V = R( S, T) V
+ \end{displaymath}
+ for all rectangle $(-\varepsilon,\varepsilon) \times [t_{j-1}, t_j] \in \mathbb{R}^2$ on which $\Sigma$ is $\mathcal{C}^{\infty}$ .
+ \footnote{$ R(S, T)$ is the curvature endomorphism evaluated on the tangent vector fields on the variation.}
+\end{proposition}
+\begin{proof}
+ See \cite{Abate2011} Lemma $8.2.3$ .
+\end{proof}
+
+ (References: \cite{Abate2011} page 386-387 + 420-421 ; \cite{Jost2005} page 171)
+
+
+\subsection{Formal Definition}
+The concept of \emph{Jacobi Field} is closely related to variations of geodesic curves.
+\\
+Let $\gamma:[a,b]\rightarrow M$ be a geodesic of the Riemannian manifold $M$. We can consider a special class of variations:
+
+\begin{definition}[Geodesic variation]
+Is a smooth variation $\Sigma:(-\varepsilon, \varepsilon) \times [a,b] \rightarrow M$ such that all the principal curves $\gamma_s (\cdot) = \Sigma(s,\cdot)$ are also geodesic.\footnote{In other words $\Sigma$ determines a smoothly variable family of geodesic.}
+\end{definition}
+
+\begin{proposition}
+ Fixing two tangent vector over a point $p= \gamma(a)$ on the geodesic $\gamma$ univocally determines 
+ a geodesic variation of $\gamma$.
+\end{proposition}
+\begin{proof}
+ See \cite{Abate2011} Lemma $8.2.5$  or \cite{Jost2005} Lemma $4.2.3$.
+\end{proof}
+
+\begin{definition}[Jacobi Fields]
+ Is a field $J \in \mathfrak{X}(\gamma)$ over a geodesic $\gamma$ such that:
+ \\
+ $\exists \Sigma$ geodesic variation such that $J=V$ represent its variation field \footnote{As defined under (def \ref{Def: Variation Field}).}.
+\end{definition}
+The following proposition determines an equivalent (analytical) definition of Jacobi field:
+
+\begin{proposition}
+$$ $$
+ $J \in \mathfrak{X}(\dot{\gamma})$ is a jacobi field iff:
+ \begin{displaymath}
+   \nabla_{\frac{\textrm{d}}{\textrm{d}t}} \nabla_{\frac{\textrm{d}}{\textrm{d}t}} J  + R(X,\dot{\gamma}) \gamma' = 0
+ \end{displaymath}
+\end{proposition}
+
+\begin{notationfix}
+The vector space of all Jacobi fields on the geodesic $\gamma$ is denoted $\mathcal{J}(\gamma)$.
+\end{notationfix}
+\begin{notationfix}
+ $J \in J(\gamma)$ is called \emph{proper} if $J_0(t)\perp \dot{(\gamma)}(t)$.
+\\
+ $\mathcal{J}(\gamma)$ indicates the vector space of all proper Jacobi fields.
+\end{notationfix}
+
+\begin{proposition}
+Every killing field $X$ on $M$ is a Jacobi Field along any geodesic in $M$.
+\end{proposition}
+\begin{proof}
+ See \cite{Jost2005} Corollary $4.2.1$.
+\end{proof}
+
+%-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+
+%Temporaneo BiblioGrafia
+\bibliography{NonSync-Tesi-Bibiliografia}
+
+
+%-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+\newpage
+\section{Closing Thoughts}
+
+\subsection{Eliminata}
+\begin{itemize}
+
+\item non messa la definizione dei campi continui e l'osservazione che S  è sempre continuo mentre $T$ può non esserlo (\cite{Abate2011} pag 420).
+
+\item sono stato ambiguo quando parlo di campi lungo la curva.. sulla continuità o meno (vedere abate pag 387)
+
+\item non mi è ancora chiaro l'utilità dei jacobi fields... Vediamo le possibilità:
+	\begin{itemize}
+	\item Dice Abate a pag. $411$ i Jacobi sono lo strumento principale per stabilire una relazione fra curvatura e topologia.
+	\item Dice Jost a pag. $183$ che le Jacobi equation sono una linearizzazione dell'equazione delle geodetiche.
+	\item Jost a pag $183-186$ esplora il legame tra $J$  e le mappe esponenziali.
+	\item Jost nel capitolo $4.3$ e  Abate a pag $424 + 433-435$ parlano del legame con i punti coniugati e morse theory.
+	\end{itemize}
+
+\item Discorso della index form come azione le cui equazioni eulero lagrange determinano l'equazione geodetica. (fonte Jost pag $177-179$).
+
+\item Discorso Decomposizione dei Jacobi field in campi orizzonatali e verticali (fonte Jost pag $180-181$, \url{http://en.wikipedia.org/wiki/Jacobi_field}.
+
+
+\end{itemize}
+
+
+
+%-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+%Temporaneo BiblioGrafia
+
+
+
+
+
+
+
+\end{document}

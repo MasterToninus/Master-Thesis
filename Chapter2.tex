@@ -5,19 +5,20 @@
    %introduzione
 	\danger .. introduzione
 
-	\section{Abstract Lagragian Systems}
-	%Definizione deI sistemi Lagrangiani in Astratto
-	\danger introduzione
-	\begin{definition}[Lagrangian System]
-	Pair $(E, \mathcal{L} )$ composed of:
-		\begin{itemize}
-			\item $E \xrightarrow{\pi} M$ smooth fiber bundle of typical fiber $Q$ on the oriented manifold $(M,\mathfrak{o})$ called \emph{"configuration bundle"}.
-			\item	$ \Lagrangian : J^r E \rightarrow \wedge^m T^*M$ bundle-morphism from the r-th Jet Bundle to  the top-dimensionial forms bundle over the base manifold $M$  called \emph{"Lagrangian density"} or simply \emph{"Lagrangian"} of r-th order.
-		\end{itemize}
-	\end{definition}	
-	This definition is broad enough to include all the systems in ordinary analytical mechanics regardless of the cardinality of degrees of freedom  in a unified way.
+	\section{Abstract Mechanical Systems}
+	It's possible to state a mathematical definition sufficiently broad to include all the systems in ordinary analytical mechanics regardless of the cardinality of degrees of freedom  in a unified way.
 	
-	\subsection{Kinematics}
+	\begin{definition}[Abstract Evolutive System]
+		Pair $(E,P )$ composed of:
+		\begin{itemize}
+			\item $E \xrightarrow{\pi} M$ \\smooth fiber bundle of typical fiber $Q$ on  manifold $M$ called \emph{"configuration bundle"}.
+			\item	$ P : \Gamma^\infty(E) \rightarrow \Gamma^\infty(E)$ \\  operator called \emph{"motion operator"}
+		\end{itemize}
+	\end{definition}
+	This formultation is still very distant from the physical interpretation but has the benift to highlight the minimal mathematical objects which must be fixed in order to specify a mechanical systems.
+	
+	
+	\paragraph{Kinematics}
 	%Fibrato Configurazione incompassa la cinematica
 	The configuration bundle encompass all the kinematical structure of the system, the pivotal role is played by the smooth sections  which are to be understood as all the possible conformation of the system.
 
@@ -33,7 +34,7 @@
 	
 	\begin{observation}[Mathematical structure]
 	Mathematically speaking this set should be regarded as an infinite dimensional Manifold. 
-	
+	\\
 	This framework provides a geometric characterization of the notion of variations as tangent vectors on the the space of kinematic configurations .\cite{Forger2005}
 	\end{observation}
 	
@@ -54,18 +55,9 @@
 	 	Additional structure on the fiber , the base or the whole bundle are to be prescribed in order to specify a precise physical model, e.g. the spin structure on $E$ for the Dirac Field.\cite{Benini}
 	 \end{observation}	
 	
-	\begin{figure}[h!]
- 	 	\caption{Geometric picture of the basic kinematic structure.}
- 	 	\danger immagine
-   		%\includegraphics[width=0.5\textwidth]{Pictures/EuleroVenn_Bundles} 
-  		\centering
-	\end{figure}	
-	
-	\subsection{Dynamics}
-	%la lagrangiana incompassa la dinamica
-	The Lagrangian density is the object that contains all the information about the dynamic evolution of the system.
-	In fact, when a dynamical principle is provided, $\Lagrangian$ determines univocally a differential operator $P$ on the kinematics configurations space $\Conf$.
-	This operator is named  \emph{"equations of motion"} operator and has the role to select the dinamically compatible configuration among all the admissible kinematic configurations of $\Conf$, exactly as it happens in analytical mechanics where the dynamic equations shape the natural motions.
+	\paragraph{Dynamics}
+	The operator $P$ is the object that contains all the information about the dynamic evolution of the system.
+	It has the role to select the dinamically compatible configuration among all the admissible kinematic configurations of $\Conf$, exactly as it happens in analytical mechanics where the dynamic equations shape the natural motions.
 	\begin{notationfix}
 		Provided an equations of motion operator
 		\begin{displaymath}
@@ -78,9 +70,30 @@
 		is called \emph{"Space of Dynamical Configurations"}.
 	\end{notationfix}
 	
+	\begin{figure}[h!]
+ 	 	\caption{Geometric picture of the basic mechanical system's structure.}
+ 	 	\danger immagine
+   		%\includegraphics[width=0.5\textwidth]{Pictures/EuleroVenn_Bundles} 
+  		\centering
+	\end{figure}	
+	
+	\subsection{Lagrangian Dynamics}	
+	Lagrangian systems constitute a subclass of the abstact mechanical systems of more practical interest:	
+		\begin{definition}[Lagrangian System]
+	Pair $(E, \mathcal{L} )$ composed of:
+		\begin{itemize}
+			\item $E \xrightarrow{\pi} M$ \\smooth fiber bundle of typical fiber $Q$ on the oriented manifold $(M,\mathfrak{o})$ called \emph{"configuration bundle"}.
+			\item	$ \Lagrangian : J^r E \rightarrow \wedge^m T^*M$ \\bundle-morphism from the r-th Jet Bundle to  the top-dimensionial forms bundle over the base manifold $M$  called \emph{"Lagrangian density"} or simply \emph{"Lagrangian"} of r-th order.
+		\end{itemize}
+	\end{definition}	
+	In what follows all the systems considered will be exclusively of first order.
+	
+	
+	%la lagrangiana incompassa la dinamica
+	In this case is the Lagrangian density the object containing all the information about the dynamic evolution of the system.
 
 	%In Layman terms la lagrangiana  è un qualcosa che può essere integrato sopra la varietà
-	In order to reconstruct the system's dynamic from the Lagrangian density we have to understand the mathematical nature of $\Lagrangian$.
+	In order to reconstruct the system's dynamic from the Lagrangian density has to be understood the mathematical nature of $\Lagrangian$.
 	$\Lagrangian$ maps point $q_p$ on the fiber $J^r_p E$ to a m-form on $T_p M$.
 	Recalling the definition of jet bundles is clear that for each smooth section on $E$ is associated a smooth section on the b$J^rE$ :
 	\begin{displaymath}
@@ -96,7 +109,7 @@
 		\begin{displaymath}
 			\Lag^r (E) \coloneqq \hom\biggr(J^r E,\quad \bigwedge^m( T^*M)\biggr)  \cong \big\{f:\Gamma^\infty(J^r E) \rightarrow \Omega^m(M)  \big\}
 		\end{displaymath}
-	(where $\Omega^m(M)$ is the common name for $\Gamma^\infty ()$ in the context of Grassmann algebras.)
+	(where $\Omega^m(M)$ is the common name for $\Gamma^\infty \big( \bigwedge^m( T^*M) \big)$ in the context of Grassmann algebras.)
 	The equivalence states the fact that a bundle-morphism induce a mapping between the sections.
 	\end{definition}
 	 this choice fix the "Dynamical identity" of the considered system.
@@ -119,7 +132,7 @@
 	\end{definition}	
 	
 	\begin{proposition}
-		As a distribution è lineare come funzionale no	
+		As a distribution $\mathcal{O}_\Lagrangian [\phi] (f) $ is necessarily linear in the test-functions entry but not in the configurations entry.	
 	\end{proposition}	
 	
 	\begin{observation}
@@ -141,25 +154,50 @@
 	\end{observation}
 	
 	\begin{notationfix}
-	
+		When calculated for the specific density of the Lagrangian system $\mathcal{O}_\Lagrangian$ takes the name of \emph{Action} or \emph{Total Lagrangian}. 
 	\end{notationfix}
-	
-	
-	\subsection{Generalization}
-	%Sistemi evolutivi e sistemi hamiltoniani	
-	From the preceding analysis is clear that the central object of the dynamics is 	the operator P \emph{motion equation operator} fa le veci delle equazioni della dinamica
-	\begin{definition}[Evolutive System]
-	
+
+	The introduction of the Lagrangian density is meaningless without the prescription of a dynamical principle which allows to determine univocally a differential operator $P$ on the kinematics configurations space $\Conf$.
+	This fundamental principle is the \emph{least action principle}.
+	A proper justification of this claim should require the presentation of the differential calculus on the infinite dimensional manifolds $\Conf$. 
+	Jumping straight to the conclusion we can state this correspondence as a principle  in term of a function which assign for all lagrangian densities an operator on the kinematic configurations space. In the case of first order lagrangian we define
+	\begin{definition}[Euler-Lagrange operator]
+		It's the differential operator
+		\begin{displaymath}
+			Q_\chi : \Conf \rightarrow \Conf
+		\end{displaymath}
+		relative to the lagrangian density $\chi \in \Lag^1(E)$, such that:
+		\begin{equation}
+			Q_\chi (\gamma) = \Biggr( \partial_\mu \biggr( \frac{\partial \chi}{\partial(\partial_\mu \phi)} \biggr\vert_\gamma \biggr) - \frac{\partial \chi}{\partial \phi}\biggr\vert_\gamma \Biggr) \qquad \forall \gamma \in \Conf
+		\end{equation}
+		(where 	$\biggr( \frac{\partial \chi}{\partial(\partial_\mu \phi)}$ is the be intended as the lagrangian density constructed differentiating $\chi(\phi, \partial_\mu)$ as an ordinary function treating its functional entries as an usual scalar variable.)
 	\end{definition}
+
+	
+	\begin{observation}
+		The whole theory of both Lagrangian densities class and Euler-Lagrange equation could be stated in a more syntetic way in terms of the Grassmann-graded variational bicomplex.\cite{Giachetta2009}\cite{Sardanashvily}
+	\end{observation}
+	
+		
+
 	
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 \newpage
 	\section{Concrete Realization}
 	%esibiamo quanto è ampia la nostra definizione
 		\subsection{Fields on curved Background}
-		%M è spazio tempo,
-		%bundle è lineare per prevedere il principio di sovrapposizione
-		%M è glob iper e P è green iper per tener conto del comporatamento propagativo
+		M è spazio tempo,
+		bundle è lineare per prevedere il principio di sovrapposizione
+		M è glob iper e P è green iper per tener conto del comporatamento propagativo
+		definire sup cauchy
+		definire s-t iperbolico (solo la caratterizzazione di ammetre una sup di cauchy)
+		definire op green iperbolico su spazio tempo iperbolico (cioè ha delle green ope)
+		Propr di buona definizione esistenza e unicita della soluzione
+		
+		Di particolare ricorrenza fisica sono gli operatori normally iperbolic
+		espressione in coordinate
+		esempio K-g!
+
 		\subsection{Finite Degree systems}
 		  % il fibrato non è vettoriale
 		  % le configurazioni sono curve

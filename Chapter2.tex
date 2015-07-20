@@ -4,6 +4,11 @@
 \chapter{Lagrangian Systems and Pierels Brackets}
    %introduzione
 	\danger .. introduzione
+		dedichiamo sforzo alla definizione dei sistemi lagrangiani astratti per dare un punto di vista unificato ai sistemi a gradi libertà continui (continui macroscopici, fluidi, campi) e a gradi di libertà discreti
+		Li vediamo come sotto classi dei sistemi lagrangiani
+		notiamo che in entrambi i casi c'è un possibile dato di cauchy
+		usiamo questo ingrediente per definire l'algoritmo di peierls.
+	\danger
 
 	\section{Abstract Mechanical Systems}
 	It's possible to state a mathematical definition sufficiently broad to include all the systems in ordinary analytical mechanics regardless of the cardinality of degrees of freedom  in a unified way.
@@ -67,7 +72,7 @@
 		\begin{displaymath}
 		\Sol \coloneqq \ker(P) \subset \Conf
 		\end{displaymath}
-		is called \emph{"Space of Dynamical Configurations"}.
+		containing all the smooth solutions is called \emph{"Space of Dynamical Configurations"}.
 	\end{notationfix}
 	
 	\begin{figure}[h!]
@@ -86,7 +91,10 @@
 			\item	$ \Lagrangian : J^r E \rightarrow \wedge^m T^*M$ \\bundle-morphism from the r-th Jet Bundle to  the top-dimensionial forms bundle over the base manifold $M$  called \emph{"Lagrangian density"} or simply \emph{"Lagrangian"} of r-th order.
 		\end{itemize}
 	\end{definition}	
-	In what follows all the systems considered will be exclusively of first order.
+	
+	\begin{NB}
+		IIn what follows all the systems considered will be exclusively of first order.
+	\end{NB}	
 	
 	
 	%la lagrangiana incompassa la dinamica
@@ -119,7 +127,9 @@
 	
 	
 	Thanks to the correspondence between a section $\phi \in \Conf$ and his r-th jet, it's possible to consider the Lagrangian as directly acting on the kinematic configurations.
-	The image  $\Lagrangian [ \phi ] \textrm{d}\mu$ , where $\textrm{d}\mu$ is the measure associated to the orientation $\mathfrak{o}$, is an object that can be measured on the whole base space, this property suggests the introduction of a class of associated functionals:
+	In layman terms the image  $\Lagrangian [ \phi ] \textrm{d}\mu$ , where $\textrm{d}\mu$ is the measure associated to the orientation $\mathfrak{o}$, is something that can be measured over the whole base space. 
+	\\
+	This property suggests the introduction of the class of associated functionals:
 	\begin{definition}[Lagrangian functional]
 		Is a functional on $\Conf$ with values on regular distribution over M associated to the generic $\Lagrangian \in \Lag$.	
 		\begin{displaymath}
@@ -182,12 +192,65 @@
 
 	
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-\newpage
+%\newpage
 	\section{Concrete Realization}
+	In the previous section we claim that the abstract definition of Lagrangian systems is broad enough to encompass all the classical lagrangian systems with both discrete degrees of freedom, like particles, and continuous degree of freedom, like fluids or fields.
+	Let' show two of the most significant examples.
 	%esibiamo quanto è ampia la nostra definizione
-		\subsection{Fields on curved Background}
-		M è spazio tempo,
-		bundle è lineare per prevedere il principio di sovrapposizione
+	
+	
+	
+		\subsection{Classical Linear Field over a Space-Time}
+		\danger così com'è la definizione è troppo forte!		
+		
+		
+			The field systems are a subset of the lagrangian systems:
+			\begin{definition}[Linear Fields on curved Background]
+				It's a Lagragian system $(E,\Lagrangian)$ such that:
+				\begin{itemize}
+					\item the configuration bundle $E\xrightarrow{\pi} M$ is a \underline{vector bundle}.
+					\item the base manifold $M$ is a \underline{Globally Hyperbolic Spacetime}.
+					\item the Euler-Lagrange operator $P= Q_\Lagrangian$ is a \underline{Green Hyperbolic operator}.
+					\item For each Cauchy surface $\Sigma \subset M$ can be defined a well-posed Cauchy problem for the motion equation of $P$.\footnote{Green-hyperbolic operators are not necessarily hyperbolic in any PDE-sense and that they cannot be characterized in general by well-posedness of a Cauchy problem. \cite{Terlaky2010} \cite{Bar2010}}
+				\end{itemize}
+			\end{definition}
+		The idea of taking bundles on a space-time manifold it's physically intuitive, kinematically speaking a fields configuration it's not more than an than an association of some element of the fiber $Q $ for each point of the space-time $M$.
+		But the other three condition are worth a deeper insight:
+
+		\paragraph{Vector Bundle Condition}
+			Even if it might make sense to speak of nonlinear fields in some more general context, this condition it's a necessary element in case some form of the \emph{superposition principles} as to be taken in account.
+			Obviously this hypothesis is not sufficient to formulate the principle in the strong classical way, i.e.:"the response at a given place and time caused by two or more stimuli is the sum of the responses which would have been caused by each stimulus individually" mostly because only free systems can be considered at this stage and any statement about stimulus can make sense.
+			\\
+			However It assure that $\Conf$ is a vector space and , in conjunction with the linearity of motion operator $P$, $\Sol= \ker(P)$ is a linear subspace.		
+			In other words every linear combination of kinematic configuration it's still a kinematic configuration.
+
+		\paragraph{Global hyperbolicity condition.}
+		
+			This condition is strictly connected to the dynamic behaviour of the system.
+			
+			\danger
+			Def di dominio di dipendendenza
+			footnote di definizione di spazio tempo
+			def cauchy surface
+			Remark causal future past
+			def globally hyperbolic
+			Teorema sulle caratterizzazioni
+			\begin{notationfix}
+				We denote the set of all the cauchy surfaces as $\PowerSet_{C}(M)$.
+			\end{notationfix}
+					
+
+		Glon iperbolic determina la fogliazione dello spazio tempo per superfici di cauchy
+		La superficie di cauchy è questa:
+		\begin{definition}[Cauchy surface]
+		\end{definition}		
+		questo da la possibilità della buona posizione dei problemi di cauchy.. fisicamente è la condizione minima per definire i dati iniziali dell'evoluzione dinamica.
+		definisco data...
+		
+	No!		La definizione di green hyperbolicity garantisce invece l'esistenza e unicità del problema di cauchy associata
+		
+		e non solo, anche l'esistenza degli operatori di green associati che sono ingrediente fondamentale della costruzione di peierels
+
 		M è glob iper e P è green iper per tener conto del comporatamento propagativo
 		definire sup cauchy
 		definire s-t iperbolico (solo la caratterizzazione di ammetre una sup di cauchy)
@@ -197,6 +260,89 @@
 		Di particolare ricorrenza fisica sono gli operatori normally iperbolic
 		espressione in coordinate
 		esempio K-g!
+		\danger
+
+		
+		\danger
+		
+		Secondo bar e ginoux per parlare di campo classico non serve specificare nient'altro...
+		la condizione di $\exists  1!$ operatore di green di $P$  insieme a quella di Essere un sistema lagrangiano è un requisito minimo  per definire senza ambiguità le parentesi di peierls.
+		
+		la condizione di green-hyperbolicity ( che garantisce di $\exists 1!\; E^\mp$ ma non che  $\exists 1!$ soluzione del PC) corredata della scelta di un pairing permette di quantizzare secondo lo schema algebrico
+		
+		La condizione di well-posedness del problema di cauchy da la possibilità di quantizzare secondo lo schema dei dati iniziali
+		
+		in tutti questi casi la candizione di Globally -hyperbolic per lo spazio tempo sottostante è necessaria
+		\danger
+
+
+		\paragraph{Green-Hyperbolicity condition.}
+			The third condition  ensures the existence of the Green's Operator as follows directly from definition.
+			
+			
+			\danger
+			Devo richiedere che il green operator sia unico? sia negli schemi di quantizzazione che nella definizione di peierels faccio largo uso dell'unicità. 
+			Per provare questa unicità si passa per la definizione di una forma bilineare che permette di parlare di aggiunto formale e quindi avvalersi del teorema.
+			
+
+		\paragraph{Cauchy condition.}
+			While the existence of a Cauchy surface allows to assign the data of initial value problems, the forth condition ensure the well -posedness of the problem for on every Cauchy surface $\Sigma$. I.e:
+			\begin{equation}\label{CauchyProblem}
+				\begin{cases} P u = 0 \\ u = u_0 \\ \nabla_{\vec{n}}u= u_1 \end{cases}
+			\end{equation}
+			admit a unique solution $u\in \Gamma(E)$ for all $(u_0, u_1) \in \Gamma (\Sigma )\times \Gamma (\Sigma )$.
+			\\
+			This suggests the following definition:
+			\begin{notationfix}
+				The set of all the smooth initial data which can be given on the Cauchy Surface $\Sigma$ is:
+				$\Data(\Sigma)  \coloneqq \biggr \{ (f_0,f_1) \big \vert f_i \in \Gamma^\infty(\Sigma)\biggr\}  \equiv  \Gamma^\infty(\Sigma) \times \Gamma^\infty(\Sigma)$
+			\end{notationfix}
+			\begin{observation}
+				$\Data(\Sigma)$ inherit the linear structure of its component $ \Gamma^\infty(\Sigma)$.
+			\end{observation}	
+			In this term the well-posedness of the cauchy problem can be stated as follow:
+
+			\begin{proposition}
+				The map $ 	 \SolMap : \Data (\Sigma ) \rightarrow \Sol $ which assign to $(u_0, u_1)\in \Data(\Sigma)$ the unique solution of the cauchy problem \ref{CauchyProblem} is linear and bijective.
+			\end{proposition}
+			
+			Since any solution, when restricted to a generic Cauchy surface $\Sigma'$, determines another pair of initial data, i.e.:
+			\begin{displaymath}
+				\phi \equiv \SolMap (\phi \vert_{\Sigma'}, \nabla_{\vec{n'}}\phi	 \vert_{\Sigma'} )	\quad \forall \phi\in \Sol
+			\end{displaymath}						
+			we can define the set of initial data regardless of the particular Cauchy surface:			
+			
+			\begin{definition}[Set of smooth initial Data]
+				\begin{displaymath}
+					\Data  \coloneqq \frac{\bigsqcup\limits_{\Sigma \in \PowerSet_C(M)}\Data(\Sigma)}{\sim} 
+				\end{displaymath}
+				where $\sim$ is such that:
+				\begin{displaymath}
+					(f_0, f_1)|_\Sigma \sim (g_0, g_1)|_{\Sigma'} \; \Leftrightarrow \; \SolMap(f_0,f_1) =  \SolMap(g_0,g_1) 
+				\end{displaymath}
+				\footnotesize{ Initial data, associated with different surface, are similar if they lead to the same solution.}	
+			\end{definition}
+			
+			\begin{proposition}
+				$\Data$ is still a vector space.
+			\end{proposition}
+			\begin{proof}\danger
+				It's sufficient to prove that:
+				\begin{displaymath}
+					\big[ \phi_a + \phi_b \big] = \big[ \phi_a \big] + \big[ \phi_b \big]
+				\end{displaymath}
+				where $[\phi]= \big\{(\phi\vert_\Sigma , \nabla_{\vec{n}}\phi \vert_\Sigma) \big\vert \Sigma \in \PowerSet_C \big\}$.
+				In fact:
+				\begin{align*}
+					 \SolMap_{\Sigma'}\big([(a',b')] + [(c',d')] \big)=\SolMap_\Sigma\big([(a,b)] + [(c,d)] \big) = \SolMap_\Sigma\big([(a,b)] \big)+ \SolMap_\Sigma\big([(c,d)] \big) =\\
+					 =\SolMap_{\Sigma'}\big([(a',b')] \big)+ \SolMap_{\Sigma'}\big([(c',d')] \big) = \SolMap_{\Sigma'}\big([(a',b')] +[(c',d')] \big)
+				\end{align*}
+
+			\end{proof}
+			\begin{corollary}
+				The function  $ 	 \mathbb{s} : \Data (\Sigma ) \rightarrow \Sol $ which map every equivalence class to the associated solution is linear and bijective.
+			\end{corollary}
+
 
 		\subsection{Finite Degree systems}
 		  % il fibrato non è vettoriale
@@ -204,7 +350,7 @@
 		  % 
 		
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-\newpage
+%\newpage
 	\section{Geometric mechanics of Finite Degree systems}
 	%L'approccio usato generalmente è deduttivo dal particolare al generale
 	%parlare di spazio delle fasi, forma simplettica, legendre
@@ -215,13 +361,62 @@
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 \newpage
 	\section{Peierls Brackets}
+	%Classe di applicabilità naturale del metodo di Peierls
+	The Peierls's construction algorithm is well defined for a specific class of systems:
+		\begin{enumerate}
+			\item Linear field theory $E=(E,\pi,M)$
+			\item Lagragian dynamics $P=Q_\Lagrangian$.
+			\item $M$ is a globally Hyperbolic space-time.
+			\item motion operator $P$ is a green-hyperbolic L.P.D.O.
+		\end{enumerate}
+
+	\begin{observation}[Peierls Bracket vs Poisson Bracket]
+	\danger\footnote{da aggiustare} Paraphrasing an observation made by Sharan\cite{Sharan2010}:
+	
+	The Poisson bracket determines how one quantity b(t, q, p) changes another quantity a(t, q, p) when it acts as the Hamiltonian or vice-versa. The Peierls bracket, on the other hand, determines how one quantity b(t, q, p) when added to the system Hamiltonian h with an infinitesimal coefficient λ affects changes in another quantity a(t, q, p) and vice-versa, i.e. 	The Peierls bracket is related to the change in an observable when the trajectory on which it is evaluated gets shifted due to an infinitesimal change in the Lagrangian of the system by another Lagragian density.
+		
+	While the Poisson bracket between two observables a and b is defined on the whole phase space and is not dependent on the existence of a Hamiltonian, the Peierls bracket refers to a specific trajectory determined by a governing Lagrangian. 
+	\end{observation}
+
+	Purpose of the Peierls' procedure is to provide a bilinear form on the space of Lagrangian densities $\Lag$.
+	This form induces a pre-symplectic structure on the space of Lagrangian Functionals which can be easily reduced to the subclass of suitable classical observable.
+	The algorithm can be summarized in a few steps
+	\begin{enumerate}
+		\item Consider a \emph{disturbance} $\chi$ that is a time-compact lagrangian density .
+		\item Construct the perturbation of a solution under the disturbance.
+		\item Define the effect of the disturbance on a second lagrangian functional.
+		\item Assemble two Effect operators to give a bracket.
+	\end{enumerate}
+
+
+	\paragraph{Disturbed motion operator}
+		Consider a perturbation by $\chi \in \Lag$ of the system's lagrangian:
+		\begin{displaymath}
+			\Lagrangian \rightsquigarrow \Lagrangian' = \Lagrangian + \epsilon\cdot \chi
+		\end{displaymath}
+		where $\epsilon$  is a modulation parameter.
+		The motion operator of the disturbed dynamics results:
+		\begin{equation}
+			P_\epsilon = \Biggr[ \partial_\mu \biggr( \frac{\partial \Lagrangian}{\partial(\partial_\mu \phi)} \biggr) - \frac{\partial \Lagrangian}{\partial \phi} \Biggr] + \epsilon \Biggr[ \partial_\mu \biggr( \frac{\partial \chi}{\partial(\partial_\mu \phi)} \biggr) - \frac{\partial \chi}{\partial \phi} \Biggr]
+			= P + \epsilon Q_\chi		
+		\end{equation}			
+	\danger sono autorizzato ad affermare che $P_\epsilon$ è lineare?		
+		
+	\paragraph{Solution of the disturbed motion as a perturb}
+		By \emph{perturbation of a solution under the disturbance} we mean a solution $\phi'\in \Conf$ of $P_\epsilon$ obtainable by a linear perturbation of a fixed solution $\phi \in \Sol$.
+
+
 	%peierels vs poisson (sharan)
+
+	\subsection{Extension to non-linear theories}
+		(Nel caso di teorie non lineari, come la geodetica, posso tentare di applicare questo criterio alle linearizzazioni!)
+		
 	
 	\subsection{Finite Dimensional case}
 	
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 \newpage
-	\section{Eliminata}
+	\section{Dubbi}
 	\begin{itemize}
 		\item quando parlo della cinematica mi piacerebbe dare indicazioni sulla struttura matematica dello spazio delle configurazioni cinematiche:
 			\begin{enumerate}
@@ -231,6 +426,11 @@
 				\item questo spazio tangente è isomorfo allo spazio delle sezioni del pullback rispetto alla sezione $\phi\in C$ del verical bundle (vedere forger romero)
 				\item il problema dell'atlante e della rappresentazione delle sezioni in carta locale ( da scegliere sia sul total space E che sul base space M)
 			\end{enumerate}
+		\item fare riferimento al teorema di Ostrowsky per giustificare il fatto che consideriamo solo il primo ordine. le langrangiana con termini cinetici esotici sono instabili ( nel senzo che non ammetto come soluzioni sezioni globali ma solo locali ).
+
+			\item Devo mettere la trafila di definizioni? direi di no, qualcosa va detto qualcosa va messo in footnote
+		\subfile{DefinitionBulk}
+			
 	\end{itemize}
 	
 \end{document}

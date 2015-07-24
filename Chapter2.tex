@@ -1,7 +1,7 @@
 \documentclass[Main]{subfiles}
 
 \begin{document}
-\chapter{Lagrangian Systems and Pierels Brackets}
+\chapter{Lagrangian Systems and Peierls Brackets}
    %introduzione
 	\danger .. introduzione
 		dedichiamo sforzo alla definizione dei sistemi lagrangiani astratti per dare un punto di vista unificato ai sistemi a gradi libertà continui (continui macroscopici, fluidi, campi) e a gradi di libertà discreti
@@ -251,7 +251,7 @@
 		
 	No!		La definizione di green hyperbolicity garantisce invece l'esistenza e unicità del problema di cauchy associata
 		
-		e non solo, anche l'esistenza degli operatori di green associati che sono ingrediente fondamentale della costruzione di peierels
+		e non solo, anche l'esistenza degli operatori di green associati che sono ingrediente fondamentale della costruzione di peierls
 
 		M è glob iper e P è green iper per tener conto del comporatamento propagativo
 		definire sup cauchy
@@ -283,7 +283,7 @@
 			
 			
 			\danger
-			Devo richiedere che il green operator sia unico? sia negli schemi di quantizzazione che nella definizione di peierels faccio largo uso dell'unicità. 
+			Devo richiedere che il green operator sia unico? sia negli schemi di quantizzazione che nella definizione di peierls faccio largo uso dell'unicità. 
 			Per provare questa unicità si passa per la definizione di una forma bilineare che permette di parlare di aggiunto formale e quindi avvalersi del teorema.
 			
 
@@ -439,7 +439,7 @@
 		\begin{displaymath}
 			\big[P_\epsilon\big] \phi'(x) =  \epsilon \biggr( \big[P\big] \eta(x) + \big[Q_\chi \phi(x) \big]\biggr)+ \epsilon^2 \big[Q_\chi^{lin}(\phi)  \big]	\eta(x) \mbeq o(\epsilon)
 		\end{displaymath}
-		\begin{equation}\label{PeierlJacobiEq}
+		\begin{equation}\label{PeierlJacobiEqLin}
 			\Rightarrow P \eta = - Q_\chi \phi(x)
 		\end{equation}
 		called \emph{Jacobi Equation}.
@@ -475,8 +475,9 @@
    		which , according to the well-posedness of the Cauchy problem, admits an unique solution.
    		The link with the first presentation is that past/future -compact supported configuration always meet the initial data condition for some future/past Cauchy surface.
 		\end{observation}
+		
 		In conclusion,fixed a solution $\phi\in \Sol$ and a perturbation $\chi$, are uniquely determined two perturbed solution:
-   		\begin{equation}
+   		\begin{equation}\label{PerturbedSolution}
    			\phi^\pm_\epsilon = \phi + \epsilon \eta^\pm
    		\end{equation}
    		such that:
@@ -530,7 +531,7 @@
 		We don't prove the symplectic property for this general object but we will face this problem for the case of  \emph{classical observable functional}, a subclass Lagrangian functional of most practical use in algebraic quantization.
 
 	\subsection{Extension to non-linear theories}
-		In the precedent costruction the green-hyperbolicity of motion operator $P$ plays a primary role.
+		In the previous costruction the green-hyperbolicity of motion operator $P$ plays a primary role.
 		Anyway the problem of searching perturbed solution of the disturbed dynamic can be stated even in presence  of non-linear fields  where the configuration bundle is not necessary a vector bundle and the motion operator is not linear.
 		%Anyway the problem of searching perturbed solution of the disturbed dynamic can be stated even in presence  of non-linear field theories.
 		\begin{figure}[h!]
@@ -540,16 +541,71 @@
 		\end{figure}		
 		
 		The crucial point of the Peierls' procedure  is to select among all the possible solution of the perturbed motion $P_\epsilon$ that configuration which can be constructed by a variation of some fixed solution of the non-perturbed dynamics $\gamma_0 \in \Sol$.
-		In the precedent case was natural restrict the choice of the possible variation to the linear one only but this preferential choice is no longer possible.
-		
-
-		
 		In this sense the problem results a \emph{"linearization"} inasmuch the  search of such solution is restricted to a local neighbour of the "point" $\gamma_0\in \Sol$.
+
+		Previously was natural restrict the choice of possible variations to the linear one only. But in the general case this preferential choice is no longer possible.
+		A way to  recover a notation similar to \ref{PerturbedSolution} is to work patchwise by chosing a coordinate representation.
+		Fixed a solution $\gamma_0 \in \Sol$ and a local trivializing chart $(A, \phi_A)$ such that $A\cap \ran(\gamma_0) \neq \emptyset$ we can define a local infinitesimal variation by acting on his components:
+		\begin{displaymath}
+			\gamma_\lambda ^{\, i}(x) = \gamma_0^{\, i}(x) + \lambda \eta^i(x) \qquad \forall x\in \pi(A)
+		\end{displaymath}
+		where $ \gamma_0^{\, i}$ are the component of the unperturbed solution in the open set $A$ and $\eta^i\in \real^q$ is a generic  real q-ple ( q is the dimension of the typical fiber manifold).
+		$\lambda$ is a real parameter that has to be "sufficiently small" in order to guarantee that the range of $\gamma_\lambda$ is properly contained in $A$.
+		In other words the construction of the linear variation, that for linear field theories could be done in a global way, in the general case can be recovered only locally.
 		
-		(Nel caso di teorie non lineari, come la geodetica, posso tentare di applicare questo criterio alle linearizzazioni!)
+		Then is possible to define the effect of the a disturbance locally, searching local section $\gamma_\epsilon^{\, i} = \gamma_0^{\, i} + \epsilon \eta^{i}$ solving the disturbed dynamic equation up to the first order in $\epsilon$ i.e. 
+		\begin{displaymath}
+			\big[ P_\epsilon \big] \gamma_\epsilon^{\,i} = o(\epsilon)
+		\end{displaymath}
+		where $\big[ P_\epsilon \big] $ has to be intended as the coordinate representation of the restriction on the local section $\Gamma^\infty(A)$.\danger\footnote{non mi è evidente se la rappresentazione in coordinate di un operatore agente sulle sezioni si realizza in modo ovvio, ma non vedo nemmeno ostruzioni! Di sicuro l'operazione è ben definita per gli L.P.D.O visto che la definizione prevede proprio che su ogni carta locale trivilizzante l'operatore sia lineare alle derivate parziali }
+		\begin{observation}
+		W.l.o.g has been taken the the same scalar $\epsilon$  to modulate both the perturbation $\gamma_\epsilon$ that the disturbance on the motion operator.
+		On the contrary consider two different parameter is immaterial since only the smaller should be taken in account.
+		\end{observation}
+
+		From the explicit equation of the perturbed solution: 
+		\begin{displaymath}
+			\biggr(\big[P\big] + \epsilon\big[Q_\chi\big] \biggr) \big(\gamma_0^{\,i}+\epsilon \eta^i \big) = o(\epsilon)
+		\end{displaymath}
+		follows an equation on the components of the local perturbation.
+		In  this case has to be dealt with the problem of non-linearity not only for Euler-Lagrange operator $Q_\chi$ but also for $P$.
+		Arresting the expension to the first order in $\epsilon$ results:
+		\begin{equation}\label{PeierlJacobiEqNonLin}
+			\biggr[P_{\gamma_0}^{\, lin} \biggr] \eta^i(x) = -\biggr(Q_\chi(\gamma_0)\biggr)(x)
+		\end{equation}
+		the \emph{Jacobi equation} on the unperturbed solution $\gamma_0\in \Sol$.
+		\begin{observation}
+			We've moved from an operator $P$  definited on  $\Conf$ to an operator  $P_{\gamma_0}^{\, lin}  $ defined on the space of variation.
+			From a global point of view this variation can be seen as the tangent vector i.e. s  $\eta \in T_{\gamma_0}\Conf$.
+			In the case of the linear system this passage was unnecessary, the Jacobi equation was directly defined on $\Conf$ since, for linear system, any section could be seen as a generator of an infinitesimal variation.
+			This behaviour mimics perfectly what happens in ordinary classical mechanics where the configuration space of a linear system is a vector space i.e a "flat" manifold\footnote{In sense that admits a global coordinate chart.} which is isomorphic to his tangent space in every point.
+		\end{observation}
 		
-	
+		Provided that the linearized motion operator (which is now properly a linear partial differential operator) is Green-Hyperbolic, the Peierels construction can continue as before.
+		Has to be noted that now the advanced/retarded perturbation are formally identical to the former:
+		\begin{displaymath}
+			\eta^{\pm\, i} = G^\pm \big( - Q_\chi \gamma_0^{\, j})
+		\end{displaymath}
+		with the important difference that $G^\pm$ are now the Green operators of the linearized motion operator and depend on the fixed solution $\gamma_0^{\, j}$.
+		
+		In conclusion the perturbed solution:
+		\begin{displaymath}
+			\gamma_{\chi}^{\pm\,i} = \gamma_0^{\, i} \pm G^\pm \big( -Q_\chi \gamma_0^{\,j}\big)
+		\end{displaymath}
+		has to be intended as the "glueing" of all the local chart representations covering the chosen solution.
+
+
 	\subsection{Finite Dimensional case}
+	 ... c'è su i miei appunti ma potrebbe essere superfluo.. 
+	 
+	 
+	 
+		\begin{figure}[h!]
+				  \centering
+   			\includegraphics[width=0.5\textwidth]{Pictures/AdvRetSol} 
+   	  		\caption{Intrinsically, searching a variation of a solution $\gamma_0\in \Sol$ which solve the disturbed motion equation is equivalent to find the intersection of the perturbed solution with a local neighbourhood of $\Gamma_0$ : $U_{\gamma_0}\cap\ker(P_\epsilon)$ .}
+		\end{figure}			
+	
 	
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 \newpage

@@ -18,27 +18,120 @@ However this is by no means different from what is discussed in ordinary quantum
 the basic formalism of quantum mechanics, which is substantially axiomatic and permits to define an abstract quantum mechanical system, and the quantization process that determine how to construct the quantum analogous of a classical system realizing the basic axioms.
 
 We refer to the algebraic quantization as a \emph{scheme of quantization} because it's not a single specific procedure but rather a class of algorithms.
-These algorithms are the same concerning the quantization step per se (costruction of the *-algebra of classical observable) but they differ in the choice of the classical objects  (essentially the classical observables) to be subjected to the procedure.
+These algorithms are the same concerning the quantization step per se (costruction of the *-algebra of classical observable) but they differ in the choice of the classical objects  (essentially the classical observables and the bilinear form) to be subjected to the procedure.
 
 Basically an algebraic quantization is achieved in three steps:
 \begin{enumerate}
 	\item \textbf{Classical Step}\\
-		Identify all the mathematical structures necessary to define the field, i.e. the couple $(E,P)$.\\
+		Identify all the mathematical structures necessary to define the field, i.e. the pair $(E,P)$.\\
 		In general every quantization process exploit some conditions on the quantum field structure that has to be met.
 	\item \textbf{Pre-Quantum Step}\\
-		\danger Are lowered from the top some additional mathematical over-structure  on the classic framework.
+		\danger Are implemented %lowered from the top 
+		some additional mathematical over-structure  on the classic framework. The aim is to establish the specific objects which will be submitted to the quantization process in the next step. 
+		Generally these object don't have any a classical meaning, their only purpose is to represent the classical analogous of the crucial structures of the quantum framework. 
+		From that we say \emph{Pre-Quantum}, their introduction doesn't have a proper \emph{a priori}explanation but has to be treated as an anstatz and justified \emph{a posteriori} within the quantum treatment.
+		
+		Essentially has to be chosen a suitable space of \emph{Classical observable} and this space has to be rigged with a well-behaved bilinear form.
+		
+		The ordinary quantum mechanics equivalent step is the choice of a particular Poisson bracket on $C^\infty(T^*Q)$ , which tipically implement the \emph{canonical commutation relations} $\{q,p\}=i\hbar$, among all the possible Poisson structure.
+		Note that this is a "pre-quantum" step because in classical Hamiltonian mechanics is considered only the Poisson structure carried from the natural symplectic form \cite{Abraham1978}.
 		
 		
 	\item \textbf{Quantization}\\
-		bo
+		Finally are introduced the rules which realize the correspondence between the chosen classical objects and their quantum analogues.\danger\footnote{ Sto Cito direttamente \cite{Benini2013}.} 
+		The algebraic approach characterizes the quantization of any field theory as a two-step procedure. In the first,
+one assigns to a physical system a suitable ∗-algebra A of observables, the central structure of the algebraic theory which encodes all structural relations between observables. The second step consists of selecting a so-called \emph{Hadamard state} which allows us to recover the interpretation of the elements of A as linear operators on a suitable Hilbert space.
 \end{enumerate}
 
 
-
+\danger\footnote{Frase che non mi piace ma voglio far presente che le realizzazioni dello schema algebrico sono molteplici!}
 As said previously, the realization of the Algebraic scheme are many: Fedosov's procedure, by Deformation, Peierls' procedure, by Initial Data etc .
 In the next section we review the last two.
 
 \section{Quantization with Peierls Bracket.}
+	\danger Temp 		\danger da contestualizzare ( e spostare)
+	\begin{observation}
+		In the algebraic quantization scheme the choice of the bundle bilinear form take a pivotal role since it is the basis of the so-called \emph{pairing}.
+		In effect this is the only discretionary parameter of the whole procedure.
+		The prescription on the symmetry properties determine the Bosonic/Fermionic character of the quantized theory:\\
+			\begin{tabular}{c c c}
+				Pairing & Observables linear form & Quantum Theory\\
+				symmetric  & anti-symmetric &  Bosonic \\
+				anti-symmetric & symmetric & Fermionic 
+			\end{tabular}
+	\end{observation}
+	\begin{observation}
+	
+	\end{observation}
+	
+	What we are going to show is a quantization procedure strictly defined for a specific class of classical theories:
+	\begin{enumerate}
+		\item Linear Fields.
+		\item Lagrangian Dynamics.
+		\item On Globally-Hyperbolic Space-time.
+		\item with Green-hyperbolic motion Operator.	
+	\end{enumerate}
+	Fall into this category prominent examples like Klein-Gordon and Proca Field Theory.\cite{Benini}
+	Has to be noted that the Lagrangian condition is ancillary. This has the purpose to justify the shape of the symplectic form on the classical observables space as consequent from the Peierls bracket.
+	It's customary to overlook to the origin of this object and jump directly to the expression \ref{Bo} in term of the Green's operator that no longer present any direct link to the Lagrangian and therefore can be extended to any green-hyperbolic theory.
+	
+	Briefly the procedure can be resumed in few steps:
+ 	\begin{enumerate}
+   		\item Classical Step\\
+   			Has to be stated the mathematical structure of the classical theory under examination.
+   			\begin{enumerate}
+   				\item Kinematics: is encoded in the configuration bundle of the theory.
+   					\begin{enumerate}
+   						\item Specify the base manifold $M$. \\Has to be a Globally-Hyperbolic Space-time.
+   						\item Specify the Fiber and the total Space $E$ auxiliary structure, e.g: spin-structure or trasformation laws under diffeomorphism on the base space.\\$E$ has to be at least a vector bundle.
+   					\end{enumerate}
+   			
+   				\item Dinamics: has to be specified the local coordinate expression of the motion operator $P: \Gamma^\infty(E)=\Conf\righrtarrow\Conf$.
+   				   	\begin{enumerate}
+   						\item Is $P$ Green-hyperbolic?
+   						\item Is $P$ derived from a lagrangian: $P=Q_\Lagrangian$? 
+   					\end{enumerate}
+   			\end{enumerate}
+   			
+   		\item Pre-Quantum Step
+   		   	\begin{enumerate}
+   				\item Pairing: construct a basic bilinear form on the space of kinematic configurations.
+   					\begin{enumerate}
+   						\item Choose $<\cdot,\cdot>$ a bilinear form on the bundle $E$.\\ Generally this object is suggested by the m
+   						\item
+   					\end{enumerate}
+   					
+   				\item Classical Observables
+   				   	\begin{enumerate}
+   						\item
+   						\item
+   					\end{enumerate}
+   				 
+   				 \item Symplectic structure
+   				   	\begin{enumerate}
+   						\item
+   						\item
+   					\end{enumerate}
+   			\end{enumerate}
+  
+   		\item Quantization Step
+   		   	\begin{enumerate}
+   				\item Quantum Observables Algebra\\
+   					A concrete realization is achieved in three step.
+   					\begin{enumerate}
+   						\item
+   						\item
+   					\end{enumerate}
+   					
+   				\item Hadamard State
+   				   	\begin{enumerate}
+   						\item
+   						\item
+   					\end{enumerate}
+   				 
+   			\end{enumerate}
+ \end{enumerate}
+
 
 	\subsection{Classical Step}
 	Applicability of the procedure.

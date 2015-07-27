@@ -2,15 +2,53 @@
 \begin{document}
 
 \chapter{Geodesic Fields}
-	mettere nell'intro una breve introduzione al problema geodetico nell'approccio standard della geometria riemmaniana
+	%mettere nell'intro una breve introduzione al problema geodetico nell'approccio standard della geometria riemmaniana
+	Usually, in the context of differential geometry, a \emph{geodesic curve} is characterized as a self-parallel curve in order to generalize the \emph{straight lines}.
+	%Definizione di geodetica su varietà con connessione
+	Considering a differential manifold $M$ endowed with an affine connection $\nabla$ we define:
+	\begin{definition}[Geodesic]
+		A curve \danger\footnote{Devo dire smooth o piecewise? }
+		$\gamma:[a,b]\rightarrow M$ such that:
+		\begin{equation}
+			\nabla_{\dot{\gamma}}\dot{\gamma} =0
+		\end{equation}
+		where $\dot{\gamma}^\mu \coloneqq \frac{d \gamma^\mu}{d t}$ is the tangent vector to the curve.
+	\end{definition}
+	\begin{notationfix}
+		In local chart the previous equation assume the popular expression:
+		\begin{equation}\label{GeodesicEquation}
+			\ddot{\gamma}^i + \Gamma^i_{\, j k} \dot{\gamma}^j \dot{\gamma}^k = 0
+		\end{equation}
+		Where $ \Gamma^i_{\, j k}$ is the coordinate representation of the Christoffel symbols of the connection.
+	\end{notationfix}
+	%Definizione metrica di geodetica su varietà riemmaniana( con connessione di levi civita)
+	In presence of a pseudo-Riemmanian metric is possible to present the geodesic in a metric sense i.e. as the curve  which extremizes the \emph{Energy Functional}\footnote{Remember that for arc-length parametrized curves the Energy functional coincide with the length functional.\cite[Lemma $1.4.2$ ]{Jost2005}}:
+	\begin{definition}[Energy functional]
+  	\begin{displaymath}
+ 		E(\gamma) \coloneqq \int_a^b \left\Vert \frac{d \gamma}{dt} (t)\right\Vert^2 dt
+ 	\end{displaymath}
+\end{definition} 	
+	Considering only the proper variation (that keep the end-point fixed), the extremum condition corresponds to equation \label{GeodesicEquation} where $\nabla$ is the unique Levi-Civita connection (torsion-free and metric-compatible).
+	%Problema di Jacobi, deviazione geodetica e legame alla curvatura
+	In general relativity takes a central role the problem of the geodesic equation linearization.
+
 
 \section{Geodesic Problem as a Mechanical Systems}
+	% Da quanto detto in introduzione ha un odore molto forte il legame dell'equazione geodetica con l'equazione del moto di un punto su una varietà e dell' funzionale lunghezza come versione con il prinicpio di minima azione
 
 \subsection{Geodesic Motion}
+	% Q è la varietà riemmanian in esame, eccc. vedi pag 223  e successive del fomm (direi di dare per assodato tutto il contesto di meccanica geometrica che mi sono studiato nei primi mesi della tesi ma credo non sia il caso di mettere per esteso qui, al massimo solo linkarlo
+
 \subsection{Geodesic Field}
+	%Qualsiasi sistema di mqo come il precedente può essere visto come un sistema campo.
+		% devo mettere le conclusione scritte sul primo quaderno insieme a quelle messe nel secondo e poi ripetute a seguito della costruzione di peierls e a quella di quantizzazione ( nei miei appunti io ho fatto ogni singolo passo in generale e poi realizzato per i sistemi campo-curve. Per la stesura finale ho deciso di unire tutto insieme in questo ultimo capitolo (senza ripetere ogni volta che il fibrato è triviale con fibra Q, la varietà base è banalmente globally iperbolic in quanto R. tutti i punti di R sono superfici di cauchy ecc ecc)
+
 
 \section{Peierls Bracket of the Geodesic field}
+
 \subsection{Example: Geodesic field on FRW space-time.}
+	% qui i conti li devo ancora fare, l'idea è che le metriche possono essere diagonalizzate risulta un sistema di equazioni del moto ode disaccoppiate di cui posso calcolare la funzione di green come indicato nelle dispense che trattano il calcolo di green per le ode.
+	%se ho l'operatore di green posso calcolare in esplicito le peierls
 
 \section{Algebraic quantization of the Geodesic Field}
 \subsection{Peierls Approach}

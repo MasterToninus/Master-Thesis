@@ -22,35 +22,122 @@
 		Where $ \Gamma^i_{\, j k}$ is the coordinate representation of the Christoffel symbols of the connection.
 	\end{notationfix}
 	%Definizione metrica di geodetica su varietà riemmaniana( con connessione di levi civita)
-	In presence of a pseudo-Riemmanian metric is possible to present the geodesic in a metric sense i.e. as the curve  which extremizes the \emph{Energy Functional}\footnote{Remember that for arc-length parametrized curves the Energy functional coincide with the length functional.\cite[Lemma $1.4.2$ ]{Jost2005}}:
+	\vspace{4mm}
+	
+	In presence of a pseudo-Riemannian metric is possible to present the geodesic in a metric sense i.e. as the curve  which extremizes the \emph{Energy Functional}\footnote{Remember that for arc-length parametrized curves the Energy functional coincide with the length functional.\cite[Lemma $1.4.2$ ]{Jost2005}}:
 	\begin{definition}[Energy functional]
-  	\begin{displaymath}
+  	\begin{equation}\label{EnergyFunctional}
  		E(\gamma) \coloneqq \int_a^b \left\Vert \frac{d \gamma}{dt} (t)\right\Vert^2 dt
- 	\end{displaymath}
+ 	\end{equation}
 \end{definition} 	
 	Considering only the proper variation (that keep the end-point fixed), the extremum condition corresponds to equation \label{GeodesicEquation} where $\nabla$ is the unique Levi-Civita connection (torsion-free and metric-compatible).
 	%Problema di Jacobi, deviazione geodetica e legame alla curvatura
-	In general relativity takes a central role the problem of the geodesic equation linearization.
+	\vspace{4mm}
+	
+	In general relativity the problem of the geodesic equation linearization, named \emph{Jacobi equations} takes a central role. \footnote{Usually in this context takes the name of \emph{Geodesic deviation} problem\cite[pag. 46]{Wald1984}.}
+	\danger (nel file di ripasso di geometria riemmaniana ho scritto gran parte delle definizione conviene vedere cosa mi serve effettivamente...
+	Di certo mi avvalgo della seguente  equazione
+	\begin{notationfix}
+		In local charts the Jacobi fields along the geodesic $\gamma$ solve a linear O.D.E.:
+		\begin{equation}\label{JacobiEquationComponents}
+			\big( X''\big)^\mu + R^\mu_{i \alpha \j} T^i X^\alpha T^j =0
+		\end{equation}
+		where:
+		\begin{itemize}
+			\item $\big(X'\big)^\mu \coloneqq \big( \nabla_{\dot{\gamma}(t)} X\big)^\mu$ is the covariant derivative along the curve $\gamma$.
+			\item $T \equiv \dot{\gamma}(t)$ stands for the tangent vector to the curve $\gamma$.
+		\end{itemize}
+	
+	\end{notationfix}
+	
+	
+	
+	
+	The rest of this chapter will be dedicated to presenting the physical approach to the Geodesic.
 
 
 \section{Geodesic Problem as a Mechanical Systems}
-	% Da quanto detto in introduzione ha un odore molto forte il legame dell'equazione geodetica con l'equazione del moto di un punto su una varietà e dell' funzionale lunghezza come versione con il prinicpio di minima azione
+	% Da quanto detto in introduzione ha un odore molto forte il legame  dell'equazione geodetica con l'equazione del moto di un punto su una varietà e dell' funzionale lunghezza come versione con il prinicpio di minima azione
+	The basic idea is very simple, portray the geodesic curve as the natural motion of a free particle constrained on the Pseudo-Riemannian manifold $Q$.
+	
+	\danger
+	
+	obvious enough this problem can be seen as a generalization of the calculation of the motions of free falling parcticles
+	In terms of general relativity this problem can be instantly recognized as the derivation of the free-falling particles motion.
+	
+	However, there is no lack of alternative viewpoints .
+	The framework of the classical Geometric Mechanics teach us to picture the "static" configurations of a constrained, complex, classical system as a point on the \emph{Configuration space} manifold. According to that, the geodesic motion can be seen as a realization of a particular dynamics on each mechanical system endowed with a pseudo-Riemannian configuration space\footnote{Such systems can be depicted as "geodesic" even in presence of a position-dependant potential.\cite[Cap 3.7]{Abraham1978}}.
+	
+\danger 
 
-\subsection{Geodesic Motion}
+
 	% Q è la varietà riemmanian in esame, eccc. vedi pag 223  e successive del fomm (direi di dare per assodato tutto il contesto di meccanica geometrica che mi sono studiato nei primi mesi della tesi ma credo non sia il caso di mettere per esteso qui, al massimo solo linkarlo
 
-\subsection{Geodesic Field}
+	\begin{theorem}[Geodesic Motion]
+		The geodesics on the Pseudo-Riemmanian manifold $(Q,g)$ are the natural motions of the ordinary Lagrangian system $(Q, L)$ where:
+		\begin{equation}
+			L(V_q) \coloneqq \frac{1}{2} g_q(V,V)
+		\end{equation}
+	\end{theorem}	
+	\begin{proof}
+		 The Euler-Lagrange equation of $L$ coincides with the geodesic equation \ref{GeodesicEquation}.
+		 \danger.. è sul quaderno non so se metterla
+	\end{proof}
+
+	\begin{observation}
+		The geodesic system is not simply Lagrangian but also Hamiltonian.
+		This property follows from the hyperregularity\cite{Abraham1978} of $L$.
+		
+		\danger
+		Anyway we will neglect this fact inasmuch in what follows only the Lagrangian character assumes a role.
+	\end{observation}
+
+
 	%Qualsiasi sistema di mqo come il precedente può essere visto come un sistema campo.
-		% devo mettere le conclusione scritte sul primo quaderno insieme a quelle messe nel secondo e poi ripetute a seguito della costruzione di peierls e a quella di quantizzazione ( nei miei appunti io ho fatto ogni singolo passo in generale e poi realizzato per i sistemi campo-curve. Per la stesura finale ho deciso di unire tutto insieme in questo ultimo capitolo (senza ripetere ogni volta che il fibrato è triviale con fibra Q, la varietà base è banalmente globally iperbolic in quanto R. tutti i punti di R sono superfici di cauchy ecc ecc)
+	As shown in chapter 2, every system with discrete degrees of freedom can be seen as the trivial field system.
+	From that follows the alternative characterization of geodesic as a lagrangian field:
+	\begin{corollary}[Geodesic field]
+		The geodesics on the Pseudo-Riemmanian manifold $(Q,g)$ can be seen as the \emph{Dynamical Configurations} of the lagrangian field system $(E,\Lagrangian)$ where:
+		\begin{itemize}
+			\item $E=(Q\times\Real, \pi, \Real)$ trivial smooth bundle on the real line.
+			\item $\Lagrangian[\gamma] = \frac{1}{2} g(\dot{\gamma},\dot{\gamma})(t) dt$
+		\end{itemize}
+	\end{corollary}
+	\begin{proof}
+		Is simple application of the correspondence seen in chapter \ref{MechanicsAsAField}.
+	\end{proof}
+	
+	From this perspective is clear that the Energy Functional can be seen as the action in the geodesic field dynamics and equation \ref{GeodesicEquation} is nothing more than the motion equation under the \emph{least action principle}.
+
+		\begin{figure}[h!]
+				  \centering
+   	%\includegraphics[width=0.5\textwidth]{Pictures/Linearization} 
+   	  \caption{Impressionistic view of the geometric mechanics structure.}
+		\end{figure}		
 
 
 \section{Peierls Bracket of the Geodesic field}
+
+\danger
+
+Da dire: espressione in coordinate della lagrangiana, è altmente non lineare perchè implicitamente è $g_{\mu\nu}(\gamma^i(t))$ non polinomiale in $\gamma^i$ ed esplicitamente è quadratica, Mostrare esplicitamente che l'equazione di jacobi per il sistema è effittivamente l'equjazione di jacobi ( questo è triviale se vedi come definisce il campo di jacobi jurgen 
+
+\danger
+
+	
 
 \subsection{Example: Geodesic field on FRW space-time.}
 	% qui i conti li devo ancora fare, l'idea è che le metriche possono essere diagonalizzate risulta un sistema di equazioni del moto ode disaccoppiate di cui posso calcolare la funzione di green come indicato nelle dispense che trattano il calcolo di green per le ode.
 	%se ho l'operatore di green posso calcolare in esplicito le peierls
 
 \section{Algebraic quantization of the Geodesic Field}
+	\danger
+	
+	va ripetuto che la geodetica è non lineare quindi ciò che effettivamente si quantizza è jacobi lungo una prefissata geodetica. questo è un campo lineare.
+	
+	\danger
+
+
 \subsection{Peierls Approach}
 \subsection{Inital data Approach}
 

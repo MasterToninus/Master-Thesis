@@ -352,15 +352,29 @@
 		  % il fibrato non è vettoriale
 		  % le configurazioni sono curve
 		  % 
+		  	Every system with discrete degrees of freedom can be seen as a trivial field system.
+			The correspondence is easily done:
+			\begin{itemize}
+				\item Configuration bundle of the system is the trivial $E= Q \times \Real$ with base manifold $M=\Real$.
+				\item The kinematic configuration are $\Conf=C^\infty(\Real,Q)$ i.e.all the possible parametrized functions on $Q$.
+				\item The lagrangian density is obtained evaluating the ordinary Lagrangian on the lifted curve:
+					\begin{equation}
+						\Lagrangian  [\gamma] \coloneqq \big( L \circ	\gamma^\textrm{lift} \big) dt  = \Lagrangian(t,\gamma^i,\dot{\gamma}^i)
+					\end{equation}
+	\end{itemize}
+
+		  	\danger
 		
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 %\newpage
-	\section{Geometric mechanics of Finite Degree systems}
+	\section{Geometric mechanics of Finite Degree systems}\label{MechanicsAsAField}
 	%L'approccio usato generalmente è deduttivo dal particolare al generale
 	%parlare di spazio delle fasi, forma simplettica, legendre
 	%osservabili classici parentesi di poisson
 	 La visione precedente è molto generale ma ci sono alcune strutture classiche che voglio replicare sul campo come la forma simplettica, le osservabili e le parentesi di poisson.
 	 Mi sembra più chiaro vederle dopo aver raccontato queste, proprio come fa Wald.
+	 
+	 		% devo mettere le conclusione scritte sul primo quaderno insieme a quelle messe nel secondo e poi ripetute a seguito della costruzione di peierls e a quella di quantizzazione ( nei miei appunti io ho fatto ogni singolo passo in generale e poi realizzato per i sistemi campo-curve. Per la stesura finale ho deciso di unire tutto insieme in questo ultimo capitolo (senza ripetere ogni volta che il fibrato è triviale con fibra Q, la varietà base è banalmente globally iperbolic in quanto R. tutti i punti di R sono superfici di cauchy ecc ecc)
 	
 	\subsection{Linear dynamical systems}	
 	
@@ -600,8 +614,11 @@
 
 
 	\subsection{Finite Dimensional case}
-	 ... c'è su i miei appunti ma potrebbe essere superfluo.. 
-	 
+
+\begin{dangerbox}
+	 ... c'è su i miei appunti ma potrebbe essere superfluo.. No, mi conviene metterlo qui piuttosto che nel capitolo su Jacobi!
+\end{dangerbox}
+
 	 
 	 
 		\begin{figure}[h!]

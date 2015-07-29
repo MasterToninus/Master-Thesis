@@ -3,7 +3,7 @@
 
 \chapter{Geodesic Fields}
 	%mettere nell'intro una breve introduzione al problema geodetico nell'approccio standard della geometria riemmaniana
-	In the context of differential geometry, a \emph{geodesic curve} is characterized as a self-parallel curve in order to generalize the \emph{straight lines}.
+	In the context of differential geometry, \emph{geodesic curves} are a generalization of \emph{straight lines}  in the sense of self-parallel curves.
 	%Definizione di geodetica su varietà con connessione
 	Considering a differential manifold $M$ endowed with an affine connection $\nabla$ we define:
 	\begin{definition}[Geodesic]
@@ -36,12 +36,10 @@
 	
 	In general relativity the problem of the geodesic equation linearization, named \emph{Jacobi equations} takes a central role. \footnote{Usually in this context takes the name of \emph{Geodesic deviation} problem\cite[pag. 46]{Wald1984}.}
 	
-	\danger 
-	
+\begin{Warning}
 	(nel file di ripasso di geometria riemmaniana ho scritto gran parte delle definizione conviene vedere cosa mi serve effettivamente...
 	Di certo mi avvalgo della seguente  equazione
-	
-	\danger	
+\end{Warning}
 	
 	\begin{notationfix}
 		In local charts the Jacobi fields along the geodesic $\gamma$ solve a linear O.D.E.:
@@ -62,19 +60,17 @@
 	The rest of this chapter will be dedicated to presenting the physical approach to the Geodesic.
 
 
-\section{Geodesic Problem as a Mechanical Systems}
+\section{Geodesic Problem as a Mechanical Systems}\label{GeodesicMechanics}
 	% Da quanto detto in introduzione ha un odore molto forte il legame  dell'equazione geodetica con l'equazione del moto di un punto su una varietà e dell' funzionale lunghezza come versione con il prinicpio di minima azione
 	The basic idea is very simple, portray the geodesic curve as the natural motion of a free particle constrained on the Pseudo-Riemannian manifold $Q$.
 	
-	\danger
-	
+	\begin{Warning}
 	obvious enough this problem can be seen as a generalization of the calculation of the motions of free falling parcticles
 	In terms of general relativity this problem can be instantly recognized as the derivation of the free-falling particles motion.
 	
 	However, there is no lack of alternative viewpoints .
 	The framework of the classical Geometric Mechanics teach us to picture the "static" configurations of a constrained, complex, classical system as a point on the \emph{Configuration space} manifold. According to that, the geodesic motion can be seen as a realization of a particular dynamics on each mechanical system endowed with a pseudo-Riemannian configuration space\footnote{Such systems can be depicted as "geodesic" even in presence of a position-dependant potential.\cite[Cap 3.7]{Abraham1978}}.
-	
-\danger 
+	\end{Warning}
 
 
 	% Q è la varietà riemmanian in esame, eccc. vedi pag 223  e successive del fomm (direi di dare per assodato tutto il contesto di meccanica geometrica che mi sono studiato nei primi mesi della tesi ma credo non sia il caso di mettere per esteso qui, al massimo solo linkarlo
@@ -94,8 +90,9 @@
 		The geodesic system is not simply Lagrangian but also Hamiltonian.
 		This property follows from the hyperregularity\cite{Abraham1978} of $L$.
 		
-		\danger
+		\begin{Warning}
 		Anyway we will neglect this fact inasmuch in what follows only the Lagrangian character assumes a role.
+		\end{Warning}
 	\end{observation}
 
 
@@ -123,13 +120,26 @@
 
 
 \section{Peierls Bracket of the Geodesic field}
+	The local coordinate expression of the lagrangian density of the geodesic field results:
+	\begin{equation}
+		\Lagrangian\big(t,\gamma^i(t), \dot{\gamma}^i(t) \big)\coloneqq \frac{1}{2}g_{\mu,\nu}\big(\gamma^i(t))\dot{\gamma}^\mu \dot{\gamma}^\nu
+	\end{equation}		
+	this is highly non-linear. Explicitly is quadratic in the velocity components $\dot{\gamma}^i$ and implicitly, through $g_{\mu\nu}(\gamma^i(t))$, is non-polynomial in coordinate $\gamma^i$.
+	
+	As show in section \ref{•}, for this type of systems, the calculation of Peierls bracket can be realized only locally around a predetermined solution.
+	Let's repeat the Peierls' procedure for the system under investigation.
 
-\danger
+	\begin{Warning}
+		Domani Comincia da Qui!
+	\end{Warning}	
+		\paragraph{1) Disturbed Dynamics}
 
-Da dire: espressione in coordinate della lagrangiana, è altmente non lineare perchè implicitamente è $g_{\mu\nu}(\gamma^i(t))$ non polinomiale in $\gamma^i$ ed esplicitamente è quadratica, Mostrare esplicitamente che l'equazione di jacobi per il sistema è effittivamente l'equjazione di jacobi ( questo è triviale se vedi come definisce il campo di jacobi jurgen 
+	
+	\begin{Warning}
+	Da dire: espressione in coordinate della lagrangiana, è altmente non lineare perchè implicitamente è $g_{\mu\nu}(\gamma^i(t))$ non polinomiale in $\gamma^i$ ed esplicitamente è quadratica, Mostrare esplicitamente che l'equazione di jacobi per il sistema è effittivamente l'equjazione di jacobi ( questo è triviale se vedi come definisce il campo di jacobi jurgen 
+	\end{Warning}
 
-\danger
-
+	
 	
 
 \subsection{Example: Geodesic field on FRW space-time.}
@@ -137,16 +147,31 @@ Da dire: espressione in coordinate della lagrangiana, è altmente non lineare pe
 	%se ho l'operatore di green posso calcolare in esplicito le peierls
 
 \section{Algebraic quantization of the Geodesic Field}
-	\danger
-	
+	\begin{Warning}
 	va ripetuto che la geodetica è non lineare quindi ciò che effettivamente si quantizza è jacobi lungo una prefissata geodetica. questo è un campo lineare.
+	\end{Warning}
 	
-	\danger
+	\begin{Warning}
+	INtro: paragrafo sul quaderno: "qual'è l'interesse che spinge a quantizzare questo sistema "Campo di Jacobi"?
+	\end{Warning}
 
+	\begin{Warning}
+		Disclaimer: Non approfondisco più di tanto gli step di quantizzazione vera e propria. il ruolo di peierls è nel prequantistico, definisce il bracket che poi va implementato sull'algebra. Una volta decisa la parentesi la macchinetta procede in automatico.
+	\end{Warning}
 
 \subsection{Peierls Approach}
+		\begin{Warning}
+		Paragrafo sul Quaderno: ...
+	\end{Warning}
+
 \subsection{Inital data Approach}
+	\begin{Warning}
+		Ancora su fogli di Brutta!
+	\end{Warning}
 
 \section{Interpretations??????}
+	\begin{Warning}
+		Speriamo bene.. :S
+	\end{Warning}
 
 \end{document}

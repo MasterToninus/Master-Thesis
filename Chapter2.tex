@@ -3,12 +3,13 @@
 \begin{document}
 \chapter{Lagrangian Systems and Peierls Brackets}
    %introduzione
-	\danger .. introduzione
+	\begin{Warning}
+	 .. introduzione
 		dedichiamo sforzo alla definizione dei sistemi lagrangiani astratti per dare un punto di vista unificato ai sistemi a gradi libertà continui (continui macroscopici, fluidi, campi) e a gradi di libertà discreti
 		Li vediamo come sotto classi dei sistemi lagrangiani
 		notiamo che in entrambi i casi c'è un possibile dato di cauchy
 		usiamo questo ingrediente per definire l'algoritmo di peierls.
-	\danger
+	\end{Warning}
 
 	\section{Abstract Mechanical Systems}
 	It's possible to state a mathematical definition sufficiently broad to include all the systems in ordinary analytical mechanics regardless of the cardinality of degrees of freedom  in a unified way.
@@ -203,8 +204,9 @@
 	
 	
 		\subsection{Classical Linear Field over a Space-Time}
-		\danger così com'è la definizione è troppo forte?	
-		
+		\begin{Warning}
+		 così com'è la definizione è troppo forte?	
+		\end{Warning}
 		
 			The field systems are a subset of the lagrangian systems:
 			\begin{definition}[Linear Fields on curved Background]
@@ -230,7 +232,7 @@
 		
 			This condition is strictly connected to the dynamic behaviour of the system.
 			
-			\danger
+			\begin{Warning}
 			Def di dominio di dipendendenza
 			footnote di definizione di spazio tempo
 			def cauchy surface
@@ -262,11 +264,10 @@
 		Di particolare ricorrenza fisica sono gli operatori normally iperbolic
 		espressione in coordinate
 		esempio K-g!
-		\danger
+		\end{Warning}
 
 		
-		\danger
-		
+		\begin{Warning}
 		Secondo bar e ginoux per parlare di campo classico non serve specificare nient'altro...
 		la condizione di $\exists  1!$ operatore di green di $P$  insieme a quella di Essere un sistema lagrangiano è un requisito minimo  per definire senza ambiguità le parentesi di peierls.
 		
@@ -275,19 +276,20 @@
 		La condizione di well-posedness del problema di cauchy da la possibilità di quantizzare secondo lo schema dei dati iniziali
 		
 		in tutti questi casi la candizione di Globally -hyperbolic per lo spazio tempo sottostante è necessaria
-		\danger
+		\end{Warning}
 
 
 		\paragraph{Green-Hyperbolicity condition.}
 			The third condition  ensures the existence of the Green's Operator as follows directly from definition.
-			\danger \textbf{Memento:}
+			\begin{Warning}
 				Pensavo di utilizzare la definizione di Green hyperbolic data da Bar che si avvale del concetto di formally dual (che non richiede la presenza del pairing) invece di quella usata in Advances AQFT che richiede solo che ammetta almeno un $G^\pm$  per poi dimostrare tramite teorema che se è anche autoaggiunto vale l'unicità. Si tratta solo di una piccola sfumatura.. Deve essere chiarito che in tutto ciò che faccio interessano che $$\forall P \, \exists1!G^\pm$$.
 				Che poi questa condizione derivi da GH secondo bar o Gh secondo dap+selfadj è una di quelle questioni propriamente matematiche che poco interessa ai fisici della commissione.
+			\end{Warning}			
 			
-			\danger
+			\begin{Warning}
 			Devo richiedere che il green operator sia unico? sia negli schemi di quantizzazione che nella definizione di peierls faccio largo uso dell'unicità. 
 			Per provare questa unicità si passa per la definizione di una forma bilineare che permette di parlare di aggiunto formale e quindi avvalersi del teorema.
-			
+			\end{Warning}
 
 		\paragraph{Cauchy condition.}
 			While the existence of a Cauchy surface allows to assign the data of initial value problems, the forth condition ensure the well -posedness of the problem for on every Cauchy surface $\Sigma$. I.e:
@@ -330,7 +332,8 @@
 			\begin{proposition}
 				$\Data$ is still a vector space.
 			\end{proposition}
-			\begin{proof}\danger
+			\begin{proof}
+				\begin{Warning}\end{Warning}
 				It's sufficient to prove that:
 				\begin{displaymath}
 					\big[ \phi_a + \phi_b \big] = \big[ \phi_a \big] + \big[ \phi_b \big]
@@ -349,11 +352,9 @@
 
 
 		\subsection{Finite Degree systems}
-			\danger
-			
+			\begin{Warning}
 				Paragrafo in cui faccio vedere come è possibile vedere un sistema lagrangiano ordinario con un sistema lagrangiano di tipo campo quindi come un sotto-sotto-caso del sistema lagrangiano astratto.
-			
-			\danger		
+			\end{Warning}	
 		
 		  % il fibrato non è vettoriale
 		  % le configurazioni sono curve
@@ -377,7 +378,7 @@
 	%parlare di spazio delle fasi, forma simplettica, legendre
 	%osservabili classici parentesi di poisson
 	
-	\danger	
+	\begin{Warning}	
 	
 	 La visione precedente è molto generale ma ci sono alcune strutture classiche che voglio replicare sul campo come la forma simplettica, le osservabili e le parentesi di poisson.
 	 Mi sembra più chiaro vederle dopo aver raccontato queste.
@@ -393,9 +394,7 @@
 		\item observable as smooth scalar field on the phase space
 		\item poisson structure
 	\end{itemize}
-	 	 
-	\danger	 
-	 
+	\end{Warning}
 	 		% devo mettere le conclusione scritte sul primo quaderno insieme a quelle messe nel secondo e poi ripetute a seguito della costruzione di peierls e a quella di quantizzazione ( nei miei appunti io ho fatto ogni singolo passo in generale e poi realizzato per i sistemi campo-curve. Per la stesura finale ho deciso di unire tutto insieme in questo ultimo capitolo (senza ripetere ogni volta che il fibrato è triviale con fibra Q, la varietà base è banalmente globally iperbolic in quanto R. tutti i punti di R sono superfici di cauchy ecc ecc)
 	
 	\subsection{Linear dynamical systems}	
@@ -403,8 +402,7 @@
 	Of course is possible to come across linear systems even in ordinary mechanics. 
 	In that case the the difference between the underlying geometric entities tend to fade out as a consequence of the flatness of the configuration space.
 	
-	\danger
-	
+	\begin{Warning}
 	Da riempire: devo dire che 
 	\begin{itemize}
 		\item Q è piatto
@@ -412,9 +410,7 @@
 		\item Q si identifica con il tangente quindi la forma simplettica è definita direttamente sulle configurazioni
 		\item ecc vedere primo capitolo wald
 	\end{itemize}
-	
-	
-	\danger
+	\end{Warning}
 		
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 \newpage
@@ -425,21 +421,22 @@
 	Instead of considering only scalar theory we extend the algorithm to a broader class of systems.
 	
 	\begin{observation}[Peierls Bracket vs Poisson Bracket]
-	\danger\footnote{da aggiustare} Paraphrasing an observation made by Sharan\cite{Sharan2010}:
+		\begin{Warning}
+	Paraphrasing an observation made by Sharan\cite{Sharan2010}:
 	
 	The Poisson bracket determines how one quantity b(t, q, p) changes another quantity a(t, q, p) when it acts as the Hamiltonian or vice-versa. The Peierls bracket, on the other hand, determines how one quantity b(t, q, p) when added to the system Hamiltonian h with an infinitesimal coefficient λ affects changes in another quantity a(t, q, p) and vice-versa, i.e. 	The Peierls bracket is related to the change in an observable when the trajectory on which it is evaluated gets shifted due to an infinitesimal change in the Lagrangian of the system by another Lagragian density.
 		
 	While the Poisson bracket between two observables a and b is defined on the whole phase space and is not dependent on the existence of a Hamiltonian, the Peierls bracket refers to a specific trajectory determined by a governing Lagrangian. 
+	
+	\end{Warning}
 	\end{observation}
 
 	Purpose of the Peierls' procedure is to provide a bilinear form on the space of Lagrangian densities with time-compact support.
 	This form induces a pre-symplectic structure on suitable subspaces of functionals to which can be recognized the role of \emph{classical observables}  of the theory.
 
-	\danger
-	
+	\begin{Warning}
 	Aggiungere altre chiacchiere e marketing riguardo le  PB, vedere nelle fonti cosa dicono i sapienti
-	
-	\danger
+	\end{Warning}
 
 
 
@@ -666,7 +663,9 @@
 
 	\subsubsection{Example: Finite Dimensional Case} 
 		As an example of such process we can consider a \emph{field of curves} i.e. an ordinary classical mechanical system in the field theoretic picture.
-		We have shown in section \ref{MechanicsAsAField} that such systems are generally non linear: the configuration bundle is not a vector one, linearity of $P$ can be defined but the Cauchy surface of $M=\Real$ are simply scalar values.
+		We have shown in section \ref{MechanicsAsAField} that such systems are generally non linear: the configuration bundle is not a vector one and then linearity of $P$ cannot be defined .
+		
+		However the base manifold is very simple. Indeed $M= \Real$ can be seen as a trivial globally-hyperbolic space-time where every real scalar $t\in M$ is a Cauchy surface.
 
 	 		\begin{figure}[h!]
 				  \centering
@@ -674,7 +673,9 @@
    	  		\caption{}
 		\end{figure}		
 	 
-	
+	\begin{Warning}
+		Da Finire
+	\end{Warning}
 	
 	
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_

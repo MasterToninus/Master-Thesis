@@ -349,6 +349,12 @@
 
 
 		\subsection{Finite Degree systems}
+			\danger
+			
+				Paragrafo in cui faccio vedere come è possibile vedere un sistema lagrangiano ordinario con un sistema lagrangiano di tipo campo quindi come un sotto-sotto-caso del sistema lagrangiano astratto.
+			
+			\danger		
+		
 		  % il fibrato non è vettoriale
 		  % le configurazioni sono curve
 		  % 
@@ -363,7 +369,6 @@
 					\end{equation}
 	\end{itemize}
 
-		  	\danger
 		
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 %\newpage
@@ -371,13 +376,46 @@
 	%L'approccio usato generalmente è deduttivo dal particolare al generale
 	%parlare di spazio delle fasi, forma simplettica, legendre
 	%osservabili classici parentesi di poisson
+	
+	\danger	
+	
 	 La visione precedente è molto generale ma ci sono alcune strutture classiche che voglio replicare sul campo come la forma simplettica, le osservabili e le parentesi di poisson.
-	 Mi sembra più chiaro vederle dopo aver raccontato queste, proprio come fa Wald.
+	 Mi sembra più chiaro vederle dopo aver raccontato queste.
+	 
+	 Mi atterrei all'approccio rapido che segue Wald (tralasciando il ponte con la meccanica analitica dei corsi standard e concentrandomi sull'approccio geometrico)
+	
+	Quindi devo parlare un po' di meccanica geometrica, di
+	\begin{itemize}
+		\item Spazio delle Fasi
+		\item tautological 1-form
+		\item simplectic form
+		\item canonical coordinate and darboux theorem
+		\item observable as smooth scalar field on the phase space
+		\item poisson structure
+	\end{itemize}
+	 	 
+	\danger	 
 	 
 	 		% devo mettere le conclusione scritte sul primo quaderno insieme a quelle messe nel secondo e poi ripetute a seguito della costruzione di peierls e a quella di quantizzazione ( nei miei appunti io ho fatto ogni singolo passo in generale e poi realizzato per i sistemi campo-curve. Per la stesura finale ho deciso di unire tutto insieme in questo ultimo capitolo (senza ripetere ogni volta che il fibrato è triviale con fibra Q, la varietà base è banalmente globally iperbolic in quanto R. tutti i punti di R sono superfici di cauchy ecc ecc)
 	
 	\subsection{Linear dynamical systems}	
+	Most of the physical systems that are encountered in the theory of fields are linear.
+	Of course is possible to come across linear systems even in ordinary mechanics. 
+	In that case the the difference between the underlying geometric entities tend to fade out as a consequence of the flatness of the configuration space.
 	
+	\danger
+	
+	Da riempire: devo dire che 
+	\begin{itemize}
+		\item Q è piatto
+		\item TQ è fibrato vettoriale
+		\item Q si identifica con il tangente quindi la forma simplettica è definita direttamente sulle configurazioni
+		\item ecc vedere primo capitolo wald
+	\end{itemize}
+	
+	
+	\danger
+		
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 \newpage
 	\section{Peierls Brackets}
@@ -386,16 +424,6 @@
 	Please note that we are not trying to provide the state of the art on the Peierls bracket ( see for example \cite{Khavkine2014} for the treatment in presence of gauge freedom) but only to expand and modernize the first approach given by Peierls.
 	Instead of considering only scalar theory we extend the algorithm to a broader class of systems.
 	
-	%Classe di applicabilità naturale del metodo di Peierls
-	The Peierls's construction algorithm is well defined for a specific class of systems:
-		\begin{enumerate}
-			\item Linear field theory: $E=(E,\pi,M)$ is a vector bundle.
-			\item Linear Lagragian dynamics: $P=Q_\Lagrangian$ is a L.P.D.O.
-			\item $M$ is a globally Hyperbolic space-time.
-			\item motion operator $P$ is a green-hyperbolic.
-		\end{enumerate}
-		
-
 	\begin{observation}[Peierls Bracket vs Poisson Bracket]
 	\danger\footnote{da aggiustare} Paraphrasing an observation made by Sharan\cite{Sharan2010}:
 	
@@ -405,22 +433,41 @@
 	\end{observation}
 
 	Purpose of the Peierls' procedure is to provide a bilinear form on the space of Lagrangian densities with time-compact support.
-	This form induces a pre-symplectic structure on suitable spaces Functionals which can be easily reduced to the subclass of suitable classical observable.
-	The algorithm can be summarized in a few steps
-	\begin{enumerate}
-		\item Consider a \emph{disturbance} $\chi$ that is a time-compact lagrangian density .
-		\item Construct the perturbation of a solution under the disturbance.
-		\item Define the effect of the disturbance on a second lagrangian functional.
-		\item Assemble two Effect operators to give a bracket.
-	\end{enumerate}
+	This form induces a pre-symplectic structure on suitable subspaces of functionals to which can be recognized the role of \emph{classical observables}  of the theory.
 
-	\subsection{Disturbance and Disturbed motion operator }
-		By \emph{"disturbance"} we mean a time-compact supported lagrangian density $\chi \in \Lag$\footnote{I.e. the top form $\chi(\phi)$ is time-compact supported for all $phi \in \Conf$.} which act as a perturbation on the system's lagrangian:
+	\danger
+	
+	Aggiungere altre chiacchiere e marketing riguardo le  PB, vedere nelle fonti cosa dicono i sapienti
+	
+	\danger
+
+
+
+	\subsection{Peierls' construction.}
+			%Classe di applicabilità naturale del metodo di Peierls
+	The Peierls's construction algorithm is well defined for a specific class of systems:
+		\begin{enumerate}
+			\item Linear field theory: $E=(E,\pi,M)$ is a vector bundle.
+			\item Linear Lagragian dynamics: $P=Q_\Lagrangian$ is a L.P.D.O.
+			\item $M$ is a globally Hyperbolic space-time.
+			\item Motion operator $P$ is a green-hyperbolic.
+		\end{enumerate}	
+	The procedure can be summarized in a few steps:
+	\begin{enumerate}
+		\item Consider a \emph{disturbance} $\chi$ that is a time-compact Lagrangian density .
+		\item Construct the \emph{perturbation of a solution under the disturbance}.
+		\item Define the \emph{effect of the disturbance} on a second Lagrangian functional.
+		\item Assemble the mutual effects of two different Lagrangian densities to give a \emph{bracket}.
+	\end{enumerate}	
+	Let's review each step more carefully.
+	
+	\subsubsection{Disturbance and Disturbed motion operator }
+		By \emph{"disturbance"} we mean a time-compact supported lagrangian density $\chi \in \Lag$\footnote{I.e. the top form $\chi(\phi)$ is time-compact supported for all $\phi \in \Conf$.} which act as a perturbation on the system's lagrangian:
 		\begin{displaymath}
 			\Lagrangian \rightsquigarrow \Lagrangian' = \Lagrangian + \epsilon\cdot \chi
 		\end{displaymath}
 		where $\epsilon$  is a modulation parameter.
-		The support condition is required in order to take in account only perturbations which affect the system dynamics only for a limited time interval.
+		The support condition is required in order to take in account only perturbations which affect the dynamic for a definite time interval.
 		The motion operator of the disturbed dynamics results:
 		\begin{equation}
 			P_\epsilon = \Biggr[ \partial_\mu \biggr( \frac{\partial \Lagrangian}{\partial(\partial_\mu \phi)} \biggr) - \frac{\partial \Lagrangian}{\partial \phi} \Biggr] + \epsilon \Biggr[ \partial_\mu \biggr( \frac{\partial \chi}{\partial(\partial_\mu \phi)} \biggr) - \frac{\partial \chi}{\partial \phi} \Biggr]
@@ -430,13 +477,14 @@
 			$P_\epsilon$ is not necessary linear, the second Hypothesis guarantees the linearity only for $P$.
 		\end{observation}
 
-	\subsection{Solution of the disturbed motion}
-		The second ingredient of the Peierls' procedure are the \emph{perturbed a solution under the disturbance} which are solution $\phi'\in \Conf$ of $P_\epsilon$ obtainable by a linear infinitesimal perturbation of a fixed solution $\phi \in \Sol$.
+	\subsubsection{Solution of the disturbed motion}
+		The second ingredient of the Peierls' procedure is the calculus of the \emph{perturbed solutions} under the considered \emph{disturbance}.
+		 These are the solutions $\phi'\in \Conf$ of $P_\epsilon$ obtainable by a infinitesimal linear perturbation of a fixed solution $\phi \in \Sol$. The good definition of linear superposition is guaranteed by the hypothesis 1).
 		More precisely, has to be seek a configuration:
 			\begin{displaymath}
 					\phi'(x) = \phi(x) + \epsilon \eta(x) \in \Conf
 			\end{displaymath}
-		(the linear superposition is well-defined according to hypothesis 1) such that:
+		such that:
 			\begin{align*} 
 				P_\epsilon \phi'(x) &= o(\epsilon)  \\ 
 				P \phi(x) &= 0
@@ -448,11 +496,13 @@
 			%= \epsilon \big( P \eta(x) + Q_\chi \phi(x) \big)+ \epsilon^2 Q_\chi	\eta(x) \mbeq o(\epsilon)
 		\end{displaymath}
 		The condition of linearity for operator $P$ doesn't hold for $Q_\chi$ in general.
-		We can work around this problem taking into account the linearization\cite[pag. 31]{Khavkine2014} of operator $Q_\chi$ around solution$\phi(x)$. That is the unique linear operator $big[Q_\chi^{lin}(\phi) \big]$ such that:
+		We can work around this problem taking into account the linearization\cite[pag. 31]{Khavkine2014} of operator $Q_\chi$ around the unperturbed solution $\phi(x)$. 
+		The linearization of $Q_\chi$ is the unique linear operator $\big[Q_\chi^{lin}(\phi) \big]$ such that:
 		\begin{displaymath}
 			\big[Q_\chi \big]( \phi(x) + \epsilon \eta(x)\big)= \big[Q_\chi \big]( \phi(x)) + \epsilon \big[Q_\chi^{lin}(\phi)  \big]( \eta(x)) + o(eta)
 		\end{displaymath}
-		which can be seen as the first term of a \emph{formal} Taylor expansion of operator $Q_\chi$ around $\phi$.\danger\footnote{If $\Conf$ is a Frechet manifold the expansion could be made rigorous defining $\big[Q_\chi^{lin}(\phi_0)  \big] = \big[\dfrac{\partial Q_\chi}{\partial \phi} (\phi_0)\big] $ in term of the Gateux derivative.}
+		which can be seen as the first term of a \emph{formal} Taylor expansion of operator $Q_\chi$ around $\phi$.
+		\danger\footnote{If $\Conf$ is a Frechet manifold the expansion could be made rigorous defining $\big[Q_\chi^{lin}(\phi_0)  \big] = \big[\dfrac{\partial Q_\chi}{\partial \phi} (\phi_0)\big] $ in term of the Gateux derivative.}
 		This is reflected in a condition on the perturbation $\eta \in \Conf_{tc}$:
 		\begin{displaymath}
 			\big[P_\epsilon\big] \phi'(x) =  \epsilon \biggr( \big[P\big] \eta(x) + \big[Q_\chi \phi(x) \big]\biggr)+ \epsilon^2 \big[Q_\chi^{lin}(\phi)  \big]	\eta(x) \mbeq o(\epsilon)
@@ -463,7 +513,7 @@
 		called \emph{Jacobi Equation}.
 		This equation is a non homogeneous P.D.E. with inhomogeneous term $ (- Q_\chi \phi(x))$ fixed by the solution $\phi\in \Sol$ to be perturbed.
 
-		 Follows from the definition of green hyperbolicity that the domain restriction of $P$ to $\Gamma^\infty_{\textrm{pc}}$ or $\Gamma^\infty_{\textrm{fc}}$ admit a unique inverse $G^+$ and $G^-$ respectively.
+		 Follows from the definition of green hyperbolicity that the domain restrictions of $P$ to $\Gamma^\infty_{\textrm{pc}}$ or $\Gamma^\infty_{\textrm{fc}}$ admit a unique inverse $G^+$ and $G^-$ respectively.
    		Therefore, equation \ref{PeierlJacobiEq} admits a unique past compact solution $\eta^+$, called retarded perturbation of $\phi\in \Sol$, and a unique future compact solution $\eta^-$, called advanced perturbation:
    		\begin{equation}\label{Perturbation}
    			\eta^\pm = G^\pm \big( - Q_\chi \phi \big)
@@ -499,35 +549,38 @@
    			\phi^\pm_\epsilon = \phi + \epsilon \eta^\pm
    		\end{equation}
    		such that:
-   		
-   		\begin{tabular}{|c|c|c|c|}
+ 		\begin{center}   \begin{tabular}{|c|c|c|c|}
    		\hline
   	 		\emph{retarded pertubation} & $\eta^+ \in \Gamma^\infty_{pc}$ & $(\eta^+, \nabla_n \eta^+ ) \big \vert_{\Sigma_{-}} = (0,0)$ & "propagating forward" \\
   	 		\hline
    			\emph{advanced pertubation} &$\eta^- \in \Gamma^\infty_{fc}$ & $(\eta^-, \nabla_n \eta^- ) \big \vert_{\Sigma_{+}} = (0,0)$ & "propagating backward" \\
    			\hline
-   		\end{tabular}
-
+   		\end{tabular}	\end{center} 	
 		
+			
    		
-		\subsection{Effect Operator}
+		\subsubsection{Effect Operator}
 		Considering an arbitrary continuous \danger\footnote{The precise notion of continuity require the specification of the infinite dimensional manifold structure.} functional $B: \Sol \rightarrow \Real$ (not necessarily linear) we can define the effect of a perturbation on the values of $B$\cite[pag. 5]{Marolf1993} as a map:
 		\begin{displaymath}
 			\mathbf{E}^\pm_\chi : C^1(\Sol,\Real) \rightarrow C^1(\Sol,\Real)
 		\end{displaymath}
-		\begin{displaymath}
+		\begin{equation}\label{EffectOperator}
 		\mathbf{E}_\chi^\pm B ( \phi_0) 
 		\coloneqq \lim_{\epsilon \rightarrow 0}
 		 \biggr( \frac{B(\phi_\epsilon^\pm) - B (\phi_0)}{\epsilon} \biggr)
-		\end{displaymath}
+		\end{equation}
 		The advanced and retarded effects of $\chi$ on B are then defined by comparing the original system with a new system defined by the same kinematic configuration space $\Conf$ but with perturbed lagrangian.
+		\begin{observation}
+			Expression \ref{EffectOperator} is clearly a special case of Gateaux derivative.\cite{Blanchard2015}
+		\end{observation}
+		
 		
 		The former expression appear quite simpler in case of a linear functional:
-			\begin{equation}
+			\begin{equation}\label{EffectOperatorLinear}
 				\mathbf{E}_\chi^\pm B ( \phi_0) =  B(\eta^\pm)
 			\end{equation}
 		
-		\subsection{The Bracket}
+		\subsubsection{The Bracket}
 		Remembering that every lagrangian density define a continuous functional (Action).
 		From that is possible to build a binary function:
 		\begin{displaymath}
@@ -546,12 +599,11 @@
 			\\
 			Linearity in the second entry is guaranteed only for lagrangian densities $\omega$ which provide a linear Lagrangian Functional $F_\omega$.
 		\end{proof}
-		We don't prove the symplectic property for this general object but we will face this problem for the case of  \emph{classical observable functional}, a subclass Lagrangian functional of most practical use in algebraic quantization.
+		We don't care to probe the simplectic property in this general ground. In the next chapter we will face the problem to determine  symmetry and non-degeneracy properties for the case of  \emph{classical observable functional}, a subclass of Lagrangian functionals of most practical use in the quantization schemes.
 
 	\subsection{Extension to non-linear theories}
-		In the previous costruction the green-hyperbolicity of motion operator $P$ plays a primary role.
+		In the previous construction the green-hyperbolicity of motion operator $P$ plays a primary role.
 		Anyway the problem of searching perturbed solution of the disturbed dynamic can be stated even in presence  of non-linear fields  where the configuration bundle is not necessary a vector bundle and the motion operator is not linear.
-		%Anyway the problem of searching perturbed solution of the disturbed dynamic can be stated even in presence  of non-linear field theories.
 		\begin{figure}[h!]
 				  \centering
    	\includegraphics[width=0.5\textwidth]{Pictures/Linearization} 
@@ -559,19 +611,19 @@
 		\end{figure}		
 		
 		The crucial point of the Peierls' procedure  is to select among all the possible solution of the perturbed motion $P_\epsilon$ that configuration which can be constructed by a variation of some fixed solution of the non-perturbed dynamics $\gamma_0 \in \Sol$.
-		In this sense the problem results a \emph{"linearization"} inasmuch the  search of such solution is restricted to a local neighbour of the "point" $\gamma_0\in \Sol$.
+		In this sense the problem results a \emph{"linearization"} inasmuch the  search of such solution is restricted to a local neighbourhood of the "point" $\gamma_0\in \Sol$.
 
-		Previously was natural restrict the choice of possible variations to the linear one only. But in the general case this preferential choice is no longer possible.
-		A way to  recover a notation similar to \ref{PerturbedSolution} is to work patchwise by chosing a coordinate representation.
+		Previously the choice to consider only the linear variation was quite natural but in the general case this preferential restriction is no longer possible.
+		A way to  recover a notation similar to \ref{PerturbedSolution} is to work patchwise choosing a coordinate representation.
 		Fixed a solution $\gamma_0 \in \Sol$ and a local trivializing chart $(A, \phi_A)$ such that $A\cap \ran(\gamma_0) \neq \emptyset$ we can define a local infinitesimal variation by acting on his components:
 		\begin{displaymath}
 			\gamma_\lambda ^{\, i}(x) = \gamma_0^{\, i}(x) + \lambda \eta^i(x) \qquad \forall x\in \pi(A)
 		\end{displaymath}
-		where $ \gamma_0^{\, i}$ are the component of the unperturbed solution in the open set $A$ and $\eta^i\in \real^q$ is a generic  real q-ple ( q is the dimension of the typical fiber manifold).
+		where $ \gamma_0^{\, i}$ are the component of the unperturbed solution in the open set $A$ and $\eta^i\in \real^q$ is a generic real q-ple ( q is the dimension of the typical fiber manifold).
 		$\lambda$ is a real parameter that has to be "sufficiently small" in order to guarantee that the range of $\gamma_\lambda$ is properly contained in $A$.
-		In other words the construction of the linear variation, that for linear field theories could be done in a global way, in the general case can be recovered only locally.
+		In other words the construction of the linear variation, that for linear field theories could be done in a global way, in the general case can be recovered only locally variating the components.
 		
-		Then is possible to define the effect of the a disturbance locally, searching local section $\gamma_\epsilon^{\, i} = \gamma_0^{\, i} + \epsilon \eta^{i}$ solving the disturbed dynamic equation up to the first order in $\epsilon$ i.e. 
+		Therefore is possible to define the effect of the a disturbance locally, searching local section $\gamma_\epsilon^{\, i} = \gamma_0^{\, i} + \epsilon \eta^{i}$ solving the disturbed dynamic equation up to the first order in $\epsilon$ i.e. 
 		\begin{displaymath}
 			\big[ P_\epsilon \big] \gamma_\epsilon^{\,i} = o(\epsilon)
 		\end{displaymath}
@@ -612,24 +664,23 @@
 		\end{displaymath}
 		has to be intended as the "glueing" of all the local chart representations covering the chosen solution.
 
+	\subsubsection{Example: Finite Dimensional Case} 
+		As an example of such process we can consider a \emph{field of curves} i.e. an ordinary classical mechanical system in the field theoretic picture.
+		We have shown in section \ref{MechanicsAsAField} that such systems are generally non linear: the configuration bundle is not a vector one, linearity of $P$ can be defined but the Cauchy surface of $M=\Real$ are simply scalar values.
 
-	\subsection{Finite Dimensional case}
-
-\begin{dangerbox}
-	 ... c'è su i miei appunti ma potrebbe essere superfluo.. No, mi conviene metterlo qui piuttosto che nel capitolo su Jacobi!
-\end{dangerbox}
-
-	 
-	 
-		\begin{figure}[h!]
+	 		\begin{figure}[h!]
 				  \centering
    			\includegraphics[width=0.5\textwidth]{Pictures/AdvRetSol} 
-   	  		\caption{Intrinsically, searching a variation of a solution $\gamma_0\in \Sol$ which solve the disturbed motion equation is equivalent to find the intersection of the perturbed solution with a local neighbourhood of $\Gamma_0$ : $U_{\gamma_0}\cap\ker(P_\epsilon)$ .}
-		\end{figure}			
+   	  		\caption{}
+		\end{figure}		
+	 
+	
 	
 	
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 \newpage
+
+	\danger \danger \danger \danger 	\danger \danger \danger \danger 	\danger \danger \danger \danger 
 	\section{Dubbi}
 	\begin{itemize}
 		\item quando parlo della cinematica mi piacerebbe dare indicazioni sulla struttura matematica dello spazio delle configurazioni cinematiche:

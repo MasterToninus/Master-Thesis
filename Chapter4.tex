@@ -128,16 +128,41 @@
 	
 	As show in section \ref{•}, for this type of systems, the calculation of Peierls bracket can be realized only locally around a predetermined solution.
 	Let's repeat the Peierls' procedure for the system under investigation.
-
+	
 	\begin{Warning}
-		Domani Comincia da Qui!
-	\end{Warning}	
-		\paragraph{1) Disturbed Dynamics}
+	Introduzione da rividere, dimostro che l'operatore linearizzato senza termine inomogeneo corrisponde all'equazione di Jacobi vera e propria mentre con termine inomogeneo dato dalle E-P del disturbo da l'equazione che definisce la perturbazione ritardata e anticipata.
+	\end{Warning}
 
+	As a consequence of our introduction on the geodesic as a field, we can state the unperturbed dynamic as a L.P.D.O :
+		\begin{equation}
+			Q_\Lagrangian \big(q^\mu 	\big)= \biggr[\ddot{q}^\mu + \Gamma^\mu_{\, i j}\dot{q}^i \dot{q}^j	\biggr]
+		\end{equation}
+	where $\dot{q}^\mu = \frac{d}{dt}q^\mu(t)=\dot{q}^i\partial_i q^\mu$.
+	
+	A linear variation of $q_0^\mu +\epsilon \eta^\mu$ constructed from the coordinate representation $q_0^\mu$ of the geodesic $\gamma_0 \in \Sol$, solves the original motion equations when
+	\begin{equation}\label{GeodesicJacobation1}
+		Q_\Lagrangian \big( q_0^\mu +\epsilon \eta^\mu \big) = \frac{d^2}{dt^2}\biggr( q_0^\mu +\epsilon \eta^\mu \biggr) +
+		\biggr[ \Gamma^\mu_{\, i j}\big( \vec{q_0} + \epsilon \vec{\eta}\big) \biggr]\biggr(\dot{q_0}^i +\epsilon \dot{\eta}^i \biggr)\biggr(\dot{q_0}^j +\epsilon \dot{\eta}^j \biggr) = 0 \mbeq o(\epsilon)
+	\end{equation}
+	If we consider only the first order in the parameter $\epsilon$ we can expand the expression of the Christoffel symbols:
+	\begin{displaymath}
+		\biggr[ \Gamma^\mu_{\, i j}\big( \vec{q_0} + \epsilon \vec{\eta}\big) \biggr] =
+		\biggr[ \Gamma^\mu_{\, i j}( \vec{q_0}) + \epsilon \eta^\alpha\big( \partial_\alpha  \Gamma^\mu_{\, i j} \big)\biggr\vert_{\vec{q_0}} + o(\epsilon) \biggr]
+	\end{displaymath}	 
+	
+	Collecting all the terms in equation \ref{GeodesicJacobation1} up the first order in $\epsilon$ follows a condition on the perturbation:
+	\begin{displaymath}
+	0 = \ddot{\eta}^\mu + \eta^\alpha\big( \partial_\alpha  \Gamma^\mu_{\, i j} \big)\biggr\vert_{\vec{q_0}} \dot{q_0}^i \dot{q_0}^j  +  \Gamma^\mu_{\, i j} \big(\dot{\eta}^i \dot{q_0}^j + \dot{q_0}^i \dot{\eta}^j \big)=
+	=\biggr\{ g^\mu_{\,\alpha} \frac{d^2}{dt^2} +
+	 \Gamma^\mu_{\, i \alpha}(\vec{q_0})\big[2 \dot{q_0}^i \frac{d}{dt} \big] + 
+\big[ \partial_\alpha  \big] \biggr\} \eta^\alpha	 
+	\end{displaymath}		
+	
 	
 	\begin{Warning}
 	Da dire: espressione in coordinate della lagrangiana, è altmente non lineare perchè implicitamente è $g_{\mu\nu}(\gamma^i(t))$ non polinomiale in $\gamma^i$ ed esplicitamente è quadratica, Mostrare esplicitamente che l'equazione di jacobi per il sistema è effittivamente l'equjazione di jacobi ( questo è triviale se vedi come definisce il campo di jacobi jurgen 
-	\end{Warning}
+	\end{Warning}	
+
 
 	
 	

@@ -18,7 +18,16 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Prereq Mate}
-
+	Quando parlo della cinematica mi piacerebbe dare indicazioni sulla struttura matematica dello spazio delle configurazioni cinematiche:
+			\begin{enumerate}
+				\item costituisce una frechet manifold ( gli unici risultati che ho trovato sono quelli di Palais di "non linear global analysis"
+				\item le curve parametrizzate sono le variazioni
+				\item classi di equivalenza definiscono delle variazioni infinitesime che costituiscono lo spazio tangente allo spazio delle configurazioni cinematiche
+				\item questo spazio tangente è isomorfo allo spazio delle sezioni del pullback rispetto alla sezione $\phi\in C$ del verical bundle (vedere forger romero)
+				\item il problema dell'atlante e della rappresentazione delle sezioni in carta locale ( da scegliere sia sul total space E che sul base space M)
+			\end{enumerate}
+	
+	Dovrei fare riferimento al teorema di Ostrowsky per giustificare il fatto che consideriamo solo il primo ordine. le langrangiana con termini cinetici esotici sono instabili ( nel senzo che non ammetto come soluzioni sezioni globali ma solo locali ).
 
 
 
@@ -40,20 +49,17 @@
 				\end{itemize}
 			\end{definition}
 		But the other three condition are worth a deeper insight:
-
-		\paragraph{Vector Bundle Condition}
-
-		\paragraph{Global hyperbolicity condition.}
-		
-		\paragraph{Green-Hyperbolicity condition.}
-			The third condition  ensures the existence of the Green's Operator as follows directly from definition.
-
-		\paragraph{Cauchy condition.}
-While the existence of a Cauchy surface allows to assign the data of initial value problems, the forth condition ensure the well -posedness of the problem for on every Cauchy surface $\Sigma$. I.e:
-			\begin{equation}\label{CauchyProblem}
-				\begin{cases} P u = 0 \\ u = u_0 \\ \nabla_{\vec{n}}u= u_1 \end{cases}
-			\end{equation}
-			admit a unique solution $u\in \Gamma(E)$ for all $(u_0, u_1) \in \Gamma (\Sigma )\times \Gamma (\Sigma )$.
+		\begin{itemize}
+			\item 	\textbf{Vector Bundle Condition}
+			\item 	\textbf{Global hyperbolicity condition.}
+			\item 	\textbf{Green-Hyperbolicity condition.}
+			\item 	\textbf{Cauchy condition.}\\
+					While the existence of a Cauchy surface allows to assign the data of initial value problems, the forth condition ensure the well -posedness of the problem for on every Cauchy surface $\Sigma$. I.e:
+					\begin{equation}\label{CauchyProblem}
+							\begin{cases} P u = 0 \\ u = u_0 \\ \nabla_{\vec{n}}u= u_1 \end{cases}
+					\end{equation}
+					admit a unique solution $u\in \Gamma(E)$ for all $(u_0, u_1) \in \Gamma (\Sigma )\times \Gamma (\Sigma )$.		
+		\end{itemize}
 
 		\begin{observation}
 			\begin{center}
@@ -70,22 +76,33 @@ While the existence of a Cauchy surface allows to assign the data of initial val
 				\item in tutti questi casi la candizione di Globally -hyperbolic per lo spazio tempo sottostante è necessaria
 			\end{itemize}
 		\end{observation}
+		
+		\begin{example}
+			in adv AQFT ci sono 3 realizzazioni concrete. Klein-Gordon e Proca soddisfano tutte le condizioni precedenti. Anche Dirac ma non è normally Hyperbolic, solo green
+		\end{example}
+
+	\section{Sistemi a finiti gradi (meccanica geometrica ordinaria)}
+		Paragrafo in cui faccio vedere come è possibile vedere un sistema lagrangiano ordinario con un sistema lagrangiano di tipo campo quindi come un sotto-sotto-caso del sistema lagrangiano astratto.
+
+		  % il fibrato non è vettoriale
+		  % le configurazioni sono curve
+		  % 
+		  	Every system with discrete degrees of freedom can be seen as a trivial field system.
+			The correspondence is easily done:
+			\begin{itemize}
+				\item Configuration bundle of the system is the trivial $E= Q \times \Real$ with base manifold $M=\Real$.
+				\item The kinematic configuration are $\Conf=C^\infty(\Real,Q)$ i.e.all the possible parametrized functions on $Q$.
+				\item The lagrangian density is obtained evaluating the ordinary Lagrangian on the lifted curve:
+					\begin{equation}
+						\Lagrangian  [\gamma] \coloneqq \big( L \circ	\gamma^\textrm{lift} \big) dt  = \Lagrangian(t,\gamma^i,\dot{\gamma}^i)
+					\end{equation}
+	\end{itemize}
+
 
 	\danger \danger \danger \danger 	\danger \danger \danger \danger 	\danger \danger \danger \danger 
 	\section{Dubbi}
 	\begin{itemize}
-		\item quando parlo della cinematica mi piacerebbe dare indicazioni sulla struttura matematica dello spazio delle configurazioni cinematiche:
-			\begin{enumerate}
-				\item costituisce una frechet manifold ( gli unici risultati che ho trovato sono quelli di Palais di "non linear global analysis"
-				\item le curve parametrizzate sono le variazioni
-				\item classi di equivalenza definiscono delle variazioni infinitesime che costituiscono lo spazio tangente allo spazio delle configurazioni cinematiche
-				\item questo spazio tangente è isomorfo allo spazio delle sezioni del pullback rispetto alla sezione $\phi\in C$ del verical bundle (vedere forger romero)
-				\item il problema dell'atlante e della rappresentazione delle sezioni in carta locale ( da scegliere sia sul total space E che sul base space M)
-			\end{enumerate}
-		\item fare riferimento al teorema di Ostrowsky per giustificare il fatto che consideriamo solo il primo ordine. le langrangiana con termini cinetici esotici sono instabili ( nel senzo che non ammetto come soluzioni sezioni globali ma solo locali ).
-
-			\item Devo mettere la trafila di definizioni? direi di no, qualcosa va detto qualcosa va messo in footnote qualcosa va messo in capitolo 1
-			
+		\item Posso dire che l'operatore di eulero lagrange di un sistema meccanico ordinario è normally iperbolic?
 	\end{itemize}
 
 

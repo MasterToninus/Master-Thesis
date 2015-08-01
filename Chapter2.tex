@@ -297,38 +297,87 @@
 		We remark that Green-hyperbolic operators are not necessarily hyperbolic in any PDE-sense, therefore the last two condition are not equivalent.
 			 
 		\begin{example}
+		It's straightforward  to frame the well-known \emph{Real Scalar Field on curved background} inside this abstract picture:
+			\begin{center}\begin{tabular}{|l|c|}
+			\hline
+			Configuration bundle & real scalar field: $F \equiv \Real$\\
+													& curved background: $M$ is globally hyperbolic\\
+			\hline
+			Kinematic Configurations & $\Conf = C^\infty(M,\Real)$\\
+			\hline
+			Motion Operator			&  $P=\square_M + m^2 + \xi R$ \\
+													& normally hyperbolic operator\\
+			\hline
+			\end{tabular}\end{center}
+			Where $P$ is the Klein-Gordon Operator: $\xi$ and $m^2$ are two real numbers, $R$ stands for the scalar curvature build out of $g$ and $\square_M \coloneqq g^ab \nabla_a \nabla_b$ is the d'Alambert operator associated to the Levi-Civita connection.	
 			
-			K-G: il fibrato è scalare
-			l'operatore del modo è normally hyperbolic
-			... vedi adv aqft
+		Note that this system satisfies all the above three condition.
 		\end{example}
 	
 
 
 
-		\subsection{Finite Degree systems as a Field}
-			\begin{Warning}
-				Paragrafo in cui faccio vedere come è possibile vedere un sistema lagrangiano ordinario con un sistema lagrangiano di tipo campo quindi come un sotto-sotto-caso del sistema lagrangiano astratto.
-			\end{Warning}	
-		
-		  % il fibrato non è vettoriale
-		  % le configurazioni sono curve
-		  % 
-		  	Every system with discrete degrees of freedom can be seen as a trivial field system.
-			The correspondence is easily done:
-			\begin{itemize}
-				\item Configuration bundle of the system is the trivial $E= Q \times \Real$ with base manifold $M=\Real$.
-				\item The kinematic configuration are $\Conf=C^\infty(\Real,Q)$ i.e.all the possible parametrized functions on $Q$.
-				\item The lagrangian density is obtained evaluating the ordinary Lagrangian on the lifted curve:
-					\begin{equation}
-						\Lagrangian  [\gamma] \coloneqq \big( L \circ	\gamma^\textrm{lift} \big) dt  = \Lagrangian(t,\gamma^i,\dot{\gamma}^i)
-					\end{equation}
-	\end{itemize}
+		\subsection{Finite Degree systems as a Field}\label{MechanicsAsAField}
+			With a little more effort is possible to see every ordinary mechanic system  -with discrete degrees of freedom- as a special case of classical field.
+			
+			Consider a lagrangian system $(Q, L)$ with configuration space $Q$ and Lagrangian function $L: TQ\rightarrow \Real$.
+			
+			Remembering the intuitive meaning of $Q$ as set of all the statical conformation of the system, it's natural to read as kinematic configuration all and only the trajectories compatible with the constraints.
+			In other words the space of kinematic configurations is the set of all the parametrized smooth curves on $Q$:
+			\begin{displaymath}
+				\Conf = C^\infty(\Real,Q)
+			\end{displaymath}
+			Therefore, the configuration bundle of this system is the trivial smooth bundle:
+			\begin{displaymath}
+				E= ( \Real\times Q, \pi, \Real)
+			\end{displaymath}
+			of typical fiber $Q$, since the corresponding space of sections coincides to  the required configuration space:
+			\begin{displaymath}
+				\Gamma^\infty(E) \equiv C^\infty(\Real,Q)
+			\end{displaymath}
 
+			Also the "field theoretic" picture of the dynamic is not difficult to achieve.
+			It's enough to recall how the Euler-Lagrange of ordinary mechanical system can be derived from the \emph{least action principle}:
+			\begin{quotation}
+				\textbf{Least Action Principle:}
+				The natural motions of the mechanical system $(Q,L)$ are the stationary points of the action functional:
+				\begin{displaymath}
+					S [\gamma]= \int_\Real L(t,\gamma^i, \dot{\gamma}^i) dt
+				\end{displaymath}
+				constructed from the Lagrangian of the system.
+			\end{quotation}
+			Remembering that we have interpreted the space $\Real$ of the parameter $t$ as the base manifold of the configuration bundle $E$, it's immediate to see $S$ as the \emph{Total Lagrangian} related to the lagrangian density:
+			\begin{displaymath}
+				\Lagrangian[\gamma] \coloneqq L \circ \big( \gamma \big)^{\big\uparrow} dt
+			\end{displaymath}
+			obtained evaluating the ordinary Lagrangian on the lifted curve $\gamma^\uparrow$ (lift of $\gamma\in \Conf$ from $Q$ to $TQ$).
+		
+
+
+		Summing up, the mathematical structure of such mechanical system is enconded as follows:
+			
+			\begin{center}\begin{tabular}{|l|c|}
+			\hline
+			Configuration bundle & Trivial bundle  $E= Q \times \Real$\\
+													& Base manifold: $M=\Real$\\
+			\hline
+			Kinematic Configurations &  $\Conf=C^\infty(\Real,Q)$\\
+			\hline
+			Lagrangian Density		&	$\Lagrangian  [\gamma] \coloneqq \big( L \circ	\gamma^\uparrow \big) dt  = L(t,\gamma^i,\dot{\gamma}^i) dt$\\
+			\hline
+			Motion Operator			&  $P=Q_\Lagrangian \equiv \frac{d}{dt}\big(\frac{\partial}{\partial \dot{x}^i}L-\frac{\partial}{\partial x^i}L $\\
+													& normally hyperbolic operator (\danger ?)\\
+			\hline
+			\end{tabular}\end{center}
+			
+			Considering that the space $M$ is trivially globally hyperbolic, since every point $t\in\Real$ is a genuine "Cauchy Surface", it's evident how this system can be seen as a special case of field theory: a "field of curves".
+			\begin{observation}
+				Unless the configuration space is a vector space, the corresponding field theory cannot be linear.
+			\end{observation}		
 		
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 %\newpage
-	\section{Geometric mechanics of Finite Degree systems}\label{MechanicsAsAField}
+	\section{Geometric mechanics of Finite Degree systems}
 	%L'approccio usato generalmente è deduttivo dal particolare al generale
 	%parlare di spazio delle fasi, forma simplettica, legendre
 	%osservabili classici parentesi di poisson
@@ -559,8 +608,8 @@
 		Anyway the problem of searching perturbed solution of the disturbed dynamic can be stated even in presence  of non-linear fields  where the configuration bundle is not necessary a vector bundle and the motion operator is not linear.
 		\begin{figure}[h!]
 				  \centering
-   	\includegraphics[width=0.5\textwidth]{Pictures/Linearization} 
-   	  \caption{Intrinsically, searching a variation of a solution $\gamma_0\in \Sol$ which solve the disturbed motion equation is equivalent to find the intersection of the perturbed solution with a local neighbourhood of $\Gamma_0$ : $U_{\gamma_0}\cap\ker(P_\epsilon)$ .}
+			   	\includegraphics[width=0.5\textwidth]{Pictures/Linearization} 
+   	  			\caption{Intrinsically, searching a variation of a solution $\gamma_0\in \Sol$ which solve the disturbed motion equation is equivalent to find the intersection of the perturbed solution with a local neighbourhood of $\Gamma_0$ : $U_{\gamma_0}\cap\ker(P_\epsilon)$ .}
 		\end{figure}		
 		
 		The crucial point of the Peierls' procedure  is to select among all the possible solution of the perturbed motion $P_\epsilon$ that configuration which can be constructed by a variation of some fixed solution of the non-perturbed dynamics $\gamma_0 \in \Sol$.
@@ -625,7 +674,7 @@
 
 	 		\begin{figure}[h!]
 				  \centering
-   			\includegraphics[width=0.5\textwidth]{Pictures/AdvRetSol} 
+   			\includegraphics[width=0.5\textwidth]{./Pictures/AdvRetSol} 
    	  		\caption{}
 		\end{figure}		
 	 

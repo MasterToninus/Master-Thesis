@@ -1,6 +1,9 @@
 \documentclass[Main]{subfiles}
 
 \begin{document}
+%-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+%-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
+%\newpage
 \chapter{Lagrangian Systems and Peierls Brackets}
    %introduzione
 	\begin{Warning}
@@ -183,9 +186,6 @@
 		\end{equation}
 		(where 	$\biggr( \frac{\partial \chi}{\partial(\partial_\mu \phi)}$ is the be intended as the lagrangian density constructed differentiating $\chi(\phi, \partial_\mu)$ as an ordinary function treating its functional entries as an usual scalar variable.)
 	\end{definition}
-	\begin{observation}
-		
-	\end{observation}
 	
 	\begin{observation}
 		The whole theory of both Lagrangian densities class and Euler-Lagrange equation could be stated in a more syntetic way in terms of the Grassmann-graded variational bicomplex.\cite{Giachetta2009}\cite{Sardanashvily}
@@ -193,7 +193,7 @@
 	
 		
 
-	
+%-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 %\newpage
 	\section{Concrete Realization}
@@ -203,96 +203,29 @@
 	
 	
 	
-		\subsection{Classical Linear Field over a Space-Time}
-		\begin{Warning}
-		 così com'è la definizione è troppo forte?	
-		\end{Warning}
+		\subsection{Classical Field Theory}
+		Basically a \emph{Fields System} is nothing more than an abstract Field System $(E,P)$ where the base space $M$  is a suitable Spacetime manifold\cite{Bar}. At this stage the question about the Lagrangian nature of the dynamics is purely ancillary.
+		\\		
+		The idea of taking bundles on a space-time manifold is physically intuitive, kinematically speaking a fields configuration is simply the association of some element of the fiber $Q $ for each point of the space-time $M$.
 		
-			The field systems are a subset of the lagrangian systems:
-			\begin{definition}[Linear Fields on curved Background]
-				It's a Lagragian system $(E,\Lagrangian)$ such that:
-				\begin{itemize}
-					\item the configuration bundle $E\xrightarrow{\pi} M$ is a \underline{vector bundle}.
-					\item the base manifold $M$ is a \underline{Globally Hyperbolic Spacetime}.
-					\item the Euler-Lagrange operator $P= Q_\Lagrangian$ is a \underline{Green Hyperbolic operator}.
-					\item For each Cauchy surface $\Sigma \subset M$ can be defined a well-posed Cauchy problem for the motion equation of $P$.\footnote{Green-hyperbolic operators are not necessarily hyperbolic in any PDE-sense and that they cannot be characterized in general by well-posedness of a Cauchy problem. \cite{Terlaky2010} \cite{Bar2010}}
-				\end{itemize}
-			\end{definition}
-		The idea of taking bundles on a space-time manifold it's physically intuitive, kinematically speaking a fields configuration it's not more than an than an association of some element of the fiber $Q $ for each point of the space-time $M$.
-		But the other three condition are worth a deeper insight:
-
-		\paragraph{Vector Bundle Condition}
+		However, there are two more requirements that are often prescribed in commonly studied field theories.
+		\paragraph{Linear Sistem Condition}		
+			\begin{itemize}
+				 \item The configuration bundle $E\xrightarrow{\pi} M$ is a \underline{vector bundle}.
+			\end{itemize}
 			Even if it might make sense to speak of nonlinear fields in some more general context, this condition it's a necessary element in case some form of the \emph{superposition principles} as to be taken in account.
 			Obviously this hypothesis is not sufficient to formulate the principle in the strong classical way, i.e.:"the response at a given place and time caused by two or more stimuli is the sum of the responses which would have been caused by each stimulus individually" mostly because only free systems can be considered at this stage and any statement about stimulus can make sense.
 			\\
 			However It assure that $\Conf$ is a vector space and , in conjunction with the linearity of motion operator $P$, $\Sol= \ker(P)$ is a linear subspace.		
 			In other words every linear combination of kinematic configuration it's still a kinematic configuration.
-
-		\paragraph{Global hyperbolicity condition.}
-		
-			This condition is strictly connected to the dynamic behaviour of the system.
-			
-			\begin{Warning}
-			Def di dominio di dipendendenza
-			footnote di definizione di spazio tempo
-			def cauchy surface
-			Remark causal future past
-			def globally hyperbolic
-			Teorema sulle caratterizzazioni
-			\begin{notationfix}
-				We denote the set of all the cauchy surfaces as $\PowerSet_{C}(M)$.
-			\end{notationfix}
-					
-
-		Glon iperbolic determina la fogliazione dello spazio tempo per superfici di cauchy
-		La superficie di cauchy è questa:
-		\begin{definition}[Cauchy surface]
-		\end{definition}		
-		questo da la possibilità della buona posizione dei problemi di cauchy.. fisicamente è la condizione minima per definire i dati iniziali dell'evoluzione dinamica.
-		definisco data...
-		
-	No!		La definizione di green hyperbolicity garantisce invece l'esistenza e unicità del problema di cauchy associata
-		
-		e non solo, anche l'esistenza degli operatori di green associati che sono ingrediente fondamentale della costruzione di peierls
-
-		M è glob iper e P è green iper per tener conto del comporatamento propagativo
-		definire sup cauchy
-		definire s-t iperbolico (solo la caratterizzazione di ammetre una sup di cauchy)
-		definire op green iperbolico su spazio tempo iperbolico (cioè ha delle green ope)
-		Propr di buona definizione esistenza e unicita della soluzione
-		
-		Di particolare ricorrenza fisica sono gli operatori normally iperbolic
-		espressione in coordinate
-		esempio K-g!
-		\end{Warning}
-
-		
-		\begin{Warning}
-		Secondo bar e ginoux per parlare di campo classico non serve specificare nient'altro...
-		la condizione di $\exists  1!$ operatore di green di $P$  insieme a quella di Essere un sistema lagrangiano è un requisito minimo  per definire senza ambiguità le parentesi di peierls.
-		
-		la condizione di green-hyperbolicity ( che garantisce di $\exists 1!\; E^\mp$ ma non che  $\exists 1!$ soluzione del PC) corredata della scelta di un pairing permette di quantizzare secondo lo schema algebrico
-		
-		La condizione di well-posedness del problema di cauchy da la possibilità di quantizzare secondo lo schema dei dati iniziali
-		
-		in tutti questi casi la candizione di Globally -hyperbolic per lo spazio tempo sottostante è necessaria
-		\end{Warning}
-
-
-		\paragraph{Green-Hyperbolicity condition.}
-			The third condition  ensures the existence of the Green's Operator as follows directly from definition.
-			\begin{Warning}
-				Pensavo di utilizzare la definizione di Green hyperbolic data da Bar che si avvale del concetto di formally dual (che non richiede la presenza del pairing) invece di quella usata in Advances AQFT che richiede solo che ammetta almeno un $G^\pm$  per poi dimostrare tramite teorema che se è anche autoaggiunto vale l'unicità. Si tratta solo di una piccola sfumatura.. Deve essere chiarito che in tutto ciò che faccio interessano che $$\forall P \, \exists1!G^\pm$$.
-				Che poi questa condizione derivi da GH secondo bar o Gh secondo dap+selfadj è una di quelle questioni propriamente matematiche che poco interessa ai fisici della commissione.
-			\end{Warning}			
-			
-			\begin{Warning}
-			Devo richiedere che il green operator sia unico? sia negli schemi di quantizzazione che nella definizione di peierls faccio largo uso dell'unicità. 
-			Per provare questa unicità si passa per la definizione di una forma bilineare che permette di parlare di aggiunto formale e quindi avvalersi del teorema.
-			\end{Warning}
-
-		\paragraph{Cauchy condition.}
-			While the existence of a Cauchy surface allows to assign the data of initial value problems, the forth condition ensure the well -posedness of the problem for on every Cauchy surface $\Sigma$. I.e:
+			 
+		\paragraph{Propagative Dynamic Condition}
+		\begin{itemize}
+			 \item The base manifold $M$ is a \underline{Globally Hyperbolic Spacetime}.
+			 \item The motion operator $P$ is \underline{PDE-hyperbolic}.
+		\end{itemize}
+		The first condition ensures the existence of Cauchy surfaces and therefore permits to state  \emph{Cauchy Problems} assigning an initial data on such regions.
+		Furthermore, PDE-hyperbolicity of the motion operator $P$ guarantees that for every Cauchy surface $\Sigma \subset M$ the corresponding initial data problem is well posed, that is:
 			\begin{equation}\label{CauchyProblem}
 				\begin{cases} P u = 0 \\ u = u_0 \\ \nabla_{\vec{n}}u= u_1 \end{cases}
 			\end{equation}
@@ -306,7 +239,7 @@
 			\begin{observation}
 				$\Data(\Sigma)$ inherit the linear structure of its component $ \Gamma^\infty(\Sigma)$.
 			\end{observation}	
-			In this term the well-posedness of the cauchy problem can be stated as follow:
+			In this term the well-posedness of the Cauchy problem can be stated as follow:
 
 			\begin{proposition}
 				The map $ 	 \SolMap : \Data (\Sigma ) \rightarrow \Sol $ which assign to $(u_0, u_1)\in \Data(\Sigma)$ the unique solution of the cauchy problem \ref{CauchyProblem} is linear and bijective.
@@ -333,7 +266,6 @@
 				$\Data$ is still a vector space.
 			\end{proposition}
 			\begin{proof}
-				\begin{Warning}\end{Warning}
 				It's sufficient to prove that:
 				\begin{displaymath}
 					\big[ \phi_a + \phi_b \big] = \big[ \phi_a \big] + \big[ \phi_b \big]
@@ -349,9 +281,32 @@
 			\begin{corollary}
 				The function  $ 	 \mathbb{s} : \Data (\Sigma ) \rightarrow \Sol $ which map every equivalence class to the associated solution is linear and bijective.
 			\end{corollary}
+		\begin{observation}
+			The Propagative dynamic condition  is the main ingredient in the \emph{initial data quantization} procedure\cite{Wald1994}.	
+		\end{observation}	
+	
+	
+		\paragraph{Green-Hyperbolic Dynamic Condition}
+		\begin{itemize}
+			\item The dynamic is generated by a \underline{Lagrangian}, i.e.  $P= Q_\Lagrangian$.
+			\item The motion operator $P$ is a \underline{Green Hyperbolic} L.P.D.O.
+		\end{itemize}
+		It's customary in Algebraic quantum field theory to identify quantizable systems through this condition.
+		In fact this condition is a necessary hypothesis to carry on the Peierls construction and the brackets underlie to the definition of the classical symplectic structure.
+		\\
+		We remark that Green-hyperbolic operators are not necessarily hyperbolic in any PDE-sense, therefore the last two condition are not equivalent.
+			 
+		\begin{example}
+			
+			K-G: il fibrato è scalare
+			l'operatore del modo è normally hyperbolic
+			... vedi adv aqft
+		\end{example}
+	
 
 
-		\subsection{Finite Degree systems}
+
+		\subsection{Finite Degree systems as a Field}
 			\begin{Warning}
 				Paragrafo in cui faccio vedere come è possibile vedere un sistema lagrangiano ordinario con un sistema lagrangiano di tipo campo quindi come un sotto-sotto-caso del sistema lagrangiano astratto.
 			\end{Warning}	
@@ -411,7 +366,9 @@
 		\item ecc vedere primo capitolo wald
 	\end{itemize}
 	\end{Warning}
-		
+
+
+%-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 \newpage
 	\section{Peierls Brackets}
@@ -437,7 +394,6 @@
 	\begin{Warning}
 	Aggiungere altre chiacchiere e marketing riguardo le  PB, vedere nelle fonti cosa dicono i sapienti
 	\end{Warning}
-
 
 
 	\subsection{Peierls' construction.}
@@ -678,24 +634,6 @@
 	\end{Warning}
 	
 	
-%-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-\newpage
 
-	\danger \danger \danger \danger 	\danger \danger \danger \danger 	\danger \danger \danger \danger 
-	\section{Dubbi}
-	\begin{itemize}
-		\item quando parlo della cinematica mi piacerebbe dare indicazioni sulla struttura matematica dello spazio delle configurazioni cinematiche:
-			\begin{enumerate}
-				\item costituisce una frechet manifold ( gli unici risultati che ho trovato sono quelli di Palais di "non linear global analysis"
-				\item le curve parametrizzate sono le variazioni
-				\item classi di equivalenza definiscono delle variazioni infinitesime che costituiscono lo spazio tangente allo spazio delle configurazioni cinematiche
-				\item questo spazio tangente è isomorfo allo spazio delle sezioni del pullback rispetto alla sezione $\phi\in C$ del verical bundle (vedere forger romero)
-				\item il problema dell'atlante e della rappresentazione delle sezioni in carta locale ( da scegliere sia sul total space E che sul base space M)
-			\end{enumerate}
-		\item fare riferimento al teorema di Ostrowsky per giustificare il fatto che consideriamo solo il primo ordine. le langrangiana con termini cinetici esotici sono instabili ( nel senzo che non ammetto come soluzioni sezioni globali ma solo locali ).
-
-			\item Devo mettere la trafila di definizioni? direi di no, qualcosa va detto qualcosa va messo in footnote qualcosa va messo in capitolo 1
-			
-	\end{itemize}
 	
 \end{document}

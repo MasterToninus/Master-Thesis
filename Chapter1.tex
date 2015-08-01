@@ -9,12 +9,16 @@
 		
 		Gli strumenti matematici per raccontare la teoria dei campi classici sono essenzialmente 3: Fibrati, S-T G-H, LDOP e GHOP.
 		
-		IN questo paper non ci soffermeremo sulle strutture del framework puramente quantistico (* algebre e quant'altro).
+		IN questo paper non ci soffermeremo sulle strutture del framework puramente quantistico (* algebre e quant'altro). Per un primer vedere articolo di Dappiaggi o Libro Adv aqft.
 		
 		Diamo per scontato un background di base in Geometria differenziale e derivate esterne (algebre di Grassman? global calculus? non so come chiamarlo!)
 		
 		Potrei avere la tentazione a provare ad usare un po' di linguaggio basilare delle categorie... la mia fonte è \href{http://katmat.math.uni-bremen.de/acc/acc.pdf}{Joy of Cat}.
 	\end{Warning}
+	
+	\begin{Warning}
+		Stile: Intro lapiadaria ai 3 argomenti ( bundle cinematica di campo, Glob iper stage per descrivere dinamica di tipo propagativo, Operatori tipo onda). Poi smitragliata di definizioni come faceva Penati.
+	\end{Warning}	
 	
 	\section{Fiber Bundles}
 		\subsection{...}
@@ -30,12 +34,71 @@
 			\begin{Warning}
 				Mettere solo le definizioni che uso prese dagli articoli di review delle Fonti
 			\end{Warning}	
+			Appunti che mi ero preso scrivendo il secono capitolo:
+					
+			This condition is strictly connected to the dynamic behaviour of the system.
+			
+			\begin{Warning}
+			Def di dominio di dipendendenza
+			footnote di definizione di spazio tempo
+			def cauchy surface
+			Remark causal future past
+			def globally hyperbolic
+			Teorema sulle caratterizzazioni
+			\end{Warning}			
+			
+			\begin{notationfix}
+				We denote the set of all the cauchy surfaces as $\PowerSet_{C}(M)$.
+			\end{notationfix}
+					
+
+		Glon iperbolic determina la fogliazione dello spazio tempo per superfici di cauchy
+		La superficie di cauchy è questa:
+		\begin{definition}[Cauchy surface]
+		\end{definition}		
+		questo da la possibilità della buona posizione dei problemi di cauchy.. fisicamente è la condizione minima per definire i dati iniziali dell'evoluzione dinamica.
+		definisco data...
+						
+		\begin{Warning}
+		Rapporto con la condizione sugli operatori...		
+		
+				
+	No!		La definizione di green hyperbolicity non garantisce invece l'esistenza e unicità del problema di cauchy associata
+		
+		e non solo, anche l'esistenza degli operatori di green associati che sono ingrediente fondamentale della costruzione di peierls
+
+		M è glob iper e P è green iper per tener conto del comporatamento propagativo
+		definire sup cauchy
+		definire s-t iperbolico (solo la caratterizzazione di ammetre una sup di cauchy)
+		definire op green iperbolico su spazio tempo iperbolico (cioè ha delle green ope)
+		Propr di buona definizione esistenza e unicita della soluzione
+		
+		Di particolare ricorrenza fisica sono gli operatori normally iperbolic
+		espressione in coordinate
+		esempio K-g!
+		\end{Warning}						
+						
+			
 					\subfile{DefinitionBulk2}		
 			
 		\section{Green Hyperbolic Operators}
 			\begin{Warning}
 				Mettere solo le definizioni che uso prese dagli articoli di review delle Fonti
 		\end{Warning}	
+					\begin{Warning}
+				Pensavo di utilizzare la definizione di Green hyperbolic data da Bar che si avvale del concetto di formally dual (che non richiede la presenza del pairing) invece di quella usata in Advances AQFT che richiede solo che ammetta almeno un $G^\pm$  per poi dimostrare tramite teorema che se è anche autoaggiunto vale l'unicità. Si tratta solo di una piccola sfumatura.. Deve essere chiarito che in tutto ciò che faccio interessano che $$\forall P \, \exists1!G^\pm$$.
+				Che poi questa condizione derivi da GH secondo bar o Gh secondo dap+selfadj è una di quelle questioni propriamente matematiche che poco interessa ai fisici della commissione.
+			\end{Warning}			
+			
+			\begin{Warning}
+			Devo richiedere che il green operator sia unico? sia negli schemi di quantizzazione che nella definizione di peierls faccio largo uso dell'unicità. 
+			Per provare questa unicità si passa per la definizione di una forma bilineare che permette di parlare di aggiunto formale e quindi avvalersi del teorema.
+			\end{Warning}
+			
+		    Green-hyperbolic operators are not necessarily hyperbolic in any PDE-sense and that they cannot be characterized in general by well-posedness of a Cauchy problem. \cite{Terlaky2010} \cite{Bar2010}
+		
+		
+		
 				\subfile{DefinitionBulk3}
 				
 

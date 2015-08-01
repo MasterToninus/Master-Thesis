@@ -1,0 +1,99 @@
+%\documentclass[a4paper,12pt]{scrartcl}
+\documentclass[Main]{subfiles}
+
+
+\title{Pezzi temporanei e parti eliminate dalla tesi. }
+\author{Toninus}
+%\input{Preamble}
+\begin{document}
+
+
+%  Titolo
+\maketitle
+\begin{abstract}
+	Sono un accumulatore.\\
+	Tutti i mezzi testi, mezze intuizioni che non ho tradotto o a cui non ho trovato posto nella tesi le metto qui dentro.
+\end{abstract}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Prereq Mate}
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Lagrangian systems e Pierls}
+	\section{Concrete Realization}
+		\subsection{Fields}
+			The field systems are a subset of the lagrangian systems:
+			\begin{definition}[Linear Fields on curved Background]
+				It's a Lagragian system $(E,\Lagrangian)$ such that:
+				\begin{itemize}
+					\item the configuration bundle $E\xrightarrow{\pi} M$ is a \underline{vector bundle}.
+					\item the base manifold $M$ is a \underline{Globally Hyperbolic Spacetime}.
+					\item the Euler-Lagrange operator $P= Q_\Lagrangian$ is a \underline{Green Hyperbolic operator}.
+					\item For each Cauchy surface $\Sigma \subset M$ can be defined a well-posed Cauchy problem for the motion equation of $P$.\footnote{Green-hyperbolic operators are not necessarily hyperbolic in any PDE-sense and that they cannot be characterized in general by well-posedness of a Cauchy problem. \cite{Terlaky2010} \cite{Bar2010}}
+				\end{itemize}
+			\end{definition}
+		But the other three condition are worth a deeper insight:
+
+		\paragraph{Vector Bundle Condition}
+
+		\paragraph{Global hyperbolicity condition.}
+		
+		\paragraph{Green-Hyperbolicity condition.}
+			The third condition  ensures the existence of the Green's Operator as follows directly from definition.
+
+		\paragraph{Cauchy condition.}
+While the existence of a Cauchy surface allows to assign the data of initial value problems, the forth condition ensure the well -posedness of the problem for on every Cauchy surface $\Sigma$. I.e:
+			\begin{equation}\label{CauchyProblem}
+				\begin{cases} P u = 0 \\ u = u_0 \\ \nabla_{\vec{n}}u= u_1 \end{cases}
+			\end{equation}
+			admit a unique solution $u\in \Gamma(E)$ for all $(u_0, u_1) \in \Gamma (\Sigma )\times \Gamma (\Sigma )$.
+
+		\begin{observation}
+			\begin{center}
+				\textbf{Visione Globale}
+			\end{center}
+			\begin{itemize}
+			\item Secondo bar e ginoux per parlare di campo classico non serve specificare nient'altro...
+				\begin{itemize}
+					\item la condizione di $\exists  1!$ operatore di green di $P$  insieme a quella di Essere un sistema lagrangiano è un requisito minimo  per definire senza ambiguità le parentesi di peierls.
+					\item La buona definizione delle parentesi di Peierls è requistio algebrico per portare avanti la quantizzazione algebrica standard (come fa Dappiaggi): \\
+					la condizione di green-hyperbolicity ( che garantisce di $\exists 1!\; E^\mp$ ma non che  $\exists 1!$ soluzione del PC) corredata della scelta di un pairing permette di quantizzare secondo lo schema algebrico
+					\item La condizione di well-posedness del problema di cauchy da la possibilità di quantizzare secondo lo schema dei dati iniziali
+				\end{itemize}
+				\item in tutti questi casi la candizione di Globally -hyperbolic per lo spazio tempo sottostante è necessaria
+			\end{itemize}
+		\end{observation}
+
+	\danger \danger \danger \danger 	\danger \danger \danger \danger 	\danger \danger \danger \danger 
+	\section{Dubbi}
+	\begin{itemize}
+		\item quando parlo della cinematica mi piacerebbe dare indicazioni sulla struttura matematica dello spazio delle configurazioni cinematiche:
+			\begin{enumerate}
+				\item costituisce una frechet manifold ( gli unici risultati che ho trovato sono quelli di Palais di "non linear global analysis"
+				\item le curve parametrizzate sono le variazioni
+				\item classi di equivalenza definiscono delle variazioni infinitesime che costituiscono lo spazio tangente allo spazio delle configurazioni cinematiche
+				\item questo spazio tangente è isomorfo allo spazio delle sezioni del pullback rispetto alla sezione $\phi\in C$ del verical bundle (vedere forger romero)
+				\item il problema dell'atlante e della rappresentazione delle sezioni in carta locale ( da scegliere sia sul total space E che sul base space M)
+			\end{enumerate}
+		\item fare riferimento al teorema di Ostrowsky per giustificare il fatto che consideriamo solo il primo ordine. le langrangiana con termini cinetici esotici sono instabili ( nel senzo che non ammetto come soluzioni sezioni globali ma solo locali ).
+
+			\item Devo mettere la trafila di definizioni? direi di no, qualcosa va detto qualcosa va messo in footnote qualcosa va messo in capitolo 1
+			
+	\end{itemize}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Test}
+	$$L - \mathrm{L} - \mathit{L}  - \mathbf{L} - \mathsf{L} - \mathtt{L}- \mathcal{L}- \mathbb{L}- \mathfrak{L}$$
+
+
+
+\end{document}

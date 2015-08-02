@@ -6,14 +6,12 @@
 %\newpage
 \chapter{Lagrangian Systems and Peierls Brackets}
    %introduzione
-	\begin{Warning}
-	 .. introduzione
-		dedichiamo sforzo alla definizione dei sistemi lagrangiani astratti per dare un punto di vista unificato ai sistemi a gradi libertà continui (continui macroscopici, fluidi, campi) e a gradi di libertà discreti
-		Li vediamo come sotto classi dei sistemi lagrangiani
-		notiamo che in entrambi i casi c'è un possibile dato di cauchy
-		usiamo questo ingrediente per definire l'algoritmo di peierls.
-	\end{Warning}
-
+  In this chapter we will put to good use all the effort invested in the study of mathematical methods for classical field to provide a good notion of Abstract Mechanical system. 
+  \emph{Abstract} in the sense that we rely on a refined definition, sufficiently broad to encompass mechanical systems with degrees of freedom both discrete and continuous.
+  \\
+  Taking advantage of this language will be able to establish the class of systems for which the Peierls' construction procedure  is applicable.
+  It will also be possible to contextualize more rigorously each step of the algorithm as shown in the original paper\cite{Peierls1952}.
+   
 	\section{Abstract Mechanical Systems}
 	It's possible to state a mathematical definition sufficiently broad to include all the systems in ordinary analytical mechanics regardless of the cardinality of degrees of freedom  in a unified way.
 	
@@ -80,10 +78,9 @@
 	\end{notationfix}
 	
 	\begin{figure}[h!]
- 	 	\caption{Geometric picture of the basic mechanical system's structure.}
- 	 	\danger immagine
-   		%\includegraphics[width=0.5\textwidth]{Pictures/EuleroVenn_Bundles} 
-  		\centering
+		\centering
+		\includegraphics[width=0.5\textwidth]{Pictures/AbstractFieldTheory} 
+		 	 	\caption{Mathematimatical framework of the mechanics of abstract systems. }
 	\end{figure}	
 	
 	\subsection{Lagrangian Dynamics}	
@@ -365,7 +362,7 @@
 			\hline
 			Lagrangian Density		&	$\Lagrangian  [\gamma] \coloneqq \big( L \circ	\gamma^\uparrow \big) dt  = L(t,\gamma^i,\dot{\gamma}^i) dt$\\
 			\hline
-			Motion Operator			&  $P=Q_\Lagrangian \equiv \frac{d}{dt}\big(\frac{\partial}{\partial \dot{x}^i}L-\frac{\partial}{\partial x^i}L $\\
+			Motion Operator			&  $P=Q_\Lagrangian \equiv \frac{d}{dt}\big(\frac{\partial}{\partial \dot{x}^i}L\big)-\frac{\partial}{\partial x^i}L $\\
 													& normally hyperbolic operator (\danger ?)\\
 			\hline
 			\end{tabular}\end{center}
@@ -378,30 +375,35 @@
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 %\newpage
 	\section{Geometric mechanics of Finite Degree systems}
-	%L'approccio usato generalmente è deduttivo dal particolare al generale
-	%parlare di spazio delle fasi, forma simplettica, legendre
-	%osservabili classici parentesi di poisson
+		The picture of the systems with discrete degrees of freedom as a field brings out only a part of the typical mathematical ingredients proper of the \emph{Geometric} approach to the classical mechanics
+
+		\begin{figure}[h!]
+		\centering
+		\begin{minipage}{0.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{Pictures/GeoMecFrame} 
+			%\caption{first figure}
+		\end{minipage}\hfill
+		\begin{minipage}{0.45\textwidth}
+			\centering
+			\includegraphics[width=\textwidth]{Pictures/FieMecFrame} 
+			%\caption{second figure}
+		\end{minipage}
+		\caption{An "impressionistic comparison"  between the mathematical framework of geometrical mechanics and  the field-theoretic picture}
+		\end{figure}
 	
-	\begin{Warning}	
+	For example we have totally overlook to mention the hamiltonian formalism in the case of field.
+	Even though it should be possible, in the spirit of what has been done for Lagrangian picture, to extend the canonical treatment to include systems with continuous degrees of freedom (see for example \cite{Giachetta1999}).
+	We will not expand this topic since the protagonist of this paper is essentially a single-particle system.
 	
-	 La visione precedente è molto generale ma ci sono alcune strutture classiche che voglio replicare sul campo come la forma simplettica, le osservabili e le parentesi di poisson.
-	 Mi sembra più chiaro vederle dopo aver raccontato queste.
-	 
-	 Mi atterrei all'approccio rapido che segue Wald (tralasciando il ponte con la meccanica analitica dei corsi standard e concentrandomi sull'approccio geometrico)
+	However in the next chapter we will need to realize a field-theoretic versions of some Canonical objects.
+	Let's review their finite dimensional version.
 	
-	Quindi devo parlare un po' di meccanica geometrica, di
-	\begin{itemize}
-		\item Spazio delle Fasi
-		\item tautological 1-form
-		\item simplectic form
-		\item canonical coordinate and darboux theorem
-		\item observable as smooth scalar field on the phase space
-		\item poisson structure
-	\end{itemize}
-	\end{Warning}
-	 		% devo mettere le conclusione scritte sul primo quaderno insieme a quelle messe nel secondo e poi ripetute a seguito della costruzione di peierls e a quella di quantizzazione ( nei miei appunti io ho fatto ogni singolo passo in generale e poi realizzato per i sistemi campo-curve. Per la stesura finale ho deciso di unire tutto insieme in questo ultimo capitolo (senza ripetere ogni volta che il fibrato è triviale con fibra Q, la varietà base è banalmente globally iperbolic in quanto R. tutti i punti di R sono superfici di cauchy ecc ecc)
+			\subfile{DefinitionBulk4}
+
 	
 	\subsection{Linear dynamical systems}	
+		
 	Most of the physical systems that are encountered in the theory of fields are linear.
 	Of course is possible to come across linear systems even in ordinary mechanics. 
 	In that case the the difference between the underlying geometric entities tend to fade out as a consequence of the flatness of the configuration space.
@@ -419,32 +421,32 @@
 
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-\newpage
+%\newpage
 	\section{Peierls Brackets}
+		Purpose of the Peierls' procedure is to provide a bilinear form on the space of Lagrangian densities with time-compact support.
+		This form induces a pre-symplectic structure on suitable subspaces of functionals to which can be recognized the role of \emph{classical observables}  of the theory.	
+	
+	\begin{observation}[Relation between Peierls Bracket and Poisson Bracket]
+		Intuitively we can say that the Peierls Brackets implement a sorts of "comparison relation" between two observables similar to the case of Poisson Bracket in ordinary hamiltonian mechanics.
+		
+		As we will see there are important differences between the two definitions:
+		\begin{itemize}
+			\item The Poisson bracket determines how one "quantity" $b$ changes another "quantity" $b$ when it acts as the  generator (usually the  Hamiltonian) of the dynamical evolution or vice-versa. \cite{Sharan2010}
+	\\	
+	The Peierls bracket, on the other hand, determines how one "quantity" $b$  when added to the system dynamics (usually the Lagrangian or the total action)  with an infinitesimal coefficient $\lambda$ affects changes in another "quantity" $a$ and vice-versa.
+	In other words the Peierls bracket is related to the change in an observable when the trajectory on which it is evaluated gets shifted due to an infinitesimal change in the Lagrangian of the system by another Lagragian density.
+	
+			\item While the Poisson bracket between two observables $a$ and b is defined on the whole phase space and is not dependent on the existence of a Hamiltonian, the Peierls bracket refers to a specific trajectory determined by a governing Lagrangian. 
+		\end{itemize}
+		A rigorous treatment of the notions of \emph{observable} and \emph{Phase Space} should require some further specification depending on which is the  considered bracket.		
+		However ,we can read the "observable" as an object with a double nature. Essentialy it can act both as the generator of the dynamics than as a quantity which can be evaluated on the system configurations.
+	\end{observation}	
+	
 	%Intro: riproponiamo in modo esteso la costruzione originale di peierls con alcuni aggiornamenti di marolf... per una carrellata con il linguaggio della moderna teoria dei campi classici (tipo mangiaratti) e in presenza di gauge vedere per esempio Khavkine
-	In this section we present more extensively the original Peierls' construction. 
-	Please note that we are not trying to provide the state of the art on the Peierls bracket ( see for example \cite{Khavkine2014} for the treatment in presence of gauge freedom) but only to expand and modernize the first approach given by Peierls.
+		In this section we present more extensively the original Peierls' construction. 
+		Please note that we are not trying to provide the state of the art on the Peierls bracket ( see for example \cite{Khavkine2014} for the treatment in presence of gauge freedom) but only to expand and modernize the first approach given by Peierls.
 	Instead of considering only scalar theory we extend the algorithm to a broader class of systems.
 	
-	\begin{observation}[Peierls Bracket vs Poisson Bracket]
-		\begin{Warning}
-	Paraphrasing an observation made by Sharan\cite{Sharan2010}:
-	
-	The Poisson bracket determines how one quantity b(t, q, p) changes another quantity a(t, q, p) when it acts as the Hamiltonian or vice-versa. The Peierls bracket, on the other hand, determines how one quantity b(t, q, p) when added to the system Hamiltonian h with an infinitesimal coefficient λ affects changes in another quantity a(t, q, p) and vice-versa, i.e. 	The Peierls bracket is related to the change in an observable when the trajectory on which it is evaluated gets shifted due to an infinitesimal change in the Lagrangian of the system by another Lagragian density.
-		
-	While the Poisson bracket between two observables a and b is defined on the whole phase space and is not dependent on the existence of a Hamiltonian, the Peierls bracket refers to a specific trajectory determined by a governing Lagrangian. 
-	
-	\end{Warning}
-	\end{observation}
-
-	Purpose of the Peierls' procedure is to provide a bilinear form on the space of Lagrangian densities with time-compact support.
-	This form induces a pre-symplectic structure on suitable subspaces of functionals to which can be recognized the role of \emph{classical observables}  of the theory.
-
-	\begin{Warning}
-	Aggiungere altre chiacchiere e marketing riguardo le  PB, vedere nelle fonti cosa dicono i sapienti
-	\end{Warning}
-
-
 	\subsection{Peierls' construction.}
 			%Classe di applicabilità naturale del metodo di Peierls
 	The Peierls's construction algorithm is well defined for a specific class of systems:
@@ -669,20 +671,19 @@
 	\subsubsection{Example: Finite Dimensional Case} 
 		As an example of such process we can consider a \emph{field of curves} i.e. an ordinary classical mechanical system in the field theoretic picture.
 		We have shown in section \ref{MechanicsAsAField} that such systems are generally non linear: the configuration bundle is not a vector one and then linearity of $P$ cannot be defined .
-		
-		However the base manifold is very simple. Indeed $M= \Real$ can be seen as a trivial globally-hyperbolic space-time where every real scalar $t\in M$ is a Cauchy surface.
-
-	 		\begin{figure}[h!]
+	 	\begin{figure}[h!]\label{GraphicAdvRetSol}
 				  \centering
    			\includegraphics[width=0.5\textwidth]{./Pictures/AdvRetSol} 
-   	  		\caption{}
-		\end{figure}		
-	 
-	\begin{Warning}
-		Da Finire
-	\end{Warning}
+   	  		\caption{Picture of the perturbed solution in case of a finite dimensional system.}
+		\end{figure}			
+		
+		However the base manifold is very simple. Indeed $M= \Real$ can be seen as a trivial globally-hyperbolic space-time where every real scalar $t\in M$ is a Cauchy surface.
+		This allows us to specify the above equations in a more intuitive way:
+		\begin{itemize}
+			\item $\gamma_0^{\, j}$ is a simple local chart representation of the curve.
+			\item for a suitable small $\epsilon$  $\gamma_0^{\, j}$ and $\gamma_{\chi}^{\pm\,i} $ can be pictured in the same local chart.
+			\item the variation $\eta^\pm$ is then the field over the unperturbed curve whose components compute the separation between $\gamma_0$ an $\gamma_{\chi}^{\pm} $
+		\end{itemize}
 	
-	
-
-	
+	 	
 \end{document}

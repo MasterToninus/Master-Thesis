@@ -374,7 +374,7 @@
 		
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 %\newpage
-	\section{Hamiltonian of Finite Degree systems}
+	\section{Hamiltonian Mechanics of Finite Degree systems}
 		The picture of the systems with discrete degrees of freedom as a field brings out only a part of the typical mathematical ingredients proper of the \emph{Geometric} approach to the classical mechanics
 
 		\begin{figure}[h!]
@@ -406,8 +406,12 @@
 	
 	This leads us to the abstract formulation for the Hamiltonian systems\cite{Abraham1978}:
 	
-	\begin{definition}[Hamiltonian System]
-	 $(\mathcal{M},\omega, H)$ 3.3.1 fomm
+	\begin{definition}[(Ordinary) Hamiltonian System]
+			Triple $(\Phase,\omega, H )$ composed of:
+		\begin{itemize}
+			\item $(\Phase,\omega)$ \\ finite dimensional symplectic manifold called \emph{"Phase space"}.
+			\item	$ H :\Phase \rightarrow \Real$ \\  smooth function called \emph{"Hamiltonian"}
+		\end{itemize}
 	\end{definition}
 	
 	\begin{observation}
@@ -416,13 +420,29 @@
 		The key is the definition of the Legendre Map $TL: TQ \rightarrow T^*Q$. 
 		Only in the case that the Lagrangian$L$  is \emph{hyperegular}, i.e. $TL$ is a diffeomorphism, is possible to push-forward $L$ to give a proper Hamiltonian on $\Phase=T^*Q$. (see for example \cite{Abraham1978}		
 	\end{observation}	
-	Remember that there's an important theorem attributed to Darboux that state that, at least locally, every symplectic form can be coordinated as the ...canonical coordinate
+	Remember that there's an important theorem attributed to Darboux that state that, at least locally, every symplectic form can be represented in the canonical form:
 	\begin{theorem}[Darboux]
-	3.2.2 fomm
+		$ $
+		\begin{hypothesis}
+			\begin{itemize}
+				\item $\Phase$ is a 2n-dimensional smooth manifold.
+				\item $\omega$ is a symplectic form on $\Phase$ i.e. a non degenerate closed ($d \omega =0$) two-form.
+			\end{itemize}
+		\end{hypothesis}
+		\begin{thesis}
+			 $\forall m\in \Phase$,  $\exists$ a local chart  $(U,\varphi)$ (where $\varphi(u) = \big(x^1(u), \ldots, x^n(u); y^1(u),\ldots, y^n(u) \big)$) such that:
+					\begin{itemize}
+						\item $\varphi(m) =0$
+						\item	$\omega \big\vert_U = \sum_{i=1}^n dx^i \wedge dy^i$
+					\end{itemize}
+		\end{thesis}
 	\end{theorem}
-	
+	\begin{proof}
+		See Theorem 3.2.2 \cite{Abraham1978}
+	\end{proof}		
+		
 	\paragraph{Classical Observables}
-		Observables in classical mechanics are represented by real valued smooth function on $\Phase$
+		Observables in classical mechanics are represented by real valued smooth function on $\Phase$:
 	\begin{notationfix}
 		The \emph{Classical Observables} space is denoted as:
 		\begin{displaymath}
@@ -432,38 +452,92 @@
 	\begin{observation}
 		Trivially, the space  $C^\infty(\Phase,\Real)$ of smooth real valued function on $\Phase$,  inherits the structure of commutive algebra over $\Real$ from its codomain $\Real$.
 	\end{observation}
-	The symplectic structure on $\Phase$ give rise to an alternative algebraic structure on the vector space of observables.
+	The symplectic structure on $\Phase$ give rise to a second algebraic structure on the vector space of observables.
 	At first it is necessary to introduce the Hamiltonian fields:
-	\begin{definition}[Hamiltonian field]
-	3.3.1 fomm
+	\begin{definition}[Hamiltonian field with energy function $H\in \Obs$]
+		Is the vector field $\mathbf{X}_H$ determined by the condition:
+		\begin{displaymath}
+			\omega( \mathbf{X}_H,  \cdot )\equiv dH (\cdot)
+		\end{displaymath}
 	\end{definition}
-	from that follows the definition of the bracket:
+	Nondegeneracy of $\omega$ guarantees that $\mathbf{X}_H$ exists for all classical observables $H\in \Obs$.
+	From that follows the definition of the bracket:
 	\begin{definition}[Poisson Bracket]
-	3.3.11 fomm
+		Is the bilinear function 	$\{\cdot, \cdot\} : \Obs \times \Obs \rightarrow \Obs$ such that:
+		\begin{equation}
+			\{ f, g \} \coloneqq \omega \big( \mathbf{X}_f , \mathbf{X}_g \big) = df ( \mathbf{X}_g)
+		\end{equation}
 	\end{definition}	
 	
+	In the canonical coordinates, provided  by  Darboux's theorem,  Poisson bracket assumes there typical expression:
 	\begin{proposition}[Symplectic char representation]
-	3.3.14 fomm
+	
+	In canonical coordinates  $(q^1, \ldots, q^; p_1, \ldots, p_n)$ we have:
+	\begin{equation}
+		\{f,g\} = \sum_{i=1}^n \biggr(\frac{\partial f}{\partial q^i} \frac{\partial g}{\partial p_i}  - \frac{\partial f}{\partial p_i} \frac{\partial g}{\partial q^i} \biggr) \qquad \forall f,g \in \Obs
+	\end{equation}
 	\end{proposition}
+	\begin{proof}
+			See Corollary 3.3.14 \cite{Abraham1978}.
+	\end{proof}
 
+	\paragraph{Solution Space}
+	In this framework the Hamilton's equations of motions can be stated in term of the Hamiltonian Fields:
+				\begin{quotation}
+				\textbf{Hamilton dynamics principle}
+				The dynamically possible motions of the Hamiltonian system $(\Phase,H)$ corresponds to the \emph{ integral curves}\cite{Abraham1978} of the hamiltonian vector field $X_H \in \Gamma(T\Phase)$
+			\end{quotation}
+		Follows immediately that the specification of a point is appropriate initial data for determining a solution of Hamilton's equations of motion, i.e. each point $y\in \Phase$  give rise to a unique solution of the dynamical evolution.
+		Therefore:
+		\begin{displaymath}
+			\Phase \cong \Data \cong \Sol
+		\end{displaymath}
 	
 	\subsection{Linear dynamical systems}	
 		
-	Most of the physical systems that are encountered in the theory of fields are linear.
-	 da qui si va su Wald
+	Most of the physical systems that are encountered in the theory of fields are linear.	
+	Of course is possible to come across linear dynamical systems also in ordinary mechanics. 
+		\begin{remark}
+			\textbf{Linear Hamiltonian System}
+			\begin{itemize}
+				\item $\Phase$ has a natural structure of vector space.
+				\item	$H$ is a quadratic function on $\Phase$.\footnote{Equations of motion are then linear on the affine canonical coordinates. Dynamics is thus simply a collection of coupled harmonic oscillators.}
+			\end{itemize}
+		\end{remark}
+
+	In this case the the difference between the underlying geometric entities tend to fade out as a consequence of the flatness of the configuration space.
 	
-	Of course is possible to come across linear systems even in ordinary mechanics. 
-	In that case the the difference between the underlying geometric entities tend to fade out as a consequence of the flatness of the configuration space.
+	The key consequence of the vector structure of $\Phase$  is that it allows us to identify the tangent space at any point $y \in \Phase$ with the Phase space $\Phase$ itself.
+	Under this identification, the symplectic form became a bilinear function $\Omega: \Phase \times \Phase \rightarrow \Real$ on $\Phase$, i.e. It can be seen as acting directly on the points of the phase space rather than on tangent vectors.
+	In this way, the phase space of a linear dynamical system, may be viewed simply as a \emph{symplectic vector space} $(\Phase, \Omega)$.
 	
-	\begin{Warning}
-	Da riempire: devo dire che 
-	\begin{itemize}
-		\item Q è piatto
-		\item TQ è fibrato vettoriale
-		\item Q si identifica con il tangente quindi la forma simplettica è definita direttamente sulle configurazioni
-		\item ecc vedere primo capitolo wald
-	\end{itemize}
-	\end{Warning}
+	Due to the identification of the phase space and the solution space, follow that the symplectic structure $\Omega$ is directly transferred from $\Phase$ to $\Sol$. This symplectic vector space structure $( \Sol	, \Omega)$ of the manifold of solutions for a linear dynamical system is the fundamental classical structure that underlies the construction of the \emph{Inital Data} quantization procedure.
+	
+	In light of the linear structure the \emph{Linear Observables} take a primary role:
+	\begin{displaymath}
+		\Obs_{\textrm{lin}} = \Phase^*
+	\end{displaymath}
+	this set is a vector space and every choice of linear canonical coordinate $\psi^\alpha = (q^a, p^b)$ on $\Phase$ constitutes a  basis on $\Obs_{\textrm{lin}} $:
+	\begin{displaymath}
+		T\Phase \simeq \Phase \; \Rightarrow \; d\psi^\alpha \equiv \psi^\alpha
+	\end{displaymath}
+	$\Phase_{\textrm{lin}}$ forms a Poisson subalgebra.
+	Moreover, the presence of the bilinear form provide the usual identification $\Phase \simeq \Phase^*$ and therefore the simplectic form on $\Phase$ can directly reproduced on $\Phase_{\textrm{lin}} $:
+	\begin{displaymath}
+		\{ \Omega(y_1, \cdot),\Omega(y_2, \cdot)\} = - \Omega(y_1, y_2) \qquad \forall y_i \in \Phase \Rightarrow \Omega(y_1, \cdot) \in \Obs_\textrm{lin}
+	\end{displaymath}
+
+	
+	
+	
+	\begin{TAM}
+			In summary the essential aspects that characterize the geometry of linear systems are the following:
+		\begin{itemize}
+			\item The symplectic form of $\Phase$ is directly defined on the points of the Phase space.
+			\item Since the points of the phase space can be put in correspondence with the solutions (can be considered as the \emph{inital data} ) the symplectic form is directly transported to $\Sol$.
+			\item The same simplectic structure can be reproduced on the space $\Obs_\textrm{lin}$ and coincides with the reduction of the Poisson bracket to this subspace.
+			\end{itemize}
+	\end{TAM}
 
 
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
@@ -717,12 +791,7 @@
 	\subsubsection{Example: Finite Dimensional Case} 
 		As an example of such process we can consider a \emph{field of curves} i.e. an ordinary classical mechanical system in the field theoretic picture.
 		We have shown in section \ref{MechanicsAsAField} that such systems are generally non linear: the configuration bundle is not a vector one and then linearity of $P$ cannot be defined .
-	 	\begin{figure}[h!]\label{GraphicAdvRetSol}
-				  \centering
-   			\includegraphics[width=0.5\textwidth]{./Pictures/AdvRetSol} 
-   	  		\caption{Picture of the perturbed solution in case of a finite dimensional system.}
-		\end{figure}			
-		
+			
 		However the base manifold is very simple. Indeed $M= \Real$ can be seen as a trivial globally-hyperbolic space-time where every real scalar $t\in M$ is a Cauchy surface.
 		This allows us to specify the above equations in a more intuitive way:
 		\begin{itemize}
@@ -731,5 +800,17 @@
 			\item the variation $\eta^\pm$ is then the field over the unperturbed curve whose components compute the separation between $\gamma_0$ an $\gamma_{\chi}^{\pm} $
 		\end{itemize}
 	
+				\begin{minipage}{\linewidth}% to keep image and caption on one page
+			
+			\makebox[\linewidth]{%        to center the image
+			\includegraphics[width=0.5\textwidth]{./Pictures/AdvRetSol}}
+  			%\includegraphics[keepaspectratio=true,scale=0.6]{slike/visina8}}
+			\captionof{figure}{Picture of the perturbed solution in case of a finite dimensional system.}\label{GraphicAdvRetSol}%      only if needed  
+			
+			\end{minipage}
+	 
+	% Debug	
+	\bibliography{bibliography}
+	\bibliographystyle{plain}	 	
 	 	
 \end{document}

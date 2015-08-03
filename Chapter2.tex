@@ -374,7 +374,7 @@
 		
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 %\newpage
-	\section{Geometric mechanics of Finite Degree systems}
+	\section{Hamiltonian of Finite Degree systems}
 		The picture of the systems with discrete degrees of freedom as a field brings out only a part of the typical mathematical ingredients proper of the \emph{Geometric} approach to the classical mechanics
 
 		\begin{figure}[h!]
@@ -397,14 +397,61 @@
 	We will not expand this topic since the protagonist of this paper is essentially a single-particle system.
 	
 	However in the next chapter we will need to realize a field-theoretic versions of some Canonical objects.
-	Let's review their finite dimensional version.
+	Let's briefly review their finite dimensional version.
 	
-			\subfile{DefinitionBulk4}
+			\paragraph{Phase Space}
+		We recalled in chapter 1 the definition of \emph{Phase Space} in ordinary classical mechanics as the cotangent bundle $T^*Q$ of the classical configuration space $Q$.
+		We showed that every classical phase space is symplectic trough the natural Poincarè form.
+		However, every quantization procedure require a modification of this standard symplectic form in order to implement the canonical commutation rules.
+	
+	This leads us to the abstract formulation for the Hamiltonian systems\cite{Abraham1978}:
+	
+	\begin{definition}[Hamiltonian System]
+	 $(\mathcal{M},\omega, H)$ 3.3.1 fomm
+	\end{definition}
+	
+	\begin{observation}
+		In classical mechanics Hamiltonian systems could be seen as a subset of Lagrangian systems.
+		\\
+		The key is the definition of the Legendre Map $TL: TQ \rightarrow T^*Q$. 
+		Only in the case that the Lagrangian$L$  is \emph{hyperegular}, i.e. $TL$ is a diffeomorphism, is possible to push-forward $L$ to give a proper Hamiltonian on $\Phase=T^*Q$. (see for example \cite{Abraham1978}		
+	\end{observation}	
+	Remember that there's an important theorem attributed to Darboux that state that, at least locally, every symplectic form can be coordinated as the ...canonical coordinate
+	\begin{theorem}[Darboux]
+	3.2.2 fomm
+	\end{theorem}
+	
+	\paragraph{Classical Observables}
+		Observables in classical mechanics are represented by real valued smooth function on $\Phase$
+	\begin{notationfix}
+		The \emph{Classical Observables} space is denoted as:
+		\begin{displaymath}
+			\Obs \equiv		C^\infty(\Phase,\Real)
+		\end{displaymath}
+	\end{notationfix}
+	\begin{observation}
+		Trivially, the space  $C^\infty(\Phase,\Real)$ of smooth real valued function on $\Phase$,  inherits the structure of commutive algebra over $\Real$ from its codomain $\Real$.
+	\end{observation}
+	The symplectic structure on $\Phase$ give rise to an alternative algebraic structure on the vector space of observables.
+	At first it is necessary to introduce the Hamiltonian fields:
+	\begin{definition}[Hamiltonian field]
+	3.3.1 fomm
+	\end{definition}
+	from that follows the definition of the bracket:
+	\begin{definition}[Poisson Bracket]
+	3.3.11 fomm
+	\end{definition}	
+	
+	\begin{proposition}[Symplectic char representation]
+	3.3.14 fomm
+	\end{proposition}
 
 	
 	\subsection{Linear dynamical systems}	
 		
 	Most of the physical systems that are encountered in the theory of fields are linear.
+	 da qui si va su Wald
+	
 	Of course is possible to come across linear systems even in ordinary mechanics. 
 	In that case the the difference between the underlying geometric entities tend to fade out as a consequence of the flatness of the configuration space.
 	
@@ -505,8 +552,7 @@
 		\begin{displaymath}
 			\big[Q_\chi \big]( \phi(x) + \epsilon \eta(x)\big)= \big[Q_\chi \big]( \phi(x)) + \epsilon \big[Q_\chi^{lin}(\phi)  \big]( \eta(x)) + o(eta)
 		\end{displaymath}
-		which can be seen as the first term of a \emph{formal} Taylor expansion of operator $Q_\chi$ around $\phi$.
-		\danger\footnote{If $\Conf$ is a Frechet manifold the expansion could be made rigorous defining $\big[Q_\chi^{lin}(\phi_0)  \big] = \big[\dfrac{\partial Q_\chi}{\partial \phi} (\phi_0)\big] $ in term of the Gateux derivative.}
+		which can be seen as the first term of a \emph{formal} Taylor expansion of operator $Q_\chi$ around $\phi$\footnote{If $\Conf$ is a Frechet manifold the expansion could be stated rigorous defining $\big[Q_\chi^{lin}(\phi_0) . \big] = \big[\dfrac{\partial Q_\chi}{\partial \phi} (\phi_0)\big] $ in term of the Gateux derivative.}
 		This is reflected in a condition on the perturbation $\eta \in \Conf_{tc}$:
 		\begin{displaymath}
 			\big[P_\epsilon\big] \phi'(x) =  \epsilon \biggr( \big[P\big] \eta(x) + \big[Q_\chi \phi(x) \big]\biggr)+ \epsilon^2 \big[Q_\chi^{lin}(\phi)  \big]	\eta(x) \mbeq o(\epsilon)
@@ -564,7 +610,7 @@
 			
    		
 		\subsubsection{Effect Operator}
-		Considering an arbitrary continuous \danger\footnote{The precise notion of continuity require the specification of the infinite dimensional manifold structure.} functional $B: \Sol \rightarrow \Real$ (not necessarily linear) we can define the effect of a perturbation on the values of $B$\cite[pag. 5]{Marolf1993} as a map:
+		Considering an arbitrary continuous\footnote{The precise notion of continuity require the specification of a (infinite dimensional) manifold structure on $\Conf$.} functional $B: \Sol \rightarrow \Real$ (not necessarily linear) we can define the effect of a perturbation on the values of $B$\cite[pag. 5]{Marolf1993} as a map:
 		\begin{displaymath}
 			\mathbf{E}^\pm_\chi : C^1(\Sol,\Real) \rightarrow C^1(\Sol,\Real)
 		\end{displaymath}
@@ -631,7 +677,7 @@
 		\begin{displaymath}
 			\big[ P_\epsilon \big] \gamma_\epsilon^{\,i} = o(\epsilon)
 		\end{displaymath}
-		where $\big[ P_\epsilon \big] $ has to be intended as the coordinate representation of the restriction on the local section $\Gamma^\infty(A)$.\danger\footnote{non mi è evidente se la rappresentazione in coordinate di un operatore agente sulle sezioni si realizza in modo ovvio, ma non vedo nemmeno ostruzioni! Di sicuro l'operazione è ben definita per gli L.P.D.O visto che la definizione prevede proprio che su ogni carta locale trivilizzante l'operatore sia lineare alle derivate parziali }
+		where $\big[ P_\epsilon \big] $ has to be intended as the coordinate representation of the operator with restricted domain to the local sections $\Gamma^\infty(A)$.
 		\begin{observation}
 		W.l.o.g has been taken the the same scalar $\epsilon$  to modulate both the perturbation $\gamma_\epsilon$ that the disturbance on the motion operator.
 		On the contrary consider two different parameter is immaterial since only the smaller should be taken in account.

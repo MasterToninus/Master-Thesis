@@ -1,0 +1,85 @@
+\usepackage{glossaries}
+
+\makenoidxglossaries
+
+%How to:
+%affinchè la voce venga printata nella lista va prima chiamata nel testo come e.g. \gls{Bundle}
+%ricordarsi di chiamarlo almeno una volta così, dopo usare il command per evitare il ripetuto hyperref
+% anche se si potrebbe evitare visto che il quadratino del link non dovrebbe apparire in stampa
+
+%Advanced Differential Geometry
+\newglossaryentry{Bundle}%
+{%
+	name={\ensuremath{E = (E,\pi , M;Q)}},
+	description={ Fiber Bundles $\pi: E\rightarrow M$ with typical fiber $Q$},
+    sort={B}
+}
+
+\newglossaryentry{Sections}%
+{%
+	name={\ensuremath{\Gamma^\infty(E)}},
+	description={ Smooth sections on the bundle $E$.},
+    sort={S}
+}
+
+
+%Geometric Lagrangian Mechanics
+	% Kinematic Configurations
+	\newglossaryentry{Conf}%
+	{%
+		name={\ensuremath{\Conf}},
+		description={ Kinematic Configurations set}
+	}
+
+	%Solutions Space
+	\newglossaryentry{Sol}%
+	{%
+		name={\ensuremath{\Sol}},
+		description={ Dynamic Configurations set}
+	}
+
+		
+	%Lagrangian class
+		\newglossaryentry{Lag}%
+	{%
+		name={\ensuremath{\Lag}},
+		description={ Set of Lagrangian densities.}
+	}
+		
+	%Lagrangiana
+	\newglossaryentry{Lagrangian}%
+	{%
+		name={\ensuremath{\Lagrangian}},
+		description={ Lagriangian density of the system.}
+	}
+		
+	%Data
+	\newglossaryentry{Data}%
+	{%
+		name={\ensuremath{\Data}},
+		description={ Inital Data set.}
+	}
+		
+	%unique solution map
+	\newglossaryentry{SolMap}%
+	{%
+		name={\ensuremath{\SolMap}},
+		description={ Map that map a fixed initial data to the unique solution.}
+	}
+		
+	%Classical Observables
+	\newglossaryentry{Obs}%
+	{%
+		name={\ensuremath{\Obs}},
+		description={ Set of all classical observables.}
+	}
+
+	%Phase Space
+	%Classical Observables
+	\newglossaryentry{Phase}%
+	{%
+		name={\ensuremath{\Phase}},
+		description={ Phase space.}
+	}
+
+

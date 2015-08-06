@@ -138,26 +138,154 @@
 			\end{notationfix}
 			
 			\begin{observation}
-				\gls{Sections} is an infinite dimensional manifolds.	
+				In general, \gls{Sections} is an infinite dimensional manifolds. In case of vector bundle is also a linear space, and the section are called "vector fields".
 			\end{observation}
-			If $E$ is a vector bundle \gls{Sections} is an infinite dimensional vector space, therefore we can introduce the  on a base:
+			
 			
 		\subsection{Mapping between Bundles}
 			%Bundle morphism
-			
-			%mor bundle
-			
+			Consider two smooth bundles $E=(E,\pi,M; Q)$ and $E'=(E',\pi',M; Q')$ on the same base space $M$.
+			\begin{definition}[Bundle map (\emph{Fiber Preserving map})]\label{Def:BundleMap}
+				Smooth function $\phi: E \rightarrow E'$ such that:			
+			 	\begin{displaymath}
+			 		\phi(E_{x})= F_{x} \qquad \forall x \in M.
+			 	\end{displaymath}
+				i.e.:
+				\begin{tikzpicture}
+					 \matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em] {
+						E & & F \\
+       					& M & \\};
+					\path[-stealth]
+    					(m-1-1) edge node [left] {$\pi_{E}$} (m-2-2)
+   		         		edge [right] node [above] {$\phi$} (m-1-3)
+    					(m-1-3) edge node [right] {$\pi_{F}$} (m-2-2);
+				\end{tikzpicture}
+			\end{definition}
+			\begin{observation}
+				Definition \ref{Def:BundleMap} is a special case of \emph{Bundle-morphism}. (see for example \cite{G.Sardanashvily2013})
+			\end{observation}
+
 			%pullback bundle
-			
-					
-					
+			Consider a smooth manifold $N$, a (smooth) fiber bundle $E=(E,\pi,M;Q)$, and a smooth function $f: N \rightarrow M$. It's possible to induce\cite{Husemoller} a bundle structure from the manifold $M$ to $N$:
+			\begin{definition}[Pull-Back Bundle]
+				3-ple $f^* (E) = (f^* (E) =, \pi^*,N)$ such that:
+				\begin{itemize}
+					\item $f^* (E) =  \big\{ (b',e) \in N \times E \quad \big\vert \; f(b') = \pi(e) \big\} $
+					\item $\pi^*:f^* (E) \rightarrow N $ such that $ \pi* (b',e) = \textrm{pr}_1 (b',e)= b' $
+				\end{itemize}
+				\begin{tikzpicture}
+					\matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em] {
+						f^* E & E \\
+						N & M \\};
+						\path[-stealth]
+    						(m-1-1)edge node [left] {$\pi'$} (m-2-1)
+    						(m-1-2) edge node [right] {$\pi$} (m-2-2)
+    						(m-2-1) edge [right] node [above] {$f$} (m-2-2);
+				\end{tikzpicture}
+			\end{definition}
+			\begin{proposition}
+				$f^* (E) = (f^* (E) =, \pi^*,N)$ consitute a fiber bundle of typical fiber Q.
+			\end{proposition}
+			\begin{proof}
+				To complete the fiber bundle structure is sufficient to provide a local trivialization atlas.
+				\\
+				$\forall ( U, \phi)$ local trivialization on $(E, \pi, M)$  consider $\psi: f^* E \rightarrow N \times Q$ such that $\psi( b',e) = \bigg( b', pr_2 \big( \phi(e)\big)\bigg)$.
+				\\
+				Then $(f^{-1}(U),\psi)$ is a local trivialization of the pull-back bundle and the fiber of $f^*E$ over a point $b′\in B'$  is just the fiber of E over $f(b′)$.
+			\end{proof}
 
 			
-			
+			%mor bundle
+			It is also noteworthy that, given any two vector bundles $E =(E\pi,M,Q)$ and $E =(E'\pi,M',Q')$, we can construct 	naturally a third fiber bundle.
+			Consider $\hom(E,E')$ the set of all the fiber preserving map between the two bundles:
+			\begin{definition}[Bundle of morphisms]
+				Fiber bundle $\hom(E,E')$ over the base space $M$ such that the fiber over a base point $p\in M$ is the infinite dimensional manifold $\hom(E_p,E'_p)$ isomorphic to $\hom(Q,Q')$.
+			\end{definition}
+			\begin{notationfix}
+				We shall write $End(E)$ for $\hom(E,E)$ and call it bundle of endomorphism, whose typical fiber is $\textrm{End}(Q)$.
+			\end{notationfix}
+			\begin{remark}
+				If $F,F'$ are vector bundle then the fiber of  $\hom(F,F')$ over a base point $p\in M$ is $\hom(F_p,F'_p)$, which is a vector space isomorphic to the vector space $\hom(V,V')$ of linear applications from $V$ to $V'$
+			\end{remark}
+	
 		\subsection{Tangent Bundles}
+			The \emph{tangent} bundle is a natural structure defined on any smooth manifold, represent the canonical example of  non-trivial vector bundle.
+						
+			\begin{definition}[Tangent Bundle]
+				The smooth vector bundle $TM=(TM,\tau,M;\Real^m)$ such that:
+				\begin{itemize}
+					\item The total space is the union of all tangent spaces to 
+						$$M: TM \coloneqq \underset{p \in M}{\sqcup} T_pM  \equiv \bigcup_{x\in M} {x}\times T_x M$$
+					\item The bundle projection maps each tangent vector $v\in  T_pM$ to the correspondent base point  $p$;
+						$$\tau : (p,v_p) \mapsto p $$
+				\end{itemize}
+			\end{definition}			
+			
+			\begin{observation}
+				In a similar fashion it's possible to construct a vector bundle relatively to any tensor product of the tangent spaces.
+				i.e.:
+				\begin{itemize}
+					\item \emph{Cotangent Bundle} $T^*M$ is build by disjoint union of the dual tangent space: 
+					$$T_p^*M \; \forall p\in M$$
+					\item \emph{Tensor Bundle} $T^{(k,l)}M$ is build by disjoint union of the tensor product of tangent space with itself:
+					\begin{displaymath}
+						T^{(k,l)}_ p M = \underbrace{T^*_pM \otimes \cdots \otimes T^*_pM}_{\textrm{k-times}} \otimes
+						\underbrace{T_pM \otimes \cdots \otimes T_pM}_{\textrm{l-times}}
+					\end{displaymath}
+					\item \emph{k-forms Bundle} $ \bigwedge^m( T^*M)$ is build by disjoint union of the antisimmetrized tensor product of the dual tangent space with itself.
+				\end{itemize}
+			\end{observation}
+			
+			
 			\subsubsection{Tautological one-form and simplectic form.}
-				Fomm: As a mathematical curiosity, we note that the cotangent bundle of any
-manifold is orientable. Indeed, it carries a symplectic structure and hence a volume element.			
+					\begin{notationfix}
+						In the context of Classical mechanics is customary to refer to the cotangent bundle $T^*Q$ over the smooth manifold  $Q $ - called \emph{Configuration Space}  - as \emph{Phase Space}.
+					\end{notationfix}
+					Since $TQ$ and $T^*Q$ are diffeomorphic , it might seem that there is no particular reason in treating this two spaces separately, but it is not so.
+					There are certain geometrical objects that live naturally on $T^*Q$ , not on $TQ$.\\
+					Of greatest interest in mathematical-physics are the Poincarè forms\cite{Fraenkel}.
+	
+					Consider a smooth manifold $Q$ and call $\Phase=T^*Q$ the corresponding cotangent bundle.
+					\begin{definition}[Tautological (Poincarè) 1-form]
+						Is the 1-form over $\Phase$:
+						\begin{displaymath}
+							\theta_0 \in \Gamma^\infty (T^*\Phase)
+						\end{displaymath}
+					such that the action on a generic point $ \omega_{\alpha_p} \in T_{\alpha_p}M$ ( in the fiber of $\alpha_p$, which in turn is a one-form on the fiber of $p\in Q$) is given by:
+						\begin{displaymath}
+						\theta_0 \big(\alpha_p \big): T_{\alpha_p}\Phase \rightarrow \Real \qquad : \; \omega_{\alpha_p} \mapsto \alpha_q \circ T \tau^*_Q \big( \omega_{\alpha_p} \big)
+						\end{displaymath}
+					\end{definition}
+					\begin{figure}[h!]
+   						\includegraphics[width=0.5\textwidth]{Pictures/Tautological1Form} 
+ 						\caption{The definition of tautological 1-form is achieved exploiting the concept of \emph{Tangent map} and remembering that $\alpha_p: T_p \Phase \rightarrow \Phase$ is a linear functional.} 
+  						\centering
+					\end{figure}	
+	
+					\begin{notationfix}
+						Canonical coordinates are defined as a special set of coordinates on the cotangent bundle of a manifold. 
+						They are usually written as a set of $(q^i,p_j)$ where ${q_i}$ are denoting the coordinates on the underlying manifold and the ${p_j}$ are denoting the conjugate momentum, which are decomposition of 1-forms in $T_p^*M$ on the dual natural basis $d q^J$ in the cotangent bundle at point $q$ in the manifold.
+					\end{notationfix}
+	
+					\begin{observation}
+						In canonical coordinate the tautological one-form assumes the famous expression:
+						\begin{displaymath}
+							\theta_0 = \sum_{i=1}^n {p_i} d q^i
+						\end{displaymath}
+						(note that $d q^i$ is a 1-form on $T^*M$ calculated with respect to the coordinate on the bundle. Has not to be confused with the 1-natural form $d q^i \in T^*_p M$.)
+					\end{observation}
+	
+					The claim is proved by the following definition:
+					\begin{definition}[Canonical (Poincarè)  symplectic form]
+						Symplectic form:
+						\begin{displaymath}
+							\omega_0 \coloneqq -d \theta_0
+						\end{displaymath}
+						In canonical coordinates assumes the famous expression:
+						\begin{displaymath}
+							\omega_0 \coloneqq \sum_{i=1}^n  d q^i \wedge d p_i
+						\end{displaymath}
+					\end{definition}
 					
 		\subsection{Jet Bundles}
 			$\Obj (A)$			

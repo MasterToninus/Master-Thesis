@@ -27,11 +27,11 @@
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 	\section{Fiber Bundles}
-		\danger intro
+		\emph{Fiber bundles} are the building block of any classical and quantum field theory.
+		Its main role is to encode the kinematic configuration of an arbitrary field theory through the concept of \emph{sections}.
 		
 		\subsection{Formal Definition}
 			Although it would be possible to present the concept \emph{bundle} in a more general way through the language of categories, for our argument will be sufficient to consider only the case of \emph{smooth bundles}.
-
 			\begin{definition}[Fiber Bundle]\label{Def:SmoothBundle}
 				A \emph{Fiber Bundle} consists in a 4-ple $(E,M,Q,\pi)$ where:
 				\begin{itemize}
@@ -116,7 +116,7 @@
 			\end{definition}
 
 		\subsection{Cross Sections}
-			The notion of bundle is particularly interesting from the perspective of physics because provides the rigorous description of a $Q-$valued field over the space $M$:			
+			Sections represent the natural mathematical object to associate to the physical idea of a $Q-$valued classical field over the space $M$:			
 			\begin{definition}[Smooth Section]
 				Function $\phi : M \rightarrow E$ such that:
 					\begin{itemize}
@@ -346,63 +346,141 @@ We define an equivalence relation between such section \emph{up to r-th order}:
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 	\section{Globally Hyperbolic Space-times}
-			\begin{Warning}
-				Mettere solo le definizioni che uso prese dagli articoli di review delle Fonti
-			\end{Warning}	
-			Appunti che mi ero preso scrivendo il secono capitolo:
-					
-			This condition is strictly connected to the dynamic behaviour of the system.
+		Rigorously speaking, configurations of a field system are encoded by sections based on a \emph{spacetime} manifold.
+		From a physical point of view, we are interested in those spacetimes which allow to set a well-posed initial value problem for hyperbolic partial differential equations, such as the wave equation.
+		 In particular we need to ensure that the spacetime we consider possesses at least one distinguished codimension 1 hypersurface on which we can assign the initial data needed to construct a solution of such an equation.
+	 	\\
+	 	For this purpose we've to  introduce the \emph{globally hyperbolic spacetimes}.
+
+		\subsection{Reprise in Lorentzian Geometry}
+			Consider a diffential manifold $M$.
 			
-			\begin{Warning}
-			Def di dominio di dipendendenza
-			footnote di definizione di spazio tempo
-			def cauchy surface
-			Remark causal future past
-			def globally hyperbolic
-			Teorema sulle caratterizzazioni
-			\end{Warning}			
+			\begin{definition}[(Pseudo-Riemmanian) Metric]
+				A function on the bundle product of $TM$ with itself: 
+				$$g: TM \times_M TM \rightarrow \Real$$ 
+				such that the restriction on each fiber $$g_p: T_pM \times T_pM \rightarrow \Real $$ is a non-degenerate bilinear form.
+			\end{definition}
 			
+			\begin{definition}[Pseudo-Riemmanian Manifold]
+				A pair $(M, g)$ such that:
+				\begin{itemize}
+					\item $M$ is a n-dimensional $(n\geq2)$, Hausdorff, second countable, connected, orientable smooth manifold.
+					\item $g$ is a Lorentzian metric.
+				\end{itemize}
+			\end{definition}
+			
+			\begin{notationfix}
+				A Pseudo-riemmanian manifold $(M,g)$ is called:
+				 \begin{itemize}
+				 	\item \emph{Riemmanian} if the sign of $g$ is positive definite.%, \emph{Pseudo-Riemman} otherwise.
+				 	\item \emph{Lorentzian} if the signature is $(+, -, \ldots,- )$ or equivalently $(-,+,\ldots,+)$.
+				 \end{itemize}
+			\end{notationfix}
+		
+		\subsection{Time Orientation}
+			If a smooth manifold is endowed with a Lorentzian metric, then the tangent vectors at each point in the manifold can be classed into three different types. 
+			\begin{notationfix}
+				$\forall p \in M, \quad \forall X \in T_pM$, the vector is:
+				\begin{itemize}
+					\item \emph{time-like} if $g(X,X)>0$.
+					\item \emph{light-like} if $g(X,X)=0$.
+					\item \emph{space-like} if $g(X,X)<0$.
+				\end{itemize}
+			\end{notationfix}
+		
+			\begin{observation}[Local Time Orientability]
+				$\forall p\in M$ the timelike tangent vectors in $p$ can be divided into two equivalence classes taking
+				\begin{displaymath}
+					X \sim Y \; \textrm{iff} \; g(X,Y)>0 \qquad \forall X,Y \in T^\textrm{time-like}_pM:
+				\end{displaymath}
+				We can (arbitrarily) call one of these equivalence classes "future-directed" and call the other "past-directed". Physically this designation of the two classes of future- and past-directed timelike vectors corresponds to a choice of an arrow of time at the point.
+				\\
+				The future- and past-directed designations can be extended to null vectors at a point by continuity.
+			\end{observation}
+	
+			\begin{definition}[Time-orientation]
+				A global tangent vector field  $\mathfrak{t}\in \Gamma^\infty(TM)$ over the Lorenzian manifold $M$ such that:
+				\begin{itemize}
+					\item $\supp(\mathfrak{t}) = M$
+					\item $\mathfrak{t}(p)$ is time-like $\forall p \in M$.
+				\end{itemize}
+			\end{definition}
+			\begin{observation}
+				The fixing of a time-orientation is equivalent to a consistent smooth choice of a local time-direction.
+			\end{observation}	
+	
+			\begin{definition}[Space-Time]
+				A quadruple $(M, g, \mathfrak{o}, \mathfrak{t})$ such that:
+				\begin{itemize}
+					\item $(M,g)$ is a time-orientable\footnote{Manifold for which such \emph{time-orientation} exists.} n-dimensional manifold $(n>2)$
+					\item $\mathfrak{o}$ is a choice of orientation
+					\item $\mathfrak{t}$ is a choice of time-orientation
+				\end{itemize}
+			\end{definition}	
+		
+			In a spacetime $M$ is quite important to identify particular classes of subsets. The main tool are the \emph{parametrized curves}:
+			\begin{notationfix}
+				Consider a piece-wise smooth curve $\gamma: \Real\supset I \rightarrow M$ is called:
+				\begin{itemize}
+					\item \emph{time-like} (resp. light-like, space-like) iff $\dot{\gamma}(p)$ is time-like (resp. light-like, space-like) $\forall p \in M$.
+					\item \emph{causal} iff $\dot{\gamma}(p)$ is nowhere spacelike.
+					\item \emph{future directed} (resp. past directed) iff is causal and  $\dot{\gamma}(p)$ is future (resp. past) directed $\forall p \in M$.
+				\end{itemize}
+			\end{notationfix}
+
+			\begin{definition}[Chronological $\substack{\textrm{ future}\\ \textrm{past } }$ of a point]
+				Are two subset related to the generic point $p	\in M$:
+				\begin{displaymath}
+					\mathbf{I}_M^\pm(p) \coloneqq \big\{ q \in M \big\vert \; \exists \gamma \in C^\infty\big((0,1), M\big)\;  \textrm{\footnotesize time-like } \substack{\textrm{future}\\ \textrm{past} } -\textrm{\footnotesize directed }:\; \gamma(0)=p,\; \gamma(1)=q  \big\}
+				\end{displaymath}
+			\end{definition}
+	
+			\begin{definition}[Causal $\substack{\textrm{ future}\\ \textrm{past } } $ of a point]
+				Are two subset related to the generic point $p	\in M$:
+				\begin{displaymath}
+					\mathbf{J}_M^\pm(p) \coloneqq \big\{ q \in M \big\vert \; \exists \gamma \in C^\infty\big((0,1), M\big)\; \textrm{\footnotesize causal } \substack{\textrm{future}\\ \textrm{past} } -\textrm{\footnotesize directed }:
+					\; \gamma(0)=p,\; \gamma(1)=q  \big\}
+				\end{displaymath}		
+			\end{definition}
+
+			\begin{notationfix}
+				Theese concepts can be naturally extended to any subset $A \subset M$:
+				\begin{itemize}
+					\item $\mathbf{I}_M^\pm(A) = \bigcup_{p\in A} \mathbf{I}_M^\pm(p) $
+					\item $\mathbf{J}_M^\pm(A) = \bigcup_{p\in A} \mathbf{J}_M^\pm(p) $
+				\end{itemize}
+			\end{notationfix}
+
+			\begin{definition}[Achronal Set]
+				Subset $\Sigma \subset M$ such that every inextensible timelike curve intersect $\Sigma$ at most once.
+			\end{definition}
+
+			\begin{definition}[$\substack{\textrm{ future}\\ \textrm{past } } $ Domain of dependence of an Achronal set]
+				The two subset related to the generic achornal set $\Sigma \subset M$:
+				\begin{displaymath}		
+					\mathbf{D}_M^\pm(\Sigma) \coloneqq \big\{ q \in M \big\vert \; \forall \gamma \substack{\textrm{ past}\\ \textrm{ future} }\textrm{\footnotesize inextensible causal curve passing through }q : \; \gamma(I) \cap \Sigma \neq \emptyset  \big\}
+				\end{displaymath}		
+			\end{definition}
+
+			\begin{notationfix}
+				$\mathbf{D}_M(\Sigma)  \coloneq \mathbf{D}_M^+(\Sigma) \cup \mathbf{D}_M^-(\Sigma)$ is called \emph{total domain of dependence}.
+			\end{notationfix}
+		
+		\subsection{Globally Hyperbolicity}
+			Finally we come to the key concept of our treatment:
+			
+			\begin{definition}[Cauchy Surface]
+				Subset $\Sigma \subset M$ such that:
+				\begin{itemize}
+					\item closed
+					\item achronal
+					\item $\mathbf{D}_M(\Sigma) \equiv M$
+				\end{itemize}
+			\end{definition}
 			\begin{notationfix}
 				We denote the set of all the cauchy surfaces as $\PowerSet_{C}(M)$.
 			\end{notationfix}
 					
-
-		Glon iperbolic determina la fogliazione dello spazio tempo per superfici di cauchy
-		La superficie di cauchy è questa:
-		\begin{definition}[Cauchy surface]
-		\end{definition}		
-		questo da la possibilità della buona posizione dei problemi di cauchy.. fisicamente è la condizione minima per definire i dati iniziali dell'evoluzione dinamica.
-		definisco data...
-						
-		\begin{Warning}
-		Rapporto con la condizione sugli operatori...		
-		
-				
-	No!		La definizione di green hyperbolicity non garantisce invece l'esistenza e unicità del problema di cauchy associata
-		
-		e non solo, anche l'esistenza degli operatori di green associati che sono ingrediente fondamentale della costruzione di peierls
-
-		M è glob iper e P è green iper per tener conto del comporatamento propagativo
-		definire sup cauchy
-		definire s-t iperbolico (solo la caratterizzazione di ammetre una sup di cauchy)
-		definire op green iperbolico su spazio tempo iperbolico (cioè ha delle green ope)
-		Propr di buona definizione esistenza e unicita della soluzione
-		
-		Di particolare ricorrenza fisica sono gli operatori normally iperbolic
-		espressione in coordinate
-		esempio K-g!
-		\end{Warning}						
-		
-		\begin{Warning}
-			Far notare che minkowski e tanti esempi importanti sono GH
-		\end{Warning}
-		
-		\begin{observation}
-		(che serve dopo) lo spazio $R$ è banalmente iperbolico in quanto tutti i punti posso essere visti come superfici di cauchy.
-		\end{observation}
-			
-					\subfile{DefinitionBulk2}		
-
 
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
@@ -424,7 +502,6 @@ We define an equivalence relation between such section \emph{up to r-th order}:
 		
 		
 		
-				\subfile{DefinitionBulk3}
 				
 
 \end{document}

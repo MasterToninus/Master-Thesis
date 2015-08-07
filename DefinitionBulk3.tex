@@ -1,0 +1,60 @@
+\documentclass[Main]{subfiles}
+
+\begin{document}
+	(sono ripetizioni inutili per la tesi, sono informazioni che si ritrovano ovunque... sono informazioni adatta al knowledge base)
+Basic Definition in L.P.D.O. on smooth vector sections.
+\\
+Consider $F=F(M,\pi,V), F'=F'(M,\pi',V')$ two linear vector bundle over $M$ with different typical fiber
+	\begin{definition}[Linear Partial Differential operator \footnotesize( of order at most $s\in \Natural_0$)]
+		Linear map $L:\Gamma(F)\rightarrow \Gamma(F')$ such that:
+		\\
+		$\forall p \in M$ exists:
+		\begin{itemize}
+			\item $(U, \phi)$ local chart on $M$.
+			\item $(U, \chi)$ local trivialization of $F$
+			\item $(U, \chi')$ local trivialization of $F'$
+		\end{itemize}
+		for which:
+		\begin{displaymath}
+			L \big(\sigma \big\vert_U\big) = \sum_{\vert \alpha \vert \leq s} A_\alpha \partial^\alpha \sigma \qquad \forall \sigma \in \Gamma(M)
+		\end{displaymath}
+	\end{definition}
+
+	\begin{remark}
+	(multi-index notation)
+	\\
+	A multi-index is a natural valued finite dimensional vector $\alpha = ( \alpha_0, \ldots, \alpha_n-1) \in \Natural^n_0$ with $n<\infty$.
+	\\
+	On $\Real^n$ a general differential operator can be identified by a multi-index:
+	\begin{displaymath}
+		\partial^\alpha = \prod_{\mu = 0}^{n-1} \partial_\mu ^{\alpha_\mu}
+	\end{displaymath}
+	(Until the Schwartz theorem holds, the order of derivation is irrelevant.)
+	\\
+	The order of the multi-index is defined as:
+	\begin{displaymath}
+		\vert \alpha \vert \coloneqq \sum_{\mu=0}^{n-1} \alpha_\mu
+	\end{displaymath}
+	\end{remark}
+
+	?????????????????????
+	\begin{proposition}[Existence and uniqueness for the Cauchy Problem]
+		\begin{hypothesis}
+			\begin{itemize}
+				\item $\mathbf{M} = (M,g,\mathfrak{o},\mathfrak{t}) $a globally hyperbolic space-time.
+				\item $\Sigma \subset M$ a spacelike cauchy surface with future-pointing unit normal vector field $\vec{n}$.
+				\item 
+			\end{itemize}
+		\end{hypothesis}
+	\begin{thesis}
+
+	\end{thesis}
+	\end{proposition}
+	\begin{observation}
+	"Green-hyperbolic operators are not necessarily hyperbolic in any PDE-sense and that they cannot be characterized in general by well-posedness of a Cauchy problem.	" \cite{Terlaky2010} \cite{Bar2010}
+	\\
+	However the existence and uniqueness can be proved for the large class of the \emph{Normally-Hyperbolic Operators}.
+	
+	\end{observation}
+
+\end{document}

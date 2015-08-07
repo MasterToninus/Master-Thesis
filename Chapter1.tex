@@ -246,7 +246,7 @@
 					Of greatest interest in mathematical-physics are the Poincarè forms\cite{Fraenkel}.
 	
 					Consider a smooth manifold $Q$ and call $\Phase=T^*Q$ the corresponding cotangent bundle.
-					\begin{definition}[Tautological (Poincarè) 1-form]
+					\begin{definition}[Tautological (Poincare) 1-form]
 						Is the 1-form over $\Phase$:
 						\begin{displaymath}
 							\theta_0 \in \Gamma^\infty (T^*\Phase)
@@ -276,7 +276,7 @@
 					\end{observation}
 	
 					The claim is proved by the following definition:
-					\begin{definition}[Canonical (Poincarè)  symplectic form]
+					\begin{definition}[Canonical (Poincare)  symplectic form]
 						Symplectic form:
 						\begin{displaymath}
 							\omega_0 \coloneqq -d \theta_0
@@ -288,23 +288,202 @@
 					\end{definition}
 					
 		\subsection{Jet Bundles}
-			$\Obj (A)$			
-			$\hom(A,B)$
-			$\Mor$
-			$\cod \dom \ran$
+			The jet bundle is a certain construction that makes a new smooth fiber bundle out of a given smooth fiber bundle. 			
+			The first step is to identify the typical fiber for this construction.
+			\\
+			Suppose $M$ is an m-dimensional manifold and that $(E, \pi, M)$ is a fiber bundle.Consider the set of all the local sections whose domain contains $p$:
+			\begin{displaymath}
+				\Gamma^\infty (p) \coloneqq \big\{ \sigma \in \Gamma^\infty(E) \quad \big\vert\:  p \in \dom(\sigma)  \big\}
+			\end{displaymath}
+
+			We define an equivalence relation between such section \emph{up to r-th order}:
+			\begin{definition}[r-jet equivalence]
+				Two such section $\sigma, \eta \in \Gamma^\infty(p)$ have the \underline{same \emph{r-jet} at $p$} $(\sigma \sim \eta)$ 
+				iff:
+				\begin{displaymath}
+					\left.\frac{\partial^{|I|} \sigma^{\alpha}}{\partial x^{I}}\right|_{p} = \left.\frac{\partial^{|I|} \eta^{\alpha}}{\partial x^{I}}\right|_{p} 
+					\quad \forall I\in \Natural^m_0 \, \vert \, 0 \leq |I| \leq r.
+				\end{displaymath}	
+				where $I$ is a \emph{Multi-index}.	
+			\end{definition}
+			\begin{remark}
+				(Multi-index notation)
+				\\
+				A multi-index is a natural valued finite dimensional vector  $I=(i_1, i_2, \ldots, i_m)\: \in \Natural^m_0$ with $m<\infty$.
+				\\
+				On $\Real^n$ a general differential operator can be identified by a multi-index:
+				\begin{displaymath}
+					\frac{\partial^{|I|}}{\partial x^{I}} := \prod_{i=1}^{m} \left( \frac{\partial}{\partial x^{i}} \right)^{I(i)}
+				\end{displaymath}
+				(Until the Schwartz theorem holds, the order of derivation is irrelevant.)
+				\\
+				The order of the multi-index is defined as:
+				\begin{displaymath}
+					|I| := \sum_{i=1}^{m} I(i)
+				\end{displaymath}
+			\end{remark}
+	
+			We define the \emph{r-th Jet in p} as the equivalence class under this relation.
+			\begin{definition}[Space of r-th Jet in p]
+				\begin{displaymath}
+					J^r_{\,p}(E) \coloneqq \frac{\Gamma^\infty(p)}{\sim}
+				\end{displaymath}
+				where $\sim$ is the r-Jet equivalence.
+			\end{definition}
+			\begin{notationfix} 
+				A r-jet with representative $\sigma$ is denoted as $j^r_p\sigma$ . 
+				\\
+				The integer $r$ is also called the order of the jet, $p$ is its source and $\sigma(p)$ is its target.
+			\end{notationfix}
+	
+			Glueing all the jet fiber $J^r_p (E)$ together for all the base point $p\in M$, as done for the tangent bundle,  
+			we obtain the desired bundle:
+			\begin{definition}[r-th Jet Bundle of $E$]
+				The smooth bundle $(J^r(E), \pi_r, M)$	where:
+				\begin{itemize}
+					\item $J^r(E) \coloneqq \underset{p \in M}{\sqcup} J^r_p (E)
+						 \equiv \big\{j^r_p\sigma \quad \vert \; p\in M, \; \sigma \in \Gamma^\infty(p) \big\}$
+					\item $\pi_r: J^r(E) \rightarrow M$ such that $j^{r}_{p}\sigma \mapsto p $
+				\end{itemize}
+			\end{definition}
+
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
-	\section{Globally Hyperbolic Space-times}
+	\section{Globally Hyperbolic Spacetimes}
 			\begin{Warning}
 				Mettere solo le definizioni che uso prese dagli articoli di review delle Fonti
 			\end{Warning}	
 			Appunti che mi ero preso scrivendo il secono capitolo:
 					
 			This condition is strictly connected to the dynamic behaviour of the system.
+		\subsection{A reprise in Spacetimes Geometry}	
+		Recurring definitions in general Relativity (excluding the general smooth manifold prolegomena).
+
+	\begin{definition}[Space-Time]
+		A quadruple $(M, g, \mathfrak{o}, \mathfrak{t})$ such that:
+		\begin{itemize}
+			\item $(M,g)$ is a time-orientable n-dimensional manifold $(n>2)$
+			\item $\mathfrak{o}$ is a choice of orientation
+			\item $\mathfrak{t}$ is a choice of time-orientation
+		\end{itemize}
+	\end{definition}
+
+	\begin{definition}[Lorentzian Manifold]
+		A pair $(M, g)$ such that:
+		\begin{itemize}
+			\item $M$ is a n-dimensional $(n\geq2)$, Hausdorff, second countable, connected, orientable smooth manifold.
+			\item $g$ is a Lorentzian metric.
+		\end{itemize}
+	\end{definition}
 			
+	\begin{definition}[Metric]
+		A function on the bundle product of $TM$ with itself: $$g: TM \times_M TM \rightarrow \Real$$ such that the restriction on each fiber $$g_p: T_pM \times T_pM \rightarrow \Real $$ is a non-degenerate bilinear form.
+	\end{definition}
+	
+	\begin{notationfix}
+		 \begin{itemize}
+		 	\item \emph{Riemman} if the sign of $g$ is positive definite, \emph{Pseudo-Riemman} otherwise.
+		 	\item \emph{Lorentzian} if the signature is $(+, -, \ldots,- )$ or equivalently $(-,+,\ldots,+)$.
+		 \end{itemize}
+	\end{notationfix}
+
+	\begin{observation}[Causal Structure]
+		If a smooth manifold is endowed with a Lorentzian manifold of signature $(+, -, \ldots, -)$ then the tangent vectors at each point in the manifold can be classed into three different types. 
+		\begin{notationfix}
+			$\forall p \in M, \quad \forall X \in T_pM$, the vector is:
+			\begin{itemize}
+				\item \emph{time-like} if $g(X,X)>0$.
+				\item \emph{light-like} if $g(X,X)=0$.
+				\item \emph{space-like} if $g(X,X)<0$.
+			\end{itemize}
+		\end{notationfix}
+	\end{observation}
+
+	\begin{observation}[Local Time Orientability]
+		$\forall p\in M$ the timelike tangent vectors in $p$ can be divided into two equivalence classes taking
+		\begin{displaymath}
+			X \sim Y \; \textrm{iff} \; g(X,Y)>0 \qquad \forall X,Y \in T^\textrm{time-like}_pM:
+		\end{displaymath}
+		We can (arbitrarily) call one of these equivalence classes "future-directed" and call the other "past-directed". Physically this designation of the two classes of future- and past-directed timelike vectors corresponds to a choice of an arrow of time at the point. The future- and past-directed designations can be extended to null vectors at a point by continuity.
+	\end{observation}
+	
+	\begin{definition}[Time-orientation]
+		A global tangent vector field  $\mathfrak{t}\in \Gamma^\infty(TM)$ over the Lorenzian manifold $M$ such that:
+		\begin{itemize}
+			\item $\supp(\mathfrak{t}) = M$
+			\item $\mathfrak{t}(p)$ is time-like $\forall p \in M$.
+		\end{itemize}
+	\end{definition}
+	\begin{observation}
+		The fixing of a time-orientation is equivalent to a consistent smooth choice of a local time-direction.
+	\end{observation}	
+	
+	\begin{definition}[Time-Orientable Lorentzian Manifold]
+		A Lorentzian Manifold $(M,g)$ such that exist at least one time-orientation $\mathfrak{t}\in \Gamma^\infty(TM)$.
+	\end{definition}
+
+	\begin{notationfix}
+		Consider a piece-wise smooth curve $\gamma: \Real\supset I \rightarrow M$ is called:
+		\begin{itemize}
+			\item \emph{time-like} (resp. light-like, space-like) iff $\dot{\gamma}(p)$ is time-like (resp. light-like, space-like) $\forall p \in M$.
+			\item \emph{causal} iff $\dot{\gamma}(p)$ is nowhere spacelike.
+			\item \emph{future directed} (resp. past directed) iff is causal and  $\dot{\gamma}(p)$ is future (resp. past) directed $\forall p \in M$.
+		\end{itemize}
+	\end{notationfix}
+
+	\begin{definition}[Chronological $\substack{\textrm{ future}\\ \textrm{past } }$ of a point]
+		Are two subset related to the generic point $p	\in M$:
+		\begin{displaymath}
+			\mathbf{I}_M^\pm(p) \coloneqq \big\{ q \in M \big\vert \; \exists \gamma \in C^\infty\big((0,1), M\big)\;  \textrm{\footnotesize time-like } \substack{\textrm{future}\\ \textrm{past} } -\textrm{\footnotesize directed }:\; \gamma(0)=p,\; \gamma(1)=q  \big\}
+		\end{displaymath}
+	\end{definition}
+	
+	\begin{definition}[Causal $\substack{\textrm{ future}\\ \textrm{past } } $ of a point]
+		Are two subset related to the generic point $p	\in M$:
+		\begin{displaymath}
+			\mathbf{J}_M^\pm(p) \coloneqq \big\{ q \in M \big\vert \; \exists \gamma \in C^\infty\big((0,1), M\big)\; \textrm{\footnotesize causal } \substack{\textrm{future}\\ \textrm{past} } -\textrm{\footnotesize directed }:\; \gamma(0)=p,\; \gamma(1)=q  \big\}
+		\end{displaymath}		
+	\end{definition}
+
+	\begin{notationfix}
+		Former concept can be naturally extended to subset $A \subset M$:
+			\begin{itemize}
+				\item $\mathbf{I}_M^\pm(A) = \bigcup_{p\in A} \mathbf{I}_M^\pm(p) $
+				\item $\mathbf{J}_M^\pm(A) = \bigcup_{p\in A} \mathbf{J}_M^\pm(p) $
+			\end{itemize}
+	\end{notationfix}
+
+	\begin{definition}[Achronal Set]
+		Subset $\Sigma \subset M$ such that every inextensible timelike curve intersect $\Sigma$ at most once.
+	\end{definition}
+
+	\begin{definition}[$\substack{\textrm{ future}\\ \textrm{past } } $ Domain of dependence of an Achronal set]
+		The two subset related to the generic achornal set $\Sigma \subset M$:
+		\begin{displaymath}		
+			\mathbf{D}_M^\pm(\Sigma) \coloneqq \big\{ q \in M \big\vert \; \forall \gamma \substack{\textrm{ past}\\ \textrm{ future} }\textrm{\footnotesize inextensible causal curve passing through }q : \; \gamma(I) \cap \Sigma \neq \emptyset  \big\}
+		\end{displaymath}		
+	\end{definition}
+
+	\begin{notationfix}
+		$\mathbf{D}_M(\Sigma)  \coloneq \mathbf{D}_M^+(\Sigma) \cup \mathbf{D}_M^-(\Sigma)$ is called \emph{total domain of dependence}.
+	\end{notationfix}
+
+	\begin{definition}[Cauchy Surface]
+		Is a subset $\Sigma \subset M$ such that:
+		\begin{itemize}
+			\item closed
+			\item achronal
+			\item $\mathbf{D}_M(\Sigma) \equiv M$
+		\end{itemize}
+	\end{definition}
+
+		\subsection{Causal Structure}
+		
+		\subsection{Globally Hyperbolic Spacetimes}
+
 			\begin{Warning}
 			Def di dominio di dipendendenza
-			footnote di definizione di spazio tempo
+			footnote di definizione di spazio tempo ( o subsection fatta apposta?)
 			def cauchy surface
 			Remark causal future past
 			def globally hyperbolic
@@ -349,8 +528,7 @@
 		\begin{observation}
 		(che serve dopo) lo spazio $R$ è banalmente iperbolico in quanto tutti i punti posso essere visti come superfici di cauchy.
 		\end{observation}
-			
-					\subfile{DefinitionBulk2}		
+
 
 
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
@@ -373,7 +551,61 @@
 		
 		
 		
-				\subfile{DefinitionBulk3}
+		Basic Definition in L.P.D.O. on smooth vector sections.
+\\
+Consider $F=F(M,\pi,V), F'=F'(M,\pi',V')$ two linear vector bundle over $M$ with different typical fiber
+	\begin{definition}[Linear Partial Differential operator \footnotesize( of order at most $s\in \Natural_0$)]
+		Linear map $L:\Gamma(F)\rightarrow \Gamma(F')$ such that:
+		\\
+		$\forall p \in M$ exists:
+		\begin{itemize}
+			\item $(U, \phi)$ local chart on $M$.
+			\item $(U, \chi)$ local trivialization of $F$
+			\item $(U, \chi')$ local trivialization of $F'$
+		\end{itemize}
+		for which:
+		\begin{displaymath}
+			L \big(\sigma \big\vert_U\big) = \sum_{\vert \alpha \vert \leq s} A_\alpha \partial^\alpha \sigma \qquad \forall \sigma \in \Gamma(M)
+		\end{displaymath}
+	\end{definition}
+
+	\begin{remark}
+	(multi-index notation)
+	\\
+	A multi-index is a natural valued finite dimensional vector $\alpha = ( \alpha_0, \ldots, \alpha_n-1) \in \Natural^n_0$ with $n<\infty$.
+	\\
+	On $\Real^n$ a general differential operator can be identified by a multi-index:
+	\begin{displaymath}
+		\partial^\alpha = \prod_{\mu = 0}^{n-1} \partial_\mu ^{\alpha_\mu}
+	\end{displaymath}
+	(Until the Schwartz theorem holds, the order of derivation is irrelevant.)
+	\\
+	The order of the multi-index is defined as:
+	\begin{displaymath}
+		\vert \alpha \vert \coloneqq \sum_{\mu=0}^{n-1} \alpha_\mu
+	\end{displaymath}
+	\end{remark}
+
+	?????????????????????
+	\begin{proposition}[Existence and uniqueness for the Cauchy Problem]
+		\begin{hypothesis}
+			\begin{itemize}
+				\item $\mathbf{M} = (M,g,\mathfrak{o},\mathfrak{t}) $a globally hyperbolic space-time.
+				\item $\Sigma \subset M$ a spacelike cauchy surface with future-pointing unit normal vector field $\vec{n}$.
+				\item 
+			\end{itemize}
+		\end{hypothesis}
+	\begin{thesis}
+
+	\end{thesis}
+	\end{proposition}
+	\begin{observation}
+	"Green-hyperbolic operators are not necessarily hyperbolic in any PDE-sense and that they cannot be characterized in general by well-posedness of a Cauchy problem.	" \cite{Terlaky2010} \cite{Bar2010}
+	\\
+	However the existence and uniqueness can be proved for the large class of the \emph{Normally-Hyperbolic Operators}.
+	
+	\end{observation}
+
 				
 
 \end{document}

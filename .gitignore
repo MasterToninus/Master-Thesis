@@ -50,3 +50,9 @@ Temporary Items
 *.blg
 *.dvi
 *.bbl
+*.pdf
+*.acn
+*.glo
+*.ist
+*.sbl
+

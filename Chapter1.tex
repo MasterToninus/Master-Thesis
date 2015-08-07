@@ -288,10 +288,61 @@
 					\end{definition}
 					
 		\subsection{Jet Bundles}
-			$\Obj (A)$			
-			$\hom(A,B)$
-			$\Mor$
-			$\cod \dom \ran$
+The jet bundle is a certain construction that makes a new smooth fiber bundle out of a given smooth fiber bundle. The first step is to identify the typical fiber for this construction.
+
+Suppose $M$ is an m-dimensional manifold and that $(E, \pi, M)$ is a fiber bundle.Consider the set of all the local sections whose domain contains $p$:
+	\begin{displaymath}
+		\Gamma^\infty (p) \coloneqq \big\{ \sigma \in \Gamma^\infty(E) \quad \big\vert\:  p \in \dom(\sigma)  \big\}
+	\end{displaymath}
+
+We define an equivalence relation between such section \emph{up to r-th order}:
+	\begin{definition}[r-jet equivalence]
+	Two such section $\sigma, \eta \in \Gamma^\infty(p)$ have the \underline{same \emph{r-jet} at $p$} $(\sigma \sim \eta)$ iff:
+	\begin{displaymath}
+		\left.\frac{\partial^{|I|} \sigma^{\alpha}}{\partial x^{I}}\right|_{p} = \left.\frac{\partial^{|I|} \eta^{\alpha}}{\partial x^{I}}\right|_{p} \quad \forall I\in \Natural^m_0 \, \vert \, 0 \leq |I| \leq r.
+	\end{displaymath}	
+	where $I$ is a \emph{Multi-index}.	
+	\end{definition}
+	\begin{remark}
+	(multi-index notation)
+	\\
+	A multi-index is a natural valued finite dimensional vector  $I=(i_1, i_2, \ldots, i_m)\: \in \Natural^m_0$ with $m<\infty$.
+	\\
+	On $\Real^n$ a general differential operator can be identified by a multi-index:
+		\begin{displaymath}
+			\frac{\partial^{|I|}}{\partial x^{I}} := \prod_{i=1}^{m} \left( \frac{\partial}{\partial x^{i}} \right)^{I(i)}
+		\end{displaymath}
+	(Until the Schwartz theorem holds, the order of derivation is irrelevant.)
+	\\
+	The order of the multi-index is defined as:
+		\begin{displaymath}
+			|I| := \sum_{i=1}^{m} I(i)
+		\end{displaymath}
+	\end{remark}
+	
+	We define the \emph{r-th Jet in p} as the equivalence class under this relation.
+	\begin{definition}[Space of r-th Jet in p]
+		\begin{displaymath}
+			J^r_{\,p}(E) \coloneqq \frac{\Gamma^\infty(p)}{\sim}
+		\end{displaymath}
+		where $\sim$ is the r-Jet equivalence.
+	\end{definition}
+	\begin{notationfix} 
+		A r-jet with representative $\sigma$ is denoted as $j^r_p\sigma$ . 
+		\\
+		The integer $r$ is also called the order of the jet, $p$ is its source and $\sigma(p)$ is its target.
+	\end{notationfix}
+	
+	Glueing all the jet fiber $J^r_p (E)$ together for all the base point $p\in M$, as done for the tangent bundle,  we obtain the desired bundle:
+	\begin{definition}[r-th Jet Bundle of $E$]
+		The smooth bundle $(J^r(E), \pi_r, M)$	where:
+		\begin{itemize}
+			\item $J^r(E) \coloneqq \underset{p \in M}{\sqcup} J^r_p (E)
+				 \equiv \big\{j^r_p\sigma \quad \vert \; p\in M, \; \sigma \in \Gamma^\infty(p) \big\}$
+			\item $\pi_r: J^r(E) \rightarrow M$ such that $j^{r}_{p}\sigma \mapsto p $
+		\end{itemize}
+	\end{definition}
++
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 	\section{Globally Hyperbolic Space-times}

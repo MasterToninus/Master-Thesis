@@ -23,7 +23,11 @@
 	(Primer)\\
 	This review is organized as follows: In Section 2 we discuss the key geometrical concepts which lie
 at the heart of the construction of quantum field theory on curved backgrounds, particularly the notion of globally hyperbolic spacetimes. In Section 3, we focus instead on the classical description of linear free field theories, whose dynamics is ruled by hyperbolic partial differential equations on vector bundles. In particular we will be interested in those equations which admit advanced and retarded Green operators.
-	\end{Warning}
+	\end{Warning}	
+	\begin{Warning}
+		Stile: Intro lapiadaria ai 3 argomenti ( bundle cinematica di campo, Glob iper stage per descrivere dinamica di tipo propagativo, Operatori tipo onda). Poi smitragliata di definizioni come faceva Penati.
+	\end{Warning}	
+	
 
 
 
@@ -68,7 +72,6 @@ Formal definition ed esempi smooth e bundle (tutto ciò che
 		(ADVANCEs)\\
 		Goal of this section is to introduce all geometric concepts and tools which are necessary to discuss both the classical dynamics and the quantization of a free quantum field on a curved background. We assume that the reader is familiar with the basic notions of differential geometry and, to a minor extent, of general relativity.
 		\end{Warning}
-
 			
 		ricordare di parlare di :
 		\\ Sezioni con supporto time, past , future, space - compact (fare schemino come in advances)
@@ -79,22 +82,11 @@ Formal definition ed esempi smooth e bundle (tutto ciò che
 			Appunti che mi ero preso scrivendo il secono capitolo:
 					
 			This condition is strictly connected to the dynamic behaviour of the system.
-			
-			\begin{Warning}
-			Def di dominio di dipendendenza
-			footnote di definizione di spazio tempo
-			def cauchy surface
-			Remark causal future past
-			def globally hyperbolic
-			Teorema sulle caratterizzazioni
-			\end{Warning}					
-
+	
 		Glon iperbolic determina la fogliazione dello spazio tempo per superfici di cauchy
 		
 		questo da la possibilità della buona posizione dei problemi di cauchy.. fisicamente è la condizione minima per definire i dati iniziali dell'evoluzione dinamica.
-		definisco data...
-						
-				
+		definisco data...			
 		
 		\begin{Warning}
 			Far notare che minkowski e tanti esempi importanti sono GH
@@ -105,8 +97,6 @@ Formal definition ed esempi smooth e bundle (tutto ciò che
 		\end{observation}
 		
 	\section{Green Hyperbolic Operators}
-
-
 		\begin{Warning}
 		Rapporto con la condizione sugli operatori...		
 		
@@ -124,9 +114,21 @@ Formal definition ed esempi smooth e bundle (tutto ciò che
 		espressione in coordinate
 		esempio K-g!
 		\end{Warning}		
-
-
-
+			\begin{Warning}
+				Mettere solo le definizioni che uso prese dagli articoli di review delle Fonti
+		\end{Warning}	
+					\begin{Warning}
+				Pensavo di utilizzare la definizione di Green hyperbolic data da Bar che si avvale del concetto di formally dual (che non richiede la presenza del pairing) invece di quella usata in Advances AQFT che richiede solo che ammetta almeno un $G^\pm$  per poi dimostrare tramite teorema che se è anche autoaggiunto vale l'unicità. Si tratta solo di una piccola sfumatura.. Deve essere chiarito che in tutto ciò che faccio interessano che $$\forall P \, \exists1!G^\pm$$.
+				Che poi questa condizione derivi da GH secondo bar o Gh secondo dap+selfadj è una di quelle questioni propriamente matematiche che poco interessa ai fisici della commissione.
+			\end{Warning}			
+			
+			\begin{Warning}
+			Devo richiedere che il green operator sia unico? sia negli schemi di quantizzazione che nella definizione di peierls faccio largo uso dell'unicità. 
+			Per provare questa unicità si passa per la definizione di una forma bilineare che permette di parlare di aggiunto formale e quindi avvalersi del teorema.
+			\end{Warning}
+			
+		    Green-hyperbolic operators are not necessarily hyperbolic in any PDE-sense and that they cannot be characterized in general by well-posedness of a Cauchy problem. \cite{Terlaky2010} \cite{Bar2010}
+		
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Lagrangian systems e Pierls}
@@ -140,6 +142,10 @@ Formal definition ed esempi smooth e bundle (tutto ciò che
 				\item il problema dell'atlante e della rappresentazione delle sezioni in carta locale ( da scegliere sia sul total space E che sul base space M)
 			\end{enumerate}
 		Dovrei fare riferimento al teorema di Ostrowsky per giustificare il fatto che consideriamo solo il primo ordine. le langrangiana con termini cinetici esotici sono instabili ( nel senzo che non ammetto come soluzioni sezioni globali ma solo locali ).
+		
+		Attenzione: come definisco l'equazione del moto se il fibrato di configurazione non è vettoriale? nel senso: non mi serve tanto la definizione di + e x ma quello che mi serve è l'esistenza di un unico elemento nullo. Se manca questo manca la possibilità di poter definire un'equazione.
+		
+		Attenzione2: il motion operator credo che debba essere un bundlemorfismo cioè deve essere fiber preserving su ogni fibra determina un endomorfismo. ??? non va bene ho detto che agisce sulle sezioni!
 
 	\section{Concrete Realization}
 		\subsection{Fields}
@@ -259,15 +265,45 @@ Formal definition ed esempi smooth e bundle (tutto ciò che
 		\begin{Warning}
 	Paraphrasing an observation made by Sharan\cite{Sharan2010}:
 	
-	The Poisson bracket determines how one quantity b(t, q, p) changes another quantity a(t, q, p) when it acts as the Hamiltonian or vice-versa. The Peierls bracket, on the other hand, determines how one quantity b(t, q, p) when added to the system Hamiltonian h with an infinitesimal coefficient λ affects changes in another quantity a(t, q, p) and vice-versa, i.e. 	The Peierls bracket is related to the change in an observable when the trajectory on which it is evaluated gets shifted due to an infinitesimal change in the Lagrangian of the system by another Lagragian density.
+	
 		
 	While the Poisson bracket between two observables a and b is defined on the whole phase space and is not dependent on the existence of a Hamiltonian, the Peierls bracket refers to a specific trajectory determined by a governing Lagrangian. 
 	
 	\end{Warning}
 	\end{observation}	
 	
+	\begin{Warning}
+		io ho cercato di usare termini diversi come disturbance, perturbation oppure disturbed, perturbed
+		ma dare piccole sfumature di differenza
+		
+		Per la tesi non va bene perchè non sono tutti termini standard! (consiglio di CD)
+	\end{Warning}
+	
 	\subsection{Non Linear Extension}
 		non mi è evidente se la rappresentazione in coordinate di un operatore agente sulle sezioni si realizza in modo ovvio, ma non vedo nemmeno ostruzioni! Di sicuro l'operazione è ben definita per gli L.P.D.O visto che la definizione prevede proprio che su ogni carta locale trivilizzante l'operatore sia lineare alle derivate parziali.
+	
+	\section{Correzioni del Capo}
+	>   1) Teorema di Ostro...(non ho capito come si chiama!) per motivare il fatto che ci limitiamo a considerare densità lagrangiane sul primo Jet.
+
+Si tratta di Ostrogradsky, un matematico ucraino ed il problema è noto come instabilità di Ostrogradsky. In realtà non esiste una referenza esplicita in teoria dei campi perché è un problema molto più generale di ODE/PDE. Per assurdo la dimostrazione (e le referenze) date su Wikipedia sono ottime:
+
+	\url{https://en.wikipedia.org/wiki/Ostrogradsky_instability}
+
+     2) posso dire che su qualsiasi fibrato liscio lo spazio delle sezioni liscie è una varietà di Frechet? Se non posso dirlo globalmente potrei ridurmi localmente alla rappresentazione della sezione in carta locale, hai una reference bella dove si prova che lo spazio delle funzioni lisce tra due aperti di $R^n$ è una varietà di frechet?
+
+Dipende tutto dalla fibra tipica del fibrato. Se è un fibrato vettoriale di rango finito, allora sì. Una referenza? Prova il libro di Michor "Convinient calculus" (credo sia il titolo giusto, l'autore è sicuramente lui)
+
+		---oppure... teniamo presente che qualunque sia il fibrato liscio... localmente E = Rq x Rm è banale! quindi le sezioni locali su un aperto sono isomorfe a Cinfty (U) che è frechet...
+		secondo me bisogna giocare su questo, non sulla linearità. il problema geodetico non riuscirò mai a vederlo come lineare.. però localmente è dato da tanti operatore uno per ogni aperto dell'atlante della varietà riemmaniana... in questi aperti l'equazione gedoetica prende la forma nota e il PC locale ammette un unica soluzione!
+		Poi qua entrerebbe il problema dell'estensione della geodetica (completezza geodetica vedere fomm, jost o abate, \href{http://tinyurl.com/pcxbcqr}{wiki, teorema di hopf-rinow}
+		Attenzione: il problema geodetico lo posso definire per aperti... ma la particolarità dell'equazione geodetica è che è compatibile per carte overlapping!
+		Se devo specificare la natura dell'operatore del moto generico su fibrato generico ho parecchio da imbarcare... Di sicuro non si passa per attribuire al fibrati di configurazione una sezione "nulla" perchè non ha senso: quale sarebbe la sezione nulla nel caso delle geodetiche? l'annullamento è sempre una questione di carta....
+
+     3)Operatore di Eulero Lagrange è sempre Globalmente Iperbolico nel caso della dinamica di sistemi lagrangiani a gradi di Libertà finiti?
+
+Assolutamente no! Esistono anche lagrangiane non quadratiche nelle velocità ... è proprio il senso del lavoro di Ostrogradsky, ossia ci sono lagrangiane con equazioni del moto altamente instabili.
+
+
 
 	\danger \danger \danger \danger 	\danger \danger \danger \danger 	\danger \danger \danger \danger 
 	\section{Dubbi}

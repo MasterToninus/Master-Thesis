@@ -12,9 +12,10 @@
 \maketitle
 \begin{abstract}
 	Sono un accumulatore.\\
-	Tutti i mezzi testi, mezze intuizioni che non ho tradotto o a cui non ho trovato posto nella tesi le metto qui dentro.
+	Tutti i mezzi testi, mezze intuizioni che non ho tradotto o a cui non ho trovato posto nella tesi le metto qui dentro.\\
 \end{abstract}
-
+%  Indice
+\tableofcontents
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \chapter{Prereq Mate}
@@ -130,7 +131,11 @@ Formal definition ed esempi smooth e bundle (tutto ciò che
 		    Green-hyperbolic operators are not necessarily hyperbolic in any PDE-sense and that they cannot be characterized in general by well-posedness of a Cauchy problem. \cite{Terlaky2010} \cite{Bar2010}
 		
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+%\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 \chapter{Lagrangian systems e Pierls}
 	\section{Presentazione in Astratto}
 		Quando parlo della cinematica mi piacerebbe dare indicazioni sulla struttura matematica dello spazio delle configurazioni cinematiche:
@@ -304,17 +309,147 @@ Dipende tutto dalla fibra tipica del fibrato. Se è un fibrato vettoriale di ran
 Assolutamente no! Esistono anche lagrangiane non quadratiche nelle velocità ... è proprio il senso del lavoro di Ostrogradsky, ossia ci sono lagrangiane con equazioni del moto altamente instabili.
 
 
+%\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+\chapter{Algebraic Quantization}
+%\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+\section{Intro}
+	Contemporary quantum field theory is mainly developed as quantization of classical fields. Classical field theory thus is a necessary step towards quantum field theory.\danger (Cito testualmente Mangiarotti, shardanashivly)
+	
+The \emph{"Quantization process"} has to be considered as an algorithm , in the sense of self-containing succession of instructions, that has to be performed in order to establish a correspondence between a classical field theory and its quantum counterpart.\\
+\danger (forse l'nlab esprime la cosa meglio di me \url{http://ncatlab.org/nlab/show/quantization}. Sono d'accordo con il loro approccio ma non voglio usare la loro formulazione perchè in fondo ci sono arrivato anche da solo :P)
 
-	\danger \danger \danger \danger 	\danger \danger \danger \danger 	\danger \danger \danger \danger 
-	\section{Dubbi}
-	\begin{itemize}
-		\item Posso dire che l'operatore di eulero lagrange di un sistema meccanico ordinario è normally iperbolic?
-	\end{itemize}
+
+\danger\footnote{Frase che non mi piace ma voglio far presente che le realizzazioni dello schema algebrico sono molteplici!}
+As said previously, the realization of the Algebraic scheme are many: Fedosov's procedure, by Deformation, Peierls' procedure, by Initial Data etc .
+In the next section we review the last two.
+
+\section{Algebraic quantization}
+\subsection{Quantization with Peierls}
+\danger Questo schema a passi rende bene sul quaderno ma non su latex... riorganizzo tutto in modo che ogni passo venga organizzato in section subsection eccetera.
+
+\danger Attenzione: nello schema nel quaderno, al passo sulla costruzione dello spazio degli osservabili, ho usato una notazione che utilizza il mapping F tra sezioni e funzionali!
+
+	Briefly the procedure can be resumed in few steps:
+ 	\begin{enumerate}
+   		\item Classical Step\\
+   			Has to be stated the mathematical structure of the classical theory under examination.
+   			\begin{enumerate}
+   				\item Kinematics: is encoded in the configuration bundle of the theory.
+   					\begin{enumerate}
+   						\item Specify the base manifold $M$. \\Has to be a Globally-Hyperbolic Space-time.
+   						\item\label{Step:AuxiliaryStructure} Specify the Fiber and the total Space $E$ auxiliary structure, e.g: spin-structure or trasformation laws under diffeomorphism on the base space.\\$E$ has to be at least a vector bundle.
+   					\end{enumerate}
+   			
+   				\item\label{Step:ClassicalDynamicsConditions} Dinamics: has to be specified the local coordinate expression of the motion operator $P: \Gamma^\infty (E)= \Conf \rightarrow \Conf$.
+   				   	\begin{enumerate}
+   						\item Is $P$ Green-hyperbolic?
+   						\item Is $P$ derived from a lagrangian: $P=Q_\Lagrangian$? 
+   					\end{enumerate}
+   			\end{enumerate}
+   			
+   		\item Pre-Quantum Step
+   		   	\begin{enumerate}
+   				\item Pairing: construct a basic bilinear form on the space of kinematic configurations.
+   					\begin{enumerate}
+   						\item Choose $<\cdot,\cdot>$ a inner product on the bundle $E$.\\ 
+						This is a parameter to be guessed. Generally this object is suggested by the auxiliary structures defined on the configuration bundle [\ref{Step:AuxiliaryStructure}].
+   						\item Construct the pairing between sections with compact support intersection:
+   							\begin{displaymath}
+   								(X,Y) = \int_M <X,Y>_x d\mu(x)
+   							\end{displaymath}
+   						\item is $P$ formally self-adjoint in respect to this pairing?
+   					\end{enumerate}
+   					
+   				\item Classical Observables: construct a set $\Obs$ of suitable classical observables.
+   				   	\begin{enumerate}
+   						\item Asantz on the off-shell functionals.\\
+   							We define a class of linear functional on $\Conf$:
+   							\begin{displaymath}
+   								\Obs_0 \coloneqq \big\{ F_f: \Conf \rightarrow \Real \:\vert
+   								\: F_f(\phi)=\int_M ( f, \phi) d\mu \; , f \in \Gamma_0^\infty(E)	\big\}
+   							\end{displaymath}
+   							Satisfying the conditions of good definition:
+   							\begin{itemize}
+   								\item Faithfully representation of the vector space $\Gamma_0^\infty(E)$ (bijective map).
+   								\item Separation of the configuration space $\Conf$.   								
+   							\end{itemize}
+   						\item Domain restriction of the functionals in $\Obs_0$ from $\Conf$ to $\Sol$:
+   							\begin{displaymath}
+   								\Obs_0\vert_\Sol \coloneqq \big\{F_f\vert_\Sol \big \vert F_f \in \Obs_0 \big\}
+   							\end{displaymath}
+   							Such that: 
+   							\begin{itemize}
+   								\item $\Obs_0\vert_\Sol$ met the separability condition.
+   								\item The correspondence with  $\Gamma_0^\infty(E)$ is no more injective:
+   									\begin{displaymath}
+   										\ker \big( \Obs_0 \mapsto \Obs_0\vert_\Sol \big) \coloneqq N \equiv P \big( \Gamma_0^\infty (E) \big)
+   									\end{displaymath}
+   								\item Define the classical observables space as the quotient:
+   									\begin{displaymath}
+   										\Obs \coloneqq \frac{\Obs_0\vert_\Sol}{N}
+   									\end{displaymath}
+   							\end{itemize}   							 
+   					\end{enumerate}
+   				 
+   				 \item Symplectic structure: endow the space $\Obs$ just defined with a bilinear form $\tau$.
+   				   	\begin{enumerate}
+   						\item Construct the Peierls Brackets between any pair of Lagrangian densities.\\
+   							The construction is guaranteed by the requirement in step [\ref{Step:ClassicalDynamicsConditions}].
+   						\item Restrict the brackets to the space $\Obs_0$.\\
+   							These are very simple Lagrangian functionals:
+   							\begin{displaymath}
+   								Q_\chi \cdot = (\chi, \cdot) \qquad \forall \chi \in \Obs_0
+   							\end{displaymath}
+							such that:
+							\begin{equation}\label{Def:SymplecticTau}
+								\tau ( \phi, \psi) = ( \phi, E \psi)
+							\end{equation}
+							Conditions of Green-hyperbolicity and formally self-adjoint are sufficient guarantees the good definitions of $\tau$
+							\footnote{Has to be noted that the Lagrangian condition is ancillary. This has the purpose to justify the shape of the symplectic form on the classical observables space as consequent from the Peierls bracket.
+		\\
+	It is frequent\cite{Dewitt1999}\cite{Benini} to overlook to the origin of this object and jump directly to the expression \ref{Def:SymplecticTau}  in term of the Green's operator that no longer present any direct link to the Lagrangian and therefore can be extended to any green-hyperbolic theory.}
+						\item Finally the value of $\tau$ is transported to the equivalence classes of $\Obs$ evaluating on the representative:
+							\begin{equation}
+								\{ [\phi], [\psi]\} \coloneqq \tau(\phi, \psi)
+							\end{equation}
+							such that:
+							\begin{itemize}
+								\item $\{\cdot,\cdot\}$ is a simplectic form ( bilinear, antisymmetric, non-degenerate).
+								\item Definition is well-posed: do not depend from the representative of the class.
+								\item causality axiom
+								\item time-slice axiom
+							\end{itemize}
+   					\end{enumerate}
+   			\end{enumerate}
+  
+   		\item Quantization Step
+   		   	\begin{enumerate}
+   				\item Quantum Observables Algebra\\
+   					A concrete realization is achieved in three step.
+   					\begin{enumerate}
+   						\item Construct the \emph{Universal Tensor Algebras} of the classical observables.
+   						\item
+   					\end{enumerate}
+   					
+   				\item Hadamard State
+   				   	\begin{enumerate}
+   						\item
+   						\item
+   					\end{enumerate}
+   				 
+   			\end{enumerate}
+ 	\end{enumerate}
+
+%\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+\chapter{Jacobi Fields}
+%\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 \chapter{Test}
+%\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 	$$L - \mathrm{L} - \mathit{L}  - \mathbf{L} - \mathsf{L} - \mathtt{L}- \mathcal{L}- \mathbb{L}- \mathfrak{L}$$
 
 

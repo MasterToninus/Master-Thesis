@@ -544,7 +544,7 @@ specify the support properties of the sections of a vector bundle with base a gl
 		\end{displaymath}
 		(where we have make use of the multi-index notation\ref{MultiIndex})
 	\end{definition}
-		\begin{observation}
+		\begin{observation}\label{Obs:EnlargeSupport}
 			Notice that linear partial differential operators cannot enlarge the support of a section.
 		\end{observation}
 		
@@ -578,7 +578,7 @@ specify the support properties of the sections of a vector bundle with base a gl
 		
 		\subsection{Green Hyperbolic Operators}	
 			Let $M$ be a globally hyperbolic spacetime, consider a vector bundle $E$ over $M$ and a L.p.d.o. $L: \Gamma(E) \rightarrow \Gamma(E)$:
-			\begin{definition}[$\substack{\textrm{ retarded}\\ \textrm{advanced } } (\pm)$ Green Operators]
+			\begin{definition}[$\substack{\textrm{ retarded}\\ \textrm{advanced } } (\pm)$ Green Operators]\label{Def:GreenOperators}
 				L.p.d.o. $G^\pm : \Gamma (E) \rightarrow \Gamma(E)$ such that:
 				\begin{itemize}
 					\item $\dom(G^+) = \Gamma_{pc}(E) \qquad \dom(G^-) = \gamma_{fc}(E)$
@@ -616,6 +616,72 @@ specify the support properties of the sections of a vector bundle with base a gl
 			\begin{proof}
 			See for example \cite{Benini}[proposition 2]
 			\end{proof}
+
+			Below will come in handy the following properties:
+			\begin{proposition}\label{Prop:GreenKernel}
+				Let $M$ be a globally hyperbolic spacetime. Consider a vector bundle $E$ over $M$, Green-hyperbolic operator $P: \Gamma(E)\rightarrow \Gamma(E)$ and a time-compact section $f\in \Gamma_{tc}(E)$.
+				Let $G^\pm$ be retarded and advanced Green operators for $P$ and denote with $E$ the corresponding advanced-minus-retarded operator.\\
+				Then:
+					\begin{enumerate}
+						\item $E f = 0 \; \Leftrightarrow \; \exists h \in \Gamma_{tc}(E) \; \vert \; f=P h $.
+						\item $P f = 0 \; \Leftrightarrow \; f=0$.
+						\item $\forall h \in \Gamma(E)\quad \exists h \in \Gamma(E)\quad \vert P h = f$.
+					\end{enumerate}
+			\end{proposition}
+			\begin{proof}
+			[Th. 1]\\
+			Inverse implication follows slavishly from the definition of causal propagator:
+			\begin{displaymath}
+				E f= (\GreenAdv - \GreenRet) P h = h -h
+			\end{displaymath}
+			since $h\in \Gamma_{tc} = \dom(\GreenAdv) \cap \dom(\GreenRet)$ .
+			\\
+			Regarding the direct implication, let $f \in \Gamma_{tc}(E)$ such that $E f = 0$.
+			That implies $\GreenRet f = \GreenAdv f $, the support properties of the retarded and advanced Green operators entail that
+			\begin{displaymath}
+				\supp (\GreenRet f ) \subset \mathbf{J}^+ (\supp f) \cap \mathbf{J}^- (\supp f)
+			\end{displaymath}
+			 In other words $h = \GreenRet f \in \Gamma_{tc}(E)$. 
+			 If we apply the operator $P$, it holds 
+			 \begin{displaymath}
+			 	P h = P \GreenRet f = f
+			 \end{displaymath}
+			
+			[Th. 2]\\
+			Suppose now that there exists $f \in \Gamma_{tc}(E)$ such that $Pf = 0$. Since a linear partial differential operator does not extend the support condition (Remark \ref{Obs:EnlargeSupport}), can be applied either
+the retarded or the advanced Green operators obtaining:
+			\begin{displaymath}
+				h = G^\pm P h = 0
+			\end{displaymath}
+			Inverse implication is trivial.
+			
+			[Th. 3]\\
+			Consider a pair of function (partion of unity of $M$) $\{\chi_\pm: M \rightarrow [0,1] \}$ such that:
+			\begin{itemize}
+				\item $\chi_\pm = 1$ on a past / future compact region.
+				\item $\chi_+(x) + \chi_-(x) = 1 \qquad \forall x\in M$.
+			\end{itemize}
+			For any $f \in 	\Gamma(E)$ we define the function:
+			\begin{displaymath}
+				h \coloneqq \GreenRet \big( \chi_+ f \big) + \GreenAdv \big( \chi_- f \big)
+			\end{displaymath}
+			Then
+			\begin{displaymath}
+				P h = (\chi_+ + \chi_-)f = f
+			\end{displaymath}
+			\end{proof}
+			
+			
+			\begin{corollary}\label{Corol:GreenKernel}
+				Let $M$ be a globally hyperbolic spacetime. Consider a vector bundle $E$ over $M$, Green-hyperbolic operator $P: \Gamma(E)\rightarrow \Gamma(E)$ and a compact supported section $f\in \Gamma_{0}(E)$.
+				Let $G^\pm$ be retarded and advanced Green operators for $P$ and denote with $E$ the corresponding advanced-minus-retarded operator.\\
+				Then the following statements hold true:
+					\begin{enumerate}
+						\item $E f = 0 \; \Leftrightarrow \;  \exists h \in \Gamma_{0}(E) \; \vert \; f=P h $.
+						\item $P f = 0 \; \Leftrightarrow \; f=0$.
+						\item $\forall h \in \Gamma_{sc}(E)\quad \exists h \in \Gamma_{sc}(E)\quad \vert P h = f$.
+					\end{enumerate}
+			\end{corollary}
 					
 		\subsection{Normally Hyperbolic Operators}
 			Green-hyperbolic operators are not necessarily hyperbolic in any PDE-sense and that they cannot be characterized in general by well-posedness\footnote{I.e. exists an unique solution.} of a Cauchy problem.

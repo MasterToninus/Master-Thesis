@@ -33,13 +33,13 @@ In this chapter we will take advantage of the language developed in the first ch
 	The configuration bundle encompasses all the kinematical structures of the system.
 	 A pivotal role is played by the smooth sections  which are to be understood as all the possible conformation of the system.
 
-	\begin{notationfix}
+	\begin{definition}[Space of kinematics (off-shell) configurations]
 		We call:
 		\begin{displaymath}
 			\gls{Conf} \coloneqq \Gamma^\infty(M,E)
 		\end{displaymath}
 		the space of kinematic configurations.
-	\end{notationfix}
+	\end{definition}
 
 	%A section is not a statical configuration, equivalent to a specific point in the configuration space of ordinary classical systems, but has to be seen as a specific realization of the kinematics in the sense of  a complete description of a possible motion. (Correzione CD)
 	At this level of abstraction, since no space-time structure has been specified, terms like stasis and motion must be taken with care .The natural physical interpretation should become manifest through the concrete realization of systems with discrete and continuous degree of freedom.
@@ -72,17 +72,16 @@ In this chapter we will take advantage of the language developed in the first ch
 	\paragraph{Dynamics}
 	The operator $P$ is the object that contains all the information about the dynamical evolution of the system.
 	It has the role to select the dinamically compatible configurations among all the admissible kinematic ones, exactly as it happens in analytical mechanics where the dynamic equations shape the natural motions.
-	\begin{notationfix}
-		For a given dynamical operator:%Given an equations of motion operator (Correzione CD)
+	\begin{definition}[Space of Dynamics (on-shell) configurations]\label{Def:SolSpace}
+		We call
+		\begin{displaymath}
+			\gls{Sol} \coloneqq \ker(P) \subset \Conf
+		\end{displaymath}
+		the set containing all the smooth solutions of the motion equations corresponding to the  dynamical operator:	
 		\begin{displaymath}
 			P: \Conf \rightarrow \Conf
 		\end{displaymath}
-		The space
-		\begin{displaymath}
-		\gls{Sol} \coloneqq \ker(P) \subset \Conf
-		\end{displaymath}
-		containing all the smooth solutions is called \emph{"Space of Dynamical Configurations"}.
-	\end{notationfix}
+	\end{definition}
 	
 	\begin{figure}[h!]
 		\centering

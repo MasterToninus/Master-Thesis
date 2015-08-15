@@ -248,7 +248,7 @@ In the next sections we review two of the possible realizations of the algebraic
 				\end{displaymath}				   					
    					
    				Since $\Sol \subset \Conf$ , this space continues to met the separability condition (on $\Sol$) but the correspondence with  $\Gamma_0^\infty(E)$ is no more injective:
-					\begin{proposition}
+					\begin{proposition}\label{Teo:NspaceDefinition}
 						\begin{displaymath}
 							\ker \big( F^\Sol \big) = P \big( \Gamma_0^\infty (E) \big)	\coloneqq N	
 						\end{displaymath}
@@ -268,7 +268,7 @@ In the next sections we review two of the possible realizations of the algebraic
 						(E \tau , \sigma) = - (\tau , E \sigma) = 0 \qquad \forall \sigma \in \Gamma_0
 					\end{displaymath}								
 					From the non-degeneracy of the pairing follows that $E\tau = 0 \Rightarrow  \tau \in \ker(E)$.
-					Considering \cite{Benini}[Prop. 3] we have $ \ker \big(E\big\vert_{\Gamma_0} \big) \equiv P \Gamma_0$.
+					Considering \ref{Corol:GreenKernel} we have $ \ker \big(E\big\vert_{\Gamma_0} \big) \equiv P \Gamma_0$.
 					\end{proof}
    			
    			\subparagraph{Classical Observable class}
@@ -309,6 +309,8 @@ In the next sections we review two of the possible realizations of the algebraic
 		\paragraph{Symplectic structure}
 			Endow the space $\Obs$ just defined with a bilinear form $\tau$.
 			\subparagraph{General Peierls Bracket Construction}
+			Construct the Peierls Brackets between any pair of Lagrangian densities.\\
+   							The construction is guaranteed by the requirement in step [\ref{Step:ClassicalDynamicsConditions}].
 				Recall that the Peierls argument has showed that:
 				\begin{itemize}
 					\item From the Lagragian Densities $\Lag(E)$ [Def: \ref{Def:LagrangianDensities}] are defined the Lagrangian functionals on $\Conf$ [Def: \label{Def:LagrangianFunctionals}] as a regular distribution.
@@ -316,51 +318,217 @@ In the next sections we review two of the possible realizations of the algebraic
 					\begin{displaymath}
 						\mathcal{O}_\Lagrangian( \phi_0) = \int_M \Lagrangian(\phi_0) d\mu
 					\end{displaymath}
-					\item Is defined the effect of a Lagrangian density  on a smooth functional $B: \Conf \rightarrow \Real$ as:
+					\item Is defined the effect (eq: \label{EffectOperator}) of a Lagrangian density  on a smooth functional $B: \Conf \rightarrow \Real$ as:
 						\begin{displaymath}
-							D_\chi^\pm B (\phi_0) = \lim_{\epsilon\rightarrow 0} \big( \frac{B(\phi_\epsilon^\pm) - B (\phi_0)} {\epsilon} \big)
+							\mathbf{E}_\chi^\pm B (\phi_0) = \lim_{\epsilon\rightarrow 0} \big( \frac{B(\phi_\epsilon^\pm) - B (\phi_0)} {\epsilon} \big)
 						\end{displaymath}
-					\item thus for each pair of Lagrangian densities is defined the Peierls brackets form:
+					\item Finally for each pair of Lagrangian densities is defined the Peierls brackets form (Eq: \label{AbstractPeierlsBracket}):
+						\begin{displaymath}
+							\{\chi, \omega \}(\phi_0) \coloneqq E_\chi^+ F_\omega (\phi_0) - E_\chi^- F_\omega(\phi_0)
+						\end{displaymath}
+						(It can be seen in an equivalent manner as defined on the Lagrangian functional domain restricted to $\Sol$)
 				\end{itemize}				 
 		
-   				   	\begin{enumerate}
-   						\item Construct the Peierls Brackets between any pair of Lagrangian densities.\\
-   							The construction is guaranteed by the requirement in step [\ref{Step:ClassicalDynamicsConditions}].
-   						\item Restrict the brackets to the space $\Obs_0$.\\
-   							These are very simple Lagrangian functionals:
-   							\begin{displaymath}
-   								Q_\chi \cdot = (\chi, \cdot) \qquad \forall \chi \in \Obs_0
-   							\end{displaymath}
-							such that:
-							\begin{equation}\label{Def:SymplecticTau}
-								\tau ( \phi, \psi) = ( \phi, E \psi)
-							\end{equation}
-							Conditions of Green-hyperbolicity and formally self-adjoint are sufficient guarantees the good definitions of $\tau$
-							\footnote{Has to be noted that the Lagrangian condition is ancillary. This has the purpose to justify the shape of the symplectic form on the classical observables space as consequent from the Peierls bracket.
-		\\
-	It is frequent\cite{Dewitt1999}\cite{Benini} to overlook to the origin of this object and jump directly to the expression \ref{Def:SymplecticTau}  in term of the Green's operator that no longer present any direct link to the Lagrangian and therefore can be extended to any green-hyperbolic theory.}
-						\item Finally the value of $\tau$ is transported to the equivalence classes of $\Obs$ evaluating on the representative:
-							\begin{equation}
-								\{ [\phi], [\psi]\} \coloneqq \tau(\phi, \psi)
-							\end{equation}
-							such that:
-							\begin{itemize}
-								\item $\{\cdot,\cdot\}$ is a simplectic form ( bilinear, antisymmetric, non-degenerate).
-								\item Definition is well-posed: do not depend from the representative of the class.
-								\item causality axiom
-								\item time-slice axiom
-							\end{itemize}
-   					\end{enumerate}
+			\subparagraph{Brackets restriction to the Pre-Observables}
+				Once these brackets is restricted from the Lagrangian functional class to the classical observables $\Obs_0$, it assumes a very simple expression:
+				\begin{itemize}
+					\item Notice that each $\phi \in \Gamma_0^\infty(E)$ define a regular Lagrangian density through the inner product:
+						\begin{displaymath}
+							\Lagrangian_\phi[\cdot](x) = <\phi, \cdot>_x
+						\end{displaymath}
+					\item The associated Lagrangian functional is simply:
+						\begin{displaymath}
+							\mathcal{O}_{\Lagrangian_\phi} (\cdot ) = \int_M  <\phi, \cdot>_x d\mu(x) = (\phi, \cdot) = F_\phi (\cdot)
+						\end{displaymath}
+					\item The corresponding Euler-Lagrange operator  results:
+						\begin{displaymath}
+							Q_{\Lagrangian_\phi}= \biggr( \nabla_\mu \big( \frac{\partial \Lagrangian}{\partial ( \partial_\mu \phi)} \big) - \frac{\partial \Lagrangian}{\partial \varphi} \biggr) = - \frac{\partial \Lagrangian_\varphi}{\partial \varphi} = -\frac{\partial}{\partial \varphi} (\phi, \varphi) = -\phi
+						\end{displaymath}
+						\textit{i.e.} the operator maps the whole space $\Conf$ to $-\phi$.
+					\item The effect operator between a pair of such Lagrangians $\Lagrangian_\alpha, \Lagrangian_\beta$ results:
+						\begin{align}
+						\mathbf{E}_{\Lagrangian_\alpha}^\pm \big( \mathcal{O}_{\Lagrangian_\beta} \big) (\phi_0) &= \mathbf{E}_{\Lagrangian_\alpha}^\pm \big( F_\beta  \big) (\phi_0) = \lim_{\epsilon \rightarrow 0} \biggr( \frac{1}{\epsilon}\big(F_\beta ( \phi_{\epsilon \Lagrangian_\alpha}^\pm) - F_\beta(\phi_0) \big) \biggr) =\\
+							&= \lim_{\epsilon \rightarrow 0} \frac{1}{\epsilon}F_\beta( \phi_{\epsilon \Lagrangian_\alpha}^\pm - \phi_0) = 
+							\big(\beta, \lim_{\epsilon\rightarrow 0} \frac{ \phi_{\epsilon \Lagrangian_\alpha}  - \phi_0}{\epsilon} \big) = \\
+							&=(\beta, \eta^\pm) = \big( \beta, - G^\pm (Q_{\Lagrangian_\alpha} \phi_0 ) \big) = ( \beta, G^\pm \alpha)
+						\end{align}
+						 $\forall 	\phi_0\in \Sol$.
+						 In the second row is been exploited respectively the linearity and continuity of the functional.
+						 In the third row has been used the Green hyperbolicity and the explicit expression of $Q_{\Lagrangian_\alpha}$.
+						 Notice that the dependence on the test solution $\phi_0$ is disappeared.
+					\item Finally the Peierls brackets expression can be stated $\forall f,h \Gamma_0^\infty (E)$:
+						\begin{equation}\label{Def:SymplecticTau}
+							\tau\{f,h\} = \{\Lagrangian_f , \Lagrangian_h\} = \big( f , (\GreenAdv - \GreenRet)h \big) = \big(f, E h\big)
+						\end{equation}
+				\end{itemize}
+							Conditions of Green-hyperbolicity and formally self-adjoint are sufficient guarantees the good definitions of $\tau$.\\
+							Has to be noted that the Lagrangian condition is ancillary. This has the purpose to justify the shape of the symplectic form on the classical observables space as consequent from the Peierls bracket.
+							\\
+							It is frequent\cite{Dewitt1999}\cite{Benini} to overlook to the origin of this object and jump directly to the expression \ref{Def:SymplecticTau}  in term of the Green's operator that no longer present any direct link to the Lagrangian and therefore can be extended to any green-hyperbolic theory.
+		
+			\subparagraph{Symplectic form on the Classical Observables}
+				Has to be noted that the brackets $\tau$ are degenerate on $\Obs_0$. 
+				If $f=Ph \in N$ we have:
+				\begin{displaymath}
+					\big( f , E g \big) = (P h , E g) = (h, PE g) = (h,0) = 0 \qquad \forall g \in \Gamma_0^\infty
+				\end{displaymath}
+				where in the last equality has been used proposition \ref{Prop:GreenKernel}.
+				The value of $\tau$ has to be transported to the equivalence classes of $\Obs$ evaluating on the representative:
+				\begin{equation}
+					\tau\big( [\phi], [\psi] \big) \coloneqq \tau(\phi, \psi)
+				\end{equation}
+				
+				\begin{proposition}
+				The brackets  $\tau$ satisfy the following properties:
+					\begin{enumerate}
+						\item\label{Th:WellPosed} Definition is well-posed: do not depend from the representative of the class.
+						\item\label{Th:Symplectic} is a simplectic form ( bilinear, antisymmetric, non-degenerate).		
+					\end{enumerate}
+				\end{proposition}
+				\begin{proof}
+					\begin{itemize}
+						\item [Th. \ref{Th:WellPosed}]
+							 $\tau$ is degenerate on $\Obs_0$ since:
+							 \begin{displaymath}
+							 	\big( f , E g \big) = (P h , E g) = (h, PE g) = (h,0) = 0 \qquad \forall g \in \Gamma_0^\infty \; \forall f=Ph \in N
+							 \end{displaymath}
+							 Then, fixed $g\in \Obs_0$, we have that the value of $\tau(f,g)$ is the same for each representative $f\in[f]$.
 
-   		  		
+						\item [Th. \ref{Th:Symplectic}]	
+							Bilinearity is guaranted by the linearity of the pairing and Green operators.\\
+							Non-degeneracy of $\tau$ follows from the non-degeneracy of pairing:
+							\begin{displaymath}
+								(f, E h) = 0 \, \forall f \in \Obs_0 \Leftrightarrow E h = 0 \Leftrightarrow h = P f
+							\end{displaymath}
+							but from definition of $\Obs$ we have $[Pf] = [0]$.\\
+							Antisimmetry of $\tau $ follows from simmetry of the (bosonic) inner product $< \cdot, \cdot>$:
+							\begin{displaymath}
+								( f , E h ) =\big(f, (\GreenAdv - \GreenRet ) h \big)= \big( ( \GreenRet - \GreenAdv) f , h \big) = - ( Ef , h) = -(h, Ef)
+							\end{displaymath}							 
+					\end{itemize}
+				\end{proof}
+				The pair $(\Obs,\tau)$ is the symplectic space of observables describing the classical theory of the real scalar field on the globally hyperbolic spacetime $M$ and it is the starting point for the quantization scheme that we shall discuss in the next section.
+				This structure meets two remarkable physical properties:
+				\begin{theorem}\label{Teo:CausalityTimeSliceAxioms}
+					Consider a globally hyperbolic spacetime $M$ and let $(\Obs,\tau)$ be the symplectic space of classical observables defined above.\\
+					The following properties hold:
+					\begin{itemize}
+						\item \textbf{Causality axiom}
+							The symplectic structure vanishes on pairs of observables localized in causally disjoint regions:
+							\begin{displaymath}
+								\tau \big( [f],[h] \big) =0 \qquad
+								\forall f,h \in \Gamma_0(E) \; \big\vert \; \supp(f) \cap \textbf{J}_M \big(\supp(h) \big) = \emptyset = 
+								\textbf{J}_M \big(\supp(f) \big) \cap \supp(h)
+							\end{displaymath}
+						\item \textbf{Time-Slice axiom}
+							For all $O \subset M$ globally hyperbolic open neighborhood of a spacelike Cauchy surface $\Sigma$ for $M$ \footnote{Namely $O$ is: an open subset providing a globally hyperbolic spacetime $O = (O,\mathfrak{g}\vert_O,\mathfrak{o}\vert_O, \mathfrak{t}\vert_O)$ and a neighborhood of $\Sigma \in \PowerSet_C(M)$ containing all causal curves for $M$ whose endpoints lie in $O$. }
+							The map $L : \Obs( O) \rightarrow \Obs(M)$ which maps an equivalence class $ f \in \Gamma_0(0)\big / P \Gamma_0(O)$ to the equivalence class of its extension by $0$ to the whole spacetime:
+							\begin{displaymath}
+							 L[f] = [f] \qquad \forall f \in \Gamma_0(O)
+							\end{displaymath}				
+							is an isomorphism between symplectic spaces.
+					\end{itemize}
+				\end{theorem}
+				\begin{proof}
+				[Th. 1]
+					\begin{itemize}
+						\item Consider a pair $f,h \in \Gamma_0 (E)$, we have: 
+							\begin{displaymath}
+								\tau \big([f] , [h] \big) = \big(f, Eh \big) = F_f \big( E h \big)
+							\end{displaymath}
+							from the definition\ref{Def:GreenOperators} of Green operators follows:
+							\begin{displaymath}
+								\supp ( E h) \subseteq \textbf{J}_M ( \supp(h)
+							\end{displaymath}
+							Thus if the two pre-observables are localized in causally disjoint regions $\tau \big([f] , [h] \big)=0 $ since correspond to the pairing of two sections with disjoint support.	
+					\end{itemize}
+				[Th. 2]
+					\begin{itemize}
+								\item %Well-defined:
+									The same construction applied to $M$ and to $O$ provides the symplectic spaces $(\Obs(M),\tau_M)$ and respectively $(\Obs(O),\tau_O)$ . 
+									The support of section $f \in \Gamma_0(O)$  is a compact $\supp(f) \subset O \subset M$. Thus such section can be uniquely extended by zero to give a compact supported local section on the whole $M$ and we denote it still by $f$ with a slight abuse of notation.
+									These observations entail that the map $L: \Obs_0 \rightarrow \Obs_M$ specified by $L [f]= [f] \forall f \in \Obs_0$ is well-defined.
+								\item %Simplectic form preserving:							
+									Note that $L$ is linear and that it preserves the symplectic form. In fact, given $[ f ], [h] \in \Obs_0$, one has:
+									\begin{displaymath}
+										\tau_M \big(L[f], L[h] \big)= \int_M <f, Eh>_x d\textrm{vol}_M =
+										 \int_O <f, Eh>_x d\textrm{vol}_O = \tau_O \big([f],[h])
+									\end{displaymath}
+									where the restriction from $M$ to $O$ in the domain of integration is motivated by the fact that, per construction, $f = 0$ outside $O$.
+								\item Being a symplectic map, $L$ is automatically injective. \\
+									In fact, given $[ f ] \in \Obs_O$ such that $L[ f ] = 0$, one has $\tau_O([ f ], [h]) = \tau_M(L[ f ],L[h]) = 0$ for all $[h] \in \Obs_0$ and the non-degeneracy of $\tau_O$ entails that $[ f ] = 0$.
+								\item Symplectic map $L$ is also surjective.
+																		\\ \danger: Da rincontrollare	\\
+									For each $f\in \Gamma_0(M)$ we look for$ f' \in \Gamma_0(M)$ with support inside $O$ such that $[f']=[f]$ in $\Obs_M$.
+									Recalling that $O$ is an open neighborhood of the spacelike Cauchy surface $\Sigma$ and exploiting the usual spacetime decomposition of $M$, see Theorem \ref{Teo:GHSC_character}, , one finds two spacelike Cauchy surfaces $\Sigma_+,\Sigma_-$ for $M$ included in $O$ lying respectively in the future and in the past of $\Sigma$. Let $\{\chi^+,\chi^-\}$ be a partition of unity subordinate to the open cover $\{\mathbf{I}^+_M(\Sigma_-), \mathbf{I}^-_M(\Sigma_+)\}$ of $M$. 
+									By construction the intersection of the supports of $\chi^+$ and of$\chi^-$ is a timelike compact region both of $O$ and of $M$. 
+									Since $PE f = 0$, $\chi^+ +\chi^-=1$ on $M$ and recalling the support properties of $E$, it follows that 
+									\begin{displaymath}
+									f' = P\big( \chi^- E f \big) =  - P \big( \chi^+ E f \big)
+									\end{displaymath}
+									is a smooth function with compact support inside $O$. 
+									Furthermore, recalling also the identity $P \GreenAdv f = f$ , one finds
+									\begin{displaymath}
+									f' -f = P(\chi^- \GreenAdv f) - P ( \chi^- \GreenRet f ) - P ( \chi^+ \GreenAdv f) - P(\chi^- \GreenAdv f) = - P(\chi^- \GreenRet f - \chi^+ \GreenAdv f )
+									\end{displaymath}
+									The support properties of both the retarded and advanced Green operators $\GreenRet, \GreenAdv$ entail that $-\chi^-\GreenRet f - \chi^+ \GreenAdv f$ is a smooth function with compact support on $M$. In fact $\supp(\chi^\mp) \cap \supp(G^\pm f )$ is a closed subset of $\mathbf{J}_m^mp(\Sigma_\pm) \cap \mathbf{J}_m^\pm(\supp(f))$, which is compact.
+									This shows that $f' -f \in P(\Gamma_0(M)) \subset N$, as proved in proposition \ref{Teo:NspaceDefinition}. 
+									Therefore we found $[ f'\vert_O] \in \Obs(O)$such that $L[ f'\vert_O]=[ f ]$ showing that the symplectic map $L$ is also surjective.
+					\end{itemize}		
+				\end{proof}
+				
+
+							
 	\subsubsection{Second Quantization Step}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		The next step is to construct a quantum field theory out of the classical one, the content of which is encoded the symplectic space $(\Obs, \tau)$. 
+		The so-called algebraic approach can be seen as a two-step quantization scheme: In the first one identifies a suitable unital  *-algebra encoding the structural relations between the observables, such as causality and locality, while, in the second, one selects a state, that is a positive, normalized, linear functional on the algebra which allows us to recover the standard probabilistic interpretation of quantum theories via the GNS theorem.
+		
+
 		\paragraph{Quantum Observables Algebra}   		
+		The crux of the algebraic quantization scheme it is the assignment of a suitable algebras of quantum observables.\\
+		Axiomatically we require that the set of quantum observables satisfies the following structure:
+		\begin{definition}[Algebra of Quantum observables associated to the classical field system $(\Obs, \tau)$.]
+			Is a unital *-algebra $\gls{Algebra}= \big( (\ObsAlg, \Complex),\cdot,*)$ generated over $\Complex$ by the symbols 
+			\begin{displaymath}
+				\big\{\IdOp\big\}\cap \big\{\mathbb{\Phi}\big( [f]\big) \; \big\vert \;  [f] \in \Obs \big\}
+			\end{displaymath}
+			such that:
+			\begin{enumerate}
+				\item The generators are independent:
+					\begin{displaymath}
+						\mathbb{\Phi} \big(a [f] + b [g] \big) = 
+						a \mathbb{\Phi} ([f]) + b \mathbb{\Phi} ([g]) \qquad \forall [f],[g] \in \Obs,\: \forall a,b \in \Real
+					\end{displaymath}
+				\item The generators are \emph{formally self-adjoint} in the sense that:
+					\begin{displaymath}
+						\big( \mathbb{\Phi}([f]) \big)^* = \mathbb{\Phi}([f]) \qquad \forall [f] \in \Obs
+					\end{displaymath}
+				\item The rules of (anti-) commutation given from the classical $\tau$ are replicated on $\ObsAlg$:
+					\begin{displaymath}
+						\big[ \mathbb{\Phi}([f]), \mathbb{\Phi}([g]) \big]_\mp = \mathbb{\Phi}([f]) \cdot \mathbb{\Phi}([g]) \mp \mathbb{\Phi}([g]) \cdot \mathbb{\Phi}([f]) = i \tau\big( [f], [g] \big) \IdOp
+					\end{displaymath}
+					where the sign $\mp$ is given respectively by the antisemmtry and simmetry of the form $\tau$.
+			\end{enumerate}
+
+		\end{definition}
+
 		A concrete realization is achieved in three step.
-   					\begin{enumerate}
-   						\item Construct the \emph{Universal Tensor Algebras} of the classical observables.
-   						\item
-   					\end{enumerate}
-   					
+			\subparagraph{Construction of the generated Algebra $(\ObsAlg, \cdot)$}
+   			
+   			\subparagraph{Construction of the Involution map $*$}
+   			
+   			\subparagraph{CCR implementation}
+   			
+   			\begin{observation}
+   				The properties of the classical field theory presented in Theorem \ref{Teo:CausalityTimeSliceAxioms} have counterparts at the quantum level as shown by the following theorem.
+				\begin{theorem}
+				
+				\end{theorem}
+				\begin{proof}
+					We omit the proof, see for example \cite{benini}[Theorem 4]
+				\end{proof}
+   			\end{observation}
+   			
    		\paragraph{Hadamard state} 
    				   	\begin{enumerate}
    						\item
@@ -378,9 +546,65 @@ In the next sections we review two of the possible realizations of the algebraic
 		
 		
 \section{Link between the two realizations}	
-		\begin{Warning}
-			Intro da Ricopiare
-		\end{Warning}
+	Have to use the following theorem:
+	\begin{theorem}
+					Let $M$ be a globally hyperbolic spacetime. Consider a vector bundle $E$ over $M$, Green-hyperbolic operator $P: \Gamma(E)\rightarrow \Gamma(E)$.
+				Let $G^\pm$ be retarded and advanced Green operators for $P$ and denote with $E$ the corresponding advanced-minus-retarded operator.\\
+				Then the following statements hold true:
+					\begin{enumerate}
+						\item The map:
+							\begin{equation}
+								 \Xi : \frac{\Gamma_{tc}(E)}{P \big( \Gamma_{tc}(E)\big)} \rightarrow  \Sol \qquad \Xi: [f] \mapsto E f
+							\end{equation}
+							,where $\Sol$ is the space of smooth solutions of $P$ as defined in \ref{Def:SolSpace},
+							is a well-defined vector space isomorphisms.
+						\item The domain restriction of map $\Xi$:
+							\begin{equation}
+								 \Xi : \Obs= \frac{\Gamma_{0}(E)}{P \big( \Gamma_{0}(E)\big)} \rightarrow  \Sol_{sc} \qquad \Xi: [f] \mapsto E f
+							\end{equation}
+							, where $\Sol_{sc}$ is the space of the space-like compact solutions of $P$,
+							is a well-defined vector space isomorphisms.
+					\end{enumerate}
+	\end{theorem}
+	\begin{proof}
+	[Th. 1]
+	\begin{itemize}
+		\item Well-posedness of $\Xi$ follows directly from the definition of causal propagator:
+			\begin{displaymath}
+				P E f = 0 \; \forall f \in \Gamma_{tc}(E) \qquad \Rightarrow \; \Xi ( \Obs_0) \subseteq \Sol
+			\end{displaymath}
+			while the explicit definition of equivalence classes:
+			\begin{displaymath}
+				[f] \equiv \{ f + P g \; \vert g \in \Gamma_{tc}(E)\} \qquad\Rightarrow \;
+				 \Xi [f] \equiv \{ E f + E P g \;\vert g \in \Gamma_{tc}(E)\} = E f
+			\end{displaymath}
+			guarantees that the image does not depend on the representative of $[f]$
+		\item %Injectivity  This map is injective since, 
+			Map $\Xi$ is injective.\\
+			Given $f , f' \in \Gamma_{tc}(E)$ such that $E f = E f'$, from linearity of $E$ follows:
+			\begin{displaymath}
+				E ( f - f') = 0
+			\end{displaymath}			
+			applying proposition \ref{Prop:GreenKernel}, one finds $h \in \Gamma{tc}(E)$ such that $P h = f - f'$. 
+			In other words $f$ and $f'$  are two representatives of the same equivalence class in $\dfrac{\Gamma_{tc}(E)}{P ( \Gamma_{tc}(E)} $.
+		\item Map $\Xi$ is surjective.\\
+			Given $u \in \Sol$ and taking into account a partition of unity $\{\chi_+, \chi_-\}$ on $M$ such that $\chi_\pm = 1$ in a past/future compact region, one finds $P ( \chi_+ u \chi_- u ) = P u=0$, therefore 
+			\begin{displaymath}
+				h = P(\chi_-u) = - P(\chi_+ u)
+			\end{displaymath}
+			is timelike compact.\\
+			Exploiting the properties of retarded and advanced Green operators
+			\begin{displaymath}
+				E h = \GreenAdv P (\chi_- u ) - \GreenRet P (\chi_- h ) = \GreenAdv P (\chi_- u ) + \GreenRet P (\chi_+ h ) = \chi_-u + \chi_+ u = u
+			\end{displaymath} 
+			one concludes that $\Xi ( \Obs_0) \supseteq \Sol$.
+	\end{itemize}
+	[Th. 2]
+	\begin{itemize}
+		\item The proof follows slavishly that of proposition \ref{Prop:GreenKernel} and thesis 1, therefore we shall not repeat it in details. 
+			One has only to keep in mind that E maps sections with compact support to sections with spacelike compact support and that the intersection between a spacelike compact region and a timelike compact one is compact.
+	\end{itemize}		
+	\end{proof}
 	
 	\subsection{Equivalence of the Classical Observables}	
 		\begin{Warning}

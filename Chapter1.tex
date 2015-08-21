@@ -418,14 +418,14 @@
 			\begin{definition}[Chronological $\substack{\textrm{ future}\\ \textrm{past } }$ of a point]
 				Are two subset related to the generic point $p	\in M$:
 				\begin{displaymath}
-					\mathbf{I}_M^\pm(p) \coloneqq \big\{ q \in M \big\vert \; \exists \gamma \in C^\infty\big((0,1), M\big)\;  \textrm{\footnotesize time-like } \substack{\textrm{future}\\ \textrm{past} } -\textrm{\footnotesize directed }:\; \gamma(0)=p,\; \gamma(1)=q  \big\}
+					\gls{ChronoPM}\coloneqq \big\{ q \in M \big\vert \; \exists \gamma \in C^\infty\big((0,1), M\big)\;  \textrm{\footnotesize time-like } \substack{\textrm{future}\\ \textrm{past} } -\textrm{\footnotesize directed }:\; \gamma(0)=p,\; \gamma(1)=q  \big\}
 				\end{displaymath}
 			\end{definition}
 	
 			\begin{definition}[Causal $\substack{\textrm{ future}\\ \textrm{past } } $ of a point]
 				Are two subset related to the generic point $p	\in M$:
 				\begin{displaymath}
-					\mathbf{J}_M^\pm(p) \coloneqq \big\{ q \in M \big\vert \; \exists \gamma \in C^\infty\big((0,1), M\big)\; \textrm{\footnotesize causal } \substack{\textrm{future}\\ \textrm{past} } -\textrm{\footnotesize directed }:
+					\gls{CausalPM} \coloneqq \big\{ q \in M \big\vert \; \exists \gamma \in C^\infty\big((0,1), M\big)\; \textrm{\footnotesize causal } \substack{\textrm{future}\\ \textrm{past} } -\textrm{\footnotesize directed }:
 					\; \gamma(0)=p,\; \gamma(1)=q  \big\}
 				\end{displaymath}		
 			\end{definition}
@@ -450,7 +450,7 @@
 			\end{definition}
 
 			\begin{notationfix}
-				$\mathbf{D}_M(\Sigma)  \coloneq \mathbf{D}_M^+(\Sigma) \cup \mathbf{D}_M^-(\Sigma)$ is called \emph{total domain of dependence}.
+				$\mathbf{D}_M(\Sigma)  \coloneqq \mathbf{D}_M^+(\Sigma) \cup \mathbf{D}_M^-(\Sigma)$ is called \emph{total domain of dependence}.
 			\end{notationfix}
 		
 		\subsection{Globally Hyperbolicity}
@@ -465,7 +465,7 @@
 				\end{itemize}
 			\end{definition}
 			\begin{notationfix}
-				We denote the set of all the cauchy surfaces as $\PowerSet_{C}(M)$.
+				We denote the set of all the cauchy surfaces as $\gls{CauchyClass}$.
 			\end{notationfix}
 		\begin{definition}[Globally-Hyperbolic SpaceTime]\label{Def:GHSP}
 			 Spacetime $M$ such that there exists at least one \emph{Cauchy Surface}
@@ -701,12 +701,12 @@ the retarded or the advanced Green operators obtaining:
 			Consider a globally hyperbolic operator $P$ for all $p \in M$ a trivializing chart $(U, \varphi, \chi)$ centered in $p$. 
 			There exist a collection $\big\{A, A^\mu \vert \mu\in \{0, \ldots ,m-1\}\big\}$ of smooth 
 			$\Hom(V,V)-$valued maps on $U$ such that, $P$ reas as follows:
-			\begin{displaymath}
+			\begin{equation}\label{Eq:NormallyHyperbolicRepresentation}
 				\chi \circ ( P \sigma) \circ \varphi^{-1} =
 				\big( g^{\mu \nu} \IdMap_V \partial\mu \partial_nu + A^\mu \partial_\mu + A\big)
 				(\chi \circ \sigma \circ \varphi^{-1} ) 
 				\qquad \forall \sigma \in \dom(P) \subset \Gamma(E)
-			\end{displaymath}
+			\end{equation}
 		where both the chart and the vector bundle trivializations are understood. 
 		One immediately notices that locally this expression agrees- up to terms of lower order in the derivative-s with the one for the d'Alembert operator acting on sections of $E$  constructed out of a covariant derivative $\nabla$ on $E$, that is the operator:
 		\begin{displaymath}

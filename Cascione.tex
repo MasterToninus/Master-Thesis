@@ -220,7 +220,7 @@ Formal definition ed esempi smooth e bundle (tutto ciò che
 			\begin{itemize}
 				\item Configuration bundle of the system is the trivial $E= Q \times \Real$ with base manifold $M=\Real$.
 				\item The kinematic configuration are $\Conf=C^\infty(\Real,Q)$ i.e.all the possible parametrized functions on $Q$.
-				\item The lagrangian density is obtained evaluating the ordinary Lagrangian on the lifted curve:
+				\item The Larangian density is obtained evaluating the ordinary Lagrangian on the lifted curve:
 					\begin{equation}
 						\Lagrangian  [\gamma] \coloneqq \big( L \circ	\gamma^\textrm{lift} \big) dt  = \Lagrangian(t,\gamma^i,\dot{\gamma}^i)
 					\end{equation}
@@ -451,11 +451,64 @@ In the next section we review the last two.
    				 
    			\end{enumerate}
  	\end{enumerate}
+ 	
+ 	\section{Quantizzazione dati iniziali}
+ 			\subsubsection{PreQuantum Step.}
+	\begin{Warning}
+		Si definisce la forma simplettica direttamente su  un opportuno sottoinsieme di data detto "spazio delle fasi classico.\\
+		Gli osservabili classici (lineari) vengono definiti di conseguenza.\\
+		Si prova che $\Obs$ così costruito è $\simeq$ $\Obs$ con le Peierls.\\
+		Ma ciò che non è limpido è il rapporto tra le 2 parentesi costruite sui due spazi isomorfi ( quindi in sostanza su un sistema classico quantizzabile con entrambe le procedure differiscono solo per la diversa prescrizione sulla forma delle brackets)\\
+		
+		Va Illustrato il parallelismo (p.14 p.16 wald) con i sistemi a finiti gradi. questo esplica come la struttura simplettica definita su TT*Q X TT*Q si confonda con quella delle parentesi di Poisson def su $\Obs \times \Obs = \Sigma^\infty \times \Sigma^\infty$ nel caso di sistemi fisici lineari.
+		
+		Nell'applicazione di queste 2 procedure  per il campo di Jacobi sono da stressare i seguenti fatti:
+		\begin{itemize}
+			\item come interviene il fatto che la varietà base sia semplice $M= \Real$ .\\
+				I dati iniziali sono numeri
+			\item Come interviene l'imput che nello specifico l'eq del moto è data da Jacobi?\\
+				(interviene in modo centrale  Riemman-Metrica-Pairing)
+		\end{itemize}
+		
+		Si dice che le Peierls sono automaticamente covarianti (vedi ForgerRomero quando ne parla) mentre quelle sui dati iniziali rompono la covarianza:
+		Di base c'è la scelta di una superficie di cauchy su cui dare i dati.
+		
+		Attenzione ad usare Wald!  è poco formalizzato: e.g.: non parla mai di  green hyperbolic ( anche perchè non serve!) conta solo che il problema di cauchy sia ben posto.
+		
+		CD parla dei Norm Hyperbolic che sono entrambe le cose!
+		
+		Quando costruisco C.F.S. scelgo i dati iniziali a supporto compatto.
+			\begin{itemize}
+				\item Motivazioni a posteriori è chara: garantisce la separabilità nel senso che una misurazione di tutte loro garantisce di esaustire la separabilità (cioè identificare in modo univoco una configurazione)
+				\item c'è motivazione a priori? no, è pura praticità: abbastanza semplice da maneggiare + garantisce la separabilità. dunque è scelta minimale: situazione più semplice per fare il pairing. ( se avessi voluto complicarmi la vita avrei preso le distro a supporto compatto
+				\item nella scelta non c'entra il fatto che le sup compatto sono funzioni di test, dunque sono il duale delle distribuzioni come dati iniziali.
+			\end{itemize}
+		\end{Warning}
+				\paragraph{Symplectic Structure on the Phase Space}
+				[Initial data symplectic form]			
+			\begin{Warning}
+				Proposta di definizione per dinamiche di ordine più alto..
+				\begin{displaymath}
+					\Omega \biggr\{ [f_0,\ldots, f_k] , [g_0,\ldots, g_k] \biggr\} =
+					\int_\Sigma d\Sigma  \biggr(-\epsilon^{ab}(f_a,g_b) \biggr)
+				\end{displaymath}
+				gli indici corrono da (0, k-1) dove k è l'ordine... (anche se non ha senso \\
+				Non va bene perchè non riesce a tenere conto del campo di Dirac!
+			\end{Warning}
+
 
 %\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 \chapter{Jacobi Fields}
 %\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 
+\section{Geodesic Peierls}
+	\begin{Warning}
+		Da dire: espressione in coordinate della lagrangiana, è altmente non lineare perchè implicitamente è $g_{\mu\nu}(\gamma^i(t))$ non polinomiale in $\gamma^i$ ed esplicitamente è quadratica, Mostrare esplicitamente che l'equazione di jacobi per il sistema è effittivamente l'equjazione di jacobi ( questo è triviale se vedi come definisce il campo di jacobi jurgen 
+	\end{Warning}	
+	\begin{Warning}
+		Sul quaderno ho scritto un po' di più ma in un modo non adatto alla tesi.! peccato
+	\end{Warning}	
+	
 
 
 

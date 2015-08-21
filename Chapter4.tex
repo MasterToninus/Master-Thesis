@@ -14,16 +14,27 @@
 		\end{equation}
 		where $\dot{\gamma}^\mu \coloneqq \frac{d \gamma^\mu}{d t}$ is the tangent vector to the curve.
 	\end{definition}
-	\begin{notationfix}
+
 		In local chart the previous equation assume the popular expression:
 		\begin{equation}\label{GeodesicEquation}
 			\ddot{\gamma}^i + \Gamma^i_{\, j k} \dot{\gamma}^j \dot{\gamma}^k = 0
 		\end{equation}
-		Where $ \Gamma^i_{\, j k}$ is the coordinate representation of the Christoffel symbols of the connection.
-	\end{notationfix}
-	%Definizione metrica di geodetica su varietà riemmaniana( con connessione di levi civita)
+		,where $ \Gamma^i_{\, j k}$ is the coordinate representation of the Christoffel symbols of the connection, that admit a well-posed Cauchy problem.
+		\begin{theorem}
+			Let $M$ be a smooth manifold, $p\in M$, $v \in T_p M$. 
+			Then there exist $\epsilon>0$ and precisely one geodesic
+			\begin{displaymath}
+				c: [0,\epsilon]\rightarrow M
+			\end{displaymath}
+			with $c(0) = p , \dot{c}(0) = v$.\\
+			 In addition, $c$ depends smoothly on $p$ and $v$.
+		\end{theorem}
+		\begin{proof}
+		Equation \ref{GeodesicEquation} is a system of second order ODE, and the Picard-Lindelof theorem yields the local existence and uniqueness of a solution with prescribed initial values and derivatives, and this solution depends smoothly on the data.
+		\end{proof}
+
 	\vspace{4mm}
-	
+	%Definizione metrica di geodetica su varietà riemmaniana( con connessione di levi civita)	
 	In presence of a pseudo-Riemannian metric is possible to present the geodesic in a metric sense i.e. as the curve  which extremizes the \emph{Energy Functional}\footnote{Remember that for arc-length parametrized curves the Energy functional coincide with the length functional.\cite[Lemma $1.4.2$ ]{Jost2005}}:
 	\begin{definition}[Energy functional]
   	\begin{equation}\label{EnergyFunctional}
@@ -51,7 +62,6 @@
 			\item $\big(X'\big)^\mu \coloneqq \big( \nabla_{\dot{\gamma}(t)} X\big)^\mu$ is the covariant derivative along the curve $\gamma$.
 			\item $T \equiv \dot{\gamma}(t)$ stands for the tangent vector to the curve $\gamma$.
 		\end{itemize}
-	
 	\end{notationfix}
 	
 	
@@ -151,12 +161,22 @@
 	\end{displaymath}	 
 	
 	Collecting all the terms in equation \ref{GeodesicJacobation1} up the first order in $\epsilon$ follows a condition on the perturbation:
-	\begin{displaymath}
-	0 = \ddot{\eta}^\mu + \eta^\alpha\big( \partial_\alpha  \Gamma^\mu_{\, i j} \big)\biggr\vert_{\vec{q_0}} \dot{q_0}^i \dot{q_0}^j  +  \Gamma^\mu_{\, i j} \big(\dot{\eta}^i \dot{q_0}^j + \dot{q_0}^i \dot{\eta}^j \big)=
-	=\biggr\{ g^\mu_{\,\alpha} \frac{d^2}{dt^2} +
+	\begin{align}\label{Eq:JacobiPeierlsEquation}
+	0 &= \ddot{\eta}^\mu + \eta^\alpha\big( \partial_\alpha  \Gamma^\mu_{\, i j} \big)\biggr\vert_{\vec{q_0}} \dot{q_0}^i \dot{q_0}^j  +  \Gamma^\mu_{\, i j} \big(\dot{\eta}^i \dot{q_0}^j + \dot{q_0}^i \dot{\eta}^j \big)= \nonumber \\
+	&=\biggr\{ g^\mu_{\,\alpha} \frac{d^2}{dt^2} +
 	 \Gamma^\mu_{\, i \alpha}(\vec{q_0})\big[2 \dot{q_0}^i \frac{d}{dt} \big] + 
-\big[ \partial_\alpha  \big] \biggr\} \eta^\alpha	 
-	\end{displaymath}		
+\big[ \partial_\alpha \Gamma^\mu_{\, i j}(\vec{q_0}) \dot{q_0}^i \dot{q_0}^j  \big] \biggr\} \eta^\alpha	= P^\mu_{\: \alpha} \eta^\alpha
+	\end{align}		
+	where $ P^\mu_{\: \alpha}$ is a linear partial differential operator acting on the \emph{variations}, \textit{,i.e.,} the components of a field along the geodesic $\gamma_0$.
+	In the notation of section \ref{Section:NonLinearPeierls} this linearized dynamics operator has been called \emph{Jacobi operator}.
+	
+	\begin{proposition}
+		The differential equation $$P^\mu_{\: \alpha} \eta^\alpha=0$$ corresponding to the l.p.d.o $P$ defined in equation \ref{GeodesicJacobation1} corresponds to equation \ref{JacobiEquationComponents} defining  the \emph{Jacobi fields} along the geodesic $\gamma_0$.
+	\end{proposition}
+	\begin{proof}
+		\danger .. sul quaderno
+	\end{proof}
+	
 	
 	
 	\begin{Warning}
@@ -174,9 +194,35 @@
 	
 
 \section{Algebraic quantization of the Geodesic Field}
-	\begin{Warning}
-	va ripetuto che la geodetica è non lineare quindi ciò che effettivamente si quantizza è jacobi lungo una prefissata geodetica. questo è un campo lineare.
-	\end{Warning}
+	The algebraic quantization scheme applies only to linear field systems.
+	Since equation\ref{GeodesicEquation} is highly non linear, what is actually quantized it is not the geodesic system but rather the Jacobi field along a fixed geodesic $\gamma_0$.
+	
+		\subsubsection{Classical Framework}
+			Chosen a geodesic $\gamma_0$ the kinematics configurations of the Jacobi fields are tangent fields along the fixed curves.
+			\paragraph{Kinematics}	
+			The configuration bundle $E$ corresponds to the \emph{Pull-back bundle} $\gamma_0^*(TQ)$ of the tangent bundle along the geodesic $\gamma_0$.
+			Then:
+			\begin{itemize}
+				\item $E$ is a vector bundle over $\Real$.
+				\item The base manifold $\Real$ can be considered as a degenerate globally hyperbolic spacetime, $\CauchyClass(\Real) = \Real$.
+				\item the fibers are $E_p \coloneqq T_{\gamma_0(p)}Q$
+				\item $\Conf = \Gamma^\infty(E) = \mathfrak{X}(\gamma_0)$ is constituted by vector fields along the curve $\gamma_0$.
+			\end{itemize}
+			
+			\paragraph{Dynamics}
+				The coordinate representation of the motion equation is:
+				\begin{displaymath}
+					\big( P X)^\mu = (X'')^\mu + R^\mu_{\, i \alpha j } T^i T^j X^\alpha
+				\end{displaymath}
+				where $X\in \Conf$ and $T^i = \dot{\gamma_0}^i$.
+				According to equation \ref{Eq:NormallyHyperbolicRepresentation} this operator fall exactly in the \emph{normally hyperbolic} operator class hence is quantizable both by Peierls procedure and by inital data.
+				
+		\subsubsection{PreQuantum Framework}
+			\paragraph{Pairing}
+				The choice of the inner product on the configuration bundle is obvious
+				è scontato prendere il r
+
+	
 	
 	\begin{Warning}
 	INtro: paragrafo sul quaderno: "qual'è l'interesse che spinge a quantizzare questo sistema "Campo di Jacobi"?

@@ -101,7 +101,6 @@ In this chapter we will take advantage of the language developed in the first ch
 	\end{definition}	
 	
 	\begin{NB}
-	
 		In what follows all the systems considered will be exclusively of first order.
 		The reason is due to the \emph{Ostrogradsky instability} according to which a non-degenerate Lagrangian dependent on time derivatives of higher than the first corresponds to a linearly unstable dynamics.\cite{Motohashi2014}
 	\end{NB}	
@@ -213,7 +212,7 @@ In this chapter we will take advantage of the language developed in the first ch
 	
 	
 	
-		\subsection{Classical Field Theory}
+		\subsection{Classical Field Theory}\label{Section:CFT}
 		%Basically 
 		A (classical) \emph{Field System} is nothing more than an abstract Field System $(E,P)$ where the base space $M$  is a suitable spacetime manifold\cite{Bar}. At this stage the question about the Lagrangian nature of the dynamics is purely ancillary.
 		\\		
@@ -242,33 +241,47 @@ In this chapter we will take advantage of the language developed in the first ch
 		The first condition ensures the existence of Cauchy surfaces and therefore permits to state  \emph{Cauchy Problems} assigning an initial data on such submanifolds.
 		Furthermore, PDE-hyperbolicity of the motion operator $P$ guarantees that for every Cauchy surface $\Sigma \subset M$ the corresponding initial data problem is well posed, that is:
 			\begin{equation}\label{CauchyProblem}
-				\begin{cases} P u = 0 \\ u = u_0 \\ \nabla_{\vec{n}}u= u_1 \end{cases}
+				\begin{cases} P u = 0 \\ u = u_0 \\ \nabla_{\vec{n}}u= u_1 \\  \vdots \\ \big[\nabla_{\vec{n}} \big]^{k-1}u = u_{k-1}\end{cases}
 			\end{equation}
-			admit a unique solution $u\in \Gamma(E)$ for all $(u_0, u_1) \in \Gamma (\Sigma )\times \Gamma (\Sigma )$.
+			where $k$ is the order of the linear differential operator as defined in Def. \ref{Def:LPDO},
+			admits a unique solution $u\in \Gamma(E)$ for all 
+			\begin{displaymath}
+				(u_0,\ldots, u_{k-1}) \in \underbrace{\Gamma (\Sigma )\times \ldots \times \Gamma (\Sigma )}_{\footnotesize{ k \textrm{ times}}}
+			\end{displaymath}.
 			\\
 			This suggests the following definition:
-			\begin{notationfix}
-				The set of all the smooth initial data which can be given on the Cauchy Surface $\Sigma$ is:
-				$\gls{Data}(\Sigma)  \coloneqq \biggr \{ (f_0,f_1) \big \vert f_i \in \Gamma^\infty(\Sigma)\biggr\}  \equiv  \Gamma^\infty(\Sigma) \times \Gamma^\infty(\Sigma)$
-			\end{notationfix}
+			\begin{definition}[Initial Data Set]
+				Let be  $P$ a l.d.p.o of order $k$, we call $\gls{Data}$ the set of all the smooth initial data which can be given on the Cauchy Surface $\Sigma$ is:
+				\begin{displaymath}
+					\Data(\Sigma)  \coloneqq \biggr \{ (f_0,\ldots f_{k-1}) \big \vert f_i \in \Gamma^\infty(\Sigma)\biggr\}  \equiv
+					\underbrace{\Gamma^\infty (\Sigma )\times \ldots \times \Gamma^\infty (\Sigma )}_{\footnotesize{ k \textrm{ times}}}					
+				\end{displaymath}
+			\end{definition}
 			\begin{observation}
 				$\Data(\Sigma)$ inherit the linear structure of its component $ \Gamma^\infty(\Sigma)$.
 			\end{observation}	
 			In this term the well-posedness of the Cauchy problem can be stated as follow:
 
 			\begin{proposition}
-				The map $$ 	 \gls{SolMap} : \Data (\Sigma ) \rightarrow \Sol $$ which assigns to $(u_0, u_1)\in \Data(\Sigma)$ the unique solution of the cauchy problem \ref{CauchyProblem} is linear and bijective.
+				The map $$ 	 \gls{SolMap} : \Data (\Sigma ) \rightarrow \Sol $$ which assigns to $(u_0, \ldots, u_{k-1})\in \Data(\Sigma)$ the unique solution of the Cauchy problem \ref{CauchyProblem} is linear and bijective.
 			\end{proposition}
 			
-			Since any solution, when restricted to a generic Cauchy surface $\Sigma'$, determines another pair of initial data, i.e.:
+			Since any solution, when restricted to a generic Cauchy surface $\Sigma'$, determines another n-tuple of initial data, i.e.:
 			\begin{displaymath}
-				\phi \equiv \SolMap (\phi \vert_{\Sigma'}, \nabla_{\vec{n'}}\phi	 \vert_{\Sigma'} )	\quad \forall \phi\in \Sol
+				\phi \equiv \SolMap \big(\phi \vert_{\Sigma'}, \nabla_{\vec{n'}}\phi\vert_{\Sigma'}, \ldots, 
+				\big[\nabla_{\vec{n'}}\big]^{(k-1)}\phi \vert_{\Sigma'} \big)	\quad \forall \phi\in \Sol
 			\end{displaymath}						
 			we can define the set of initial data regardless of the particular Cauchy surface:			
+
+			\begin{NB}
+			
+				Embracing the principle of Ostrogradsky, can be neglected operators of order	beyond the second.
+				Without loss of generality we denote the element of $\Data$ as a pair $(f_0,f_1)$.
+			\end{NB}			
 			
 			\begin{definition}[Set of smooth initial Data]
 				\begin{displaymath}
-					\Data  \coloneqq \frac{\bigsqcup\limits_{\Sigma \in \PowerSet_C(M)}\Data(\Sigma)}{\sim} 
+					\Data  \coloneqq \frac{\bigsqcup\limits_{\Sigma \in \CauchyClass(M)}\Data(\Sigma)}{\sim} 
 				\end{displaymath}
 				where $\sim$ is such that:
 				\begin{displaymath}
@@ -285,7 +298,7 @@ In this chapter we will take advantage of the language developed in the first ch
 				\begin{displaymath}
 					\big[ \phi_a + \phi_b \big] = \big[ \phi_a \big] + \big[ \phi_b \big]
 				\end{displaymath}
-				where $[\phi]= \big\{(\phi\vert_\Sigma , \nabla_{\vec{n}}\phi \vert_\Sigma) \big\vert \Sigma \in \PowerSet_C \big\}$.
+				where $[\phi]= \big\{(\phi\vert_\Sigma , \nabla_{\vec{n}}\phi \vert_\Sigma) \big\vert \Sigma \in \CauchyClass \big\}$.
 				In fact:
 				\begin{align*}
 					 \SolMap_{\Sigma'}\big([(a',b')] + [(c',d')] \big)=\SolMap_\Sigma\big([(a,b)] + [(c,d)] \big) = \SolMap_\Sigma\big([(a,b)] \big)+ \SolMap_\Sigma\big([(c,d)] \big) =\\
@@ -299,8 +312,7 @@ In this chapter we will take advantage of the language developed in the first ch
 		\begin{observation}
 			The hyperbolicity condition  is the main ingredient in the \emph{initial data quantization} procedure\cite{Wald1994}.	
 		\end{observation}	
-	
-	
+			
 		\paragraph{Green-Hyperbolic Dynamic Condition}
 		\begin{itemize}
 			\item The dynamic is generated by a \underline{Lagrangian}, i.e.  $P= Q_\Lagrangian$.
@@ -489,7 +501,7 @@ In this chapter we will take advantage of the language developed in the first ch
 	\begin{proposition}[Symplectic coordinate representation]
 	
 	In canonical coordinates  $(q^1, \ldots, q^; p_1, \ldots, p_n)$ we have:
-	\begin{equation}
+	\begin{equation}\label{Eq:SymplecticCoordinateRepresentation}
 		\{f,g\} = \sum_{i=1}^n \biggr(\frac{\partial f}{\partial q^i} \frac{\partial g}{\partial p_i}  - \frac{\partial f}{\partial p_i} \frac{\partial g}{\partial q^i} \biggr) \qquad \forall f,g \in \Obs
 	\end{equation}
 	\end{proposition}
@@ -505,12 +517,11 @@ In this chapter we will take advantage of the language developed in the first ch
 			\end{quotation}
 		It follows that the specification of a point in the phase space is an appropriate initial data for determining a solution of Hamilton's equations of motion, \textit{i.e}, each point $y\in \Phase$  gives rise to a unique solution of the dynamical evolution.
 		Therefore:
-		\begin{displaymath}
+		\begin{equation}\label{Eq:PhaseDataSol}
 			\Phase \cong \Data \cong \Sol
-		\end{displaymath}
+		\end{equation}
 	
-	\subsection{Linear dynamical systems}	
-		
+	\subsection{Linear dynamical systems}\label{Section:LinearClassicalSystem}
 	Most of the physical systems that are encountered in the theory of fields are linear.	
 	It is possible to come across linear dynamical systems also in ordinary mechanics. 
 		\begin{remark}
@@ -751,7 +762,7 @@ In this chapter we will take advantage of the language developed in the first ch
 		We are not interested in addressing the cases for which the simplectic property is met on this general ground. 
 		In the next chapter we will face the problem to determine  symmetry and non-degeneracy properties for the case of  \emph{classical observable functionals}, a subclass of Lagrangian functionals of most practical use in the quantization schemes.
 
-	\subsection{Extension to non-linear theories}
+	\subsection{Extension to non-linear theories}\label{Section:NonLinearPeierls}
 		In the previous construction the Green-hyperbolicity of $P$ plays a primary role.
 		The problem of searching perturbed solution to the disturbed dynamic can be stated even in presence  of non-linear fields  when the configuration bundle is not necessary a vector bundle or the operator ruling the dynamics is not linear.
 		\begin{figure}[h!]

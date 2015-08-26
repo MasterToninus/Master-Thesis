@@ -452,6 +452,19 @@ In the next section we review the last two.
    			\end{enumerate}
  	\end{enumerate}
  	
+	\begin{observation}
+		Conditions of Green-hyperbolicity and formally self-adjoint are sufficient guarantees the good definitions of $\tau$.
+		Has to be noted that the Lagrangian condition is ancillary. This has the purpose to justify the shape of the symplectic form on the classical observables space as consequent from the Peierls bracket.
+		\\
+	It is frequent\cite{Dewitt1999}\cite{Benini} to overlook to the origin of this object and jump directly to the expression \ref{Def:SymplecticTau}  in term of the Green's operator that no longer present any direct link to the Lagrangian and therefore can be extended to any green-hyperbolic theory.
+	\end{observation}
+	
+	\begin{Warning}
+		Sull'inner product:\\
+						Together with the Green-hyperbolicity this condition guarantees that $\exists 1! G^\pm$ and $(G^\pm)^\dagger) = G^\mp$.
+				( $\exists 1! E$ causal propagator and $E^\dagger =  -E$.
+	\end{Warning}
+ 	
  	\section{Quantizzazione dati iniziali}
  			\subsubsection{PreQuantum Step.}
 	\begin{Warning}
@@ -495,7 +508,51 @@ In the next section we review the last two.
 				gli indici corrono da (0, k-1) dove k è l'ordine... (anche se non ha senso \\
 				Non va bene perchè non riesce a tenere conto del campo di Dirac!
 			\end{Warning}
+	\subsection{Quantum Step}
+	   		\paragraph{Hadamard state} 
+			Considering the scope of this thesis, we will focus primary on the first step. For a brief account on the construction of the \emph{quantum states} see Ref. \cite{Benini2013}.
+			\begin{Warning}
+			Non devi certo entrare nei dettagli, ma devi quantomeno accennare al fatto che siano la classe corretta di stati di usare in quanto godono di proprietà rilevanti quali in particolare la possibilità di costruire i polinomi di Wick in modo covariante.
+			\end{Warning}
 
+\section{Raccordo tra le due procedure}
+
+	%\subsection{Equivalence of the Brackets}	
+	\begin{proposition}[The mapping $\Xi$ is a simplettomorphism.]
+		Let be $(\Obs,\tau)$ and $(\Obs_{Lin},\Omega)$ the two classical symplectic spaces according to initial data quantization and Peierls quantization, where
+		\begin{displaymath}
+			\sigma: \Sol_{sc}\times \Sol_{sc} \rightarrow \Real \qquad 
+			\sigma\big( \psi, \phi \big) \int_\Sigma \big( <\nabla_n \psi ,\phi>  - <\psi, \nabla_n \phi> \big) d\Sigma
+		\end{displaymath}
+		\begin{displaymath}
+			\tau: \Obs \times \Obs \rightarrow \Real \qquad
+			\tau \big( [f] ,[g] \big) = \int_M < f, Eg> d\mu
+		\end{displaymath}
+		are the corresponding symplectic forms.\\
+		The isomorphism $\Xi: [f] \mapsto E f$ between the two underlying vector spaces preserves the symplectic forms:
+		\begin{displaymath}
+			\sigma \big( Ef, Eg \big) =  \tau\big( [f], [g] \big)
+		\end{displaymath}
+		
+	
+	\end{proposition}
+	\begin{proof}
+		\danger non vale in generale ma solo per alcuni casi!
+	\begin{Warning}
+		La formula discende seguendo un ragionamento simile a quello precedente. Nota che vale per P operatore d'onda (o di KG) e non in generale per ogni operatore Green-iperbolico e formalmente autoaggiunto (ad esempio per Dirac non vale, seppur sia un operatore Green iperbolico).
+	\end{Warning}
+		\begin{align}
+		\tau\big( [f], [g] \big) \coloneqq  & \int_M f E h d\textrm{Vol}_M = 
+		\int_{\CausalFut(\Sigma)} f \psi d\textrm{Vol}_M	 + \int_{\CausalPast(\Sigma)} f \psi d\textrm{Vol}_M =	\nonumber \\
+		=& \int_{\CausalFut(\Sigma)} (P \GreenAdv f) \psi d\textrm{Vol}_M	 + \int_{\CausalPast(\Sigma)} ( P \GreenRet f ) \psi d\textrm{Vol}_M =	 \\
+		=&  -\int_\Sigma \big( \nabla_n ( \GreenAdv f) \big) \psi d\Sigma
+		+\int_\Sigma \big( ( \GreenAdv f) \big)\nabla_n  \psi d\Sigma +\\
+		&+\int_\Sigma \big( \nabla_n ( \GreenRet f) \big) \psi d\Sigma  
+		-\int_\Sigma \big( ( \GreenRet f) \big)\nabla_n  \psi d\Sigma =  \\
+		=& \int_\Sigma \big( \phi \nabla_n \psi - \psi \nabla_n \phi \big) d\Sigma \coloneqq\sigma (\phi, \psi)
+		\end{align}
+
+	\end{proof}
 
 %\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 \chapter{Jacobi Fields}

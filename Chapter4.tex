@@ -7,15 +7,15 @@
 	%Definizione di geodetica su varietà con connessione
 	Considering a differential manifold $M$ endowed with an affine connection $\nabla$ we define:
 	\begin{definition}[Geodesic]
-		A curve \danger\footnote{Devo dire smooth o piecewise? }
-		$\gamma:[a,b]\rightarrow M$ such that:
+		A smooth curve $\gamma:[a,b]\rightarrow M$ such that:
 		\begin{equation}
 			\nabla_{\dot{\gamma}}\dot{\gamma} =0
 		\end{equation}
 		where $\dot{\gamma}^\mu \coloneqq \frac{d \gamma^\mu}{d t}$ is the tangent vector to the curve.
 	\end{definition}
+	
 
-		In local chart the previous equation assume the popular expression:
+		In local chart the previous equation assume the well-known expression:
 		\begin{equation}\label{GeodesicEquation}
 			\ddot{\gamma}^i + \Gamma^i_{\, j k} \dot{\gamma}^j \dot{\gamma}^k = 0
 		\end{equation}
@@ -42,18 +42,17 @@
  	\end{equation}
 \end{definition} 	
 	Considering only the proper variation (that keep the end-point fixed), the extremum condition corresponds to equation \ref{GeodesicEquation} where $\nabla$ is the unique Levi-Civita connection (torsion-free and metric-compatible).
-	%Problema di Jacobi, deviazione geodetica e legame alla curvatura
+
 	\vspace{4mm}
+		%Problema di Jacobi, deviazione geodetica e legame alla curvatura
+	In general relativity the problem of the geodesic equation linearization, named \emph{Jacobi equations} takes a central role. \footnote{Usually in this context takes the name of \emph{Geodesic deviation} problem\cite[pag. 46]{Wald1984} inasmuch Jacobi field describes the difference between the geodesic and an "infinitesimally close" geodesic.}
+	\\
+	Briefly a Jacobi field along the geodesic $\gamma$ can be seen as the tangent vector field on the submanifold determined by  a smooth one parameter family of geodesics$ \gamma_\tau$ ( with $\gamma_0=\gamma$) in respect to the$t$ coordinate. \textit{i.e.}:
+	\begin{displaymath}
+	 J = \left. \frac{\partial \gamma_\tau (t)}{\partial \tau}\right\rvert_{\tau=0}
+	\end{displaymath}
 	
-	In general relativity the problem of the geodesic equation linearization, named \emph{Jacobi equations} takes a central role. \footnote{Usually in this context takes the name of \emph{Geodesic deviation} problem\cite[pag. 46]{Wald1984}.}
-	
-\begin{Warning}
-	(nel file di ripasso di geometria riemmaniana ho scritto gran parte delle definizione conviene vedere cosa mi serve effettivamente...
-	Di certo mi avvalgo della seguente  equazione
-\end{Warning}
-	
-	\begin{notationfix}
-		In local charts the Jacobi fields along the geodesic $\gamma$ solve a linear O.D.E.:
+		In local charts, a Jacobi fields along the geodesic $\gamma$ is solution of a linear O.D.E.:
 		\begin{equation}\label{JacobiEquationComponents}
 			\big( X''\big)^\mu + R^\mu_{i \alpha \j} T^i X^\alpha T^j =0
 		\end{equation}
@@ -62,25 +61,24 @@
 			\item $\big(X'\big)^\mu \coloneqq \big( \nabla_{\dot{\gamma}(t)} X\big)^\mu$ is the covariant derivative along the curve $\gamma$.
 			\item $T \equiv \dot{\gamma}(t)$ stands for the tangent vector to the curve $\gamma$.
 		\end{itemize}
-	\end{notationfix}
+
 	
 	
 	
 	
-	The rest of this chapter will be dedicated to presenting the physical approach to the Geodesic.
+	The rest of this chapter will be dedicated to presenting the the approach to geodesic and Jacobi problem as a physical system.
 
 
 \section{Geodesic Problem as a Mechanical Systems}\label{GeodesicMechanics}
 	% Da quanto detto in introduzione ha un odore molto forte il legame  dell'equazione geodetica con l'equazione del moto di un punto su una varietà e dell' funzionale lunghezza come versione con il prinicpio di minima azione
-	The basic idea is very simple, portray the geodesic curve as the natural motion of a free particle constrained on the Pseudo-Riemannian manifold $Q$.
+	The basic idea is very simple, portray the geodesic curve as the natural motion of a free point particle constrained on the Pseudo-Riemannian manifold $Q$.
 	
-	\begin{Warning}
-	obvious enough this problem can be seen as a generalization of the calculation of the motions of free falling parcticles
+	\begin{remark}
 	In terms of general relativity this problem can be instantly recognized as the derivation of the free-falling particles motion.
 	
 	However, there is no lack of alternative viewpoints .
-	The framework of the classical Geometric Mechanics teach us to picture the "static" configurations of a constrained, complex, classical system as a point on the \emph{Configuration space} manifold. According to that, the geodesic motion can be seen as a realization of a particular dynamics on each mechanical system endowed with a pseudo-Riemannian configuration space\footnote{Such systems can be depicted as "geodesic" even in presence of a position-dependant potential.\cite[Cap 3.7]{Abraham1978}}.
-	\end{Warning}
+	The framework of the classical \emph{geometric mechanics} taught us to picture the "static" configurations of a constrained, complex, classical system as a point on the \emph{Configuration space} manifold. According to that, the geodesic motion can be seen as a realization of a particular dynamics on a mechanical system with a pseudo-Riemannian configuration space\footnote{Such systems can be depicted as "geodesic" even in presence of a position-dependant potential.\cite[Cap 3.7]{Abraham1978}}.
+	\end{remark}
 
 
 	% Q è la varietà riemmanian in esame, eccc. vedi pag 223  e successive del fomm (direi di dare per assodato tutto il contesto di meccanica geometrica che mi sono studiato nei primi mesi della tesi ma credo non sia il caso di mettere per esteso qui, al massimo solo linkarlo
@@ -99,16 +97,12 @@
 	\begin{observation}
 		The geodesic system is not simply Lagrangian but also Hamiltonian.
 		This property follows from the hyperregularity\cite{Abraham1978} of $L$.
-		
-		\begin{Warning}
-		Anyway we will neglect this fact inasmuch in what follows only the Lagrangian character assumes a role.
-		\end{Warning}
 	\end{observation}
 
 
 	%Qualsiasi sistema di mqo come il precedente può essere visto come un sistema campo.
 	As shown in chapter 2, every system with discrete degrees of freedom can be seen as the trivial field system.
-	From that follows the alternative characterization of geodesic as a lagrangian field:
+	From that follows the alternative characterization of geodesic as a Lagrangian field:
 	\begin{corollary}[Geodesic field]
 		The geodesics on the Pseudo-Riemmanian manifold $(Q,g)$ can be seen as the \emph{Dynamical Configurations} of the lagrangian field system $(E,\Lagrangian)$ where:
 		\begin{itemize}
@@ -130,18 +124,15 @@
 
 
 \section{Peierls Bracket of the Geodesic field}
-	The local coordinate expression of the lagrangian density of the geodesic field results:
+	The local coordinate expression of the Lagrangian density of the geodesic field results:
 	\begin{equation}
-		\Lagrangian\big(t,\gamma^i(t), \dot{\gamma}^i(t) \big)\coloneqq \frac{1}{2}g_{\mu,\nu}\big(\gamma^i(t))\dot{\gamma}^\mu \dot{\gamma}^\nu
+		\Lagrangian\big(t,\gamma^i(t), \dot{\gamma}^i(t) \big)\coloneqq \frac{1}{2}g_{\mu,\nu}\left(\gamma^i\left(t\right)\right)\dot{\gamma}^\mu \dot{\gamma}^\nu
 	\end{equation}		
-	this is highly non-linear. Explicitly is quadratic in the velocity components $\dot{\gamma}^i$ and implicitly, through $g_{\mu\nu}(\gamma^i(t))$, is non-polynomial in coordinate $\gamma^i$.
+	this is highly non-linear. 
+	Explicitly is quadratic in the velocity components $\dot{\gamma}^i$ and implicitly, through $g_{\mu\nu}(\gamma^i(t))$, is non-polynomial in coordinate $\gamma^i$.
 	
-	As show in section \ref{}, for this type of systems, the calculation of Peierls bracket can be realized only locally around a predetermined solution.
-	Let's repeat the Peierls' procedure for the system under investigation.
-	
-	\begin{Warning}
-	Introduzione da rividere, dimostro che l'operatore linearizzato senza termine inomogeneo corrisponde all'equazione di Jacobi vera e propria mentre con termine inomogeneo dato dalle E-P del disturbo da l'equazione che definisce la perturbazione ritardata e anticipata.
-	\end{Warning}
+	As show in section \ref{Section:NonLinearPeierls}, for this type of systems the calculation of Peierls bracket can be realized only locally around a predetermined solution.
+	Let us repeat the Peierls' procedure for the system under investigation.
 
 	As a consequence of our introduction on the geodesic as a field, we can state the unperturbed dynamic as a L.P.D.O :
 		\begin{equation}
@@ -168,21 +159,64 @@
 \big[ \partial_\alpha \Gamma^\mu_{\, i j}(\vec{q_0}) \dot{q_0}^i \dot{q_0}^j  \big] \biggr\} \eta^\alpha	= P^\mu_{\: \alpha} \eta^\alpha
 	\end{align}		
 	where $ P^\mu_{\: \alpha}$ is a linear partial differential operator acting on the \emph{variations}, \textit{,i.e.,} the components of a field along the geodesic $\gamma_0$.
-	In the notation of section \ref{Section:NonLinearPeierls} this linearized dynamics operator has been called \emph{Jacobi operator}.
+	As showed in section \ref{Section:NonLinearPeierls}, equating the linearized dynamics operator with the term $-\left(Q_\chi(\gamma_0)\right)(x)$ 	(see equation \ref{PeierlJacobiEqNonLin}) lead to the inhomogeneous \emph{Jacobi operator} from which follows all the standard construction of the brackets Peierls.
+
 	
 	\begin{proposition}
 		The differential equation $$P^\mu_{\: \alpha} \eta^\alpha=0$$ corresponding to the l.p.d.o $P$ defined in equation \ref{GeodesicJacobation1} corresponds to equation \ref{JacobiEquationComponents} defining  the \emph{Jacobi fields} along the geodesic $\gamma_0$.
 	\end{proposition}
 	\begin{proof}
-		\danger .. sul quaderno
+		For convenience, we adopt the following notation:
+		\begin{align*}
+		&\eta^\mu \partial_\mu \coloneqq X \equiv X^\mu \partial_mu \\
+		&\dot{q_0}^i \partial_i \equiv \dot{\gamma_0} \coloneqq T \equiv T^i \partial_i
+		\end{align*}
+		We have to show that the equation just found:
+		\begin{equation}\label{JacobiEqI}
+			\ddot{X}^\mu + X^\alpha\left(\partial_\alpha\Gamma^{\mu}_{\, i j}\right)T^i T^j + \Gamma^\mu_{\, \alpha j}\left(2 T^i \dot{X}^\alpha \right) = 0
+		\end{equation}
+		where $\dot{X}^\mu = \frac{d}{dt}X^\mu= T^i \partial_i X^\mu$,
+		correspond to equation defying the Jacobi field:
+		\begin{equation}\label{JacobiEqII}
+			\left(X'' \right)^\mu + R^\mu_{\, i \alpha j}T^i X^\alpha T^j = 0
+		\end{equation}
+		where $\left(X')\right)^\mu \coloneqq \left(D_t X \right)^\mu$ and $D_t = T^i \nabla_i$ is the covariant derivative along the curve.\\
+		Since:
+		\begin{align}\label{JacobiEqDerivative}
+			X'' &= D_t D_t X = D_t \left( \partial_\mu \left( \dot{X}^\mu + \Gamma^\mu_{\, i \alpha} T^i X^\alpha \right)\right) \nonumber \\
+			&=\left( \ddot{X}^\mu + \frac{d}{dt}\left( \Gamma^\mu_{\, i \alpha} T^j X^\alpha \right) + \Gamma^\mu_{\, j \nu}T^j \dot{X}^\nu + T^j \Gamma^\mu_{\, j \nu} \Gamma^\nu_{\, i \alpha} T^i X^\alpha \right)\partial_\mu
+		\end{align}
+		We can write equation \ref{JacobiEqI} in term of the covariant derivative as:
+		\begin{align*}
+			\left(X'' \right)^\mu &=
+			- \left(
+			X^\alpha\left(\partial_\alpha\Gamma^{\mu}_{\, i j}\right)T^i T^j + \Gamma^\mu_{\, \alpha i}\left(2 T^i \dot{X}^\alpha \right)
+			- \frac{d}{dt}\left( \Gamma^\mu_{i \alpha} T^i X^\alpha \right) - T^j \Gamma^\mu_{\, j s} \Gamma^s_{\, i \alpha} T^i X^\alpha
+			\right) =\\
+			&=			
+			-\left(
+			X^\alpha\left(\partial_\alpha\Gamma^{\mu}_{\, i j}\right)T^i T^j - \dot{\Gamma}^\mu_{i \alpha} T^i X^\alpha
+			- \Gamma^\mu_{i \alpha} \dot{T}^i X^\alpha  - T^j \Gamma^\mu_{\, j s} \Gamma^s_{\, i \alpha} T^i X^\alpha				
+			\right)
+		\end{align*}
+		remembering that the geodesic condition is still to be met:
+		\begin{displaymath}
+			\dot{T}^i = - \Gamma^I_{\, j k} T^j T^k
+		\end{displaymath}
+		we can conclude that:
+		\begin{align*}
+			\left(X'' \right)^\mu &=
+			- \left(
+			  X^\alpha\left( \partial_\alpha\Gamma^\mu_{\, i j}\right)T^i T^j
+			- T^j \left( \partial_j \Gamma^\mu_{\, i \alpha}\right) T^i X^\alpha
+			+X^\alpha \Gamma^\mu_{\, \alpha s} \Gamma^s_{\, i j}T^i T^j 
+			- T^j \Gamma^\mu_{\, j s} \Gamma^s_{\, i \alpha} T^i X^\alpha
+			\right) =\\
+			&=	-\left( R^\mu_{\, i \alpha j}T^i X^\alpha T^j\right)		
+		\end{align*}
 	\end{proof}
 	
 	
-	
-	\begin{Warning}
-	Da dire: espressione in coordinate della lagrangiana, è altmente non lineare perchè implicitamente è $g_{\mu\nu}(\gamma^i(t))$ non polinomiale in $\gamma^i$ ed esplicitamente è quadratica, Mostrare esplicitamente che l'equazione di jacobi per il sistema è effittivamente l'equjazione di jacobi ( questo è triviale se vedi come definisce il campo di jacobi jurgen 
-	\end{Warning}	
-
 
 	
 	

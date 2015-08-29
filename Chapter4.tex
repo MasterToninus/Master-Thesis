@@ -1,6 +1,13 @@
 \documentclass[Main]{subfiles}
 \begin{document}
 
+
+%NUMBERING of all subsubsection ecc (in order to better grasp the quantization procedure scheme)
+\setcounter{secnumdepth}{5} % seting level of numbering (default for "report" is 3). With ''-1'' you have non number also for chapters
+\renewcommand\thesubsubsection{\Alph{subsubsection}}
+\renewcommand\theparagraph{\thesubsubsection.\alph{paragraph}}
+\renewcommand\thesubparagraph{\theparagraph.\Roman{subparagraph}}
+
 \chapter{Geodesic Fields}
 	%mettere nell'intro una breve introduzione al problema geodetico nell'approccio standard della geometria riemmaniana
 	In the context of differential geometry, \emph{geodesic curves} are a generalization of \emph{straight lines}  in the sense of self-parallel curves.
@@ -60,6 +67,7 @@
 		\begin{itemize}
 			\item $\big(X'\big)^\mu \coloneqq \big( \nabla_{\dot{\gamma}(t)} X\big)^\mu$ is the covariant derivative along the curve $\gamma$.
 			\item $T \equiv \dot{\gamma}(t)$ stands for the tangent vector to the curve $\gamma$.
+			\item $R^\mu_{i \alpha \j}$ is the components representations of the Riemman curvature tensor,
 		\end{itemize}
 
 	
@@ -222,14 +230,15 @@
 	
 
 \subsection{Example: Geodesic field on FRW space-time.}
-	% qui i conti li devo ancora fare, l'idea è che le metriche possono essere diagonalizzate risulta un sistema di equazioni del moto ode disaccoppiate di cui posso calcolare la funzione di green come indicato nelle dispense che trattano il calcolo di green per le ode.
-	%se ho l'operatore di green posso calcolare in esplicito le peierls
+	% qui i conti li devo ancora fare, 
+	l'idea è che le metriche possono essere diagonalizzate risulta un sistema di equazioni del moto ode disaccoppiate di cui posso calcolare la funzione di green come indicato nelle dispense che trattano il calcolo di green per le ode.
+	se ho l'operatore di green posso calcolare in esplicito le soluzioni perturbate e quindi le peierls.
 	Guardare pag 5 advance + pag 6 primer	
 	
 
 \section{Algebraic quantization of the Geodesic Field}
 	The algebraic quantization scheme applies only to linear field systems.
-	Since equation\ref{GeodesicEquation} is highly non linear, what is actually quantized it is not the geodesic system but rather the Jacobi field along a fixed geodesic $\gamma_0$.
+	Since equation\ref{GeodesicEquation} is highly non linear, what can actually be quantized it is not the geodesic system but rather its linearization, the Jacobi field along a fixed geodesic $\gamma_0$.
 	
 		\subsubsection{Classical Framework}
 			Chosen a geodesic $\gamma_0$ the kinematics configurations of the Jacobi fields are tangent fields along the fixed curves.
@@ -253,22 +262,43 @@
 				
 		\subsubsection{PreQuantum Framework}
 			\paragraph{Pairing}
-				The choice of the inner product on the configuration bundle is obvious
-				è scontato prendere il r
+				The choice of the inner product on this configuration bundle is rather obvious.
+				Since $Q$ is a Riemannian manifold and $\Conf$ is composed by tangent vector fields, it is straightforward to choose as inner product on the configuration bundle $E$ the metric function defined on $Q$:
+				\begin{equation}
+					\left\langle X,Y \right\rangle_t \coloneqq g\left( X\left(\gamma_0(t) \right),Y\left(\gamma_0(t) \right)\right)
+					\qquad \forall X,Y \in E_t
+				\end{equation}
+				
+				Follows slavishly the definition of pairing:
+				\begin{equation}
+					\left( X, Y \right) = \int_{\gamma_0} \left\langle X,Y \right\rangle_t dt
+				\end{equation}
+				well-defined for every pair $X,Y \in Conf$ such that $\supp(X) \cap \supp(Y)$ is compact.
+				
+				Operator $P$ ruling the dynamics is formally self-adjoint:
+				\begin{align*}
+				 ( Y, PX) &= \int Y_\mu PX^\mu dt= 
+				 \int\left( Y_\mu \ddot{X}^\mu + Y_\mu R^\mu_{\, i \alpha j}T^i T^j X^\alpha \right)dt = \\
+ 				 &= \int\left( \ddot{Y}_\mu X^\mu + X_\mu R^\mu_{\, i \alpha j}T^i T^j Y^\alpha \right)dt =
+				 \int P Y_\mu X^\mu dt=( PY, X) 				 				 
+				\end{align*}
+				where is been integrated by parts twice (border value are null since the integrand is compactly supported) and has been exploited a curvature tensor identity:
+				\begin{displaymath}
+					\langle R(X,T)T,Y \rangle = \langle R(Y,T)T,X \rangle
+				\end{displaymath}
 
-	
-	
-	\begin{Warning}
-	INtro: paragrafo sul quaderno: "qual'è l'interesse che spinge a quantizzare questo sistema "Campo di Jacobi"?
-	\end{Warning}
+			\paragraph{Classical Observables}
+				Replicating what was done in the general case, 
+				we construct the \emph{pre-observables} as the functionals $F_f:\Conf \rightarrow \Real$ for all $f \in \Gamma_0(E)$ compactly supported field along geodesic $\gamma_0$ as:
+				\begin{equation}
+					F_f(X) = \int_{\gamma_0} <X, f>_t dt \qquad \forall X \in \Conf
+				\end{equation}
+				The classical observables space is then obtained through the quotient:
 
-	\begin{Warning}
-		Disclaimer: Non approfondisco più di tanto gli step di quantizzazione vera e propria. il ruolo di peierls è nel prequantistico, definisce il bracket che poi va implementato sull'algebra. Una volta decisa la parentesi la macchinetta procede in automatico.
-	\end{Warning}
 
 \subsection{Peierls Approach}
-		\begin{Warning}
-		Paragrafo sul Quaderno: ...
+	\begin{Warning}
+		Disclaimer: Non approfondisco più di tanto gli step di quantizzazione vera e propria. il ruolo di peierls è nel prequantistico, definisce il bracket che poi va implementato sull'algebra. Una volta decisa la parentesi la macchinetta procede in automatico.
 	\end{Warning}
 
 \subsection{Inital data Approach}

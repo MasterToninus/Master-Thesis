@@ -558,7 +558,7 @@ In the next section we review the last two.
 \chapter{Jacobi Fields}
 %\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 \section{intro}
-	ho definito la geodesica come curva smooth.. in realtà basta essere piecewise C^2!
+	ho definito la geodesica come curva smooth.. in realtà basta essere piecewise $C^2$!
 	
 \section{Geodesic Problem as a Mechanical Systems}
 	\begin{observation}
@@ -583,7 +583,24 @@ In the next section we review the last two.
 		Sul quaderno ho scritto un po' di più ma in un modo non adatto alla tesi.! peccato
 	\end{Warning}	
 		
-
+\section{Jacobi Quantization}
+			Operator $P$ ruling the dynamics is formally self-adjoint:
+				\begin{displaymath}
+				 ( Y, PX) = \int Y_\mu PX^\mu dt= 
+				 \int\left( Y_\mu \ddot{X}^\mu + Y_\mu R^\mu_{\, i \alpha j}T^i T^j X^\alpha \right)dt =
+ 				 \int\left( \ddot{Y}_\mu X^\mu + X_\mu R^\mu_{\, i \alpha j}T^i T^j Y^\alpha \right)dt =
+				 \int P Y_\mu X^\mu dt=( PY, X) 				 				 
+				\end{displaymath}
+			where is been integrated by parts twice (border value are null since the integrand is compactly supported) and has been exploited a curvature tensor identity:
+				\begin{displaymath}
+					\langle R(X,T)T,Y \rangle = \langle R(Y,T)T,X \rangle
+				\end{displaymath}
+				Uso nell'ordine:
+				\begin{eqnarray}
+					& 	\langle R(u,v)w,z \rangle=\langle R(w,z)u,v \rangle		\\
+					&	R(u,v)=-R(v,u) \\
+					& \langle R(u,v)w,z \rangle=-\langle R(u,v)z,w \rangle
+				\end{eqnarray}
 
 
 %\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/

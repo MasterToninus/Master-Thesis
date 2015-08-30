@@ -53,11 +53,13 @@
 	\vspace{4mm}
 		%Problema di Jacobi, deviazione geodetica e legame alla curvatura
 	In general relativity the problem of the geodesic equation linearization, named \emph{Jacobi equations} takes a central role. \footnote{Usually in this context takes the name of \emph{Geodesic deviation} problem\cite[pag. 46]{Wald1984} inasmuch Jacobi field describes the difference between the geodesic and an "infinitesimally close" geodesic.}
-	\\
-	Briefly a Jacobi field along the geodesic $\gamma$ can be seen as the tangent vector field on the submanifold determined by  a smooth one parameter family of geodesics$ \gamma_\tau$ ( with $\gamma_0=\gamma$) in respect to the$t$ coordinate. \textit{i.e.}:
+	
+	\begin{definition}[Jacobi Field]
+	We call a \emph{Jacobi field} along the geodesic $\gamma$ the tangent vector field over the submanifold $\gamma(t,\tau)$, determined by  a smooth one parameter family of geodesics$ \gamma_\tau$ ( with $\gamma_0=\gamma$), in respect to the$\tau$ coordinate. \textit{i.e.}:
 	\begin{displaymath}
 	 J = \left. \frac{\partial \gamma_\tau (t)}{\partial \tau}\right\rvert_{\tau=0}
 	\end{displaymath}
+	\end{definition}
 	
 		In local charts, a Jacobi fields along the geodesic $\gamma$ is solution of a linear O.D.E.:
 		\begin{equation}\label{JacobiEquationComponents}
@@ -74,7 +76,7 @@
 	
 	
 	
-	The rest of this chapter will be dedicated to presenting the the approach to geodesic and Jacobi problem as a physical system.
+	The rest of this chapter will be devoted to the presentation of the approach to geodesic and Jacobi problem as a physical system.
 
 
 \section{Geodesic Problem as a Mechanical Systems}\label{GeodesicMechanics}
@@ -259,8 +261,9 @@
 				\end{displaymath}
 				where $X\in \Conf$ and $T^i = \dot{\gamma_0}^i$.
 				According to equation \ref{Eq:NormallyHyperbolicRepresentation} this operator fall exactly in the \emph{normally hyperbolic} operator class hence is quantizable both by Peierls procedure and by inital data.
-				
-		\subsubsection{PreQuantum Framework}
+		
+		\subsection{PreQuantum Framework}
+		\subsubsection{Peierls approach}
 			\paragraph{Pairing}
 				The choice of the inner product on this configuration bundle is rather obvious.
 				Since $Q$ is a Riemannian manifold and $\Conf$ is composed by tangent vector fields, it is straightforward to choose as inner product on the configuration bundle $E$ the metric function defined on $Q$:
@@ -288,23 +291,42 @@
 				\end{displaymath}
 
 			\paragraph{Classical Observables}
-				Replicating what was done in the general case, 
+				Replicating what is done in the general case, 
 				we construct the \emph{pre-observables} as the functionals $F_f:\Conf \rightarrow \Real$ for all $f \in \Gamma_0(E)$ compactly supported field along geodesic $\gamma_0$ as:
 				\begin{equation}
 					F_f(X) = \int_{\gamma_0} <X, f>_t dt \qquad \forall X \in \Conf
 				\end{equation}
-				The classical observables space is then obtained through the quotient:
-
-
-\subsection{Peierls Approach}
-	\begin{Warning}
-		Disclaimer: Non approfondisco più di tanto gli step di quantizzazione vera e propria. il ruolo di peierls è nel prequantistico, definisce il bracket che poi va implementato sull'algebra. Una volta decisa la parentesi la macchinetta procede in automatico.
-	\end{Warning}
-
-\subsection{Inital data Approach}
-	\begin{Warning}
-		Ancora su fogli di Brutta!
-	\end{Warning}
+				The classical observables space is then obtained through the usual quotient:
+				\begin{displaymath}
+					\Obs \simeq \frac{\Gamma_0}{P \Gamma_0}
+				\end{displaymath}
+				observables functionals are the maps:
+				\begin{displaymath}
+				 F_{[f]}(X) = F_f (X) \qquad \forall X \in \Sol
+				\end{displaymath}
+				where $f$ is a representative of equivalence class $[f]\in \Obs$.
+			
+			\paragraph{Symplectic Structure}
+				Geodesic motion is a particular case of system with finite degrees of freedom, thus the Peierls bracket between two Lagrangian functionals $\chi, \omega$ around a geodesic $\gamma_0$ tested on a function $f \in C_0^\infty(\Real)$ is given by \ref{EspressionePeierlsCampiCurve}.
+				Restricting the definition to the simplest Lagrangian functionals constructible from the classical observables:
+				\begin{displaymath}
+					\chi [\phi] \coloneqq (\chi, \phi) \qquad \chi \in \Obs,\, \phi \in \Sol
+				\end{displaymath}
+				that is, considering only Lagrangian densities in the form:
+				\begin{displaymath}
+					\chi ( \vec{q}i, \dot{\vec{q}}) \coloneqq < \chi, \vec{q}> = \chi^i q_i
+				\end{displaymath}
+				such that $ Q_\chi \gamma_0^i = \chi^i$, the Peierls brackets expression reduces to
+				\begin{displaymath}
+					\left\lbrace\chi , \omega \right\rbrace (\gamma_0) [f] = \int f(t) \left\langle\chi, \left(\GreenAdv - \GreenRet \right)\omega \right\rangle dt
+				\end{displaymath}
+				For regular distribution can be neglected the test-function $f$. We conclude that:
+				\begin{displaymath}
+					\tau( \chi, \omega) = \{\chi , \omega \} =\int \left\langle\chi, \left(\GreenAdv - \GreenRet \right)\omega \right\rangle dt = ( \chi, E \omega)
+				\end{displaymath}
+				
+				
+		\subsubsection{Inital data Approach}
 
 \section{Interpretations??????}
 	\begin{Warning}

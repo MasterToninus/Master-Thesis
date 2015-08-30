@@ -304,11 +304,11 @@ In the next sections we review two of the possible realizations of the algebraic
 					\end{displaymath}
 					\item Is defined the effect (eq: \label{EffectOperator}) of a Lagrangian density  on a smooth functional $B: \Conf \rightarrow \Real$ as:
 						\begin{displaymath}
-							\mathbf{E}_\chi^\pm B (\phi_0) = \lim_{\epsilon\rightarrow 0} \big( \frac{B(\phi_\epsilon^\pm) - B (\phi_0)} {\epsilon} \big)
+							\EffectOp_\chi^\pm B (\phi_0) = \lim_{\epsilon\rightarrow 0} \big( \frac{B(\phi_\epsilon^\pm) - B (\phi_0)} {\epsilon} \big)
 						\end{displaymath}
 					\item Finally for each pair of Lagrangian densities is defined the Peierls brackets form (Eq: \label{AbstractPeierlsBracket}):
 						\begin{displaymath}
-							\{\chi, \omega \}(\phi_0) \coloneqq E_\chi^+ F_\omega (\phi_0) - E_\chi^- F_\omega(\phi_0)
+							\{\chi, \omega \}(\phi_0) \coloneqq \EffectOp_\chi^+ F_\omega (\phi_0) - \EffectOp_\chi^- F_\omega(\phi_0)
 						\end{displaymath}
 						%(It can be seen in an equivalent manner as defined on the Lagrangian functional domain restricted to $\Sol$)
 				\end{itemize}				 
@@ -331,7 +331,7 @@ In the next sections we review two of the possible realizations of the algebraic
 						\textit{i.e.} the operator maps the whole space $\Conf$ to $-\phi$.
 					\item The effect operator between a pair of such Lagrangians $\Lagrangian_\alpha, \Lagrangian_\beta$ results:
 						\begin{align}
-						\mathbf{E}_{\Lagrangian_\alpha}^\pm \big( \mathcal{O}_{\Lagrangian_\beta} \big) (\phi_0) &= \mathbf{E}_{\Lagrangian_\alpha}^\pm \big( F_\beta  \big) (\phi_0) = \lim_{\epsilon \rightarrow 0} \biggr( \frac{1}{\epsilon}\big(F_\beta ( \phi_{\epsilon \Lagrangian_\alpha}^\pm) - F_\beta(\phi_0) \big) \biggr) =\\
+						\EffectOp_{\Lagrangian_\alpha}^\pm \big( \mathcal{O}_{\Lagrangian_\beta} \big) (\phi_0) &= \EffectOp_{\Lagrangian_\alpha}^\pm \big( F_\beta  \big) (\phi_0) = \lim_{\epsilon \rightarrow 0} \biggr( \frac{1}{\epsilon}\big(F_\beta ( \phi_{\epsilon \Lagrangian_\alpha}^\pm) - F_\beta(\phi_0) \big) \biggr) =\\
 							&= \lim_{\epsilon \rightarrow 0} \frac{1}{\epsilon}F_\beta( \phi_{\epsilon \Lagrangian_\alpha}^\pm - \phi_0) = 
 							\big(\beta, \lim_{\epsilon\rightarrow 0} \frac{ \phi_{\epsilon \Lagrangian_\alpha}  - \phi_0}{\epsilon} \big) = \\
 							&=(\beta, \eta^\pm) = \big( \beta, - G^\pm (Q_{\Lagrangian_\alpha} \phi_0 ) \big) = ( \beta, G^\pm \alpha)

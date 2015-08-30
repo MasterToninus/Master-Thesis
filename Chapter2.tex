@@ -673,16 +673,16 @@ In this chapter we will take advantage of the language developed in the first ch
 		This equation is a non homogeneous P.D.E. with inhomogeneous term $ (- Q_\chi \phi(x))$ fixed by the solution $\phi\in \Sol$ to be perturbed.
 
 		It follows from the definition of Green hyperbolicity that the domain restrictions of $P$ to $\Gamma^\infty_{\textrm{pc}}$ or $\Gamma^\infty_{\textrm{fc}}$ admit a unique inverse $G^+$ and $G^-$ respectively.
-   		Therefore, equation \ref{PeierlJacobiEqLin} admits a unique past compact solution $\eta^+$, called retarded perturbation of $\phi\in \Sol$, and a unique future compact solution $\eta^-$, called advanced perturbation:
+   		Therefore, equation \ref{PeierlJacobiEqLin} admits a unique past compact solution $\eta_+$, called retarded perturbation of $\phi\in \Sol$, and a unique future compact solution $\eta_-$, called advanced perturbation:
    		\begin{equation}\label{Perturbation}
-   			\eta^\pm = G^\pm \big( - Q_\chi \phi \big)
+   			\eta_\pm = G^\pm \big( - Q_\chi \phi \big)
    		\end{equation}
    		Note that the time-compact support condition on $\chi$ guarantees that $Q_\chi \phi \; \in \dom(G^+) \cap \dom(G^-)$.
-   		Expression \ref{Perturbation} reflects perfectly the orginal Peierls' notation where $\eta^\pm$ were noted as functions of the unperturbed solution: $\eta^+ \equiv\reflectbox{\reflectbox{D}}_\chi \phi$ and $\eta^- \equiv  \reflectbox{D}_\chi \phi$.
+   		Expression \ref{Perturbation} reflects perfectly the orginal Peierls' notation where $\eta_\pm$ were noted as functions of the unperturbed solution: $\eta_+ \equiv\reflectbox{\reflectbox{D}}_\chi \phi$ and $\eta_- \equiv  \reflectbox{D}_\chi \phi$.
 		
 		
 		\begin{observation}
-			In most of the practical cases it is possible to give a more "down to earth" characterization of $\eta^\pm$ in terms of a Cauchy problem.\\
+			In most of the practical cases it is possible to give a more "down to earth" characterization of $\eta_\pm$ in terms of a Cauchy problem.\\
 			It has to be stressed that this approach is not possible in general since Green-hyperbolic operators are not necessarily hyperbolic in any PDE-sense i.e. the well-posedness of the Cauchy problem is not guaranteed on any Cauchy surface. \cite[pag 1]{Bar} \cite[remark 3.18]{Bar2010}\cite[remark 2.1]{Khavkine2014}
 			\\
 		Consider a motion operator $P$ which is also hyperbolic.
@@ -706,14 +706,14 @@ In this chapter we will take advantage of the language developed in the first ch
 		In conclusion, for any but fixed $\phi\in \Sol$ and perturbation $\chi$, there exist two uniquely perturbed solutions:
 		%In conclusion,fixed a solution $\phi\in \Sol$ and a perturbation $\chi$, are uniquely determined two perturbed solution: (Correzione CD)
    		\begin{equation}\label{PerturbedSolution}
-   			\phi^\pm_\epsilon = \phi + \epsilon \eta^\pm
+   			\phi^\pm_\epsilon = \phi + \epsilon \eta_\pm
    		\end{equation}
    		such that:
  		\begin{center}   \begin{tabular}{|c|c|c|c|}
    		\hline
-  	 		\emph{retarded pertubation} & $\eta^+ \in \Gamma^\infty_{pc}$ & $(\eta^+, \nabla_n \eta^+ ) \big \vert_{\Sigma_{-}} = (0,0)$ & "propagating forward" \\
+  	 		\emph{retarded pertubation} & $\eta_+ \in \Gamma^\infty_{pc}$ & $(\eta_+, \nabla_n \eta_+ ) \big \vert_{\Sigma_{-}} = (0,0)$ & "propagating forward" \\
   	 		\hline
-   			\emph{advanced pertubation} &$\eta^- \in \Gamma^\infty_{fc}$ & $(\eta^-, \nabla_n \eta^- ) \big \vert_{\Sigma_{+}} = (0,0)$ & "propagating backward" \\
+   			\emph{advanced pertubation} &$\eta_- \in \Gamma^\infty_{fc}$ & $(\eta_-, \nabla_n \eta_- ) \big \vert_{\Sigma_{+}} = (0,0)$ & "propagating backward" \\
    			\hline
    		\end{tabular}	\end{center} 	
 		
@@ -722,10 +722,10 @@ In this chapter we will take advantage of the language developed in the first ch
 		\subsubsection{Effect Operator}
 		Considering an arbitrary continuous\footnote{The precise notion of continuity require the specification of a (infinite dimensional) manifold structure on $\Conf$.} functional $B: \Sol \rightarrow \Real$ (not necessarily linear) we can define the effect of a perturbation on the values of $B$\cite[pag. 5]{Marolf1993} as a map:
 		\begin{displaymath}
-			\mathbf{E}^\pm_\chi : C^1(\Sol,\Real) \rightarrow C^1(\Sol,\Real)
+			\gls{EffectOp} : C^1(\Sol,\Real) \rightarrow C^1(\Sol,\Real)
 		\end{displaymath}
 		\begin{equation}\label{EffectOperator}
-		\mathbf{E}_\chi^\pm B ( \phi_0) 
+		\EffectOp_\chi^\pm B ( \phi_0) 
 		\coloneqq \lim_{\epsilon \rightarrow 0}
 		 \biggr( \frac{B(\phi_\epsilon^\pm) - B (\phi_0)}{\epsilon} \biggr)
 		\end{equation}
@@ -737,7 +737,7 @@ In this chapter we will take advantage of the language developed in the first ch
 		
 		The former expression simplifies in case of a linear functional:
 			\begin{equation}\label{EffectOperatorLinear}
-				\mathbf{E}_\chi^\pm B ( \phi_0) =  B(\eta^\pm)
+				\EffectOp_\chi^\pm B ( \phi_0) =  B(\eta_\pm)
 			\end{equation}
 		
 		\subsubsection{The Brackets}
@@ -748,7 +748,7 @@ In this chapter we will take advantage of the language developed in the first ch
 		\end{displaymath}
 		as follow:
 		\begin{equation}\label{AbstractPeierlsBracket}
-				\{\chi, \omega \}(\phi_0) \coloneqq E_\chi^+ F_\omega (\phi_0) - E_\chi^- F_\omega(\phi_0)
+				\{\chi, \omega \}(\phi_0) \coloneqq \EffectOp_\chi^- F_\omega (\phi_0) - \EffectOp_\chi^+ F_\omega(\phi_0)
 		\end{equation}
 
 		\begin{proposition}[Bilinearity]
@@ -821,7 +821,7 @@ In this chapter we will take advantage of the language developed in the first ch
 		(which is now properly a linear partial differential operator), is Green-Hyperbolic, the Peierels construction can continue as before.
 		Notice that now the advanced/retarded perturbation are formally identical to equation \ref{Perturbation}
 		\begin{displaymath}
-			\eta^{\pm\, i} = G^\pm \big( - Q_\chi \gamma_0^{\, j})
+			\eta_\pm^{\, i} = G^\pm \big( - Q_\chi \gamma_0^{\, j})
 		\end{displaymath}
 		with the important difference that $G^\pm$ are now the Green operators of the linearized %equation of motion (Correzione CD)
 		equation of motion
@@ -843,10 +843,14 @@ In this chapter we will take advantage of the language developed in the first ch
 		\begin{itemize}
 			\item $\gamma_0^{\, j}$ is a simple local chart representation of the curve.
 			\item for a suitable small $\epsilon$  $\gamma_0^{\, j}$ and $\gamma_{\chi}^{\pm\,i} $ can be depicted in the same local chart.
-			\item the variation $\eta^\pm$ is then the field over the unperturbed curve whose components compute the separation between $\gamma_0$ an $\gamma_{\chi}^{\pm} $
+			\item the variation $\eta_\pm$ is then the field over the unperturbed curve whose components compute the separation between $\gamma_0$ an $\gamma_{\chi}^{\pm} $. In other words:
+			\begin{displaymath}
+				\gamma_{\chi}^{\pm \, i} = \gamma_0^i  \pm G^\pm (-Q_\chi \gamma_0^i)
+			\end{displaymath}
+			where $G^\pm$ are the right-left inverse of $\left[P_{\gamma_0}^{\, lin} \right]$ whose existence and uniqueness is guaranteed by the global hyperbolicity of the linearization of $P$.
 		\end{itemize}
-	
-				\begin{minipage}{\linewidth}% to keep image and caption on one page
+		
+			\begin{minipage}{\linewidth}% to keep image and caption on one page
 			
 			\makebox[\linewidth]{%        to center the image
 			\includegraphics[width=0.5\textwidth]{./Pictures/AdvRetSol}}
@@ -854,6 +858,43 @@ In this chapter we will take advantage of the language developed in the first ch
 			\captionof{figure}{Picture of the perturbed solution in case of a finite dimensional system.}\label{GraphicAdvRetSol}%      only if needed  
 			
 			\end{minipage}
+		
+		Once seen as the perturbation $\epsilon \chi$ disturbs the solution $\gamma_0 \in \Sol$, it is possible to compute the effect of a perturbing density $\chi$ on the values of the functional $F_\omega$ associated to as second Lagrangian density $\omega$ as shown in equation \ref{EffectOperator}.
+		By a Taylor expansion arrested to the first order we can say that:
+		\begin{displaymath}
+			F_\omega \left( \gamma_\epsilon^{\, \pm} \right) [f]= \int f(t) 
+			\omega( t, \gamma_0^{\, i} + \epsilon \eta^i_\pm , \dot{\gamma}_0^{\, i} + \epsilon \dot{\eta}_\pm^i ) dt =
+			F_\omega (\gamma_0) [f] + \epsilon \int f(t) \left[ 
+			\left. \frac{\partial\omega}{\partial q^i}\right\vert_{\gamma_0} \eta^i_\pm +
+			\left. \frac{\partial\omega}{\partial \dot{q}^i}\right\vert_{\gamma_0} \dot{\eta}^i_\pm 
+			 \right] dt
+		\end{displaymath}
+		for any test function $f$.\\
+		Substituting this result in the definition of effect operator:
+		\begin{displaymath}
+			\EffectOp_\chi^{\, \pm} F_\omega ( \gamma_0) [f] = \int f(t) \left[ 
+			\left. \frac{\partial\omega}{\partial q^i}\right\vert_{\gamma_0} \eta^i_\pm +
+			\left. \frac{\partial\omega}{\partial \dot{q}^i}\right\vert_{\gamma_0} \dot{\eta}^i_\pm 
+			 \right] dt
+		\end{displaymath}
+		we get an explicit expression for the Peirels brackets:
+		\begin{align}\label{EspressionePeierlsCampiCurve}
+			\left\lbrace \chi , \omega \right\rbrace \left( \gamma_0 \right) [f] &=
+			\int f(t) \left[ 
+			\left.\left( \frac{\partial\omega}{\partial q^i}\right)\right\vert_{\gamma_0} \left( \eta_- - \eta_+\right)^i +
+			\left.\left( \frac{\partial\omega}{\partial \dot{q}^i}\right)\right\vert_{\gamma_0} \left( \dot{\eta}_- - \dot{\eta}_+\right)^i 
+			 \right] dt = \nonumber\\
+			 &= \int f(t) 
+			 \left[  
+				\left.\left( \frac{\partial\omega}{\partial q^i}\right)\right\vert_{\gamma_0} +
+				\left.\left( \frac{\partial\omega}{\partial \dot{q}^i}\right)\right\vert_{\gamma_0} \partial_t
+			\right]
+			\left[
+				\left( \GreenAdv - \GreenRet \right)\left( - Q_\chi \gamma_0 \right)
+			\right]^i				dt
+		\end{align}
+			
+		
 	 
 	% Debug	
 	%	\bibliography{bibliography}

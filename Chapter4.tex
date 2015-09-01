@@ -286,9 +286,9 @@
 				 \int P Y_\mu X^\mu dt=( PY, X) 				 				 
 				\end{align*}
 				where is been integrated by parts twice (border value are null since the integrand is compactly supported) and has been exploited a curvature tensor identity:
-				\begin{displaymath}
+				\begin{equation}\label{Eq:CurvatureSimmetry}
 					\langle R(X,T)T,Y \rangle = \langle R(Y,T)T,X \rangle
-				\end{displaymath}
+				\end{equation}
 
 			\paragraph{Classical Observables}
 				Replicating what is done in the general case, 
@@ -327,6 +327,59 @@
 				
 				
 		\subsubsection{Inital data Approach}
+			\paragraph{Classical Phase Space}
+				The base manifold for the configuration bundle under examination is the real line that can be seen as a degenerate globally hyperbolic spacetime.
+				Thus each point $p\in \Real$ are Cauchy surfaces and no further support condition can be imposed.
+				Considering that operator $P$ is of second order, we have:
+				\begin{displaymath}
+					\Phase(p) \equiv \Data(p) = \Gamma^\infty(p) \times \Gamma^\infty(p) =
+					T_{\gamma_0(p)}Q \times T_{\gamma_0(p)}Q
+				\end{displaymath}
+				and
+				\begin{displaymath}
+					\Phase \simeq \Sol
+				\end{displaymath}
+				using the map which yields the unique solution starting from an initial data.
+				
+			\paragraph{Symplectic Structure on the Phase Space}		
+				The general definition \ref{Def:InitialDataSymplecticForm} of the symplectic form on the classical phase space reduces to:
+				\begin{displaymath}
+					\Omega: \Phase(p) \times \Phase(p) \rightarrow \Complex \qquad : \qquad 					
+					\Omega \biggr\{ [V_0,V_1] , [W_0, W_1] \biggr\} = g(V_1,W_0)  - g( V_0, W_1) 
+				\end{displaymath}
+				where $g$ is the inner product on $Q$.
+				\\
+				Which can be trasferred on the solutions space:
+				\begin{displaymath}
+					\sigma_p: \Sol \times \Sol \rightarrow \Complex \qquad : \qquad 					
+					\sigma_p \biggr\{X, Y  \biggr\} = \Omega \biggr\{ [Y(t), D_t Y(t)] , [X(t), D_t X(t)] \biggr\}
+				\end{displaymath}
+				\vspace{3mm}
+				Mimicking what is done in example \ref{Ex:IndipendentPhaseSpace} for the scalar field, can be proved the independence of the phase space construction from the particular choice of $p \in \Real$.
+				Taken $X,Y \in \Sol$ two Jacobi fields on $\gamma_0(t)$, can be defined a scalar field over $\Real$:
+				\begin{displaymath}
+					J(t) \coloneqq \Omega \biggr\{ [Y(t), D_t Y(t)] , [X(t), D_t X(t)] \biggr\}
+					= X^\alpha(t) g_{\alpha \beta} D_t Y^\beta(t) - 
+					Y^\alpha(t) g_{\alpha \beta} D_t X^\beta(t) 					
+				\end{displaymath}
+				where $D_t = T^\mu \nabla_\mu$ as usual.
+				This is clearly a conserved current:
+				\begin{eqnarray}
+					D_t J =& (D_t X)^\alpha g_{\alpha \beta} (D_t Y)^\beta - (D_t Y)^\alpha g_{\alpha \beta} (D_t X)^\alpha + X^\alpha g_{\alpha \beta} D_t D_t Y^\beta - Y^\alpha g_{\alpha \beta} D_t D_t X^\beta = \nonumber \\
+					=& X^\alpha g_{\alpha \beta} PY^\beta - Y^\alpha g_{\alpha \beta} PX^\beta - X_\beta R^\beta _{\, i \alpha j}T^i Y^\alpha T^j +Y_\beta R^\beta _{\, i \alpha j}T^i X^\alpha T^j  = 0
+				\end{eqnarray}
+				exploiting the conditions $\nabla_\mu g_{\alpha \beta}=0$, $PX=PY=0$ and equation \ref{Eq:CurvatureSimmetry}.
+				Hence:
+				\begin{displaymath}
+				\int_p^{p'} D_t J = J(p) - J(p') = 0
+				\end{displaymath}
+			In others words:
+			\begin{displaymath}
+				\sigma_\Sigma (X, Y) = \sigma_{\Sigma'} (X, Y) 
+				\qquad \forall X, Y \in \Sol \; \forall \Sigma, \Sigma' \in \CauchyClass(M)= \Real
+			\end{displaymath}
+				
+				
 
 \section{Interpretations??????}
 	\begin{Warning}

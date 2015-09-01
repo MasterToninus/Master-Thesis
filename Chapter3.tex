@@ -701,11 +701,22 @@ In the next sections we review two of the possible realizations of the algebraic
 				\end{displaymath}
 				The converse is also true since for all $\gamma \in \Sol_{sc}$ and Cauchy surface $\Sigma$ follows $\supp\big( \gamma \big\vert_\Sigma \big)$ is compact.
 			\end{proof}
+			Therefore, similar to what was concluded in paragraph  \ref{Def:DataSenzaSup}, we have:
+			$ \SolMap \left( \Phase(\Sigma) \right) = \Sol_{sc} \forall \sigma \in \CauchyClass(M)$
+			hence
+			\begin{equation}
+				\Sol_{sc} \simeq \frac{\bigsqcup\limits_{\Sigma \in \CauchyClass(M)}\Data(\Sigma)}{\sim} \coloneqq \Phase
+			\end{equation}
+				where $\sim$ is such that:
+				\begin{displaymath}
+					(f_0, f_1)|_\Sigma \sim (g_0, g_1)|_{\Sigma'} \; \Leftrightarrow \; \SolMap(f_0,f_1) =  \SolMap(g_0,g_1) 
+				\end{displaymath}
+
 
 
 		\paragraph{Symplectic Structure on the Phase Space}
 			Remembering that for a classical linear system, with second order dynamic equations, the symplectic structure can be defined globally on the phase space, we define a bilinear form on $\Phase$ mimicking eq. \ref{Eq:SymplecticCoordinateRepresentation}:
-			\begin{definition}[Initial data symplectic form]
+			\begin{definition}[Initial data symplectic form]\label{Def:InitialDataSymplecticForm}
 				\begin{displaymath}
 					\Omega: \Phase(\Sigma) \times \Phase(\Sigma) \rightarrow \Complex \qquad : \qquad 					
 					\Omega \biggr\{ [f_0,f_1] , [g_0, g_1] \biggr\} = \int_\Sigma d\Sigma \biggr( (f_1,g_0)  - ( f_0, g_1) \biggr)
@@ -762,7 +773,7 @@ In the next sections we review two of the possible realizations of the algebraic
 						\end{align*}
 		  In this term the phase space $\Phase(\Sigma)$ is \emph{non-covariant}.
 		  
-		\begin{example}
+		\begin{example}\label{Ex:IndipendentPhaseSpace}
 			The Klein-Gordon scalar field $(E,P)$ where:
 			\begin{eqnarray}
 				E &= M \times \Real \nonumber\\

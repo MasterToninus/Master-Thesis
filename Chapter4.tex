@@ -378,8 +378,63 @@
 				\sigma_\Sigma (X, Y) = \sigma_{\Sigma'} (X, Y) 
 				\qquad \forall X, Y \in \Sol \; \forall \Sigma, \Sigma' \in \CauchyClass(M)= \Real
 			\end{displaymath}
-				
-				
+
+	\subsection{Comparisons}
+		The two procedures yelds two different classical symplectic spaces: $(\Obs,\tau)$ and $(\Sol, \sigma)$.
+		We have proved in section \ref{Section:LinkBetweenQuantization} (Theorem \ref{Teo:IsomorphismBetweenTheTwoSymplectic}) that the two vector spaces are isomorphic through the map $\Xi$ realized with the causal propagator $E$ .
+		Furthermore, in this case can be proved that $\Xi$ preserves the symplectic form.
+		\\
+		Once again we mimic what is done for the scalar field case (ex \ref{Ex:SimplettomorphismPhaseSpace}).
+		Consider two compactly supported vector field $f,h \in \Gamma_0(E)$ along $\gamma_0$	and call $X= Ef,\: T = Eh$ the corresponding Jacobi field.
+		In fact from definition of $\tau$ follows:
+		\begin{align}
+			\tau\big( [f], [g] \big) =& (f, Eh) = \int_\Real f^\mu g_{\mu \nu} ( E h)^\nu dt =
+					\int_\Sigma^\infty  f^\mu g_{\mu \nu} Y^\nu dt	 + 
+					\int_{-\infty}^\Sigma  f^\mu g_{\mu \nu} Y^\nu dt
+			\nonumber \\
+			=& \int_\Sigma^\infty (P \GreenAdv f)^\mu g_{\mu \nu} Y^\nu dt	 + 
+					\int_{-\infty}^\Sigma (P \GreenRet f)^\mu g_{\mu \nu} Y^\nu dt
+		\end{align}
+		where has been decomposed the integral by splitting the domain of integration into two subsets whose intersection has zero measure and are exploited the properties of the retarded and advanced operators.\\
+		Considering the explicit representation of operator $P$ allows us to integrate by parts twice:
+		\begin{align}
+			&\int_\Sigma^\infty (P \GreenAdv f)^\mu g_{\mu \nu} Y^\nu dt = \int_\Sigma^\infty \left( D_t^{\,2} \GreenAdv f +R(\GreenAdv f,T)T \right)^\mu g_{\mu \nu} Y^\nu dt = \nonumber \\
+			&= 
+			 \int_\Sigma^\infty D_t \left( \left(D_t  \GreenAdv f \right)^\mu g_{\mu \nu} Y^\nu \right)dt -
+			 \int_\Sigma^\infty \left( D_t  \GreenAdv f \right)^\mu g_{\mu \nu} \left( D_t Y \right)^\nu dt +
+			 \int_\Sigma^\infty \left( R( \GreenAdv f,T)T \right)^\mu g_{\mu \nu} Y^\nu dt = \nonumber \\
+			&= 
+			 - \left. D_t( \GreenAdv f)^\mu g_{\mu \nu} Y^\nu \right\vert_\Sigma -
+			 \int_\Sigma^\infty D_t \left( \left( \GreenAdv f \right)^\mu g_{\mu \nu} \left( D_t Y \right)^\nu \right)dt + \int_\Sigma^\infty \big(
+			 (\GreenAdv f)^\mu g_{\mu \nu} (D_t^{\, 2}Y)^\nu + 
+			 \left(R( \GreenAdv f,T)T \right)^\mu g_{\mu \nu} Y^\nu
+			 \big) dt	=	 \nonumber \\
+			 &=
+			 -   \left. D_t( \GreenAdv f)^\mu g_{\mu \nu} Y^\nu \right\vert_\Sigma
+			 +  \left. ( \GreenAdv f)^\mu g_{\mu \nu} (D_t Y)^\nu \right\vert_\Sigma
+			 + \int_\Sigma^\infty \big(
+			 (\GreenAdv f)^\mu g_{\mu \nu} (P Y)^\nu 
+			 \big) dt =\nonumber \\
+			 &= 
+			 -   \left. D_t( \GreenAdv f)^\mu g_{\mu \nu} Y^\nu \right\vert_\Sigma
+			 +  \left. ( \GreenAdv f)^\mu g_{\mu \nu} (D_t Y)^\nu \right\vert_\Sigma
+		\end{align}
+		where the \emph{Stokes theorem} and property \ref{Eq:CurvatureSimmetry} are been used.
+		\\
+		Combining the two above equations one concludes that:
+		\begin{align}
+		\tau\big( [f], [g] \big) =& 
+			 -   \left. D_t( \GreenAdv f)^\mu g_{\mu \nu} Y^\nu \right\vert_\Sigma
+			 +  \left. ( \GreenAdv f)^\mu g_{\mu \nu} (D_t Y)^\nu \right\vert_\Sigma		+
+		\nonumber \\
+			&+ \left. D_t( \GreenRet f)^\mu g_{\mu \nu} Y^\nu \right\vert_\Sigma
+			   -  \left. ( \GreenRet f)^\mu g_{\mu \nu} (D_t Y)^\nu \right\vert_\Sigma		
+		 =  \nonumber\\
+		=&\left. \left( E f \right)^\mu g_{\mu \nu} ( D_t Y)^\nu\right\vert_\Sigma	 
+		-  \left.\left(D_t E f \right)^\mu g_{\mu \nu}  Y^\nu \right\vert_\Sigma	= \nonumber \\
+		=& X_\mu(\Sigma) \left( D_t Y (\Sigma)\right)-\nu - \left(D_t X(\Sigma)\right)_\mu Y^\nu(\Sigma) \equiv \sigma( X, Y)
+		\end{align}
+		Then $(\Obs, \tau)$ and $(\Sol, \sigma)$ are isomorphic not only as vector spaces but also as symplectic spaces.
 
 \section{Interpretations??????}
 	\begin{Warning}

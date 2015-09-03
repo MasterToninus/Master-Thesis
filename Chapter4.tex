@@ -42,9 +42,10 @@
 
 	\vspace{4mm}
 	%Definizione metrica di geodetica su varietà riemmaniana( con connessione di levi civita)	
-	In presence of a pseudo-Riemannian metric is possible to present the geodesic in a metric sense i.e. as the curve  which extremizes the \emph{Energy Functional}\footnote{Remember that for arc-length parametrized curves the Energy functional coincide with the length functional.\cite[Lemma $1.4.2$ ]{Jost2005}}:
+	In presence of a pseudo-Riemannian metric is possible to present the geodesic in a metric sense i.e. as the curve extremizing the \emph{Energy Functional}\footnote{Remember that for arc-length parametrized curves the Energy functional coincide with the length functional.\cite[Lemma $1.4.2$ ]{Jost2005}}:
 	\begin{definition}[Energy functional]
   	\begin{equation}\label{EnergyFunctional}
+  		E: C^1\left(\left[a,b\right],Q\right) \rightarrow \Real \qquad
  		E(\gamma) \coloneqq \int_a^b \left\Vert \frac{d \gamma}{dt} (t)\right\Vert^2 dt
  	\end{equation}
 \end{definition} 	
@@ -69,7 +70,7 @@
 		\begin{itemize}
 			\item $\big(X'\big)^\mu \coloneqq \big( \nabla_{\dot{\gamma}(t)} X\big)^\mu$ is the covariant derivative along the curve $\gamma$.
 			\item $T \equiv \dot{\gamma}(t)$ stands for the tangent vector to the curve $\gamma$.
-			\item $R^\mu_{i \alpha \j}$ is the components representations of the Riemman curvature tensor,
+			\item $R^\mu_{i \alpha \j}$ is the components representations of the Riemann curvature tensor,
 		\end{itemize}
 
 	
@@ -94,15 +95,16 @@
 	% Q è la varietà riemmanian in esame, eccc. vedi pag 223  e successive del fomm (direi di dare per assodato tutto il contesto di meccanica geometrica che mi sono studiato nei primi mesi della tesi ma credo non sia il caso di mettere per esteso qui, al massimo solo linkarlo
 
 	\begin{theorem}[Geodesic Motion]
-		The geodesics on the Pseudo-Riemmanian manifold $(Q,g)$ are the natural motions of the ordinary Lagrangian system $(Q, L)$ where:
+		The geodesics on the Pseudo-Riemannian manifold $(Q,g)$ are the natural motions of the ordinary Lagrangian system $(Q, L)$ where:
 		\begin{equation}
 			L(V_q) \coloneqq \frac{1}{2} g_q(V,V)
 		\end{equation}
 	\end{theorem}	
-	\begin{proof}
-		 The Euler-Lagrange equation of $L$ coincides with the geodesic equation \ref{GeodesicEquation}.
-		 \danger.. è sul quaderno non so se metterla
-	\end{proof}
+	%\danger !!! da aggiungere
+	%\begin{proof}
+	%	 The Euler-Lagrange equation of $L$ coincides with the geodesic equation \ref{GeodesicEquation}.
+	%	 \danger.. è sul quaderno non so se metterla
+	%\end{proof}
 
 	\begin{observation}
 		The geodesic system is not simply Lagrangian but also Hamiltonian.
@@ -111,35 +113,36 @@
 
 
 	%Qualsiasi sistema di mqo come il precedente può essere visto come un sistema campo.
-	As shown in chapter 2, every system with discrete degrees of freedom can be seen as the trivial field system.
+	As shown in chapter 2, every system with discrete degrees of freedom can be seen as a trivial field system.
 	From that follows the alternative characterization of geodesic as a Lagrangian field:
 	\begin{corollary}[Geodesic field]
-		The geodesics on the Pseudo-Riemmanian manifold $(Q,g)$ can be seen as the \emph{Dynamical Configurations} of the lagrangian field system $(E,\Lagrangian)$ where:
+		The geodesics on the Pseudo-Riemannian manifold $(Q,g)$ can be seen as the \emph{Dynamical Configurations} of the Lagrangian field system $(E,\Lagrangian)$ where:
 		\begin{itemize}
 			\item $E=(Q\times\Real, \pi, \Real)$ trivial smooth bundle on the real line.
 			\item $\Lagrangian[\gamma] = \frac{1}{2} g(\dot{\gamma},\dot{\gamma})(t) dt$
 		\end{itemize}
 	\end{corollary}
 	\begin{proof}
-		Is simple application of the correspondence seen in chapter \ref{MechanicsAsAField}.
+		Is a simple application of the correspondence seen in chapter \ref{MechanicsAsAField}.
 	\end{proof}
 	
-	From this perspective is clear that the Energy Functional can be seen as the action in the geodesic field dynamics and equation \ref{GeodesicEquation} is nothing more than the motion equation according to the \emph{least action principle}.
+	From this perspective is clear that the Energy Functional corresponds to the action of the geodesic field dynamics and equation \ref{GeodesicEquation} is nothing more than the motion equation according to the \emph{least action principle}.
 
-		\begin{figure}[h!]
-				  \centering
+% \danger aggiungere!!!
+%		\begin{figure}[h!]
+%		 \centering
    	%\includegraphics[width=0.5\textwidth]{Pictures/Linearization} 
-   	  \caption{Impressionistic view of the geometric mechanics structure.}
-		\end{figure}		
+%	 	 \caption{Impressionistic view of the geometric mechanics structure.}
+%		\end{figure}		
 
 
 \section{Peierls Bracket of the Geodesic field}
-	The local coordinate expression of the Lagrangian density of the geodesic field results:
+	The local coordinate expression for the Lagrangian density of the geodesic field results:
 	\begin{equation}
 		\Lagrangian\big(t,\gamma^i(t), \dot{\gamma}^i(t) \big)\coloneqq \frac{1}{2}g_{\mu,\nu}\left(\gamma^i\left(t\right)\right)\dot{\gamma}^\mu \dot{\gamma}^\nu
 	\end{equation}		
-	this is highly non-linear. 
-	Explicitly is quadratic in the velocity components $\dot{\gamma}^i$ and implicitly, through $g_{\mu\nu}(\gamma^i(t))$, is non-polynomial in coordinate $\gamma^i$.
+	which is highly non-linear. 
+	Explicitly is quadratic in the velocity components $\dot{\gamma}^i$ and implicitly, through $g_{\mu\nu}(\gamma^i(t))$, is non-polynomial in curve coordinate $\gamma^i$.
 	
 	As show in section \ref{Section:NonLinearPeierls}, for this type of systems the calculation of Peierls bracket can be realized only locally around a predetermined solution.
 	Let us repeat the Peierls' procedure for the system under investigation.
@@ -232,18 +235,20 @@
 	
 
 \subsection{Example: Geodesic field on FRW space-time.}
+	\begin{Warning}
 	% qui i conti li devo ancora fare, 
 	l'idea è che le metriche possono essere diagonalizzate risulta un sistema di equazioni del moto ode disaccoppiate di cui posso calcolare la funzione di green come indicato nelle dispense che trattano il calcolo di green per le ode.
 	se ho l'operatore di green posso calcolare in esplicito le soluzioni perturbate e quindi le peierls.
 	Guardare pag 5 advance + pag 6 primer	
+	\end{Warning}
 	
 
 \section{Algebraic quantization of the Geodesic Field}
 	The algebraic quantization scheme applies only to linear field systems.
-	Since equation\ref{GeodesicEquation} is highly non linear, what can actually be quantized it is not the geodesic system but rather its linearization, the Jacobi field along a fixed geodesic $\gamma_0$.
+	Since equation\ref{GeodesicEquation} is highly non linear,  it is not the geodesic system that can actually be quantized but rather its linearization, the Jacobi field along a fixed geodesic $\gamma_0$.
 	
 		\subsubsection{Classical Framework}
-			Chosen a geodesic $\gamma_0$ the kinematics configurations of the Jacobi fields are tangent fields along the fixed curves.
+			The basic idea is that, chosen a geodesic $\gamma_0$, the kinematics configurations of the Jacobi fields are tangent fields along the fixed curves.
 			\paragraph{Kinematics}	
 			The configuration bundle $E$ corresponds to the \emph{Pull-back bundle} $\gamma_0^*(TQ)$ of the tangent bundle along the geodesic $\gamma_0$.
 			Then:
@@ -257,15 +262,15 @@
 			\paragraph{Dynamics}
 				The coordinate representation of the motion equation is:
 				\begin{displaymath}
-					\big( P X)^\mu = (X'')^\mu + R^\mu_{\, i \alpha j } T^i T^j X^\alpha
+					\left( P X \right)^\mu = (X'')^\mu + R^\mu_{\, i \alpha j } T^i T^j X^\alpha
 				\end{displaymath}
 				where $X\in \Conf$ and $T^i = \dot{\gamma_0}^i$.
-				According to equation \ref{Eq:NormallyHyperbolicRepresentation} this operator fall exactly in the \emph{normally hyperbolic} operator class hence is quantizable both by Peierls procedure and by inital data.
+				According to equation \ref{Eq:NormallyHyperbolicRepresentation} this operator fall exactly in the \emph{normally hyperbolic} operator class hence is quantizable both by Peierls procedure and by initial data.
 		
 		\subsection{PreQuantum Framework}
 		\subsubsection{Peierls approach}
 			\paragraph{Pairing}
-				The choice of the inner product on this configuration bundle is rather obvious.
+				%The choice of the inner product on this configuration bundle is rather obvious.
 				Since $Q$ is a Riemannian manifold and $\Conf$ is composed by tangent vector fields, it is straightforward to choose as inner product on the configuration bundle $E$ the metric function defined on $Q$:
 				\begin{equation}
 					\left\langle X,Y \right\rangle_t \coloneqq g\left( X\left(\gamma_0(t) \right),Y\left(\gamma_0(t) \right)\right)
@@ -274,9 +279,9 @@
 				
 				Follows slavishly the definition of pairing:
 				\begin{equation}
-					\left( X, Y \right) = \int_{\gamma_0} \left\langle X,Y \right\rangle_t dt
+					\left( X, Y \right) = \int_\Real \left\langle X,Y \right\rangle_t dt
 				\end{equation}
-				well-defined for every pair $X,Y \in Conf$ such that $\supp(X) \cap \supp(Y)$ is compact.
+				well-defined for every pair $X,Y \in \Conf$ such that $\supp(X) \cap \supp(Y)$ is compact.
 				
 				Operator $P$ ruling the dynamics is formally self-adjoint:
 				\begin{align*}
@@ -294,7 +299,8 @@
 				Replicating what is done in the general case, 
 				we construct the \emph{pre-observables} as the functionals $F_f:\Conf \rightarrow \Real$ for all $f \in \Gamma_0(E)$ compactly supported field along geodesic $\gamma_0$ as:
 				\begin{equation}
-					F_f(X) = \int_{\gamma_0} <X, f>_t dt \qquad \forall X \in \Conf
+					F_f(X) = \int_\Real <X, f>_t dt \qquad \forall X \in \Conf
+				%	F_f(X) = \int_{\dom(\gamma_0)} <X, f>_t dt \qquad \forall X \in \Conf
 				\end{equation}
 				The classical observables space is then obtained through the usual quotient:
 				\begin{displaymath}
@@ -312,7 +318,7 @@
 				\begin{displaymath}
 					\chi [\phi] \coloneqq (\chi, \phi) \qquad \chi \in \Obs,\, \phi \in \Sol
 				\end{displaymath}
-				that is, considering only Lagrangian densities in the form:
+				corresponding to Lagrangian densities in the form:
 				\begin{displaymath}
 					\chi ( \vec{q}i, \dot{\vec{q}}) \coloneqq < \chi, \vec{q}> = \chi^i q_i
 				\end{displaymath}
@@ -320,15 +326,18 @@
 				\begin{displaymath}
 					\left\lbrace\chi , \omega \right\rbrace (\gamma_0) [f] = \int f(t) \left\langle\chi, \left(\GreenAdv - \GreenRet \right)\omega \right\rangle dt
 				\end{displaymath}
-				For regular distribution can be neglected the test-function $f$. We conclude that:
+				For regular distribution can be neglected the test-function $f$.
+
+				\vspace{3.5mm}
+				We conclude that,according to the Peierls' procedure,  the classical symplectic space is the pair $(\Obs, \tau)$ where:
 				\begin{displaymath}
-					\tau( \chi, \omega) = \{\chi , \omega \} =\int \left\langle\chi, \left(\GreenAdv - \GreenRet \right)\omega \right\rangle dt = ( \chi, E \omega)
+					\tau( [\chi], [\omega]) = \{\chi , \omega \} =\int \left\langle\chi, \left(\GreenAdv - \GreenRet \right)\omega \right\rangle dt = ( \chi, E \omega) \qquad \forall \chi,\omega \in \Gamma_0(E)
 				\end{displaymath}
 				
 				
-		\subsubsection{Inital data Approach}
+		\subsubsection{Initial data Approach}
 			\paragraph{Classical Phase Space}
-				The base manifold for the configuration bundle under examination is the real line that can be seen as a degenerate globally hyperbolic spacetime.
+				The base manifold for the configuration bundle under examination is the real line $\Real$ that can be seen as a degenerate globally hyperbolic spacetime.
 				Thus each point $p\in \Real$ are Cauchy surfaces and no further support condition can be imposed.
 				Considering that operator $P$ is of second order, we have:
 				\begin{displaymath}
@@ -349,7 +358,7 @@
 				\end{displaymath}
 				where $g$ is the inner product on $Q$.
 				\\
-				Which can be trasferred on the solutions space:
+				Which can be transferred on the solutions space:
 				\begin{displaymath}
 					\sigma_p: \Sol \times \Sol \rightarrow \Complex \qquad : \qquad 					
 					\sigma_p \biggr\{X, Y  \biggr\} = \Omega \biggr\{ [Y(t), D_t Y(t)] , [X(t), D_t X(t)] \biggr\}
@@ -368,7 +377,7 @@
 					D_t J =& (D_t X)^\alpha g_{\alpha \beta} (D_t Y)^\beta - (D_t Y)^\alpha g_{\alpha \beta} (D_t X)^\alpha + X^\alpha g_{\alpha \beta} D_t D_t Y^\beta - Y^\alpha g_{\alpha \beta} D_t D_t X^\beta = \nonumber \\
 					=& X^\alpha g_{\alpha \beta} PY^\beta - Y^\alpha g_{\alpha \beta} PX^\beta - X_\beta R^\beta _{\, i \alpha j}T^i Y^\alpha T^j +Y_\beta R^\beta _{\, i \alpha j}T^i X^\alpha T^j  = 0
 				\end{eqnarray}
-				exploiting the conditions $\nabla_\mu g_{\alpha \beta}=0$, $PX=PY=0$ and equation \ref{Eq:CurvatureSimmetry}.
+				exploiting the conditions $\nabla_\mu g_{\alpha \beta}=0$, $PX=PY=0$ and equation \ref{Eq:CurvatureSimmetry}.\\
 				Hence:
 				\begin{displaymath}
 				\int_p^{p'} D_t J = J(p) - J(p') = 0
@@ -378,9 +387,16 @@
 				\sigma_\Sigma (X, Y) = \sigma_{\Sigma'} (X, Y) 
 				\qquad \forall X, Y \in \Sol \; \forall \Sigma, \Sigma' \in \CauchyClass(M)= \Real
 			\end{displaymath}
+			
+				\vspace{3.5mm}
+				In conclusion, according to the initial data procedure,  the classical symplectic space is the pair $(\Sol, \sigma)$ such that:
+				\begin{displaymath}
+					\sigma( X, Y) = X_\mu(\Sigma) \left( D_t Y (\Sigma)\right)^\nu - \left(D_t X(\Sigma)\right)_\mu Y^\nu(\Sigma) \qquad \forall X,Y \in \Sol
+				\end{displaymath}
+				where $\Sigma$ is an arbitrary point in $\Real$.
 
 	\subsection{Comparisons}
-		The two procedures yelds two different classical symplectic spaces: $(\Obs,\tau)$ and $(\Sol, \sigma)$.
+		The two procedures yields two different classical symplectic spaces: $(\Obs,\tau)$ and $(\Sol, \sigma)$.
 		We have proved in section \ref{Section:LinkBetweenQuantization} (Theorem \ref{Teo:IsomorphismBetweenTheTwoSymplectic}) that the two vector spaces are isomorphic through the map $\Xi$ realized with the causal propagator $E$ .
 		Furthermore, in this case can be proved that $\Xi$ preserves the symplectic form.
 		\\
@@ -432,7 +448,7 @@
 		 =  \nonumber\\
 		=&\left. \left( E f \right)^\mu g_{\mu \nu} ( D_t Y)^\nu\right\vert_\Sigma	 
 		-  \left.\left(D_t E f \right)^\mu g_{\mu \nu}  Y^\nu \right\vert_\Sigma	= \nonumber \\
-		=& X_\mu(\Sigma) \left( D_t Y (\Sigma)\right)-\nu - \left(D_t X(\Sigma)\right)_\mu Y^\nu(\Sigma) \equiv \sigma( X, Y)
+		=& X_\mu(\Sigma) \left( D_t Y (\Sigma)\right)^\nu - \left(D_t X(\Sigma)\right)_\mu Y^\nu(\Sigma) \equiv \sigma( X, Y)
 		\end{align}
 		Then $(\Obs, \tau)$ and $(\Sol, \sigma)$ are isomorphic not only as vector spaces but also as symplectic spaces.
 

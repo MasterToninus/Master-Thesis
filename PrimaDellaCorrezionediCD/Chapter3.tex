@@ -1,0 +1,955 @@
+\documentclass[Main]{subfiles}
+
+
+%NUMBERING of all subsubsection ecc (in order to better grasp the quantization procedure scheme)
+\setcounter{secnumdepth}{5} % seting level of numbering (default for "report" is 3). With ''-1'' you have non number also for chapters
+\renewcommand\thesubsubsection{\Alph{subsubsection}}
+\renewcommand\theparagraph{\thesubsubsection.\alph{paragraph}}
+\renewcommand\thesubparagraph{\theparagraph.\Roman{subparagraph}}
+
+\begin{document}
+
+\chapter{Algebraic Quantization}
+In order to proceed to the quantization of the geodesic system  it is necessary to devote a chapter to the description of the \emph{algebraic quantization scheme}.
+We will show two realizations of the scheme applicable to a class of systems sufficiently broad to encompass the system under examination.
+
+\section{Overview on the Algebraic Quantization Scheme.}
+Contemporary quantum field theory is mainly developed as quantization of classical fields.
+The \emph{"Quantization process"} has to be considered as an algorithm , in the sense of self-containing succession of instructions, that has to be performed in order to establish a correspondence between a classical field theory and its quantum counterpart.
+
+On this basis the axiomatic theory of quantum fields, originally proposed by Wightman on Minkoski spacetimes and etended to curved backgroud by Haag and Kastler on curved space-time, takes the role of "validity check". It provide a set of conditions that must be met in order to establish whether the result can be consider a proper quantum field theory.
+Basically there are no physical/philosophical principles which justifies "a priori" the relation between these  mathematical objects (e.g the classical state versus quantum states) individually. The scheme can only be ratified " a posteriori" as a whole,% verifying the agreement with the experimental observations.
+
+However this is by no means different from what is discussed in ordinary quantum mechanics where there are essentially two levels:
+the basic formalism of quantum mechanics, which is substantially axiomatic and permits to define an abstract quantum mechanical system, and the quantization process that determine how to construct the quantum analogous of a classical system realizing the basic axioms.
+
+We refer to the algebraic quantization as a \emph{scheme of quantization} because it is not a single specific procedure but rather a class of algorithms.
+These algorithms are the same concerning the quantization step per se (construction of the *-algebra of classical observable) but they differ in the choice of the classical objects  (essentially the classical observables and the bilinear form) to be subjected to the procedure.
+
+Basically an algebraic quantization is achieved in three steps:
+\begin{enumerate}[A)]
+	\item \textbf{Classical Step}\\
+		Identify all the mathematical structures necessary to define the field, \textit{i.e.},the pair $(E,P)$.\\
+		In general every quantization process exploit some conditions on the quantum field structure that has to be met.
+	\item \textbf{Pre-Quantum Step}\\
+		Are implemented %lowered from the top 
+		some additional mathematical over-structure  on the classical framework. The aim is to establish the specific objects which will be submitted to the quantization process in the next step. 
+		Generally these object do not posses any a classical meaning, their only purpose is to represent the classical analogous of the crucial structures of the quantum framework. 
+		For this reason these structures are said \emph{Pre-Quantum}, their introduction doesn't have a proper \emph{a priori} explanation but has to be treated as an ansatz and justified \emph{a posteriori} within the quantum treatment.
+		
+		Essentially has to be chosen a suitable space of \emph{Classical observable} and this space has to be rigged with a well-behaved bilinear form.
+		
+		The ordinary quantum mechanics equivalent step is the choice of a particular Poisson bracket on $C^\infty(T^*Q)$ , which typically implement the \emph{canonical commutation relations} $\{q,p\}=i\hbar$, among all the possible Poisson structure. 
+		This is "pre-quantum" in the sense that has to be chosen an alternative symplectic structure different from the natural form(Def:\ref{Def:NatSymForm}).
+		
+		
+	\item \textbf{Quantization}\\
+		Finally are introduced the rules which realize the correspondence between the chosen classical objects and their quantum analogues.
+		The algebraic approach characterizes the quantization of any field theory as a two-step procedure. 
+		In the first, one assigns to a physical system a suitable *-algebra $A$ of observables, the central structure of the algebraic theory which encodes all structural relations between observables. 
+		The second step consists of selecting a so called \emph{Hadamard state} which allows us to recover the interpretation of the elements of $A$ as linear operators on a suitable Hilbert space.
+\end{enumerate}
+
+In the next sections we review two of the possible realizations of the algebraic quantization scheme.
+
+\section{Quantization with Peierls Bracket.}
+	We are going to show is a quantization procedure strictly defined for the class of classical theories for which the Peierls' construction make sense.\textit{i.e.}:
+	\begin{enumerate}
+		\item Linear fields.
+		\item Lagrangian dynamics.
+		\item Based on globally-hyperbolic space-time.
+		\item Dynamics ruled by a Green-hyperbolic, self-dual operator.	
+	\end{enumerate}
+	Fall into this category prominent examples like Klein-Gordon and Proca Field Theory\cite{Benini}.
+
+	\subsubsection{Classical Step}%%%%%%%%%%%%%%%%%
+	The starting point for the realization of any quantum theory is always to provide a precise mathematical formalization of the corresponding classical theory.
+	This step deals with the question of whether the procedure of quantization is applicable to the theory under examination.
+	
+		\paragraph{Kinematics}
+		Is encoded in the configuration bundle of the classical field.
+   					\begin{enumerate}
+   						\item Specify the base manifold $M$. \\Has to be a Globally-Hyperbolic Space-time.
+   						\item\label{Step:AuxiliaryStructure} Specify the fiber and the total Space $E$ auxiliary structure, e.g: spin-structure or transformation laws under diffeomorphism on the base space.\\$E$ has to be at least a vector bundle.
+   					\end{enumerate}
+   		
+   		\paragraph{Dynamics}
+   		Has to be specified the local coordinate expression of the motion operator $P: \Gamma^\infty (E)= \Conf \rightarrow \Conf$.
+   		Operator $P$ must met the following properties in order to carry out the procedure:
+   				   	\begin{enumerate}
+   						\item $P$ has to be Green-hyperbolic?
+   						\item Is $P$ derived from a Lagrangian: $P=Q_\Lagrangian$? 
+   					\end{enumerate}
+   					
+	\subsubsection{PreQuantum Step}%%%%%%%%%%%%%%%
+		\paragraph{Pairing}\label{Paragraph:Pairing Construction}
+				Within the algebraic quantization scheme the choice of the \emph{pairing} takes a crucial role.
+				Basically this structure is a bilinear form on the space of kinematic configurations realized by assigning a bundle inner product.
+
+			\subparagraph{Assignment of a Inner Product}
+				The choice of the bundle inner product  $<\cdot,\cdot>$ on $E$ is the only discretionary parameter of the whole procedure and is the basis of the entire procedure.\\
+				Even if its expression is generally suggested by the auxiliary structures defying the configuration bundle [\ref{Step:AuxiliaryStructure}] practically can be considered as a parameter to guess. 
+				However the choice of a bilinear form is not completely arbitrary, the condition that must be met is the self-adjointness of operator $P$ in respect to correspondent pairing.
+				Together with the Green-hyperbolicity this condition guarantees that $\exists 1! E$ causal propagator and $E^\dagger =  -E$.
+			\begin{definition}
+				We call \emph{inner product} of the vector bundle $E$ the smooth map:
+				\begin{displaymath}
+					<\cdot,\cdot> : E \times_M E \rightarrow \Real
+				\end{displaymath}
+				such that the restriction of $<\cdot,\cdot>$ to any fiber $E_p\times E_p$ is a non-degenerate bilinear form.
+			\end{definition}
+
+				Further prescription on the symmetry properties determine the Bosonic/Fermionic character of the quantized theory:\\
+				\begin{tabular}{|c | c | c|}
+					\hline
+					Pairing & Observables linear form & Quantum Theory\\
+					\hline
+					symmetric  & anti-symmetric &  Bosonic \\
+					anti-symmetric & symmetric & Fermionic \\
+					\hline
+				\end{tabular}		
+
+			
+			\subparagraph{Pairing Definition}
+			
+				The \emph{pairing} between two sections is constructed as:
+   					\begin{displaymath}
+   								(X,Y) = \int_M <X,Y>_x d\mu(x)
+   					\end{displaymath}
+   				where $d\mu = d\textrm{Vol}_\mu$ is the volume form induced by the metrics and the orientation on $M$.\\
+   				The definition is well posed only in:
+   				\begin{displaymath}
+   					\dom\big( (\cdot, \cdot) \big) = 
+   					\big\{(X,Y) \in \Gamma^\infty(E) \times \Gamma^\infty(E) \; \big\vert \,  <X,Y>_x \in L^1(M,\mu)\big \}
+   				\end{displaymath}
+   				Some subdomains are of greater practical interest:
+   				\begin{displaymath}
+   					\dom\big( (\cdot, \cdot) \big) \supset \{ (X,Y) \in \Gamma^\infty(E) \times \Gamma^\infty(E) \; \vert \, \supp{X} \cap \supp{Y} \textrm{ compact} \} \supset \Gamma^\infty_0 (E) \times \Gamma^\infty(E)
+   				\end{displaymath}
+   				In particular the pairing between compact supported sections and kinematic configurations it is always well-defined.
+   				\begin{proposition}
+   					The pairing between sections with compact support intersection is a non-degenerate bilinear form.
+   				\end{proposition}
+   				\begin{proof}
+					Bilinearity of $(\cdot,\cdot)$ follows slavishly from the bilinearity of the inner product $<\cdot,\cdot>$ and linearity of the Lebesgue integral.
+					
+					Regarding the non-degeneracy:\\
+   					Consider a section $\sigma \in \Conf$ such that $(\sigma, \tau) = 0 \quad \forall \tau \in \Conf$.
+   					Then $<\sigma, \tau>_x$ is a null function almost everywhere on $M$.
+   					But $\sigma$ and $\tau$ are smooth then :
+   					\begin{displaymath}
+   						<\sigma, \tau >_x = 0 \Leftrightarrow \supp(\sigma) \cap \supp(\tau) = \emptyset \qquad \forall \tau \in \Conf
+   					\end{displaymath}
+   					\textit{i.e.}: $\supp(\sigma) = \emptyset \quad \Rightarrow \quad \sigma=0$
+   				\end{proof}
+   				
+   				In order to carry out the procedure must be checked that $P$ is formally self-adjoint in respect to this pairing.
+
+   					
+   		\paragraph{Classical Observables}
+   		The pairing constitutes the main ingredient to define a set $\Obs$ of suitable \emph{classical observables}.
+   		\begin{remark}
+   			A good class of classical observables must be:
+   			\begin{itemize}
+   				\item A collection of  linear functionals on $\Sol$.
+   				\item This set must be in a one-to-one correspondence  with a linear subspace of $\Conf$.
+   				\item Must be sufficiently rich to separate the solutions space:
+   					\begin{itemize}
+   						\item There are sufficiently many observables to detect any information from any on-shell configuration.
+   						\item Two on-shell configurations are the same if and only if every outcome under all the possible observables are the same.
+   						\item The set contains enough functionals to represent the minimum number of measure process necessary to distinguish every possible physical configuration
+   					\end{itemize}
+   			\end{itemize}
+   		\end{remark}
+   		The concrete construction is achieved in three steps.
+   		
+ 			\subparagraph{PreObservables}
+ 				Is defined a class of \emph{"off-shell"} functional on $\Conf$
+   							\begin{displaymath}
+   								\Obs_0 \coloneqq \big\{ F_f: \Conf \rightarrow \Real ;  F_f(\phi)=( f, \phi) \forall \phi \in \Conf \:\vert
+   								\:  f \in \Gamma_0^\infty(E)	\big\}
+   							\end{displaymath}
+   				This can be seen as the range of the linear map:
+   				\begin{displaymath}
+   					F: \Gamma_0^\infty \rightarrow \Obs_0
+  	 			\end{displaymath}
+   				which associates to any section $f\in \Gamma_0^\infty(E)$ the linear functional 
+   				$F_f(\cdot) = (f,\cdot) :\Conf \rightarrow \Real$.
+  	 			\begin{displaymath}
+   					\Conf 	\supset \Gamma^\infty_0(E) \ni f \mapsto F_f(\cdot):\Conf \rightarrow \Real
+   				\end{displaymath}			
+			
+				\begin{proposition}
+					The pre-observables class satisfies the following properties:
+					\begin{enumerate}
+						\item\label{Th:FaithfulRepres} $\Obs_0$ is a faithful representation of the linear space:\\
+									map $F: \Gamma_0^\infty \rightarrow \Obs_0$ is bijective.
+						\item\label{Th:SeparabilityCond} $\Obs_0$ satisfies the separability condition, \textit{i.e.} the class is rich enough to distinguish different off-shell configurations:
+						\begin{displaymath}
+							\forall \phi,\psi \in \Conf \; \exists f \in \Gamma_0 \quad \textrm{such that:} \quad F_f(\phi) \neq F_f(\psi)
+						\end{displaymath}
+					\end{enumerate}	
+				\end{proposition}
+				\begin{proof}
+				
+					[Th \ref{Th:FaithfulRepres}]\\
+					Surjectivity is guaranteed by definition, every functional in $\Obs$ is constructed through the pairing with a compactly supported section.\\
+					Injectivity is proved ad absurdum.
+					Consider two distinct section $g,h \in \Gamma_0$ such that $F_g = F_h$. Then
+					\begin{displaymath}
+						 ( g, \phi) = F_g(\phi) = F_h(\phi) = (h, \phi)  \quad \forall \phi \in \Conf
+					\end{displaymath}
+					From linearity of the pairing we have 
+					\begin{displaymath}
+						(g-h, \phi) = 0 \quad\forall \phi \in \Conf
+					\end{displaymath}
+					which follows from the non-degeneration of the pairing that $g=h$.
+					
+					[Th \ref{Th:SeparabilityCond}]\\
+					Ad absurdum again.
+					Consider a pair $\phi,\psi \in \Conf$ of "inseparable" configurations:
+					\begin{displaymath}
+						(f, \phi) = (f, \psi) \qquad \forall f \in \Gamma_0^\infty(E)
+					\end{displaymath}
+					From linearity of the pairing we have 
+					\begin{displaymath}
+						(f, \phi-\psi) = 0 \qquad \forall f \in \Gamma_0^\infty(E)
+					\end{displaymath}
+					from the non-degeneration of the pairing follow that $\phi = \psi$.
+				\end{proof}
+				This proposition justifies the correspondence between classical pre-observables and compactly supported sections.
+			
+			\subparagraph{Domain restriction of the Pre-Observables} 
+			  		
+				Consider now the domain restriction of the functionals in $\Obs_0$ from $\Conf$ to $\Sol$:
+   					\begin{displaymath}
+   						\Obs_0^\Sol \coloneqq \big\{F_f\vert_\Sol : \Sol \rightarrow \Real \big \vert F_f \in \Obs_0 \big\}
+   					\end{displaymath}
+				Call $r^\Sol : \Obs_0 F_f \mapsto F_f \vert_\Sol \in \Obs_0^\Sol$ the map realizing the domain restriction on the elements of $\Obs_0$.
+				The map $F^\Sol \coloneqq r^\Sol \circ F : \Obs_0 \mapsto \Obs_0^\Sol $ realize a correspondence between $\Gamma_0^\infty(E)$ and a linear functional on $\Sol$, then we can say that:
+				\begin{displaymath}
+					\Obs_0^\Sol = F^\Sol ( \Gamma_0^\infty(E)) = r^\Sol \circ F (\Gamma_0^\infty(E)) 
+				\end{displaymath}				   					
+   					
+   				Since $\Sol \subset \Conf$ , this space continues to met the separability condition but the correspondence with  $\Gamma_0^\infty(E)$ is no more injective:
+					\begin{proposition}\label{Teo:NspaceDefinition}
+						\begin{displaymath}
+							\ker \big( F^\Sol \big) = P \big( \Gamma_0^\infty (E) \big)	\coloneqq N	
+						\end{displaymath}
+					\end{proposition}
+					\begin{proof}
+					[Th: $\ker(F^\Sol) \supseteq N$]\\
+					Since a l.p.d.o. can not enlarge the domain support, $ P \tau \in \dom(F) \quad \forall \tau \in \Gamma_0^\infty$ then the thesis is well-posed.
+					Exploiting the definition and the self-adjointness of operator $P$ we have:
+					\begin{displaymath}
+						F_{P\tau} \big( \sigma \big) = ( P\tau, \sigma) = (\tau, P\sigma) = F_\tau (P\sigma)= F_\tau(0) = 0 \qquad \forall \sigma \in \Sol, \forall \tau \in \Conf
+					\end{displaymath}
+					[Th: $\ker(F^\Sol) \subseteq N$]\\			
+					Let $	\tau \in N$ then $F_\tau (\sigma) =0 \forall \sigma \in \Sol$.
+					Take $E= \GreenAdv- \GreenRet$	 the unique causal propagator of $P$.
+					Then:
+					\begin{displaymath}
+						(E \tau , \sigma) = - (\tau , E \sigma) = 0 \qquad \forall \sigma \in \Gamma_0
+					\end{displaymath}								
+					From the non-degeneracy of the pairing follows that $E\tau = 0 \Rightarrow  \tau \in \ker(E)$.
+					Considering \ref{Corol:GreenKernel} we have $ \ker \big(E\big\vert_{\Gamma_0} \big) \equiv P \Gamma_0$.
+					\end{proof}
+   			
+   			\subparagraph{Classical Observable class}
+   					Due to the degeneration of the map $F^\Sol$ it is clear that $\Obs_0^\Sol$ can not be a good classical observables set.
+   					Being the kernel known we can identify all the elements that posses the same corresponding functional:
+   					\begin{displaymath}
+   						[f] = \big\{f + P g \quad\vert\: g \in \Gamma_0\big\}
+   					\end{displaymath}
+   					It is natural then to define the classical observables as the quotient space:
+   									\begin{displaymath}
+   										\Obs \coloneqq \frac{\Obs_0^\Sol}{N}
+   									\end{displaymath}
+   									
+   					Finally, can be easily defined the mapping between these equivalence classes:\\
+   					$\forall [f] \in \frac{\Gamma_0}{P\Gamma_0}$ is associated the functional $F_{[f]} : \Sol \rightarrow  \Real$ such that:
+   					\begin{displaymath}
+   						F_{[f]} (\phi) = F_f(\phi) \qquad \forall \phi \in \Sol , \forall f \in [f]
+   					\end{displaymath}
+   					This functional is well-defined, \textit{i.e.} the expression is independent from the choice of the representative, only on $\Sol$. 
+   					The reason is that if $\phi \in \Conf \setminus \Sol$, then $F_f(\phi)$ is different for each choice of the representative $f \in [f]$.
+   					From that, this construction is said to " implement the  on-shell condition at the level of functionals".
+   					
+   					In conclusion the mapping:
+   					\begin{displaymath}
+   						\frac{\Gamma_0}{P \Gamma_0}  \xmapsto{F} \Obs = F \big( \frac{\Gamma_0}{P \Gamma_0}\big)
+   					\end{displaymath}
+   					,between suitable equivalence classes  and linear functionals on $\Sol$, guarantees:
+   					\begin{itemize}
+   						\item a faithful representation since $F$ is bijective.
+   						\item separability condition, a fortiori of separability properties of $\Obs_0^\Sol$
+   					\end{itemize}
+   					From now on we will identify this two spaces:
+   					\begin{displaymath}
+   						\Obs \simeq 	\frac{\Gamma_0}{P \Gamma_0}
+   					\end{displaymath}
+   					by virtue of bijectivity of $F$.
+   			
+		\paragraph{Symplectic structure}
+			Endow the space $\Obs$ just defined with a bilinear form $\tau$ constructed restricting the Peierls form.
+			\subparagraph{General Peierls Bracket Construction}
+			The starting point is the definition of the Peierls Brackets between any pair of Lagrangian densities.
+			The construction is guaranteed by the requirement in step [\ref{Step:ClassicalDynamicsConditions}].\\
+				We recall the main consequences  ot the Peierls' argument:
+				\begin{itemize}
+					\item From the Lagragian Densities $\Lag(E)$ [Def: \ref{Def:LagrangianDensities}] are defined the Lagrangian functionals on $\Conf$ [Def: \label{Def:LagrangianFunctionals}] as a regular distribution.
+					\item Considering a domain restriction from $\Conf$ to $\Gamma_0(E)$  this functional takes a simpler expression:
+					\begin{displaymath}
+						\mathcal{O}_\Lagrangian( \phi_0) = \int_M \Lagrangian(\phi_0) d\mu
+					\end{displaymath}
+					\item Is defined the effect (eq: \label{EffectOperator}) of a Lagrangian density  on a smooth functional $B: \Conf \rightarrow \Real$ as:
+						\begin{displaymath}
+							\EffectOp_\chi^\pm B (\phi_0) = \lim_{\epsilon\rightarrow 0} \big( \frac{B(\phi_\epsilon^\pm) - B (\phi_0)} {\epsilon} \big)
+						\end{displaymath}
+					\item Finally for each pair of Lagrangian densities is defined the Peierls brackets form (Eq: \label{AbstractPeierlsBracket}):
+						\begin{displaymath}
+							\{\chi, \omega \}(\phi_0) \coloneqq \EffectOp_\chi^+ F_\omega (\phi_0) - \EffectOp_\chi^- F_\omega(\phi_0)
+						\end{displaymath}
+						%(It can be seen in an equivalent manner as defined on the Lagrangian functional domain restricted to $\Sol$)
+				\end{itemize}				 
+		
+			\subparagraph{Brackets restriction to the Pre-Observables}
+				Once these brackets is restricted from the Lagrangian functional class to the classical observables $\Obs_0$, it assumes a very simple expression:
+				\begin{itemize}
+					\item Notice that each $\phi \in \Gamma_0^\infty(E)$ define a regular Lagrangian density through the inner product:
+						\begin{displaymath}
+							\Lagrangian_\phi[\cdot](x) = <\phi, \cdot>_x
+						\end{displaymath}
+					\item The associated Lagrangian functional is simply:
+						\begin{displaymath}
+							\mathcal{O}_{\Lagrangian_\phi} (\cdot ) = \int_M  <\phi, \cdot>_x d\mu(x) = (\phi, \cdot) = F_\phi (\cdot)
+						\end{displaymath}
+					\item The corresponding Euler-Lagrange operator  results:
+						\begin{displaymath}
+							Q_{\Lagrangian_\phi}= \biggr( \nabla_\mu \big( \frac{\partial \Lagrangian}{\partial ( \partial_\mu \phi)} \big) - \frac{\partial \Lagrangian}{\partial \varphi} \biggr) = - \frac{\partial \Lagrangian_\varphi}{\partial \varphi} = -\frac{\partial}{\partial \varphi} (\phi, \varphi) = -\phi
+						\end{displaymath}
+						\textit{i.e.} the operator maps the whole space $\Conf$ to $-\phi$.
+					\item The effect operator between a pair of such Lagrangians $\Lagrangian_\alpha, \Lagrangian_\beta$ results:
+						\begin{align}
+						\EffectOp_{\Lagrangian_\alpha}^\pm \big( \mathcal{O}_{\Lagrangian_\beta} \big) (\phi_0) &= \EffectOp_{\Lagrangian_\alpha}^\pm \big( F_\beta  \big) (\phi_0) = \lim_{\epsilon \rightarrow 0} \biggr( \frac{1}{\epsilon}\big(F_\beta ( \phi_{\epsilon \Lagrangian_\alpha}^\pm) - F_\beta(\phi_0) \big) \biggr) =\\
+							&= \lim_{\epsilon \rightarrow 0} \frac{1}{\epsilon}F_\beta( \phi_{\epsilon \Lagrangian_\alpha}^\pm - \phi_0) = 
+							\big(\beta, \lim_{\epsilon\rightarrow 0} \frac{ \phi_{\epsilon \Lagrangian_\alpha}  - \phi_0}{\epsilon} \big) = \\
+							&=(\beta, \eta^\pm) = \big( \beta, - G^\pm (Q_{\Lagrangian_\alpha} \phi_0 ) \big) = ( \beta, G^\pm \alpha)
+						\end{align}
+						 $\forall 	\phi_0\in \Sol$.
+						 In the second row is been exploited respectively the linearity and continuity of the functional.
+						 In the third row has been used the Green hyperbolicity and the explicit expression of $Q_{\Lagrangian_\alpha}$.
+						 Notice that the dependence on the test solution $\phi_0$ is disappeared.
+					\item Finally the Peierls brackets expression can be stated as :
+						\begin{equation}\label{Def:SymplecticTau}
+							\tau\{f,h\} = \{\Lagrangian_f , \Lagrangian_h\} = \big( f , (\GreenAdv - \GreenRet)h \big) = \big(f, E h\big) \qquad \forall f,h \: \Gamma_0^\infty (E)
+						\end{equation}
+				\end{itemize}
+							Conditions of Green-hyperbolicity and formally self-adjoint are sufficient guarantees the good definitions of $\tau$.\\
+							Has to be noted that the Lagrangian condition is ancillary. This has the purpose to justify the shape of the symplectic form on the classical observables space as consequent from the Peierls bracket.
+							\\
+							It is frequent\cite{Dewitt1999}\cite{Benini} to overlook to the origin of this object and jump directly to the expression \ref{Def:SymplecticTau}  in term of the Green's operator that no longer present any direct link to the Lagrangian and therefore can be extended to any green-hyperbolic theory.
+		
+			\subparagraph{Symplectic form on the Classical Observables}
+				Has to be noted that the brackets $\tau$ are degenerate on $\Obs_0$. 
+				If $f=Ph \in N$ we have:
+				\begin{displaymath}
+					\big( f , E g \big) = (P h , E g) = (h, PE g) = (h,0) = 0 \qquad \forall g \in \Gamma_0^\infty
+				\end{displaymath}
+				where in the last equality has been used proposition \ref{Prop:GreenKernel}.
+				The value of $\tau$ has to be transported to the equivalence classes of $\Obs$ evaluating on the representative:
+				\begin{equation}
+					\tau\big( [\phi], [\psi] \big) \coloneqq \tau(\phi, \psi)
+				\end{equation}
+				
+				\begin{proposition}
+				The brackets  $\tau$ satisfy the following properties:
+					\begin{enumerate}
+						\item\label{Th:WellPosed} Definition is well-posed: do not depend from the representative of the class.
+						\item\label{Th:Symplectic} is a symplectic form ( bilinear, antisymmetric, non-degenerate) in the Bosonic case while is a scalar product in	the Fermionic case.
+					\end{enumerate}
+				\end{proposition}
+				\begin{proof}
+					\begin{itemize}
+						\item [Th. \ref{Th:WellPosed}]
+							 $\tau$ is degenerate on $\Obs_0$ since:
+							 \begin{displaymath}
+							 	\big( f , E g \big) = (P h , E g) = (h, PE g) = (h,0) = 0 \qquad \forall g \in \Gamma_0^\infty \; \forall f=Ph \in N
+							 \end{displaymath}
+							 Then, fixed $g\in \Obs_0$, we have that the value of $\tau(f,g)$ is the same for each representative $f\in[f]$.
+
+						\item [Th. \ref{Th:Symplectic}]	
+							Bilinearity is guaranteed by the linearity of the pairing and Green operators.\\
+							Non-degeneracy of $\tau$ follows from the non-degeneracy of pairing:
+							\begin{displaymath}
+								(f, E h) = 0 \, \forall f \in \Obs_0 \Leftrightarrow E h = 0 \Leftrightarrow h = P f
+							\end{displaymath}
+							but from definition of $\Obs$ we have $[Pf] = [0]$.\\
+							Antisymmetry/symmetry of $\tau $ follows from symmetry/antisymmetry of the Bosonic/Fermionic bilinear form $< \cdot, \cdot>$:
+							\begin{displaymath}
+								( f , E h ) =\big(f, (\GreenAdv - \GreenRet ) h \big)= \big( ( \GreenRet - \GreenAdv) f , h \big) =- ( Ef , h) = \mp(h, Ef)
+							\end{displaymath}							 
+					\end{itemize}
+				\end{proof}
+				The pair $(\Obs,\tau)$ is the symplectic space of observables describing the classical theory of the real scalar field on the globally hyperbolic space-time $M$ and it is the starting point for the quantization scheme that we shall discuss in the next section.
+				This structure meets two remarkable physical properties:
+				\begin{theorem}\label{Teo:CausalityTimeSliceAxioms}
+					Consider a globally hyperbolic space-time $M$ and let $(\Obs,\tau)$ be the symplectic space of classical observables defined above.\\
+					The following properties hold:
+					\begin{itemize}
+						\item \textbf{Causality axiom}
+							The symplectic structure vanishes on pairs of observables localized in causally disjoint regions:
+							\begin{displaymath}
+								\tau \big( [f],[h] \big) =0 \qquad
+								\forall f,h \in \Gamma_0(E) \; \big\vert \; \supp(f) \cap \textbf{J}_M \big(\supp(h) \big) = \emptyset = 
+								\textbf{J}_M \big(\supp(f) \big) \cap \supp(h)
+							\end{displaymath}
+						\item \textbf{Time-Slice axiom}
+							For all $O \subset M$ globally hyperbolic open neighbourhood of a spacelike Cauchy surface $\Sigma$ for $M$ \footnote{Namely $O$ is: an open subset providing a globally hyperbolic space-time $O = (O,\mathfrak{g}\vert_O,\mathfrak{o}\vert_O, \mathfrak{t}\vert_O)$ and a neighbourhood of $\Sigma \in \CauchyClass$ containing all causal curves for $M$ whose endpoints lie in $O$. }
+							The map $L : \Obs( O) \rightarrow \Obs(M)$ which maps an equivalence class $ f \in \Gamma_0(0)\big / P \Gamma_0(O)$ to the equivalence class of its extension by $0$ to the whole space-time:
+							\begin{displaymath}
+							 L[f] = [f] \qquad \forall f \in \Gamma_0(O)
+							\end{displaymath}				
+							is an isomorphism between symplectic spaces.
+					\end{itemize}
+				\end{theorem}
+				\begin{proof}
+				[Th. 1]
+					\begin{itemize}
+						\item Consider a pair $f,h \in \Gamma_0 (E)$, we have: 
+							\begin{displaymath}
+								\tau \big([f] , [h] \big) = \big(f, Eh \big) = F_f \big( E h \big)
+							\end{displaymath}
+							from the definition\ref{Def:GreenOperators} of Green operators follows:
+							\begin{displaymath}
+								\supp ( E h) \subseteq \textbf{J}_M ( \supp(h)
+							\end{displaymath}
+							Thus if the two pre-observables are localized in causally disjoint regions $\tau \big([f] , [h] \big)=0 $ since correspond to the pairing of two sections with disjoint support.	
+					\end{itemize}
+				[Th. 2]
+					\begin{itemize}
+								\item %Well-defined:
+									The same construction applied to $M$ and to $O$ provides the symplectic spaces $(\Obs(M),\tau_M)$ and respectively $(\Obs(O),\tau_O)$ . 
+									The support of section $f \in \Gamma_0(O)$  is a compact $\supp(f) \subset O \subset M$. Thus such section can be uniquely extended by zero to give a compact supported local section on the whole $M$ and we denote it still by $f$ with a slight abuse of notation.
+									These observations entail that the map $L: \Obs_0 \rightarrow \Obs_M$ specified by $L [f]= [f] \forall f \in \Obs_0$ is well-defined.
+								\item %symplectic form preserving:							
+									Note that $L$ is linear and that it preserves the symplectic form. In fact, given $[ f ], [h] \in \Obs_0$, one has:
+									\begin{displaymath}
+										\tau_M \big(L[f], L[h] \big)= \int_M <f, Eh>_x d\textrm{vol}_M =
+										 \int_O <f, Eh>_x d\textrm{vol}_O = \tau_O \big([f],[h])
+									\end{displaymath}
+									where the restriction from $M$ to $O$ in the domain of integration is motivated by the fact that, per construction, $f = 0$ outside $O$.
+								\item Being a symplectic map, $L$ is automatically injective. \\
+									In fact, given $[ f ] \in \Obs_O$ such that $L[ f ] = 0$, one has $\tau_O([ f ], [h]) = \tau_M(L[ f ],L[h]) = 0$ for all $[h] \in \Obs_0$ and the non-degeneracy of $\tau_O$ entails that $[ f ] = 0$.
+								\item Symplectic map $L$ is also surjective.
+																		\\ \danger: Da rincontrollare	\\
+									For each $f\in \Gamma_0(M)$ we look for$ f' \in \Gamma_0(M)$ with support inside $O$ such that $[f']=[f]$ in $\Obs_M$.
+									Recalling that $O$ is an open neighborhood of the spacelike Cauchy surface $\Sigma$ and exploiting the usual spacetime decomposition of $M$, see Theorem \ref{Teo:GHSC_character}, , one finds two spacelike Cauchy surfaces $\Sigma_+,\Sigma_-$ for $M$ included in $O$ lying respectively in the future and in the past of $\Sigma$. Let $\{\chi^+,\chi^-\}$ be a partition of unity subordinate to the open cover $\{\mathbf{I}^+_M(\Sigma_-), \mathbf{I}^-_M(\Sigma_+)\}$ of $M$. 
+									By construction the intersection of the supports of $\chi^+$ and of$\chi^-$ is a timelike compact region both of $O$ and of $M$. 
+									Since $PE f = 0$, $\chi^+ +\chi^-=1$ on $M$ and recalling the support properties of $E$, it follows that 
+									\begin{displaymath}
+									f' = P\big( \chi^- E f \big) =  - P \big( \chi^+ E f \big)
+									\end{displaymath}
+									is a smooth function with compact support inside $O$. 
+									Furthermore, recalling also the identity $P \GreenAdv f = f$ , one finds
+									\begin{displaymath}
+									f' -f = P(\chi^- \GreenAdv f) - P ( \chi^- \GreenRet f ) - P ( \chi^+ \GreenAdv f) - P(\chi^- \GreenAdv f) = - P(\chi^- \GreenRet f - \chi^+ \GreenAdv f )
+									\end{displaymath}
+									The support properties of both the retarded and advanced Green operators $\GreenRet, \GreenAdv$ entail that $-\chi^-\GreenRet f - \chi^+ \GreenAdv f$ is a smooth function with compact support on $M$. In fact $\supp(\chi^\mp) \cap \supp(G^\pm f )$ is a closed subset of $\mathbf{J}_m^mp(\Sigma_\pm) \cap \mathbf{J}_m^\pm(\supp(f))$, which is compact.
+									This shows that $f' -f \in P(\Gamma_0(M)) \subset N$, as proved in proposition \ref{Teo:NspaceDefinition}. 
+									Therefore we found $[ f'\vert_O] \in \Obs(O)$such that $L[ f'\vert_O]=[ f ]$ showing that the symplectic map $L$ is also surjective.
+					\end{itemize}		
+				\end{proof}
+			
+
+							
+	\subsubsection{Second Quantization Step}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+		The next step is to construct a quantum field theory out of the classical one, the content of which is encoded the symplectic space $(\Obs, \tau)$. 
+		The so-called algebraic approach can be seen as a two-step quantization scheme: In the first one identifies a suitable unital  *-algebra encoding the structural relations between the observables, such as causality and locality, while, in the second, one selects a state, that is a positive, normalized, linear functional on the algebra which allows us to recover the standard probabilistic interpretation of quantum theories via the GNS theorem.
+
+		\paragraph{Quantum Observables Algebra}   		
+		The crux of the algebraic quantization scheme it is the assignment of a suitable algebras of quantum observables.\\
+		Axiomatically we require fot the set of quantum observables the following structure:
+		
+		\begin{definition}[Quantum Algebra]\label{Def:QuantumObsAlgebra}
+			We call \emph{algebra of Quantum observables} associated to the classical field system $(\Obs, \tau)$.
+			Is a unital *-algebra $\gls{Algebra}= \big( (\ObsAlg, \Complex),\cdot,*)$ generated over $\Complex$ by the symbols 
+			\begin{displaymath}
+				\big\{\IdOp\big\}\bigcup \big\{\mathbb{\Phi}\big( [f]\big) \; \big\vert \;  [f] \in \Obs \big\}
+			\end{displaymath}
+			such that:
+			\begin{enumerate}
+				\item The generators are independent:
+					\begin{equation}\label{Ip:GenIndip}
+						\mathbb{\Phi} \big(a [f] + b [g] \big) = 
+						a \mathbb{\Phi} ([f]) + b \mathbb{\Phi} ([g]) \qquad \forall [f],[g] \in \Obs,\: \forall a,b \in \Real
+					\end{equation}
+				\item The generators are \emph{formally self-adjoint} in the sense that:
+					\begin{equation}\label{Ip:GenSelfAd}
+						\big( \mathbb{\Phi}([f]) \big)^* = \mathbb{\Phi}([f]) \qquad \forall [f] \in \Obs
+					\end{equation}
+				\item The rules of (anti-) commutation given from the classical $\tau$ are replicated on $\ObsAlg$:
+					\begin{equation}\label{Ip:ImplementCCR}
+						\big[ \mathbb{\Phi}([f]), \mathbb{\Phi}([g]) \big]_\mp = \mathbb{\Phi}([f]) \cdot \mathbb{\Phi}([g]) \mp \mathbb{\Phi}([g]) \cdot \mathbb{\Phi}([f]) = i \tau\big( [f], [g] \big) \IdOp
+					\end{equation}
+					where the sign $\mp$ is given respectively by the anti-symmetry and symmetry of the form $\tau$.
+			\end{enumerate}
+
+		\end{definition}
+
+		A concrete realization is achieved in four step.
+			\subparagraph{Construction of the generated vector space $\ObsAlg$}
+   				Being generated by the symbols $\big\{\IdOp\big\}\cup\big\{\mathbf{\Phi}([f])\big\}_{[f]\in \Obs}$ means that $\ObsAlg$ can be obtained as $\Complex$-linear combination of $\IdOp$ and a finite number of product by elements like $\mathbf{\Phi}([f])$.
+   				\textit{I.e.}:
+   				\begin{displaymath}
+   					\ObsAlg = \textrm{span} \biggr( \big\{\IdOp\big\}\bigcup_{n<\infty}D_n
+   					\big\{\mathbb{\Phi}\big( [f]\big) \; \big\vert \;  [f] \in \Obs \big\}
+   					\biggr)
+   				\end{displaymath}
+   				where $D_n (I)$ is the of the dispositions with repetitions of $n$ elements picked from set $I$ whose elements are to be intended as an ordered product. In other words every element of $\ObsAlg$ can be expressed as a polynomial in the generators with coefficients in $\Complex$, it is implied that elements $\IdOp$ acts as unital element in the algebra.
+   				\\
+				This is nothing more than the \emph{Free space} generated from $\IdOp$ and $\big\{\Obs^k = 
+   				\underbrace{\Obs\times \ldots \times \Obs}_{\textrm{k times}} \big\}_{k< + \infty}$, in this term the symbol $\mathbf{\Phi}$ can be intended as the map which associates to any disposition of element in set $\Obs$ a linear generator of a suitable vector space.
+   				\\
+   				Recalling that the free space is the main ingredient in the definition of tensor product of vector spaces, we can concretely realize the vector space underlying the algebra mimicking what is done for the tensor space.
+   				Through the correspondence:
+   				\begin{displaymath}
+   					\mathbb{\Phi}([f]) \cdot \mathbb{\Phi}([g]) \cdot \ldots \quad \leftrightsquigarrow \quad [f] \otimes [g] \otimes \ldots
+   				\end{displaymath}
+   				we define the $\ObsAlg$ vector space as the \emph{Universal Tensor Algebra}:
+   				\begin{displaymath}
+   					\ObsAlg \coloneqq \bigoplus_{k \in \Natural_0} \Obs_\Complex^{\otimes k}
+   				\end{displaymath}
+   				direct sum, for all $k$ natural finite number, of $\Obs_\Complex^{\otimes k}$ the k-fold tensor power of the complexification $\Obs_\Complex$ of the space of classical observables.
+   				Where we have set $\Obs_\Complex^{\otimes 0} = \Complex$.
+				\\
+				Thus, the elements of the space $\ObsAlg$ are explicitly the sequences $\{ V_k \in \Obs_\Complex^{\otimes k} \}_{k\in \Natural_0}$ with only a finite number of non-zero entries.
+				Every entry $V_k$ is a linear combination with complex coefficients  of elements in the form $[f_1]\otimes\ldots \otimes [f_k]$ with $[f_i] \in \Obs$.\\
+				\textit{i.e.} $V_k \in \textrm{span}\big\{[f_1]\otimes\ldots \otimes [f_k] \; \big \vert [f_i] \in \Obs \big\}$.
+			
+			\subparagraph{Endow $\ObsAlg$ with a product }
+				This space can be equipped with the structure of algebra structure as following.
+				
+				Concretely the symbol $\mathbf{\Phi}$ giving the generator of $\ObsAlg$ can be seen as the operator:
+						\begin{displaymath}
+							\mathbf{\Phi}: \Obs \rightarrow \ObsAlg \qquad : \qquad \mathbf{\Phi}([f]) = \{ 0, [f], 0,\ldots\}
+						\end{displaymath}
+						and $\IdOp = \big\{ 1,0,\ldots \big\}$.
+				
+				Thus a product operator $ \cdot : \ObsAlg \times \ObsAlg \rightarrow \ObsAlg$, can be given through the action on each element in the sequence:
+					\begin{displaymath}
+						\{ u_k\} \times \{ v_k \} \mapsto \{ w_k = \sum_{i+j=k} u_i \otimes v_j \}
+					\end{displaymath}
+					definition is well-posed since:
+					\begin{displaymath}
+						\big\{ 0,0, [f]\otimes [g],0, \ldots \big\} = \mathbf{\Phi}([f]) \cdot \mathbf{\Phi}([g]) =
+						\{0,[f],0,\ldots\} \cdot \{ 0,[g],0,\ldots\} = \big\{0,0, [f]\otimes [g],0,\ldots\big\}
+					\end{displaymath}
+					first equivalence follows from the concrete construction of $\ObsAlg$, the second by definition of $\mathbf{\Phi}$ and the third by definition of $\cdot$.
+				
+				This construction satisfies automatically condition \ref{Ip:GenIndip} in definition \ref{Def:QuantumObsAlgebra}:
+						\begin{displaymath}
+							\mathbf{\Phi}(a[f] + b[g]) = \big\{0, a[f] + b[g],0, \ldots \big\}= a\{0, [f],0,\ldots\} + b\{0, [g],0,\ldots \} = a \mathbf{\Phi}([f]) + b \mathbf{\Phi}([g])
+						\end{displaymath}
+
+				We conclude that that  $(\ObsAlg, \cdot )$ constitutes an algebra over $\Complex$ appropriate to our purpose.
+   				
+   			\subparagraph{Construction of the Involution map $*$}
+	   			It can easily be defined an operation of involution $*:\ObsAlg \rightarrow \ObsAlg$ stating the action on the generators:
+				\begin{displaymath}
+					\{ \underbrace{0,\ldots, 0}_{k \textrm{times}}, [f_1]\otimes [f_2] \otimes \ldots \otimes [f_k],0,\ldots \}
+					\xmapsto{*}
+					\{ \underbrace{0,\ldots, 0}_{k \textrm{times}}, [f_k]\otimes [f_{k-1}] \otimes \ldots \otimes [f_1],0,\ldots \}
+				\end{displaymath}
+				for all $[f_1],\ldots,[f_k] \in \Obs$, and extending it by anti-linearity to the whole of $\ObsAlg$:
+				\begin{displaymath}
+					\big( \alpha x + y \big)^* \coloneqq \bar{\alpha} x^* + y^* \qquad \forall x,y\in \ObsAlg \; \forall \alpha \in \Complex
+				\end{displaymath}
+				It is straightforward to realize that $*$ implement the *-algebra properties:
+				\begin{equation}
+					\big( \mathbf{\Phi}([f]) \cdot \mathbf{\Phi}([g]) \big)^* = \big\{0,0,[f]\otimes [g],0,\ldots \big\}^* =
+					\big\{0,0,[g]\otimes [f],0,\ldots \big\}^* = \big( \mathbf{\Phi}([g]) \cdot \mathbf{\Phi}([f]) \big)	
+				\end{equation}
+				where the identity element is represented by $\IdOp$:
+				\begin{equation}
+				\IdOp^* = \{1,0,\ldots\}^* =\{1,0,\ldots\}= \IdOp
+				\end{equation}
+				hence $\ObsAlg$ is a unital *-algebra, implementing relation \ref{Ip:GenSelfAd} too:
+				\begin{displaymath}
+					\big(\mathbf{\Phi}([f])\big)^* = \big\{ 0, [f],0,\ldots\big\}^* = \big\{ 0, [f],0,\ldots\big\} = \mathbf{\Phi}([f])
+				\end{displaymath}			
+   			\subparagraph{CCR implementation}
+				The *-algebra $\ObsAlg$ already “knows” of the dynamics of the field since this is already encoded in $\Obs$, however, the canonical commutation relations (CCR) \ref{Ip:ImplementCCR} are still missing. 
+   		 		A way to implement this relationship is through the definition of an equivalence relation:
+   		 			\begin{displaymath}
+   		 				\mathbf{\Phi}([f]) \cdot \mathbf{\Phi}([g]) \simeq \pm \mathbf{\Phi}([g]) \cdot \mathbf{\Phi}([f]) + 
+   		 				i \tau\big( [f], [g] \big) \IdOp
+   		 			\end{displaymath}
+   		 		for all $[f],[g] \in \Obs$.\\
+   		 		Practically this can be obtained realizing the quotient space relative to a suitable two-sided ideal.
+   		 		\begin{proposition}
+   		 			Let be $I \subset \ObsAlg$ the subalgebra generated by:
+   		 				\begin{displaymath}
+   		 					\big\{
+   		 					 \mathbf{\Phi}([f]) \cdot \mathbf{\Phi}([g])  \mp \mathbf{\Phi}([g]) \cdot \mathbf{\Phi}([f]) - 
+   		 				i \tau\big( [f], [g] \big)\IdOp \quad \big \vert \quad [f],[g]\in \ObsAlg
+   		 					 \big\}
+   		 				\end{displaymath}
+   		 			this is a suitable two-sided ideal of $\ObsAlg$.
+   		 		\end{proposition}
+   		 		\begin{proof}
+   		 			$I$ is clearly a subalgebra inasmuch is generated by a subset in $\ObsAlg$.
+   		 			
+   		 			... 	\danger lift-right ideal?
+					\begin{align*}
+						& \mathbf{\Phi}([h])\big(
+   		 					 \mathbf{\Phi}([f]) \cdot \mathbf{\Phi}([g])  \mp \mathbf{\Phi}([g]) \cdot \mathbf{\Phi}([f]) - 
+   		 				i \tau\big( [f], [g] \big)\IdOp
+   		 					 \big)=\\
+   		 				&= \mathbf{\Phi}([h]) \cdot \mathbf{\Phi}([f]) \cdot \mathbf{\Phi}([g]) \mp  \mathbf{\Phi}([h]) \cdot \mathbf{\Phi}([g]) \cdot \mathbf{\Phi}([f])
+   		 					 - i \tau\big( [f], [g] \big) \mathbf{\Phi}([h])
+   		 			\end{align*}					   		 			
+   		 		\end{proof}
+   		 		Thus $\mathbf{\ObsAlg} \coloneqq \ObsAlg / I$ is a proper quantum algebra according to definition \ref{Def:QuantumObsAlgebra}.   			
+   			
+			\begin{remark}
+			Under suitable conditions, our quantization procedure perfectly agrees with the standard textbook quantization involving creation and annihilation operators ( see for example \cite{Mandl}). 
+			In fact, assuming that $M$ is Minkowski spacetime, one can relate directly our algebraic approach to the one more commonly used by means of an expansion in Fourier modes of the fundamental quantum fields $\Phi([ f ])$, which generate the algebra $A$.
+			\end{remark}   			
+   			
+   			The properties of the classical obsevables presented in theorem \ref{Teo:CausalityTimeSliceAxioms} have counterparts at the quantum level as shown by the following theorem:
+				\begin{theorem}\label{Teo:QuantumCausalityTimeSliceAxioms}
+					Consider a globally hyperbolic spacetime $M$ and let $\ObsAlg$ be the unital *-algebra of quantum observables defined above.\\
+					The following properties hold:
+					\begin{itemize}
+						\item \textbf{Causality axiom}
+							Elements of the algebra $\ObsAlg$ localized in causally disjoint regions commute:
+							\begin{displaymath}
+								\mathbf{\Phi}([f]) \cdot \mathbf{\Phi}([g]) = \mathbf{\Phi}([g]) \cdot \mathbf{\Phi}([f]) \qquad 
+								\forall f,h \in \Gamma_0(E) \; \big\vert \; \supp(f) \cap \textbf{J}_M \big(\supp(h) \big) = \emptyset
+							\end{displaymath}
+						\item \textbf{Time-Slice axiom}
+							For all $O \subset M$ globally hyperbolic open neighborhood of a spacelike Cauchy surface $\Sigma$ for $M$ denote 
+							with $\ObsAlg_M$ and with $\ObsAlg_O$ the unital *-algebras of observables for the field system respectively over $M$ and over $O$.
+							Then the unit-preserving *-homomorphism $\mathbf{\Phi}(L):\ObsAlg_O \rightarrow \ObsAlg_M $, $ \mathbf{\Phi}([ f ]) \mapsto \mathbf{\Phi} (L[f])$ is an isomorphism of *-algebras, where $L$ denotes the symplectic isomorphism introduced in Theorem \ref{Step:AuxiliaryStructure}.
+					\end{itemize}
+				\end{theorem}
+				\begin{proof}
+					We omit the proof, see for example \cite{benini}[Theorem 4]
+				\end{proof}
+	
+   		\paragraph{Hadamard state} 
+			Considering the scope of this thesis, we will focus primary on the first step. For a brief account on the construction of the \emph{quantum states} see Ref. \cite{Benini2013}.
+			\begin{Warning}
+			Non devi certo entrare nei dettagli, ma devi quantomeno accennare al fatto che siano la classe corretta di stati di usare in quanto godono di proprietà rilevanti quali in particolare la possibilità di costruire i polinomi di Wick in modo covariante.
+			\end{Warning}
+
+
+\section{Quantization by Initial Data.}
+	The presentation of this quantization procedure is essentially based on the book by Wald  (Ref. \cite{Wald1994}).\\
+	Unlike the previous algorithm, in this case are not exploited the condition of existence and uniqueness of Green's Operator (Green hyperbolicity) but rather the well-posedness of intial data problem on any Cauchy surface (PDE hyperbolicity) .
+	This quantization procedure is then well defined  only for the class of classical theories for which the Cauchy problem construction make sense,\textit{i.e.}:
+	\begin{enumerate}
+		\item Linear fields.\footnote{Not necessarily Lagrangian.}
+		\item Based on globally-hyperbolic spacetime.
+		\item Dynamics ruled by a PDE hyperbolic operator.	
+	\end{enumerate}
+	There are many systems  which are quantizable according to both procedures, the most canonical example is again the Klein-Gordon scalar field \cite{Wald1994}.
+
+	\subsubsection{Classical Step}
+		The procedure is very slightly different from the previous one.	
+		The starting point is still the identification of the  proper mathematical formulation of  the field system under consideration, \textit{i.e.} the identification of pair $(E,P)$.
+		\\
+		This time the main role is attributed to the space of the initial data $\Data$ and to the map $\SolMap$ providing the corresponding unique solution, as presented in section \ref{Section:CFT}.
+
+		\begin{NB}
+		
+				For the sake of simplicity we restrict ourselves to dynamic operators of the second order only.
+		\end{NB}
+
+	\subsubsection{PreQuantum Step.}
+		The step in which, essentially, all the procedures in the scheme of algebraic quantization differ radically is in the assignation on the PreQuantum structures.
+		In this case the strategy is to mimic the geometric mechanics picture for a linear point particles system (see \ref{Section:LinearClassicalSystem}).
+				
+		\paragraph{Pairing}
+		Even if in the two procedures are involved different PreQuantum structures, the \emph{pairing} plays again a key role.
+		The construction is the same as paragraph \ref{Paragraph:Pairing Construction} and therefore we shall not repeat it in details.
+
+		\paragraph{Classical Phase Space construction}
+			We define the phase space as a subset of $\Data$:
+			\begin{definition}[Classical Phase Space]
+				We call \emph{Classical Phase Space} the vector subspace of $\Data$ composed of compactly supported smooth initial dataj:
+				\begin{displaymath}
+					\gls{Phase}(\Sigma) \coloneqq \Gamma_0^\infty(\Sigma) \times \Sigma_0^\infty (\Sigma) \subset \Data(\Sigma)			
+				\end{displaymath}				
+			\end{definition}			
+			As pointed by Wald in \cite{Wald1994} this choice is essentially justified a posteriori as it allow to define a good symplectic form and a well-defined observable space in a minimal way.
+			
+			The following proposition a field theoretic version of equation \ref{Eq:PhaseDataSol}
+			\begin{proposition}
+				The map $\SolMap$ is a bijection from $\Phase(\Sigma)$ to $\Sol_{sc}$ the space of spacelike compact solutions.			
+			\end{proposition}
+			\begin{proof}
+				Consider a pair $f_0, f_1 \in \Gamma_0^\infty(\Sigma)$, from the support condition for the solution of the Cauchy problem:
+				\danger
+				\begin{equation}\label{Eq:SupportoCauchySol}
+					\supp\biggr( \SolMap \big([f_0,f_1] \biggr) \subseteq \mathbf{J}_M \biggr( \supp(f_0) \cup \supp(f_1) \biggr)
+				\end{equation}
+				follows that the support of solution $\SolMap \big([f_0,f_1]\big) $	is included in the domain of dependence of the compact, acronal	set $\biggr( \supp(f_0) \cup \supp(f_1) \biggr)$, then is spacelike compact,\\ \textit{i.e.}
+				\begin{displaymath}
+					\SolMap \big( \Phase(\Sigma)\big) \subseteq \Sol_{sc}
+				\end{displaymath}
+				The converse is also true since for all $\gamma \in \Sol_{sc}$ and Cauchy surface $\Sigma$ follows $\supp\big( \gamma \big\vert_\Sigma \big)$ is compact.
+			\end{proof}
+			Therefore, similar to what was concluded in paragraph  \ref{Def:DataSenzaSup}, we have:
+			$ \SolMap \left( \Phase(\Sigma) \right) = \Sol_{sc} \forall \sigma \in \CauchyClass(M)$
+			hence
+			\begin{equation}
+				\Sol_{sc} \simeq \frac{\bigsqcup\limits_{\Sigma \in \CauchyClass(M)}\Data(\Sigma)}{\sim} \coloneqq \Phase
+			\end{equation}
+				where $\sim$ is such that:
+				\begin{displaymath}
+					(f_0, f_1)|_\Sigma \sim (g_0, g_1)|_{\Sigma'} \; \Leftrightarrow \; \SolMap(f_0,f_1) =  \SolMap(g_0,g_1) 
+				\end{displaymath}
+
+
+
+		\paragraph{Symplectic Structure on the Phase Space}
+			Remembering that for a classical linear system, with second order dynamic equations, the symplectic structure can be defined globally on the phase space, we define a bilinear form on $\Phase$ mimicking eq. \ref{Eq:SymplecticCoordinateRepresentation}:
+			\begin{definition}[Initial data symplectic form]\label{Def:InitialDataSymplecticForm}
+				\begin{displaymath}
+					\Omega: \Phase(\Sigma) \times \Phase(\Sigma) \rightarrow \Complex \qquad : \qquad 					
+					\Omega \biggr\{ [f_0,f_1] , [g_0, g_1] \biggr\} = \int_\Sigma d\Sigma \biggr( (f_1,g_0)  - ( f_0, g_1) \biggr)
+				\end{displaymath}
+				where $d\Sigma$ is the volume form naturally induced by the spacetime metric (and corresponding measure $d\mu(x)= d\textrm{vol}_M$) on the subspace $\Sigma$.
+			\end{definition}			
+			
+			Has to be noted that at the basis of this construction there is the choice of a Cauchy surface $\Sigma$, in this sense this second procedure is \emph{"non-covariant"} in contrast to the Peierls' algorithm.
+				
+			\begin{proposition}
+				Let be $\Omega: \Phase(\Sigma) \times \Phase(\Sigma) \rightarrow \Complex $ the function defined above, it satisfies the following properties:
+				\begin{enumerate}
+					\item bilinear.
+					\item antisymmetric if $<\cdot, \cdot>$ is symmetric.
+					\item non degenerate:
+						\begin{displaymath}
+							\Omega\big( [f_0,f_1], [g_0,g_1] \big) =0 \forall [f_0,f_1]\in \Phase(\Sigma) \Leftrightarrow [g_0,g_1] =[0,0]
+						\end{displaymath}
+				\end{enumerate}								
+			\end{proposition}
+			\begin{proof}
+
+			[Th. 1]\\
+			Bilinearity follows directly from the bilinearity of the bundle inner product and from the linearity of the Lebesgue integral.
+
+			[Th. 2]\\
+			Provided the simmetry of the inner product : $ <f,g> = \pm <g,f>$ follows that:
+				\begin{displaymath}
+					<f_1,g_0> -<f_0,g_1> = \mp \big( <g_1,f_0> - <g_0,f_1> \big)
+				\end{displaymath}
+			\textit{,i.e.,} $\Omega$ has opposed simmetry property respect to $<\cdot,\cdot>$.
+
+			[Th. 3]\\
+			Since the null property is valid for every $[f_0,f_1]\in \Phase(\Sigma)$ is a furthermore valid for data $[g_1,0]$ and $[0,g_0]$.
+			These lead to equation:
+			\begin{displaymath}
+				\int_\Sigma \parallel g_i \parallel^2 d\Sigma = 0 \rightarrow g_i = 0 
+			\end{displaymath}
+			for $i \in {0,1}$, thus $[g_0,g_1] = [0,0]$.
+			\end{proof}
+
+			Considering the one-to-one correspondence between $\Phase$ and $\Sol_{sc}$ we can transport this function on the space of spacelike compact solutions:
+			\begin{displaymath}
+				\sigma_\Sigma \big\{ \varphi, \psi \big\} \coloneqq 
+				\Omega \big\{ [\varphi\vert_\Sigma, \nabla_n\varphi\vert_\Sigma] ,[\psi\vert_\Sigma,\nabla_n\psi\vert_\Sigma] \big\}
+			\end{displaymath}				
+			where $n$ denote the unit (future directed) normal vector to $\Sigma$.
+				
+			Except some particular cases this definition is strictly dependant from the chosen Cauchy surface $\Sigma$.
+			Generally, for any pair of solutions $\varphi, \psi \in \Sol_{sc}$ and for any pair of Cauchy surfaces 	$\Sigma, \Sigma' \in \CauchyClass(M)$, we have:
+						\begin{align*}
+							\sigma_\Sigma ( \psi, \phi) &= \int_\Sigma < \nabla_n \phi, \psi>  - <\phi, \nabla_n \psi > d\Sigma=\\
+							&\neq \int_{\Sigma'} < \nabla_n \phi, \psi>  - <\phi, \nabla_n \psi > d\Sigma'= \sigma_{\Sigma'}(\psi,\phi)
+						\end{align*}
+		  In this term the phase space $\Phase(\Sigma)$ is \emph{non-covariant}.
+		  
+		\begin{example}\label{Ex:IndipendentPhaseSpace}
+			The Klein-Gordon scalar field $(E,P)$ where:
+			\begin{eqnarray}
+				E &= M \times \Real \nonumber\\
+				P &= \square_M + m^2 + \xi R \label{Eq:KGOperator}
+			\end{eqnarray}
+			, is one of such cases whereby it can be proven the independence of the phase space construction from the choice of $\Sigma$.
+			\\
+			Let be $\varphi, \psi \in \Sol_{sc}$ two spacelike compact solutions, with these can be realized a "current":
+			\begin{displaymath}
+					J_\mu \coloneqq \varphi \cdot \nabla_\mu \psi  - \psi \cdot \nabla_\mu \varphi
+			\end{displaymath}
+			that is a tangent vector field on the spacetime manifolds $M$.			
+			\\
+			Exploiting the motion equations follows that $J_\mu$ is a conserved current:
+			\begin{eqnarray}\label{Eq:ScalarCurrent}
+				\nabla^\mu J_\mu &= \nabla^\mu\varphi \nabla_\mu\psi  - \nabla^\mu \psi \nabla_\mu \varphi + 
+				\varphi \nabla^\mu \nabla_\mu \psi - \psi \nabla^\mu \nabla_\mu \varphi	= \nonumber \\
+				&=  \varphi \big( P - \kappa \big) \psi - \psi \big( P - \kappa \big) \varphi = 0 
+			\end{eqnarray}
+			where $\kappa$ is the constant factor in operator $P$ ruling the dynamics.
+			\\
+			Now consider two Cauchy surfaces $\Sigma, \Sigma'$ such that $\CausalFut(\Sigma) \supset \Sigma'$ and denote $I$ an open set such that:
+			\begin{displaymath}
+				\supp\big(\varphi \vert_\Sigma \big) \cup \supp\big( \psi \vert_\Sigma \big) \subset I \subset \Sigma
+			\end{displaymath}
+			Denoting as $D$ the region between $I$ and $\Sigma'$:
+			\begin{displaymath}
+				D \coloneqq \big( \CausalFut(I) \cap \CausalPast(\Sigma') \big)
+			\end{displaymath}
+			In virtue of eq \ref{Eq:ScalarCurrent} follows:
+			\begin{displaymath}
+				0 = \int_{D} \nabla^\mu J_\mu = \int_{\partial D} n^\mu J_\mu = \big( \int_{\Sigma'} d\Sigma- \int_{\Sigma}d\Sigma \big) \big( \varphi \cdot \nabla_n \psi  - \psi \cdot \nabla_n \varphi \big) 
+			\end{displaymath}
+			where in the second equivalence has been used \emph{Stokes Theorem} and $n$ denote the outgoing normal vector.
+			\\
+			In others words:
+			\begin{displaymath}
+				\sigma_\Sigma ( \varphi, \psi) = \sigma_{\Sigma'} (\varphi, \psi) 
+				\qquad \forall \varphi, \psi \in \Sol_{sc},\: \forall \Sigma, \Sigma' \in \CauchyClass(M)
+			\end{displaymath}
+			
+			
+		\end{example}
+			
+		\paragraph{Poisson space of linear observables}		
+		Exactly as shown in section \ref{Section:LinearClassicalSystem} it is possible to define the set of classical observables through the symplectic form on $\Phase(\Sigma)$.
+		The key role is taken by the linear observables:
+		\begin{displaymath}
+			\Obs_{Lin} \coloneqq \biggr\{ \Omega\big( [\varphi, \pi], \cdot \big): \Phase(\Sigma) \rightarrow \Real \quad \vert\; [\phi,\pi]\in \Phase(\Sigma) \biggr\}	\simeq \Sol_{sc}
+		\end{displaymath}
+		The symplectic form is slavishly transferred from $\Phase(\Sigma)$ to $\Obs_{Lin}$:
+		\begin{displaymath}
+			\biggr\{ \Omega\big( [\phi_0,\pi_0], \cdot \big) , \Omega \big( [\phi_1,\pi_1], \cdot \big) \biggr\} \coloneqq
+			- \Omega\big( [\phi_0, \pi_0], [\phi_1, \pi_1]\big)
+		\end{displaymath}				
+		
+	\subsubsection{Second Quantization Step.}
+		The pair $(\Obs_{Lin}, \Omega)$ takes the place of $(\Obs, \tau)$ in the quantization procedure.
+		Once the classic symplectic manifold is identified, the concrete construction of the quantum algebra is accomplished as before. We shall not repeat the construction it in details.
+		
+\section{Link between the two realizations}	\label{Section:LinkBetweenQuantization}
+	To a system susceptible to both the quantization procedures, for example in the case that operator $P$ is normally hyperbolic, are associated two apparently different symplectic spaces : $(\Obs,\tau)$ and $(\Obs_{Lin},\Omega)$.
+	
+	A crucial result that can be generally proved is that the space of linear functional $\Obs_{Lin}$ and the space of classical observables $\Obs$ are isomorphic.
+	According to that the two procedures differ only in the attribution of the corresponding symplectic form.
+
+	%\subsection{Correspondence of the two Classical Observables Spaces}	
+	The linear isomorphism $\Obs = \Gamma_0^\infty / \big( P ( \Gamma_0^\infty) \big) \simeq \Sol_{sc} \simeq \Obs_{Lin}$ follows directly from the next theorem:
+	\begin{theorem}\label{Teo:IsomorphismBetweenTheTwoSymplectic}
+					Let $M$ be a globally hyperbolic spacetime. Consider a vector bundle $E$ over $M$, Green-hyperbolic operator $P: \Gamma(E)\rightarrow \Gamma(E)$.
+				Let $G^\pm$ be retarded and advanced Green operators for $P$ and denote with $E$ the corresponding advanced-minus-retarded operator.\\
+				Then the following statements hold true:
+					\begin{enumerate}
+						\item The map:
+							\begin{equation}
+								 \Xi : \frac{\Gamma_{tc}(E)}{P \big( \Gamma_{tc}(E)\big)} \rightarrow  \Sol \qquad \Xi: [f] \mapsto E f
+							\end{equation}
+							,where $\Sol$ is the space of smooth solutions of $P$ as defined in \ref{Def:SolSpace},
+							is a well-defined vector space isomorphisms.
+						\item The domain restriction of map $\Xi$:
+							\begin{equation}
+								 \Xi : \Obs= \frac{\Gamma_{0}(E)}{P \big( \Gamma_{0}(E)\big)} \rightarrow  \Sol_{sc} \qquad \Xi: [f] \mapsto E f
+							\end{equation}
+							, where $\Sol_{sc}$ is the space of the space-like compact solutions of $P$,
+							is a well-defined vector space isomorphisms.
+					\end{enumerate}
+	\end{theorem}
+	\begin{proof}
+	[Th. 1]
+	\begin{itemize}
+		\item Well-posedness of $\Xi$ follows directly from the definition of causal propagator:
+			\begin{displaymath}
+				P E f = 0 \; \forall f \in \Gamma_{tc}(E) \qquad \Rightarrow \; \Xi ( \Obs_0) \subseteq \Sol
+			\end{displaymath}
+			while the explicit definition of equivalence classes:
+			\begin{displaymath}
+				[f] \equiv \{ f + P g \; \vert g \in \Gamma_{tc}(E)\} \qquad\Rightarrow \;
+				 \Xi [f] \equiv \{ E f + E P g \;\vert g \in \Gamma_{tc}(E)\} = E f
+			\end{displaymath}
+			guarantees that the image does not depend on the representative of $[f]$
+		\item %Injectivity  This map is injective since, 
+			Map $\Xi$ is injective.\\
+			Given $f , f' \in \Gamma_{tc}(E)$ such that $E f = E f'$, from linearity of $E$ follows:
+			\begin{displaymath}
+				E ( f - f') = 0
+			\end{displaymath}			
+			applying proposition \ref{Prop:GreenKernel}, one finds $h \in \Gamma{tc}(E)$ such that $P h = f - f'$. 
+			In other words $f$ and $f'$  are two representatives of the same equivalence class in $\dfrac{\Gamma_{tc}(E)}{P ( \Gamma_{tc}(E)} $.
+		\item Map $\Xi$ is surjective.\\
+			Given $u \in \Sol$ and taking into account a partition of unity $\{\chi_+, \chi_-\}$ on $M$ such that $\chi_\pm = 1$ in a past/future compact region, one finds $P ( \chi_+ u \chi_- u ) = P u=0$, therefore 
+			\begin{displaymath}
+				h = P(\chi_-u) = - P(\chi_+ u)
+			\end{displaymath}
+			is timelike compact.\\
+			Exploiting the properties of retarded and advanced Green operators
+			\begin{displaymath}
+				E h = \GreenAdv P (\chi_- u ) - \GreenRet P (\chi_- h ) = 
+				\GreenAdv P (\chi_- u ) + \GreenRet P (\chi_+ h ) = \chi_-u + \chi_+ u = u
+			\end{displaymath} 
+			one concludes that $\Xi ( \Obs_0) \supseteq \Sol$.
+	\end{itemize}
+	[Th. 2]
+	\begin{itemize}
+		\item The proof follows slavishly that of proposition \ref{Prop:GreenKernel} and thesis 1, therefore we shall not repeat it in details. 
+			One has only to keep in mind that E maps sections with compact support to sections with spacelike compact support and that the intersection between a spacelike compact region and a timelike compact one is compact.
+	\end{itemize}		
+	\end{proof}
+
+	In some cases the two symplectic spaces coincide completely.	
+		\begin{example}\ref{Ex:SimplettomorphismPhaseSpace}
+		Consider the Klein-Gordon scalar field $(E,P)$.
+		We have already proved the independence of the phase space construction from the choice of $\Sigma$.
+		Let be $(\Obs,\tau)$ and $(\Obs_{Lin},\Omega)$ the two classical symplectic spaces according to initial data quantization and Peierls quantization, where
+		\begin{displaymath}
+			\sigma: \Sol_{sc}\times \Sol_{sc} \rightarrow \Real \qquad 
+			\sigma\big( \psi, \phi \big) \int_\Sigma \big( <\nabla_n \psi ,\phi>  - <\psi, \nabla_n \phi> \big) d\Sigma
+		\end{displaymath}
+		
+		\begin{displaymath}
+			\tau: \Obs \times \Obs \rightarrow \Real \qquad
+			\tau \big( [f] ,[g] \big) = \int_M < f, Eg> d\mu
+		\end{displaymath}
+		are the corresponding symplectic forms.\\
+		The isomorphism $\Xi: [f] \mapsto E f$ between the two underlying vector spaces is a simplettomorphism 
+		inasmuch it preserves the symplectic forms:
+		\begin{displaymath}
+			\sigma \big( \phi, \psi \big) =  \tau\big( [f], [g] \big)
+		\end{displaymath}
+		where $\phi = E f$ and $\psi= E g$.
+		in fact from the definition of $\tau$ follows:
+		\begin{align}
+		\tau\big( [f], [g] \big) \coloneqq  & \int_M f E h d\textrm{Vol}_M = 
+		\int_{\CausalFut(\Sigma)} f \psi d\textrm{Vol}_M	 + \int_{\CausalPast(\Sigma)} f \psi d\textrm{Vol}_M =	\nonumber \\
+		=& \int_{\CausalFut(\Sigma)} (P \GreenAdv f) \psi d\textrm{Vol}_M	 + \int_{\CausalPast(\Sigma)} ( P \GreenRet f ) \psi d\textrm{Vol}_M
+		\end{align}
+		where has been decomposed the integral by splitting the domain of integration into two subsets whose intersection has zero measure and are exploited the properties of the retarded and advanced operators.\\
+		Using $G^\pm$ inside the integral over $\CausalPM(\Sigma)$ and considering the explicit representation of the Klein Gordon operator (eq:\ref{Eq:KGOperator}) allows us to integrate by parts twice:
+		\begin{align}
+			&\int_{\CausalFut(\Sigma)} (P \GreenAdv f) \psi d\textrm{Vol}_M	=
+			\int_{\CausalFut(\Sigma)} (\square_M \GreenAdv f) \psi d\textrm{Vol}_M	 + \kappa \int_{\CausalFut(\Sigma)} ( \GreenAdv f) \psi d\textrm{Vol}_M  = \nonumber\\
+			&= -\int_\Sigma \big( \nabla_n ( \GreenAdv f) \big) \psi d\Sigma 
+				- \int_{\CausalFut(\Sigma)} (\nabla_n \GreenAdv f) \nabla_n \psi d\textrm{Vol}_M 
+				+ \kappa \int_{\CausalFut(\Sigma)} ( \GreenAdv f) \psi d\textrm{Vol}_M  =\nonumber\\
+			&= -\int_\Sigma \big( \nabla_n ( \GreenAdv f) \big) \psi d\Sigma 	+\int_\Sigma \big( ( \GreenAdv f) \big)\nabla_n  \psi d\Sigma  + \int_{\CausalFut(\Sigma)} ( \GreenAdv f) ( \square_m + \kappa) \psi d\textrm{Vol}_M
+		\end{align}
+		where $\kappa$ is the constant factor in operator $P$ and using the \emph{Stokes theorem}  the sign of the normal outgoing normal vector is taken in account.\\
+		Combining the two preceeding equations one concludes that:
+		\begin{align}
+		\tau\big( [f], [g] \big) =&  -\int_\Sigma \big( \nabla_n ( \GreenAdv f) \big) \psi d\Sigma
+		+\int_\Sigma \big( ( \GreenAdv f) \big)\nabla_n  \psi d\Sigma +\nonumber\\
+		&+\int_\Sigma \big( \nabla_n ( \GreenRet f) \big) \psi d\Sigma  
+		-\int_\Sigma \big( ( \GreenRet f) \big)\nabla_n  \psi d\Sigma =  \nonumber\\
+		=& \int_\Sigma \big( \phi \nabla_n \psi - \psi \nabla_n \phi \big) d\Sigma \coloneqq\sigma (\phi, \psi)
+		\end{align}
+		
+	\end{example}
+
+
+\end{document}

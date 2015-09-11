@@ -5,25 +5,27 @@
 %%%	Intro	%%%
 %\_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_%
 	The interaction between mathematics and Quantum Field Theory are complex and highly not trivial.
-	Since contemporary quantum field theory is mainly developed as quantization of classical fields, the mathematical foundation of classical field theory represent a necessary step towards the comprehension of field theory foundations.
+	Since contemporary quantum field theory is mainly developed as a quantization of classical fields, the mathematical foundation of classical field theory represents a necessary step towards the understanding of the foundations of field theory.
 	
-	Goal of this section is to introduce the three  building blocks of classical field theory, namely \emph{vector bundles}, \emph{globally hyperbolic spacestimes} and \emph{Green hyperbolic operators}.
-	Given the purpose of this thesis, we'll not dwell on the structures typical of the quantum framework (such *-algebras).
+	%Goal of this section is to introduce the three  building blocks of classical field theory, namely \emph{vector bundles}, \emph{globally hyperbolic spacestimes} and \emph{Green hyperbolic operators}.
+	Goal of this section is to introduce the three  building blocks of \emph{"pre-quantum field theory} , by this we mean the theory that describes the classical analogue of quantum theory that, in turn, describes the elementary particles.
+	Namely these are the \emph{vector bundles}, \emph{globally hyperbolic spacestimes} and \emph{Green hyperbolic operators}.
+	Given the purpose of this thesis, we shall not dwell on the structures typical of the quantum framework (such *-algebras).
 	We assume that the reader is familiar with the basic notions of differential geometry, external calculus and, to a minor extent, of general relativity.
 %\_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_%
 %\_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_%
 	\section{Fiber Bundles}
-		\emph{Fiber bundles} are the stage for classical and quantum field kinematic.
-		Its main role is to encode the kinematic configuration of an arbitrary field theory through the concept of
+		\emph{Fiber bundles} are the stage for the kinematics of classical and quantum fields.
+		Its main role is to encode the kinematic configurations of an arbitrary field theory through the concept of
 		\emph{sections}.
 		
 		\subsection{Formal Definition}
-			Although it would be possible to present the concept \emph{bundle} in a more general way through the language of categories, for our argument will be sufficient to consider only the case of \emph{smooth bundles}.
+			Although it would be possible to present the concept of \emph{bundle} in a more general way through the language of categories, for the sake of this work it will be sufficient to consider only the case of \emph{smooth bundles}.
 			\begin{definition}[Fiber Bundle]\label{Def:SmoothBundle}
-				We call a \emph{Smooth (Fiber) Bundle}  a 4-ple $(E,M,Q,\pi)$ where:
+				We call a \emph{Smooth (Fiber) Bundle}  a quadruple $(E,M,Q,\pi)$ where:
 				\begin{itemize}
 					\item[-] $E,M,Q$ :  smooth manifolds called respectively \emph{Total Space}, \emph{Base Space}, \emph{Typical Fiber}.
-					\item[-] $\pi : E \rightarrow M $ continuous smooth function (called \emph{Bundle Projection})
+					\item[-] $\pi : E \rightarrow M $ smooth function (called \emph{Bundle Projection})
 				\end{itemize}
 				Endowed with a \emph{Local Trivialization}:
 				\begin{itemize}
@@ -35,9 +37,10 @@
  							\footnote{surjectivity $\Rightarrow$ $\pi^{-1}(U) \neq \emptyset$.} 
  							\footnote{cartesian product of topological space is a topological space with the direct product topology.}
 					\end{itemize}
-					such that: $p_1 \cdot \chi = \pi \vert_{\pi^{-1}(p)}$.
+					such that the natural projection $p_1 : U \times F \rightarrow U$ satisfies the following equation: $$p_1 \cdot \chi = \pi \vert_{\pi^{-1}(p)}$$.
 
-					i.e: the following graph commutes:
+					\textit{i.e.}: the following graph commutes:
+					
 					\begin{tikzpicture}
 						 \matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em] {
      						\pi^{-1}(U) & U \times Q \\
@@ -57,48 +60,49 @@
 %  				\includegraphics[width=0.5\textwidth]{Pictures/FiberBundle}
   				\centering
 			\end{figure}
-			\begin{notationfix}
+%			\begin{notationfix}
 				It is customary to refer to a vector bundle specifying only its total space:
 				\begin{displaymath}
 					\gls{Bundle}%E= ( E,\pi, B ; F)
 				\end{displaymath}
 			 	In the following we adopt this convention whenever this does not lead to misunderstandings.
-			\end{notationfix}
+%			\end{notationfix}
 			
-			\begin{observation}
+%			\begin{observation}
 				For all $p\in M$ we refer to the submanifold $E_{p} := \pi_{-1}(p) \subset E $ as \emph{fiber over the point p}.
 				\\
 				Every fiber $E_p$ is diffeomorphic to the typical fiber $F$ through the local trivialization charts.
-			\end{observation}
+%			\end{observation}
 			
 			\begin{notationfix}
 				We say that a smooth bundle E is \emph{(globally) trivial} if $E \simeq M \times Q$ i.e there exists a trivialization of $E$ which is defined everywhere.
 				\\
-				Note that definition \ref{Def:SmoothBundle}  prescribes the existence of local trivializations only.
+				Note that Definition \ref{Def:SmoothBundle}  prescribes the existence of local trivializations only.
 			\end{notationfix}
 			
-			When a smooth fiber bundle $(E,\pi,M;Q)$ is considered, in addition to the typical functions of the bundle $(\pi, \chi_{\alpha})$ should be taken in account also  the local charts $(U_{\alpha_k}, \phi_{\alpha_k})_{k = E,M,Q}$ provided by the atlases of $E,M$ and $Q$:
+			When a smooth fiber bundle $(E,\pi,M;Q)$ is considered, in addition to the typical functions of the bundle $(\pi, \chi_{\alpha})$ also the local charts $(U_{\alpha_k}, \phi_{\alpha_k})_{k = E,M,Q}$, provided by the atlases of E, M and Q, should be provided.
+			%should be taken in account also  the local charts $(U_{\alpha_k}, \phi_{\alpha_k})_{k = E,M,Q}$ provided by the atlases of $E,M$ and $Q$:
 			\begin{definition}[Bundle atlas]
-				We calla a \emph{Bundle Atlas} a collection of local chart which trivializes $E$. I.e. triples  $(U_\alpha, \psi_\alpha, \chi_\alpha)$ where:
+				We calla a \emph{Bundle Atlas} a collection of local charts which trivializes $E$. I.e. triples  $(U_\alpha, \psi_\alpha, \chi_\alpha)$ where:
 				\begin{itemize}
-					\item $U_\alpha$ open set in $M$ such that $\bigcup_{\alpha} U_{\alpha} \supseteq M$.
+					\item $U_\alpha$ is a open set in $M$ such that $\bigcup_{\alpha} U_{\alpha} \supseteq M$.
 					\item $\chi_\alpha$  is a local trivialization.
-					\item $(U_\alpha,\psi_\alpha)$ local chart on $M$.
+					\item $(U_\alpha,\psi_\alpha)$ is a local chart on $M$.
 				\end{itemize}		
 			\end{definition}
 			\begin{observation}
-				Given a local chart $(U_\alpha, \psi_\alpha^{(M)}$ on M and a local chart $(U_\alpha^{(Q)}, \psi_\alpha^{(Q)}$ on the fiber manifold it is possible to construct a chart on the total space:	
+				Given a local chart $(U_\alpha, \psi_\alpha^{(M)} )$ on M and a local chart $(U_\alpha^{(Q)}, \psi_\alpha^{(Q)})$ on the fiber manifold it is possible to construct a chart on the total space:	
 				\begin{displaymath}
 							\psi^{(E)}_\alpha = \psi_\alpha^{(M)} \times  \psi_\alpha^{(Q)} \circ \chi_\alpha
 				\end{displaymath}	
 			\end{observation}
 			
-			Endowing the bundles manifolds with other additional structures, can be introduced important subclasses of smooth bundles:
+			Endowing the bundle manifolds with other additional structures, we can introduce important subclasses of smooth bundles:
 			\begin{definition}[Vector Bundle]
 				We call \emph{Vector Bundle} a smooth bundle $E=(E,\pi,M;V)$ such that:
 				\begin{itemize}
 					\item The typical fiber $V$ is a finite dimensional vector space.	
-					\item All the trivialization $\chi_{\alpha} $ are diffeomorphism such that:
+					\item All trivializations $\chi_{\alpha} $ are diffeomorphisms such that:
 						\begin{displaymath}
 							\chi_{\alpha}\vert_{\pi^{-1}(p)} \in \mathbb{GL}(n, \mathbb{R})
 						\end{displaymath}
@@ -107,31 +111,35 @@
 
 		\subsection{Cross Sections}
 			Sections represent the natural mathematical object to encode a $Q-$ valued classical field over the space $M$:			
+%			\begin{definition}[Smooth Section]
+%				We call \emph{Smooth Section} a function $\phi : M \rightarrow E$ such that:
+%					\begin{itemize}
+%						\item $\phi$ smooth.
+%						\item $\pi \cdot \phi = \IdMap_M$ 
+%					\end{itemize}
+%			\end{definition}
 			\begin{definition}[Smooth Section]
-				We call \emph{Smooth Section} a function $\phi : M \rightarrow E$ such that:
-					\begin{itemize}
-						\item $\phi$ smooth.
-						\item $\phi \cdot \pi = \IdMap_M$ 
-					\end{itemize}
+				We call \emph{Smooth Section} 	any $\phi\in C^\infty(M;E)$ such that $$\pi\circ\phi = id|_M$$		
 			\end{definition}
-			
-			\begin{notationfix}
+%			\begin{notationfix}
 				We refer to:
 					\begin{itemize}
 						\item \emph{Global section} $\Leftrightarrow$ $\textrm{dom}(\phi) = M$
 						\item \emph{Local section} $\Leftrightarrow$ $\textrm{dom}(\phi) \subset M$
 					\end{itemize}
-				We denote the set of all the smooth sections of the bundle $E$  as:
+				We denote the set of all global smooth sections of the bundle $E$  as:
 				\begin{displaymath}
 					\gls{Sections}
 				\end{displaymath}
-			\end{notationfix}
-			
-			\begin{observation}
-				In general, \gls{Sections} is an infinite dimensional manifolds. 
-				\\
-				In case of vector bundle is also a linear Frechet space\cite{Kriegl}, and the section are called "vector fields".
-			\end{observation}
+%			\end{notationfix}
+			generally this space is an infinite dimensional manifold.
+			In case of vector bundles it is also a linear Frechet space\cite{Kriegl}.
+%			\begin{observation}
+%				In general, \gls{Sections} is an infinite dimensional manifold. 
+%				\\
+%				In case of vector bundles it is also a linear Frechet space\cite{Kriegl}.
+%				, and the sections are called "vector fields". (CD, non sono sicuro, di solito questo nome in geometria differenziali è riservato per i campi intesi come sezione del fibrato tangente
+%			\end{observation}
 			
 			
 		\subsection{Mapping between Bundles}
@@ -156,23 +164,24 @@
 				\end{tikzpicture}
 			\end{definition}
 			\begin{observation}
-				Definition \ref{Def:BundleMap} is a special case of \emph{Bundle-morphism}. (see for example \cite{G.Sardanashvily2013})
+				Definition \ref{Def:BundleMap} is a special case of \emph{bundle-morphism}. (see for example \cite{G.Sardanashvily2013})
 			\end{observation}
 
 			%pullback bundle
-			Consider a smooth manifold $N$, a (smooth) fiber bundle $E=(E,\pi,M;Q)$, and a smooth function $f: N \rightarrow M$. it is possible to induce\cite{Husemoller} a bundle structure from the manifold $M$ to $N$:
+			Consider a smooth manifold $N$, a (smooth) fiber bundle $E=(E,\pi,M;Q)$, and a smooth function $f: N \rightarrow M$. it is possible to induce\cite{Husemoller} a bundle structure from $M$ to $N$:
 			\begin{definition}[Pull-Back Bundle]
-				We call \emph{pull-back bundle}of E a 3-ple $f^* (E) = (f^* (E) =, \pi^*,N)$ such that:
+				We call \emph{pull-back bundle} of E a triple $f^* (E) = (f^* (E) , \pi^*,N)$ such that:
 				\begin{itemize}
 					\item $f^* (E) =  \big\{ (b',e) \in N \times E \quad \big\vert \; f(b') = \pi(e) \big\} $
-					\item $\pi^*:f^* (E) \rightarrow N $ such that $ \pi* (b',e) = \textrm{pr}_1 (b',e)= b' $
+					\item $\pi^*:f^* (E) \rightarrow N $ such that $ \pi^* (b',e) = \textrm{pr}_1 (b',e)= b' $
 				\end{itemize}
+				where $p_1 : U \times F \rightarrow U$ is the natural projection  on the first entry.
 			\end{definition}
 			\begin{proposition}
-				$f^* (E) = (f^* (E) =, \pi^*,N)$ constitutes a smooth bundle of typical fiber Q.
+				$f^* (E) = (f^* (E) =, \pi^*,N)$ is a smooth bundle with typical fiber $Q$.
 			\end{proposition}
 			\begin{proof}
-				To complete the fiber bundle structure is sufficient to provide a local trivialization atlas.
+				To complete the fiber bundle structure it is sufficient to provide a local trivialization atlas.
 				\\
 				$\forall ( U, \phi)$ local trivialization on $(E, \pi, M)$  consider $\psi: f^* E \rightarrow N \times Q$ such that $\psi( b',e) = \bigg( b', pr_2 \big( \phi(e)\big)\bigg)$.
 				\\
@@ -181,54 +190,58 @@
 
 			
 			%mor bundle
-			It is also noteworthy that, given any two vector bundles $E =(E\pi,M,Q)$ and $E =(E'\pi,M',Q')$, we can construct 	naturally a third fiber bundle.\\
+			It is also noteworthy that, given any two vector bundles $E =(E,\pi,M,Q)$ and $E =(E',\pi',M',Q')$, we can construct 	naturally a third fiber bundle.\\
 			Consider $\Hom(E,E')$ the set of all the fiber preserving map between the two bundles:
 			\begin{definition}[Bundle of homomorphisms]
-				We call \emph{bundle of homomorphism} a fiber bundle $\Hom(E,E')$ over the base space $M$ such that the fiber over a base point $p\in M$ is the infinite dimensional manifold $\Hom(E_p,E'_p)$ isomorphic to $\Hom(Q,Q')$.
+				We call \emph{bundle of homomorphisms} a fiber bundle $\Hom(E,E')$ over the base space $M$ such that the fiber over a base point $p\in M$ is the infinite dimensional manifold $\Hom(E_p,E'_p)$ isomorphic to $\Hom(Q,Q')$.
 			\end{definition}
-			\begin{notationfix}
-				We shall write $End(E)$ for $\Hom(E,E)$ and call it bundle of endomorphism, whose typical fiber is $\textrm{End}(Q)$.
-			\end{notationfix}
+%			\begin{notationfix}
+				We shall write $End(E)$ for $\Hom(E,E)$ and we call it bundle of endomorphism, whose typical fiber is $\textrm{End}(Q)$.
+%			\end{notationfix}
 			\begin{remark}
 				If $F,F'$ are vector bundle then the fiber of  $\Hom(F,F')$ over a base point $p\in M$ is $\Hom(F_p,F'_p)$, which is a vector space isomorphic to the vector space $\Hom(V,V')$ of linear applications from $V$ to $V'$
 			\end{remark}
 	
 		\subsection{Tangent Bundles}
-			The \emph{tangent} bundle is a natural structure defined on any smooth manifold, represent the canonical example of  non-trivial vector bundle.
+			The \emph{tangent} bundle is a natural structure defined on any smooth manifold, it represents the canonical example of  non-trivial vector bundle.
 						
 			\begin{definition}[Tangent Bundle]
 				We call \emph{tangent bundle of M} the smooth vector bundle $TM=(TM,\tau,M;\Real^m)$ such that:
 				\begin{itemize}
 					\item The total space is the union of all tangent spaces to 
-						$$M: TM \coloneqq \underset{p \in M}{\sqcup} T_pM  \equiv \bigcup_{x\in M} {x}\times T_x M$$
+						$$TM \coloneqq \underset{p \in M}{\sqcup} T_pM  \equiv \bigcup_{x\in M} {x}\times T_x M$$
 					\item The bundle projection maps each tangent vector $v\in  T_pM$ to the correspondent base point  $p$;
 						$$\tau : (p,v_p) \mapsto p $$
 				\end{itemize}
 			\end{definition}			
-			
-			\begin{observation}
-				In a similar fashion it is possible to construct a vector bundle relatively to any tensor product of the tangent spaces.
-				i.e.:
+			In a similar fashion it is possible to construct a structure dual to $TM$:
+			\begin{definition}[Cotangent Bundle]
+				We call \emph{cotangent bundle} the vector bundle $T^*M$ builded by disjoint union of the dual tangent space $T_p^*M $.
+			\end{definition}
+			Furthermore, this construction can be repeated for any tensor product of the tangent and cotangent spaces, \textit{i.e.}:
 				\begin{itemize}
-					\item \emph{Cotangent Bundle} $T^*M$ is build by disjoint union of the dual tangent space: 
-					$$T_p^*M $$
-					\item \emph{Tensor Bundle} $T^{(k,l)}M$ is build by disjoint union of the tensor product of tangent space with itself:
+%					\item \emph{Cotangent Bundle} $T^*M$ is build by 
+					\item The \emph{Tensor Bundle} $T^{(k,l)}M$ is build by disjoint unions of the tensor product of tangent space with itself:
 					\begin{displaymath}
 						T^{(k,l)}_ p M = \underbrace{T^*_pM \otimes \cdots \otimes T^*_pM}_{\textrm{k-times}} \otimes
 						\underbrace{T_pM \otimes \cdots \otimes T_pM}_{\textrm{l-times}}
 					\end{displaymath}
-					\item \emph{k-forms Bundle} $ \bigwedge^m( T^*M)$ is build by disjoint union of the antisimmetrized tensor product of the dual tangent space with itself.
+					\item The \emph{k-form Bundle} $ \bigwedge^m( T^*M)$ is build by disjoint unions of the antisimmetrized tensor product of the dual tangent space with itself.
 				\end{itemize}
-			\end{observation}
+%			\end{observation}
 			
 			
-			\subsubsection{Tautological one-form and simplectic form.}
-					\begin{notationfix}
+			\subsubsection{Tautological one-form and symplectic form.}
+					\begin{remark}
+%					\begin{notationfix}
 						In the context of Classical mechanics is customary to refer to the cotangent bundle $T^*Q$ over the smooth manifold  $Q $ - called \emph{Configuration Space}  - as \emph{Phase Space}.
-					\end{notationfix}
-					Since $TQ$ and $T^*Q$ are diffeomorphic , it might seem that there is no particular reason in treating this two spaces separately, but it is not so.
-					There are certain geometrical objects that live naturally on $T^*Q$ , not on $TQ$.\\
-					Of greatest interest in mathematical-physics are the Poincaré forms\cite{Frankel2003}.
+%					\end{notationfix}
+					\end{remark}
+
+					Since $TQ$ and $T^*Q$ are diffeomorphic , it might seem that there is no particular reason in treating these two spaces separately, but this is not the case.
+					There are certain geometrical objects that live naturally on $T^*Q$ , not on $TQ$.
+					Of greatest interest % in mathematical-physics 
+					are the Poincaré forms\cite{Frankel2003}.
 	
 					Consider a smooth manifold $Q$ and call $\Phase=T^*Q$ the corresponding cotangent bundle.
 					\begin{definition}[Tautological (Poincaré) 1-form]
@@ -240,6 +253,7 @@
 						\begin{displaymath}
 						\theta_0 \big(\alpha_p \big): T_{\alpha_p}\Phase \rightarrow \Real \qquad : \; \omega_{\alpha_p} \mapsto \alpha_q \circ T \tau^*_Q \big( \omega_{\alpha_p} \big)
 						\end{displaymath}
+					where $T$ is the \emph{tangent map}, namely the bundle-morphism which act on each fiber as the differential map $d (\tau^*_Q)$.
 					\end{definition}
 					\begin{figure}[h!]
 						\centering
@@ -247,58 +261,64 @@
  						\caption{The definition of tautological 1-form is achieved exploiting the concept of \emph{Tangent map} and remembering that $\alpha_p: T_p \Phase \rightarrow \Phase$ is a linear functional.} 
   						\centering
 					\end{figure}	
+%					\begin{remark}	
+%					\begin{notationfix}
+						In the context of classical mechanics we define a  special set of coordinates on the cotangent bundle of a manifold called \emph{canonical coordinates}.
+						They are usually written as a set of $(q^i,p_j)$ where ${q_i}$ are denoting the coordinates on the underlying manifold and the ${p_j}$ are denoting the conjugate momenta, which are decompositions of 1-forms in $T_p^*M$ on the dual natural basis $d q^J$ in the cotangent bundle at the point $q$ in the manifold.
+%					\end{notationfix}
+%					\end{remark}
 	
-					\begin{notationfix}
-						Canonical coordinates are defined as a special set of coordinates on the cotangent bundle of a manifold. 
-						They are usually written as a set of $(q^i,p_j)$ where ${q_i}$ are denoting the coordinates on the underlying manifold and the ${p_j}$ are denoting the conjugate momentum, which are decomposition of 1-forms in $T_p^*M$ on the dual natural basis $d q^J$ in the cotangent bundle at point $q$ in the manifold.
-					\end{notationfix}
-	
-					\begin{observation}
-						In canonical coordinate the tautological one-form assumes the famous expression:
+%					\begin{observation}
+						In canonical coordinates the tautological one-form assumes the famous expression:
 						\begin{displaymath}
 							\theta_0 = \sum_{i=1}^n {p_i} d q^i
 						\end{displaymath}
-						(note that $d q^i$ is a 1-form on $T^*M$ calculated with respect to the coordinate on the bundle. Has not to be confused with the 1-natural form $d q^i \in T^*_p M$.)
-					\end{observation}
+						(note that $d q^i$ is a 1-form on $T^*M$ calculated with respect to the coordinate on the bundle. One should not confuse it with the 1-natural form $d q^i \in T^*_p M$.)
+%					\end{observation}
+
 	
-					The claim is proved by the following definition:
+%					The claim is proved by the following definition:
+					This allows us to define a natural symplectic structure on any phase space:
 					\begin{definition}[Canonical (Poincarè)  symplectic form]\label{Def:NatSymForm}
-						Symplectic form:
+						We call \emph{Canonical (Poincarè)} form the symplectic:
 						\begin{displaymath}
 							\omega_0 \coloneqq -d \theta_0
 						\end{displaymath}
-						In canonical coordinates assumes the famous expression:
+						In canonical coordinates it assumes the renown expression:
 						\begin{displaymath}
 							\omega_0 \coloneqq \sum_{i=1}^n  d q^i \wedge d p_i
 						\end{displaymath}
 					\end{definition}
 					
 		\subsection{Jet Bundles}
-			The jet bundle is a certain construction that makes a new smooth fiber bundle out of a given bundle. The first step is to identify the typical fiber for this construction.
+			The jet bundle is a %certain 
+			construction that makes a new smooth fiber bundle out of a given bundle. The first step is to identify the typical fiber for this construction.
 
-			Suppose $M$ is an m-dimensional manifold and that $(E, \pi, M)$ is a fiber bundle.Consider the set of all the local sections whose domain contains $p$:
+			Suppose $M$ is an m-dimensional manifold and that $(E, \pi, M)$ is a fiber bundle. 
+			Consider the set of all the local sections whose domain contains $p$:
 			\begin{displaymath}
 				\Gamma^\infty (p) \coloneqq \big\{ \sigma \in \Gamma^\infty(E) \quad \big\vert\:  p \in \dom(\sigma)  \big\}
 			\end{displaymath}
 
 			We define an equivalence relation between such section \emph{up to r-th order}:
 			\begin{definition}[r-jet equivalence]
-				Two section $\sigma, \eta \in \Gamma^\infty(p)$ have the \underline{same \emph{r-jet} at $p$} $(\sigma \sim \eta)$ iff:
+				Two sections $\sigma, \eta \in \Gamma^\infty(p)$ have the \underline{same \emph{r-jet} at $p$} $(\sigma \sim \eta)$ iff:
 				\begin{displaymath}
 					\left.\frac{\partial^{|I|} \sigma^{\alpha}}{\partial x^{I}}\right|_{p} = \left.\frac{\partial^{|I|} \eta^{\alpha}}{\partial x^{I}}\right|_{p} \quad \forall I\in \Natural^m_0 \, \vert \, 0 \leq |I| \leq r.
 				\end{displaymath}	
-				where $I$ is a \emph{Multi-index}\ref{MultiIndex}.	
+				where $I$ is a \emph{multi-index} ,see Remark \ref{MultiIndex}.	
 		\end{definition}
 		\begin{remark}\label{MultiIndex}
 			(multi-index notation)
 			\\
-			A multi-index is a natural valued finite dimensional vector  $I=(i_1, i_2, \ldots, i_m)\: \in \Natural^m_0$ with $m<\infty$.
+			A multi-index is a %natural valued 
+			finite dimensional vector  $I=(i_1, i_2, \ldots, i_m)\: \in \Natural^m_0$ with $m<\infty$.
 			\\
-			On $\Real^n$ a general differential operator can be identified by a multi-index:
+			On $\Real^n$ a differential operator can be identified by a multi-index:
 			\begin{displaymath}
 				\frac{\partial^{|I|}}{\partial x^{I}} := \prod_{i=1}^{m} \left( \frac{\partial}{\partial x^{i}} \right)^{I(i)}
 			\end{displaymath}
-			(Until the Schwartz theorem holds, the order of derivation is irrelevant.)
+			(Whenever the Schwartz theorem holds, the order of derivation is irrelevant.)
 			\\
 			The order of the multi-index is defined as:
 			\begin{displaymath}
@@ -320,7 +340,7 @@
 			The integer $r$ is also called the order of the jet, $p$ is its source and $\sigma(p)$ is its target.
 		\end{notationfix}
 	
-		Glueing all the jet fiber $J^r_p (E)$ together for all the base point $p\in M$, as done for the tangent bundle,  we obtain the desired bundle:
+		Glueing together all the jet fibers $J^r_p (E)$ together for all the base points $p\in M$, as done for the tangent bundle,  we obtain the desired bundle:
 		\begin{definition}[r-th Jet Bundle of $E$]
 			We call \emph{r-th Jet Bundle of $E$} the smooth bundle $(J^r(E), \pi_r, M)$	where:
 			\begin{itemize}
@@ -337,42 +357,41 @@
 		From a physical point of view, we are interested in those spacetimes which allow to set a well-posed initial value problem for hyperbolic partial differential equations, such as the wave equation.
 		 In particular we need to ensure that the spacetime we consider possesses at least one distinguished codimension 1 hypersurface on which we can assign the initial data needed to construct a solution of such an equation.
 	 	\\
-	 	For this purpose we have to  introduce the \emph{globally hyperbolic spacetimes}.
+	 	For this purpose we have to  introduce \emph{globally hyperbolic spacetimes}.
 
 		\subsection{Reprise in Lorentzian Geometry}
-			Consider a diffential manifold $M$.
+			Consider a differential manifold $M$.
 			
-			\begin{definition}[(Pseudo-Riemmanian) Metric]
-				A function on the bundle product of $TM$ with itself: 
+			\begin{definition}[(Pseudo-Riemannian) Metric]
+				We call \emph{(Pseudo-Riemannian) Metric} a map on the bundle product of $TM$ with itself: 
 				$$g: TM \times_M TM \rightarrow \Real$$ 
 				such that the restriction on each fiber $$g_p: T_pM \times T_pM \rightarrow \Real $$ is a non-degenerate bilinear form.
 			\end{definition}
 			
-			\begin{definition}[Pseudo-Riemmanian Manifold]
-				A pair $(M, g)$ such that:
+			\begin{definition}[Pseudo-Riemannian Manifold]
+				We call \emph{Pseudo-Riemannian manifold} a pair $(M, g)$ such that:
 				\begin{itemize}
 					\item $M$ is a n-dimensional $(n\geq2)$, Hausdorff, second countable, connected, orientable smooth manifold.
 					\item $g$ is a Lorentzian metric.
 				\end{itemize}
-			\end{definition}
-			
-			\begin{notationfix}
-				A Pseudo-riemmanian manifold $(M,g)$ is called:
+			\end{definition}		
+%			\begin{notationfix}
+				A Pseudo-Riemannian manifold $(M,g)$ is called:
 				 \begin{itemize}
-				 	\item \emph{Riemmanian} if the sign of $g$ is positive definite.%, \emph{Pseudo-Riemman} otherwise.
+				 	\item \emph{Riemannian} if the sign of $g$ is positive definite.%, \emph{Pseudo-Riemman} otherwise.
 				 	\item \emph{Lorentzian} if the signature is $(+, -, \ldots,- )$ or equivalently $(-,+,\ldots,+)$.
 				 \end{itemize}
-			\end{notationfix}
+%			\end{notationfix}
 		
 		\subsection{Time Orientation}
-			If a smooth manifold is endowed with a Lorentzian metric, then the tangent vectors at each point in the manifold can be classed into three different types. 
+			If a smooth manifold is endowed with a Lorentzian metric ( with signature $(-,+++)$), then the tangent vectors at each point in the manifold can be classified into three different types. 
 			\begin{notationfix}
 
 				$\forall p \in M, \quad \forall X \in T_pM$,  we call a vector:
 				\begin{itemize}
-					\item \emph{time-like} if $g(X,X)>0$.
+					\item \emph{time-like} if $g(X,X)<0$.
 					\item \emph{light-like} if $g(X,X)=0$.
-					\item \emph{space-like} if $g(X,X)<0$.
+					\item \emph{space-like} if $g(X,X)>0$.
 				\end{itemize}
 			\end{notationfix}
 		
@@ -399,7 +418,7 @@
 			\end{observation}	
 	
 			\begin{definition}[Space-Time]
-				We call \emph{Spacetime} a quadruple $(M, g, \mathfrak{o}, \mathfrak{t})$ such that:
+				We call \emph{spacetime} a quadruple $(M, g, \mathfrak{o}, \mathfrak{t})$ such that:
 				\begin{itemize}
 					\item $(M,g)$ is a time-orientable\footnote{Manifold for which such \emph{time-orientation} exists.} n-dimensional manifold $(n>2)$
 					\item $\mathfrak{o}$ is a choice of orientation
@@ -407,54 +426,53 @@
 				\end{itemize}
 			\end{definition}	
 		
-			In a spacetime $M$ is quite important to identify particular classes of subsets. The main tool are the \emph{parametrized curves}:
+			In a spacetime $M$ it is quite important to identify particular classes of subsets. The main tool are the \emph{parametrized curves}:
 			\begin{notationfix}
-				Consider a piece-wise smooth curve $\gamma: \Real\supset I \rightarrow M$ is called:
+				Consider a piece-wise smooth curve $\gamma: \Real\supset I \rightarrow M$. It is called:
 				\begin{itemize}
 					\item \emph{time-like} (resp. light-like, space-like) iff $\dot{\gamma}(p)$ is time-like (resp. light-like, space-like) $\forall p \in M$.
 					\item \emph{causal} iff $\dot{\gamma}(p)$ is nowhere spacelike.
-					\item \emph{future directed} (resp. past directed) iff is causal and  $\dot{\gamma}(p)$ is future (resp. past) directed $\forall p \in M$.
+					\item \emph{future directed} (resp. past directed) iff it is causal and  $\dot{\gamma}(p)$ is future (resp. past) directed $\forall p \in M$.
 				\end{itemize}
 			\end{notationfix}
 
 			\begin{definition}[Chronological $\substack{\textrm{ future}\\ \textrm{past } }$ of a point]
-				Are two subset related to the generic point $p	\in M$:
+				We call \emph{Chronological $\substack{\textrm{ future}\\ \textrm{past } }$}  of a point $p$ the two subsets :
 				\begin{displaymath}
 					\gls{ChronoPM}\coloneqq \big\{ q \in M \big\vert \; \exists \gamma \in C^\infty\big((0,1), M\big)\;  \textrm{\footnotesize time-like } \substack{\textrm{future}\\ \textrm{past} } -\textrm{\footnotesize directed }:\; \gamma(0)=p,\; \gamma(1)=q  \big\}
 				\end{displaymath}
 			\end{definition}
 	
 			\begin{definition}[Causal $\substack{\textrm{ future}\\ \textrm{past } } $ of a point]
-				Are two subset related to the generic point $p	\in M$:
+				We call \emph{Causal $\substack{\textrm{ future}\\ \textrm{past } }$}  of a point $p$ the two subsets :
 				\begin{displaymath}
 					\gls{CausalPM} \coloneqq \big\{ q \in M \big\vert \; \exists \gamma \in C^\infty\big((0,1), M\big)\; \textrm{\footnotesize causal } \substack{\textrm{future}\\ \textrm{past} } -\textrm{\footnotesize directed }:
 					\; \gamma(0)=p,\; \gamma(1)=q  \big\}
 				\end{displaymath}		
 			\end{definition}
-
-			\begin{notationfix}
-				Theese concepts can be naturally extended to any subset $A \subset M$:
+%			\begin{notationfix}
+				These concepts can be naturally extended to any subset $A \subset M$:
 				\begin{itemize}
 					\item $\mathbf{I}_M^\pm(A) = \bigcup_{p\in A} \mathbf{I}_M^\pm(p) $
 					\item $\mathbf{J}_M^\pm(A) = \bigcup_{p\in A} \mathbf{J}_M^\pm(p) $
 				\end{itemize}
-			\end{notationfix}
+%			\end{notationfix}
 
 			\begin{definition}[Achronal Set]
-				We call \emph{Achronal Set} a subset $\Sigma \subset M$ such that every inextensible timelike curve intersect $\Sigma$ at most once.
+				We call \emph{achronal set} a subset $\Sigma \subset M$ such that every inextensible timelike curve intersects $\Sigma$ at most once.
 			\end{definition}
 
 			\begin{definition}[$\substack{\textrm{ future}\\ \textrm{past } } $ Domain of dependence of an Achronal set]
-				The two subset related to the generic achornal set $\Sigma \subset M$:
+				We call \emph{$\substack{\textrm{ future}\\ \textrm{past } } $ domain of dependence} of an achronal set  $\Sigma \subset M$ ,the two subset:
 				\begin{displaymath}		
 					\mathbf{D}_M^\pm(\Sigma) \coloneqq \big\{ q \in M \big\vert \; \forall \gamma \substack{\textrm{ past}\\ \textrm{ future} }\textrm{\footnotesize inextensible causal curve passing through }q : \; \gamma(I) \cap \Sigma \neq \emptyset  \big\}
 				\end{displaymath}		
 			\end{definition}
-
-			\begin{notationfix}
-
-				$\mathbf{D}_M(\Sigma)  \coloneqq \mathbf{D}_M^+(\Sigma) \cup \mathbf{D}_M^-(\Sigma)$ is called \emph{total domain of dependence}.
-			\end{notationfix}
+%			\begin{notationfix}
+			The union of the two domain of dependence:
+			$$\mathbf{D}_M(\Sigma)  \coloneqq \mathbf{D}_M^+(\Sigma) \cup \mathbf{D}_M^-(\Sigma)$$ 
+			is called \emph{total domain of dependence}.
+%			\end{notationfix}
 		
 		\subsection{Globally Hyperbolicity}
 			Finally we come to the key concept of our treatment:
@@ -485,7 +503,7 @@
 						endowed with the line element $ds^2 = \beta dt^2 - h_t$ 
 						where $t : \Real \times \sigma \rightarrow \Real$ is the projection on the first factor, 
 						$\beta$ is a smooth and strictly positive function on $\Real \times \Sigma$ 
-						and $t \mapsto h_t , t \in \Real$, yields a one-parameter family of smooth Riemmanian metrics.\\
+						and $t \mapsto h_t , t \in \Real$, yields a one-parameter family of smooth Riemannian metrics.\\
 						Furthermore, for all $t\in \Real$, $\{t\}\times \Sigma$ is an (n-1)-dimensional, spacelike, smooth Cauchy surface in M.
 				\end{itemize}
 			\end{theorem}

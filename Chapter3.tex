@@ -11,17 +11,22 @@
 
 \chapter{Algebraic Quantization}
 In order to proceed to the quantization of the geodesic system  it is necessary to devote a chapter to the description of the \emph{algebraic quantization scheme}.
-We will show two realizations of the scheme applicable to a class of systems sufficiently broad to encompass the system under examination.
+We will show two realizations of the scheme applicable to a class of systems sufficiently broad to encompass the %system 
+case under examination.
 
 \section{Overview on the Algebraic Quantization Scheme.}
-Contemporary quantum field theory is mainly developed as quantization of classical fields.
+Contemporary quantum field theory is mainly developed as a quantization of classical fields.
 The \emph{"Quantization process"} has to be considered as an algorithm , in the sense of self-containing succession of instructions, that has to be performed in order to establish a correspondence between a classical field theory and its quantum counterpart.
 
-On this basis the axiomatic theory of quantum fields, originally proposed by Wightman on Minkoski spacetimes and etended to curved backgroud by Haag and Kastler on curved space-time, takes the role of "validity check". It provide a set of conditions that must be met in order to establish whether the result can be consider a proper quantum field theory.
-Basically there are no physical/philosophical principles which justifies "a priori" the relation between these  mathematical objects (e.g the classical state versus quantum states) individually. The scheme can only be ratified " a posteriori" as a whole,% verifying the agreement with the experimental observations.
+On this basis the axiomatic theory of quantum fields, 
+especially the extension of the Haag and Kastler axioms to curved background proposed by Dimock in (1980), 
+%originally proposed by Wightman (1950) on Minkoski spacetimes, reprised by Haag and Kastler in (1964) and further extended to curved background by Dimock in 1980 on curved space-time, 
+takes the role of "validity check". 
+It provides a set of conditions that must be met in order to establish whether the result can be considered a proper quantum field theory.
+Basically there are no physical/philosophical principles which justify "a priori" the relation between these  mathematical objects (e.g the classical state versus quantum states) individually. The scheme can only be ratified " a posteriori" as a whole,% verifying the agreement with the experimental observations.
 
-However this is by no means different from what is discussed in ordinary quantum mechanics where there are essentially two levels:
-the basic formalism of quantum mechanics, which is substantially axiomatic and permits to define an abstract quantum mechanical system, and the quantization process that determine how to construct the quantum analogous of a classical system realizing the basic axioms.
+This is, however, by no means different from what it is discussed in ordinary quantum mechanics where there are essentially two levels:
+the basic formalism of quantum mechanics, which is substantially axiomatic and permits to define an abstract quantum mechanical system, and the quantization process that determines how to construct the quantum analogous of a classical system realizing the basic axioms.
 
 We refer to the algebraic quantization as a \emph{scheme of quantization} because it is not a single specific procedure but rather a class of algorithms.
 These algorithms are the same concerning the quantization step per se (construction of the *-algebra of classical observable) but they differ in the choice of the classical objects  (essentially the classical observables and the bilinear form) to be subjected to the procedure.
@@ -30,76 +35,91 @@ Basically an algebraic quantization is achieved in three steps:
 \begin{enumerate}[A)]
 	\item \textbf{Classical Step}\\
 		Identify all the mathematical structures necessary to define the field, \textit{i.e.},the pair $(E,P)$.\\
-		In general every quantization process exploit some conditions on the quantum field structure that has to be met.
+		In general every quantization process exploits some conditions on the quantum field structure that has to be met.
 	\item \textbf{Pre-Quantum Step}\\
-		Are implemented %lowered from the top 
-		some additional mathematical over-structure  on the classical framework. The aim is to establish the specific objects which will be submitted to the quantization process in the next step. 
-		Generally these object do not posses any a classical meaning, their only purpose is to represent the classical analogous of the crucial structures of the quantum framework. 
-		For this reason these structures are said \emph{Pre-Quantum}, their introduction doesn't have a proper \emph{a priori} explanation but has to be treated as an ansatz and justified \emph{a posteriori} within the quantum treatment.
+		It consists of the implementation of additional %lowered from the top 
+		mathematical superstructure on the classical framework. The aim is to establish the specific objects which will be %submitted to 
+		used in the quantization process in the next step. 
+		Generally these objects do not posses any classical meaning, their only purpose is to represent the classical analogue of the crucial structures of the quantum framework. 
+		For this reason these structures are said \emph{Pre-Quantum}, their introduction does not have a proper \emph{a priori} explanation but it has to be treated as an ansatz and justified \emph{a posteriori} within the quantum treatment.
 		
-		Essentially has to be chosen a suitable space of \emph{Classical observable} and this space has to be rigged with a well-behaved bilinear form.
+		Essentially a suitable space of \emph{classical observables} has to be chosen and this space has to be rigged with a well-behaved bilinear form.
 		
-		The ordinary quantum mechanics equivalent step is the choice of a particular Poisson bracket on $C^\infty(T^*Q)$ , which typically implement the \emph{canonical commutation relations} $\{q,p\}=i\hbar$, among all the possible Poisson structure. 
+		The ordinary quantum mechanics equivalent step is the choice of a particular Poisson bracket on $C^\infty(T^*Q)$ , which typically implements the \emph{canonical commutation relations} $\{q,p\}=i\hbar$, among all the possible Poisson structures. 
 		This is "pre-quantum" in the sense that has to be chosen an alternative symplectic structure different from the natural form(Def:\ref{Def:NatSymForm}).
 		
 		
 	\item \textbf{Quantization}\\
-		Finally are introduced the rules which realize the correspondence between the chosen classical objects and their quantum analogues.
+		Finally we introduce the rules which realize the correspondence between the chosen classical objects and their quantum analogues.
 		The algebraic approach characterizes the quantization of any field theory as a two-step procedure. 
-		In the first, one assigns to a physical system a suitable *-algebra $A$ of observables, the central structure of the algebraic theory which encodes all structural relations between observables. 
-		The second step consists of selecting a so called \emph{Hadamard state} which allows us to recover the interpretation of the elements of $A$ as linear operators on a suitable Hilbert space.
+		In the first, one assigns to a physical system a suitable *-algebra $A$ of observables, the central structure of the algebraic theory which encodes all structural relations between observables.\\
+		The second step consists of selecting a so called \emph{algebraic state} which allows us to recover the interpretation of the elements of $A$ as linear operators on a suitable Hilbert space.
+		Further conditions are necessary in order to select the physically meaningful states among all possible ones, namely has to be met the \emph{Hadamard condition}.
+		
+		
 \end{enumerate}
 
 In the next sections we review two of the possible realizations of the algebraic quantization scheme.
 
 \section{Quantization with Peierls Bracket.}
-	We are going to show is a quantization procedure strictly defined for the class of classical theories for which the Peierls' construction make sense.\textit{i.e.}:
+	We are going to present a quantization procedure strictly defined for the class of classical theories for which the Peierls' construction make sense, \textit{i.e.}:
 	\begin{enumerate}
 		\item Linear fields.
 		\item Lagrangian dynamics.
 		\item Based on globally-hyperbolic space-time.
 		\item Dynamics ruled by a Green-hyperbolic, self-dual operator.	
 	\end{enumerate}
-	Fall into this category prominent examples like Klein-Gordon and Proca Field Theory\cite{Benini}.
+	Notable examples falling in this category are the
+%	Fall into this category prominent examples like 
+	Klein-Gordon and the  Proca Field Theory\cite{Benini}.
 
 	\subsubsection{Classical Step}%%%%%%%%%%%%%%%%%
 	The starting point for the realization of any quantum theory is always to provide a precise mathematical formalization of the corresponding classical theory.
 	This step deals with the question of whether the procedure of quantization is applicable to the theory under examination.
 	
 		\paragraph{Kinematics}
-		Is encoded in the configuration bundle of the classical field.
+		It is encoded in the configuration bundle of the classical field.
    					\begin{enumerate}
-   						\item Specify the base manifold $M$. \\Has to be a Globally-Hyperbolic Space-time.
+   						\item One has to specify the base manifold $M$. \\Has to be a Globally-Hyperbolic Space-time.
    						\item\label{Step:AuxiliaryStructure} Specify the fiber and the total Space $E$ auxiliary structure, e.g: spin-structure or transformation laws under diffeomorphism on the base space.\\$E$ has to be at least a vector bundle.
+   						\begin{Warning}
+   							andrebbe detta meglio perché non è chiara. In realtà, procedi così:\\
+   							1) fissi la varietà ed eventualmente una struttura di spin \\
+   							2) fissi un fibrato vettoriale associato al fibrato/struttura di spin
+   						\end{Warning}
    					\end{enumerate}
    		
    		\paragraph{Dynamics}
-   		Has to be specified the local coordinate expression of the motion operator $P: \Gamma^\infty (E)= \Conf \rightarrow \Conf$.
-   		Operator $P$ must met the following properties in order to carry out the procedure:
+% 		Has to be specified the local coordinate expression of the 
+		It is encoded in the motion operator $P: \Gamma^\infty (E)= \Conf \rightarrow \Conf$.
+   		$P$ must meet the following properties in order to carry out the procedure:
    				   	\begin{enumerate}
-   						\item $P$ has to be Green-hyperbolic?
-   						\item Is $P$ derived from a Lagrangian: $P=Q_\Lagrangian$? 
+   						\item $P$ has to be Green-hyperbolic.%?
+   						\item Is $P$ derived from a Lagrangian: $P=Q_\Lagrangian$.%? 
    					\end{enumerate}
    					
 	\subsubsection{PreQuantum Step}%%%%%%%%%%%%%%%
 		\paragraph{Pairing}\label{Paragraph:Pairing Construction}
 				Within the algebraic quantization scheme the choice of the \emph{pairing} takes a crucial role.
-				Basically this structure is a bilinear form on the space of kinematic configurations realized by assigning a bundle inner product.
+				Basically this structure is a bilinear form on the space of kinematical configurations realized by assigning a fibrewise inner product.
 
 			\subparagraph{Assignment of a Inner Product}
-				The choice of the bundle inner product  $<\cdot,\cdot>$ on $E$ is the only discretionary parameter of the whole procedure and is the basis of the entire procedure.\\
-				Even if its expression is generally suggested by the auxiliary structures defying the configuration bundle [\ref{Step:AuxiliaryStructure}] practically can be considered as a parameter to guess. 
-				However the choice of a bilinear form is not completely arbitrary, the condition that must be met is the self-adjointness of operator $P$ in respect to correspondent pairing.
-				Together with the Green-hyperbolicity this condition guarantees that $\exists 1! E$ causal propagator and $E^\dagger =  -E$.
-			\begin{definition}
-				We call \emph{inner product} of the vector bundle $E$ the smooth map:
+				The choice of the bundle inner product  $<\cdot,\cdot>$ on $E$ is the only discretionary parameter of the whole procedure and it is the basis of the entire procedure.\\
+				Even if its expression is generally suggested by the auxiliary structures defying the configuration bundle [\ref{Step:AuxiliaryStructure}] , for all practical purposes it can be considered as a free parameter.
+%				 to guess. 
+				However the choice of a bilinear form is not completely arbitrary, the condition that must be met is the self-adjointness of operator $P$ with respect to the correspondent pairing.
+				Together with Green-hyperbolicity this condition guarantees that $\exists 1! E$ causal propagator and $E^\dagger =  -E$.
+			\begin{definition}%[Fibrewise inner product]
+				We call \emph{inner product} of the vector bundle $E$ a smooth map:
 				\begin{displaymath}
 					<\cdot,\cdot> : E \times_M E \rightarrow \Real
 				\end{displaymath}
 				such that the restriction of $<\cdot,\cdot>$ to any fiber $E_p\times E_p$ is a non-degenerate bilinear form.
 			\end{definition}
 
-				Further prescription on the symmetry properties determine the Bosonic/Fermionic character of the quantized theory:\\
+				The
+%				Further prescription on the 
+				symmetry properties determine the Bosonic/Fermionic character of the quantized theory:\\
 				\begin{tabular}{|c | c | c|}
 					\hline
 					Pairing & Observables linear form & Quantum Theory\\
@@ -112,12 +132,13 @@ In the next sections we review two of the possible realizations of the algebraic
 			
 			\subparagraph{Pairing Definition}
 			
-				The \emph{pairing} between two sections is constructed as:
+				The \emph{pairing} between two sections is defined as:
    					\begin{displaymath}
    								(X,Y) = \int_M <X,Y>_x d\mu(x)
    					\end{displaymath}
-   				where $d\mu = d\textrm{Vol}_\mu$ is the volume form induced by the metrics and the orientation on $M$.\\
-   				The definition is well posed only in:
+   				where $d\mu = d\textrm{Vol}_\mu$ is the volume form induced by the metric and the orientation on $M$
+ 				 under the additional constraint:
+%   				The definition is well posed only in:
    				\begin{displaymath}
    					\dom\big( (\cdot, \cdot) \big) = 
    					\big\{(X,Y) \in \Gamma^\infty(E) \times \Gamma^\infty(E) \; \big\vert \,  <X,Y>_x \in L^1(M,\mu)\big \}
@@ -126,24 +147,25 @@ In the next sections we review two of the possible realizations of the algebraic
    				\begin{displaymath}
    					\dom\big( (\cdot, \cdot) \big) \supset \{ (X,Y) \in \Gamma^\infty(E) \times \Gamma^\infty(E) \; \vert \, \supp{X} \cap \supp{Y} \textrm{ compact} \} \supset \Gamma^\infty_0 (E) \times \Gamma^\infty(E)
    				\end{displaymath}
-   				In particular the pairing between compact supported sections and kinematic configurations it is always well-defined.
+   				In particular the pairing between compact supported sections and kinematic configurations is always well-defined.
    				\begin{proposition}
    					The pairing between sections with compact support intersection is a non-degenerate bilinear form.
    				\end{proposition}
    				\begin{proof}
-					Bilinearity of $(\cdot,\cdot)$ follows slavishly from the bilinearity of the inner product $<\cdot,\cdot>$ and linearity of the Lebesgue integral.
+					Bilinearity of $(\cdot,\cdot)$ follows slavishly from that
+					%(the bilinearity)
+					of the inner product $<\cdot,\cdot>$ and linearity of the Lebesgue integral.
 					
-					Regarding the non-degeneracy:\\
-   					Consider a section $\sigma \in \Conf$ such that $(\sigma, \tau) = 0 \quad \forall \tau \in \Conf$.
-   					Then $<\sigma, \tau>_x$ is a null function almost everywhere on $M$.
-   					But $\sigma$ and $\tau$ are smooth then :
+					As far as non-degeneracy is concerned, consider a section $\sigma \in \Conf$ such that $(\sigma, \tau) = 0 \quad \forall \tau \in \Conf$.
+   					Then $<\sigma, \tau>_x$ vanishes almost everywhere on $M$.
+   					Yet $\sigma$ and $\tau$ are smooth then :
    					\begin{displaymath}
    						<\sigma, \tau >_x = 0 \Leftrightarrow \supp(\sigma) \cap \supp(\tau) = \emptyset \qquad \forall \tau \in \Conf
    					\end{displaymath}
    					\textit{i.e.}: $\supp(\sigma) = \emptyset \quad \Rightarrow \quad \sigma=0$
    				\end{proof}
    				
-   				In order to carry out the procedure must be checked that $P$ is formally self-adjoint in respect to this pairing.
+   				In order to carry out the procedure one must check that $P$ is formally self-adjoint in respect to this pairing.
 
    					
    		\paragraph{Classical Observables}
@@ -153,18 +175,18 @@ In the next sections we review two of the possible realizations of the algebraic
    			\begin{itemize}
    				\item A collection of  linear functionals on $\Sol$.
    				\item This set must be in a one-to-one correspondence  with a linear subspace of $\Conf$.
-   				\item Must be sufficiently rich to separate the solutions space:
+   				\item It must be sufficiently rich to separate the space of solutions:
    					\begin{itemize}
    						\item There are sufficiently many observables to detect any information from any on-shell configuration.
-   						\item Two on-shell configurations are the same if and only if every outcome under all the possible observables are the same.
-   						\item The set contains enough functionals to represent the minimum number of measure process necessary to distinguish every possible physical configuration
+   						\item Two on-shell configurations are the same if and only if every outcome under all the possible observables is the same.
+   						\item The set contains enough functionals to represent the minimum number of measure processes necessary to distinguish every possible physical configuration
    					\end{itemize}
    			\end{itemize}
    		\end{remark}
    		The concrete construction is achieved in three steps.
    		
  			\subparagraph{PreObservables}
- 				Is defined a class of \emph{"off-shell"} functional on $\Conf$
+ 				They are defined as a class of \emph{"off-shell"} functionals on $\Conf$
    							\begin{displaymath}
    								\Obs_0 \coloneqq \big\{ F_f: \Conf \rightarrow \Real ;  F_f(\phi)=( f, \phi) \forall \phi \in \Conf \:\vert
    								\:  f \in \Gamma_0^\infty(E)	\big\}
@@ -180,10 +202,10 @@ In the next sections we review two of the possible realizations of the algebraic
    				\end{displaymath}			
 			
 				\begin{proposition}
-					The pre-observables class satisfies the following properties:
+					The class of pre-observables satisfies the following properties:
 					\begin{enumerate}
 						\item\label{Th:FaithfulRepres} $\Obs_0$ is a faithful representation of the linear space:\\
-									map $F: \Gamma_0^\infty \rightarrow \Obs_0$ is bijective.
+									the map $F: \Gamma_0^\infty \rightarrow \Obs_0$ is bijective.
 						\item\label{Th:SeparabilityCond} $\Obs_0$ satisfies the separability condition, \textit{i.e.} the class is rich enough to distinguish different off-shell configurations:
 						\begin{displaymath}
 							\forall \phi,\psi \in \Conf \; \exists f \in \Gamma_0 \quad \textrm{such that:} \quad F_f(\phi) \neq F_f(\psi)
@@ -195,15 +217,15 @@ In the next sections we review two of the possible realizations of the algebraic
 					[Th \ref{Th:FaithfulRepres}]\\
 					Surjectivity is guaranteed by definition, every functional in $\Obs$ is constructed through the pairing with a compactly supported section.\\
 					Injectivity is proved ad absurdum.
-					Consider two distinct section $g,h \in \Gamma_0$ such that $F_g = F_h$. Then
+					Consider two distinct sections $s,h \in \Gamma_0$ such that $F_s = F_h$. Then
 					\begin{displaymath}
-						 ( g, \phi) = F_g(\phi) = F_h(\phi) = (h, \phi)  \quad \forall \phi \in \Conf
+						 ( s, \phi) = F_s(\phi) = F_h(\phi) = (h, \phi)  \quad \forall \phi \in \Conf
 					\end{displaymath}
-					From linearity of the pairing we have 
+					From the linearity of the pairing we have 
 					\begin{displaymath}
-						(g-h, \phi) = 0 \quad\forall \phi \in \Conf
+						(s-h, \phi) = 0 \quad\forall \phi \in \Conf
 					\end{displaymath}
-					which follows from the non-degeneration of the pairing that $g=h$.
+					it follows from the non-degeneracy of the pairing that $s=h$.
 					
 					[Th \ref{Th:SeparabilityCond}]\\
 					Ad absurdum again.
@@ -211,11 +233,11 @@ In the next sections we review two of the possible realizations of the algebraic
 					\begin{displaymath}
 						(f, \phi) = (f, \psi) \qquad \forall f \in \Gamma_0^\infty(E)
 					\end{displaymath}
-					From linearity of the pairing we have 
+					From the linearity of the pairing we have 
 					\begin{displaymath}
 						(f, \phi-\psi) = 0 \qquad \forall f \in \Gamma_0^\infty(E)
 					\end{displaymath}
-					from the non-degeneration of the pairing follow that $\phi = \psi$.
+					from the non-degeneracy of the pairing follow that $\phi = \psi$.
 				\end{proof}
 				This proposition justifies the correspondence between classical pre-observables and compactly supported sections.
 			
@@ -225,13 +247,15 @@ In the next sections we review two of the possible realizations of the algebraic
    					\begin{displaymath}
    						\Obs_0^\Sol \coloneqq \big\{F_f\vert_\Sol : \Sol \rightarrow \Real \big \vert F_f \in \Obs_0 \big\}
    					\end{displaymath}
-				Call $r^\Sol : \Obs_0 F_f \mapsto F_f \vert_\Sol \in \Obs_0^\Sol$ the map realizing the domain restriction on the elements of $\Obs_0$.
-				The map $F^\Sol \coloneqq r^\Sol \circ F : \Obs_0 \mapsto \Obs_0^\Sol $ realize a correspondence between $\Gamma_0^\infty(E)$ and a linear functional on $\Sol$, then we can say that:
+%				Call $r^\Sol : \Obs_0 \ni F_f \mapsto F_f \vert_\Sol \in \Obs_0^\Sol$ the map realizing the domain restriction on the elements of $\Obs_0$.
+				Call $r^\Sol : \Obs_0 \rightarrow \Obs_0^\Sol$ the map realizing the domain restriction on the elements of $\Obs_0$, \textit{i.e.} : $r^\Sol F_f \mapsto F_f \vert_\Sol $.\\
+				The map $F^\Sol \coloneqq r^\Sol \circ F : \Obs_0 \mapsto \Obs_0^\Sol $ realizes a correspondence between $\Gamma_0^\infty(E)$ and a linear functional on $\Sol$
+				We can conclude that:
 				\begin{displaymath}
 					\Obs_0^\Sol = F^\Sol ( \Gamma_0^\infty(E)) = r^\Sol \circ F (\Gamma_0^\infty(E)) 
 				\end{displaymath}				   					
    					
-   				Since $\Sol \subset \Conf$ , this space continues to met the separability condition but the correspondence with  $\Gamma_0^\infty(E)$ is no more injective:
+   				Since $\Sol \subset \Conf$ , this space continues to meet the separability condition but the correspondence with  $\Gamma_0^\infty(E)$ is no longer injective:
 					\begin{proposition}\label{Teo:NspaceDefinition}
 						\begin{displaymath}
 							\ker \big( F^\Sol \big) = P \big( \Gamma_0^\infty (E) \big)	\coloneqq N	
@@ -241,7 +265,7 @@ In the next sections we review two of the possible realizations of the algebraic
 					
 					[Th: $\ker(F^\Sol) \supseteq N$]\\
 					Since a l.p.d.o. can not enlarge the domain support, $ P \tau \in \dom(F) \quad \forall \tau \in \Gamma_0^\infty$ then the thesis is well-posed.
-					Exploiting the definition and the self-adjointness of operator $P$ we have:
+					Exploiting the definition and the self-adjointness of $P$ we have:
 					\begin{displaymath}
 						F_{P\tau} \big( \sigma \big) = ( P\tau, \sigma) = (\tau, P\sigma) = F_\tau (P\sigma)= F_\tau(0) = 0 \qquad \forall \sigma \in \Sol, \forall \tau \in \Conf
 					\end{displaymath}
@@ -252,12 +276,13 @@ In the next sections we review two of the possible realizations of the algebraic
 					\begin{displaymath}
 						(E \tau , \sigma) = - (\tau , E \sigma) = 0 \qquad \forall \sigma \in \Gamma_0
 					\end{displaymath}								
-					From the non-degeneracy of the pairing follows that $E\tau = 0 \Rightarrow  \tau \in \ker(E)$.
+					From the non-degeneracy of the pairing it follows that $E\tau = 0 \Rightarrow  \tau \in \ker(E)$.
 					Considering \ref{Corol:GreenKernel} we have $ \ker \big(E\big\vert_{\Gamma_0} \big) \equiv P \Gamma_0$.
 					\end{proof}
    			
    			\subparagraph{Classical Observable class}
-   					Due to the degeneration of the map $F^\Sol$ it is clear that $\Obs_0^\Sol$ can not be a good classical observables set.
+   					Due to the degeneracy of the map $F^\Sol$, % it is clear that 
+   					$\Obs_0^\Sol$ can not be a good set of classical observables.\\
    					Being the kernel known we can identify all the elements that posses the same corresponding functional:
    					\begin{displaymath}
    						[f] = \big\{f + P g \quad\vert\: g \in \Gamma_0\big\}
@@ -267,14 +292,15 @@ In the next sections we review two of the possible realizations of the algebraic
    										\Obs \coloneqq \frac{\Obs_0^\Sol}{N}
    									\end{displaymath}
    									
-   					Finally, can be easily defined the mapping between these equivalence classes:\\
-   					$\forall [f] \in \frac{\Gamma_0}{P\Gamma_0}$ is associated the functional $F_{[f]} : \Sol \rightarrow  \Real$ such that:
+   					Finally, the mapping between these equivalence classes can be easily defined :\\
+   					$\forall [f] \in \frac{\Gamma_0}{P\Gamma_0}$ we build the functional $F_{[f]} : \Sol \rightarrow  \Real$ such that:
    					\begin{displaymath}
    						F_{[f]} (\phi) = F_f(\phi) \qquad \forall \phi \in \Sol , \forall f \in [f]
    					\end{displaymath}
    					This functional is well-defined, \textit{i.e.} the expression is independent from the choice of the representative, only on $\Sol$. 
    					The reason is that if $\phi \in \Conf \setminus \Sol$, then $F_f(\phi)$ is different for each choice of the representative $f \in [f]$.
-   					From that, this construction is said to " implement the  on-shell condition at the level of functionals".
+   					%From that, 
+   					This construction is said to " implement the  on-shell condition at the level of functionals".
    					
    					In conclusion the mapping:
    					\begin{displaymath}
@@ -283,31 +309,35 @@ In the next sections we review two of the possible realizations of the algebraic
    					,between suitable equivalence classes  and linear functionals on $\Sol$, guarantees:
    					\begin{itemize}
    						\item a faithful representation since $F$ is bijective.
-   						\item separability condition, a fortiori of separability properties of $\Obs_0^\Sol$
+   						\item the separability condition, a fortiori of separability properties of $\Obs_0^\Sol$
    					\end{itemize}
-   					From now on we will identify this two spaces:
+   					From now on we will identify these two spaces:
    					\begin{displaymath}
    						\Obs \simeq 	\frac{\Gamma_0}{P \Gamma_0}
    					\end{displaymath}
-   					by virtue of bijectivity of $F$.
+   					in view of the bijectivity of $F$.
    			
 		\paragraph{Symplectic structure}
 			Endow the space $\Obs$ just defined with a bilinear form $\tau$ constructed restricting the Peierls form.
 			\subparagraph{General Peierls Bracket Construction}
 			The starting point is the definition of the Peierls Brackets between any pair of Lagrangian densities.
-			The construction is guaranteed by the requirement in step [\ref{Step:ClassicalDynamicsConditions}].\\
+			%The construction is guaranteed by the requirement in step [\ref{Step:ClassicalDynamicsConditions}].
+			\\
 				We recall the main consequences  ot the Peierls' argument:
 				\begin{itemize}
-					\item From the Lagragian Densities $\Lag(E)$ [Def: \ref{Def:LagrangianDensities}] are defined the Lagrangian functionals on $\Conf$ [Def: \label{Def:LagrangianFunctionals}] as a regular distribution.
+					\item From the Lagragian Densities $\Lag(E)$ (see Definition  \ref{Def:LagrangianDensities}) %are defined the Lagrangian functionals on $\Conf$ [Def: \ref{Def:LagrangianFunctionals}] as a regular distribution.
+					the Lagrangian functionals on $\Conf$ are defined as a regular distribution (see Definition \ref{Def:LagrangianFunctionals}).
+
 					\item Considering a domain restriction from $\Conf$ to $\Gamma_0(E)$  this functional takes a simpler expression:
 					\begin{displaymath}
 						\mathcal{O}_\Lagrangian( \phi_0) = \int_M \Lagrangian(\phi_0) d\mu
 					\end{displaymath}
-					\item Is defined the effect (eq: \label{EffectOperator}) of a Lagrangian density  on a smooth functional $B: \Conf \rightarrow \Real$ as:
+					\item The effect of  a Lagrangian density  is defined on a smooth functional $B: \Conf \rightarrow \Real$ as :
+%					Is defined the effect (eq: \label{EffectOperator}) of a Lagrangian density   as:
 						\begin{displaymath}
 							\EffectOp_\chi^\pm B (\phi_0) = \lim_{\epsilon\rightarrow 0} \big( \frac{B(\phi_\epsilon^\pm) - B (\phi_0)} {\epsilon} \big)
 						\end{displaymath}
-					\item Finally for each pair of Lagrangian densities is defined the Peierls brackets form (Eq: \label{AbstractPeierlsBracket}):
+					\item Finally, for each pair of Lagrangian densities, the Peierls brackets --- see Eq. (\ref{AbstractPeierlsBracket}) --- are defined as:
 						\begin{displaymath}
 							\{\chi, \omega \}(\phi_0) \coloneqq \EffectOp_\chi^+ F_\omega (\phi_0) - \EffectOp_\chi^- F_\omega(\phi_0)
 						\end{displaymath}
@@ -315,9 +345,9 @@ In the next sections we review two of the possible realizations of the algebraic
 				\end{itemize}				 
 		
 			\subparagraph{Brackets restriction to the Pre-Observables}
-				Once these brackets is restricted from the Lagrangian functional class to the classical observables $\Obs_0$, it assumes a very simple expression:
+				Once these brackets are restricted from the class of Lagrangian functionals to the classical observables $\Obs_0$, it assumes a very simple expression:
 				\begin{itemize}
-					\item Notice that each $\phi \in \Gamma_0^\infty(E)$ define a regular Lagrangian density through the inner product:
+					\item Notice that each $\phi \in \Gamma_0^\infty(E)$ defines a regular Lagrangian density through the inner product:
 						\begin{displaymath}
 							\Lagrangian_\phi[\cdot](x) = <\phi, \cdot>_x
 						\end{displaymath}
@@ -325,7 +355,7 @@ In the next sections we review two of the possible realizations of the algebraic
 						\begin{displaymath}
 							\mathcal{O}_{\Lagrangian_\phi} (\cdot ) = \int_M  <\phi, \cdot>_x d\mu(x) = (\phi, \cdot) = F_\phi (\cdot)
 						\end{displaymath}
-					\item The corresponding Euler-Lagrange operator  results:
+					\item The corresponding Euler-Lagrange operator is:
 						\begin{displaymath}
 							Q_{\Lagrangian_\phi}= \biggr( \nabla_\mu \big( \frac{\partial \Lagrangian}{\partial ( \partial_\mu \phi)} \big) - \frac{\partial \Lagrangian}{\partial \varphi} \biggr) = - \frac{\partial \Lagrangian_\varphi}{\partial \varphi} = -\frac{\partial}{\partial \varphi} (\phi, \varphi) = -\phi
 						\end{displaymath}
@@ -338,18 +368,18 @@ In the next sections we review two of the possible realizations of the algebraic
 							&=(\beta, \eta^\pm) = \big( \beta, - G^\pm (Q_{\Lagrangian_\alpha} \phi_0 ) \big) = ( \beta, G^\pm \alpha)
 						\end{align}
 						 $\forall 	\phi_0\in \Sol$.
-						 In the second row is been exploited respectively the linearity and continuity of the functional.
-						 In the third row has been used the Green hyperbolicity and the explicit expression of $Q_{\Lagrangian_\alpha}$.
-						 Notice that the dependence on the test solution $\phi_0$ is disappeared.
+						 In the second row we have exploited respectively the linearity and continuity of the functional.
+						 In the third row we have used the Green hyperbolicity and the explicit expression of $Q_{\Lagrangian_\alpha}$.
+						 Notice that the dependence on the test solution $\phi_0$ has disappeared.
 					\item Finally the Peierls brackets expression can be stated as :
 						\begin{equation}\label{Def:SymplecticTau}
 							\tau\{f,h\} = \{\Lagrangian_f , \Lagrangian_h\} = \big( f , (\GreenAdv - \GreenRet)h \big) = \big(f, E h\big) \qquad \forall f,h \: \Gamma_0^\infty (E)
 						\end{equation}
 				\end{itemize}
-							Conditions of Green-hyperbolicity and formally self-adjoint are sufficient guarantees the good definitions of $\tau$.\\
-							Has to be noted that the Lagrangian condition is ancillary. This has the purpose to justify the shape of the symplectic form on the classical observables space as consequent from the Peierls bracket.
+							The conditions of Green-hyperbolicity and formally self-adjoint are sufficient guarantee the good definitions of $\tau$.\\
+							Notice that the Lagrangian condition is ancillary. This has the purpose to justify the shape of the symplectic form on the space of classical observables as consequent from the Peierls bracket.
 							\\
-							It is frequent\cite{Dewitt1999}\cite{Benini} to overlook to the origin of this object and jump directly to the expression \ref{Def:SymplecticTau}  in term of the Green's operator that no longer present any direct link to the Lagrangian and therefore can be extended to any green-hyperbolic theory.
+							It is costumary\cite{Dewitt1999}\cite{Benini} to overlook the origin of this object and to jump directly to the expression \ref{Def:SymplecticTau}  in term of the Green's operator that no longer presents any direct link to the Lagrangian and therefore can be extended to any green-hyperbolic theory.
 		
 			\subparagraph{Symplectic form on the Classical Observables}
 				Has to be noted that the brackets $\tau$ are degenerate on $\Obs_0$. 
@@ -358,7 +388,10 @@ In the next sections we review two of the possible realizations of the algebraic
 					\big( f , E g \big) = (P h , E g) = (h, PE g) = (h,0) = 0 \qquad \forall g \in \Gamma_0^\infty
 				\end{displaymath}
 				where in the last equality has been used proposition \ref{Prop:GreenKernel}.
-				The value of $\tau$ has to be transported to the equivalence classes of $\Obs$ evaluating on the representative:
+				$\tau$ descends
+%				The value of $\tau$ has to be transported 
+				to the equivalence classes of $\Obs$ 
+%				by evaluation on the representative:
 				\begin{equation}
 					\tau\big( [\phi], [\psi] \big) \coloneqq \tau(\phi, \psi)
 				\end{equation}
@@ -366,8 +399,9 @@ In the next sections we review two of the possible realizations of the algebraic
 				\begin{proposition}
 				The brackets  $\tau$ satisfy the following properties:
 					\begin{enumerate}
-						\item\label{Th:WellPosed} Definition is well-posed: do not depend from the representative of the class.
-						\item\label{Th:Symplectic} is a symplectic form ( bilinear, antisymmetric, non-degenerate) in the Bosonic case while is a scalar product in	the Fermionic case.
+						\item\label{Th:WellPosed} %Definition is well-posed: do
+							Definition does not depend from the representative of the class.
+						\item\label{Th:Symplectic} It is a symplectic form ( bilinear, antisymmetric, non-degenerate) in the Bosonic case while it is a scalar product in	the Fermionic case.
 					\end{enumerate}
 				\end{proposition}
 				\begin{proof}

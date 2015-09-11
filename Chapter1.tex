@@ -72,13 +72,15 @@
 				For all $p\in M$ we refer to the submanifold $E_{p} := \pi_{-1}(p) \subset E $ as \emph{fiber over the point p}.
 				\\
 				Every fiber $E_p$ is diffeomorphic to the typical fiber $F$ through the local trivialization charts.
-%			\end{observation}
-			
-			\begin{notationfix}
-				We say that a smooth bundle E is \emph{(globally) trivial} if $E \simeq M \times Q$ i.e there exists a trivialization of $E$ which is defined everywhere.
-				\\
-				Note that Definition \ref{Def:SmoothBundle}  prescribes the existence of local trivializations only.
-			\end{notationfix}
+%			\end{observation}		
+
+%			\begin{notationfix}
+				Since  Definition \ref{Def:SmoothBundle}  prescribes the existence of local trivializations only,
+				we say that a smooth bundle E is \emph{(globally) trivial} if $E \simeq M \times Q$ i.e there exists a trivialization of $E$ which is defined everywhere.
+%				\\
+%				Note that Definition \ref{Def:SmoothBundle}  prescribes the existence of local trivializations only.
+%			\end{notationfix}
+			\vspace{3mm}
 			
 			When a smooth fiber bundle $(E,\pi,M;Q)$ is considered, in addition to the typical functions of the bundle $(\pi, \chi_{\alpha})$ also the local charts $(U_{\alpha_k}, \phi_{\alpha_k})_{k = E,M,Q}$, provided by the atlases of E, M and Q, should be provided.
 			%should be taken in account also  the local charts $(U_{\alpha_k}, \phi_{\alpha_k})_{k = E,M,Q}$ provided by the atlases of $E,M$ and $Q$:
@@ -90,12 +92,14 @@
 					\item $(U_\alpha,\psi_\alpha)$ is a local chart on $M$.
 				\end{itemize}		
 			\end{definition}
-			\begin{observation}
-				Given a local chart $(U_\alpha, \psi_\alpha^{(M)} )$ on M and a local chart $(U_\alpha^{(Q)}, \psi_\alpha^{(Q)})$ on the fiber manifold it is possible to construct a chart on the total space:	
+%			\begin{observation}
+
+			Notice that when are given a local chart $(U_\alpha, \psi_\alpha^{(M)} )$ on M and a local chart $(U_\alpha^{(Q)}, \psi_\alpha^{(Q)})$ on the fiber manifold it is possible to construct a chart on the total space:	
 				\begin{displaymath}
 							\psi^{(E)}_\alpha = \psi_\alpha^{(M)} \times  \psi_\alpha^{(Q)} \circ \chi_\alpha
 				\end{displaymath}	
-			\end{observation}
+%			\end{observation}
+			\vspace{3mm}			
 			
 			Endowing the bundle manifolds with other additional structures, we can introduce important subclasses of smooth bundles:
 			\begin{definition}[Vector Bundle]
@@ -163,9 +167,9 @@
     					(m-1-3) edge node [right] {$\pi_{F}$} (m-2-2);
 				\end{tikzpicture}
 			\end{definition}
-			\begin{observation}
+%			\begin{observation}
 				Definition \ref{Def:BundleMap} is a special case of \emph{bundle-morphism}. (see for example \cite{G.Sardanashvily2013})
-			\end{observation}
+%			\end{observation}
 
 			%pullback bundle
 			Consider a smooth manifold $N$, a (smooth) fiber bundle $E=(E,\pi,M;Q)$, and a smooth function $f: N \rightarrow M$. it is possible to induce\cite{Husemoller} a bundle structure from $M$ to $N$:
@@ -395,7 +399,8 @@
 				\end{itemize}
 			\end{notationfix}
 		
-			\begin{observation}[Local Time Orientability]
+			\begin{observation}%[Local Time Orientability]
+			
 				$\forall p\in M$ the timelike tangent vectors in $p$ can be divided into two equivalence classes taking
 				\begin{displaymath}
 					X \sim Y \; \textrm{iff} \; g(X,Y)>0 \qquad \forall X,Y \in T^\textrm{time-like}_pM:
@@ -413,9 +418,9 @@
 					\item $\mathfrak{t}(p)$ is time-like $\forall p \in M$.
 				\end{itemize}
 			\end{definition}
-			\begin{observation}
-				The fixing of a time-orientation is equivalent to a consistent smooth choice of a local time-direction.
-			\end{observation}	
+%			\begin{observation}
+				Can be noted that fixing of a time-orientation is equivalent to a consistent smooth choice of a local time-direction.
+%			\end{observation}	
 	
 			\begin{definition}[Space-Time]
 				We call \emph{spacetime} a quadruple $(M, g, \mathfrak{o}, \mathfrak{t})$ such that:
@@ -428,7 +433,9 @@
 		
 			In a spacetime $M$ it is quite important to identify particular classes of subsets. The main tool are the \emph{parametrized curves}:
 			\begin{notationfix}
-				Consider a piece-wise smooth curve $\gamma: \Real\supset I \rightarrow M$. It is called:
+
+%				Consider 
+				A piece-wise smooth curve $\gamma: \Real\supset I \rightarrow M$ is called:
 				\begin{itemize}
 					\item \emph{time-like} (resp. light-like, space-like) iff $\dot{\gamma}(p)$ is time-like (resp. light-like, space-like) $\forall p \in M$.
 					\item \emph{causal} iff $\dot{\gamma}(p)$ is nowhere spacelike.
@@ -478,18 +485,22 @@
 			Finally we come to the key concept of our treatment:
 			
 			\begin{definition}[Cauchy Surface]
-				Subset $\Sigma \subset M$ such that:
-				\begin{itemize}
-					\item closed
-					\item achronal
-					\item $\mathbf{D}_M(\Sigma) \equiv M$
-				\end{itemize}
+				We call \emph{Cauchy surface} a closed, achronal subset $\Sigma \subset M$ such that:
+				\begin{displaymath}
+					\mathbf{D}_M(\Sigma) \equiv M
+				\end{displaymath}
+%				Subset $\Sigma \subset M$ such that:
+%				\begin{itemize}
+%					\item closed
+%					\item achronal
+%					\item $\mathbf{D}_M(\Sigma) \equiv M$
+%				\end{itemize}
 			\end{definition}
-			\begin{notationfix}
-				We denote the set of all the cauchy surfaces as $\gls{CauchyClass}$.
-			\end{notationfix}
+%			\begin{notationfix}
+				We denote the set of all the Cauchy surfaces as $\gls{CauchyClass}$.
+%			\end{notationfix}
 		\begin{definition}[Globally-Hyperbolic SpaceTime]\label{Def:GHSP}
-			 Spacetime $M$ such that there exists at least one \emph{Cauchy Surface}
+			We call a spacetime $M$ \emph{globally hyperbolic} if it contains at least one \emph{Cauchy Surface}.
 		\end{definition}
 
 			According to Definition \ref{Def:GHSP}, only the existence of a single Cauchy hypersurface is guaranteed. 
@@ -501,24 +512,26 @@
 					\item $(M,g)$ is globally hyperbolic.
 					\item $(M,g)$ is isometric to $ \Real \times \Sigma $ 
 						endowed with the line element $ds^2 = \beta dt^2 - h_t$ 
-						where $t : \Real \times \sigma \rightarrow \Real$ is the projection on the first factor, 
+						where $t : \Real \times \Sigma \rightarrow \Real$ is the projection on the first factor, 
 						$\beta$ is a smooth and strictly positive function on $\Real \times \Sigma$ 
 						and $t \mapsto h_t , t \in \Real$, yields a one-parameter family of smooth Riemannian metrics.\\
 						Furthermore, for all $t\in \Real$, $\{t\}\times \Sigma$ is an (n-1)-dimensional, spacelike, smooth Cauchy surface in M.
 				\end{itemize}
 			\end{theorem}
 			
-			The class of globally hyperbolic spacetimes includes most of the physically interesting examples, e.g.: Minkowski spacetimes, Friedman-Robertson-Walker solutions, Kerr family. 
-			However, in what follows we will make primary use of the most trivial example:
+			The class of globally hyperbolic spacetimes includes most of the physically interesting examples, e.g.: Minkowski spacetime, Friedman-Robertson-Walker spacetime and Kerr spacetimes, the two-parameter family of rotating black holes, solutions to the vacuum Einstein's equations. 
+			\\
+			In what follows we will make primary use of the most trivial example:
 			\begin{example}
 				Trivially, the real line $\Real$ is a globally hyperbolic manifold.
 				\\
-				Each point $x\in \Real$ represent a proper Cauchy surfaces which realize the trivial foliation $\Real \simeq 1\times \Real $ required by theorem \ref{Teo:GHSC_character}
+				Each point $x\in \Real$ represent a proper Cauchy surfaces which realize the trivial foliation $\Real \simeq {p}\times \Real $ required by theorem \ref{Teo:GHSC_character}
 			\end{example}
 
 			To conclude this section, we introduce some terms which will be often used in the following in order to
 specify the support properties of the sections of a vector bundle with base a globally hyperbolic spacetime.
 			\begin{notationfix}
+			
 				Let $M$ be a globally hyperbolic spacetime and $E=(E,\pi,M;V)$ a vector bundle of typical fiber $V$.\\
 				We denote:
 				\begin{itemize}
@@ -539,11 +552,12 @@ specify the support properties of the sections of a vector bundle with base a gl
 %\_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_%
 %\_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_%
 		\section{Green Hyperbolic Operators}
-					\emph{Green Hyperbolic Operator} are the suitable object to represent a \emph{wave-like propagation} dynamic.
+					\emph{Green Hyperbolic Operators} are the suitable object to represent a \emph{wave-like propagation} dynamics.
 					
-		Consider $E=(E,\pi,M;V), E'=(E',\pi',M;V')$ two linear vector bundle over $M$ (with different typical fiber), we define:
+		Consider $E=(E,\pi,M;V), E'=(E',\pi',M;V')$ two linear vector bundles over $M$ (with different typical fiber), we define:
 		\begin{definition}[Linear Partial Differential operator \footnotesize( of order at most $s\in \Natural_0$)]\label{Def:LPDO}
-			Linear map $L:\Gamma(E)\rightarrow \Gamma(E')$ such that $\forall p \in M$ exists:
+			We call \emph{linear partial differential operator} a 
+			linear map $L:\Gamma(E)\rightarrow \Gamma(E')$ such that $\forall p \in M$ there exists:
 		\begin{itemize}
 			%\item open set $U \ni p$.
 			%\item $(U, \varphi )$ local chart on $M$.
@@ -555,7 +569,8 @@ specify the support properties of the sections of a vector bundle with base a gl
 					\item $(U, \chi)$ local trivialization of $F$
 					\item $(U, \chi')$ local trivialization of $F'$
 				\end{itemize}
-			\item $\{A_\alpha :U \rightarrow \Hom(V,V')\; \vert \: \alpha \in \Natural_0^n, \vert \alpha \vert \leq s \}$ collection of smooth maps labeled by multi-indices.
+			\item $\{A_\alpha :U \rightarrow \Hom(V,V')\; \vert \: \alpha \in \Natural_0^n, \vert \alpha \vert \leq s \}$ 
+			a collection of smooth maps labeled by multi-indices where $s$ is a fixed integer said \emph{order of the operator}.
 		\end{itemize}
 		which allows to express $L$ locally:
 		\begin{displaymath}
@@ -565,9 +580,9 @@ specify the support properties of the sections of a vector bundle with base a gl
 		\end{displaymath}
 		(where we have make use of the multi-index notation\ref{MultiIndex})
 	\end{definition}
-		\begin{observation}\label{Obs:EnlargeSupport}
+		\begin{remark}\label{Obs:EnlargeSupport}
 			Notice that linear partial differential operators cannot enlarge the support of a section.
-		\end{observation}
+		\end{remark}
 		
 		Definition \ref{Def:LPDO} accounts for a large class of operators, most of which are not typically used in the framework of field theory.\\
 		In order to characterize a relevant subset we introduce two auxiliary concepts:
@@ -584,61 +599,75 @@ specify the support properties of the sections of a vector bundle with base a gl
 			 	where $ \xi^\alpha = \prod_{\mu=0}^{m-1} \xi^{\alpha_\mu}$
 			 \end{definition}
 			\begin{definition}[Formal Dual Operator ( of $L$)]
-				The unique linear partial differential operator $L^\star: \Gamma(G^*) \rightarrow \Gamma(E^*)$ such that:
+				We call \emph{formal dual operator} of $L$
+				the unique linear partial differential operator $L^\star: \Gamma(G^*) \rightarrow \Gamma(E^*)$ such that:
 				\begin{displaymath}
 					<L^\star g' , f > = <g', L f> 
 				\end{displaymath}
 				$\forall f\in \Gamma(E),\; g' \in \Gamma(G^*)$ which have supports with compact overlap.
 				\\
-				($<\cdot,\cdot>$ denote the 1-form evaluation: $<\alpha,v>= \alpha(v) \quad \forall v\in E_p, \alpha \in E^*_p$.)
+				($<\cdot,\cdot>$ denotes the 1-form evaluation: $<\alpha,v>= \alpha(v) \quad \forall v\in E_p, \alpha \in E^*_p$.)
 			\end{definition}
 			\begin{NB}
 			
-				From now on we will consider only bundles with globally-hyperbolic spacetime base.
+				From now on we will consider only bundles with globally-hyperbolic spacetimes as base spaces.
 			\end{NB}			
 		
 		\subsection{Green Hyperbolic Operators}	
 			Let $M$ be a globally hyperbolic spacetime, consider a vector bundle $E$ over $M$ and a L.p.d.o. $L: \Gamma(E) \rightarrow \Gamma(E)$:
 			\begin{definition}[$\substack{\textrm{ retarded}\\ \textrm{advanced } } (\pm)$ Green Operators]\label{Def:GreenOperators}
-				L.p.d.o. $G^\pm : \Gamma (E) \rightarrow \Gamma(E)$ such that:
+				We call \emph{$\substack{\textrm{ retarded}\\ \textrm{advanced } } (\pm)$ Green Operator} of $L$ a 
+				l.p.d.o. $G^\pm : \Gamma (E) \rightarrow \Gamma(E)$ such that:
 				\begin{itemize}
-					\item $\dom(G^+) = \Gamma_{pc}(E) \qquad \dom(G^-) = \gamma_{fc}(E)$
+					\item $\dom(G^+) = \Gamma_{pc}(E) \qquad \dom(G^-) = \Gamma_{fc}(E)$
 					\item $LG^\pm f=G^\pm Lf = f \qquad \forall f\in \dom(G^\pm)$
 					\item $\supp(G^\pm f) \subset \mathbf{J}^\pm_M (\supp(f)) \qquad \forall f\in \dom(G^\pm)$
 				\end{itemize}
 			\end{definition}
-			\begin{observation}
-				From the definition follows that $G^\pm$ is the left-right inverse of the restriction of $L$ to $\dom(G^\pm)$.
-			\end{observation}
+%			\begin{observation}
+%				From the definition it follows that 
+				In others words we can say that 
+				$G^\pm$ is the left-right inverse of the restriction of $L$ to $\dom(G^\pm)$.
+%			\end{observation}
 			\begin{notationfix}
-				We refer to the operator:
+			
+				We call \emph{Advanced minus Retarded operator} or \emph{Causal Propagator}\cite{Benini2013} the operator:
 				\begin{displaymath}
 					E \coloneqq G^-  - G^+ : \Gamma_{tc}(E) \rightarrow \Gamma(E)
 				\end{displaymath}
-				as the \emph{Advanced minus Retarded operator} or \emph{Causal Propagator}\cite{Benini2013}.
 			\end{notationfix}		
 		
 			Green operators are not necessarily unique. For this we introduce the following definition:
 			\begin{definition}[Green hyperbolic operator]
-				The linear partial differential operator $P$ is be called Green hyperbolic if $P$ and $P^\star$ have advanced and retarded Green’s operators.
+				We call \emph{Green hyperbolic} a
+%				The 
+				linear partial differential operator $P$ 
+%				is be called Green hyperbolic if 
+				such that $P$ and $P^\star$ have advanced and retarded Green’s operators.
 			\end{definition}
-			for such operators uniqueness of Green's operator is guaranteed:
+			For these operators uniqueness of Green's operators is guaranteed:
 			\begin{theorem}[Characterization of Green Hyperbolic operators]
 				$ $
-				\begin{hypothesis}
-					\item $E=(E,\pi,M)$ a vector bundles over a globally hyperbolic spacetime $M$.
-					\item $P:\Gamma(E) \rightarrow \Gamma(E)$ a Green hyperbolic operator, $G^\pm$ its Green's operators and $G_\star^\pm$ the Green's operators of the dual.
-				\end{hypothesis}		
-				\begin{thesis}
-					\item $L$ posses an unique retarded $\GreenRet$ and a unique advanced $\GreenAdv$ Green operator.
+%				\begin{hypothesis}
+					Let be:
+					\begin{itemize}
+						\item $E=(E,\pi,M)$ a vector bundle over a globally hyperbolic spacetime $M$.
+						\item $P:\Gamma(E) \rightarrow \Gamma(E)$ a Green hyperbolic operator, $G^\pm$ its Green's operators and $G_\star^\pm$ the Green's operators of the dual.					
+					\end{itemize}
+%				\end{hypothesis}		
+%				\begin{thesis}
+					Then:
+					\begin{itemize}
+					\item $P$ possesses a unique retarded $\GreenRet$ and a unique advanced $\GreenAdv$ Green's operator.
 					\item $<G_\star^\pm f', f> = <f', G^\mp f > \qquad \forall f \in \Gamma_0(E),\: \forall f' \in \Gamma_0(E^*)$
-				\end{thesis}
+					\end{itemize}
+%				\end{thesis}
 			\end{theorem}
 			\begin{proof}
 			See for example \cite{Benini}[proposition 2]
 			\end{proof}
 
-			Below will come in handy the following properties:
+			In what follows we will make extensive use of the following properties:
 			\begin{proposition}\label{Prop:GreenKernel}
 				Let $M$ be a globally hyperbolic spacetime. Consider a vector bundle $E$ over $M$, Green-hyperbolic operator $P: \Gamma(E)\rightarrow \Gamma(E)$ and a time-compact section $f\in \Gamma_{tc}(E)$.
 				Let $G^\pm$ be retarded and advanced Green operators for $P$ and denote with $E$ the corresponding advanced-minus-retarded operator.\\
@@ -677,7 +706,7 @@ the retarded or the advanced Green operators obtaining:
 			Inverse implication is trivial.
 			
 			[Th. 3]\\
-			Consider a pair of function (partion of unity of $M$) $\{\chi_\pm: M \rightarrow [0,1] \}$ such that:
+			Consider a pair of function (partition of unity of $M$) $\{\chi_\pm: M \rightarrow [0,1] \}$ such that:
 			\begin{itemize}
 				\item $\chi_\pm = 1$ on a past / future compact region.
 				\item $\chi_+(x) + \chi_-(x) = 1 \qquad \forall x\in M$.
@@ -709,14 +738,14 @@ the retarded or the advanced Green operators obtaining:
 			However  for the large class of the \emph{Normally-Hyperbolic Operators} hyperbolicity is guaranteed both in PDE and Green sense.
 
 		Consider a Lorentzian manifold $(M,g)$ and two vector bundles $E=(E,\pi,M;V), E'=(E',\pi',M;V')$,
-		\begin{definition}[Normally Hyperbolic Operators]
-			Second order linear partial differential operator $P:\Gamma(E)\rightarrow \Gamma(E')$ such that:
+		\begin{definition}[Normally Hyperbolic Operators]\label{Def:NormalHyperOper}
+			We call \emph{normally hyperbolic operator} a second order linear partial differential operator $P:\Gamma(E)\rightarrow \Gamma(E')$ such that:
 			\begin{displaymath}
 				\sigma_P(\xi) = g(\xi,\xi) \IdOp_{E_p} \qquad \forall p\in M, \xi \in T^*_pM
 			\end{displaymath}
 		\end{definition}
 		
-		\begin{observation}%In coordinate questi operatori hanno un'espressione molto familiare ...
+%		\begin{observation}%In coordinate questi operatori hanno un'espressione molto familiare ...
 			Making explicit the coordinate expression of a normally hyperbolic operator $P$ , one realizes how such operators  provide the natural generalization of the usual Wave operator. 
 			\\
 			Consider a globally hyperbolic operator $P$ for all $p \in M$ a trivializing chart $(U, \varphi, \chi)$ centered in $p$. 
@@ -733,8 +762,9 @@ the retarded or the advanced Green operators obtaining:
 		\begin{displaymath}
 			\square_\nabla = g^{\mu \nu} \nabla_\mu \nabla_\nu : \Gamma(E) \rightarrow \Gamma(E)
 		\end{displaymath}
-		\end{observation}
-		This definition becomes even more important if we assume that the underlying background is globally hyperbolic, since we can associate to each normally hyperbolic operator $P$ an initial value problem and talk about Green's operator.
+%		\end{observation}
+
+		Definition \ref{Def:NormalHyperOper} becomes even more important if we assume that the underlying background is globally hyperbolic, since we can associate to each normally hyperbolic operator $P$ an initial value problem and we can talk about Green's operators.
 		\begin{proposition}[Green operators]
 			Let $P$ be a normally hyperbolic operator, then:
 			\begin{itemize}
@@ -748,13 +778,15 @@ the retarded or the advanced Green operators obtaining:
 		
 	\begin{theorem}[Normally hyperbolic operators properties.]
 	$ $
-		\begin{hypothesis}
+%		\begin{hypothesis}
+			Let be:
 			\begin{itemize}
 				\item $\Sigma \subset M$ a spacelike Cauchy surface with future-pointing unit normal vector field $\vec{n}$.
 				\item $P$ a normally hyperbolic operator and $\nabla$ a P-compatible\footnote{There existss a section $A \in \Gamma(\textrm{End}(E))$ such that $\square_\nabla + A = P$.} covariant derivative on $E$
 			\end{itemize}
-		\end{hypothesis}
-	\begin{thesis}
+%		\end{hypothesis}
+%		\begin{thesis}
+		Then:
 		\begin{itemize}
 			\item The Cauchy problem;
 				\begin{displaymath}
@@ -764,11 +796,11 @@ the retarded or the advanced Green operators obtaining:
 						\nabla_{\vec{n}}u= u_1  & \textrm{on $\Sigma$}
 					\end{cases}
 				\end{displaymath}
-				admit a unique solution $u\in \Gamma(E)$ for any $J\in \Gamma(E)$ and $ u_0,u_1 \in \Gamma(\Sigma)$
+				admits a unique solution $u\in \Gamma(E)$ for any $J\in \Gamma(E)$ and $ u_0,u_1 \in \Gamma(\Sigma)$
 			%\item $\supp(U) \subset \mathbf{J}_M \big( \supp(u_0) \cup \supp(u_0) \cup \supp(J) \big)$
 			\item $P$ is Green-hyperbolic.
 		\end{itemize}
-	\end{thesis}
+%		\end{thesis}
 	\end{theorem}	
 	\begin{proof}
 		First proposition has been proved in different forms in several books, e.g. \cite{Bar2009}[Corollary 5].

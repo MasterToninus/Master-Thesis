@@ -10,7 +10,7 @@
 
 \chapter{Geodesic Fields}
 	%mettere nell'intro una breve introduzione al problema geodetico nell'approccio standard della geometria riemmaniana
-	In the context of differential geometry, \emph{geodesic curves} are a generalization of \emph{straight lines}  in the sense of self-parallel curves.
+	In the context of differential geometry, \emph{geodesic curves} are a generalization of \emph{straight lines}  in the sense of self-parallel curves.\\
 	%Definizione di geodetica su varietà con connessione
 	Considering a differential manifold $M$ endowed with an affine connection $\nabla$ we define:
 	\begin{definition}[Geodesic]
@@ -22,11 +22,12 @@
 	\end{definition}
 	
 
-		In local chart the previous equation assume the well-known expression:
+		In local chart the previous equation assumes the well-known expression:
 		\begin{equation}\label{GeodesicEquation}
 			\ddot{\gamma}^i + \Gamma^i_{\, j k} \dot{\gamma}^j \dot{\gamma}^k = 0
 		\end{equation}
-		,where $ \Gamma^i_{\, j k}$ is the coordinate representation of the Christoffel symbols of the connection, that admit a well-posed Cauchy problem.
+		where $ \Gamma^i_{\, j k}$ is the coordinate representation of the Christoffel symbols of the connection.
+		Equation (\ref{GeodesicEquation}) admits a well-posed Cauchy problem.
 		\begin{theorem}
 			Let $M$ be a smooth manifold, $p\in M$, $v \in T_p M$. 
 			Then there exist $\epsilon>0$ and precisely one geodesic
@@ -42,18 +43,22 @@
 
 	\vspace{4mm}
 	%Definizione metrica di geodetica su varietà riemmaniana( con connessione di levi civita)	
-	In presence of a pseudo-Riemannian metric is possible to present the geodesic in a metric sense i.e. as the curve extremizing the \emph{Energy Functional}\footnote{Remember that for arc-length parametrized curves the Energy functional coincide with the length functional.\cite[Lemma $1.4.2$ ]{Jost2005}}:
+	In presence of a pseudo-Riemannian metric it is possible to present the geodesic %in a metric sense i.e. 
+	as the curve extremizing the \emph{Energy Functional}\footnote{Remember that for arc-length parametrized curves the Energy functional coincides with the length functional.\cite[Lemma $1.4.2$ ]{Jost2005}}:
 	\begin{definition}[Energy functional]
   	\begin{equation}\label{EnergyFunctional}
-  		E: C^1\left(\left[a,b\right],Q\right) \rightarrow \Real \qquad
- 		E(\gamma) \coloneqq \int_a^b \left\Vert \frac{d \gamma}{dt} (t)\right\Vert^2 dt
+  		H: C^1\left(\left[a,b\right],Q\right) \rightarrow \Real \qquad
+ 		H(\gamma) \coloneqq \int_a^b \left\Vert \frac{d \gamma}{dt} (t)\right\Vert^2 dt
  	\end{equation}
 \end{definition} 	
-	Considering only the proper variation (that keep the end-point fixed), the extremum condition corresponds to equation \ref{GeodesicEquation} where $\nabla$ is the unique Levi-Civita connection (torsion-free and metric-compatible).
+	Considering only the proper variations (that keep the end-point fixed), the extremum condition corresponds to equation \ref{GeodesicEquation} where $\nabla$ is the unique Levi-Civita connection (torsion-free and metric-compatible).
 
 	\vspace{4mm}
 		%Problema di Jacobi, deviazione geodetica e legame alla curvatura
-	In general relativity the problem of the geodesic equation linearization, named \emph{Jacobi equations} takes a central role. \footnote{Usually in this context takes the name of \emph{Geodesic deviation} problem\cite[pag. 46]{Wald1984} inasmuch Jacobi field describes the difference between the geodesic and an "infinitesimally close" geodesic.}
+	In general relativity the problem of the 
+	linearization of the geodesic equation yields the Jacobi equation which takes
+	%geodesic equation linearization, named \emph{Jacobi equations} takes
+	 a central role. \footnote{Usually in this context takes the name of \emph{Geodesic deviation} problem\cite[pag. 46]{Wald1984} inasmuch Jacobi field describes the difference between the geodesic and an "infinitesimally close" geodesic.}
 	
 	\begin{definition}[Jacobi Field]
 	We call a \emph{Jacobi field} along the geodesic $\gamma$ the tangent vector field over the submanifold $\gamma(t,\tau)$, determined by  a smooth one parameter family of geodesics$ \gamma_\tau$ ( with $\gamma_0=\gamma$), in respect to the$\tau$ coordinate. \textit{i.e.}:
@@ -62,33 +67,36 @@
 	\end{displaymath}
 	\end{definition}
 	
-		In local charts, a Jacobi fields along the geodesic $\gamma$ is solution of a linear O.D.E.:
+		In local charts, a Jacobi field along the geodesic $\gamma$ is solution of a linear O.D.E.:
 		\begin{equation}\label{JacobiEquationComponents}
 			\big( X''\big)^\mu + R^\mu_{i \alpha \j} T^i X^\alpha T^j =0
 		\end{equation}
 		where:
 		\begin{itemize}
 			\item $\big(X'\big)^\mu \coloneqq \big( \nabla_{\dot{\gamma}(t)} X\big)^\mu$ is the covariant derivative along the curve $\gamma$.
-			\item $T \equiv \dot{\gamma}(t)$ stands for the tangent vector to the curve $\gamma$.
-			\item $R^\mu_{i \alpha \j}$ is the components representations of the Riemann curvature tensor,
+			\item $T \equiv \dot{\gamma}(t)$ stands for the tangent vector to $\gamma$.
+			\item $R^\mu_{i \alpha \j}$ are the representation in components of the Riemann curvature tensor,
 		\end{itemize}
 
 	
 	
 	
 	
-	The rest of this chapter will be devoted to the presentation of the approach to geodesic and Jacobi problem as a physical system.
+	The rest of this chapter will be devoted to discussing geodesic and Jacobi fields
+	% the presentation of the approach to geodesic and Jacobi problem 
+	as a physical system.
 
 
 \section{Geodesic Problem as a Mechanical Systems}\label{GeodesicMechanics}
 	% Da quanto detto in introduzione ha un odore molto forte il legame  dell'equazione geodetica con l'equazione del moto di un punto su una varietà e dell' funzionale lunghezza come versione con il prinicpio di minima azione
-	The basic idea is very simple, portray the geodesic curve as the natural motion of a free point particle constrained on the Pseudo-Riemannian manifold $Q$.
+	The basic idea is very simple, to portray the geodesic curve as the natural motion of a free point particle constrained on the Pseudo-Riemannian manifold $Q$.
 	
 	\begin{remark}
-	In terms of general relativity this problem can be instantly recognized as the derivation of the free-falling particles motion.
+	In terms of general relativity this problem can be instantly recognized as the derivation of the motion of free-falling particles.
 	
 	However, there is no lack of alternative viewpoints .
-	The framework of the classical \emph{geometric mechanics} taught us to picture the "static" configurations of a constrained, complex, classical system as a point on the \emph{Configuration space} manifold. According to that, the geodesic motion can be seen as a realization of a particular dynamics on a mechanical system with a pseudo-Riemannian configuration space\footnote{Such systems can be depicted as "geodesic" even in presence of a position-dependant potential.\cite[Cap 3.7]{Abraham1978}}.
+	The framework of the classical \emph{geometric mechanics} taught us to picture the "static" configurations of a constrained, complex, classical system as a point on the \emph{Configuration space}.% manifold. 
+	According to that, the geodesic motion can be seen as a realization of a particular dynamics on a mechanical system with a pseudo-Riemannian configuration space\footnote{Such systems can be depicted as "geodesic" even in presence of a position-dependant potential.\cite[Cap 3.7]{Abraham1978}}.
 	\end{remark}
 
 
@@ -100,21 +108,42 @@
 			L(V_q) \coloneqq \frac{1}{2} g_q(V,V)
 		\end{equation}
 	\end{proposition}	
-	%\danger !!! da aggiungere
-	%\begin{proof}
-	%	 The Euler-Lagrange equation of $L$ coincides with the geodesic equation \ref{GeodesicEquation}.
-	%	 \danger.. è sul quaderno non so se metterla
-	%\end{proof}
+	\begin{proof}
+		%	 The Euler-Lagrange equation of $L$ coincides with the geodesic equation \ref{GeodesicEquation}.
+		%	 \danger.. è sul quaderno non so se metterla (ho dovuto staccare i foglio per portarmeli a lecce!) ora sono pinzati al quanderno 2
+		A direct computation of the Euler-Lagrange equations:
+		\begin{displaymath}
+			\frac{d}{dt} \left( \frac{\partial L}{\partial V^i}\right) = \frac{\partial L}{\partial q^i}
+		\end{displaymath}
+		for the Lagrangian
+		\begin{displaymath}
+			L = \frac{1}{2} g_{i j} ( \vec{q} ) V^i V^j
+		\end{displaymath}
+		brings to the following equation motion:
+		\begin{displaymath}
+			g_{k j} \ddot{q}^j = \left(
+				 \frac{1}{2} \left(
+				 	\frac{\partial g_{i j}}{\partial q^k} \dot{q}^i \dot{q}^j \right)
+				  - \frac{\partial g_{k j}}{\partial q^i} \dot{q}^i \dot{q}^j  \right)
+		\end{displaymath}
+		Multiplying for the inverse of the metric we find:
+		\begin{displaymath}
+			g^{l k} g_{k j } \ddot{q}^j \equiv \ddot{q}^l = \frac{1}{2} g^{l k} \left( \frac{\partial g_{i j}}{\partial q^k} - \frac{\partial g_{k j}}{\partial q^i}- \frac{\partial g_{k i}}{\partial q^j}\right) \dot{q}^i \dot{q}^j 
+			= - \Gamma^l_{\, i j} \dot{q}^i \dot{q}^j
+		\end{displaymath}
+		where in the last equation we have recognized the expression of Christoffel symbols in term of the Riemannian metric.
+	\end{proof}
 
-	\begin{observation}
+%	\begin{observation}
+	\begin{remark}
 		The geodesic system is not simply Lagrangian but also Hamiltonian.
 		This property follows from the hyperregularity\cite{Abraham1978} of $L$.
-	\end{observation}
-
+	\end{remark}
+%	\end{observation}
 
 	%Qualsiasi sistema di mqo come il precedente può essere visto come un sistema campo.
 	As shown in chapter 2, every system with discrete degrees of freedom can be seen as a trivial field system.
-	From that follows the alternative characterization of geodesic as a Lagrangian field:
+	From that it follows the alternative characterization of geodesics as a Lagrangian field:
 	\begin{corollary}[Geodesic field]
 		The geodesics on the Pseudo-Riemannian manifold $(Q,g)$ can be seen as the \emph{Dynamical Configurations} of the Lagrangian field system $(E,\Lagrangian)$ where:
 		\begin{itemize}
@@ -123,28 +152,30 @@
 		\end{itemize}
 	\end{corollary}
 	\begin{proof}
-		Is a simple application of the correspondence seen in chapter \ref{MechanicsAsAField}.
+		It is a simple application of the correspondence seen in chapter \ref{MechanicsAsAField}.
 	\end{proof}
 	
-	From this perspective is clear that the Energy Functional corresponds to the action of the geodesic field dynamics and equation \ref{GeodesicEquation} is nothing more than the motion equation according to the \emph{least action principle}.
+	From this perspective it is clear that the Energy Functional corresponds to the action of the geodesic field dynamics and equation \ref{GeodesicEquation} is nothing more than the equations of motion according to the \emph{least action principle}.
 
 % \danger aggiungere!!!
 %		\begin{figure}[h!]
 %		 \centering
    	%\includegraphics[width=0.5\textwidth]{Pictures/Linearization} 
+   	% (credo sia la figura pagina 1 del quaderno 2)
 %	 	 \caption{Impressionistic view of the geometric mechanics structure.}
 %		\end{figure}		
 
 
 \section{Peierls Bracket of the Geodesic field}
-	The local coordinate expression for the Lagrangian density of the geodesic field results:
+	The local coordinate expression for the Lagrangian density of the geodesic field is:
 	\begin{equation}
 		\Lagrangian\big(t,\gamma^i(t), \dot{\gamma}^i(t) \big)\coloneqq \frac{1}{2}g_{\mu,\nu}\left(\gamma^i\left(t\right)\right)\dot{\gamma}^\mu \dot{\gamma}^\nu
 	\end{equation}		
-	which is highly non-linear. 
-	Explicitly is quadratic in the velocity components $\dot{\gamma}^i$ and implicitly, through $g_{\mu\nu}(\gamma^i(t))$, is non-polynomial in curve coordinate $\gamma^i$.
+	which is highly non-linear. \\
+	It is explicitly is quadratic in the velocity components $\dot{\gamma}^i$ and implicitly, through $g_{\mu\nu}(\gamma^i(t))$, is non-polynomial in the %curve 
+	coordinates $\gamma^i$.
 	
-	As show in section \ref{Section:NonLinearPeierls}, for this type of systems the calculation of Peierls bracket can be realized only locally around a predetermined solution.
+	As show in section \ref{Section:NonLinearPeierls}, for this type of systems the calculation of the Peierls bracket can be realized only locally around a predetermined solution.
 	Let us repeat the Peierls' procedure for the system under investigation.
 
 	As a consequence of our introduction on the geodesic as a field, we can state the unperturbed dynamic as a L.P.D.O :
@@ -153,7 +184,7 @@
 		\end{equation}
 	where $\dot{q}^\mu = \frac{d}{dt}q^\mu(t)=\dot{q}^i\partial_i q^\mu$.
 	
-	A linear variation of $q_0^\mu +\epsilon \eta^\mu$ constructed from the coordinate representation $q_0^\mu$ of the geodesic $\gamma_0 \in \Sol$, solves the original motion equations when
+	A linear variation of $q_0^\mu +\epsilon \eta^\mu$ constructed from the coordinate representation $q_0^\mu$ of the geodesic $\gamma_0 \in \Sol$, solves the original equations of motion when
 	\begin{equation}\label{GeodesicJacobation1}
 		Q_\Lagrangian \big( q_0^\mu +\epsilon \eta^\mu \big) = \frac{d^2}{dt^2}\biggr( q_0^\mu +\epsilon \eta^\mu \biggr) +
 		\biggr[ \Gamma^\mu_{\, i j}\big( \vec{q_0} + \epsilon \vec{\eta}\big) \biggr]\biggr(\dot{q_0}^i +\epsilon \dot{\eta}^i \biggr)\biggr(\dot{q_0}^j +\epsilon \dot{\eta}^j \biggr) = 0 \mbeq o(\epsilon)
@@ -164,15 +195,15 @@
 		\biggr[ \Gamma^\mu_{\, i j}( \vec{q_0}) + \epsilon \eta^\alpha\big( \partial_\alpha  \Gamma^\mu_{\, i j} \big)\biggr\vert_{\vec{q_0}} + o(\epsilon) \biggr]
 	\end{displaymath}	 
 	
-	Collecting all the terms in equation \ref{GeodesicJacobation1} up the first order in $\epsilon$ follows a condition on the perturbation:
+	Collecting all the terms in equation \ref{GeodesicJacobation1} up to the first order in $\epsilon$ it follows a condition on the perturbation:
 	\begin{align}\label{Eq:JacobiPeierlsEquation}
 	0 &= \ddot{\eta}^\mu + \eta^\alpha\big( \partial_\alpha  \Gamma^\mu_{\, i j} \big)\biggr\vert_{\vec{q_0}} \dot{q_0}^i \dot{q_0}^j  +  \Gamma^\mu_{\, i j} \big(\dot{\eta}^i \dot{q_0}^j + \dot{q_0}^i \dot{\eta}^j \big)= \nonumber \\
 	&=\biggr\{ g^\mu_{\,\alpha} \frac{d^2}{dt^2} +
 	 \Gamma^\mu_{\, i \alpha}(\vec{q_0})\big[2 \dot{q_0}^i \frac{d}{dt} \big] + 
 \big[ \partial_\alpha \Gamma^\mu_{\, i j}(\vec{q_0}) \dot{q_0}^i \dot{q_0}^j  \big] \biggr\} \eta^\alpha	= P^\mu_{\: \alpha} \eta^\alpha
 	\end{align}		
-	where $ P^\mu_{\: \alpha}$ is a linear partial differential operator acting on the \emph{variations}, \textit{,i.e.,} the components of a field along the geodesic $\gamma_0$.
-	As showed in section \ref{Section:NonLinearPeierls}, equating the linearized dynamics operator with the term $-\left(Q_\chi(\gamma_0)\right)(x)$ 	(see equation \ref{PeierlJacobiEqNonLin}) lead to the inhomogeneous \emph{Jacobi operator} from which follows all the standard construction of the brackets Peierls.
+	where $ P^\mu_{\: \alpha}$ is a linear partial differential operator acting on the \emph{variations} \textit{,i.e.,} the components of a field along the geodesic $\gamma_0$.\\
+	As showed in section \ref{Section:NonLinearPeierls}, equating the linearized dynamics operator with the term $-\left(Q_\chi(\gamma_0)\right)(x)$ 	(see equation \ref{PeierlJacobiEqNonLin}) leads to the inhomogeneous \emph{Jacobi operator} from which all the standard construction of the brackets Peierls follows.
 
 	
 	\begin{proposition}
@@ -181,7 +212,7 @@
 	\begin{proof}
 		For convenience, we adopt the following notation:
 		\begin{align*}
-		&\eta^\mu \partial_\mu \coloneqq X \equiv X^\mu \partial_mu \\
+		&\eta^\mu \partial_\mu \coloneqq X \equiv X^\mu \partial_\mu \\
 		&\dot{q_0}^i \partial_i \equiv \dot{\gamma_0} \coloneqq T \equiv T^i \partial_i
 		\end{align*}
 		We have to show that the equation just found:
@@ -189,7 +220,7 @@
 			\ddot{X}^\mu + X^\alpha\left(\partial_\alpha\Gamma^{\mu}_{\, i j}\right)T^i T^j + \Gamma^\mu_{\, \alpha j}\left(2 T^i \dot{X}^\alpha \right) = 0
 		\end{equation}
 		where $\dot{X}^\mu = \frac{d}{dt}X^\mu= T^i \partial_i X^\mu$,
-		correspond to equation defying the Jacobi field:
+		corresponds to the equation defying the Jacobi field:
 		\begin{equation}\label{JacobiEqII}
 			\left(X'' \right)^\mu + R^\mu_{\, i \alpha j}T^i X^\alpha T^j = 0
 		\end{equation}
@@ -244,11 +275,12 @@
 	
 
 \section{Algebraic quantization of the Geodesic Field}
-	The algebraic quantization scheme applies only to linear field systems.
+	The algebraic quantization scheme applies only to %linear field systems.
+	systems of linear fields.
 	Since equation\ref{GeodesicEquation} is highly non linear,  it is not the geodesic system that can actually be quantized but rather its linearization, the Jacobi field along a fixed geodesic $\gamma_0$.
 	
 		\subsubsection{Classical Framework}
-			The basic idea is that, chosen a geodesic $\gamma_0$, the kinematics configurations of the Jacobi fields are tangent fields along the fixed curves.
+			The basic idea is that, chosen a geodesic $\gamma_0$, the kinematical configurations of the Jacobi fields are tangent fields along the fixed curves.
 			\paragraph{Kinematics}	
 			The configuration bundle $E$ corresponds to the \emph{Pull-back bundle} $\gamma_0^*(TQ)$ of the tangent bundle along the geodesic $\gamma_0$.
 			Then:
@@ -265,7 +297,7 @@
 					\left( P X \right)^\mu = (X'')^\mu + R^\mu_{\, i \alpha j } T^i T^j X^\alpha
 				\end{displaymath}
 				where $X\in \Conf$ and $T^i = \dot{\gamma_0}^i$.
-				According to equation \ref{Eq:NormallyHyperbolicRepresentation} this operator fall exactly in the \emph{normally hyperbolic} operator class hence is quantizable both by Peierls procedure and by initial data.
+				According to equation \ref{Eq:NormallyHyperbolicRepresentation} this operator falls exactly in the class of \emph{normally hyperbolic} operators hence it is quantizable both by  means of Peierls procedure and by means of initial data.
 		
 		\subsection{PreQuantum Framework}
 		\subsubsection{Peierls approach}
@@ -277,43 +309,43 @@
 					\qquad \forall X,Y \in E_t
 				\end{equation}
 				
-				Follows slavishly the definition of pairing:
+				It follows slavishly the definition of a pairing:
 				\begin{equation}
 					\left( X, Y \right) = \int_\Real \left\langle X,Y \right\rangle_t dt
 				\end{equation}
 				well-defined for every pair $X,Y \in \Conf$ such that $\supp(X) \cap \supp(Y)$ is compact.
 				
-				Operator $P$ ruling the dynamics is formally self-adjoint:
+				The operator $P$ ruling the dynamics is formally self-adjoint:
 				\begin{align*}
 				 ( Y, PX) &= \int Y_\mu PX^\mu dt= 
 				 \int\left( Y_\mu \ddot{X}^\mu + Y_\mu R^\mu_{\, i \alpha j}T^i T^j X^\alpha \right)dt = \\
  				 &= \int\left( \ddot{Y}_\mu X^\mu + X_\mu R^\mu_{\, i \alpha j}T^i T^j Y^\alpha \right)dt =
 				 \int P Y_\mu X^\mu dt=( PY, X) 				 				 
 				\end{align*}
-				where is been integrated by parts twice (border value are null since the integrand is compactly supported) and has been exploited a curvature tensor identity:
+				where we have integrated by parts twice (the boundary value being null since the integrand is compactly supported) and we have exploited the curvature tensor identity:
 				\begin{equation}\label{Eq:CurvatureSimmetry}
 					\langle R(X,T)T,Y \rangle = \langle R(Y,T)T,X \rangle
 				\end{equation}
 
 			\paragraph{Classical Observables}
-				Replicating what is done in the general case, 
-				we construct the \emph{pre-observables} as the functionals $F_f:\Conf \rightarrow \Real$ for all $f \in \Gamma_0(E)$ compactly supported field along geodesic $\gamma_0$ as:
+				Replicating what has been done in the general case, 
+				we construct the \emph{pre-observables} as the functionals $F_f:\Conf \rightarrow \Real$ for all $f \in \Gamma_0(E)$ compactly supported fields along the geodesic $\gamma_0$:
 				\begin{equation}
 					F_f(X) = \int_\Real <X, f>_t dt \qquad \forall X \in \Conf
 				%	F_f(X) = \int_{\dom(\gamma_0)} <X, f>_t dt \qquad \forall X \in \Conf
 				\end{equation}
-				The classical observables space is then obtained through the usual quotient:
+				The space of classical observables is then obtained through the usual quotient:
 				\begin{displaymath}
 					\Obs \simeq \frac{\Gamma_0}{P \Gamma_0}
 				\end{displaymath}
-				observables functionals are the maps:
+				The observables functionals are the maps:
 				\begin{displaymath}
 				 F_{[f]}(X) = F_f (X) \qquad \forall X \in \Sol
 				\end{displaymath}
-				where $f$ is a representative of equivalence class $[f]\in \Obs$.
+				where $f$ is a representative of the equivalence class $[f]\in \Obs$.
 			
 			\paragraph{Symplectic Structure}
-				Geodesic motion is a particular case of system with finite degrees of freedom, thus the Peierls bracket between two Lagrangian functionals $\chi, \omega$ around a geodesic $\gamma_0$ tested on a function $f \in C_0^\infty(\Real)$ is given by \ref{EspressionePeierlsCampiCurve}.
+				The geodesic motion is a particular case of a system with finite degrees of freedom, thus the Peierls brackets between two Lagrangian functionals $\chi, \omega$ around a geodesic $\gamma_0$ tested on a function $f \in C_0^\infty(\Real)$ are given by \ref{EspressionePeierlsCampiCurve}.
 				Restricting the definition to the simplest Lagrangian functionals constructible from the classical observables:
 				\begin{displaymath}
 					\chi [\phi] \coloneqq (\chi, \phi) \qquad \chi \in \Obs,\, \phi \in \Sol
@@ -326,7 +358,8 @@
 				\begin{displaymath}
 					\left\lbrace\chi , \omega \right\rbrace (\gamma_0) [f] = \int f(t) \left\langle\chi, \left(\GreenAdv - \GreenRet \right)\omega \right\rangle dt
 				\end{displaymath}
-				For regular distribution can be neglected the test-function $f$.
+				The test-function $f$ can be neglected for regular distributions.
+%				For regular distribution can be neglected the test-function $f$.
 
 				\vspace{3.5mm}
 				We conclude that,according to the Peierls' procedure,  the classical symplectic space is the pair $(\Obs, \tau)$ where:
@@ -338,8 +371,8 @@
 		\subsubsection{Initial data Approach}
 			\paragraph{Classical Phase Space}
 				The base manifold for the configuration bundle under examination is the real line $\Real$ that can be seen as a degenerate globally hyperbolic spacetime.
-				Thus each point $p\in \Real$ are Cauchy surfaces and no further support condition can be imposed.
-				Considering that operator $P$ is of second order, we have:
+				Thus each point $p\in \Real$ is a Cauchy surfaces and no further support condition can be imposed.\\
+				Considering that the operator $P$ is of second order, we have:
 				\begin{displaymath}
 					\Phase(p) \equiv \Data(p) = \Gamma^\infty(p) \times \Gamma^\infty(p) =
 					T_{\gamma_0(p)}Q \times T_{\gamma_0(p)}Q
@@ -358,14 +391,14 @@
 				\end{displaymath}
 				where $g$ is the inner product on $Q$.
 				\\
-				Which can be transferred on the solutions space:
+				This formula can be transferred to the space of solutions:
 				\begin{displaymath}
 					\sigma_p: \Sol \times \Sol \rightarrow \Complex \qquad : \qquad 					
 					\sigma_p \biggr\{X, Y  \biggr\} = \Omega \biggr\{ [Y(t), D_t Y(t)] , [X(t), D_t X(t)] \biggr\}
 				\end{displaymath}
 				\vspace{3mm}
-				Mimicking what is done in example \ref{Ex:IndipendentPhaseSpace} for the scalar field, can be proved the independence of the phase space construction from the particular choice of $p \in \Real$.
-				Taken $X,Y \in \Sol$ two Jacobi fields on $\gamma_0(t)$, can be defined a scalar field over $\Real$:
+				Mimicking what has been done in example \ref{Ex:IndipendentPhaseSpace} for the scalar field, the independence of the phase space construction from the particular choice of $p \in \Real$ can be proved.\\
+				Taken $X,Y \in \Sol$ two Jacobi fields on $\gamma_0(t)$, a scalar field over $\Real$ can be defined:
 				\begin{displaymath}
 					J(t) \coloneqq \Omega \biggr\{ [Y(t), D_t Y(t)] , [X(t), D_t X(t)] \biggr\}
 					= X^\alpha(t) g_{\alpha \beta} D_t Y^\beta(t) - 
@@ -396,13 +429,13 @@
 				where $\Sigma$ is an arbitrary point in $\Real$.
 
 	\subsection{Comparisons}
-		The two procedures yields two different classical symplectic spaces: $(\Obs,\tau)$ and $(\Sol, \sigma)$.
+		The two procedures yield two different classical symplectic spaces: $(\Obs,\tau)$ and $(\Sol, \sigma)$.
 		We have proved in section \ref{Section:LinkBetweenQuantization} (Theorem \ref{Teo:IsomorphismBetweenTheTwoSymplectic}) that the two vector spaces are isomorphic through the map $\Xi$ realized with the causal propagator $E$ .
-		Furthermore, in this case can be proved that $\Xi$ preserves the symplectic form.
+		Furthermore, in this case it can be proved that $\Xi$ preserves the symplectic form.
 		\\
-		Once again we mimic what is done for the scalar field case (ex \ref{Ex:SimplettomorphismPhaseSpace}).
-		Consider two compactly supported vector field $f,h \in \Gamma_0(E)$ along $\gamma_0$	and call $X= Ef,\: T = Eh$ the corresponding Jacobi field.
-		In fact from definition of $\tau$ follows:
+		Once again we mimic what has been done for the case of a scalar field (ex \ref{Ex:SimplettomorphismPhaseSpace}).
+		Consider two compactly supported vector fields $f,h \in \Gamma_0(E)$ along $\gamma_0$	and call $X= Ef,\: T = Eh$ the corresponding Jacobi field.
+		In fact from the definition of $\tau$ it follows:
 		\begin{align}
 			\tau\big( [f], [g] \big) =& (f, Eh) = \int_\Real f^\mu g_{\mu \nu} ( E h)^\nu dt =
 					\int_\Sigma^\infty  f^\mu g_{\mu \nu} Y^\nu dt	 + 
@@ -411,8 +444,8 @@
 			=& \int_\Sigma^\infty (P \GreenAdv f)^\mu g_{\mu \nu} Y^\nu dt	 + 
 					\int_{-\infty}^\Sigma (P \GreenRet f)^\mu g_{\mu \nu} Y^\nu dt
 		\end{align}
-		where has been decomposed the integral by splitting the domain of integration into two subsets whose intersection has zero measure and are exploited the properties of the retarded and advanced operators.\\
-		Considering the explicit representation of operator $P$ allows us to integrate by parts twice:
+		where the integral has been decomposed by splitting the domain of integration into two subsets whose intersection has zero measure and we have exploited the properties of the retarded and advanced operators.\\
+		Considering the explicit representation of the operator $P$, we can integrate by parts twice:
 		\begin{align}
 			&\int_\Sigma^\infty (P \GreenAdv f)^\mu g_{\mu \nu} Y^\nu dt = \int_\Sigma^\infty \left( D_t^{\,2} \GreenAdv f +R(\GreenAdv f,T)T \right)^\mu g_{\mu \nu} Y^\nu dt = \nonumber \\
 			&= 
@@ -435,7 +468,7 @@
 			 -   \left. D_t( \GreenAdv f)^\mu g_{\mu \nu} Y^\nu \right\vert_\Sigma
 			 +  \left. ( \GreenAdv f)^\mu g_{\mu \nu} (D_t Y)^\nu \right\vert_\Sigma
 		\end{align}
-		where the \emph{Stokes theorem} and property \ref{Eq:CurvatureSimmetry} are been used.
+		where \emph{Stokes theorem} and property \ref{Eq:CurvatureSimmetry} have been used.
 		\\
 		Combining the two above equations one concludes that:
 		\begin{align}
@@ -450,7 +483,7 @@
 		-  \left.\left(D_t E f \right)^\mu g_{\mu \nu}  Y^\nu \right\vert_\Sigma	= \nonumber \\
 		=& X_\mu(\Sigma) \left( D_t Y (\Sigma)\right)^\nu - \left(D_t X(\Sigma)\right)_\mu Y^\nu(\Sigma) \equiv \sigma( X, Y)
 		\end{align}
-		Then $(\Obs, \tau)$ and $(\Sol, \sigma)$ are isomorphic not only as vector spaces but also as symplectic spaces.
+		$(\Obs, \tau)$ and $(\Sol, \sigma)$ are isomorphic not only as vector spaces but also as symplectic spaces.
 
 \section{Interpretations??????}
 	\begin{Warning}

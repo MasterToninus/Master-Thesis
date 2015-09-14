@@ -29,7 +29,7 @@ This is, however, by no means different from what it is discussed in ordinary qu
 the basic formalism of quantum mechanics, which is substantially axiomatic and permits to define an abstract quantum mechanical system, and the quantization process that determines how to construct the quantum analogous of a classical system realizing the basic axioms.
 
 We refer to the algebraic quantization as a \emph{scheme of quantization} because it is not a single specific procedure but rather a class of algorithms.
-These algorithms are the same concerning the quantization step per se (construction of the *-algebra of classical observable) but they differ in the choice of the classical objects  (essentially the classical observables and the bilinear form) to be subjected to the procedure.
+These algorithms are the same concerning the quantization step per se (construction of the $\ast-$algebra of classical observable) but they differ in the choice of the classical objects  (essentially the classical observables and the bilinear form) to be subjected to the procedure.
 
 Basically an algebraic quantization is achieved in three steps:
 \begin{enumerate}[A)]
@@ -52,7 +52,7 @@ Basically an algebraic quantization is achieved in three steps:
 	\item \textbf{Quantization}\\
 		Finally we introduce the rules which realize the correspondence between the chosen classical objects and their quantum analogues.
 		The algebraic approach characterizes the quantization of any field theory as a two-step procedure. 
-		In the first, one assigns to a physical system a suitable *-algebra $A$ of observables, the central structure of the algebraic theory which encodes all structural relations between observables.\\
+		In the first, one assigns to a physical system a suitable $\ast-$algebra $A$ of observables, the central structure of the algebraic theory which encodes all structural relations between observables.\\
 		The second step consists of selecting a so called \emph{algebraic state} which allows us to recover the interpretation of the elements of $A$ as linear operators on a suitable Hilbert space.
 		Further conditions are necessary in order to select the physically meaningful states among all possible ones, namely has to be met the \emph{Hadamard condition}.
 		
@@ -505,16 +505,16 @@ In the next sections we review two of the possible realizations of the algebraic
 							
 	\subsubsection{Second Quantization Step}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 		The next step is to construct a quantum field theory out of the classical one, the content of which is encoded the symplectic space $(\Obs, \tau)$. 
-		The so-called algebraic approach can be seen as a two-step quantization scheme: In the first one identifies a suitable unital  *-algebra encoding the structural relations between the observables, such as causality and locality, while, in the second, one selects a state, that is a positive, normalized, linear functional on the algebra which allows us to recover the standard probabilistic interpretation of quantum theories via the GNS theorem.
+		The so-called algebraic approach can be seen as a two-step quantization scheme: In the first one identifies a suitable unital  $\ast-$algebra encoding the structural relations between the observables, such as causality and locality, while, in the second, one selects a state, that is a positive, normalized, linear functional on the algebra which allows us to recover the standard probabilistic interpretation of quantum theories via the Gelfand-Neimark-Segal (GNS) theorem.
 
 		\paragraph{Quantum Observables Algebra}   		
 		The crux of the algebraic quantization scheme it is the assignment of a suitable algebras of quantum observables.\\
 		Axiomatically we require for the set of quantum observables the following structure:
 		
 		\begin{definition}[Quantum Algebra]\label{Def:QuantumObsAlgebra}
-			We call \emph{algebra of Quantum observables} associated to the classical field system $(\Obs, \tau)$ the unital *-algebra $\gls{Algebra}= \big( (\ObsAlg, \Complex),\cdot,*)$ generated over $\Complex$ by the symbols 
+			We call \emph{algebra of Quantum observables} associated to the classical field system $(\Obs, \tau)$ the unital $\ast-$algebra $\gls{Algebra}= \big( (\ObsAlg, \Complex),\cdot,*)$ generated over $\Complex$ by the symbols 
 			\begin{displaymath}
-				\big\{\IdOp\big\}\bigcup \big\{\mathbb{\Phi}\big( [f]\big) \; \big\vert \;  [f] \in \Obs \big\}
+				\big\{\IdElem\big\}\bigcup \big\{\mathbb{\Phi}\big( [f]\big) \; \big\vert \;  [f] \in \Obs \big\}
 			\end{displaymath}
 			such that:
 			\begin{enumerate}
@@ -530,7 +530,7 @@ In the next sections we review two of the possible realizations of the algebraic
 				\item The (anti-) commutation relations extrapolated from %....The rules of (anti-) commutation given from 
 					the classical $\tau$ are replicated on $\ObsAlg$:
 					\begin{equation}\label{Ip:ImplementCCR}
-						\big[ \mathbb{\Phi}([f]), \mathbb{\Phi}([g]) \big]_\mp = \mathbb{\Phi}([f]) \cdot \mathbb{\Phi}([g]) \mp \mathbb{\Phi}([g]) \cdot \mathbb{\Phi}([f]) = i \tau\big( [f], [g] \big) \IdOp
+						\big[ \mathbb{\Phi}([f]), \mathbb{\Phi}([g]) \big]_\mp = \mathbb{\Phi}([f]) \cdot \mathbb{\Phi}([g]) \mp \mathbb{\Phi}([g]) \cdot \mathbb{\Phi}([f]) = i \tau\big( [f], [g] \big) \IdElem
 					\end{equation}
 					where the sign $\mp$ depend respectively on the anti-symmetry and symmetry of the form $\tau$.
 			\end{enumerate}
@@ -547,15 +547,15 @@ In the next sections we review two of the possible realizations of the algebraic
    				namely $\ObsAlg$ can be obtained as a $\Complex$-linear combination of $\IdOp$ and a finite number of products by elements like $\mathbf{\Phi}([f])$.\\
    				\textit{I.e.}:
    				\begin{displaymath}
-   					\ObsAlg = \textrm{span} \biggr( \big\{\IdOp\big\}\bigcup_{n<\infty}D_n
+   					\ObsAlg = \textrm{span} \biggr( \big\{\IdElem\big\}\bigcup_{n<\infty}D_n
    					\big\{\mathbb{\Phi}\big( [f]\big) \; \big\vert \;  [f] \in \Obs \big\}
    					\biggr)
    				\end{displaymath}
    				%where $D_n (I)$ is the of the dispositions with repetitions of $n$ elements picked from set $I$ whose elements are to be intended as an ordered product.  % CD disposizione non si dice in inglese!
 				where $D_n (I)$ is the of the \emph{ordered product with repetition}  of $n$ elements picked from set $I$.
-   				In other words every element of $\ObsAlg$ can be expressed as a polynomial in the generators with coefficients in $\Complex$, it is implied that elements $\IdOp$ acts as unital element in the algebra.
+   				In other words every element of $\ObsAlg$ can be expressed as a polynomial in the generators with coefficients in $\Complex$, it is implied that elements $\IdElem$ acts as unital element in the algebra.
    				\\
-				This is nothing more than the \emph{Free space} generated by $\IdOp$ and $\big\{\Obs^k = 
+				This is nothing more than the \emph{Free space} generated by $\IdElem$ and $\big\{\Obs^k = 
    				\underbrace{\Obs\times \ldots \times \Obs}_{\textrm{k times}} \big\}_{k< + \infty}$, in this term the symbol $\mathbf{\Phi}$ can be intended as the map which associates to any %disposition 
    				ordered selection (with repetition) 
    				of elements in set $\Obs$ a linear generator of a suitable vector space.
@@ -584,7 +584,7 @@ In the next sections we review two of the possible realizations of the algebraic
 						\begin{displaymath}
 							\mathbf{\Phi}: \Obs \rightarrow \ObsAlg \qquad : \qquad \mathbf{\Phi}([f]) = \{ 0, [f], 0,\ldots\}
 						\end{displaymath}
-						and $\IdOp = \big\{ 1,0,\ldots \big\}$.
+						and $\IdElem = \big\{ 1,0,\ldots \big\}$.
 				
 				Thus a product operator $ \cdot : \ObsAlg \times \ObsAlg \rightarrow \ObsAlg$, can be given through the action on each element in the sequence:
 					\begin{displaymath}
@@ -615,25 +615,25 @@ In the next sections we review two of the possible realizations of the algebraic
 				\begin{displaymath}
 					\big( \alpha x + y \big)^* \coloneqq \bar{\alpha} x^* + y^* \qquad \forall x,y\in \ObsAlg \; \forall \alpha \in \Complex
 				\end{displaymath}
-				Involution $*$ implements the *-algebra properties:
+				Involution $*$ implements the $\ast-$algebra properties:
 				\begin{equation}
 					\big( \mathbf{\Phi}([f]) \cdot \mathbf{\Phi}([g]) \big)^* = \big\{0,0,[f]\otimes [g],0,\ldots \big\}^* =
 					\big\{0,0,[g]\otimes [f],0,\ldots \big\}^* = \big( \mathbf{\Phi}([g]) \cdot \mathbf{\Phi}([f]) \big)	
 				\end{equation}
-				where the identity element is represented by $\IdOp$:
+				where the identity element is represented by $\IdElem$:
 				\begin{equation}
-				\IdOp^* = \{1,0,\ldots\}^* =\{1,0,\ldots\}= \IdOp
+				\IdElem^* = \{1,0,\ldots\}^* =\{1,0,\ldots\}= \IdElem
 				\end{equation}
-				hence $\ObsAlg$ is a unital *-algebra, implementing relation \ref{Ip:GenSelfAd} too:
+				hence $\ObsAlg$ is a unital $\ast-$algebra, implementing relation \ref{Ip:GenSelfAd} too:
 				\begin{displaymath}
 					\big(\mathbf{\Phi}([f])\big)^* = \big\{ 0, [f],0,\ldots\big\}^* = \big\{ 0, [f],0,\ldots\big\} = \mathbf{\Phi}([f])
 				\end{displaymath}			
    			\subparagraph{CCR implementation}
-				The *-algebra $\ObsAlg$ already “knows” of the dynamics of the field since this is already encoded in $\Obs$, however, the canonical commutation relations (CCR) \ref{Ip:ImplementCCR} are still missing. 
+				The $\ast-$algebra $\ObsAlg$ already “knows” of the dynamics of the field since this is already encoded in $\Obs$, however, the canonical commutation relations (CCR) \ref{Ip:ImplementCCR} are still missing. 
    		 		A way to implement this relation is through the definition of an equivalence relation:
    		 			\begin{displaymath}
    		 				\mathbf{\Phi}([f]) \cdot \mathbf{\Phi}([g]) \simeq \pm \mathbf{\Phi}([g]) \cdot \mathbf{\Phi}([f]) + 
-   		 				i \tau\big( [f], [g] \big) \IdOp
+   		 				i \tau\big( [f], [g] \big) \IdElem
    		 			\end{displaymath}
    		 		for all $[f],[g] \in \Obs$.\\
    		 		Practically this can be implemented via the quotient space relative to a suitable two-sided ideal.
@@ -642,7 +642,7 @@ In the next sections we review two of the possible realizations of the algebraic
    		 				\begin{displaymath}
    		 					\big\{
    		 					 \mathbf{\Phi}([f]) \cdot \mathbf{\Phi}([g])  \mp \mathbf{\Phi}([g]) \cdot \mathbf{\Phi}([f]) - 
-   		 				i \tau\big( [f], [g] \big)\IdOp \quad \big \vert \quad [f],[g]\in \ObsAlg
+   		 				i \tau\big( [f], [g] \big)\IdElem \quad \big \vert \quad [f],[g]\in \ObsAlg
    		 					 \big\}
    		 				\end{displaymath}
    		 			this is a two-sided ideal of $\ObsAlg$.
@@ -654,7 +654,7 @@ In the next sections we review two of the possible realizations of the algebraic
 					\begin{align*}
 						& \mathbf{\Phi}([h])\big(
    		 					 \mathbf{\Phi}([f]) \cdot \mathbf{\Phi}([g])  \mp \mathbf{\Phi}([g]) \cdot \mathbf{\Phi}([f]) - 
-   		 				i \tau\big( [f], [g] \big)\IdOp
+   		 				i \tau\big( [f], [g] \big)\IdElem
    		 					 \big)=\\
    		 				&= \mathbf{\Phi}([h]) \cdot \mathbf{\Phi}([f]) \cdot \mathbf{\Phi}([g]) \mp  \mathbf{\Phi}([h]) \cdot \mathbf{\Phi}([g]) \cdot \mathbf{\Phi}([f])
    		 					 - i \tau\big( [f], [g] \big) \mathbf{\Phi}([h])
@@ -669,7 +669,7 @@ In the next sections we review two of the possible realizations of the algebraic
    			
    			The properties of the classical obsevables presented in theorem \ref{Teo:CausalityTimeSliceAxioms} have counterparts at the quantum level as shown by the following theorem:
 				\begin{theorem}\label{Teo:QuantumCausalityTimeSliceAxioms}
-					Consider a globally hyperbolic spacetime $M$ and let $\ObsAlg$ be the unital *-algebra of quantum observables defined above.\\
+					Consider a globally hyperbolic spacetime $M$ and let $\ObsAlg$ be the unital $\ast-$algebra of quantum observables defined above.\\
 					The following properties hold:
 					\begin{itemize}
 						\item \textbf{Causality axiom}
@@ -680,19 +680,111 @@ In the next sections we review two of the possible realizations of the algebraic
 							\end{displaymath}
 						\item \textbf{Time-Slice axiom}
 							For all $O \subset M$ globally hyperbolic open neighborhood of a spacelike Cauchy surface $\Sigma$ for $M$ denote 
-							with $\ObsAlg_M$ and with $\ObsAlg_O$ the unital *-algebras of observables for the field system respectively over $M$ and over $O$.
-							Then the unit-preserving *-homomorphism $\mathbf{\Phi}(L):\ObsAlg_O \rightarrow \ObsAlg_M $, $ \mathbf{\Phi}([ f ]) \mapsto \mathbf{\Phi} (L[f])$ is an isomorphism of *-algebras, where $L$ denotes the symplectic isomorphism introduced in Theorem \ref{Step:AuxiliaryStructure}.
+							with $\ObsAlg_M$ and with $\ObsAlg_O$ the unital $\ast-$algebras of observables for the field system respectively over $M$ and over $O$.
+							Then the unit-preserving *-homomorphism $\mathbf{\Phi}(L):\ObsAlg_O \rightarrow \ObsAlg_M $, $ \mathbf{\Phi}([ f ]) \mapsto \mathbf{\Phi} (L[f])$ is an isomorphism of $\ast-$algebras, where $L$ denotes the symplectic isomorphism introduced in Theorem \ref{Step:AuxiliaryStructure}.
 					\end{itemize}
 				\end{theorem}
 				\begin{proof}
 					We omit the proof, see for example \cite{benini}[Theorem 4]
 				\end{proof}
 	
-   		\paragraph{Hadamard state} 
-			Considering the scope of this thesis, we will focus primary on the first step. For a brief account on the construction of the \emph{quantum states} see Ref. \cite{Benini2013}.
-			\begin{Warning}
-			Non devi certo entrare nei dettagli, ma devi quantomeno accennare al fatto che siano la classe corretta di stati di usare in quanto godono di proprietà rilevanti quali in particolare la possibilità di costruire i polinomi di Wick in modo covariante.
-			\end{Warning}
+   		\paragraph{Algebraic State and Hilbert state representation} 
+			The power of the algebraic approach lies in its ability to separate the algebraic relations of quantum fields from the Hilbert space representations of these relations and thus in some sense to treat all possible Hilbert space representations at once. \\
+			However the usual interpretation of the physical observables as linear operators on a suitable Hilbert space is not lost.
+			We can recover the probabilistic interpretation of a quantum theory through the introduction of the notion of \emph{algebraic state} taking advance of the GNS theorem. 
+			Further conditions are necessary in order to select the physically meaningful states among all possible ones .
+			
+			\subparagraph{GNS reconstruction}
+						
+				For any unital $\ast-$algebra $\ObsAlg$, which is not necessarily the field algebra of Definition\ref{Def:QuantumObsAlgebra}, we generalize the notion of (quantum) state as follows:
+				\begin{definition}[Algebraic State]
+					We call an \emph{(algebraic) state} over $\ObsAlg$ the $\Complex-$linear functional $\omega: \ObsAlg \rightarrow \Complex$ such that:
+					\begin{itemize}
+						\item it is positive:
+							$$ \omega( a^* a ) \geq 0 \qquad \forall a \in \ObsAlg$$
+						\item it is normalized:
+							$$ \omega(\IdElem) = 1 $$	
+					\end{itemize}									
+				\end{definition}
+							
+				These object are important inasmuch the %The importance of these objects is that the 
+				selection of one of such algebraic state allows us to recover, via the GNS theorem, the standard probabilistic interpretation of quantum theories, \textit{i.e.} the representation elements of $\ObsAlg$ as linear operators on a suitable Hilbert space.
+				
+				To make this statement clear we have to recall the definition of representation of $\ast$-algebras:
+				\begin{definition}
+					We call \emph{$\ast-$representation of $\ObsAlg$} on the Hilbert space $H$ a  linear map $\pi: \ObsAlg \rightarrow \mathcal{L}(D)$ , where $D\subset H$ is a linear dense subspace and $\mathcal{L}(D)$ is the space of linear operator, such that:
+					\begin{itemize}
+						\item it is \emph{product preserving} :
+							$$ \pi(a) \pi(b) = \pi ( a b) \qquad \forall a,b \in \ObsAlg$$
+						\item it preserves the unit element:
+							$$ \pi( \IdElem) = \IdMap_D $$
+						\item it preserves the star involution:
+							$$ \left. \pi(a)^\dagger \right\vert_D = \pi( a^*) \qquad \forall a \in \ObsAlg$$
+								where $\dagger$ denotes the Hermitian adjoint operation in $H$.
+					\end{itemize}
+				\end{definition}
+%				\begin{notationfix}
+				A representation is said \emph{faithful}, if the mapping $\pi$ is bijective.			
+%				\end{notationfix}
+
+				As a preliminary result, we can show that, whenever we represent a $\ast-$algebra on a Hilbert space via linear bounded operators, we can automatically associate an algebraic state to any unit vector in $H$\footnote{We donete the scalar product on the Hilbert space as $\langle \cdot \vert \rangle$.}
+				\begin{proposition}
+					Let $\ObsAlg$ be any topological unital $\ast-$algebra and $\pi$ a faithful strongly continuous ( \textit{i.e.} in the operator norm topology) $\pi: \ObsAlg \rightarrow \mathcal{B}(H)$ , where $ \mathcal{B}(H)$ is the space of bounded operator on $H$.\\
+					Then for any $\psi \in H$ of unit norm, the functional $\omega_\psi : \ObsAlg \rightarrow \Complex$ defined by:
+					\begin{displaymath}
+						\omega_\psi ( a) \coloneqq  \langle \psi \vert \pi( a ) \psi \rangle
+					\end{displaymath}
+					is an algebraic state on $\ObsAlg$.
+				\end{proposition}
+				%Nota: ho modificato lemma 4.3 del primer ricordando che un operatore continuo su dominio è limitato sul dominio, continuo su dominio aperto può essere esteso alla chiusura.
+				\begin{proof}
+				Per construction $\omega_\psi$ is linear and continuous since $\pi$ is linear and strongly continuous.\\
+				$\omega_\psi (\IdElem) )= 1$ follows from $\Vert \psi \Vert_H = 1$  and $\pi(\IdElem)= \IdMap_D$, being $\pi$ a representation. To conclude we notice that:
+				\begin{displaymath}
+					\omega_\psi ( a^* a) \coloneqq \langle \psi \vert \pi( a^* a) \psi \rangle = \langle \psi | \pi(a)^* \pi(a) \psi \rangle = \Vert \pi(a)\psi \Vert^2_H \geq 0
+				\end{displaymath}
+					exploiting the $\ast-$algebra product preserving properties of $\pi$.
+				\end{proof}
+				The key role is played by the following theorem:
+				\begin{theorem}[GNS construction.]
+					Let $\ObsAlg$ be a complex unital $\ast-$algebra and $\omega: \ObsAlg \rightarrow \Complex$ is a state, then:
+					\begin{enumerate}
+						\item There exists a quadruple $\left( H_\omega, D_\omega, \pi_\omega, \Psi_\omega \right)$, where:
+							\begin{itemize}
+								\item $H_\omega$ is a complex Hilbert space.
+								\item $D_\omega \subset H$ is a dense linear subspace.
+								\item $\pi_\omega:\ObsAlg \rightarrow  \mathcal{L}(D_\omega)$ is a $\ast-$representation of $\ObsAlg$ on $H_\omega$ with domain $D_\omega$.
+								\item $\Psi_\omega \in D_\omega$ is a unit vector.
+							\end{itemize}
+							such that:
+							\begin{enumerate}
+								\item
+								$\Psi_\omega ( \ObsAlg) = \left\lbrace \pi_\omega ( a) \Psi_\omega \: \vert \: a \in \ObsAlg \right\rbrace$ is dense in $H_\omega$.
+								\item $\omega (a) = \left\langle \Psi_\omega \vert \pi_\omega ( a) \Psi_\omega \right\rangle \qquad \forall a \in \ObsAlg$
+							\end{enumerate}
+							\item The GNS quadruple is determined up to an equivalence. \\Namely, if $\left( H'_\omega, D'_\omega, \pi'_\omega, \Psi'_\omega \right)$ is a second quadruple satisfying the preceding conditions, there exists a surjective isometry $U: H_\omega \rightarrow H'_\omega$ such that:
+							\begin{enumerate}
+								\item $U \Psi_\omega = \Psi'_\omega$
+								\item $U D_\omega = D'_\omega$
+								\item $U \pi_\omega(a) U^{-1} = \pi'_\omega (a) \qquad \forall a \in \ObsAlg$
+							\end{enumerate}
+					\end{enumerate}							
+				\end{theorem}
+				\begin{proof}
+					We omit the proof, see for example \cite{Khavkine2014a}[Theorem 1] or \cite{benini2013}[Theorem 4.4] for the stronger version of the theorem regarding the case where $\ObsAlg$ is a C$\ast-$algebra,  \textit{i.e.} a $\ast-$algebra endowed with a multiplicatively compatible norm.
+				\end{proof}
+				
+				\subparagraph{Hadamard condition}
+					 The definition of an algebraic state we reviewed in the previous subsection is too general.
+					 In fact the most of the positive, normalized, linear functional on the algebra are not even physically acceptable as they does not allow a proper definition of the Wick polynomials, which constitute the basic objects of perturbation theory.
+					 
+					 It is possible to identify , therefore, a distinguished subclass of states, called \emph{Hadamard states}, which avoid these pathologies and are unanimously recognized as being the only physically significant ones.
+					 The Hadamard condition seems to be the natural generalisation of the energy-positivity condition of the Minkowski vacuum state which encodes the UV properties of physical states in QFT. Is then a good selection criterion for physical states in quantum field theory  in order  to discuss perturbatively interacting theories. 
+					 	
+				Considering the scope of this thesis, we will not discussed further the details of this important subclass of physical states.
+				For a brief account on the formulation of this property in terms of  \emph{microlocal analysis} see for example Ref. \cite{Benini2013} \cite{Khavkine2014a}.
+				
+				
 
 
 \section{Quantization by Initial Data.}

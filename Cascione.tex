@@ -511,10 +511,64 @@ In the next section we review the last two.
 	\subsection{Quantum Step}
 	   		\paragraph{Hadamard state} 
 			Considering the scope of this thesis, we will focus primary on the first step. For a brief account on the construction of the \emph{quantum states} see Ref. \cite{Benini2013}.
+
 			\begin{Warning}
 			Non devi certo entrare nei dettagli, ma devi quantomeno accennare al fatto che siano la classe corretta di stati di usare in quanto godono di proprietà rilevanti quali in particolare la possibilità di costruire i polinomi di Wick in modo covariante.
+				Fonti: 
+				\begin{itemize}
+					\item Advances:\\
+						" one selects a state, that is a positive, normalized, linear functional on the algebra which allows us to recover the standard probabilistic interpretation of quantum theories via the GNS theorem."
+					\item Primer : 
+						\begin{itemize}
+							\item The second step consists of selecting a so-called algebraic state $\omega$ that is a continuous linear and positive functional on A, which, via the GNS theorem,53 allows us to recover the interpretation of the elements of A as linear operators on a suitable Hilbert space.
+							\item  In a free quantum field theory on Minkowski spacetime, under the assumption to work at vanishing temperature, there exists a unique ground state which can be singled out thanks to the Poincarè group.63
+								The relevance of the so-called Poincar´ e vacuum is enormous, being at the heart of the perturbative
+methods out of which interactions are treated. 
+								On the contrary, whenever the underlying manifold is no longer trivial, the lack of a sufficiently big group of isometries of the metric forbids the existence of a natural vacuum state. We will show, moreover, that most of the algebraic states are not even physically acceptable since they entail that the basic objects of perturbation theory, theWick polynomials, cannot be well-defined. 
+								We shall identify, therefore, a distinguished subclass of states, called Hadamard states, which avoid these pathologies and are unanimously recognized as being the only physically significant ones.
+							\item we introduce in Section 4 the notion of an algebraic state on the resulting quantum field theory and we prove the GNS theorem which allows us to interpret the said algebra in terms of linear operators on a suitable Hilbert space. 
+								Hence we recover the standard interpretation of a quantum theory. Eventually we introduce some basic tools proper of microlocal analysis in order to characterize physically sensible states by means of the so-called Hadamard condition.
+						\end{itemize}
+					\item QuasiFree:\\
+				\end{itemize}
 			\end{Warning}
 
+					\begin{Warning}
+				\begin{itemize}
+					\item punto della situazione: ci troviamo un'algebra astratta (avremmo potuto impostare così anche la m.q.o) vogliamo capire come rappresentarla per mezzo di operatori su un opportuno spazio di hilbert . 
+					dando interpretazione dell'azione dell'osservabile sugli stati.\\
+					In the last part of this review we introduce the notion of algebraic state and the criteria which allow us to select those which are physically sensible.
+					\item si definisce lo stato algebrico.\\
+						l'idea che sta alla base della definizione di stato in questo modo è che 
+						 - interpretando w(a) come il valore d'aspettazione dell'osservabile per un sistema nello stato omega-  
+						per ogni osservabile a= a*  se conosco tutti i "momenti" e tutti i valori aspettazione sui polinimi costruiti con a è nota (ovvero posso ricostruire da questi) la distribuzione di probabilità relativa ai valori di outcome associati all'osservabile a. (per ora l'osservabile è astratto quindi gli outcome sono boh)
+					\item per capire dove si vuole arrivare bisogna ricordare cos'è una rapresentazione di un unital * algebra
+						
+				\end{itemize}
+			\end{Warning}
+
+				\begin{definition}[Algebraic State]
+					We call an \emph{(algebraic) state} over $\ObsAlg$ the $\Complex-$linear functional $\omega: \ObsAlg \rightarrow \Complex$ such that:
+					\begin{itemize}
+						\item it is positive:
+							$$ \omega( a^* a ) \geq 0 \qquad \forall a \in \ObsAlg$$
+						\item it is normalized:
+							$$ \omega(\IdElem) = 1 $$	
+					\end{itemize}									
+				\end{definition}
+			
+				\begin{Warning}
+					Aggiunge Moretti sotto la definizione\\
+						
+				 	The overall idea underlying this definition is that if, for a given observable $a = a^* \in \ObsAlg$ we know all moments $\omega( a^n )$, and thus all expectation values of polynomials $\omega\left(p(a)\right)$, we also know the probability distribution associated to every value of a when the state is $\omega$. 
+				 	To give a precise meaning to this idea, we should represent observables a as self-adjoint operators $\hat{a}$ in some Hilbert space $H$, where the values of a correspond to the point of spectrum $\sigma(\hat{a})$and the mentioned probability distribution is that generated by a vector $\psi$  state representing $\omega$ in $H$, and the spectral measure of $\hat{a}$. 
+				 	We therefore expect that, in this picture, $\omega(a) = \left\langle  \psi \vert \hat{a} \psi \right\rangle$ for some normalized vector $\psi \in H$. 
+				 	This is, in fact, a consequence of the content of the celebrated GNS reconstruction procedure for unital C$\ast-$algebras [29, 60, 50].
+				 	We will discuss shortly the unital  $\ast-$algebra version of that theorem. 
+				 	Note that the general problem of reconstructing even a unique classical state (a probability distribution on phase space) from the knowledge of all of its polynomial moments is much more difficult and is sometimes impossible (due to non-uniqueness). 
+				 	This kind of reconstruction goes under the name of the Hamburger moment problem [55, X.6 Ex.4].
+				\end{Warning}					
+			
 \section{Raccordo tra le due procedure}
 
 	%\subsection{Equivalence of the Brackets}	

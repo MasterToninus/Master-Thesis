@@ -217,7 +217,7 @@
 		\end{align*}
 		We have to show that the equation just found:
 		\begin{equation}\label{JacobiEqI}
-			\ddot{X}^\mu + X^\alpha\left(\partial_\alpha\Gamma^{\mu}_{\, i j}\right)T^i T^j + \Gamma^\mu_{\, \alpha j}\left(2 T^i \dot{X}^\alpha \right) = 0
+			\ddot{X}^\mu + X^\alpha\left(\partial_\alpha\Gamma^{\mu}_{\, i j}\right)T^i T^j + \Gamma^\mu_{\, \alpha j}\left(2 T^j \dot{X}^\alpha \right) = 0
 		\end{equation}
 		where $\dot{X}^\mu = \frac{d}{dt}X^\mu= T^i \partial_i X^\mu$,
 		corresponds to the equation defying the Jacobi field:
@@ -228,7 +228,7 @@
 		Since:
 		\begin{align}\label{JacobiEqDerivative}
 			X'' &= D_t D_t X = D_t \left( \partial_\mu \left( \dot{X}^\mu + \Gamma^\mu_{\, i \alpha} T^i X^\alpha \right)\right) \nonumber \\
-			&=\left( \ddot{X}^\mu + \frac{d}{dt}\left( \Gamma^\mu_{\, i \alpha} T^j X^\alpha \right) + \Gamma^\mu_{\, j \nu}T^j \dot{X}^\nu + T^j \Gamma^\mu_{\, j \nu} \Gamma^\nu_{\, i \alpha} T^i X^\alpha \right)\partial_\mu
+			&=\left( \ddot{X}^\mu + \frac{d}{dt}\left( \Gamma^\mu_{\, j \alpha} T^j X^\alpha \right) + \Gamma^\mu_{\, j \nu}T^j \dot{X}^\nu + T^j \Gamma^\mu_{\, j \nu} \Gamma^\nu_{\, i \alpha} T^i X^\alpha \right)\partial_\mu
 		\end{align}
 		We can write equation \ref{JacobiEqI} in term of the covariant derivative as:
 		\begin{align*}
@@ -271,6 +271,26 @@
 	l'idea è che le metriche possono essere diagonalizzate risulta un sistema di equazioni del moto ode disaccoppiate di cui posso calcolare la funzione di green come indicato nelle dispense che trattano il calcolo di green per le ode.
 	se ho l'operatore di green posso calcolare in esplicito le soluzioni perturbate e quindi le peierls.
 	Guardare pag 5 advance + pag 6 primer	
+	
+	Per Ripasso di FRW: \url{http://universeinproblems.com/index.php/Friedman-Lemaitre-Robertson-Walker_(FLRW)_metric#Problem_1:_expanding_baloon}
+	\end{Warning}
+	
+	\begin{Warning}
+		La costruzione dell'esempio si articola in vari step:
+		\begin{enumerate}
+			\item Introdurre la Metrica FRW come fa CD (ricordare che è GH)
+			\item Calcolo Cristoffel (uso Mathematica)
+			\item Equazione Geodetica
+			\item Calcolo R
+			\item Do espressione in coordinate per il campo di Jacobi
+			\item Verifico che trovo 4 equazioni Disaccoppiate (credo che sarà necessario mettersi nelle coordinate che dice Wiki)
+			\item calcolo le 2 soluzioni omogenee per ogni componente
+			\item ricordare cos'è l'operatore di green in generale, se l'op è diagonale ricordare come si semplifica (cioè ho 4 op di green per ogni ode), ricordare cos'è l'op di green per una ode (cioè operatore  a nucleo integrale, il nucleo è detto 
+			\item Criterio per il calcolo delle green per delle ode lineari di secondo ordine
+			\item realizzo il calcolo per ogni componente di jacobi
+			\item realizzo l'op di green (dovrebbe dipendere dalla geodetica da cui sono partito ) è dico come va inserito per ottenere il disturbo
+			\item limitandosi al caso di densità lagrangiane lineari trovo il disturbo e le peierls
+		\end{enumerate}
 	\end{Warning}
 	
 
@@ -491,3 +511,4 @@
 	\end{Warning}
 
 \end{document}
+

@@ -16,12 +16,17 @@ In this chapter we will take advantage of the language developed in the first ch
 	%It is possible to state a mathematical definition sufficiently broad to encode all the classical mechanical systems regardless of the cardinality of degrees of freedom  in a unified way. (Correzione CD)
 	In what follows we will refer to a rather particular class of dynamical systems:
 	
-	\begin{definition}[Dynamical System]%Corretto da CD prima era "Evolutive system"
-		Pair $(E,P )$ composed of:
+	\begin{definition}[Dynamical System]\label{Def:AbstracDynamicalSystem}
+	%Corretto da CD prima era "Evolutive system"
+		We call \emph{abstract dynamical system} 
+		a pair $(E,P )$ composed of:
 		\begin{itemize}
 			\item $E \xrightarrow{\pi} M$ \\
 			smooth fiber bundle of typical fiber $Q$ on  manifold $M$, called \emph{"configuration bundle"}.
-			\item	$ P : \Gamma^\infty(E) \rightarrow \Gamma^\infty(E)$ %\\  operator called \emph{"motion operator"}
+			\item	$ P : \Gamma^\infty(E) \rightarrow \Gamma^\infty(E)$ \\
+			differential operator %\\  operator called \emph{"motion operator"} 
+			in the sense that it is represented by a linear combination of partial derivative in every local chart.
+			%In cascione ho raccolto la discussione su questo punto
 		\end{itemize}
 	\end{definition}
 	This formulation is still very far from the physical interpretation but has the benefit to highlight the minimal mathematical framework
@@ -41,33 +46,38 @@ In this chapter we will take advantage of the language developed in the first ch
 		the space of kinematic configurations.
 	\end{definition}
 
-	%A section is not a statical configuration, equivalent to a specific point in the configuration space of ordinary classical systems, but has to be seen as a specific realization of the kinematics in the sense of  a complete description of a possible motion. (Correzione CD)
-	At this level of abstraction, since no space-time structure has been specified, terms like stasis and motion must be taken with care .The natural physical interpretation should become manifest through the concrete realization of systems with discrete and continuous degree of freedom.
+	A section is not a statical configuration, equivalent to a specific point in the configuration space of ordinary classical systems, but has to be seen as a specific realization of the kinematics in the sense of  a complete description of a possible motion. %(Correzione CD)
+	%At this level of abstraction, since no space-time structure has been specified, terms like stasis and motion must be taken with care .
+	The natural physical interpretation should become manifest through the concrete realization of systems with discrete and continuous degree of freedom.
 	
-	\begin{observation}[Mathematical structure]
+		\begin{remark}
+	%\begin{observation}[Mathematical structure]
 	Notice that $\Gamma^\infty(M;E)$ is best understood as an infinite dimensional Manifold. 
 	\\
 	This framework provides a geometric characterization of the notion of variations as tangent vectors on the the space of kinematic configurations .\cite{Forger2005}
-	\end{observation}
 	
-	\begin{observation}[Coordinate Representation]
+	In the case where $E$ is a vector bundle and $P$ is a l.p.d.o. $\Conf$ is a vector space.
+	%\end{observation}
+		\end{remark}
+	
+	\vspace{2mm}
+%	\begin{observation}[Coordinate Representation]
 	The choice of a chart atlas $\Atlas(M)$ on the base space $M$ and $\Atlas(E)$ on the total space $E$ provides a correspondence between each configuration $\gamma \in \Conf$ and family of smooth real functions $\{f_{\alpha \beta}:A_\alpha \subset \Real^m \rightarrow \Real^q \}$.
 	Where $m$ and $q$ are respectively the dimension of $Q$ and $M$.	
 	\\
 	The process is trivial:
-	\begin{displaymath}
+	\begin{equation}\label{Def:LocalChartRepresentation}
 		\gamma \in \Conf \mapsto \{f_{A,U}=\psi_U \circ \gamma \circ \psi_A^{-1} \vert (A,\psi_A) \in \Atlas(M), (U,\psi_U)\in \Atlas(E)   \}
-	\end{displaymath}
-	
+	\end{equation}
 	%	$\forall (A,\psi_A)$ local chart on $M$ and $(U,\psi_U)$ local chart on $E$ such that $\gamma(A) \cap U \neq \emptyset$ $f_{A,U}=\psi_U \circ \gamma \circ \psi_A^{-1}$
-
 	Since the whole section is quite difficult to handle  as a global object, is customary in field theory to work in the more practical local representation. 
-	\end{observation}	
+%	\end{observation}	
 	
-	\begin{observation}[Further specification of the system's kinematics]
+	\vspace{2mm}
+%	\begin{observation}[Further specification of the system's kinematics]
 	 	The general formalism does not require any other structure to be carried forward.
 	 	Additional structure on the fiber , the base or the whole bundle are to be prescribed in order to specify a precise physical model, e.g. the spin structure on $E$ for the Dirac Field.\cite{Benini}
-	 \end{observation}	
+%	 \end{observation}	
 	
 	\paragraph{Dynamics}
 	The operator $P$ is the object that contains all the information about the dynamical evolution of the system.
@@ -75,13 +85,15 @@ In this chapter we will take advantage of the language developed in the first ch
 	\begin{definition}[Space of Dynamics (on-shell) configurations]\label{Def:SolSpace}
 		We call
 		\begin{displaymath}
-			\gls{Sol} \coloneqq \ker(P) \subset \Conf
+			\gls{Sol} \coloneqq \ker(P) = \left\{\left. \gamma \in \Conf \quad\right\vert  R(P)\left(f\right) = 0 \quad \forall \textrm{local chart representation}\right\}
 		\end{displaymath}
-		the set containing all the smooth solutions of the motion equations corresponding to the  dynamical operator:	
+		,where we have denoted respectively as $R(P)$ and $f$ the local chart representation (as in Eq. \ref{Def:LocalChartRepresentation}) of $P$ and $\gamma$ on the same chart.\\
+		This is the subset of $\Conf$ containing all the smooth solutions of the motion equations corresponding to the  dynamical operator:	
 		\begin{displaymath}
 			P: \Conf \rightarrow \Conf
 		\end{displaymath}
 	\end{definition}
+	Notice that in case of a linear dynamical system $\ker(P)$ is proper \emph{kernel} subspace in the sense of liner operator theory.
 	
 	\begin{figure}[h!]
 		\centering
@@ -93,14 +105,16 @@ In this chapter we will take advantage of the language developed in the first ch
 	Lagrangian systems constitute an interesting subclass of the abstract dynamical systems:
 	%more practical interest:	
 		\begin{definition}[Lagrangian System ( of $r$-th order)]
-	Pair $(E, \mathcal{L} )$ composed of:
-		\begin{itemize}
-			\item $E \xrightarrow{\pi} M$ \\smooth fiber bundle of typical fiber $Q$ on the oriented pseudo-Riemmanian manifold $(M,g,\mathfrak{o})$ called \emph{"configuration bundle"}.
-			\item	$ \gls{Lagrangian} : J^r E \rightarrow \wedge^m T^*M$ \\bundle-morphism from the r-th Jet Bundle (see Section \ref{Sect:JetBundles}) to  the top-dimensionial form bundle over the base manifold $M$  called \emph{"Lagrangian density"} or simply \emph{"Lagrangian"} of r-th order.
-		\end{itemize}
-	\end{definition}	
+			We call \emph{Lagrangian system} of $r$-th order the
+			pair $(E, \mathcal{L} )$ composed of:
+			\begin{itemize}
+				\item $E \xrightarrow{\pi} M$ \\smooth fiber bundle of typical fiber $Q$ on the oriented pseudo-Riemmanian manifold $(M,g,\mathfrak{o})$ called \emph{"configuration bundle"}.
+				\item	$ \gls{Lagrangian} : J^r E \rightarrow \wedge^m T^*M$ \\bundle-morphism from the r-th Jet Bundle (see Section \ref{Sect:JetBundles}) to  the top-dimensionial form bundle over the base manifold $M$  called \emph{"Lagrangian density"} or simply \emph{"Lagrangian"} of r-th order.
+			\end{itemize}
+		\end{definition}	
 	
 	\begin{NB}
+	
 		In what follows all the systems considered will be exclusively of first order.
 		The reason is due to the \emph{Ostrogradsky instability} according to which a non-degenerate Lagrangian dependent on time derivatives of higher than the first corresponds to a linearly unstable dynamics.\cite{Motohashi2014}
 	\end{NB}	
@@ -122,7 +136,8 @@ In this chapter we will take advantage of the language developed in the first ch
 	
 	%la classe delle densità lagrangiane
 	It should be clear that $\Lagrangian$ is a specific choice among the vast class of functions suitable to be a good Lagrangian density over the  Configuration Bundle $E$:
-	\begin{definition}[Lagrangian Density on the bundle $E$]\label{Def:LagrangianDensities}
+	\begin{definition}[Lagrangian Densities on the bundle $E$]\label{Def:LagrangianDensities}
+		We denote the set of all \emph{Lagrangian densities} (of $r-$th order) on the bundle $E$ as:
 		\begin{displaymath}
 			\gls{Lag}^r (E) \coloneqq \hom\biggr(J^r E,\quad \bigwedge^m( T^*M)\biggr)  \cong \big\{f:\Gamma^\infty(J^r E) \rightarrow \Omega^m(M)  \big\}
 		\end{displaymath}
@@ -143,20 +158,21 @@ In this chapter we will take advantage of the language developed in the first ch
 		We call \emph{Lagrangian functional} a map :
 		%Is a functional on $\Conf$ with values on regular distribution over M associated to the generic $\Lagrangian \in \Lag$.	(Correzione CD)
 		\begin{displaymath}
-			\mathcal{O}_\Lagrangian : \Conf \rightarrow D'(M) \big( C^\infty_0(M) \big)'
+			\mathcal{O}_\Lagrangian : \Conf \rightarrow D'(M) 
 		\end{displaymath}			
-		where  $D'(M)$ is the space of regular distribution over $M$.
+		where  $D'(M)$ is the space of regular distribution over $M$.%\big( C^\infty_0(M) \big)' io lo avevo indicato come il duale delle funzioni di test
 			Such that the Lagrangian functional associated to $\Lagrangian$, valued on the configuration $\phi \in \Conf$ and tested on the test-function $f \in C^\infty_0(M)$ it is given by:
 		\begin{displaymath}
 			\mathcal{O}_\Lagrangian [\phi] (f) = \int_M \Lagrangian [\phi] f \textrm{d}\mu
 		\end{displaymath}		
 	\end{definition}	
-	
-%	\begin{proposition} %(Correzione CD)
-%		As a distribution $\mathcal{O}_\Lagrangian [\phi] (f) $ is necessarily linear in the test-functions entry but not in the configurations entry.	
+%	\begin{proposition} 
+	%(Correzione CD)Quando si parla di distribuzioni, si tende a sottolineare che sono funzionali lineari sullo spazio delle test-funzioni. In realtà questo non basta, il funzionale deve essere anche continuo. E' questa la vera proprietà dominante e mi premeva sottolinearti di sottolinearla.
+	%(COntestazione CD) A voler essere pignoli, il problema non è la linearità, ma la continuità rispetto alla topologia di D'(M). Le distribuzioni sono funzionali lineari e continui. Siamo sicuri che siano tutti continui e che non ci sia una drastica riduzione a chiedere una mappa in D'(M)?
+	Notice that $\mathcal{O}_\Lagrangian [\phi] (f)$, as distribution, is necessarily continuous and linear in the test-functions entry  but not in the configurations entry.	
 %	\end{proposition}	
 	
-	\begin{observation}
+%	\begin{observation}
 		The choice of the image of $\mathcal{O}_\Lagrangian$ as a distribution is a necessary precaution to ensure the \emph{convergence} of the functional, whatever is the configuration on which it is evaluated.
 		In fact, despite $\Lagrangian [ \phi ]$  being integrable with respect to the measure $\textrm{d}\mu$, it is not necessary summable if the support of the configuration $\phi$ becomes arbitrarily large.
 		\\
@@ -172,12 +188,13 @@ In this chapter we will take advantage of the language developed in the first ch
 		is well defined for all $\Lagrangian \in \Lag^r(E)$ only over the compactly supported sections. 
 		To take account of the global sections it is sufficient to control the integral smearing the integrand with an arbitrary test-function.
 	%il funzionale lagrangiana totale e azione
-	\end{observation}
+%	\end{observation}
 	
-	\begin{notationfix}
-		The functional $\mathcal{O}_\Lagrangian$, when calculated for the specific Lagrangian of the system, takes the name of \emph{Action} or \emph{Total Lagrangian}. 
-	\end{notationfix}
+%	\begin{notationfix}	% Correzione CD: nomenclatura non standard
+%		The functional $\mathcal{O}_\Lagrangian$, when calculated for the specific Lagrangian of the system, takes the name of \emph{Action} or \emph{Total Lagrangian}. 
+%	\end{notationfix}
 
+	\vspace{2mm}
 	The introduction of the Lagrangian density is meaningless without the prescription of a dynamical principle which allows to determine unambiguously a dynamical operator $P$ on $\Conf$.
 	This fundamental principle is the \emph{least action principle}.
 	A proper justification of this claim should require the presentation of the differential calculus on the infinite dimensional manifolds $\Conf$. 
@@ -195,10 +212,12 @@ In this chapter we will take advantage of the language developed in the first ch
 		Where $\nabla_\mu$ is the covariant derivative corresponding to the background metric $g$.
 		($\frac{\partial \chi}{\partial(\partial_\mu \phi)}$ has the be intended as the Lagrangian density constructed differentiating $\chi(\phi, \partial_\mu)$ as an ordinary function, treating its functional entries as an usual scalar variable.)
 	\end{definition}
-	
-	\begin{observation}
+
+	\begin{remark}	
+%	\begin{observation}
 		The whole theory of both Lagrangian densities class and Euler-Lagrange equation could be stated in a more syntetic way in terms of a Grassmann-graded variational bicomplex.\cite{Giachetta2009}\cite{Sardanashvily}
-	\end{observation}
+%	\end{observation}
+	\end{remark}
 	
 		
 
@@ -206,7 +225,7 @@ In this chapter we will take advantage of the language developed in the first ch
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 %\newpage
 	\section{Concrete Realization}
-		In the previous section we stated an abstract definition of Lagrangian systems sufficiently broad to encompass all  classical Lagrangian systems with both discrete degrees of freedom, like particles, and continuous degree of freedom, like fluids or fields.
+		In the previous section we stated an abstract definition of Lagrangian systems sufficiently broad to encompass all  classical Lagrangian systems with both discrete degrees of freedom, like particles, and continuous degrees of freedom, like fluids or fields.
 	Let us show two of the most significant examples.
 	%esibiamo quanto è ampia la nostra definizione
 	
@@ -214,7 +233,7 @@ In this chapter we will take advantage of the language developed in the first ch
 	
 		\subsection{Classical Field Theory}\label{Section:CFT}
 		%Basically 
-		A (classical) \emph{Field System} is nothing more than an abstract Field System $(E,P)$ where the base space $M$  is a suitable spacetime manifold\cite{Bar}. At this stage the question about the Lagrangian nature of the dynamics is purely ancillary.
+		A (classical) \emph{Field System} is nothing more than an abstract dynamical system $(E,P)$ (see Def. \ref{Def:AbstracDynamicalSystem}) where the base space $M$  is a suitable spacetime manifold\cite{Bar}. At this stage the question about the Lagrangian nature of the dynamics is purely ancillary.
 		\\		
 		The idea of taking bundles on a space-time manifold is physically intuitive, kinematically speaking a field configuration is simply the association of some element of the fiber $Q $ for each point of the space-time $M$.
 		
@@ -280,6 +299,7 @@ In this chapter we will take advantage of the language developed in the first ch
 			\end{NB}			
 			
 			\begin{definition}[Set of smooth initial Data]\label{Def:DataSenzaSup}
+				We denote the set of all smooth initial data as:
 				\begin{displaymath}
 					\Data  \coloneqq \frac{\bigsqcup\limits_{\Sigma \in \CauchyClass(M)}\Data(\Sigma)}{\sim} 
 				\end{displaymath}
@@ -398,9 +418,10 @@ In this chapter we will take advantage of the language developed in the first ch
 			\end{tabular}\end{center}
 			
 			Considering that the space $M$ is trivially globally hyperbolic, since every point $t\in\Real$ is a genuine "Cauchy Surface", it is evident how this system can be seen as a special case of field theory: a "field of curves".
-			\begin{observation}
-				Unless the configuration space is a vector space, the corresponding field theory cannot be linear.
-			\end{observation}		
+
+%			\begin{observation}
+				Notice that ,unless the configuration space is a vector space, the corresponding field theory cannot be linear.
+%			\end{observation}		
 		
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 %\newpage
@@ -422,7 +443,7 @@ In this chapter we will take advantage of the language developed in the first ch
 		\caption{An "impressionistic comparison"  between the mathematical framework of geometrical mechanics and  the field-theoretic picture}
 		\end{figure}
 	
-	For example we have a ovvoided to mention the Hamiltonian formalism in the case of abstract fields.
+	For example we have a avoided to mention the Hamiltonian formalism in the case of abstract fields.
 	Even though it should be possible, in the spirit of what has been done within the Lagrangian picture, to extend the canonical treatment to include systems with continuous degrees of freedom (see for example \cite{Giachetta1999}),we will not expand this topic since the protagonist of this thesis is essentially a classical point particle system.
 	
 	%However in the next chapter we will need to realize a field-theoretic versions of some Canonical objects.	\\  (Correzione CD)
@@ -436,34 +457,37 @@ In this chapter we will take advantage of the language developed in the first ch
 	This leads us to make use of the abstract formulation of Hamiltonian systems\cite{Abraham1978}:
 	
 	\begin{definition}[(Ordinary) Hamiltonian System]
-			Triple $(\Phase,\omega, H )$ composed of:
+			We call \emph{(ordinary) Hamiltonian system} a
+			triple $(\Phase,\omega, H )$ composed of:
 		\begin{itemize}
 			\item $(\Phase,\omega)$ \\ finite dimensional symplectic manifold called \emph{"Phase space"}.
 			\item	$ H :\Phase \rightarrow \Real$ \\  smooth function called \emph{"Hamiltonian"}
 		\end{itemize}
 	\end{definition}
 	
-	\begin{observation}
+	\begin{remark}
 		In classical mechanics Hamiltonian systems could be seen as a subset of Lagrangian systems.
 		\\
 		The key is the definition of the Legendre Map $TL: TQ \rightarrow T^*Q$,  in the case that the Lagrangian $L$  is \emph{hyperegular}  - i.e. $TL$ is a diffeomorphism - is possible to push-forward $L$ to give a proper Hamiltonian on $\Phase=T^*Q$. (see for example \cite{Abraham1978})
-	\end{observation}	
+	\end{remark}	
 	Recall that the Darboux theorem states that, at least locally, every symplectic form can be represented in the canonical form:
 	\begin{theorem}[Darboux]
 		$ $
-		\begin{hypothesis}
-			\begin{itemize}
-				\item $\Phase$ is a 2n-dimensional smooth manifold.
-				\item $\omega$ is a symplectic form on $\Phase$ i.e. a non degenerate closed ($d \omega =0$) two-form.
-			\end{itemize}
-		\end{hypothesis}
-		\begin{thesis}
+%		\begin{hypothesis}
+%			\begin{itemize}
+%				\item $\Phase$ is a 2n-dimensional smooth manifold.
+%				\item $\omega$ is a symplectic form on $\Phase$ i.e. a non degenerate closed ($d \omega =0$) two-form.
+%			\end{itemize}
+%		\end{hypothesis}
+			Let be $(\Phase, \omega)$ a symplectic manifold, \textit{i.e.}  a 2n-dimensional smooth manifold $\Phase$ endowed with a non degenerate closed two-form $\omega$.\\
+			Then
+%		\begin{thesis}
 			 $\forall m\in \Phase$,  $\exists$ a local chart  $(U,\varphi)$ (where $\varphi(u) = \big(x^1(u), \ldots, x^n(u); y^1(u),\ldots, y^n(u) \big)$) such that:
 					\begin{itemize}
 						\item $\varphi(m) =0$
 						\item	$\omega \big\vert_U = \sum_{i=1}^n dx^i \wedge dy^i$
 					\end{itemize}
-		\end{thesis}
+%		\end{thesis}
 	\end{theorem}
 	\begin{proof}
 		We omit the proof which can be found in \cite{Abraham1978}[Th. 3.2.2].
@@ -471,19 +495,25 @@ In this chapter we will take advantage of the language developed in the first ch
 		
 	\paragraph{Classical Observables}
 		Observables in classical mechanics are represented by real valued smooth functions on $\Phase$:
-	\begin{notationfix}
+	\begin{definition}[Space of Classical Observables]
+%	\begin{notationfix}
 		The \emph{Space of Classical Observables} is denoted as:
 		\begin{displaymath}
 			\Obs \equiv		C^\infty(\Phase,\Real)
 		\end{displaymath}
-	\end{notationfix}
-	\begin{observation}
+%	\end{notationfix}
+	\end{definition}
+%
+%	\begin{observation}
 		The space  $C^\infty(\Phase,\Real)$ of smooth real valued function on $\Phase$,  inherits the structure of commutive algebra over $\Real$ from its codomain $\Real$.
-	\end{observation}
+%	\end{observation}
+
+	\vspace{2mm}
 	The symplectic structure on $\Phase$ gives rise to a second algebraic structure on the vector space of observables.
 	At first it is necessary to introduce the Hamiltonian fields:
 	\begin{definition}[Hamiltonian field with energy function $H\in \Obs$]
-		Is the vector field $\mathbf{X}_H$ determined by the condition:
+		We call \emph{Hamiltonian field} with energy function $H\in \Obs$
+		the vector field $\mathbf{X}_H$ determined by the condition:
 		\begin{displaymath}
 			\omega( \mathbf{X}_H,  \cdot )\equiv dH (\cdot)
 		\end{displaymath}
@@ -491,12 +521,38 @@ In this chapter we will take advantage of the language developed in the first ch
 	Nondegeneracy of $\omega$ guarantees that $\mathbf{X}_H$ exists for all classical observables $H\in \Obs$.
 	From that follows the definition of the bracket:
 	\begin{definition}[Poisson Brackets]
-		Is the bilinear function 	$\{\cdot, \cdot\} : \Obs \times \Obs \rightarrow \Obs$ such that:
+		We call \emph{Poisson brackets}
+		the bilinear function 	$\{\cdot, \cdot\} : \Obs \times \Obs \rightarrow \Obs$ such that:
 		\begin{equation}
 			\{ f, g \} \coloneqq \omega \big( \mathbf{X}_f , \mathbf{X}_g \big) = df ( \mathbf{X}_g)
 		\end{equation}
-	\end{definition}	
+	\end{definition}
+	%Nota di CD: andrebbe ricordata l'eguaglianza di Jacobi http://math.stackexchange.com/questions/557358/showing-jacobi-identity-for-poisson-bracket
+	% prop 3.3.17 fomm
+	\begin{proposition}
+		The real vector space $\Obs= C^\infty(M,\Real)$, together with the Poisson brackets $\{\cdot, \cdot\}$, form a Lie algebra,\\
+		\textit{i.e.:} $\{\cdot,\cdot\}$ satisfies  the following axioms:
+		\begin{itemize}
+			\item bilinearity
+				\begin{displaymath}
+					\{a x + b y, z\} = a \{x, z\} + b \{y, z\}, \quad  \{z, a x + b y\} = a\{z, x\}+ b \{z, y\} \qquad \forall a,b \in \Complex , \: \forall x,y,z \in \Obs
+				\end{displaymath}
+			\item alternativity
+				\begin{displaymath}
+						\{x,x\}= 0 \qquad \forall x \in \Obs
+				\end{displaymath}
+			\item The Jacobi equation:
+				\begin{displaymath}
+					\{x, \{ y , z \} \} + \{y, \{ z , x \} \} + \{z, \{ x , y \} \} = 0 \qquad \forall x,y,z \in \Obs
+				\end{displaymath}
+		\end{itemize}
+	\end{proposition}
+	\begin{proof}
+		We omit the proof, see for example Ref. \cite{Abraham1978}[Prop. 3.3.17].
+	\end{proof}
 	
+	
+	\vspace{2mm}
 	In the canonical coordinates, provided  by  Darboux theorem, the  Poisson bracket assumes the typical expression:
 	\begin{proposition}[Symplectic coordinate representation]
 	
@@ -550,7 +606,7 @@ In this chapter we will take advantage of the language developed in the first ch
 	\end{displaymath}
 	$\Phase_{\textrm{lin}}$ forms a Poisson subalgebra.
 	\\%Moreover, 
-	The presence of the non-degenerate bilinear form provide the usual identification $\Phase \simeq \Phase^*$ and therefore the simplectic form on $\Phase$ can directly reproduced on $\Obs{\textrm{lin}} $:
+	The presence of the non-degenerate bilinear form provide the usual identification $\Phase \simeq \Phase^*$ and therefore the simplectic form on $\Phase$ can directly reproduced on $\Obs_{\textrm{lin}} $:
 	\begin{displaymath}
 		\{ \Omega(y_1, \cdot),\Omega(y_2, \cdot)\} = - \Omega(y_1, y_2) \qquad \forall y_i \in \Phase \Rightarrow \Omega(y_1, \cdot) \in \Obs_\textrm{lin}
 	\end{displaymath}
@@ -558,24 +614,25 @@ In this chapter we will take advantage of the language developed in the first ch
 	
 	
 	
-	\begin{TAM}
-			To summarize the essential aspects that characterize the geometry of linear systems are the following:
+%	\begin{TAM}
+			In conclusion, the essential aspects that characterize the geometry of linear systems are the following:
 		\begin{itemize}
 			\item The symplectic form of $\Phase$ is directly defined on the points of the Phase space.
 			\item Since the points of the phase space can be put in correspondence with the solutions (can be considered as the \emph{inital data} ) the symplectic form is directly transported to $\Sol$.
 			\item The same simplectic structure can be reproduced on the space $\Obs_\textrm{lin}$ and coincides with the reduction of the Poisson bracket to this subspace.
 			\end{itemize}
-	\end{TAM}
+%	\end{TAM}
 
 
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 %\newpage
 	\section{Peierls Brackets}
-		Purpose of the Peierls' procedure is to provide a bilinear form on the space of Lagrangian densities with time-compact support.
+		Purpose of Peierls' procedure is to provide a bilinear form on the space of Lagrangian densities with time-compact support.
 		This form induces a pre-symplectic structure on suitable subspaces of functionals to which can be recognized the role of \emph{classical observables}  of the theory.	
-	
-	\begin{observation}[Relation between Peierls Brackets and Poisson Brackets]
+
+	\vspace{2mm}	
+%	\begin{observation}[Relation between Peierls Brackets and Poisson Brackets]
 		Intuitively we can say that the Peierls Brackets implement a sorts of "comparison relation" between two observables similar to the Poisson brackets in ordinary Hamiltonian mechanics.
 		
 		As we will see there are important differences between the two definitions:
@@ -592,8 +649,9 @@ In this chapter we will take advantage of the language developed in the first ch
 		\end{itemize}
 		A rigorous treatment of the notions of \emph{observable} and \emph{Phase Space} should require some further specification depending on which is the  considered brackets.		
 		We can read the "observable" as an object with a twofold nature. Essentialy it can act both as the generator of the dynamics and as a quantity which can be evaluated on the system configurations.
-	\end{observation}	
-	
+%	\end{observation}	
+
+		\vspace{2mm}	
 	%Intro: riproponiamo in modo esteso la costruzione originale di peierls con alcuni aggiornamenti di marolf... per una carrellata con il linguaggio della moderna teoria dei campi classici (tipo mangiaratti) e in presenza di gauge vedere per esempio Khavkine
 		In this section we present more extensively the original Peierls' construction. 
 		Please note that we are not trying to provide the state of the art on the Peierls brackets ( see for example \cite{Khavkine2014} for the treatment in presence of gauge freedom) but only to expand and modernize the first approach given by Peierls.
@@ -640,6 +698,7 @@ In this chapter we will take advantage of the language developed in the first ch
 		\\
 		These are obtainable by a infinitesimal linear perturbation of any, but fixed, solution $\phi \in \Sol$. The good definition of linear superposition is guaranteed by the hypothesis \ref{HpPeierls1}.
 		 %These are the solutions $\phi'\in \Conf$ of $P_\epsilon$ obtainable by a infinitesimal linear perturbation of a fixed solution $\phi \in \Sol$. The good definition of linear superposition is guaranteed by the hypothesis 1).(Correzione di CD)
+		\\
 		More precisely, one looks for to be seek a configuration:
 			\begin{displaymath}
 					\phi'(x) = \phi(x) + \epsilon \eta(x) \in \Conf
@@ -661,7 +720,7 @@ In this chapter we will take advantage of the language developed in the first ch
 		\begin{displaymath}
 			\big[Q_\chi \big]( \phi(x) + \epsilon \eta(x)\big)= \big[Q_\chi \big]( \phi(x)) + \epsilon \big[Q_\chi^{lin}(\phi)  \big]( \eta(x)) + o(\epsilon)
 		\end{displaymath}
-		which can be seen as the first term of a \emph{formal} Taylor expansion of operator $Q_\chi$ around $\phi$\footnote{If $\Conf$ is a Frechet manifold the expansion could be stated rigorously by defining $\big[Q_\chi^{lin}(\phi_0) . \big] = \big[\dfrac{\partial Q_\chi}{\partial \phi} (\phi_0)\big] $ in terms of the Gateux derivative.}
+		which can be seen as the first term of a \emph{formal} Taylor expansion of operator $Q_\chi$ around $\phi$\footnote{If $\Conf$ is a Frechet manifold the expansion could be stated rigorously by defining $\big[Q_\chi^{lin}(\phi_0) . \big] = \big[\dfrac{\partial Q_\chi}{\partial \phi} (\phi_0)\big] $ in terms of the Gateaux derivative.}
 		This is reflected in a condition on the perturbation $\eta \in \Conf_{tc}$:
 		\begin{displaymath}
 			\big[P_\epsilon\big] \phi'(x) =  \epsilon \biggr( \big[P\big] \eta(x) + \big[Q_\chi \phi(x) \big]\biggr)+ \epsilon^2 \big[Q_\chi^{lin}(\phi)  \big]	\eta(x) \mbeq o(\epsilon)
@@ -680,8 +739,8 @@ In this chapter we will take advantage of the language developed in the first ch
    		Note that the time-compact support condition on $\chi$ guarantees that $Q_\chi \phi \; \in \dom(G^+) \cap \dom(G^-)$.
    		Expression \ref{Perturbation} reflects perfectly the orginal Peierls' notation where $\eta_\pm$ were noted as functions of the unperturbed solution: $\eta_+ \equiv\reflectbox{\reflectbox{D}}_\chi \phi$ and $\eta_- \equiv  \reflectbox{D}_\chi \phi$.
 		
-		
-		\begin{observation}
+		\vspace{2mm}
+%		\begin{observation}
 			In most of the practical cases it is possible to give a more "down to earth" characterization of $\eta_\pm$ in terms of a Cauchy problem.\\
 			It has to be stressed that this approach is not possible in general since Green-hyperbolic operators are not necessarily hyperbolic in any PDE-sense i.e. the well-posedness of the Cauchy problem is not guaranteed on any Cauchy surface. \cite[pag 1]{Bar} \cite[remark 3.18]{Bar2010}\cite[remark 2.1]{Khavkine2014}
 			\\
@@ -701,8 +760,9 @@ In this chapter we will take advantage of the language developed in the first ch
    		\end{equation}
    		which , according to the well-posedness of the Cauchy problem, admits an unique solution.
    		The link with the previous presentation is that past/future -compact supported configurations trivially meet the initial data condition for some future/past Cauchy surface.
-		\end{observation}
+%		\end{observation}
 		
+		\vspace{2mm}
 		In conclusion, for any but fixed $\phi\in \Sol$ and perturbation $\chi$, there exist two uniquely perturbed solutions:
 		%In conclusion,fixed a solution $\phi\in \Sol$ and a perturbation $\chi$, are uniquely determined two perturbed solution: (Correzione CD)
    		\begin{equation}\label{PerturbedSolution}
@@ -730,9 +790,11 @@ In this chapter we will take advantage of the language developed in the first ch
 		 \biggr( \frac{B(\phi_\epsilon^\pm) - B (\phi_0)}{\epsilon} \biggr)
 		\end{equation}
 		The advanced and retarded effects of $\chi$ on B are then defined by comparing the original system with a new system defined by the same kinematic configuration space $\Conf$ but with perturbed Lagrangian.
-		\begin{observation}
-			Expression \ref{EffectOperator} is clearly a special case of Gateaux derivative.\cite{Blanchard2015}
-		\end{observation}
+		\\
+%		\begin{observation}
+			Has to be noted that expression \ref{EffectOperator} is clearly a special case of Gateaux derivative.\cite{Blanchard2015}
+			%consiglio CD Se non hai in mente una referenza, credo che il libro "Analysis, tensor and manifolds" abbia quello che fa al caso tuo.
+%		\end{observation}
 		
 		
 		The former expression simplifies in case of a linear functional:
@@ -791,13 +853,16 @@ In this chapter we will take advantage of the language developed in the first ch
 			\big[ P_\epsilon \big] \gamma_\epsilon^{\,i} = o(\epsilon)
 		\end{displaymath}
 		where $\big[ P_\epsilon \big] $ has to be intended as the coordinate representation of the operator with domain restricted to the local sections $\Gamma^\infty(A)$.
-		\begin{observation}
+		
+		\vspace{2mm}
+%		\begin{observation}
 		Without loss of generality has been taken the same scalar $\epsilon$  to modulate both the perturbation $\gamma_\epsilon$ and the %disturbance on the motion operator.(Correzione CD)
 		perturbation on the operator ruling the dynamics
-		
+		\\	
 		Consider two different parameters is moot since, in that case,only the smaller one should be taken in account.
-		\end{observation}
+%		\end{observation}
 
+		\vspace{2mm}
 		From the explicit equation of the perturbed solution: 
 		\begin{displaymath}
 			\biggr(\big[P\big] + \epsilon\big[Q_\chi\big] \biggr) \big(\gamma_0^{\,i}+\epsilon \eta^i \big) = o(\epsilon)
@@ -809,17 +874,21 @@ In this chapter we will take advantage of the language developed in the first ch
 			\biggr[P_{\gamma_0}^{\, lin} \biggr] \eta^i(x) = -\biggr(Q_\chi(\gamma_0)\biggr)(x)
 		\end{equation}
 		the \emph{Jacobi equation} on the unperturbed solution $\gamma_0\in \Sol$.
-		\begin{observation}
-			We switched from an operator $P$  defined on  $\Conf$ to an operator  $P_{\gamma_0}^{\, lin}  $ defined on the space of variations.
-			From a global point of view this variation can be seen as a tangent vector, \textit{ i.e.}, $\eta \in T_{\gamma_0}\Conf$.
+
+		\vspace{2mm}
+%		\begin{observation}
+			Has to be stressed that
+			we switched from an operator $P$  defined on  $\Conf$ to an operator  $P_{\gamma_0}^{\, lin}  $ defined on the space of variations.
+			From a global point of view this variation can be seen as a tangent vector, \textit{ i.e.}, $\eta \in T_{\gamma_0}\Conf$.\\
 			In the case of a linear system this passage was unnecessary, the Jacobi equation was directly defined on $\Conf$ since, for linear systems, any section could be seen as a generator of an infinitesimal variation.
 			This behaviour mimics perfectly what happens in ordinary classical mechanics where the configuration space of a linear system is a vector space i.e a "flat" manifold\footnote{In sense that admits a global coordinate chart.} which is isomorphic to his tangent space in every point.
-		\end{observation}
-		
+%		\end{observation}
+
+		\vspace{2mm}	
 		Provided that the %linearized motion operator (Correzione CD)
 		 operator, ruling the dynamics
 		(which is now properly a linear partial differential operator), is Green-Hyperbolic, the Peierels construction can continue as before.
-		Notice that now the advanced/retarded perturbation are formally identical to equation \ref{Perturbation}
+		Notice that now the advanced/retarded perturbation are formally identical to equation \ref{Perturbation}:
 		\begin{displaymath}
 			\eta_\pm^{\, i} = G^\pm \big( - Q_\chi \gamma_0^{\, j})
 		\end{displaymath}

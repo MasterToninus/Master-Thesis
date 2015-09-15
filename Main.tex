@@ -19,7 +19,9 @@
 \input{abstract.tex}
 
 %List of symbols
-\printnoidxglossary[sort=def,title={List of Symbols}]
+\addcontentsline{toc}{chapter}{List of symbols}
+\glossarystyle{long}
+\printnoidxglossary[sort=def,title={List of Symbols},nonumberlist]
 
 %  Indice
 \tableofcontents
@@ -38,9 +40,13 @@
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 %Per la bibliography senza citazione diretta
 \nocite {Abraham1978,Bar2010,Jost2005}
+\nocite{*}
 
-	\bibliography{bibliography}
+\addcontentsline{toc}{chapter}{Bibliography}
+
 	\bibliographystyle{plain}
+	\bibliography{bibliography}
+
 
 
 \end{document}

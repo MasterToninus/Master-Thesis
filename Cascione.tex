@@ -163,6 +163,34 @@ Formal definition ed esempi smooth e bundle (tutto ciò che
 		\end{displaymath}
 		containing all the smooth solutions is called \emph{"Space of Dynamical Configurations"}.
 	\end{notationfix}
+	
+	\begin{Warning}
+		Punto Cruciale : Richiedere che il fibrato di configurazione sia necessariamente un fibrato vettoriale (pag.1, pag.3, pag.16)\\
+	No, il mio obbiettivo è di essere sufficientemente generico in modo che anche il problema della geodetica possa essere infilato in questa categoria.
+		\\
+		 Mi rendo conto che i conti non tornano. La falla principale è a pag.3 dove parlo di Kernel, il che non ha alcun senso visto che non ho modo di definire una sezione "zero". \\
+		 Altro aspetto da sottolineare è che sui fibrati non vettoriali i concetti come sovrapposizione, perturbazione ecc.. possono essere definiti al massimo localmente, mai globalmente.
+		\\
+		Propongo dunque di definire il "Motion operator" P in modo da cogliere le proprietà cruciali del problema della geodetica:
+			\begin{itemize}
+			  	\item per ogni sezione ho tante rappresentazione in carta locale corrispondenti a tutte le combinazioni di "patch" (ammesso che vi corrisponda anche una trivializzazione locale) che posso scegliere sulla varietà base e sulla varietà fibra. Per ognuna di queste scelte associo alla sezione una funzione liscia da $R^m$ a $R^q$.\\
+
+				\item Dunque ognuna di queste coppie di carte implica anche una rappresentazione di P come operatore dallo spazio delle funzioni lisce da $R^m$ a $R^q$ in se stesso. Chiamiamola $R(P): C^\infty -> C^\infty$
+				\item Ammesso che il range di queste rappresentazioni contenga sempre lo 0  è sempre ben definita una motion equation (esclusivamente locale).
+				\begin{displaymath}
+					 R(P) \phi = 0
+				\end{displaymath}
+				\item  Ipotesi cruciale è che per coppie di rappresentazioni locali in qualche modo overlapping le soluzioni coincidano ( a meno di un cambio di coordinate) in modo che posso definiri sezioni locali che risolvono l'equazione in modo indipendente dalla carta locale scelta.
+			\end{itemize}
+			In altre parole vorei generalizzare quello che accade con le geodetiche dove ho una rappresentazione in carta dell'equazione geodetica per ogni carta locale. Questa rappresentazione ammette una unica soluzione (locale).Per come è definita l'equazione della geodetica si ha che la sua soluzione è indipendente dalla carta scelta.
+
+			\vspace{3mm}
+			Risposta:\\
+			Secondo me è molto meno "grave" di quello che stai pensando. 
+			Il punto fondamentale è il seguente. Se il fibrato non è vettoriale, puoi definire un operatore differenziale che, in carta locale, è una combinazione lineare di derivate. 
+			Ciò che perdi è la struttura lineare se lo spazio di target non è uno spazio/fibrato vettoriale. 
+			Ad esempio ha senso domandarsi cosa vuol dire $P\varphi = 0$, però $\varphi$ non è un elemento del kernel, in quanto la somma di due soluzioni non è nemmeno ben definita. Allo stesso tempo P non puoi chiamarlo operatore lineare. In pratica devi stare attento solo a togliere ogni riferimento alle strutture lineari tipiche degli spazi vettoriali fintanto che non lavori con fibrati vettoriali.
+	\end{Warning}
 
 	\section{Concrete Realization}
 		\subsection{Fields}

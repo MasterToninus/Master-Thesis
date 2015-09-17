@@ -1,0 +1,80 @@
+\documentclass[Main]{subfiles}
+\begin{document}
+
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+%\section{Motivazione della Tesi}
+
+%Cosa sono le Peierls, introduzione con l'articolo
+\emph{Peierls brackets} are a crucial element in the scheme of algebraic quantization,
+they provide an effective "recipe" to ascribe a pre-symplectic structure to the \emph{space of dynamic configurations} of a field system on a generic \emph{globally hyperbolic} spacetime.
+
+%Il problema delle peierls
+From the literature review it is clear that this tool never received particular attention since its debut in 1952 \cite{Peierls1952}.
+This seems mainly due to the lack of a convincing geometric interpretation
+which had the effect of limiting its reception often relegating his role to that of a mere  "mathematical trick".
+
+%Cosa vogliamo Fare
+The aim of this thesis is to review the original Peierls' procedure in every single step adapting it to a more rigorous and modern mathematical formalism.
+%Come lo Facciamo
+To take a step closer to the comprehension of this object we study the well-known geodesic problem regarding it as a special case of a field-like system.
+Essentially this example is noteworthy from two aspect:
+\begin{enumerate}
+	\item As a system with discrete degrees of freedom:
+	\begin{itemize}
+		\item The kinematic configurations are parametrized curves on a Riemannian manifold.
+				In other words this system is a very simple field with base manifold the real line $\Real$ and valued to the manifold $Q$. 
+				In this sense it represent a complementary example to the basic real scalar field.
+		\item The Cauchy data for systems of this type are simply pairs of finite-dimensional vectors.
+			According to the \emph{quantization procedure by initial data} the symplectic form associated to this system is unique and ,eventually, can be proved that it corresponds to that, generally different, constructed through the Peierls' method.
+	\end{itemize}
+
+	\item As a system dynamically ruled by the \emph{geodesic equation}:
+	\begin{itemize}
+		\item The equations of dynamics are generally higher non-linear. 
+		Typically, any realizations of the algebraic quantization scheme, including the Peierls' algorithm, require to pass through the linearization of the equations of motion which takes the name of \emph{Jacobi equations}.
+			\\
+			The solutions of such linearization are called \emph{Jacobi fields},
+			these are objects extensively studied from the point of view of differential geometry 
+			( where they are introduced as a tangent field over a geodesic variation) but rarely are approached as a field-like dynamical system.
+		\item The differential operator of Jacobi equations is \emph{normally hyperbolic}, this allows us to complete the quantization scheme according to two different procedure: 
+		the first one uses the Peierls bracket, exploiting the Green hyperbolicity and formal self-adjointness properties, 
+		the second is the initial data procedure, as hyperbolic operator in PDE sense.
+	\end{itemize}
+\end{enumerate}
+
+Since the field of Jacobi lends itself to be quantized both according to the Peierls procedure than according the initial data procedure,
+the comparison between the two symplectic forms thus obtained,
+It allows us to assign a geometric interpretation to the original Peierls' method.
+
+\vspace{3mm}
+%Sinossi
+Now that we have presented the main topics we are going to deal with and we have presented the motivations to study them, we briefly summarize the content of the thesis.
+
+The first chapter is devoted to review the mathematical framework  underlying to the rigorous formulation of continuous classical system, starting point of every algebraic quantization realizations.
+We begin introducing the smooth bundles which are the suitable object to encode the kinematical structure of a generic field system.
+Then we define the notion of globally hyperbolic spacetime as the natural playground where state the dynamic evolution of a field system as as well-defined initial data problem.
+Finally we outline the Green hyperbolic operator theory, the class of linear differential operator on a vector bundle to which applies the Pierels' brackets construction and the corresponding quantization procedure.
+
+Chapter 2 is dedicated to introducing the Peierls bracket construction procedure.
+In the first part we make use of the mathematical language developed above in order to formalize the correct abstract mechanical system for which it the Peierls procedure is well defined. Furthermore we will show how the most familiar mechanical systems, namely the point particle and the fundamental fields over a spacetime, can be treated in a unified way as special cases of the aforementioned abstract system.
+\\
+In the end we propose an extended version of the original Peierls' algorithm obtained combining the construction proposed in his paper\cite{Peierls1952} with some recent references, mainly \cite{Marolf1993}\cite{Dewitt1999}\cite{Forger2005}\cite{Sharan2010}\cite{Khavkine2014}.
+Basically we obtain the extension of the step-by-step procedure proposed by Peierls to a large class of abstact mechanical systems, no necessarily linear, instead of limiting ourselves to the scalar field case only.
+
+In order to pursue the study of the system in question it is necessary to introduce the scheme of algebraic quantization.
+To this end, the third chapter is focused to presenting two realization of the algebraic quantization scheme.
+The two are distinguished by the different construction of the pre-quantum symplectic space associated to the classical system.
+\\
+The first one is based on the restriction of the Peierls bracket to the class of \emph{classical observables}, the resulting symplectic form is sometimes prescribed axiomatically \cite{Dewitt1999}\cite{Esposito}\cite{Benini}.\\
+The second exploit the PDE hyperbolicity of the motion equations of the system and it is known as \emph{quantization by initial data}\cite{Wald1994}.
+
+In the last chapter we will apply all the formalism developed so far to the case of the geodesic field.
+We construct the Peierls bracket for such system and, as a  concrete example, we carry out all calculations for the specific case of a FRW spacetime spatially flat.
+Then we will construct two equivalent pre-quantum symplectic space related to the geodesic system following the step-by-step algorithm presented in chapter 3 .
+At last we propose a geometric picture of the whole Peierls construction.
+
+
+
+
+\end{document}

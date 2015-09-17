@@ -930,14 +930,15 @@ In this chapter we will take advantage of the language developed in the first ch
 		
 		Once seen as the perturbation $\epsilon \chi$ disturbs the solution $\gamma_0 \in \Sol$, it is possible to compute the effect of a perturbing density $\chi$ on the values of the functional $F_\omega$ associated to as second Lagrangian density $\omega$ as shown in equation \ref{EffectOperator}.
 		By a Taylor expansion arrested to the first order we can say that:
-		\begin{displaymath}
-			F_\omega \left( \gamma_\epsilon^{\, \pm} \right) [f]= \int f(t) 
-			\omega( t, \gamma_0^{\, i} + \epsilon \eta^i_\pm , \dot{\gamma}_0^{\, i} + \epsilon \dot{\eta}_\pm^i ) dt =
+		\begin{align*}
+			F_\omega \left( \gamma_\epsilon^{\, \pm} \right) [f]&= \int f(t) 
+			\omega( t, \gamma_0^{\, i} + \epsilon \eta^i_\pm , \dot{\gamma}_0^{\, i} + \epsilon \dot{\eta}_\pm^i ) dt = \\
+			& = 
 			F_\omega (\gamma_0) [f] + \epsilon \int f(t) \left[ 
 			\left. \frac{\partial\omega}{\partial q^i}\right\vert_{\gamma_0} \eta^i_\pm +
 			\left. \frac{\partial\omega}{\partial \dot{q}^i}\right\vert_{\gamma_0} \dot{\eta}^i_\pm 
 			 \right] dt
-		\end{displaymath}
+		\end{align*}
 		for any test function $f$.\\
 		Substituting this result in the definition of effect operator:
 		\begin{displaymath}

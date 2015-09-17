@@ -57,3 +57,12 @@
 \input{../Latex-Theorem/TheoremTemplateToninus.tex}
 
 
+%Fancyhdr http://tex.stackexchange.com/questions/118647/line-under-chapter-name-at-top-of-the-page
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[EL]{\nouppercase\leftmark}
+\fancyhead[OR]{\nouppercase\rightmark}
+\cfoot{\thepage}
+\fancyhead[ER,OL]{\thepage}
+

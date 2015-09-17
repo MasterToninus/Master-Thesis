@@ -275,22 +275,26 @@
 	Per Ripasso di FRW: \url{http://universeinproblems.com/index.php/Friedman-Lemaitre-Robertson-Walker_(FLRW)_metric#Problem_1:_expanding_baloon}
 	\end{Warning}
 	
-	We recall that the Friedmann–Lemaître–Robertson–Walker spacetime is a 4D homogeneous isotropic manifold that solves exactly the Einstein equations.
-	
-	 ... \danger
-	
+	We recall that the Friedmann–Lemaître–Robertson–Walker spacetimes are homogeneous and isotropic solutions of Einstein’s equations whose line element is:
 	\begin{equation}
-		ds^2 = dt^2 - a(t) \left( \frac{dr^2}{1-k r^2} + r^2 d\theta^2 + sin^2(\theta) d\phi^2\right)
+		ds^2 = -dt^2 + a^2(t) \left( \frac{dr^2}{1-k r^2} + r^2 d\theta^2 + sin^2(\theta) d\phi^2\right)
 	\end{equation}
 		where $0 < a(t) \in C^\infty	(\Real)$ is said \emph{scale factor} and $k$ is a constant normalizable to $\pm 1$ or $0$.
+		Accordingly with the three possible values of $k$, the assumptions of homogeneity and isotropy alone determine the spacetime metric up to the three discrete possibilities of spatial geometry.
+		Namely the manifold
+		Accordingly with the 
+		the background is R×Σ, where Σ is locally homeomorphic to R3, S3, the 3-sphere or H3, the three-dimensional hyperboloid.
+		This spacetime is topological equivalent (homeomorphic) to $\Real \times \Sigma$ where $\Sigma$ is a 3D manifolds which depends on the value of $k$:		
 		
+		
+		The assumptions of homogeneity and isotropy alone determine the spacetime metric up to the three discrete possibilities of spatial geometry.
 		This spacetime is topological equivalent (homeomorphic) to $\Real \times \Sigma$ where $\Sigma$ is a 3D manifolds which depends on the value of $k$:
 		
 		... \danger
 		
 		We want to construct the Peierls bracket for a simple base geodesic on the "flat" FRW solution:
 		\begin{displaymath}
-			ds^2 = dt^2 - a(t) \left( dx^2 + dy^2 + dz^2 \right)
+			ds^2 = -dt^2  a(t) \left( dx^2 + dy^2 + dz^2 \right)
 		\end{displaymath}
 		
 		In the conformal coordinates we find that
@@ -303,9 +307,14 @@
 		
 		Consider now the most simple isotropic observer:
 		\begin{displaymath}
-			\gamma(t)^\mu = ( u(t),0,0,0)
+			\gamma(t)^\mu = ( c(t),0,0,0)
 		\end{displaymath}
-		This is a geodesic if:
+		This is a geodesic iff:
+		\begin{displaymath}
+			c(t) = a + b t
+		\end{displaymath}
+		
+		% \url{http://www.nada.kth.se/~annak/greens1d_odes.pdf}
 		
 		
 		The Jacobi equation along this solution are:

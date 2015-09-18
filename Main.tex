@@ -1,9 +1,12 @@
 \documentclass{report}
 \usepackage{subfiles}
 
-\input{Preamble.tex}
-\usepackage[T1,T2A]{fontenc}
+%Flag che toggla il mio stile e le mie osservazioni..
+%era una cose che andava pensata prima! ora mi tocca rimettere a mano le mie osservazioni (messe nel cascione e il mio stile lasciato nella cartella "pre correzione"
+\newif\ifToninus
+\Toninustrue  %Commentare per ottenere la versione da stampare
 
+\input{Preamble.tex}
 
 \input{SymbolsGlossary}
 
@@ -41,7 +44,7 @@
 
 \subfile{Chapter4}
 
-\subfile{Conclusions}
+%\subfile{Conclusions}
 
 
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
@@ -50,11 +53,9 @@
 \nocite{*}
 
 \addcontentsline{toc}{chapter}{Bibliography}
-
+%\printbibliography
 	\bibliographystyle{plain}
-	\bibliography{bibliography}
-
-
+	\bibliography{ThesisBiblio}
 
 \end{document}
 

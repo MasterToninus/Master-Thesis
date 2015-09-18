@@ -266,62 +266,16 @@
 	
 
 \subsection{Example: Geodesic field on FRW space-time.}
+\ifToninus
 	\begin{Warning}
 	% qui i conti li devo ancora fare, 
-	l'idea è che le metriche possono essere diagonalizzate risulta un sistema di equazioni del moto ode disaccoppiate di cui posso calcolare la funzione di green come indicato nelle dispense che trattano il calcolo di green per le ode.
-	se ho l'operatore di green posso calcolare in esplicito le soluzioni perturbate e quindi le peierls.
-	Guardare pag 5 advance + pag 6 primer	
-	
-	Per Ripasso di FRW: \url{http://universeinproblems.com/index.php/Friedman-Lemaitre-Robertson-Walker_(FLRW)_metric#Problem_1:_expanding_baloon}
-	\end{Warning}
-	
-	We recall that the Friedmann–Lemaître–Robertson–Walker spacetimes are homogeneous and isotropic solutions of Einstein’s equations whose line element is:
-	\begin{equation}
-		ds^2 = -dt^2 + a^2(t) \left( \frac{dr^2}{1-k r^2} + r^2 d\theta^2 + sin^2(\theta) d\phi^2\right)
-	\end{equation}
-		where $0 < a(t) \in C^\infty	(\Real)$ is said \emph{scale factor} and $k$ is a constant normalizable to $\pm 1$ or $0$.
-		Accordingly with the three possible values of $k$, the assumptions of homogeneity and isotropy alone determine the spacetime metric up to the three discrete possibilities of spatial geometry.
-		Namely the manifold
-		Accordingly with the 
-		the background is  
-		This spacetime is topological equivalent (homeomorphic) to $\Real \times \Sigma$ where $\Sigma$ is a 3D manifolds which depends on the value of $k$:		
-		is locally homeomorphic to R3, S3, the 3-sphere or H3, the three-dimensional hyperboloid.
-		
-		The assumptions of homogeneity and isotropy alone determine the spacetime metric up to the three discrete possibilities of spatial geometry.
-		This spacetime is topological equivalent (homeomorphic) to $\Real \times \Sigma$ where $\Sigma$ is a 3D manifolds which depends on the value of $k$:
-		
-		... \danger
-		
-		We want to construct the Peierls bracket for a simple base geodesic on the "flat" FRW solution:
-		\begin{displaymath}
-			ds^2 = -dt^2  a(t) \left( dx^2 + dy^2 + dz^2 \right)
-		\end{displaymath}
-		
-		In the conformal coordinates we find that
-		
+	l'idea è che per scelta di metrica e geodetica semplici le equazioni di jacobi possono essere disaccoppiate a dare 4 ode di cui in linea di principio posso calcolare la funzione di green	
 
-		
-		On this manifolds the geodesic equation are
-		
-		\cite{Wald1984}
-		
-		Consider now the most simple isotropic observer:
-		\begin{displaymath}
-			\gamma(t)^\mu = ( c(t),0,0,0)
-		\end{displaymath}
-		This is a geodesic iff:
-		\begin{displaymath}
-			c(t) = a + b t
-		\end{displaymath}
-		
-		% \url{http://www.nada.kth.se/~annak/greens1d_odes.pdf}
-		
-		
-		The Jacobi equation along this solution are:
-	
-	
-	\begin{Warning}
-		La costruzione dell'esempio si articola in vari step:
+	\vspace{2mm}
+	Per Ripasso di FRW: \url{http://universeinproblems.com/index.php/Friedman-Lemaitre-Robertson-Walker_(FLRW)_metric#Problem_1:_expanding_baloon}
+
+	\vspace{2mm}
+	L'esempio deve articolarsi così:
 		\begin{enumerate}
 			\item Introdurre la Metrica FRW come fa CD (ricordare che è GH)
 			\item Calcolo Cristoffel (uso Mathematica)
@@ -337,7 +291,166 @@
 			\item limitandosi al caso di densità lagrangiane lineari trovo il disturbo e le peierls
 		\end{enumerate}
 	\end{Warning}
+\fi	
+	Let us compute the Peierls' bracket for the single special case of geodesic motion on Friedmann–Lemaître–Robertson–Walker spacetimes (FRW).
 	
+	We recall that the FRW spacetimes are homogeneous and isotropic solutions of Einstein’s equations.
+	These manifold are endowed with a line element of the form:
+	\begin{equation}
+		ds^2 = -dt^2 + a^2(t) \left( \frac{dr^2}{1-k r^2} + r^2 d\theta^2 + sin^2(\theta) d\phi^2\right)
+	\end{equation}
+		where $0 < a(t) \in C^\infty	(\Real)$ is said \emph{scale factor} and $k$ is a constant normalizable to $\pm 1$ or $0$.
+		The assumptions of homogeneity and isotropy alone determine the spacetime metric up to the three discrete possibilities of spatial geometry.
+		This spacetime is topological equivalent (homeomorphic) to $\Real \times \Sigma$ where $\Sigma$ is a 3D manifolds which depends on the value of $k$:
+		\begin{center}\begin{tabular}{l l}
+			$k = 1$ & $\Sigma \simeq S^3$ (3-sphere)\\
+			$k = 0$ & $\Sigma \simeq \Real^3$ (three-dimensional Euclidean space)\\
+			$k = -1$ & $\Sigma \simeq H^3$ ( three-dimensional hyperboloid)\\		
+		\end{tabular}\end{center}
+		\vspace{2mm}
+		
+		For the sake of simplicity let reduce ourselves to the case of \emph{flat} spatial geometry, \\textit{i.e.}:
+		\begin{displaymath}
+			ds^2 = -dt^2 + a^2(t) \left( dx^2 + dy^2 + dz^2\right) = g_{\mu \nu} dx^\mu dx^\nu
+		\end{displaymath}
+		in the \emph{cosmological} reference frame.
+\ifToninus
+	\begin{Warning}
+		Una possibile giustificazione a questa tesi è : evidenze sperimentali in ambito cosmologico suggeriscono che $k=0$
+	\end{Warning}
+\fi
+
+
+		In order to express the geodesic equations we have to compute the Christoffels symbols. According to the basic definition:
+		\begin{displaymath}
+			\Gamma^\lambda_{\, \mu \nu} = \frac{1}{2} g^{\lambda \sigma } \left( \partial_\mu g_{\sigma \nu} + \partial_\nu g_{\mu \sigma} - \partial_{\sigma}g_{\mu \nu} \right)
+		\end{displaymath}
+		we find that the non-vanishing components of $\Gamma^\lambda_{\, \mu \nu}$ are merely:
+			\begin{eqnarray}
+				\Gamma^0_{\, i i} &= a \dot{a} \\
+				\Gamma^i_{\, i 0} &= \Gamma^i_{\, 0 i} = \dfrac{\dot{a}}{a}
+			\end{eqnarray}
+			where we have used the usual convention to express with latin indices the spatial cordinate, with $0$ the time coordinate and with greek indices all the spacetimes coordinates.
+			
+			In the cosmological coordinate chart the geodesic equations are:
+			\begin{eqnarray}
+				\frac{d^2}{d \tau^2} \gamma^0 &= - a \dot{a} \left( \frac{d}{d \tau} \gamma^i \frac{d}{d \tau}\gamma_i \right) \label{FRWJacobi1}\\
+				\frac{d^2}{d \tau^2} \gamma^i &= - 2 \dfrac{\dot{a}}{a} \left( \frac{d}{d \tau} \gamma^0 \frac{d}{d \tau}\gamma^i \right) 		\label{FRWJacobi2}	
+			\end{eqnarray}
+			
+			Jacobi fields are dependant from the choice of a base geodesic. 
+			Let us consider a \emph{cosmological} observer:
+			\begin{displaymath}
+				\gamma^\mu (t) = \begin{bmatrix}  a_0 + m t \\  a_1 \\ a_2 \\ a_3  \end{bmatrix}
+				\qquad
+				T^\mu=\frac{d}{d t}\gamma^\mu(t)= \begin{bmatrix}  m \\  0 \\ 0 \\ 0  \end{bmatrix}
+			\end{displaymath}
+			Since we have parametrized the curve by coordinate $x^0 = t$ the covariant derivative in Eq. \label{JacobiEquationComponents}  corresponds to an ordinary derivative.
+\ifToninus
+	\begin{Warning}
+		Sul quaderno ho scritto un po' di più rifacendomi al discorso visto su wiki Jacobi Fields.
+	\end{Warning}
+\fi
+			Remembering the definition of Riemannian curvature:
+			\begin{displaymath}
+				{R^\sigma}_{\mu\nu\kappa} =
+				  {\partial{\Gamma^\sigma}_{\mu\nu} \over \partial x^\kappa} -
+				  {\partial{\Gamma^\sigma}_{\mu\kappa} \over \partial x^\nu} +
+				  {\Gamma^\lambda}_{\mu\nu}{\Gamma^\sigma}_{\kappa\lambda} -
+				  {\Gamma^\lambda}_{\mu\kappa}{\Gamma^\sigma}_{\nu\lambda}		
+			\end{displaymath}			 
+			we find by direct computation  that the non-null components of the Riemann curvature tensor are:
+			\begin{equation}
+				R^0_{\: i 0 i}= - R^{0}_{\: i i 0}= a \ddot{a} \qquad
+				R^i_{\: 0 0 i}=-R^i_{\: 0 i 0}=	\dfrac{\ddot{a}}{a}\qquad
+				R^i_{\: j i j} = - R^i_{\: j j i} = \dot{a}^2				
+			\end{equation}
+			then a Jacobi $X^\mu(t)$ along the time-like geodesic $\gamma(t)$ satisfies the following uncoupled homogeneous equations:
+			\begin{eqnarray}
+				&\frac{d^2}{d \tau^2} X^0 = 0 \\
+				&\frac{d^2}{d \tau^2} X^i = - m^2 R^{\mu}_{\: 0 \nu 0} X^\nu = \left( m^2 \frac{\ddot{a}}{a}\right) X^i 			
+			\end{eqnarray}	
+			\vspace{2mm}
+			
+			Regarding this problem as a field system, we can say that the operator $P$ ruling the dynamics is diagonal:
+			\begin{displaymath}
+				P X =
+				 \begin{bmatrix}  
+				 \left(\frac{d}{dt}\right)^2 & 0 \\
+				 0 & \IdOp \left( \left(\frac{d}{dt}\right)^2 - m^2 \frac{\ddot{a}}{a} \right)
+				 \end{bmatrix}
+				 \begin{bmatrix} X^0 \\ X^i  \end{bmatrix}
+				 = 0
+			\end{displaymath}
+			Then the corresponding linear operator is also diagonal:
+			\begin{displaymath}
+				G =
+				 \begin{bmatrix}  
+				 G_0 & 0 \\
+				 0 & G_i
+				 \end{bmatrix}
+			\end{displaymath}		
+			where $G_0$ and $G_1$ are the Green operator of the ordinary differential operator $\left(\frac{d}{dt}\right)^2$ and $\left( \left(\frac{d}{dt}\right)^2 - m^2 \frac{\ddot{a}}{a} \right)$ respectively.
+			Namely this operators are the Hilbert–Schmidt integral operator:
+			\begin{displaymath}
+				G_\mu f = \int_\Real G_\mu( x \vert \xi ) f(\xi) d\xi
+			\end{displaymath}
+			where the kernel function $G( x \vert \xi ) $ it is known as \emph{Green function} and satisfies the following equation:
+			\begin{displaymath}
+				P_\mu G_\mu( x | \xi) = \delta( x - \xi)
+			\end{displaymath}
+\ifToninus
+	\begin{remark}
+		\danger .. L'utilizzo principale di questi oggetti è per il calcolo della soluzione particolare delle ODE inomogenee.
+	\end{remark}
+\fi			
+			In the specific case of second order ODE the general green function can be explicitly computed as a linear combination of two linearly independent solutions $y_1$ and $y_2$:
+			\begin{equation}
+			\begin{cases}
+                        G( x \vert \xi) = \theta( x - \xi) \left(d_1 y_1(t) + d_2 y_2(t) \right) + \theta( x - \xi) \left(c_1 y_1(t) + c_2 y_2(t) \right) \\
+						y_1(\xi) (c_1-d_1) + y_2(\xi) ( c_2 - d_2) = 0 \\
+						\dot{y}_1(\xi) (c_1-d_1) + \dot{y}_2(\xi) ( c_2 - d_2) = -1 \\
+            \end{cases}
+			\end{equation}
+			where the two undetermined parameters depend on the eventual boundary conditions.
+\ifToninus
+	\begin{Warning}
+		Sarebbe stato carino fare un'appendice sul metodo del calcolo delle green per le ode componendo due soluzioni di omogenea \cite{Tornberg}.
+	\end{Warning}
+\fi		
+			(For a quick reference see for example \cite{Tornberg}.)
+			
+			As a linear autonomous ordinary differential equation Eq. \ref{FRWJacobi1} advaced and retarded green functions can be promptly computed:
+			\begin{eqnarray*}
+				G^+_0(t \vert \xi) = \theta(t-\xi) \left(a +b t \right) \\
+				G^-_0( t \vert \xi) = \theta(\xi -t) \left( a +b t + \xi -t\right)
+			\end{eqnarray*}
+
+			In other hand, since coefficient $m^2 \frac{\ddot{a}(t)}{a(t)}$ it is generally time dependant,  Eq. \ref{FRWJacobi2} it's non-autonomous and do not exists any analitical expression of the general solution.
+\ifToninus
+	\begin{Warning}	
+		Anche un'appendice sul calcolo delle green sfruttando lo sviluppo di Dyson e quello di Magnus ( Partendo come spunto dall'articolo \cite{Dappiaggi2014}) non sarebbe stata male. ma è venuto il tempo di concludere.
+	\end{Warning}
+\fi	
+			However it is possible to express the corresponding Green function as a convergent Dyson expansion\cite{Dappiaggi2014}.
+			The idea is to consider the non-autonomous term $V(t) = -m^2 \frac{\ddot{a}(t)}{a(t)}$ as if it were a perturbing potential.\\
+			Calling $G^\pm_0 (t \vert \xi)$ the green function of operator $P_{0 0}=\left(\frac{d}{dt}\right)^2$, the time-independent part of differential operator $P_{i i}=\left( \left(\frac{d}{dt}\right)^2 - m^2 \frac{\ddot{a}}{a} \right)$, we can express the Green function of $P_{i i}$ as follow:
+			
+			\begin{align*}
+				G^+ ( \tau \vert \tau' ) = G^+_0( \tau \vert \tau' ) + \sum_{n=1}^\infty (-)^n 
+				\int_{-\infty}^\tau dt_1 \cdots \int_{-\infty}^{t_{n-1}} dt_{n-1} 
+				& \times	  G^+_0(\tau \vert t_1) G^+_0(t_1\vert t_2) \cdots G^+_0(t_{n-1} \vert t_n) \times \\
+				& \times  V(t_1) V(t_2) \cdots V(t_n) \times \\
+				& \times  G^+_0 (t_n \vert \tau' ) \\
+			\end{align*}		
+			respectively $G^-$  can be obtained considering the anticipated Green function $G^-_0$ and integrating from $t$ to $+\infty$.
+			
+			
+		
+		
+		 		
+		\cite{Wald1984}
+		
 
 \section{Algebraic quantization of the Geodesic Field}
 	The algebraic quantization scheme applies only to %linear field systems.

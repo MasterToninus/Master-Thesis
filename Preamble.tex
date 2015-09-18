@@ -28,8 +28,11 @@
 %Slash over letter
 \usepackage{cancel}
 
-%Usare bibiliografia bibtex
-%\bibliographystyle{plain}
+%Usare bibiliografia biblatex
+%\usepackage[style=numeric,natbib=true]{biblatex}
+%\addbibresource{ThesisBiblio.bib}
+
+
 
 %Danger sign
 \usepackage{fourier}
@@ -49,13 +52,16 @@
 %Common symbols
 \input{../Math-Symbols-List/CommonSymbols.tex}
 
-%Accented Letters
+%Accented Letters  (lot of stuff... got problems with dieresys)
 \usepackage[utf8]{inputenc}
 
-%Temporaneo, Aggiunta della mia classe teorem... Deve diventare un pacchetto!
-%\input{../Latex-Theorem/TheoremTemplateToninus_plain.tex}
-\input{../Latex-Theorem/TheoremTemplateToninus.tex}
 
+%Temporaneo, Aggiunta della mia classe teorem... Deve diventare un pacchetto!
+\ifToninus
+\input{../Latex-Theorem/TheoremTemplateToninus.tex}
+\else
+\input{../Latex-Theorem/TheoremTemplateToninus_plain.tex}
+\fi
 
 %Fancyhdr http://tex.stackexchange.com/questions/118647/line-under-chapter-name-at-top-of-the-page
 \usepackage{fancyhdr}
@@ -65,4 +71,3 @@
 \fancyhead[OR]{\nouppercase\rightmark}
 \cfoot{\thepage}
 \fancyhead[ER,OL]{\thepage}
-

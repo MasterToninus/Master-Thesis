@@ -1,31 +1,51 @@
 \documentclass[Main]{subfiles}
 \begin{document}
 
-\chapter*{Conclusions}
-\addcontentsline{toc}{chapter}{Conclusions}
-
-%DIre per l'ennesima volta cosa si è fatto..
-Il confronto con le numerose fonti analizzate ci ha permesso di sintetizzare, in un linguaggio più moderno e rigoroso,  l'algoritmo  di costruzione  delle parantesi proposto da Peierls per una classe di sistemi abbastanza generale: Lagrangiani con operatore del moto Green-Iperbolico e con Operatori di Green unici.
-
+\chapter*{Conclusions and outlook}
+\addcontentsline{toc}{chapter}{Conclusions and outlook}
+\ifToninus
+\section{Ennesimo sommario}
+	Ripetere di nuovo cosa si è fatto nella tesi (al passato)
+		
+\fi
+We shall now briefly summarize our results.
+\\
+In Chapter 1 we have reviewed the basic mathematical structures which underlie to the rigorous treatment of any field theories on curved background. The smooth fiber bundles are the natural objects to encompass the kinematics of a system, the imposition of the globally hyperbolic condition on the base spacetime permits to depict a deterministic classical dynamics reconstructable  by the choice of an appropriate set of initial data while the Green-hyperbolic operators are an abstract general class of equations which strictly resemble the wave-like propagation.
+\\
+In Chapter 2 we've dealt with the problem of the Peierls brackets construction for theories not necessarily linear .
+In the first instance we have identified a general class of systems for which the original Peierls' algorithm applies without incisive changes. We have shown that this class is not a mere academic exercise but include all the classical Lagrangian systems regardless of the cardinality of the degrees of freedom.
+For such class we revived the Peierls' procedure in details, adapting all its step to the language currently in use in the modern algebraic theory of fields.
+\ifToninus
+	Il confronto con le numerose fonti analizzate ci ha permesso di sintetizzare, in un linguaggio più moderno e rigoroso,  l'algoritmo  di costruzione  delle parantesi proposto da Peierls per una classe di sistemi abbastanza generale: Lagrangiani con operatore del moto Green-Iperbolico e con Operatori di Green unici.
+\fi
+\\
+We have devoted Chapter 3 to review the algebraic quantization procedure describing two different realization.
+We paid particular attention to the different "pre-quantum" structures which can be attributed to the classical theory to be quantized.
+In the first procedure we have stressed how the 2-form on the classical symplectic space, which in most part of our references tends to be postulated, may instead be derived from the more general Peierls brackets.
+Regarding the second, non covariant, construction of \emph{quantization by initial data}, we showed how it can be compared with the first procedure and how, in rather important case as the scalar field theory, it can be proved to be equivalent.
+\ifToninus
 Abbiamo sottolineato come da questa costruzione si possano ottenere in modo pressochè immediato la struttura simplettica di pre-quantizzazione che usualmente viene assunta come un postulato negli schemi di quantizzazione algebrica.
-
-Abbiamo realizzato le parentesi di Peierls e due schemi di quantizzazione algebrica per l'esempio insolito del \emph{Moto Geodetico} e fatto emergere un legame tra le forme simplettiche ottenute tramite queste due differenti costruzioni.
-
-To chapter 
-
+\fi
+\\
+In the last Chapter we have realized the Peierls brackets and the two procedure of algebraic quantization to the case of Geodesic motion.
+We brought down the explicit calculation of the Peierls' symplectic form in the special case of Jacobi fields along the isotropic, homogeneous, free-falling  observers in De Sitter spacetimes. This simple example made clear that under the rather elegant expression $\{\chi, \omega\} \coloneqq ( \chi, E \omega)$ lie nontrivial calculations, in particular regarding the explicit expression of the Green operators for the ordinary differential equations of Jacobi.
+At last we proved the equivalence between the algebraic quantization by Peierls bracket and by initial data.
 
 \vspace{2mm}%Possibili estensioni del Lavoro
 
+\ifToninus
+\section{Outlook}
+Ipotizzare possibili estensioni di questo lavoro.
 
-	Great emphasis should be pointed on the reproposition of the construction procedure  originally proposed by Peierls in a more rigorous and modern fashion, stating the equivalence with the more recent presentation suggested by DeWitt, and connecting to the modern abstract approach\cite{Khavkine} involving variational bicomplex.
-	Currently there's lack of bibliography on the theme  that hinders the recognition of the role of this object among the schemes of Algebraic quantization.
-
-
-%second
-
- Extend the work of the paper of  Forger and Romero\cite{Forger} from the point of view of differential calculus on infinite dimensional manifolds.
-	The main advantage of this approach, would be to make clear the parallelism between the geometrical mechanics of ordinary finite dimensional systems and fields. To this extent the calculus of variation will assume a pivotal role since the variations could be seen as tangent vectors over the manifold of  kinematic configurations.
-	Essentially, I propose to review the key findings in non-linear global analysis from the point of view of the geometric mechanics of system with infinite degrees of freedom.
-	A good starting point might be the work of Palais\cite{Palais} on the analysis of smooth sections spaces.
+\fi
+To close, let us discuss  some possible extensions of our work.
+	In the courses of this thesis we have tried to keep our mathematical formalization not excessively sophisticated. 
+	Currently are under examinations further extensions of the Peierls construction to non Lagrangian fields or to systems with Gauge freedom ( see for example \cite{Khavkine} ), all of these are based on the variational bicomplex formalism \cite{G.Sardanashvily2013}.
+	We have preferred to keep the level of our discussion to an introductory level since the current lack of bibliography on the theme are hinders the recognition of the role of the Peierls brackets among the schemes of Algebraic quantization.
 	
+	It is not new in the literature the idea of realizing the equivalent of geometric mechanics for systems with continuous degrees of freedom. Such formalism is currently based on the concept of \emph{“covariant phase space”} which is usually defined as the (infinite-dimensional) space of solutions of the equations of motion. 
+				This geometric theory fits neatly into the philosophy underlying the symplectic formalism in general; in particular, it admits a natural definition of the Poisson bracket through the Peierls construction.
+		The main advantage of this approach, would be to make clear the parallelism between the geometrical mechanics of ordinary finite dimensional systems and fields. 
+		Its main drawback is the lack of mathematical rigor, since it is often restricted to the formal extrapolation of techniques from ordinary calculus on manifolds to the infinite-dimensional setting: transforming such formal results into mathematical theorems is a separate problem, often highly complex and difficult.		
+		The application of the modern results in non-linear global analysis in this topic are currently not extensively investigated.
 	\end{document}

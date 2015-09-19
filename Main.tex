@@ -5,8 +5,8 @@
 %era una cose che andava pensata prima! ora mi tocca rimettere a mano le mie osservazioni (messe nel cascione e il mio stile lasciato nella cartella "pre correzione"
 \newif\ifToninus
 \Toninustrue  %Commentare per ottenere la versione da stampare
-
 \input{Preamble.tex}
+\Toninusfalse
 
 \input{SymbolsGlossary}
 
@@ -20,8 +20,9 @@
 %  Titolo
 \maketitle
 
+\pagenumbering{roman}
 % Abstract
-\input{abstract.tex}
+\subfile{abstract.tex}
 
 %List of symbols
 \addcontentsline{toc}{chapter}{List of symbols}
@@ -33,7 +34,8 @@
 
 
 %% my document content
-
+\clearpage
+\pagenumbering{arabic}
 \subfile{Introduction}
 
 \subfile{Chapter1}
@@ -44,7 +46,7 @@
 
 \subfile{Chapter4}
 
-%\subfile{Conclusions}
+\subfile{Conclusions}
 
 
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_

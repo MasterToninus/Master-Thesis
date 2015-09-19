@@ -780,15 +780,20 @@ In this chapter we will take advantage of the language developed in the first ch
 			
    		
 		\subsubsection{Effect Operator}
-		Considering an arbitrary continuous\footnote{The precise notion of continuity require the specification of a (infinite dimensional) manifold structure on $\Conf$.} functional $B: \Sol \rightarrow \Real$ (not necessarily linear) we can define the effect of a perturbation on the values of $B$\cite[pag. 5]{Marolf1993} as a map:
+		Considering an arbitrary continuous\footnote{The precise notion of continuity require the specification of a (infinite dimensional) manifold structure on $\Conf$.} functional $B: \Conf \rightarrow \Real$ (not necessarily linear) we can define the effect of a perturbation on the values of $B$\cite[pag. 5]{Marolf1993} as a map:
 		\begin{displaymath}
-			\gls{EffectOp} : C^1(\Sol,\Real) \rightarrow C^1(\Sol,\Real)
+			\gls{EffectOp} : C^1(\Conf,\Real) \rightarrow C^1(\Conf,\Real)
 		\end{displaymath}
 		\begin{equation}\label{EffectOperator}
 		\EffectOp_\chi^\pm B ( \phi_0) 
 		\coloneqq \lim_{\epsilon \rightarrow 0}
 		 \biggr( \frac{B(\phi_\epsilon^\pm) - B (\phi_0)}{\epsilon} \biggr)
 		\end{equation}
+\ifToninus
+	\begin{Warning}
+		Nella stesura originale consideravo solo fuzionali B su Sol..  questo non poteva avere senso perchè $\phi_\epsilon$ non è in $\Sol$!
+	\end{Warning}
+\fi
 		The advanced and retarded effects of $\chi$ on B are then defined by comparing the original system with a new system defined by the same kinematic configuration space $\Conf$ but with perturbed Lagrangian.
 		\\
 %		\begin{observation}

@@ -334,18 +334,17 @@
 			
 			In the cosmological coordinate chart the geodesic equations are:
 			\begin{eqnarray}
-				\frac{d^2}{d \tau^2} \gamma^0 &= - a \dot{a} \left( \frac{d}{d \tau} \gamma^i \frac{d}{d \tau}\gamma_i \right) \label{FRWJacobi1}\\
-				\frac{d^2}{d \tau^2} \gamma^i &= - 2 \dfrac{\dot{a}}{a} \left( \frac{d}{d \tau} \gamma^0 \frac{d}{d \tau}\gamma^i \right) 		\label{FRWJacobi2}	
+				\frac{d^2}{d \tau^2} \gamma^0 &= - a \dot{a} \left( \frac{d}{d \tau} \gamma^i \frac{d}{d \tau}\gamma_i \right) \label{FRWGeo1}\\
+				\frac{d^2}{d \tau^2} \gamma^i &= - 2 \dfrac{\dot{a}}{a} \left( \frac{d}{d \tau} \gamma^0 \frac{d}{d \tau}\gamma^i \right) 		\label{FRWGeo2}	
 			\end{eqnarray}
 			
 			Jacobi fields are dependant from the choice of a base geodesic. 
-			Let us consider a \emph{cosmological} observer:
+			Let us consider the a simple time-like geodesic, namely the \emph{cosmological} free-falling observer:
 			\begin{displaymath}
 				\gamma^\mu (t) = \begin{bmatrix}  a_0 + m t \\  a_1 \\ a_2 \\ a_3  \end{bmatrix}
 				\qquad
 				T^\mu=\frac{d}{d t}\gamma^\mu(t)= \begin{bmatrix}  m \\  0 \\ 0 \\ 0  \end{bmatrix}
 			\end{displaymath}
-			Since we have parametrized the curve by coordinate $x^0 = t$ the covariant derivative in Eq. \label{JacobiEquationComponents}  corresponds to an ordinary derivative.
 \ifToninus
 	\begin{Warning}
 		Sul quaderno ho scritto un po' di più rifacendomi al discorso visto su wiki Jacobi Fields.
@@ -365,11 +364,11 @@
 				R^i_{\: 0 0 i}=-R^i_{\: 0 i 0}=	\dfrac{\ddot{a}}{a}\qquad
 				R^i_{\: j i j} = - R^i_{\: j j i} = \dot{a}^2				
 			\end{equation}
-			then a Jacobi $X^\mu(t)$ along the time-like geodesic $\gamma(t)$ satisfies the following uncoupled homogeneous equations:
+			Since we have parametrized the curve by coordinate $x^0 = t$ the covariant derivative in Eq. \ref{JacobiEquationComponents}  corresponds to an ordinary derivative, then a Jacobi $X^\mu(t)$ along the time-like geodesic $\gamma(t)$ satisfies the following uncoupled homogeneous equations:
 			\begin{eqnarray}
-				&\frac{d^2}{d \tau^2} X^0 = 0 \\
-				&\frac{d^2}{d \tau^2} X^i = - m^2 R^{\mu}_{\: 0 \nu 0} X^\nu = \left( m^2 \frac{\ddot{a}}{a}\right) X^i 			
-			\end{eqnarray}	
+				\frac{d^2}{d t^2} X^0  &=& 0 \label{FRWJacobi1}\\
+				\frac{d^2}{d t^2} X^i &= &- m^2 R^{\mu}_{\: 0 \nu 0} X^\nu = \left( m^2 \frac{\ddot{a}}{a}\right) X^i 	\label{FRWJacobi2}	
+			\end{eqnarray}			
 			\vspace{2mm}
 			
 			Regarding this problem as a field system, we can say that the operator $P$ ruling the dynamics is diagonal:
@@ -382,29 +381,34 @@
 				 \begin{bmatrix} X^0 \\ X^i  \end{bmatrix}
 				 = 0
 			\end{displaymath}
-			Then the corresponding linear operator is also diagonal:
+			
+			The main difficulty to face in the explicit Peierls brackets construction is the computation of the Green operator of $P$.
+			In this case we can say with certainty that both Green operators are diagonal:
 			\begin{displaymath}
-				G =
+				G^\pm =
 				 \begin{bmatrix}  
-				 G_0 & 0 \\
-				 0 & G_i
+				 G\pm_0 & 0 \\
+				 0 & G^\pm_i
 				 \end{bmatrix}
 			\end{displaymath}		
-			where $G_0$ and $G_1$ are the Green operator of the ordinary differential operator $\left(\frac{d}{dt}\right)^2$ and $\left( \left(\frac{d}{dt}\right)^2 - m^2 \frac{\ddot{a}}{a} \right)$ respectively.
-			Namely this operators are the Hilbert–Schmidt integral operator:
+			where $G^\pm_0$ and $G^\pm_i$ are the Green operators of the only two ODE involved:
 			\begin{displaymath}
-				G_\mu f = \int_\Real G_\mu( x \vert \xi ) f(\xi) d\xi
+				P_0 = \left(\frac{d}{dt}\right)^2 \qquad P_i=\left( \left(\frac{d}{dt}\right)^2 - m^2 \frac{\ddot{a}}{a} \right)
 			\end{displaymath}
-			where the kernel function $G( x \vert \xi ) $ it is known as \emph{Green function} and satisfies the following equation:
+			Namely these operators are the Hilbert–Schmidt integral operators:
 			\begin{displaymath}
-				P_\mu G_\mu( x | \xi) = \delta( x - \xi)
+				G^\pm_\mu f = \int_\Real G^\pm_\mu( x \vert \xi ) f(\xi) d\xi
 			\end{displaymath}
+			where the kernel function $G^\pm( x \vert \xi ) $ it is known as \emph{Green function} and satisfies the fundamental distributional equation:
+			\begin{equation}\label{Eq:FoundamentalEquation}
+				P_\mu G^\pm_\mu( x | \xi) = \delta( x - \xi)
+			\end{equation}
 \ifToninus
 	\begin{remark}
 		\danger .. L'utilizzo principale di questi oggetti è per il calcolo della soluzione particolare delle ODE inomogenee.
 	\end{remark}
 \fi			
-			In the specific case of second order ODE the general green function can be explicitly computed as a linear combination of two linearly independent solutions $y_1$ and $y_2$:
+			In the specific case of second order ODE the general Green function  - solution of equation \ref{Eq:FoundamentalEquation} - can be explicitly computed as a linear combination of two linearly independent solutions $y_1$ and $y_2$ of the homogeneous problem:
 			\begin{equation}
 			\begin{cases}
                         G( x \vert \xi) = \theta( x - \xi) \left(d_1 y_1(t) + d_2 y_2(t) \right) + \theta( x - \xi) \left(c_1 y_1(t) + c_2 y_2(t) \right) \\
@@ -420,13 +424,13 @@
 \fi		
 			(For a quick reference see for example \cite{Tornberg}.)
 			
-			As a linear autonomous ordinary differential equation Eq. \ref{FRWJacobi1} advaced and retarded green functions can be promptly computed:
+			 Eq. \ref{FRWJacobi1} is a linear autonomous ordinary differential equation, the advaced and retarded Green functions can be promptly computed:
 			\begin{eqnarray*}
 				G^+_0(t \vert \xi) = \theta(t-\xi) \left(a +b t \right) \\
 				G^-_0( t \vert \xi) = \theta(\xi -t) \left( a +b t + \xi -t\right)
 			\end{eqnarray*}
 
-			In other hand, since coefficient $m^2 \frac{\ddot{a}(t)}{a(t)}$ it is generally time dependant,  Eq. \ref{FRWJacobi2} it's non-autonomous and do not exists any analitical expression of the general solution.
+			In other hand, since coefficient $m^2 \frac{\ddot{a}(t)}{a(t)}$ it is generally time dependant,  Eq. \ref{FRWJacobi2} it's non-autonomous and do not exists an analytical expression of its general solution.
 \ifToninus
 	\begin{Warning}	
 		Anche un'appendice sul calcolo delle green sfruttando lo sviluppo di Dyson e quello di Magnus ( Partendo come spunto dall'articolo \cite{Dappiaggi2014}) non sarebbe stata male. ma è venuto il tempo di concludere.
@@ -434,31 +438,82 @@
 \fi	
 			However it is possible to express the corresponding Green function as a convergent Dyson expansion\cite{Dappiaggi2014}.
 			The idea is to consider the non-autonomous term $V(t) = -m^2 \frac{\ddot{a}(t)}{a(t)}$ as if it were a perturbing potential.\\
-			Calling $G^\pm_0 (t \vert \xi)$ the green function of operator $P_{0 0}=\left(\frac{d}{dt}\right)^2$, the time-independent part of differential operator $P_{i i}=\left( \left(\frac{d}{dt}\right)^2 - m^2 \frac{\ddot{a}}{a} \right)$, we can express the Green function of $P_{i i}$ as follow:
+			Remembering that $G^\pm_0 (t \vert \xi)$ is the Green function of operator \ifToninus$P_{0}=\left(\frac{d}{dt}\right)^2$\else$P_0$\fi, which can be seen as the time-independent part of differential operator \ifToninus$P_{i i}=\left( \left(\frac{d}{dt}\right)^2 - m^2 \frac{\ddot{a}}{a} \right)$\else$P_i$\fi, we can express the Green function of $P_{i}$ as follow:
 			
 			\begin{align*}
-				G^+ ( \tau \vert \tau' ) = G^+_0( \tau \vert \tau' ) + \sum_{n=1}^\infty (-)^n 
+				G^+_i ( \tau \vert \tau' ) = G^+_0( \tau \vert \tau' ) + \sum_{n=1}^\infty (-)^n 
 				\int_{-\infty}^\tau dt_1 \cdots \int_{-\infty}^{t_{n-1}} dt_{n-1} 
 				& \times	  G^+_0(\tau \vert t_1) G^+_0(t_1\vert t_2) \cdots G^+_0(t_{n-1} \vert t_n) \times \\
 				& \times  V(t_1) V(t_2) \cdots V(t_n) \times \\
 				& \times  G^+_0 (t_n \vert \tau' ) \\
 			\end{align*}		
-			respectively $G^-$  can be obtained considering the anticipated Green function $G^-_0$ and integrating from $t$ to $+\infty$.
+			similarly $G^-_i$  can be obtained considering the anticipated Green function $G^-_0$ and integrating from $t$ to $+\infty$.
 			
 			\vspace{2mm}
-		Anyway all this machinery it is not necessary in the case that the coefficient $\ddot{a}/a$ is a positive constant, \textit{i.e.} in  the \emph{De Sitter} spacetimes where $ a(t) = exp(H t)$.  \cite{Wald1984}
-		In this case the general solutions are:
+		Anyway all this machinery it is not necessary in the special case of where \emph{De Sitter} spacetimes where $ a(t) = exp(H t)$ and the coefficient $\ddot{a}/a$ is a positive constant.  \cite{Wald1984}\\
+		In this case the general solutions are simply:
 		\begin{displaymath}
 		 y(t) = c_1 e^{m t \sqrt{\ddot{a}/a}} + c_2 e^{-m t \sqrt{\ddot{a}/a}}
 		\end{displaymath}
-					\begin{equation}
-			\begin{cases}
-                        G( x \vert \xi) = \theta( x - \xi) \left(d_1 y_1(t) + d_2 y_2(t) \right) + \theta( x - \xi) \left(c_1 y_1(t) + c_2 y_2(t) \right) \\
-						y_1(\xi) (c_1-d_1) + y_2(\xi) ( c_2 - d_2) = 0 \\
-						\dot{y}_1(\xi) (c_1-d_1) + \dot{y}_2(\xi) ( c_2 - d_2) = -1 \\
-            \end{cases}
-			\end{equation}
-		
+		and the Green functions can be expressed as follows:
+			\begin{eqnarray*}
+				G^+_i(t \vert \xi) &=& \theta( x - \xi) \left(a e^{m t \sqrt{\ddot{a}/a}} + b e^{-m t \sqrt{\ddot{a}/a}}\right) \\
+				G^-_i( t \vert \xi) &=& \theta(\xi -t) \left( 
+				\left(a-\frac{e^{-\xi m \sqrt{\ddot{a}/a}}}{2 m \sqrt{\ddot{a}/a}} \right) e^{m t \sqrt{\ddot{a}/a}}+
+				\left(b +\frac{e^{\xi m \sqrt{\ddot{a}/a}}}{2 m \sqrt{\ddot{a}/a}} \right) e^{m t \sqrt{\ddot{a}/a}}			
+				\right)
+			\end{eqnarray*}
+
+			Combing all these results we're able to give an explicit expression of the Peierls symplectic form $\tau$- as defined in Eq. 	\ref{Def:SymplecticTau}- for the De Sitter spacetime.
+			For any pair $(X, Y)$ of compactly supported fields over $\gamma(t)$ we have:
+			\begin{align*}
+			\{X ,Y \} =&\int \left\langle X, \left(\GreenAdv - \GreenRet \right)Y \right\rangle dt =	\\
+			=&
+			\int_\Real dt  
+				 \begin{bmatrix}  
+					 X^0(t) & \vec{X}(t) \\
+				 \end{bmatrix}
+				 \begin{bmatrix}  
+				 	-1 & 0 \\
+				 	0 & a^2(t)\IdOp
+				 \end{bmatrix}			
+				 \begin{bmatrix}  
+				 	(G^-_0 - G^+_0) & 0 \\
+				 	0 & (G^-_i - G^+_i)
+				 \end{bmatrix}	
+				 \begin{bmatrix}  
+				 	Y^0(t) \\ \vec{Y}(t)
+				 \end{bmatrix}	
+				 = \\
+			=&
+				\int_\Real dt  \left(
+					-X^0(t) (G^-_0 - G^+_0)Y^0(t)+
+					a^2(t)\vec{X} \cdot (G^-_i- G^+_i)\vec{Y}(t)
+				\right) = \\
+			=&
+				\int_\Real dt 				\int_\Real d\xi \left(
+					-X^0(t)Y^0(\xi)\left(
+					\theta(\xi -t) \left( a +b t + \xi -t\right) -  \theta(t-\xi) \left(a +b t \right)
+					\right) \right. +\\
+			&+
+					\int_\Real dt 				\int_\Real d\xi a^2(t) \left(
+					\vec{X}(t) \cdot \vec{Y}(\xi)
+					\left(
+					 \theta(\xi -t) \left( 
+				\left(a-\frac{e^{-\xi m \sqrt{\ddot{a}/a}}}{2 m \sqrt{\ddot{a}/a}} \right) e^{m t \sqrt{\ddot{a}/a}}+
+				\left(b +\frac{e^{\xi m \sqrt{\ddot{a}/a}}}{2 m \sqrt{\ddot{a}/a}} \right) e^{m t \sqrt{\ddot{a}/a}}			
+				\right)\right)
+					\right)+ \\
+			&-
+					\int_\Real dt 				\int_\Real d\xi a^2(t) \left( 
+					\vec{X}(t)\cdot \vec{Y}(\xi)
+						 \left( 
+							\theta( x - \xi) \left(a e^{m t \sqrt{\ddot{a}/a}} + b e^{-m t \sqrt{\ddot{a}/a}}\right)
+						\right)
+					\right)
+			\end{align*}						
+
+			
 		
 
 \section{Algebraic quantization of the Geodesic Field}
@@ -673,9 +728,27 @@
 		$(\Obs, \tau)$ and $(\Sol, \sigma)$ are isomorphic not only as vector spaces but also as symplectic spaces.
 
 \section{Interpretations??????}
+\ifToninus
 	\begin{Warning}
-		Speriamo bene.. :S
+		\begin{itemize}
+			\item 		è evidente che una costruzione così articolata non si presta ad un'interpretazione geometrica immediata.
+			\item 		Ciò che mi sfugge totalmente è in che modo jacobi ci aiuta a dare  un'interpretazione geometrica.
+			\item		Keyword: covariant phase space...  Forger ROmero è pieno di spunti interessanti anche Khavkine... ma mi sembra chiaro che qualsiasi interpretazione geometrica non scampi da un pensante inserto di teoria dei campi classici (variational bicomplex and so on)
+			\item		Il grande open problem di questo formalismo geometrico è che molti punti sono calcolo formale tirato di peso dalla teoria a gradi finiti la cui corretta definizione matematica latita.. Analisi globali e teoria delle variazioni vera.
+			\item anche se posticipassi la tesi di un mese  e mezzo temo mi ci vorrebbe assai di più per comprendere a pieno queste fonti.. Soprattuto dovrei partire ancora dai metodi matematici, unico punto da cui cominciare è qualcosa di Shardanashivly.
+			\item la cosa che mi rode è che riassunto e titolo dati alla commissione parlano di interpretazioni Geometriche e io non ne ho nemmeno una., soprattuto non ho nessun insight legato al problema dei campi di Jacobi.
+			
+		\end{itemize}
+		
+		
+
 	\end{Warning}
+\fi
+
+
+
+
+
 
 \end{document}
 

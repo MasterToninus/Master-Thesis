@@ -186,7 +186,7 @@ In the next sections we review two of the possible realizations of the algebraic
    		The concrete construction is achieved in three steps.
    		
  			\subparagraph{PreObservables}
- 				They are defined as a class of \emph{"off-shell"} functionals on $\Conf$
+ 				They are defined as a class of \emph{"off-shell"} functionals on $\Conf$:
    							\begin{displaymath}
    								\Obs_0 \coloneqq \big\{ F_f: \Conf \rightarrow \Real ;  F_f(\phi)=( f, \phi) \forall \phi \in \Conf \:\vert
    								\:  f \in \Gamma_0^\infty(E)	\big\}
@@ -375,7 +375,7 @@ In the next sections we review two of the possible realizations of the algebraic
 						 Notice that the dependence on the test solution $\phi_0$ has disappeared.
 					\item Finally the Peierls brackets expression can be stated as :
 						\begin{equation}\label{Def:SymplecticTau}
-							\tau\{f,h\} = \{\Lagrangian_f , \Lagrangian_h\} = \big( f , (\GreenAdv - \GreenRet)h \big) = \big(f, E h\big) \qquad \forall f,h \: \Gamma_0^\infty (E)
+							\tau\{ [f] , [h]\} = \{\Lagrangian_f , \Lagrangian_h\} = \big( f , (\GreenAdv - \GreenRet)h \big) = \big(f, E h\big) \qquad \forall f,h \: \Gamma_0^\infty (E)
 						\end{equation}
 				\end{itemize}
 							The conditions of Green-hyperbolicity and formally self-adjoint are sufficient guarantee the good definitions of $\tau$.\\
@@ -671,8 +671,8 @@ In the next sections we review two of the possible realizations of the algebraic
    		 		Thus $\mathbf{\ObsAlg} \coloneqq \ObsAlg / I$ is a proper quantum algebra according to definition \ref{Def:QuantumObsAlgebra}.   			
    			
 			\begin{remark}
-			Under suitable conditions, our quantization procedure perfectly agrees with the standard textbook quantization involving creation and annihilation operators ( see for example \cite{Mandl}). 
-			In fact, assuming that $M$ is Minkowski spacetime, one can relate directly our algebraic approach to the one more commonly used by means of an expansion in Fourier modes of the fundamental quantum fields $\Phi([ f ])$, which generate the algebra $A$.
+			Under suitable conditions( namely after the choice of a Poincaré vacuum state) our quantization procedure perfectly agrees with the standard textbook quantization involving creation and annihilation operators ( see for example \cite{Mandl}). 
+			In fact, assuming that $M$ is Minkowski spacetime, one can relate directly our algebraic approach to the one more commonly used by means of an expansion in Fourie modes of the fundamental quantum fields $\Phi([ f ])$, which generate the algebra $A$.
 			\end{remark}   			
    			
    			The properties of the classical obsevables presented in theorem \ref{Teo:CausalityTimeSliceAxioms} have counterparts at the quantum level as shown by the following theorem:
@@ -847,6 +847,13 @@ In the next sections we review two of the possible realizations of the algebraic
 				\begin{equation}\label{Eq:SupportoCauchySol}
 					\supp\biggr( \SolMap \big([f_0,f_1] \biggr) \subseteq \mathbf{J}_M \biggr( \supp(f_0) \cup \supp(f_1) \biggr)
 				\end{equation}
+%				
+\ifToninus
+	\begin{Warning}
+		Impresione! dice CD che questa inclusione vale solo se P è anche Green hyperbolico! ma fin ora ho usato solo l'ipotes di PDE hyperbolico
+	\end{Warning}				
+\fi
+%				
 				it follows that the support of $\SolMap \big([f_0,f_1]\big) $	is included in the domain of dependence of the compact, achronal	set $\biggr( \supp(f_0) \cup \supp(f_1) \biggr)$.
 				Hence it is spacelike compact,\\ \textit{i.e.}
 				\begin{displaymath}

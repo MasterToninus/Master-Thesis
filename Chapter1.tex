@@ -141,14 +141,22 @@
 					\gls{Sections}
 				\end{displaymath}
 %			\end{notationfix}
+\ifToninus
+		\begin{observation}
+			In general, \gls{Sections} is an infinite dimensional manifold. 
+			\\
+				In case of vector bundles it is also a linear Frechet space\cite{Kriegl}.
+			\\
+			In the rather particular case of the tangent bundle on a smooth manifolds the sections are also called "vector fields" and indicated as:
+			\begin{displaymath}
+				\mathfrak{X}(M) = \Gamma^\infty(TM)
+			\end{displaymath}
+		\end{observation}
+\else
 			generally this space is an infinite dimensional manifold.
 			In case of vector bundles it is also a linear Frechet space\cite{Kriegl}.
-%			\begin{observation}
-%				In general, \gls{Sections} is an infinite dimensional manifold. 
-%				\\
-%				In case of vector bundles it is also a linear Frechet space\cite{Kriegl}.
-%				, and the sections are called "vector fields". (CD, non sono sicuro, di solito questo nome in geometria differenziali è riservato per i campi intesi come sezione del fibrato tangente
-%			\end{observation}
+\fi
+
 			
 			
 		\subsection{Mapping between Bundles}
@@ -671,6 +679,15 @@ specify the support properties of the sections of a vector bundle with base a gl
 			\begin{proof}
 			See for example \cite{Benini}[proposition 2]
 			\end{proof}
+
+\ifToninus
+	\begin{Warning}
+		Attenzione sulla mia notazione:\\
+		ho usato $G^+$ e $G^-$ per gli operatori di Green ed $E= G^- - G^+$ per il propagatore causale\\
+		CD: "E' una notazione bizzarra, ma non c'è nulla di male. "
+	\end{Warning}
+\fi
+
 
 			In what follows we will make extensive use of the following properties:
 			\begin{proposition}\label{Prop:GreenKernel}

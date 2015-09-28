@@ -36,7 +36,16 @@ In this chapter we will take advantage of the language developed in the first ch
 	\paragraph{Kinematics}
 	%Fibrato Configurazione incompassa la cinematica
 	The configuration bundle encompasses all the kinematical structures of the system.
-	 A pivotal role is played by the smooth sections  which are to be understood as all the possible conformation of the system.
+	 A pivotal role is played by the smooth global sections  which are to be understood as all the possible conformation of the system.
+
+\ifToninus
+	\begin{Warning}
+		Perchè solo le sezioni Globali?
+		\vspace{2mm}\\
+		CD: non vorrai mica che un campo sia definito localmente, così che, per me seduto in x c'è un campo scalare e per te, in y no! 		\\
+		IO:  il dubbio mi è nato dal fatto che per campi non lineari si è obbligati a ragionare in carta e quindi trovare le singolo soluzioni sulle patch! vedi esempio geodetica.
+	\end{Warning}
+\fi
 
 	\begin{definition}[Space of kinematics (off-shell) configurations]
 		We call:
@@ -627,7 +636,7 @@ In this chapter we will take advantage of the language developed in the first ch
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 %\newpage
-	\section{Peierls Brackets}
+	\section{Peierls Brackets}\label{Section:PeierlsBrackets}
 		Purpose of Peierls' procedure is to provide a bilinear form on the space of Lagrangian densities with time-compact support.
 		This form induces a pre-symplectic structure on suitable subspaces of functionals to which can be recognized the role of \emph{classical observables}  of the theory.	
 
@@ -657,7 +666,7 @@ In this chapter we will take advantage of the language developed in the first ch
 		Please note that we are not trying to provide the state of the art on the Peierls brackets ( see for example \cite{Khavkine2014} for the treatment in presence of gauge freedom) but only to expand and modernize the first approach given by Peierls.
 	Instead of considering only a scalar theory we extend the algorithm to a broader class of systems.
 	
-	\subsection{Peierls' construction.}
+	\subsection{Peierls' construction.}\label{Section:PeierlsConstruction}
 			%Classe di applicabilità naturale del metodo di Peierls
 	The Peierls's construction algorithm is well defined for a specific class of systems:
 		\begin{enumerate}[(A)]

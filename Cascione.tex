@@ -19,9 +19,109 @@
 \end{abstract}
 %  Indice
 \tableofcontents
+%\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+%/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+\chapter{Introduction}
+%\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+Devo fare un'introduzione soft, devo parafrasare i migliori.
+
+\begin{Warning}
+CD: Primer: \\
+
+Quantum electrodynamics and the so-called standard model of particles have been experimentally verified to an outstanding degree of precision and allowed us to have an almost fully satisfactory and unified description of the electro-weak forces. 
+It is striking that, to the inherent quantum nature of the description of elementary particles, it is opposed the structure of a classical theory, proper of general relativity. 
+It is almost unanimously accepted that this quandary can be solved by developing a quantum version of Einstein’s theory, which is often dubbed as quantum gravity. Yet, despite countless efforts, a quantum theory of the gravitational interaction remains elusive at best.
+
+Nonetheless, the quest to finding a quantum theory of gravity often lead the community to neglect the
+existence of an intermediate regime which has acquired only recently a renewed relevance. As a matter fact,both quantum electrodynamics, the standard model of particles, as well as all the quantum theories thought in the standard undergraduate courses, are formulated under the assumption that the underlying background is Minkowski spacetime.
+
+Yet, if we take into account the lesson of general relativity, Minkowski spacetime is a rather special case of a Lorentzian manifold, which solves Einstein’s equations only in absence of matter. At the same time, changing the structure of the background might look at first glance as an hazard. On the one hand, unless in very extreme conditions such as in a neighbourhood of a black hole, the gravitational effects are negligible and no direct evidence of the necessity to modify the spacetime metric has emerged in the experiments based at the high energy accelerators. On the other hand, the high degree of symmetry of the Minkowski metric, encoded in the Poincar´
+e group, makes the formulation of any
+quantum field theory technically much easier then the counterpart on an arbitrary Lorentzian background. Basic tools such as Fourier transform have no meaning nor counterpart as soon as we consider a manifold endowed with a non trivial metric.
+
+For these reasons, the development of the so-called quantum field theory on curved backgrounds looked often more as a mere intellectual curiosity rather than a stringent necessity. This perception has drastically changed in the last twenty years or so, particularly thanks to the advances in our understanding of the Universe as we observe it. Cosmology has become one of the leading branches of theoretical physics, mostly because it offers the possibility to interface the models built so far with a plethora of experimental data. 
+Since the formulation of theories like inflation, it has become increasingly clear not only that the matter description via quantum fields has to be taken into account, but also that, due to the large scales involved (both spatially and temporally), the presence of a non trivial background must be accounted for. Although gravity is still weak enough to justify a classical description of such force, the effects of a non Minkowskian metric on the quantum fields are no longer negligible.
+
+At this stage, one should seek a formulation, based on suitable first principles, which can be applied to the largest possible class of backgrounds.  To this extent, in this thesis we will adopt the algebraic approach. 
+Algebraic quantum field theory is proven to be the most promising way to reach a general and mathematical rigorous description of the foundations of quantum fields on a curved background.
+Contemporary quantum field theory is mainly developed as quantization of classical fields and AQFT is not an exception.
+In this case, the criteria to provide a proper quantization procedure are based on a set of axioms, first written down by Haag and Kastler for quantum theories on Minkowski spacetime and adapted to a curved background setting by Dimock.
+
+These methods are known, respec- tively, as the covariant phase space formalism3–5 and the Peierls bracket. 
+
+
+\end{Warning}
+
+
+
+\begin{Warning}
+Khavkine:\\
+
+A classical field theory is essentially defined by a local variational principle for a given set of dynamical fields on a given spacetime manifold. 
+The variational principle determines a set of partial differential equations (PDEs), the equations of motion, to be emposed on the dynamical fields. 
+The equations of motion are typically hyperbolic (or can be made so with gauge fixing if gauge invariance is present).
+What distinguishes variational PDEs among the more general class of hyperbolic PDEs is that their solution spaces can be naturally endowed with symplectic and hence Poisson structure, making it into a phase space. 
+The algebra of smooth functions on the phase space with the corresponding Poisson bracket then constitutes the Poisson algebra of observables. The existence of this algebraic formulation is what allows for quantization. It is clear that the symplectic and Poisson structure on its phase space is a crucial ingredient in the description of a classical field theory. 
+The most common way of building these structures is via the canonical formalism which requires an explicit choice of a time function, even when no one such choice is natural, and the application of a Legendre transform, which may be only ambiguously defined, for instance, in the presence of gauge invariance. 
+However, it is also well known that both can be defined completely covariantly (that is, without choosing an ex- plicit time function or applying a Legendre transform) directly fromthe Lagrangian, without going through the canonical formalism. 
+These methods are known, respec- tively, as the covariant phase space formalism3–5 and the Peierls bracket. 
+They are clearly preferable when the canonical formalism explicitly breaks some of the natural symmetries of the theory (any relativistic theory is an example). 
+The symplectic 2-form and the Poisson bivector constructed in this way are equivalent (they are mutual inverses). 
+Despite the covariance of both constructions, until recently, their equivalence was only known via the intermediary of the non-covariant canonical formalism. 
+That is, until Forger and Romero provided an elegant, completely covariant proof of the equivalence in the case of a scalar field.
+In this review, we describe in depth the constructions of symplectic and Poisson structures of classical field theory, as well as their equivalence, all in a covariant way. 
+A novel contribution of our exposition is an extension of the Forger-Romero argument to field theories where constraints and gauge invariance are present. 
+Another is that we do not restrict ourselves to the class of wave-like equations defined on Lorentzian manifolds (though that will be the main source of our examples). 
+We also pay special attention to several aspects that are often omitted or left implicit in the existing literature. 
+Neither the covariant phase space nor the Peierls constructions are automatic. 
+That is, besides a given Lagrangian density, several conditions must be fulfilled for the corresponding formulas to make sense.
+We make these conditions explicit in both cases: existence of a Cauchy surface and spacelike compact support for solutions, in the construction of the symplectic structure, and existence of hyperbolic PDE system, with retarded and advanced Green functions, closely related to the equations of motions, in the construction of the Poisson structure. 
+Furthermore, the statement of equivalence also requires a certain sufficient condition on the cohomological properties of the constraint and gauge generator differential operators. 
+Note that we restrict our attention to the geometric and algebraic aspects of the constructions and systematically avoid analytical details.
+In particular, the con- struction of the space of solutions of a PDE system on a spacetime of dimension greater than one (which corresponds to an ordinary mechanical system) requires a theory of infinite dimensional differential geometry. 
+We treat the minimal amount of the needed infinite dimensional geometry in a formal way. 
+On the other hand, an honest attempt to present the relevant functional analytical details can be found in Refs. 11–14. Our results could then form the core identities of a future investigation along similar lines that could extend them beyond the formal level.
+
+
+Al che Khavkine procede con un'analisi storica molto dettagliata partendo dalle singole origini di ogni aspetto della teoria.
+Non si tratta della modesta analisi delle fonti fatta da me che essenzialmente è partita da Peierls, passata per dewitt, e dopo si è focalizzata su scritti degli ultimi 20 anni, Marolf, Forger Romero ecc.
+
+The canonical formalism in mechanics15–19 (what we would now call the construc- tion of the symplectic and Poisson structures on the phase space of a mechanical system) has a long history and is most closely associated with the names of Hamil- ton and Jacobi. Though, undoubtedly, its roots go back even to Lagrange. Its main features are (a) the identification of the phase space with the space of initial data and (b) the use of the Legendre transform to determine special coordinates on the phase space in which the symplectic form takes a certain canonical form (hence naming the formalism). Because of the relation of Poisson brackets to quantization, the problem of the quantization of fields in the early 20th century required the translation (see for instance Refs. 1,20) of the canonical formalism from mechanics to field theories (multiple independent variables instead of just one).
+
+Souriau, despite lack ofmany explicit references to his work. Perhaps his importance is not surprising, since he was one of the people responsible for abstracting (in the 1960s) the modern notion of a symplectic manifold as the appropriate arena for mechanics.19 In particular, the name of Souriau is closely associated to identifying the classical phase space with the set of solutions of the equations of motion, rather
+
+\end{Warning}
+
+\begin{Warning}
+Forger ROmero\\
+
+One of the most annoying flaws of the usual canonical formalism in field theory is its lack of manifest covariance, that is, its lack of explicit Lorentz invariance (in the context of special relativity) and more generally its lack of explicit invariance under space-time coordinate transformations (in the context of general relativity). 
+Of course, this defect is built into the theory from the very beginning, since the usual canonical formalism represents the dynamical variables of classical field theory by functions on some spacelike hypersurface (Cauchy data) and provides differential equations for their time evolution off this hypersurface: thus it presupposes a splitting of space-time into space and time, in the form of a foliation of space-time into Cauchy surfaces.
+As a result, canonical quantization leads to models of quantum field theory whose covariance is far from obvious and in fact constitutes a formidable problem: as a well known example, we may quote the efforts necessary to check Lorentz invariance in (perturbative) quantum electrodynamics in the Coulomb gauge. 
+These and similar observations have over many decades nourished attempts to develop a fully covariant formulation of the canonical formalism in classical field theory, which would hopefully serve as a starting point for alternative methods of quantization.
+Among the many ideas that have been proposed in this direction, two have come to occupy a special role. One of these is the “covariant functional formalism”, based on the concept of “covariant phase space” which is defined as the (infinite-dimensional) space of solu- tions of the equations of motion. This approach was strongly advocated in the 1980’s by Crnkovi´
+c,Witten and Zuckerman [1–3] (see also [4]) who showed how to construct a symplectic structure on the covariant phase space of many important models of field theory (including gauge theories and general relativity), but the idea as such has amuch longer history. The other has become known as the “multisymplectic formalism”, based on the concept of “multiphase space” which is a (finite-dimensional) space that can be
+defined locally by associating to each coordinate qi not just one conjugate momentumpi but n conjugate momenta pµ
+i (µ = 1,... ,n), where n is the dimension of the underly-
+ing space-time manifold. In coordinate form, this construction goes back to the classical work of De Donder and Weyl in the 1930’s [5, 6], whereas a global formulation was initiated in the 1970’s by a group of mathematical physicists, mainly in Poland [7–9] but also elsewhere [10–12], and definitely established in the 1990’s [13, 14]; a detailed exposition, with lots of examples, can be found in the GIMmsy paper [15]. The two formalisms, although both fully covariant and directed towards the same ultimate goal, are of different nature; each of them has its own merits and drawbacks.
+
+
+
+
+\end{Warning}
+
+
+
+
+
+
+
+%\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 \chapter{Prereq Mate}
+%\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+
 
 	\begin{Warning}
 	(Primer)\\

@@ -770,7 +770,7 @@
 			\item As a quantity evaluable on the conformations of the system, through the correspondence  $\Lagrangian \mapsto  \mathcal{O}_\Lagrangian$.
 		\end{itemize}
 		
-		In first instance, Peierl's procedure consider a not necessarily linear Lagrangian density $\chi\in \Lag(E)$. The unique constraint is posed on the support condition of $\chi$.\\
+		In first instance, Peierl's procedure consider a not necessarily linear fixed Lagrangian density $\chi\in \Lag(E)$. The unique constraint is posed on the support condition of $\chi$.\\
 		We have proved in Section \ref{Section:PeierlsConstruction} that such choice determines two particular variation of any fixed solution $\phi_0 \in \Sol$.
 		
 				\vspace{1mm}		
@@ -778,11 +778,31 @@
 			\includegraphics[width=\textwidth]{Pictures/GeomPicture2}
 		\end{minipage}
 		\begin{minipage}{0.5\textwidth}
-
+			Call $\Sol_\epsilon$ the space of solution of the disturbed dynamic equation $Q_{\Lagrangian + \epsilon \chi}$.
+			Since $Q_\chi$ is generally not linear we depict this space as an arbitrary curve.
+			Without any loss of generality we  overlook to the possibility that $\Sol \cap \Sol_\epsilon \neq \emptyset$ in this picture.\\
 
 		\end{minipage}
 			\vspace{1mm}\\	
-
+		Among all the possible linear variations of $\phi_0$, the two variation $\phi_\epsilon^\pm = \phi_0 + \epsilon \eta_\pm$ determined by the fixed perturbation $\chi$ are the unique solution of Eq. \ref{PeierlJacobiEqLin}, \textit{i.e.}:
+		\begin{displaymath}
+   			\eta_\pm = G^\pm \left( - Q_\chi \phi_0 \right)
+		\end{displaymath}
+		\begin{Warning}
+			Quando parlo di sistemi lineari questo discorso va localizzato e linearizzato
+		\end{Warning}
+		
+		
+		In layman term we can say that the quantity $Q_\chi \phi_0$ quantifies how much $\phi_0$ fails to be a solution of the disturbed equations of motion.
+		More explicitly :
+		\begin{displaymath}
+			P_\epsilon \phi_0 =  \cancel{P \phi_0} + \epsilon Q_\chi \phi_0
+		\end{displaymath}
+		
+		The subsequent step in Peierls' procedure is the introduction of the effect operator. 
+		This object can be seen as a function, associated to the disturbance $\chi$, which maps any continuous fuctional $B$ on $\Conf$ to a functional $\EffectOp_\chi^\pm B$ on $\Sol$. 
+		Directly from definition \ref{EffectOperator} , we can see that $\EffectOp_\chi^\pm B$, the effect of $\chi$ on $B$ evaluated in $\phi_0$, is formally a directional derivative in the direction of $\phi_\epsilon^\pm$ calculated in point $\phi_0$.
+		The
 
 	\subsection{Geometric Mechanics of Classical Fields}
 	

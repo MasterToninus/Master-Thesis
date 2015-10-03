@@ -1,0 +1,48 @@
+%^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+%		Initial data set
+%_______________________________________________________________________________
+
+\documentclass{standalone}
+
+\usepackage{tikz}
+%\usetikzlibrary{...}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+
+
+%Common symbols
+\input{../../Math-Symbols-List/CommonSymbols.tex}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[,clip=false,
+						axis x line=bottom, axis y line=left,
+						ticks=none,
+						xmin=-1, xmax=16, ymin=-1, ymax=9
+						]
+	
+	%Riquadro che simboleggia Data
+	\addplot[dashed,color=gray] coordinates {
+		(1,1) (14,1) (14,7)(1,7)(1,1)
+		}node [pos=1,pin={270:$\Data$},inner sep=0pt] {};
+
+
+	%Il piano R2 del vettore iniziale
+		\draw[->,color=black] (2,3) -- (6,3);
+		\draw[->,color=black] (3,2) -- (3,6);
+
+	%Il piano R2 della velocità iniziale 
+		\draw[->,color=black] (9,3) -- (13,3);
+		\draw[->,color=black] (10,2) -- (10,6);
+
+	%è un prodotto cartesiano
+		\node[] at (7.5,4.5) {$\times$};
+
+	%I dati iniziali
+		\draw[-latex,color=green] (3,3) -- (4,6) node [pos=0.5,label={180:{$X_0$}}]  {};    
+		\draw[-latex,color=red] (10,3) -- (12.5,3.7) node [pos=0.5,label={270:{$V_0$}}]  {};
+
+\end{axis}
+
+\end{tikzpicture}
+\end{document}

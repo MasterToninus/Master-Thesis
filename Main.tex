@@ -1,13 +1,18 @@
 \documentclass{report}
-\usepackage{subfiles}
-
-%Flag che toggla il mio stile e le mie osservazioni..
-%era una cose che andava pensata prima! ora mi tocca rimettere a mano le mie osservazioni (messe nel cascione e il mio stile lasciato nella cartella "pre correzione"
+\usepackage{subfiles}%---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%Flag di Debug.
+%che toggla il mio stile e le mie osservazioni..era una cose che andava pensata prima! ora mi tocca rimettere a mano le mie osservazioni (messe nel cascione e il mio stile lasciato nella cartella "pre correzione"
 \newif\ifToninus
 %\Toninustrue  %Commentare per ottenere la versione da stampare
-\input{./Preamble.tex}
+%---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-\input{SymbolsGlossary}
+%---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+%		Preambolo
+	\input{./Preamble.tex}
+	\input{./SymbolsGlossary.tex}
+%---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 
 \title{Interpretazione Geometrica delle parentesi di Peierls nella quantizzazione algebrica del campo Geodetico. }
 \author{Antonio Michele Miti}
@@ -24,6 +29,7 @@
 
 \pagenumbering{roman}
 \newpage
+
 % Abstract
 \subfile{abstract.tex}
 

@@ -1,0 +1,49 @@
+%^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+% La rappresentazione 2D dello spazio delle configurazioni Cinematiche  a supporto compatto
+% con aggiunta delle soluzioni della lagrangiana perturbata
+%_______________________________________________________________________________
+
+\documentclass{standalone}
+
+%\usetikzlibrary{...}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+
+%Common symbols
+\input{../../Math-Symbols-List/CommonSymbols.tex}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[axis lines=none,clip=false]
+
+	% Il riquadro di \Conf
+	\addplot[color=black] coordinates {
+		(8,6) (0,6) (0,0)(8,0)(8,6)
+		}node [pos=1,pin={0:$\Gamma_0$},inner sep=0pt] {};
+
+	% la retta di \Sol
+	\addplot[color=red] coordinates {
+		(0,2)
+		(8,2)
+	}node [pos=1,pin={0:$\Sol_0$},inner sep=0pt] {};
+	
+	% Zero section
+	\node[label={270:{$0$}},circle,fill,inner sep=1pt] at (axis cs:1.25,2) {};
+	% Fixed Solution
+	\node[label={270:{$\phi_0$}},circle,fill,inner sep=1pt] at (axis cs:5,2) {};
+
+	% La curva di \Sol_\epsilon
+	\addplot[color=orange] coordinates {
+	(0,4)(8,4)
+	}node [pos=1,pin={0:$\Sol_\epsilon$},inner sep=0pt] {};
+           
+	%LagrangianDensities
+	\addplot[->] coordinates
+           {(1.25,2) (2,3)}node [pos=0.5,label={0:$\chi$},inner sep=0pt] {};		
+	
+	
+
+\end{axis}
+\end{tikzpicture}
+\end{document}

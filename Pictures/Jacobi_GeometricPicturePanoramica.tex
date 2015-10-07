@@ -1,0 +1,137 @@
+%^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+%		Panoramica del sistema geoderico 2D
+%_______________________________________________________________________________
+
+\documentclass{standalone}
+
+\usepackage{amssymb}
+
+\usepackage{tikz}
+%\usetikzlibrary{...}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usetikzlibrary{calc}
+
+\usepackage[graphics,tightpage,active]{preview}
+\PreviewEnvironment{tikzpicture}
+
+%Common symbols
+\input{../../Math-Symbols-List/CommonSymbols.tex}
+
+\begin{document}
+    \begin{tikzpicture}
+       \node (a) at (0,0)
+         {
+			\begin{tikzpicture}[scale=0.8]
+				\begin{axis}[axis lines=none,clip=false]
+					%Riquadro che simboleggia Data
+					\addplot[dashed,color=gray] coordinates {
+						(1,1) (14,1) (14,7)(1,7)(1,1)
+						};
+					\node   [pin={180:$\Data(\Sigma)$},inner sep=0pt]  at (1,7){};
+				
+					%Il piano R2 del vettore iniziale
+					\draw[->,color=black] (2,3) -- (6,3);
+					\draw[->,color=black] (3,2) -- (3,6);
+					\node[] at (5.5,5.5) {$\mathbb{R}^2$};
+				
+					%Il piano R2 della velocità iniziale 
+					\draw[->,color=black] (9,3) -- (13,3);
+					\draw[->,color=black] (10,2) -- (10,6);
+					\node[] at (12.5,5.5) {$\mathbb{R}^2$};
+
+					
+					%è un prodotto cartesiano
+					\node[] at (7.5,4.5) {$\times$};
+				
+					%I dati iniziali
+					\draw[-latex,color=green] (3,3) -- (4,6) node [pos=0.5,label={180:{$X_0$}}]  {};    
+					\draw[-latex,color=red] (10,3) -- (12.5,3.7) node [pos=0.5,label={270:{$V_0$}}]  {};
+
+				\end{axis}
+			 \end{tikzpicture}
+         };
+        \node (b) at (8,0)
+         {
+			\begin{tikzpicture}[remember picture,scale=0.8]
+				\begin{axis}[axis lines=none,clip=false]
+					% Il riquadro di \Conf
+					\addplot[color=black] coordinates {
+						(8,6) (0,6) (0,0)(8,0)(8,6)
+					}node [pos=1,pin={0:$\Gamma_0$},inner sep=0pt] {};
+					
+					% la retta di \Sol
+					\addplot[color=red] coordinates {
+						(0,2)	
+						(8,2)
+					}node [pos=1,pin={0:$\Sol$},inner sep=0pt] {};
+
+					% Zero section
+					\node(O)[label={270:{$0$}},circle,fill,inner sep=1pt] at (axis cs:1.25,2) {};
+					% Fixed Solution
+					\node[label={270:{$\vec{X}$}},circle,fill,inner sep=1pt] at (axis cs:5,2) {};
+
+					% Osservabile associato alla soluzione
+					\draw[-latex,color=black] (O) -- (4,4) node [pos=1,label={$\chi=E^{-1} \vec{X}$}]  {};  
+
+
+				\end{axis}
+			\end{tikzpicture}
+         };
+        \node (c) at (3.5,5.5) [ xscale=1.1, yscale=0.9]
+         {
+         \begin{tikzpicture}
+         \begin{axis}[	axis x line=bottom, axis y line=left,
+						ticks=none,
+						xlabel={$x_1$},ylabel={$x_2$},
+						xlabel style={below right},ylabel style={above left},
+						xmin=-1, xmax=16, ymin=-0.8, ymax=3
+						]
+ 
+			% Geodesica di partenza
+			\addplot[blue,domain=1:14,variable=\t] ({t},{sin(x^2)*x^(1/4)})		
+				\foreach \p in {0,1,...,20}{						%punti per ottenere il vettore variazione
+					node[sloped,inner sep=0cm,above,pos=\p/20,
+					anchor=south west]
+					(N \p){}
+  				};	
+  			% Geodesica Variata
+  			\addplot[gray,domain=1:14,variable=\t] ({t+0.5*(1+sin(t*10))},{sin(x^2)*x^(1/4)+(1 +0.5*cos(t*10))*t/10+0.3})
+				\foreach \p in {0,1,...,20}{						%punti per ottenere il vettore variazione
+					node[	sloped,inner sep=0cm,above,pos=\p/20,
+      					anchor=south west]
+      				(M \p){}
+  				};	
+			%I Dati Iniziali
+			\fill (N 0.south) circle [radius=2pt]node [label={225:{$\Sigma$}}]  {};  
+			\draw[-latex,color=green] (N 0) -- (M 0) node [pos=0.5,label={180:{$X_0$}}]  {};    
+			
+			%La velocità iniziale la metto a mano in modo che si legga chiaramente 
+			\draw[-latex,color=red] (N 0)  -- ($(N 1) + (0.8,-0.7)$) node [pos=0.5,label={270:{$V_0$}}]  {};
+			\node[black] at (axis cs:6.5,2.4) {$\vec{X}$};
+			\node [blue]  at (axis cs:6.5,0.8)   {$\gamma_0$};
+		
+		\end{axis}
+		
+		%Lo Jacobi Field
+		\foreach \p in {1,2,...,20} {
+			\draw[-latex,color=black] (N \p) -- (M \p);
+    	}
+		\end{tikzpicture}
+         };
+         
+       %Mappe tra gli spazi componenti
+        \node (Sol)  at (5.4,-0.75){};
+        \node (Data) at (2.7,-0.75){};
+              
+       \path[->]		
+       		(Data.north)    edge[bend left=60,above]  node        {$\SolMap$}  (Sol)
+      		(Sol)    edge[bend left=60,below]  node        { \tiny $\left( \left. \cdot \right\vert_\Sigma , \left. D_t( \cdot ) \right\vert_\Sigma  \right)$}  (Data.south);
+
+    \end{tikzpicture}
+
+
+ 
+
+\end{document}

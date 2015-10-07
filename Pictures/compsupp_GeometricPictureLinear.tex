@@ -1,0 +1,119 @@
+%^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+%		Rappresentazione di funzionali lineari di effetto\\
+%_______________________________________________________________________________
+
+\documentclass{standalone}
+
+\usepackage{tikz}
+%\usetikzlibrary{...}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usetikzlibrary{arrows} 
+
+%Funzione 3D
+\pgfmathdeclarefunction{F}{2}{\pgfmathparse{50+  (2.75)*(#1-1.25)  -(#2-2) }}
+
+
+%Common symbols
+\input{../../Math-Symbols-List/CommonSymbols.tex}
+
+\begin{document}
+\begin{tikzpicture}
+\begin{axis}[axis lines=none,clip=false,view={30}{30},]
+
+	%Funzionale sulle configurazioni
+	\addplot3[    surf,    colormap/greenyellow,% mesh, color=gray
+	,domain=0:8,y domain=0:6]
+	{F(x,y)};
+	\node [color=black,pin={90:{\tiny $B(\cdot)=(\omega, \cdot)$}},inner sep=0pt] at (axis cs:0.8,1.2,{F(0.8,1.2)}) {};;
+
+	% Il riquadro di \Conf
+	\addplot3[color=black] coordinates {
+		(8,6,0) (0,6,0) (0,0,0)(8,0,0)(8,6,0)
+		}node [pos=1,pin={270:$\Gamma_0$},inner sep=0pt] {};
+
+	%Valore B(\phi_0)$
+	\node[pin={135:{\tiny $(\omega,\phi_0)$}},circle,fill,inner sep=1pt] at (axis cs:5,2,{F(5,2)}) {};
+	
+
+	% Curve parametrizzate sulla superficie (le spezzo a metà così riesco a mettere bene il vettore tangente
+		\addplot3[red,domain=0:2/3,variable=\t,samples y=0] ({1+6*t},{6-6*t},{F(1+6*t,6-6*t)})
+			node [pos=0,pin={30:{\tiny $ B(\phi_\epsilon^+)$}},inner sep=0pt] {}
+       		node[pos=1,sloped,inner sep=0cm,above,
+  	    				anchor=south west,
+   	  	 				minimum height=(10+50)*0.02cm,minimum width=(10+50)*0.02cm]
+    	  				(P 0) {}		%nodo di phi_0
+			;
+		 \addplot3[red,domain=2/3:1,variable=\t,samples y=0]({1+6*t},{6-6*t},{F(1+6*t,6-6*t)});
+		% tangent vector
+		 \draw[-latex,color=black] (P 0.south west) -- (P 0.south east)node [pos=0.7,label={0:{\tiny $ \EffectOp_\chi^+ B ( \phi_0)$}}] {};
+
+
+		\addplot3[red,domain=0:(2/3),variable=\t,samples y=0] ({7-3*t},{6-6*t},{F(7-3*t,6-6*t)})
+			node [pos=0,pin={30:{\tiny $ B(\phi_\epsilon^-)$}},inner sep=0pt] {}
+       		node[pos=1,sloped,inner sep=0cm,above,
+  	    				anchor=south west,
+   	  	 				minimum height=(10+50)*0.02cm,minimum width=(10+50)*0.02cm]
+    	  				(P 1) {}		%nodo di phi_0
+			;
+		 \addplot3[red,domain=(2/3):1,variable=\t,samples y=0] ({7-3*t},{6-6*t},{F(7-3*t,6-6*t)});
+		% tangent vector
+		 \draw[-latex,color=black] (P 1.south west) -- (P 1.south east) node [pos=0.5,label={70:{\tiny $ \EffectOp_\chi^- B ( \phi_0)$}}] {}; 
+
+
+	% L'effetto è la pendenza.. in un certo senso è la componente verticale!
+			%Componenti Verticali
+			%\draw[-stealth',gray]  (P 0.south west)  --%
+      		%	node[right] {$\vec{A_o}$} (P 0.south west |- P 0.south east);
+
+			%\draw[-stealth',yellow]  (P 1.south west)  --%
+      		%	node[right] {$\vec{B_o}$} (P 1.south west |- P 1.south east);
+
+
+	%\\\\\\\\\\\\\\Parte 2d)\\\\\\\\\\\\\\
+	% la retta di \Sol
+	\addplot[color=red] coordinates {
+		(0,2)
+		(8,2)
+	}node [pos=1,pin={270:$\Sol_0$},inner sep=0pt] {};
+	
+	% Zero section
+	\node[label={270:{$0$}},circle,fill,inner sep=1pt] at (axis cs:1.25,2) {};
+	% Fixed Solution
+	\node[label={270:{$\phi_0$}},circle,fill,inner sep=1pt] at (axis cs:5,2) {};
+
+	% La curva di \Sol_\epsilon
+	\addplot[color=orange] coordinates {
+	(0,4)(8,4)
+	}node [pos=1,pin={270:$\Sol_\epsilon$},inner sep=0pt] {};
+
+	%Variation
+	\addplot[color=gray] coordinates {
+		(1,6)
+		(7,0)
+	}node [pos=1,pin={270:$\phi_\epsilon^+$},inner sep=0pt] {};
+	\addplot[color=gray] coordinates {
+		(7,6)
+		(4,0)
+	}node [pos=1,pin={270:$\phi_\epsilon^-$},inner sep=0pt] {};
+	
+	%Perturbation
+	\addplot[->] coordinates
+           {(5,2) (3,4)}node [pos=0.5,label={178:{\small $\epsilon \eta^+$}},inner sep=0pt] {};
+	\addplot[->] coordinates
+           {(5,2) (6,4)}node [pos=0.5,label={-2.5:{\small $\epsilon \eta^-$}},inner sep=0pt] {};
+
+	%AdvancedMinusRetarded
+	\addplot[->] coordinates
+           {(3,4) (6,4)}node [pos=1,label={120:{\small $E (\chi)$}},inner sep=0pt] {};
+           
+	%LagrangianDensities
+	\addplot[->] coordinates
+           {(1.25,2) (4,1)}node [pos=0.5,label={270:$\omega$},inner sep=0pt] {};	
+	\addplot[->] coordinates
+           {(1.25,2) (2,3)}node [pos=0,label={30:$\chi$},inner sep=0pt] {};		
+	
+\end{axis}
+\end{tikzpicture}
+\end{document}

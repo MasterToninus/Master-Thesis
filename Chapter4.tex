@@ -747,22 +747,25 @@
 \fi
 
 	\subsection{Geometric picture of Peierls brackets}
-		Before addressing the formalization as geometric objects of the constituent parts of the Peierls' algorithm, let us provide a geometric representation of the procedure explained in Section \ref{Section:PeierlsBrackets}.
+		%Prima dell'interpretazione vediamo l'illustrazione
+		Before addressing the formalization as geometric objects of the constituent parts of the Peierls' algorithm, let us provide a geometric visualization of the procedure explained in Section \ref{Section:PeierlsBrackets}.
 		
+		\subsubsection{General Construction on Linear system.}
 		As a starting point we consider a linear field system:
 
-			\vspace{1mm}		
+		\vspace{1mm}		
 		\begin{minipage}{0.5\textwidth}
-			\includegraphics[width=\textwidth]{Pictures/GeometricPicture1}
+			\includegraphics[width=\textwidth]{Pictures/GeometricPicture0}
 		\end{minipage}
 		\begin{minipage}{0.5\textwidth}
-			The set $\Conf$, space of kinematic configuration, is a linear manifold.
-			For the sake of simplicity we depict it as a plane, neglecting the complexities related to infinite-dimensional manifods.\\
-			Consequently, the space of solutions $ \Sol$ is a linear submanifolds, in our picture a line, containing the section $0$. \\
-			A generic functional on the systems can be seen as a function on this $\Real^2$ plane. According to that $\Sol$ can be regarded as the locus of the  \emph{"total lagrangian"} $  \mathcal{O}_\Lagrangian$ extrama.\\
-			To an arbitrary variation of a solution $\phi_0$ corresponds a generic parametrized curve on the plane.
+			\begin{itemize}
+				\item The set $\Conf$, space of kinematic configuration, is a linear manifold.\\
+					For the sake of simplicity we depict it as a plane, neglecting the complexities related to infinite-dimensional manifods.
+				\item Consequently, the space of solutions $ \Sol$ is a linear submanifolds, in our picture a line, containing the section $0$.
+			\end{itemize}
 		\end{minipage}
-			\vspace{1mm}\\
+		\vspace{1mm}\\
+			
 		We recall that the main character of the Peierls' procedure are the \emph{Lagrangian densities}, elements in $\Lag(E)$.
 		Abstractly, they are maps from kinematic configuration to volume form on the spacetime. From a more practical point of view we are more interested in its twofold nature:
 		\begin{itemize}
@@ -771,28 +774,39 @@
 		\end{itemize}
 		
 		In first instance, Peierl's procedure consider a not necessarily linear fixed Lagrangian density $\chi\in \Lag(E)$. The unique constraint is posed on the support condition of $\chi$.\\
+		\vspace{1mm}		
+		\begin{minipage}{0.5\textwidth}
+			\includegraphics[width=\textwidth]{Pictures/GeometricPicture1}
+		\end{minipage}
+		\begin{minipage}{0.5\textwidth}
+			\begin{itemize}
+				\item Call $\Sol_\epsilon$ the space of solution of the disturbed dynamic equation $Q_{\Lagrangian + \epsilon \chi}$.
+					Since $Q_\chi$ is generally not linear we depict this space as an arbitrary curve.\\
+					Without any loss of generality we  overlook to the possibility that $\Sol \cap \Sol_\epsilon \neq \emptyset$ in this picture.
+				\item To an arbitrary variation of a solution $\phi_0$ corresponds a generic parametrized curve on the plane.
+			\end{itemize}
+		\end{minipage}
+		\vspace{1mm}
+		\\
 		We have proved in Section \ref{Section:PeierlsConstruction} that such choice determines two particular variation of any fixed solution $\phi_0 \in \Sol$.
-		
-				\vspace{1mm}		
-		\begin{minipage}{0.5\textwidth}
-			\includegraphics[width=\textwidth]{Pictures/GeomPicture2}
-		\end{minipage}
-		\begin{minipage}{0.5\textwidth}
-			Call $\Sol_\epsilon$ the space of solution of the disturbed dynamic equation $Q_{\Lagrangian + \epsilon \chi}$.
-			Since $Q_\chi$ is generally not linear we depict this space as an arbitrary curve.
-			Without any loss of generality we  overlook to the possibility that $\Sol \cap \Sol_\epsilon \neq \emptyset$ in this picture.\\
 
+		\vspace{1mm}		
+		\begin{minipage}{0.5\textwidth}
+			\includegraphics[width=\textwidth]{Pictures/GeometricPicture2}
 		\end{minipage}
-			\vspace{1mm}\\	
-		Among all the possible linear variations of $\phi_0$, the two variation $\phi_\epsilon^\pm = \phi_0 + \epsilon \eta_\pm$ determined by the fixed perturbation $\chi$ are the unique solution of Eq. \ref{PeierlJacobiEqLin}, \textit{i.e.}:
-		\begin{displaymath}
-   			\eta_\pm = G^\pm \left( - Q_\chi \phi_0 \right)
-		\end{displaymath}
-		\begin{Warning}
-			Quando parlo di sistemi lineari questo discorso va localizzato e linearizzato
-		\end{Warning}
-		
-		
+		\begin{minipage}{0.5\textwidth}
+			\begin{itemize}
+				\item	Among all the possible linear variations of $\phi_0$, we consider the two variation $$\phi_\epsilon^\pm = \phi_0 + \epsilon \eta_\pm$$ where $\eta_\pm$ are the unique solution of Eq. \ref{PeierlJacobiEqLin}, \textit{i.e.}:
+					\begin{displaymath}
+   						\eta_\pm = G^\pm \left( - Q_\chi \phi_0 \right)
+					\end{displaymath}
+					determined by the fixed perturbation $\chi$.
+			\end{itemize}
+		\end{minipage}
+		\vspace{1mm}\\		
+					\ifToninus \begin{Warning}
+						Quando parlo di sistemi non lineari questo discorso va localizzato e linearizzato
+					\end{Warning}	 \fi		
 		In layman term we can say that the quantity $Q_\chi \phi_0$ quantifies how much $\phi_0$ fails to be a solution of the disturbed equations of motion.
 		More explicitly :
 		\begin{displaymath}
@@ -801,11 +815,231 @@
 		
 		The subsequent step in Peierls' procedure is the introduction of the effect operator. 
 		This object can be seen as a function, associated to the disturbance $\chi$, which maps any continuous fuctional $B$ on $\Conf$ to a functional $\EffectOp_\chi^\pm B$ on $\Sol$. 
-		Directly from definition \ref{EffectOperator} , we can see that $\EffectOp_\chi^\pm B$, the effect of $\chi$ on $B$ evaluated in $\phi_0$, is formally a directional derivative in the direction of $\phi_\epsilon^\pm$ calculated in point $\phi_0$.
-		The
+
+		\vspace{1mm}		
+		\begin{minipage}{0.5\textwidth}
+			\includegraphics[width=\textwidth]{Pictures/GeometricPicture3}
+		\end{minipage}
+		\begin{minipage}{0.5\textwidth}
+			\begin{itemize}
+				\item  A generic continuous functional on the systems can be seen as a continuous function on this $\Real^2$ plane. \\ We depict them as a surface embedded in $\Real^3$.
+				\item  According to that $\Sol$ can be regarded as the locus of the  \emph{"total lagrangian"} $  \mathcal{O}_\Lagrangian$ extrama.
+				\item	Directly from definition \ref{EffectOperator} , we can see that $\EffectOp_\chi^\pm B$, the effect of $\chi$ on $B$ evaluated in $\phi_0$, is formally a directional derivative in the direction of $\phi_\epsilon^\pm$ calculated in point $\phi_0$.
+					We depict such quantity as a tangent vector to the surface $B$ but, more properly, is corresponds to value of the inclination this vector.
+			\end{itemize}
+		\end{minipage}
+		\vspace{1mm}\\	
+		All of this machinery has a rather simpler picture when the functional $B$ is linear.
+
+		\vspace{1mm}		
+		\begin{minipage}{0.5\textwidth}
+			\includegraphics[width=\textwidth]{Pictures/GeometricPictureLinear1}
+		\end{minipage}
+		\begin{minipage}{0.5\textwidth}
+			\begin{itemize}
+				\item  When $B$ is a linear functional the effect takes the simple form:
+					\begin{displaymath}
+						\EffectOp_\chi^\pm B (\phi_0) = B ( \eta_\pm)
+					\end{displaymath}
+					In this case the dependence from the starting solution $\phi_0$ is accounted implicitly in the construction of perturbation $\eta_\pm(\phi_0)$.
+			\end{itemize}
+		\end{minipage}
+		\vspace{1mm}\\	
+
+		Finally, 
+		considering two Lagrangian densities $\chi, \omega$ and the corresponding Lagrangian functional $ \mathcal{O}_\omega$, we achieve the Peierls brackets as:
+		\begin{displaymath}
+			\{\chi, \omega \}(\phi_0) \coloneqq \EffectOp_\chi^- \mathcal{O}_\omega (\phi_0) - \EffectOp_\chi^+ \mathcal{O}_\omega(\phi_0)
+		\end{displaymath}
+		According to our (\danger graphical? \danger) geometric picture we can conclude that the brackets compute the difference between the slopes of the two function $\mathcal{O}_\omega ( \phi_\epsilon^\pm)$, which can be seen as real function on the single variable $\epsilon$, calculated in $\epsilon=0$.
+		We stress again that $ \phi_\epsilon^\pm$ are not arbitrary but are the specific wo variations associated to $\chi$ according to the Peierls' procedure.
+		
+		Thus, the brackets between $\chi$ and $\omega$ are null in three cases:
+		\begin{enumerate}
+			\item The two curves $\mathcal{O}_\omega ( \phi_\epsilon^+)$ and $\mathcal{O}_\omega ( \phi_\epsilon^-)$ have the same derivative when evaluated in $\phi_0$.
+			\item The starting solution $\phi_0$ is also a solution of $Q_\omega$.\\
+				In this case to $\phi_0$ corresponds an extremal of $\mathcal{O}_\omega$ thus its derivative is null according to each variation passing trough $\phi_0$.
+			\item The starting solution $\phi_0$ is also a solution of $Q_\chi$.\\
+				In this case the two perturbation $\phi_\epsilon^\pm$ are degenerate since $ \eta_\pm = 0$.
+		\end{enumerate}
+		
+		
+		\subsubsection{Peierls brackets role in second quantization.}
+		The prequantum structure, in the procedure of quantization via Peierls brackets, require to restrict ourselves from the set $\Conf$ of all the global section to the space $\Gamma_0$ of compactly supported sections.
+
+		\vspace{1mm}		
+		\begin{minipage}{0.5\textwidth}
+			\includegraphics[width=\textwidth]{Pictures/compsupp_GeometricPicture0}
+		\end{minipage}
+		\begin{minipage}{0.5\textwidth}
+			\begin{itemize}
+				\item  For linear fields $\Gamma_0$ is still linear space, we can keep the same representation of the preceding paragraph.
+			\end{itemize}
+		\end{minipage}
+		\vspace{1mm}\\					
+
+	In our picture, the  choice of a pairing 
+	\begin{displaymath}
+		( \cdot , \cdot ) : \Gamma_0 \times \Gamma_0 \rightarrow \Real^+
+	\end{displaymath}
+	 ( see Section \ref{Paragraph:Pairing Construction}) correspond to the attribution of a scalar product on the plane $\Gamma_0$.
+	Therefore, $\Gamma_0$ is a vector space rigged with a scalar product $(\cdot , \cdot)$.\\
+
+	In summary, to each $f\in \Gamma_0$ we associate:
+	\begin{enumerate}
+		\item a continuous linear functional 
+				\footnote{ One should not be misled by the extreme simplification of our geometric visualization.
+				It must kept in mind that all the spaces involved are, at best, manifolds with uncountable dimensions.
+				Important results as the theorem of Riesz-Fréchet can not be taken in account.}
+			on $\Gamma_0$:
+			\begin{displaymath}
+				F_f(\cdot) = (f, \cdot)
+			\end{displaymath}
+
+		\item a Lagrangian density:
+			\begin{displaymath}
+				f \mapsto \Lagrangian_f \coloneqq \left\langle  f , \cdot \right\rangle_{(x)}
+			\end{displaymath}
+			where $<\cdot,\cdot>$ is the inner product on the configuration bundle $E$ and such that $F_f \equiv \mathcal{O}_{\Lagrangian_f}$.
+		\item a Euler-Lagrange operator:
+			\begin{displaymath}
+				Q_{f}(\gamma) = - f \qquad \gamma \in \Conf
+			\end{displaymath}
+			which maps every kinematic configuration in $-f \in \Gamma_0$.
+	\end{enumerate}
+	In virtue of these correspondence, the Peierls' procedure allows us to equip the space $\Gamma_0$ with a pre-symplectic structure
+	\begin{displaymath}
+		\tau(f,g) =  \left\lbrace \Lagrangian_f , \Lagrangian_g \right\rbrace = \left( f, (\GreenAdv - \GreenRet) g \right)
+	\end{displaymath}
+	%
+	\vspace{2mm}\\
+	Let us visualize this construction in details.
+	
+		\vspace{1mm}		
+		\begin{minipage}{0.5\textwidth}
+			\includegraphics[width=\textwidth]{Pictures/compsupp_GeometricPicture1}
+		\end{minipage}
+		\begin{minipage}{0.5\textwidth}
+			\begin{itemize}
+				\item  We are considering only Lagrangian densities constructed from elements of $\Gamma_0$, these can be depicted as vectors on the plane $\Gamma_0$.
+				\item 	$\Sol_\epsilon$ consists of all the sections $\gamma \in \Gamma_0$ such that:
+					\begin{displaymath}
+						P_\epsilon \gamma = ( P  - \epsilon Q_\chi) \gamma = P \gamma - \epsilon \chi = 0
+					\end{displaymath}
+					\textit{i.e. :} are solutions of the inhomogeneous equation $P \gamma = \epsilon \chi$.
+			\end{itemize}
+		\end{minipage}
+		\vspace{1mm}
+		
+		Remembering that the solutions of a inhomogeneous differential problem can be made out superposing solutions of the homogeneous problem with a "particular solution", 
+		we can affirm that
+		\begin{displaymath}
+			\Sol_\epsilon = \left\lbrace \phi + \epsilon G^\pm \chi \quad \vert \phi \in \Sol \quad  \right\rbrace =
+			 \Sol + \epsilon \GreenAdv \chi = \Sol + \epsilon \GreenRet \chi
+		\end{displaymath}
+		and depict this space as a line parallel to $\Sol$.
+
+		
+		
+		\vspace{1mm}		
+		\begin{minipage}{0.5\textwidth}
+			\includegraphics[width=\textwidth]{Pictures/compsupp_GeometricPicture2}
+		\end{minipage}
+		\begin{minipage}{0.5\textwidth}
+			\begin{itemize}
+				\item In this case the directions $\eta_\pm$ of the Peierls' variation $\phi_\epsilon^\pm = \phi_0 + \epsilon \eta_\pm$ of a fixed $\phi_0 \in \Sol $ are independent from $\phi_0$:
+				\begin{displaymath}
+					\eta_\pm = G^\pm (- Q_\chi \phi_0 ) = G^\pm \chi
+				\end{displaymath}
+				\item consequently $E \chi = (\GreenAdv - \GreenRet) Q_\chi \phi_0$ is always a vector on the line $\Sol_\epsilon \parallel \Sol_0$.\\
+				This has been proved in Theorem:	\ref{Teo:IsomorphismBetweenTheTwoSymplectic} through the definition of the isomorphism $\Xi$.
+			\end{itemize}
+		\end{minipage}
+		\vspace{1mm}\\		
+	
+		The effect of disturbance $\chi$ on an arbitrary continuous linear functional is:
+		\begin{displaymath}
+			\EffectOp_\chi^\pm B (\phi_0)=B (\eta_\pm) = B ( G^\pm \chi) \qquad \forall \phi_0 \in Sol
+		\end{displaymath}		
+		Considering instead the Lagrangian functional relative to $\omega \in \Gamma_0$ we find
+		\begin{displaymath}
+			\EffectOp_\chi^\pm F_\omega (\phi_0) = \left( \omega , G^\pm \chi \right)
+		\end{displaymath}
+		which leads to the pre-symplectic form $\tau$.
+		
+				\vspace{1mm}		
+		\begin{minipage}{0.5\textwidth}
+			\includegraphics[width=\textwidth]{Pictures/compsupp_GeometricPictureLinear}
+		\end{minipage}
+		\begin{minipage}{0.5\textwidth}
+			\begin{itemize}
+				\item For the sake of simplicity we depict the pairing relation as the ordinary inner product  on the plane $\Gamma_0$.
+				\item The Lagrangian functional $B_\omega (\cdot) = (\omega, \cdot)$ correspondent to  $\omega \in \Gamma_0$  can be depicted as a plane which intersect plane $ x y$ along the normal to $\omega$.
+			\end{itemize}
+		\end{minipage}
+		\vspace{1mm}\\	
+	
+		In conclusion, according to our visualization, the brackets between $\chi$ and $\omega$ are null when:
+		\begin{displaymath}
+		 \omega \perp E \chi \Longleftrightarrow \chi \perp E \omega
+		\end{displaymath}
+		where the perpendicularity condition is intended in respect to the inner product on $\Gamma_0$ induced by pairing.
+		
+		\begin{Warning}
+			Osservando la figura si potrebbe dedurre che 
+			\begin{displaymath}
+				\omega \perp \Sol_0 \quad \Rightarrow \qquad \{\omega, \chi\} = ( \omega , E \chi)=0 \qquad \forall \chi \in \Gamma_0
+			\end{displaymath}
+			Ma io ho anche detto che :
+			\begin{displaymath}
+				E \chi \parallel \Sol_0 \qquad \forall \chi \in \Gamma_0
+			\end{displaymath}
+			Quindi ho un assurdo
+			\begin{displaymath}
+				 0 = ( \omega , E \chi)=-( E\omega ,  \chi)\neq 0
+			\end{displaymath}
+			?\\
+			No, se posso provare che 
+			\begin{displaymath}
+				(\omega, \phi) = 0 \quad \forall \phi \in \Sol_0  \qquad \Rightarrow  \quad(\GreenAdv - \GreenRet) Q_\omega \phi_0= 0 
+			\end{displaymath}
+			Questo è ragionevole perchè il funzionale $\mathcal{O}_\omega (\cdot) = ( \omega, \cdot): \Conf \rightarrow \Real$ se ridotto di domino a $\Sol$ è identicamente nullo ( $\ker(\mathcal{O}_\omega) \supset \Sol$) e  dovrebbe dare $\left. Q_\omega \right\vert_\Sol = 0$.
+			\\ non sono sicuro che si possa fare così... 
+			
+			
+		\end{Warning}
+	
+		\subsubsection{Peierls Brackets of the Jacobi field}
+		Now we take a step further considering the Peierls brackets in the case of a Jacobi Fields.
+		\begin{figure}[h!]
+			\includegraphics[width=\textwidth]{Pictures/Jacobi_GeometricPicturePanoramica}	
+			\caption{ 
+			%Impressionistic representation of the Jacobi field system on a  2-dimensional Riemannian manifold $M$.\\
+			Below: the geometric structures encoding the "pre-quantum" Jacobi field.
+			\\
+			Above: a local chart representation of a Jacobi field $\vec{X}$ along a fixed geodesic $\gamma_0$ on a  2-dimensional Riemannian manifold $M$.
+			}	
+		\end{figure}				
+
+		This example provides a testing ground on which compare the two pre-quantization procedures showed in Chapter 3.\\
+		The crucial point is that the following correspondences:
+		\begin{displaymath}
+			(\chi) \in \Gamma_0 \quad \xmapsto{\Xi} \quad (E \chi) \in \Sol \quad \xmapsto{\vert_\Sigma} \quad 
+			 \left(\left. E\chi \right\vert_\Sigma , D_t\left.\left( E \chi \right)\right\vert_\Sigma \right) \in\Data(\Sigma)
+		\end{displaymath}
+		\begin{displaymath}
+			 \left(\substack{a\\b}\right) \in\Data(\Sigma) \quad \xmapsto{\SolMap} \quad
+			 \left( \SolMap \left(\substack{a\\b}\right) \right)\in \Sol \quad \xmapsto{E^{-1}} \quad 
+			 \left( E^{-1}\SolMap \left(\substack{a\\b}\right) \right) \in \Gamma_0
+		\end{displaymath}
+		are symplecto-morphism. This allows us to compare the symplectic form $\tau$ on $\Obs$ with the symplectic form $\Omega$ on $\Data(\Sigma)$.
+		
+		\vspace{1mm}
+		In order to obtain a more intuitive representation we limit ourselves to the most simple case of one-dimensional Riemannian manifolds.
 
 	\subsection{Geometric Mechanics of Classical Fields}
 	
+	L'idea è che tutta l'immagine precedente richiederebbe una further investigation from a mathematica point of view per essere ammessa come rigorosa.
 	The covariant phase space of a system in physics is the space of all of its solutions to its classical equations of motion, the space of classical trajectories of the system. 
  Typically these phase spaces are (locally) naturally parameterized by the suitable boundary conditions or choice of a Cauchy surface which uniquely determine the corresponding history of the physical system. This parameterization is what traditionally is just called a “phase space”. 
 	The “covariant” in “covariant phase space” is to indicated that it comes without any unnatural choices.
@@ -826,7 +1060,7 @@
  This way a finite-dimensional phase space can sometimes describe continuous systems (e.g. in hydrodynamics) whch have infinitely many degrees of freedom; that phase space is however not a cotangent bundle of something in general.
 
  \begin{example}
-  The covarint phase space of the relativistic particle on a pseudo-Riemannian manifold X is the space of geodesics of X (in the absence of a background gauge field).
+  The covariant phase space of the relativistic particle on a pseudo-Riemannian manifold X is the space of geodesics of X (in the absence of a background gauge field).
  \end{example}
 
 

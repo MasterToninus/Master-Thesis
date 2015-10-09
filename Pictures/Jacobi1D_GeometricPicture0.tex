@@ -23,91 +23,45 @@
     \begin{tikzpicture}
        \node (a) at (0,0)
          {
-			\begin{tikzpicture}[scale=0.8]
-				\begin{axis}[view={-30}{30},no markers,axis lines = middle,ticks=none ,
+			\begin{tikzpicture}[clip=false]
+				\begin{axis}[color=gray,view={30}{30},axis lines = middle,ticks=none ,
 					ymax=15,ymin=-5,
 					xmax=15,xmin=-5,
 					zmax=15, zmin=-10]
-						\addplot3+[domain=-0:30,samples=200,samples y=0,ultra thick](x-5,{3*sin(deg(1.2*x))},{3*cos(deg(1.2*x))+x/5});
+						\addplot3+[domain=0:20,samples=200,samples y=0,ultra thick,no markers](x-5,{3*sin(deg(1.2*x))},{3*cos(deg(1.2*x))+x/5})
+						node [pos=0.55,label={220:{$M$}}]  {}			
+						node[black,pos=0.280,label={[black]90:{$P$}},circle,fill,inner sep=1pt]{}
+						node[pos=0.285,sloped,inner sep=0cm,above,
+  	    							anchor=south,
+   	  	 							minimum height=(10+50)*0.05cm,minimum width=(10+50)*0.05cm]
+    	  							(P) {}			
+						;
+						\draw[color=black] (P.south east) -- (P.south west)node [pos=0.45,label={15:{\tiny $ T_pM$}}] {};
+					
+
 				\end{axis}
 			 \end{tikzpicture}
          };
-        \node (b) at (8,0)
+        \node (b) at (4,0)
          {
-			\begin{tikzpicture}[remember picture,scale=0.8]
-				\begin{axis}[axis lines=none,clip=false]
-					% Il riquadro di \Conf
-					\addplot[color=black] coordinates {
-						(8,6) (0,6) (0,0)(8,0)(8,6)
-					}node [pos=1,pin={0:$\Gamma_0$},inner sep=0pt] {};
-					
-					% la retta di \Sol
-					\addplot[color=red] coordinates {
-						(0,2)	
-						(8,2)
-					}node [pos=1,pin={0:$\Sol$},inner sep=0pt] {};
-
-					% Zero section
-					\node(O)[label={270:{$0$}},circle,fill,inner sep=1pt] at (axis cs:1.25,2) {};
-					% Fixed Solution
-					\node[label={270:{$\vec{X}$}},circle,fill,inner sep=1pt] at (axis cs:5,2) {};
-
-					% Osservabile associato alla soluzione
-					\draw[-latex,color=black] (O) -- (4,4) node [pos=1,label={$\chi=E^{-1} \vec{X}$}]  {};  
-
-
-				\end{axis}
+			\begin{tikzpicture}[remember picture,scale=0.4,clip=false]
+					\draw[-latex] (0,0) -- (0,5)
+						node [draw=none,midway,right] {$(s)$}
+						node [pos=1,label={0:{$\Real$}}]  {};    
 			\end{tikzpicture}
          };
-        \node (c) at (3.5,5.5) [ xscale=1.1, yscale=0.9]
+        \node (c) at (0,-4)
          {
-         \begin{tikzpicture}
-         \begin{axis}[	axis x line=bottom, axis y line=left,
-						ticks=none,
-						xlabel={$x_1$},ylabel={$x_2$},
-						xlabel style={below right},ylabel style={above left},
-						xmin=-1, xmax=16, ymin=-0.8, ymax=3
-						]
- 
-			% Geodesica di partenza
-			\addplot[blue,domain=1:14,variable=\t] ({t},{sin(x^2)*x^(1/4)})		
-				\foreach \p in {0,1,...,20}{						%punti per ottenere il vettore variazione
-					node[sloped,inner sep=0cm,above,pos=\p/20,
-					anchor=south west]
-					(N \p){}
-  				};	
-  			% Geodesica Variata
-  			\addplot[gray,domain=1:14,variable=\t] ({t+0.5*(1+sin(t*10))},{sin(x^2)*x^(1/4)+(1 +0.5*cos(t*10))*t/10+0.3})
-				\foreach \p in {0,1,...,20}{						%punti per ottenere il vettore variazione
-					node[	sloped,inner sep=0cm,above,pos=\p/20,
-      					anchor=south west]
-      				(M \p){}
-  				};	
-			%I Dati Iniziali
-			\fill (N 0.south) circle [radius=2pt]node [label={225:{$\Sigma$}}]  {};  
-			\draw[-latex,color=green] (N 0) -- (M 0) node [pos=0.5,label={180:{$X_0$}}]  {};    
-			
-			%La velocità iniziale la metto a mano in modo che si legga chiaramente 
-			\draw[-latex,color=red] (N 0)  -- ($(N 1) + (0.8,-0.7)$) node [pos=0.5,label={270:{$V_0$}}]  {};
-			\node[black] at (axis cs:6.5,2.4) {$\vec{X}$};
-			\node [blue]  at (axis cs:6.5,0.8)   {$\gamma_0$};
-		
-		\end{axis}
-		
-		%Lo Jacobi Field
-		\foreach \p in {1,2,...,20} {
-			\draw[-latex,color=black] (N \p) -- (M \p);
-    	}
-		\end{tikzpicture}
+			\begin{tikzpicture}[remember picture,scale=0.4,clip=false]
+					\draw[-latex] (0,0) -- (5,0) 
+						node [draw=none,midway,below] {$(t)$}
+						node [pos=1,label={270:{$\Real$}}]  {};    
+			\end{tikzpicture}
          };
-         
-       %Mappe tra gli spazi componenti
-        \node (Sol)  at (5.4,-0.75){};
-        \node (Data) at (2.7,-0.75){};
               
        \path[->]		
-       		(Data.north)    edge[bend left=60,above]  node        {$\SolMap$}  (Sol)
-      		(Sol)    edge[bend left=60,below]  node        { \tiny $\left( \left. \cdot \right\vert_\Sigma , \left. D_t( \cdot ) \right\vert_\Sigma  \right)$}  (Data.south);
+       		(a.south)    edge[bend left=20,above]  node [draw=none,midway,right]         {$\Psi$}  (c.north)
+      		(b.west)    edge[bend left=20,below]  node  [draw=none,midway,below]       { $\gamma$}  (a.east);
 
     \end{tikzpicture}
 

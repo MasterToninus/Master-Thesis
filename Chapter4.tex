@@ -425,10 +425,10 @@
 			(For a quick reference see for example \cite{Tornberg}.)
 			
 			 Eq. \ref{FRWJacobi1} is a linear autonomous ordinary differential equation, the advaced and retarded Green functions can be promptly computed:
-			\begin{eqnarray*}
-				G^+_0(t \vert \xi) = \theta(t-\xi) \left(a +b t \right) \\
-				G^-_0( t \vert \xi) = \theta(\xi -t) \left( a +b t + \xi -t\right)
-			\end{eqnarray*}
+			\begin{eqnarray}\label{SimpleGreenFunction}
+				G^+_0(t \vert \xi) = \theta(t-\xi) \left(a +b t \right) \nonumber\\
+				G^-_0( t \vert \xi) = \theta(\xi -t) \left( a +b t + \xi -t\right) 
+			\end{eqnarray}
 
 			In other hand, since coefficient $m^2 \frac{\ddot{a}(t)}{a(t)}$ it is generally time dependant,  Eq. \ref{FRWJacobi2} it's non-autonomous and do not exists an analytical expression of its general solution.
 \ifToninus
@@ -733,7 +733,7 @@
 		\begin{itemize}
 			\item 		è evidente che una costruzione così articolata non si presta ad un'interpretazione geometrica immediata.
 			\item 		Ciò che mi sfugge totalmente è in che modo jacobi ci aiuta a dare  un'interpretazione geometrica.
-			\item		Keyword: covariant phase space...  Forger ROmero è pieno di spunti interessanti anche Khavkine... ma mi sembra chiaro che qualsiasi interpretazione geometrica non scampi da un pensante inserto di teoria dei campi classici (variational bicomplex and so on)
+			\item		Keyword: covariant phase space...  Forger ROmero è pieno di spunti interessanti anche Khavkine... ma mi sembra chiaro che qualsiasi interpretazione geometrica non scampi da un pesante inserto di teoria dei campi classici (variational bicomplex and so on)
 			\item		Il grande open problem di questo formalismo geometrico è che molti punti sono calcolo formale tirato di peso dalla teoria a gradi finiti la cui corretta definizione matematica latita.. Analisi globali e teoria delle variazioni vera.
 			\item anche se posticipassi la tesi di un mese  e mezzo temo mi ci vorrebbe assai di più per comprendere a pieno queste fonti.. Soprattuto dovrei partire ancora dai metodi matematici, unico punto da cui cominciare è qualcosa di Shardanashivly.
 			\item la cosa che mi rode è che riassunto e titolo dati alla commissione parlano di interpretazioni Geometriche e io non ne ho nemmeno una., soprattuto non ho nessun insight legato al problema dei campi di Jacobi.
@@ -851,8 +851,8 @@
 		\begin{displaymath}
 			\{\chi, \omega \}(\phi_0) \coloneqq \EffectOp_\chi^- \mathcal{O}_\omega (\phi_0) - \EffectOp_\chi^+ \mathcal{O}_\omega(\phi_0)
 		\end{displaymath}
-		According to our (\danger graphical? \danger) geometric picture we can conclude that the brackets compute the difference between the slopes of the two function $\mathcal{O}_\omega ( \phi_\epsilon^\pm)$, which can be seen as real function on the single variable $\epsilon$, calculated in $\epsilon=0$.
-		We stress again that $ \phi_\epsilon^\pm$ are not arbitrary but are the specific wo variations associated to $\chi$ according to the Peierls' procedure.
+		According to our (\danger graphical? \danger) geometric picture we can conclude that the Peierls brackets compute the difference between the slopes of the two function $\mathcal{O}_\omega ( \phi_\epsilon^\pm)$, which can be seen as real function on the single variable $\epsilon$, calculated in $\epsilon=0$.
+		We stress again that $ \phi_\epsilon^\pm$ are not arbitrary but are the specific two variations associated to $\chi$ according to the Peierls' procedure.
 		
 		Thus, the brackets between $\chi$ and $\omega$ are null in three cases:
 		\begin{enumerate}
@@ -862,6 +862,18 @@
 			\item The starting solution $\phi_0$ is also a solution of $Q_\chi$.\\
 				In this case the two perturbation $\phi_\epsilon^\pm$ are degenerate since $ \eta_\pm = 0$.
 		\end{enumerate}
+		
+		\begin{Warning}
+			Osservazione colta: nel punto 2 le Peierls sono nulle in quanto sto perturbando lungo una simmetria del sistema ( è qualcosa che ha a che fare con le costanti del moto della perturbazione.
+		\end{Warning}
+		
+		In conclusion the Peierls brackets compute the quantity:
+		\begin{equation}\label{GlobalPeierls}
+			\mathcal{O}_\omega ( \phi_{\tiny \epsilon\chi}^+)  - \mathcal{O}_\omega ( \phi_{\tiny \epsilon\chi}^-) \simeq  \{\chi, \omega \}(\phi_0)  + o(\epsilon)
+		\end{equation}
+		arrested to the first order, in the "small" parameter $\epsilon$, of a formal Taylor expansion.
+		The section $\phi_{\tiny \epsilon\chi}^\pm$ can be seen as the variation of a fixed unperturbed solution $\phi_0$ induced by a perturbation term $\epsilon \chi$ in the Lagrangian ruling the dynamics depending on whether such disturbance propagates forward or backward in time.
+		Thus the  quantity \ref{GlobalPeierls} is the difference between the change in the value of the Lagrangian functional $\mathcal{O}_\omega$ evaluated along  the perturbation propagating backward and forward.
 		
 		
 		\subsubsection{Peierls brackets role in second quantization.}
@@ -967,7 +979,7 @@
 		\end{displaymath}
 		which leads to the pre-symplectic form $\tau$.
 		
-				\vspace{1mm}		
+		\vspace{1mm}		
 		\begin{minipage}{0.5\textwidth}
 			\includegraphics[width=\textwidth]{Pictures/compsupp_GeometricPictureLinear}
 		\end{minipage}
@@ -999,7 +1011,11 @@
 				 0 = ( \omega , E \chi)=-( E\omega ,  \chi)\neq 0
 			\end{displaymath}
 			?\\
-			No, se posso provare che 
+			Non necessariamente! 0 è una soluzione e se 
+			\begin{displaymath}
+				E\omega= 0   \qquad \forall \omega \perp \Sol_0
+			\end{displaymath}
+			o in altre parole: 
 			\begin{displaymath}
 				(\omega, \phi) = 0 \quad \forall \phi \in \Sol_0  \qquad \Rightarrow  \quad(\GreenAdv - \GreenRet) Q_\omega \phi_0= 0 
 			\end{displaymath}
@@ -1034,10 +1050,77 @@
 		\end{displaymath}
 		are symplecto-morphism. This allows us to compare the symplectic form $\tau$ on $\Obs$ with the symplectic form $\Omega$ on $\Data(\Sigma)$.
 		
-		\vspace{1mm}
+		\vspace{2mm}
 		In order to obtain a more intuitive representation we limit ourselves to the most simple case of one-dimensional Riemannian manifolds.
 
+		\vspace{1mm}		
+		\begin{minipage}{0.5\textwidth}
+			\includegraphics[width=\textwidth]{Pictures/Jacobi1D_GeometricPicture0}
+		\end{minipage}
+		\begin{minipage}{0.5\textwidth}
+			\begin{itemize}
+				\item We depict $M$ as an embedded curve in the three dimensional space.
+				\item Local charts are simply functions $\Psi: M \rightarrow \Real$, we call $t$ the corresponding coordinate.
+				\item Parametrized curves are functions $\gamma: \Real \rightarrow M$, we call $s$ the parameter.
+				\item The tangent space to $T_P M$ correspond to the tangent line to $M$ in $P$.
+			\end{itemize}
+		\end{minipage}
+		\vspace{1mm}\\	
+		
+		Briefly, to each smooth curve $\gamma$ can be associated the ordinary smooth function $f(s) = \Psi \cdot \gamma$.\\
+		In this case the metric is simply a smooth, non-null, function $g: M \rightarrow \Real$. The inner product between two "tangent vector" is:
+		\begin{displaymath}
+			\left< a , b \right> = g a b \qquad \forall a,b \in T_P M \simeq \Real
+		\end{displaymath}
+		Since it is necessary only a single coordinate ($t$), there is just one Christoffel symbol:
+		\begin{displaymath}
+			\Gamma^0_{\, 0 0} = \frac{1}{2} g^{-1} \left( \frac{\partial g}{\partial t} \right)
+		\end{displaymath}
+		The corresponding geodesic equation is:
+		\begin{displaymath}
+			\partial^2_s \gamma + \frac{1}{2}\left.\left[ g^{-1}  \partial_t g \right] \right\vert_{\gamma(s)}  \left(\partial_s\gamma\right) ^2 = 0
+		\end{displaymath}
+		Clearly the fields along a fixed geodesic $\gamma(s)$ are scalar function $X(s) \in \Real$ too.
+		Since the Riemann tensor on a one dimensional manifold is null, the single Jacobi equation results:
+		\begin{displaymath}
+			\partial_s^2 X = 0
+		\end{displaymath}
+		In conclusion the Jacobi Fields along $\gamma(s)$ are all the straight lines:
+		\begin{displaymath}
+			X(s) = a + b s
+		\end{displaymath}
+		therefore $\Sol \simeq \Real^2$ is a two dimesional linear subspace of the linear manifold:
+		\begin{displaymath}
+			\Gamma_0 = C_0^\infty (\Real) = \{ f: \Real \rightarrow \Real \; \vert \, \textrm{ \tiny smooth, compactly supported}\}
+		\end{displaymath}
+		Moreover the Green operators have an exact expression:
+		\begin{displaymath}
+			G^\pm \psi (s) = \int_{-\infty}^\infty \left(\psi(\xi) \theta\left( \pm\left(s-\xi\right) \right) \left( a_\pm + \xi b_\pm \right) \right) 
+		\end{displaymath}
+		correspondent to the Green functions of Eq. \ref{SimpleGreenFunction}.
+
+		\begin{Warning}
+			Forse ho sbagliato qualcos:\\ non mi risulta che $E \psi$ sia una soluzione, ovvero sia nella forma $(a +b s)$.
+		\end{Warning}
+
+
+
+
+
+
 	\subsection{Geometric Mechanics of Classical Fields}
+	
+\ifToninus
+	\begin{Warning}
+		Ricordare: in questa Tesi non sono in grado di dare lo "stato dell'arte" sulle Parentesi di Peierls e sulla meccanica geometrica dei campi!\\
+		Il sistema campo pre quantistico più generico che si può costruire richiede due ingredienti ulteriori:
+		\begin{itemize}
+			\item Libertà di Gauge
+			\item Spin structure
+		\end{itemize}
+	\end{Warning}	
+\fi
+	
 	
 	L'idea è che tutta l'immagine precedente richiederebbe una further investigation from a mathematica point of view per essere ammessa come rigorosa.
 	The covariant phase space of a system in physics is the space of all of its solutions to its classical equations of motion, the space of classical trajectories of the system. 

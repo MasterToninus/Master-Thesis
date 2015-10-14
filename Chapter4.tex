@@ -411,7 +411,7 @@
 			In the specific case of second order ODE the general Green function  - solution of equation \ref{Eq:FoundamentalEquation} - can be explicitly computed as a linear combination of two linearly independent solutions $y_1$ and $y_2$ of the homogeneous problem:
 			\begin{equation}
 			\begin{cases}
-                        G( x \vert \xi) = \theta( x - \xi) \left(d_1 y_1(t) + d_2 y_2(t) \right) + \theta( x - \xi) \left(c_1 y_1(t) + c_2 y_2(t) \right) \\
+                        G( x \vert \xi) = \theta( x - \xi) \left(d_1 y_1(x) + d_2 y_2(x) \right) + \theta( x - \xi) \left(c_1 y_1(x) + c_2 y_2(x) \right) \\
 						y_1(\xi) (c_1-d_1) + y_2(\xi) ( c_2 - d_2) = 0 \\
 						\dot{y}_1(\xi) (c_1-d_1) + \dot{y}_2(\xi) ( c_2 - d_2) = -1 \\
             \end{cases}
@@ -727,24 +727,8 @@
 		\end{align}
 		$(\Obs, \tau)$ and $(\Sol, \sigma)$ are isomorphic not only as vector spaces but also as symplectic spaces.
 
-\section{Interpretations??????}
-\ifToninus
-	\begin{Warning}
-		\begin{itemize}
-			\item 		è evidente che una costruzione così articolata non si presta ad un'interpretazione geometrica immediata.
-			\item 		Ciò che mi sfugge totalmente è in che modo jacobi ci aiuta a dare  un'interpretazione geometrica.
-			\item		Keyword: covariant phase space...  Forger ROmero è pieno di spunti interessanti anche Khavkine... ma mi sembra chiaro che qualsiasi interpretazione geometrica non scampi da un pesante inserto di teoria dei campi classici (variational bicomplex and so on)
-			\item		Il grande open problem di questo formalismo geometrico è che molti punti sono calcolo formale tirato di peso dalla teoria a gradi finiti la cui corretta definizione matematica latita.. Analisi globali e teoria delle variazioni vera.
-			\item anche se posticipassi la tesi di un mese  e mezzo temo mi ci vorrebbe assai di più per comprendere a pieno queste fonti.. Soprattuto dovrei partire ancora dai metodi matematici, unico punto da cui cominciare è qualcosa di Shardanashivly.
-			\item la cosa che mi rode è che riassunto e titolo dati alla commissione parlano di interpretazioni Geometriche e io non ne ho nemmeno una., soprattuto non ho nessun insight legato al problema dei campi di Jacobi.
-			
-		\end{itemize}
-		
-				calculus of variation will assume a pivotal role since the variations could be seen as tangent vectors over the manifold of  kinematic configurations.
+\section{Geometric approach}
 
-
-	\end{Warning}
-\fi
 
 	\subsection{Geometric picture of Peierls brackets}
 		%Prima dell'interpretazione vediamo l'illustrazione
@@ -804,9 +788,7 @@
 			\end{itemize}
 		\end{minipage}
 		\vspace{1mm}\\		
-					\ifToninus \begin{Warning}
-						Quando parlo di sistemi non lineari questo discorso va localizzato e linearizzato
-					\end{Warning}	 \fi		
+	
 		In layman term we can say that the quantity $Q_\chi \phi_0$ quantifies how much $\phi_0$ fails to be a solution of the disturbed equations of motion.
 		More explicitly :
 		\begin{displaymath}
@@ -874,6 +856,14 @@
 		arrested to the first order, in the "small" parameter $\epsilon$, of a formal Taylor expansion.
 		The section $\phi_{\tiny \epsilon\chi}^\pm$ can be seen as the variation of a fixed unperturbed solution $\phi_0$ induced by a perturbation term $\epsilon \chi$ in the Lagrangian ruling the dynamics depending on whether such disturbance propagates forward or backward in time.
 		Thus the  quantity \ref{GlobalPeierls} is the difference between the change in the value of the Lagrangian functional $\mathcal{O}_\omega$ evaluated along  the perturbation propagating backward and forward.
+		
+		\begin{remark}
+		All of the above could be generalized to non linear systems regarding it as a "Linearization".\\
+		The plane $\Conf$ depicted above can be seen as a formal tangent space to the non-linear manifold of the kinematic configurations.
+		While in the case of linear fields the manifold $\Conf$ is flat and essentially coincides with its unique tangent space, for general field systems  this correspondence can be admitted only locally.
+		In all of that calculus of variation will assume a pivotal role since the variations could be seen as tangent vectors over the manifold of  kinematic configurations.
+		\end{remark}		
+		
 		
 		
 		\subsubsection{Peierls brackets role in second quantization.}
@@ -1089,21 +1079,26 @@
 		\begin{displaymath}
 			X(s) = a + b s
 		\end{displaymath}
-		therefore $\Sol \simeq \Real^2$ is a two dimesional linear subspace of the linear manifold:
+		therefore $\Sol \simeq \Real^2$ is a two dimensional linear subspace of the linear manifold:
 		\begin{displaymath}
 			\Gamma_0 = C_0^\infty (\Real) = \{ f: \Real \rightarrow \Real \; \vert \, \textrm{ \tiny smooth, compactly supported}\}
 		\end{displaymath}
-		Moreover the Green operators have an exact expression:
+		Moreover , from the explicit computation of the Green functions (see Eq. \ref{SimpleGreenFunction}), it follows the exact expression for the Green operators:
+		\begin{align*}
+			G^+ \psi (s) =& \int_{-\infty}^\infty \psi(\xi) \theta\big( s-\xi \big) \left( a + s b \right) d\xi 
+			=  \left( a + s b \right) \left(\int_{-\infty}^{s}  \psi(\xi) d\xi\right)	\\
+			G^- \psi (s)=& \int_{-\infty}^\infty \psi(\xi) \theta\big( \xi -s \big) \big( (a + \xi)  + s ( b  - 1) \big) d\xi 
+		\end{align*}
+		for all  $\psi \in \Sigma_0$.
+		The "advanced minus retarded" operator results:
 		\begin{displaymath}
-			G^\pm \psi (s) = \int_{-\infty}^\infty \left(\psi(\xi) \theta\left( \pm\left(s-\xi\right) \right) \left( a_\pm + \xi b_\pm \right) \right) 
+			( G^- -  G^+ ) \psi(s) =  \left( a + s b \right) \left(\int_{s}^{\infty} \psi(\xi) d\xi - \int_{-\infty}^{s} \psi(\xi) d\xi \right) + \int_{s}^{\infty} \psi(\xi) ( \xi -s) d\xi
 		\end{displaymath}
-		correspondent to the Green functions of Eq. \ref{SimpleGreenFunction}.
-
 		\begin{Warning}
-			Forse ho sbagliato qualcos:\\ non mi risulta che $E \psi$ sia una soluzione, ovvero sia nella forma $(a +b s)$.
+			I conti non tornano:\\  $E \psi$ non è nella forma $(a +b s)$ dunque non è una soluzione.
 		\end{Warning}
 
-
+	\subsection{Geometric interpretation of the Peierls' procedure.}
 
 
 
@@ -1118,11 +1113,46 @@
 			\item Libertà di Gauge
 			\item Spin structure
 		\end{itemize}
+
+	L'idea è che tutta l'immagine precedente richiederebbe una further investigation from a mathematical point of view per essere ammessa come rigorosa.
+	\end{Warning}
+
+	\begin{Warning}
+	Bisogna ricordare cosa si intende per meccanica geometrica per spiegare cosa si intende per meccanica geometrica per i sistemi prequantum.
+	
+	 \textbf{Lessing}
+		
+		\begin{itemize}
+		\item Geometric mechanics employs modern geometry to describe mechanical systems.\\
+		But how does geometry arise in mechanics?  (lessig)
+		\item We begin to see how geometry is an intrinsic part of mechanics and why the geometry should be respected: the space of all admissible configurations of a mechanical system has a natural geometric structure and constraints are intrinsically satisfied by the choice of the geometry. In more formal parlance, the configuration space Q of a mechanical system is a manifold, the generalization of
+a 2-dimensional surface in space, and its topological and geometrical structure represent all physical states.
+	The description of the configurations of a system as points on a manifold is the principal premise of geometric mechanics and it enables to illustrate the system’s structure even when the configuration space is complicated and abstract, cf. again Table 1, providing the inherent intuition of geometric mechanics.
+
+	\end{itemize}
+	
+	\textbf{Mia idea}
+	\begin{itemize}
+		\item la scommessa della meccanica geometrica è quella di poter attribuire ad ogni sistema meccanico una varietà simplettica anche nota come spazio della fasi.
+		\item la pretesa implicita è che da tale spazio delle fasi si possa ricavare tutto, e in meccanica classica lo si fa una volta fissata la scelta di una hamiltoniana
+		\item Vogliamo estendere questo ragionamento ai campi.. qual'è lo spazio delle fasi per un sistema campo?
+		\item Ci sono due grandi scogli
+			\begin{itemize}
+				\item mentre per il sistema classico a gradi finiti la scelta della varietà è limpida ( i vincoli determinano lo spazio delle configurazioni e da quello si costuisce lo spazio delle fasi come fibrato cotangente) per i campi non è così: Wald e peirels danno delle descrizioni diverse (che risultano equivalenti) la prima viene costruita esplicitamente come un ponte  con la meccanica geom a gradi finiti (vedere i punti dello spazio delle fasi come dati)
+				\item in mec. punti la forma simplettica è una proprietà intrinseca della costruzione dello spazio delle fasi (ogni fibrato cotangente è simplettico) e il teorema di darboux fornisce un'espressione univoca.
+					Inoltre, fissato un dato, l'hamiltoniana fissata determina una traiettoria come flusso del campo hamiltoniano.\\
+					Per i campi non ho tutti questi lussi				
+			\end{itemize}
+		\item bisogna far notare una cosa importante: in tutto questo c'è il tema di passare dallo spazio della fasi (inteso come spazio dei dati iniziali) al cosidetto spazio delle fasi covariante.\\
+			Questo dovrebbe essere SOL, ed ho mostrato come Sol esista per ogni sistema meccanico indipendentemente dalla cardinalità delle coordinate di configurazione.
+	\end{itemize}
+	
+		
 	\end{Warning}	
 \fi
 	
 	
-	L'idea è che tutta l'immagine precedente richiederebbe una further investigation from a mathematica point of view per essere ammessa come rigorosa.
+
 	The covariant phase space of a system in physics is the space of all of its solutions to its classical equations of motion, the space of classical trajectories of the system. 
  Typically these phase spaces are (locally) naturally parameterized by the suitable boundary conditions or choice of a Cauchy surface which uniquely determine the corresponding history of the physical system. This parameterization is what traditionally is just called a “phase space”. 
 	The “covariant” in “covariant phase space” is to indicated that it comes without any unnatural choices.

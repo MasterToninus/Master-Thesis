@@ -1,0 +1,36 @@
+\documentclass[Main]{subfiles}
+\begin{document}
+\section{Chiarimento sugli operatori di Green per le Ode}
+Dalle fonti ( principalmente \url{http://www.nada.kth.se/~annak/greens1d_odes.pdf}) ho capito che le funzioni di Green per una ODE di secondo grando le costruisco a partire da due soluzioni $y_1, y_2$ linearmente independenti dell'equazione omogenea (operatore $L$).
+Cioè:
+
+\begin{displaymath}
+	g^+ ( x \vert \xi) = \theta( x-\xi)  \left( c_1 y_1(x) + c_2 y_2(x)\right)
+\end{displaymath}
+\begin{displaymath}
+	g^- ( x \vert \xi) = \theta( \xi-x)  \left( d_1 y_1(x) +d_2  y_2(x)\right)	
+\end{displaymath}
+Scegliendo $a_1,b_1,a_2,b_2$ in modo che le due funzioni si raccordino in $\xi$ ma le derivate prime presentino un salto:
+			\begin{equation}
+			\begin{cases}
+						y_1(\xi) (c_1-d_1) + y_2(\xi) ( c_2 - d_2) = 0 \\
+						\dot{y}_1(\xi) (c_1-d_1) + \dot{y}_2(\xi) ( c_2 - d_2) = -1 \\
+            \end{cases}
+			\end{equation}
+
+Tali funzioni di green sono uniche solo se l'opertore $L$ è anche corredato di condizioni al bordo
+\vspace{1mm}
+Quindi le funzioni di green di un opertare differenziale ordinario di secondo ordine:
+\begin{displaymath}
+L = \partial_x^2 + \alpha \partial_x + \beta
+\end{displaymath}
+sono tante quanti le possibili coppie di dati sul bordo.
+\vspace{2mm}
+Dubbio: allora come è fatto l'unico operatore di Green $\pm$ associato all'operatore $L$?\\
+Ho detto che 
+\begin{displaymath}
+	G_\pm \psi(x) = \int_\Real g^\pm(x \vert \xi) \psi(\xi) d\xi
+\end{displaymath}
+ma senza aver specificato dei dati al bordo $g^\pm$ non è univocamente definita.
+
+\end{document}

@@ -81,16 +81,20 @@ In the next sections we review two of the possible realizations of the algebraic
 		It is encoded in the configuration bundle of the classical field.
    					\begin{enumerate}
    						\item One has to specify the base manifold $M$. \\Has to be a Globally-Hyperbolic Space-time.
-   						\item\label{Step:AuxiliaryStructure} Specify the fiber and the total Space $E$ auxiliary structure, e.g: spin-structure or transformation laws under diffeomorphism on the base space.\\$E$ has to be at least a vector bundle.
+   						\item\label{Step:AuxiliaryStructure} Specify the fiber.\\ The total Space $E$ has to be at least a vector bundle.
+   							\footnote{	In the case where it is specified a non-zero spin structure,
+   							has to be imposed a compatibility condition for the configuration bundle of the system under examination.
+   							An explicit example for the Dirac Field can be found in \cite{Dappiaggi2013}.}
+   					\end{enumerate}
+\ifToninus	   						
    						\begin{Warning}
    							andrebbe detta meglio perché non è chiara. In realtà, procedi così:\\
    							1) fissi la varietà ed eventualmente una struttura di spin \\
    							2) fissi un fibrato vettoriale associato al fibrato/struttura di spin\\
-   							
-   							Inoltre " se M è globalmente hyperbolico esiste sempre una struttura di spin, ciò che  cambia è che non è identicamente nulla.
-   							
+   							Inoltre " se M è globalmente hyperbolico esiste sempre una struttura di spin, ciò che  cambia è che non è identicamente nulla.		
    						\end{Warning}
-   					\end{enumerate}
+\fi
+
    		
    		\paragraph{Dynamics}
 % 		Has to be specified the local coordinate expression of the 
@@ -136,9 +140,9 @@ In the next sections we review two of the possible realizations of the algebraic
 			\subparagraph{Pairing Definition}
 			
 				The \emph{pairing} between two sections is defined as:
-   					\begin{displaymath}
+   					\begin{equation}\label{Def:Pairing}
    								(X,Y) = \int_M <X,Y>_x d\mu(x)
-   					\end{displaymath}
+   					\end{equation}
    				where $d\mu = d\textrm{Vol}_\mu$ is the volume form induced by the metric and the orientation on $M$
  				 under the additional constraint:
 %   				The definition is well posed only in:

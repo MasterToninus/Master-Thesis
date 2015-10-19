@@ -296,12 +296,12 @@
 	
 	We recall that the FRW spacetimes are homogeneous and isotropic solutions of Einstein’s equations.
 	These manifold are endowed with a line element of the form:
-	\begin{equation}
-		ds^2 = -dt^2 + a^2(t) \left( \frac{dr^2}{1-k r^2} + r^2 d\theta^2 + sin^2(\theta) d\phi^2\right)
+	\begin{equation}\label{EQ: metrica FRW}
+		ds^2 = -dt^2 + a^2(t) \left( \frac{dr^2}{1-k r^2} + r^2 d\theta^2 + sin^2\theta d\phi^2\right)
 	\end{equation}
-		where $0 < a(t) \in C^\infty	(\Real)$ is said \emph{scale factor} and $k$ is a constant normalizable to $\pm 1$ or $0$.
-		The assumptions of homogeneity and isotropy alone determine the spacetime metric up to the three discrete possibilities of spatial geometry.
-		This spacetime is topological equivalent (homeomorphic) to $\Real \times \Sigma$ where $\Sigma$ is a 3D manifolds which depends on the value of $k$:
+		where $0 < a(t) \in C^\infty	(I)$ is said \emph{scale factor}, $I \subset \Real$ is the time domain and $k$ is a constant normalizable to $\pm 1$ or $0$.
+		The assumptions of homogeneity and isotropy alone determine the spacetime metric up to the value of the scale factor $a$ and three discrete possibilities of spatial geometry.
+		The simply connected spacetimes compatibile with \ref{EQ: metrica FRW} are topological equivalent (homeomorphic) to $\Real \times \Sigma$ where $\Sigma$ is a 3D manifold which depends on the value of $k$:
 		\begin{center}\begin{tabular}{l l}
 			$k = 1$ & $\Sigma \simeq S^3$ (3-sphere)\\
 			$k = 0$ & $\Sigma \simeq \Real^3$ (three-dimensional Euclidean space)\\
@@ -309,7 +309,7 @@
 		\end{tabular}\end{center}
 		\vspace{2mm}
 		
-		For the sake of simplicity let reduce ourselves to the case of \emph{flat} spatial geometry, \\textit{i.e.}:
+		For the sake of simplicity let us reduce ourselves to the case of \emph{flat} spatial geometry, \textit{i.e.}:
 		\begin{displaymath}
 			ds^2 = -dt^2 + a^2(t) \left( dx^2 + dy^2 + dz^2\right) = g_{\mu \nu} dx^\mu dx^\nu
 		\end{displaymath}
@@ -321,16 +321,16 @@
 \fi
 
 
-		In order to express the geodesic equations we have to compute the Christoffels symbols. According to the basic definition:
+		In order to express the geodesic equations we have to compute the Christoffel symbols. According to the basic definition:
 		\begin{displaymath}
 			\Gamma^\lambda_{\, \mu \nu} = \frac{1}{2} g^{\lambda \sigma } \left( \partial_\mu g_{\sigma \nu} + \partial_\nu g_{\mu \sigma} - \partial_{\sigma}g_{\mu \nu} \right)
 		\end{displaymath}
-		we find that the non-vanishing components of $\Gamma^\lambda_{\, \mu \nu}$ are merely:
+		we find that the non-vanishing components of $\Gamma^\lambda_{\, \mu \nu}$ are : %merely:
 			\begin{eqnarray}
 				\Gamma^0_{\, i i} &= a \dot{a} \\
 				\Gamma^i_{\, i 0} &= \Gamma^i_{\, 0 i} = \dfrac{\dot{a}}{a}
 			\end{eqnarray}
-			where we have used the usual convention to express with latin indices the spatial cordinate, with $0$ the time coordinate and with greek indices all the spacetimes coordinates.
+			where we have used the usual convention to express with latin indices the spatial coordinates, with $0$ the time coordinate and with greek indices all the spacetimes coordinates.
 			
 			In the cosmological coordinate chart the geodesic equations are:
 			\begin{eqnarray}
@@ -338,8 +338,8 @@
 				\frac{d^2}{d \tau^2} \gamma^i &= - 2 \dfrac{\dot{a}}{a} \left( \frac{d}{d \tau} \gamma^0 \frac{d}{d \tau}\gamma^i \right) 		\label{FRWGeo2}	
 			\end{eqnarray}
 			
-			Jacobi fields are dependant from the choice of a base geodesic. 
-			Let us consider the a simple time-like geodesic, namely the \emph{cosmological} free-falling observer:
+			Jacobi fields are dependant on the choice of a base geodesic. 
+			Let us consider a simple time-like geodesic, namely the \emph{cosmological} free-falling observer:
 			\begin{displaymath}
 				\gamma^\mu (t) = \begin{bmatrix}  a_0 + m t \\  a_1 \\ a_2 \\ a_3  \end{bmatrix}
 				\qquad
@@ -350,7 +350,7 @@
 		Sul quaderno ho scritto un po' di più rifacendomi al discorso visto su wiki Jacobi Fields.
 	\end{Warning}
 \fi
-			Remembering the definition of Riemannian curvature:
+			Remembering the definition of the components of the Riemann tensor:
 			\begin{displaymath}
 				{R^\sigma}_{\mu\nu\kappa} =
 				  {\partial{\Gamma^\sigma}_{\mu\nu} \over \partial x^\kappa} -
@@ -358,13 +358,13 @@
 				  {\Gamma^\lambda}_{\mu\nu}{\Gamma^\sigma}_{\kappa\lambda} -
 				  {\Gamma^\lambda}_{\mu\kappa}{\Gamma^\sigma}_{\nu\lambda}		
 			\end{displaymath}			 
-			we find by direct computation  that the non-null components of the Riemann curvature tensor are:
+			we find by direct computation  that the non vanishing components are:
 			\begin{equation}
 				R^0_{\: i 0 i}= - R^{0}_{\: i i 0}= a \ddot{a} \qquad
 				R^i_{\: 0 0 i}=-R^i_{\: 0 i 0}=	\dfrac{\ddot{a}}{a}\qquad
 				R^i_{\: j i j} = - R^i_{\: j j i} = \dot{a}^2				
 			\end{equation}
-			Since we have parametrized the curve by coordinate $x^0 = t$ the covariant derivative in Eq. \ref{JacobiEquationComponents}  corresponds to an ordinary derivative, then a Jacobi $X^\mu(t)$ along the time-like geodesic $\gamma(t)$ satisfies the following uncoupled homogeneous equations:
+			Since we have parametrized the curve with $x^0 = t$ the covariant derivative in Eq. \ref{JacobiEquationComponents}  corresponds to an ordinary derivative, then a Jacobi $X^\mu(t)$ along the time-like geodesic $\gamma(t)$ satisfies the following uncoupled homogeneous equations:
 			\begin{eqnarray}
 				\frac{d^2}{d t^2} X^0  &=& 0 \label{FRWJacobi1}\\
 				\frac{d^2}{d t^2} X^i &= &- m^2 R^{\mu}_{\: 0 \nu 0} X^\nu = \left( m^2 \frac{\ddot{a}}{a}\right) X^i 	\label{FRWJacobi2}	
@@ -382,7 +382,7 @@
 				 = 0
 			\end{displaymath}
 			
-			The main difficulty to face in the explicit Peierls brackets construction is the computation of the Green operator of $P$.
+			The main difficulty to face in the explicit Peierls bracket construction is the computation of the Green operator of $P$.
 			In this case we can say with certainty that both Green operators are diagonal:
 			\begin{displaymath}
 				G^\pm =
@@ -393,9 +393,9 @@
 			\end{displaymath}		
 			where $G^\pm_0$ and $G^\pm_i$ are the Green operators of the only two ODE involved:
 			\begin{displaymath}
-				P_0 = \left(\frac{d}{dt}\right)^2 \qquad P_i=\left( \left(\frac{d}{dt}\right)^2 - m^2 \frac{\ddot{a}}{a} \right)
+				P_0 = \left(\frac{d}{dt}\right)^2 \qquad P_i=\left( \frac{d^2}{dt^2} - m^2 \frac{\ddot{a}}{a} \right)
 			\end{displaymath}
-			Namely these operators are the Hilbert–Schmidt integral operators:
+			These operators are the Hilbert–Schmidt integral operators:
 			\begin{displaymath}
 				G^\pm_\mu f = \int_\Real G^\pm_\mu( x \vert \xi ) f(\xi) d\xi
 			\end{displaymath}
@@ -424,13 +424,13 @@
 \fi		
 			(For a quick reference see for example \cite{Tornberg}.)
 			
-			 Eq. \ref{FRWJacobi1} is a linear autonomous ordinary differential equation, the advaced and retarded Green functions can be promptly computed:
+			 Eq. \ref{FRWJacobi1} is a linear autonomous ordinary differential equation, the advanced and retarded Green functions can be promptly computed:
 			\begin{eqnarray}\label{SimpleGreenFunction}
 				G^+_0(t \vert \xi) = \theta(t-\xi) \left(a +b t \right) \nonumber\\
 				G^-_0( t \vert \xi) = \theta(\xi -t) \left( a +b t + \xi -t\right) 
 			\end{eqnarray}
 
-			In other hand, since coefficient $m^2 \frac{\ddot{a}(t)}{a(t)}$ it is generally time dependant,  Eq. \ref{FRWJacobi2} it's non-autonomous and do not exists an analytical expression of its general solution.
+			In other hand, since the coefficient $m^2 \frac{\ddot{a}(t)}{a(t)}$ is in general time dependant,  Eq. \ref{FRWJacobi2} is a non autonomous ODE and an analytical expression of its general solution does not exist..
 \ifToninus
 	\begin{Warning}	
 		Anche un'appendice sul calcolo delle green sfruttando lo sviluppo di Dyson e quello di Magnus ( Partendo come spunto dall'articolo \cite{Dappiaggi2014}) non sarebbe stata male. ma è venuto il tempo di concludere.
@@ -438,7 +438,7 @@
 \fi	
 			However it is possible to express the corresponding Green function as a convergent Dyson expansion\cite{Dappiaggi2014}.
 			The idea is to consider the non-autonomous term $V(t) = -m^2 \frac{\ddot{a}(t)}{a(t)}$ as if it were a perturbing potential.\\
-			Remembering that $G^\pm_0 (t \vert \xi)$ is the Green function of operator \ifToninus$P_{0}=\left(\frac{d}{dt}\right)^2$\else$P_0$\fi, which can be seen as the time-independent part of differential operator \ifToninus$P_{i i}=\left( \left(\frac{d}{dt}\right)^2 - m^2 \frac{\ddot{a}}{a} \right)$\else$P_i$\fi, we can express the Green function of $P_{i}$ as follow:
+			Remembering that $G^\pm_0 (t \vert \xi)$ is the Green function of operator \ifToninus$P_{0}=\left(\frac{d}{dt}\right)^2$\else$P_0$\fi, which can be seen as the time-independent part of differential operator \ifToninus$P_{i i}=\left( \left(\frac{d}{dt}\right)^2 - m^2 \frac{\ddot{a}}{a} \right)$\else$P_i$\fi, we can formally express the Green function of $P_{i}$ as follow:
 			
 			\begin{align*}
 				G^+_i ( \tau \vert \tau' ) = G^+_0( \tau \vert \tau' ) + \sum_{n=1}^\infty (-)^n 
@@ -448,10 +448,10 @@
 				& \times  G^+_0 (t_n \vert \tau' ) \\
 			\end{align*}		
 			similarly $G^-_i$  can be obtained considering the anticipated Green function $G^-_0$ and integrating from $t$ to $+\infty$.
+			In both cases the convergence of the series is not guaranteed and should be verified for each explicit expression of the scale function $a (t)$.
 			
 			\vspace{2mm}
-		Anyway all this machinery it is not necessary in the special case of where \emph{De Sitter} spacetimes where $ a(t) = exp(H t)$ and the coefficient $\ddot{a}/a$ is a positive constant.  \cite{Wald1984}\\
-		In this case the general solutions are simply:
+		\ifToninus Anyway all this machinery it is not necessary \fi In the special case of \emph{De Sitter} spacetime, where $ a(t) = exp(H t)$ and the coefficient $\ddot{a}/a$ is a positive constant  \cite{Wald1984}, the general solutions are:% simply:
 		\begin{displaymath}
 		 y(t) = c_1 e^{m t \sqrt{\ddot{a}/a}} + c_2 e^{-m t \sqrt{\ddot{a}/a}}
 		\end{displaymath}
@@ -743,7 +743,7 @@
 		\end{minipage}
 		\begin{minipage}{0.5\textwidth}
 			\begin{itemize}
-				\item The set $\Conf$, space of kinematic configuration, is a linear manifold.\\
+				\item The set $\Conf$, space of kinematic configurations, is a linear submanifold.\\
 					For the sake of simplicity we depict it as a plane, neglecting the complexities related to infinite-dimensional manifods.
 				\item Consequently, the space of solutions $ \Sol$ is a linear submanifolds, in our picture a line, containing the section $0$.
 			\end{itemize}
@@ -751,28 +751,28 @@
 		\vspace{1mm}\\
 			
 		We recall that the main character of the Peierls' procedure are the \emph{Lagrangian densities}, elements in $\Lag(E)$.
-		Abstractly, they are maps from kinematic configuration to volume form on the spacetime. From a more practical point of view we are more interested in its twofold nature:
+		Abstractly, they are maps from kinematic configurations to volume forms on the spacetime. From a more practical point of view we are interested in its twofold nature:
 		\begin{itemize}
 			\item As the object ruling the dynamics, through the correspondence $\Lagrangian \mapsto Q_\Lagrangian$, or, eventually, as a disturbance on the fixed unperturbed Lagrangian.
 			\item As a quantity evaluable on the conformations of the system, through the correspondence  $\Lagrangian \mapsto  \mathcal{O}_\Lagrangian$.
 		\end{itemize}
 		
-		In first instance, Peierl's procedure consider a not necessarily linear fixed Lagrangian density $\chi\in \Lag(E)$. The unique constraint is posed on the support condition of $\chi$.\\
+		In the first instance, the Peierl's procedure considers a not necessarily linear fixed Lagrangian density $\chi\in \Lag(E)$. The only constraint is imposed on the support condition of $\chi$.\\
 		\vspace{1mm}		
 		\begin{minipage}{0.5\textwidth}
 			\includegraphics[width=\textwidth]{Pictures/GeometricPicture1}
 		\end{minipage}
 		\begin{minipage}{0.5\textwidth}
 			\begin{itemize}
-				\item Call $\Sol_\epsilon$ the space of solution of the disturbed dynamic equation $Q_{\Lagrangian + \epsilon \chi}$.
+				\item Call $\Sol_\epsilon$ the space of solutions of the disturbed dynamics equation $Q_{\Lagrangian + \epsilon \chi}$.
 					Since $Q_\chi$ is generally not linear we depict this space as an arbitrary curve.\\
-					Without any loss of generality we  overlook to the possibility that $\Sol \cap \Sol_\epsilon \neq \emptyset$ in this picture.
+					Without any loss of generality we  neglect the possibility that $\Sol \cap \Sol_\epsilon \neq \emptyset$ in this picture.
 				\item To an arbitrary variation of a solution $\phi_0$ corresponds a generic parametrized curve on the plane.
 			\end{itemize}
 		\end{minipage}
 		\vspace{1mm}
 		\\
-		We have proved in Section \ref{Section:PeierlsConstruction} that such choice determines two particular variation of any fixed solution $\phi_0 \in \Sol$.
+		We have proved in Section \ref{Section:PeierlsConstruction} that such choice determines two particular variations of any fixed solution $\phi_0 \in \Sol$.
 
 		\vspace{1mm}		
 		\begin{minipage}{0.5\textwidth}
@@ -780,7 +780,7 @@
 		\end{minipage}
 		\begin{minipage}{0.5\textwidth}
 			\begin{itemize}
-				\item	Among all the possible linear variations of $\phi_0$, we consider the two variation $$\phi_\epsilon^\pm = \phi_0 + \epsilon \eta_\pm$$ where $\eta_\pm$ are the unique solution of Eq. \ref{PeierlJacobiEqLin}, \textit{i.e.}:
+				\item	Among all the possible linear variations of $\phi_0$, we consider the two variations $$\phi_\epsilon^\pm = \phi_0 + \epsilon \eta_\pm$$ where $\eta_\pm$ are the unique solution of Eq. \ref{PeierlJacobiEqLin}, \textit{i.e.}:
 					\begin{displaymath}
    						\eta_\pm = G^\pm \left( - Q_\chi \phi_0 \right)
 					\end{displaymath}
@@ -789,13 +789,13 @@
 		\end{minipage}
 		\vspace{1mm}\\		
 	
-		In layman term we can say that the quantity $Q_\chi \phi_0$ quantifies how much $\phi_0$ fails to be a solution of the disturbed equations of motion.
+		In layman terms we can say that the quantity $Q_\chi \phi_0$ quantifies how much $\phi_0$ fails to be a solution of the disturbed equations of motion.
 		More explicitly :
 		\begin{displaymath}
 			P_\epsilon \phi_0 =  \cancel{P \phi_0} + \epsilon Q_\chi \phi_0
 		\end{displaymath}
 		
-		The subsequent step in Peierls' procedure is the introduction of the effect operator. 
+		The subsequent step in the Peierls' procedure is the introduction of the effect operator. 
 		This object can be seen as a function, associated to the disturbance $\chi$, which maps any continuous fuctional $B$ on $\Conf$ to a functional $\EffectOp_\chi^\pm B$ on $\Sol$. 
 
 		\vspace{1mm}		
@@ -805,9 +805,9 @@
 		\begin{minipage}{0.5\textwidth}
 			\begin{itemize}
 				\item  A generic continuous functional on the systems can be seen as a continuous function on this $\Real^2$ plane. \\ We depict them as a surface embedded in $\Real^3$.
-				\item  According to that $\Sol$ can be regarded as the locus of the  \emph{"total lagrangian"} $  \mathcal{O}_\Lagrangian$ extrama.
-				\item	Directly from definition \ref{EffectOperator} , we can see that $\EffectOp_\chi^\pm B$, the effect of $\chi$ on $B$ evaluated in $\phi_0$, is formally a directional derivative in the direction of $\phi_\epsilon^\pm$ calculated in point $\phi_0$.
-					We depict such quantity as a tangent vector to the surface $B$ but, more properly, is corresponds to value of the inclination this vector.
+				\item  Accordingly, $\Sol$ can be regarded as the locus of the  \emph{"total lagrangian"} $  \mathcal{O}_\Lagrangian$ extrema.
+				\item	Directly from Definition \ref{EffectOperator} , we can see that $\EffectOp_\chi^\pm B$, the effect of $\chi$ on $B$ evaluated in $\phi_0$, is formally a directional derivative in the direction of $\phi_\epsilon^\pm$ calculated in point $\phi_0$.
+					We depict such quantity as a tangent vector to the surface $B$ but, more properly, it corresponds to the value of the inclination of this vector.
 			\end{itemize}
 		\end{minipage}
 		\vspace{1mm}\\	
@@ -823,7 +823,7 @@
 					\begin{displaymath}
 						\EffectOp_\chi^\pm B (\phi_0) = B ( \eta_\pm)
 					\end{displaymath}
-					In this case the dependence from the starting solution $\phi_0$ is accounted implicitly in the construction of perturbation $\eta_\pm(\phi_0)$.
+					In this case the dependence on the initial solution $\phi_0$ is accounted implicitly in the construction of perturbation $\eta_\pm(\phi_0)$.
 			\end{itemize}
 		\end{minipage}
 		\vspace{1mm}\\	
@@ -833,8 +833,8 @@
 		\begin{displaymath}
 			\{\chi, \omega \}(\phi_0) \coloneqq \EffectOp_\chi^- \mathcal{O}_\omega (\phi_0) - \EffectOp_\chi^+ \mathcal{O}_\omega(\phi_0)
 		\end{displaymath}
-		According to our (\danger graphical? \danger) geometric picture we can conclude that the Peierls brackets compute the difference between the slopes of the two function $\mathcal{O}_\omega ( \phi_\epsilon^\pm)$, which can be seen as real function on the single variable $\epsilon$, calculated in $\epsilon=0$.
-		We stress again that $ \phi_\epsilon^\pm$ are not arbitrary but are the specific two variations associated to $\chi$ according to the Peierls' procedure.
+		According to our \ifToninus (\danger graphical? \danger)\fi geometric picture we can conclude that the Peierls brackets compute the difference between the slopes of the two function $\mathcal{O}_\omega ( \phi_\epsilon^\pm)$, which can be seen as real function on the single variable $\epsilon$, calculated in $\epsilon=0$.
+		We stress again that $ \phi_\epsilon^\pm$ are not arbitrary but they are the specific two variations associated to $\chi$ according to the Peierls' procedure.
 		
 		Thus, the brackets between $\chi$ and $\omega$ are null in three cases:
 		\begin{enumerate}
@@ -842,18 +842,19 @@
 			\item The starting solution $\phi_0$ is also a solution of $Q_\omega$.\\
 				In this case to $\phi_0$ corresponds an extremal of $\mathcal{O}_\omega$ thus its derivative is null according to each variation passing trough $\phi_0$.
 			\item The starting solution $\phi_0$ is also a solution of $Q_\chi$.\\
-				In this case the two perturbation $\phi_\epsilon^\pm$ are degenerate since $ \eta_\pm = 0$.
+				In this case the two perturbation $\phi_\epsilon^\pm$ are degenerate since they correspond to a transformation along a symmetry of the system and $ \eta_\pm = 0$.
 		\end{enumerate}
-		
+\ifToninus
 		\begin{Warning}
 			Osservazione colta: nel punto 2 le Peierls sono nulle in quanto sto perturbando lungo una simmetria del sistema ( è qualcosa che ha a che fare con le costanti del moto della perturbazione.
 		\end{Warning}
+\fi
 		
 		In conclusion the Peierls brackets compute the quantity:
 		\begin{equation}\label{GlobalPeierls}
 			\mathcal{O}_\omega ( \phi_{\tiny \epsilon\chi}^+)  - \mathcal{O}_\omega ( \phi_{\tiny \epsilon\chi}^-) \simeq  \{\chi, \omega \}(\phi_0)  + o(\epsilon)
 		\end{equation}
-		arrested to the first order, in the "small" parameter $\epsilon$, of a formal Taylor expansion.
+		up to the first order, in the \ifToninus "small" \fi expansion parameter $\epsilon$, of a formal Taylor expansion.
 		The section $\phi_{\tiny \epsilon\chi}^\pm$ can be seen as the variation of a fixed unperturbed solution $\phi_0$ induced by a perturbation term $\epsilon \chi$ in the Lagrangian ruling the dynamics depending on whether such disturbance propagates forward or backward in time.
 		Thus the  quantity \ref{GlobalPeierls} is the difference between the change in the value of the Lagrangian functional $\mathcal{O}_\omega$ evaluated along  the perturbation propagating backward and forward.
 		
@@ -861,9 +862,12 @@
 		All of the above could be generalized to non linear systems regarding it as a "Linearization".\\
 		The plane $\Conf$ depicted above can be seen as a formal tangent space to the non-linear manifold of the kinematic configurations.
 		While in the case of linear fields the manifold $\Conf$ is flat and essentially coincides with its unique tangent space, for general field systems  this correspondence can be admitted only locally.
-		In all of that calculus of variation will assume a pivotal role since the variations could be seen as tangent vectors over the manifold of  kinematic configurations.
 		\end{remark}		
-		
+\ifToninus
+	\begin{Warning}
+				In all of that calculus of variation will assume a pivotal role since the variations could be seen as tangent vectors over the manifold of  kinematic configurations.
+	\end{Warning}
+\fi	
 		
 		
 		\subsubsection{Peierls brackets role in second quantization.}
@@ -875,7 +879,7 @@
 		\end{minipage}
 		\begin{minipage}{0.5\textwidth}
 			\begin{itemize}
-				\item  For linear fields $\Gamma_0$ is still linear space, we can keep the same representation of the preceding paragraph.
+				\item  For linear fields $\Gamma_0$ is still a linear space, we can keep the same representation of the preceding paragraph.
 			\end{itemize}
 		\end{minipage}
 		\vspace{1mm}\\					
@@ -884,10 +888,10 @@
 	\begin{displaymath}
 		( \cdot , \cdot ) : \Gamma_0 \times \Gamma_0 \rightarrow \Real^+
 	\end{displaymath}
-	 ( see Section \ref{Paragraph:Pairing Construction}) correspond to the attribution of a scalar product on the plane $\Gamma_0$.
+	 ( see Section \ref{Paragraph:Pairing Construction}) corresponds to the attribution of a scalar product on the plane $\Gamma_0$.
 	Therefore, $\Gamma_0$ is a vector space rigged with a scalar product $(\cdot , \cdot)$.\\
 
-	In summary, to each $f\in \Gamma_0$ we associate:
+	To summarize, to each $f\in \Gamma_0$ we associate:
 	\begin{enumerate}
 		\item a continuous linear functional 
 				\footnote{ One should not be misled by the extreme simplification of our geometric visualization.
@@ -909,7 +913,7 @@
 			\end{displaymath}
 			which maps every kinematic configuration in $-f \in \Gamma_0$.
 	\end{enumerate}
-	In virtue of these correspondence, the Peierls' procedure allows us to equip the space $\Gamma_0$ with a pre-symplectic structure
+	In virtue of these correspondences, the Peierls' procedure allows us to equip the space $\Gamma_0$ with a pre-symplectic structure
 	\begin{displaymath}
 		\tau(f,g) =  \left\lbrace \Lagrangian_f , \Lagrangian_g \right\rbrace = \left( f, (\GreenAdv - \GreenRet) g \right)
 	\end{displaymath}
@@ -928,7 +932,7 @@
 					\begin{displaymath}
 						P_\epsilon \gamma = ( P  - \epsilon Q_\chi) \gamma = P \gamma - \epsilon \chi = 0
 					\end{displaymath}
-					\textit{i.e. :} are solutions of the inhomogeneous equation $P \gamma = \epsilon \chi$.
+					They are solutions of the inhomogeneous equation $P \gamma = \epsilon \chi$.
 			\end{itemize}
 		\end{minipage}
 		\vspace{1mm}
@@ -939,7 +943,7 @@
 			\Sol_\epsilon = \left\lbrace \phi + \epsilon G^\pm \chi \quad \vert \phi \in \Sol \quad  \right\rbrace =
 			 \Sol + \epsilon \GreenAdv \chi = \Sol + \epsilon \GreenRet \chi
 		\end{displaymath}
-		and depict this space as a line parallel to $\Sol$.
+		and we can depict this space as a line parallel to $\Sol$.
 
 		
 		
@@ -976,7 +980,7 @@
 		\begin{minipage}{0.5\textwidth}
 			\begin{itemize}
 				\item For the sake of simplicity we depict the pairing relation as the ordinary inner product  on the plane $\Gamma_0$.
-				\item The Lagrangian functional $B_\omega (\cdot) = (\omega, \cdot)$ correspondent to  $\omega \in \Gamma_0$  can be depicted as a plane which intersect plane $ x y$ along the normal to $\omega$.
+				\item The Lagrangian functional $B_\omega (\cdot) = (\omega, \cdot)$ correspondent to  $\omega \in \Gamma_0$  can be depicted as a plane which intersects plane $ x y$ along the normal to $\omega$.
 			\end{itemize}
 		\end{minipage}
 		\vspace{1mm}\\	
@@ -985,8 +989,21 @@
 		\begin{displaymath}
 		 \omega \perp E \chi \Longleftrightarrow \chi \perp E \omega
 		\end{displaymath}
-		where the perpendicularity condition is intended in respect to the inner product on $\Gamma_0$ induced by pairing.
+		where the perpendicularity condition is meant with respect to the inner product on $\Gamma_0$ induced by the pairing \ref{Def:Pairing}.
 		
+		\vspace{2mm}
+		Looking at the picture we can deduce that if $\omega$ is orthogonal to $\Sol_0$ the brackets are necessary null:
+			\begin{displaymath}
+				 \{\omega, \chi\} = -(E \omega , \chi) = ( \omega , E \chi)=0 \qquad \forall \chi \in \Gamma_0
+			\end{displaymath}
+		Since $E\omega \in \Sol_0$ the equivalence above is met only if:
+		\begin{displaymath}
+		(\GreenAdv - \GreenRet) Q_\omega \phi_0= E \omega = 0 
+		\end{displaymath}
+		This is guaranteed from the condition $\ker(\mathcal{O}_\omega) \supset \Sol$.
+		In fact, when the functional $\mathcal{O}_\omega (\cdot) = ( \omega, \cdot): \Conf \rightarrow \Real$ is domain restricted to $\Sol$, it provides degenerate Euler-Lagrange equations: $\left. Q_\omega \right\vert_\Sol = 0$.
+
+\ifToninus
 		\begin{Warning}
 			Osservando la figura si potrebbe dedurre che 
 			\begin{displaymath}
@@ -1011,9 +1028,8 @@
 			\end{displaymath}
 			Questo è ragionevole perchè il funzionale $\mathcal{O}_\omega (\cdot) = ( \omega, \cdot): \Conf \rightarrow \Real$ se ridotto di domino a $\Sol$ è identicamente nullo ( $\ker(\mathcal{O}_\omega) \supset \Sol$) e  dovrebbe dare $\left. Q_\omega \right\vert_\Sol = 0$.
 			\\ non sono sicuro che si possa fare così... 
-			
-			
 		\end{Warning}
+\fi	
 	
 		\subsubsection{Peierls Brackets of the Jacobi field}
 		Now we take a step further considering the Peierls brackets in the case of a Jacobi Fields.
@@ -1027,7 +1043,7 @@
 			}	
 		\end{figure}				
 
-		This example provides a testing ground on which compare the two pre-quantization procedures showed in Chapter 3.\\
+		This example provides a testing ground to compare the two pre-quantization procedures showed in Chapter 3.\\
 		The crucial point is that the following correspondences:
 		\begin{displaymath}
 			(\chi) \in \Gamma_0 \quad \xmapsto{\Xi} \quad (E \chi) \in \Sol \quad \xmapsto{\vert_\Sigma} \quad 
@@ -1052,17 +1068,17 @@
 				\item We depict $M$ as an embedded curve in the three dimensional space.
 				\item Local charts are simply functions $\Psi: M \rightarrow \Real$, we call $t$ the corresponding coordinate.
 				\item Parametrized curves are functions $\gamma: \Real \rightarrow M$, we call $s$ the parameter.
-				\item The tangent space to $T_P M$ correspond to the tangent line to $M$ in $P$.
+				\item The tangent space to $T_P M$ corresponds to the tangent line to $M$ in $P$.
 			\end{itemize}
 		\end{minipage}
 		\vspace{1mm}\\	
 		
-		Briefly, to each smooth curve $\gamma$ can be associated the ordinary smooth function $f(s) = \Psi \cdot \gamma$.\\
-		In this case the metric is simply a smooth, non-null, function $g: M \rightarrow \Real$. The inner product between two "tangent vector" is:
+		Briefly, to each smooth curve $\gamma$ we associate the ordinary smooth function $f(s) = \Psi \cdot \gamma (s)$.\\
+		In this case the metric is simply a smooth, non vanishing, function $g: M \rightarrow \Real$. The inner product between two "tangent vectors" is:
 		\begin{displaymath}
 			\left< a , b \right> = g a b \qquad \forall a,b \in T_P M \simeq \Real
 		\end{displaymath}
-		Since it is necessary only a single coordinate ($t$), there is just one Christoffel symbol:
+		\ifToninus Since it is necessary only a single coordinate ($t$),\fi There is just one Christoffel symbol:
 		\begin{displaymath}
 			\Gamma^0_{\, 0 0} = \frac{1}{2} g^{-1} \left( \frac{\partial g}{\partial t} \right)
 		\end{displaymath}
@@ -1070,7 +1086,7 @@
 		\begin{displaymath}
 			\partial^2_s \gamma + \frac{1}{2}\left.\left[ g^{-1}  \partial_t g \right] \right\vert_{\gamma(s)}  \left(\partial_s\gamma\right) ^2 = 0
 		\end{displaymath}
-		Clearly the fields along a fixed geodesic $\gamma(s)$ are scalar function $X(s) \in \Real$ too.
+		Clearly the fields along a fixed geodesic $\gamma(s)$ are scalar functions $X(s) \in \Real$ too.
 		Since the Riemann tensor on a one dimensional manifold is null, the single Jacobi equation results:
 		\begin{displaymath}
 			\partial_s^2 X = 0
@@ -1083,14 +1099,14 @@
 		\begin{displaymath}
 			\Gamma_0 = C_0^\infty (\Real) = \{ f: \Real \rightarrow \Real \; \vert \, \textrm{ \tiny smooth, compactly supported}\}
 		\end{displaymath}
-		Moreover , from the explicit computation of the Green functions (see Eq. \ref{SimpleGreenFunction}), it follows the exact expression for the Green operators:
+		From the explicit computation of the Green functions (see Eq. \ref{SimpleGreenFunction}), it follows, moreover, the exact expression for the Green operators:
 		\begin{align*}
 			G^+ \psi (s) =& \int_{-\infty}^\infty \psi(\xi) \theta\big( s-\xi \big) \left( a + s b \right) d\xi 
 			=  \left( a + s b \right) \left(\int_{-\infty}^{s}  \psi(\xi) d\xi\right)	\\
 			G^- \psi (s)=& \int_{-\infty}^\infty \psi(\xi) \theta\big( \xi -s \big) \big( (a + \xi)  + s ( b  - 1) \big) d\xi 
 		\end{align*}
 		for all  $\psi \in \Sigma_0$.
-		The "advanced minus retarded" operator results:
+		The "advanced minus retarded" operator is:
 		\begin{displaymath}
 			( G^- -  G^+ ) \psi(s) =  \left( a + s b \right) \left(\int_{s}^{\infty} \psi(\xi) d\xi - \int_{-\infty}^{s} \psi(\xi) d\xi \right) + \int_{s}^{\infty} \psi(\xi) ( \xi -s) d\xi
 		\end{displaymath}
@@ -1098,8 +1114,16 @@
 			I conti non tornano:\\  $E \psi$ non è nella forma $(a +b s)$ dunque non è una soluzione.
 		\end{Warning}
 
-	\subsection{Geometric interpretation of the Peierls' procedure.}
+		\begin{figure}[h!]
+			\includegraphics[width=\textwidth]{Pictures/Jacobi1D_GeometricPicturePanoramica}	
+			\caption{ 
+			%Impressionistic representation of the Jacobi field system on a  2-dimensional Riemannian manifold $M$.\\
+			}	
+		\end{figure}		
 
+
+	\subsection{Geometric interpretation of the Peierls' procedure.}
+		Intro: sulla questione della INTERPRETAZIONE GEOMETRICA come intesa da CD (vedi Cascione)
 
 
 
@@ -1152,25 +1176,28 @@ a 2-dimensional surface in space, and its topological and geometrical structure 
 \fi
 	
 	
+\begin{Warning}
+	\underline{Parte Scopiazzata dalle fonti che va parafrasata}:\\
 
 	The covariant phase space of a system in physics is the space of all of its solutions to its classical equations of motion, the space of classical trajectories of the system. 
  Typically these phase spaces are (locally) naturally parameterized by the suitable boundary conditions or choice of a Cauchy surface which uniquely determine the corresponding history of the physical system. This parameterization is what traditionally is just called a “phase space”. 
 	The “covariant” in “covariant phase space” is to indicated that it comes without any unnatural choices.
 	
- For instance for a non-relativistic particle propagating on a Riemannian manifold $X$ with the usual action functional, a trajectory is uniquely fixed by the position $xi \in X$ and the momentum $p\in T^*_x X$ of the particle at a given time. 
+ For instance for a non-relativistic particle propagating on a Riemannian manifold $X$ with the usual action functional, a trajectory is uniquely fixed by the position $x_i \in X$ and the momentum $p\in T^*_x X$ of the particle at a given time. 
  Correspondingly the space of all solutions and hence the (covariant) phase space of the system may be identified with the cotangent bundle $T^*X$ of $X$.
 
- The covariant phase space can be embedded into the space of field configurations as a subspace of the set of solutions that transversely intersects gauge orbits.  
+ The covariant phase space can be embedded into the space of field configurations as a subspace of the set of solutions that intersects transversely gauge orbits.  
  This embedding is characterized as the zero locus of the equations of motion and some gauge fixing conditions. The non-degenerate Poisson structure on the algebra of functions on the covariant phase space is given by the Peierls bracket.
 
- The Peierls bracket of two functions $A$ and $B$ is the antisymmetrized influence on $B$ of an infinitesimal perturbation of a gauge-fixed action by function that restricts to A on the embedding. 
+ The Peierls bracket between two functions $A$ and $B$ is the antisymmetrized influence on $B$ of an infinitesimal perturbation of a gauge-fixed action by a function that restricts to A on the embedding. 
  The algebra of functions on the space of field configurations becomes a Poisson algebra in the following way. Pick a set of functions on the space of field configurations that restrict to a non-degenerate coordinate system on the embedded covariant phase space. 
- These functions, together with the equations of motion and gauge fixing conditions define a Poisson bivector by being declared canonical, such that the kernel of the bivector coincides with the ideal generated by the equations of motion and the gauge fixing conditions. 
- Obviously the Poisson structure thus constructed on the algebra of functions on field configurations is not unique and depends on the above choice of coordinates; the same non-uniqueness may be parametrized instead by a choice of a connection on the space of field configurations. 
+ These functions, together with the equations of motion and gauge fixing conditions define a Poisson bivector by being declared canonical, so that the kernel of the bivector coincides with the ideal generated by the equations of motion and the gauge fixing conditions. 
+The Poisson structure thus constructed on the algebra of functions on field configurations is not unique and depends on the above choice of coordinates; the same non-uniqueness may be parametrized instead by a choice of a connection on the space of field configurations. 
  The embedded covariant phase space becomes a leaf of the symplectic foliation of the space of field configurations.
 
- However, even reduced phase spaces are not all cotangent bundles, typically not, for instance, if they are obtained by symplectic reduction. 
- This way a finite-dimensional phase space can sometimes describe continuous systems (e.g. in hydrodynamics) whch have infinitely many degrees of freedom; that phase space is however not a cotangent bundle of something in general.
+ However, even reduced phase spaces are not all cotangent bundles, for instance, if they are obtained by symplectic reduction. 
+ In this way a finite-dimensional phase space can sometimes describe continuous systems (e.g. in hydrodynamics) which have infinitely many degrees of freedom; that phase space is however not a cotangent bundle in general.
+\end{Warning}
 
  \begin{example}
   The covariant phase space of the relativistic particle on a pseudo-Riemannian manifold X is the space of geodesics of X (in the absence of a background gauge field).

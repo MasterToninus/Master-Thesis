@@ -1,0 +1,116 @@
+%^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+%		Panoramica del sistema geodetico 1D
+%_______________________________________________________________________________
+
+\documentclass{standalone}
+
+\usepackage{amssymb}
+
+\usepackage{tikz}
+%\usetikzlibrary{...}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\usetikzlibrary{calc}
+
+\usepackage[graphics,tightpage,active]{preview}
+\PreviewEnvironment{tikzpicture}
+
+%Common symbols
+\input{../../Math-Symbols-List/CommonSymbols.tex}
+
+\begin{document}
+    \begin{tikzpicture}
+       \node (a) at (0,0) %Data
+         {
+			\begin{tikzpicture}[scale=0.8]
+				\begin{axis}[axis lines=none,clip=false]
+					%Riquadro che simboleggia Data
+					\addplot[dashed,color=gray] coordinates {
+						(-1.5,-1.5) (4.5,-1.5) (4.5,4.5)(-1.5,4.5)(-1.5,-1.5)
+						};
+					\node   [pin={180:$\Data(\Sigma)$},inner sep=0pt]  at (-1.5,4.5){};
+				
+					%Il piano R2 dei Dati
+					\draw[->,color=black] (-1,0) -- (4,0);
+					\draw[->,color=black] (0,-1) -- (0,4);
+					\node[] at (3.75,3.75) {$\mathbb{R}^2$};
+				
+					%I dati iniziali
+					\draw[-latex,color=green] (0,0) -- (4,-0.7) node [pos=0.5,label={300:{$(a_2,b_2)$}}]  {};    
+					\draw[-latex,color=blue] (0,0) -- (3.5,3.2) node [pos=0.5,label={300:{$(a_1,b_1)$}}]  {};
+
+				\end{axis}
+			 \end{tikzpicture}
+         };
+        \node (b) at (8,0)
+         {
+			\begin{tikzpicture}[remember picture,scale=0.8]
+				\begin{axis}[axis lines=none,clip=false]
+					% Il riquadro di \Conf
+					\addplot[color=black] coordinates {
+						(8,6) (0,6) (0,0)(8,0)(8,6)
+					}node [pos=1,pin={0:$\Complex^\infty_0 \left(\Real(t)\right)$},inner sep=0pt] {};
+					
+					% la retta di \Sol
+					\addplot[color=red] coordinates {
+						(0,2)	
+						(8,2)
+					}node [pos=1,pin={0:$\Sol$},inner sep=0pt] {};
+
+					% Zero section
+					\node(O)[label={270:{$0$}},circle,fill,inner sep=1pt] at (axis cs:1.25,2) {};
+
+					% Fixed Solution
+					\node[label={270:{$\vec{X_1}$}},circle,fill,blue,inner sep=1pt] at (axis cs:5,2) {};
+					\node[label={270:{$\vec{X_2}$}},circle,fill,green,inner sep=1pt] at (axis cs:3,2) {};
+
+
+					% Osservabile associato alla soluzione
+					\draw[-latex,color=black] (O) -- (4,4) node [pos=1,label={$\chi=E^{-1} \vec{X}$}]  {};  
+
+
+				\end{axis}
+			\end{tikzpicture}
+         };
+        \node (c) at (4.5,5.5) [ xscale=1.1, yscale=0.9]
+         {
+         \begin{tikzpicture}
+         \begin{axis}[	axis x line=bottom, axis y line=left,
+						ticks=none, clip=false,
+						xlabel={$t= \gamma(s)$},ylabel={$X(t)$},
+						xlabel style={below right},ylabel style={above left},
+						xmin=0, xmax=5, ymin=0, ymax=10
+						]
+ 
+			% Geodesica di partenza
+			\addplot[blue,domain=0:5] ({x},{1.5 + 1.2*x})	
+					node[	inner sep=0cm,pos=1,label={0:{$X_1 =a_1+b_1 t$}}]	(G1)	{};
+      					
+  			% Geodesica Variata
+  			\addplot[green,domain=0:5] ({x},{8-0.3*x})
+					node[	inner sep=0cm,pos=1,label={0:{$X_2=a_2+b_2 t$}}]	(G2)	{};
+	
+			%I Dati Iniziali
+		
+			% Zero section
+			\node[label={270:{$0$}},circle,fill,inner sep=1pt] at (axis cs:0,0) {};		
+		
+		\end{axis}
+		\end{tikzpicture}
+         };
+         
+       %Mappe tra gli spazi componenti
+        \node (Sol)  at (5.4,-0.75){};
+        \node (Data) at (2.7,-0.75){};
+              
+       \path[->]		
+       		(Data.north)    edge[bend left=60,above]  node        {$\SolMap$}  (Sol)
+      		(Sol)    edge[bend left=60,below]  node        { \tiny $\left( \left. \cdot \right\vert_\Sigma , \left. D_t( \cdot ) \right\vert_\Sigma  \right)$}  (Data.south);
+
+    \end{tikzpicture}
+
+
+ 
+
+\end{document}

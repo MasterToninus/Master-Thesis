@@ -772,7 +772,7 @@ the retarded or the advanced Green operators obtaining:
 			\\
 			Consider a globally hyperbolic operator $P$ for all $p \in M$ a trivializing chart $(U, \varphi, \chi)$ centered in $p$. 
 			There exist a collection $\big\{A, A^\mu \vert \mu\in \{0, \ldots ,m-1\}\big\}$ of smooth 
-			$\Hom(V,V)-$valued maps on $U$ such that, $P$ reas as follows:
+			$\Hom(V,V)-$valued maps on $U$ such that, $P$ reads as follows:
 			\begin{equation}\label{Eq:NormallyHyperbolicRepresentation}
 				\chi \circ ( P \sigma) \circ \varphi^{-1} =
 				\big( g^{\mu \nu} \IdMap_V \partial\mu \partial_nu + A^\mu \partial_\mu + A\big)
@@ -829,9 +829,66 @@ the retarded or the advanced Green operators obtaining:
 		For the second proposition see\cite{Baer2008}[Corollary 3.4.3]
 	\end{proof}
 	
-	% Debug	
-	%\bibliography{bibliography}
-	%\bibliographystyle{plain}	 	
-				
+	\subsection{Green Operators and O.D.E.}
+	In chapter four we will need the explicit expression of the Green operators in the case of linear \textit{ordinary } differential operators (l.o.d.o.). 	
+	We can see them as a trivial case of l.p.d.o. on $\Gamma(E) = C^\infty(\Real)$.
+	
+	Let us call $L_x$ the linear operator associated to the inhomogeneous ordinary differential equation (O.d.e)
+	\begin{displaymath}
+		L_x [u] = \left[ A_n(x) \frac{d^n}{dx^n} + A_{n-1}(x) \frac{d^{n-1}}{dx^{n-1}} + \ldots + A_0(x) \right] u(x) = f(x)
+	\end{displaymath}
+	of $n$-th order.
+	\begin{Warning}
+		Vedi Gaeta, c'è una condizione ulteriore di regolarità sui coefficienti
+	\end{Warning}
+	In this context is more common to refer to Green \textit{functions} instead of Green \textit{operators}.
+	\begin{definition}[Green function]
+	We call \emph{Green function} associated to the l.o.d.o. $L_x$ the solution $G(x \vert \xi)$ of the fundamental distributional equation:
+	\begin{equation}\label{Eq:FundamentalGreen}
+		L_x G(x\vert\xi) = \delta(x-\xi)
+	\end{equation}
+	\end{definition}
+	The main reason to introduce this object is that it provides a criterion to construct a solution of a non-homogeneous O.d.e. independently of the datum $f$:
+	\begin{proposition}
+		Let $G(x \vert \xi)$ be a green function of the l.o.d.o. $L_x$.\\
+		The function
+		\begin{displaymath}
+			u = \int_\Real G( x \vert \xi) f(\xi) d\xi
+		\end{displaymath}
+		is a solution of non-homogeneus equation $L_x[u] = f$.
+	\end{proposition}
+	\begin{proof}
+		\begin{displaymath}
+			L_x[u] = \int_\Real L_x\left[ G(x \vert \xi ) \right] f(\xi) d\xi = \int_\real \delta(x -\xi) f(\xi) d\xi = f(x)
+		\end{displaymath}
+	\end{proof}
+	Accordingly to this result , we can define the \emph{Green operator} $\hat{G}$ associated to the Green function $G(x \vert \xi)$ as the \emph{Hilbert-Schmidt} integral operator 
+			\begin{displaymath}
+				\hat{G} f = \int_\Real G( x \vert \xi ) f(\xi) d\xi
+			\end{displaymath}	
+	where the Green function takes the role of kernel function.
+	
+	\begin{remark}
+		The most general solution of Equation 	\ref{Eq:FundamentalGreen} can be written as:
+		\begin{displaymath}
+		G( x \vert \xi) = g(x \vert \xi) + \sum_{k=1}^{n} C_k(\xi) \varphi_k(x,\xi)
+		\end{displaymath}
+		where $g(x \vert \xi)$ is a particular solution of \ref{Eq:FundamentalGreen} called \emph{singular part} and the $\varphi_k(x,\xi)$ are $n$ linearly independent solutions of the associated homogeneous :
+		\begin{displaymath}
+			L_x \varphi(x , \xi) = 0
+		\end{displaymath}
+		Here $n$ is the order of $L_x$ as a linear differential operator.
+		
+		\vspace{1m}
+		The role of the non-singular part is to take in account the different boundary condition that can be eventually imposed to the problem.
+	\end{remark}
+	
+
+
+\ifToninus
+	\begin{Warning}
+		Sarebbe stato carino fare un'appendice sul metodo del calcolo delle green per le ode componendo due soluzioni di omogenea \cite{Tornberg}.
+	\end{Warning}
+\fi
 
 \end{document}

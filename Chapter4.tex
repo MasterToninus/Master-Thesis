@@ -395,6 +395,9 @@
 			\begin{displaymath}
 				P_0 = \left(\frac{d}{dt}\right)^2 \qquad P_i=\left( \frac{d^2}{dt^2} - m^2 \frac{\ddot{a}}{a} \right)
 			\end{displaymath}
+
+\begin{Warning}
+	\textbf{Da MODIFICARE}\\
 			These operators are the Hilbert–Schmidt integral operators:
 			\begin{displaymath}
 				G^\pm_\mu f = \int_\Real G^\pm_\mu( x \vert \xi ) f(\xi) d\xi
@@ -417,11 +420,7 @@
             \end{cases}
 			\end{equation}
 			where the two undetermined parameters depend on the eventual boundary conditions.
-\ifToninus
-	\begin{Warning}
-		Sarebbe stato carino fare un'appendice sul metodo del calcolo delle green per le ode componendo due soluzioni di omogenea \cite{Tornberg}.
-	\end{Warning}
-\fi		
+		
 			(For a quick reference see for example \cite{Tornberg}.)
 			
 			 Eq. \ref{FRWJacobi1} is a linear autonomous ordinary differential equation, the advanced and retarded Green functions can be promptly computed:
@@ -429,6 +428,7 @@
 				G^+_0(t \vert \xi) = \theta(t-\xi) \left(a +b t \right) \nonumber\\
 				G^-_0( t \vert \xi) = \theta(\xi -t) \left( a +b t + \xi -t\right) 
 			\end{eqnarray}
+\end{Warning}
 
 			In other hand, since the coefficient $m^2 \frac{\ddot{a}(t)}{a(t)}$ is in general time dependant,  Eq. \ref{FRWJacobi2} is a non autonomous ODE and an analytical expression of its general solution does not exist..
 \ifToninus
@@ -451,6 +451,9 @@
 			In both cases the convergence of the series is not guaranteed and should be verified for each explicit expression of the scale function $a (t)$.
 			
 			\vspace{2mm}
+\begin{Warning}
+		\textbf{DA CORREGGERE}						
+			
 		\ifToninus Anyway all this machinery it is not necessary \fi In the special case of \emph{De Sitter} spacetime, where $ a(t) = exp(H t)$ and the coefficient $\ddot{a}/a$ is a positive constant  \cite{Wald1984}, the general solutions are:% simply:
 		\begin{displaymath}
 		 y(t) = c_1 e^{m t \sqrt{\ddot{a}/a}} + c_2 e^{-m t \sqrt{\ddot{a}/a}}
@@ -512,7 +515,7 @@
 						\right)
 					\right)
 			\end{align*}						
-
+\end{Warning}
 			
 		
 

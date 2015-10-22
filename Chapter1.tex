@@ -775,12 +775,12 @@ the retarded or the advanced Green operators obtaining:
 			$\Hom(V,V)-$valued maps on $U$ such that, $P$ reads as follows:
 			\begin{equation}\label{Eq:NormallyHyperbolicRepresentation}
 				\chi \circ ( P \sigma) \circ \varphi^{-1} =
-				\big( g^{\mu \nu} \IdMap_V \partial\mu \partial_nu + A^\mu \partial_\mu + A\big)
+				\big( g^{\mu \nu} \IdMap_V \partial_\mu \partial_\nu + A^\mu \partial_\mu + A\big)
 				(\chi \circ \sigma \circ \varphi^{-1} ) 
 				\qquad \forall \sigma \in \dom(P) \subset \Gamma(E)
 			\end{equation}
 		where both the chart and the vector bundle trivializations are understood. 
-		One immediately notices that locally this expression agrees- up to terms of lower order in the derivative-s with the one for the d'Alembert operator acting on sections of $E$  constructed out of a covariant derivative $\nabla$ on $E$, that is the operator:
+		One immediately notices that locally this expression agrees- up to terms of lower order in the derivatives with the one for the d'Alembert operator acting on sections of $E$  constructed out of a covariant derivative $\nabla$ on $E$, that is the operator:
 		\begin{displaymath}
 			\square_\nabla = g^{\mu \nu} \nabla_\mu \nabla_\nu : \Gamma(E) \rightarrow \Gamma(E)
 		\end{displaymath}
@@ -829,19 +829,21 @@ the retarded or the advanced Green operators obtaining:
 		For the second proposition see\cite{Baer2008}[Corollary 3.4.3]
 	\end{proof}
 	
-	\subsection{Green Operators and O.D.E.}
+	\subsection{Green Functions}\label{Section:GreenFunctions}
 	In chapter four we will need the explicit expression of the Green operators in the case of linear \textit{ordinary } differential operators (l.o.d.o.). 	
-	We can see them as a trivial case of l.p.d.o. on $\Gamma(E) = C^\infty(\Real)$.
+	We can see them as a trivial case of l.p.d.o. on $\Gamma(E) = C^\infty(\Real)$ over the trivial globally hyperbolic manifold $M=\Real$.
 	
 	Let us call $L_x$ the linear operator associated to the inhomogeneous ordinary differential equation (O.d.e)
 	\begin{displaymath}
 		L_x [u] = \left[ A_n(x) \frac{d^n}{dx^n} + A_{n-1}(x) \frac{d^{n-1}}{dx^{n-1}} + \ldots + A_0(x) \right] u(x) = f(x)
 	\end{displaymath}
 	of $n$-th order.
-	\begin{Warning}
-		Vedi Gaeta, c'è una condizione ulteriore di regolarità sui coefficienti
-	\end{Warning}
-	In this context is more common to refer to Green \textit{functions} instead of Green \textit{operators}.
+	For the sake of simplicity we will consider only the case of \emph{regular} operators, such that all the $A_k(x)$ are limited functions and $A_n(x)$ is different from zero on the whole domain.
+	\ifToninus \begin{Warning}
+		Vedi Gaeta \cite{Gaeta2014}, c'è una condizione ulteriore di regolarità sui coefficienti
+	\end{Warning} \fi
+	
+	In this context is more common to talk about Green \textit{functions} instead of Green \textit{operators}.
 	\begin{definition}[Green function]
 	We call \emph{Green function} associated to the l.o.d.o. $L_x$ the solution $G(x \vert \xi)$ of the fundamental distributional equation:
 	\begin{equation}\label{Eq:FundamentalGreen}
@@ -867,27 +869,132 @@ the retarded or the advanced Green operators obtaining:
 				\hat{G} f = \int_\Real G( x \vert \xi ) f(\xi) d\xi
 			\end{displaymath}	
 	where the Green function takes the role of kernel function.
+	Let us recall that this operator is to be understood as a \emph{"formal operator"} until the domain is not specified.
 	
 	\begin{remark}
 		The most general solution of Equation 	\ref{Eq:FundamentalGreen} can be written as:
-		\begin{displaymath}
+		\begin{equation}\label{Eq:MostGeneralGreenFunc}
 		G( x \vert \xi) = g(x \vert \xi) + \sum_{k=1}^{n} C_k(\xi) \varphi_k(x,\xi)
-		\end{displaymath}
+		\end{equation}
 		where $g(x \vert \xi)$ is a particular solution of \ref{Eq:FundamentalGreen} called \emph{singular part} and the $\varphi_k(x,\xi)$ are $n$ linearly independent solutions of the associated homogeneous :
 		\begin{displaymath}
 			L_x \varphi(x , \xi) = 0
 		\end{displaymath}
 		Here $n$ is the order of $L_x$ as a linear differential operator.
 		
-		\vspace{1m}
+		\vspace{1mm}
 		The role of the non-singular part is to take in account the different boundary condition that can be eventually imposed to the problem.
+		More precisely, if operator $L_x$ acts on a space of function determined by boundary conditions
+		\begin{displaymath}
+			D = \{ f \in C^n \big( \left[a,b\right] \big) \; \vert \; f(a)= \alpha , f(b)=\beta \in \Real\}
+		\end{displaymath}
+		this constraint sets the coefficients $C_k(\xi)$ appearing in Eq. \ref{Eq:MostGeneralGreenFunc}.
 	\end{remark}
 	
-
+	According to Eq. \ref{Eq:NormallyHyperbolicRepresentation}, all the normally hyperbolic ordinary differential operators are the regular second order ones:
+	\begin{displaymath}
+		L_x = a(x) \frac{d^2}{d x^2} + b(x) \frac{d}{d x} + c(x)	
+	\end{displaymath}
+	An useful property of such operators is that they can always be rewritten in "canonical form": 
+	
+	\begin{proposition}
+	If $u(x)$ is a solution of the non-homogeneous equation:
+	\begin{displaymath}
+		L_x[u] \equiv a(x) u''(x) + b(c) u'(x) + c(x) u(x) = f(x)
+	\end{displaymath}
+	then $v(x) =  \dfrac{u(x)}{\phi(x)}$ solves:
+	\begin{displaymath}
+		v''(x) +v(x) V(x) = \Phi(x)
+	\end{displaymath}
+	where
+	\begin{displaymath}
+		\tiny{
+		\phi(x) =  \exp \left[-\frac{1}{2}\int \frac{b(x)}{a(x)}dx \right] \quad ; \qquad
+		V(x) = \dfrac{c(x)}{a(x)} - \left( \frac{b(x)}{2a(x)} \right)^2 - \left( \frac{b(x)}{2a(x)} \right)' \quad ; \qquad
+		\Phi(x) = \frac{f(x)}{a(x) \phi(x)}}
+	\end{displaymath}
+	\end{proposition}
+	The problem of the calculation of the general Green function for an ordinary normally hyperbolic differential operator it is reduced to that of calculating the singular part of the Green function of the differential operator in canonical form:
+	\begin{equation}\label{Eq:CanonicalSecondOrderLODO}
+		L_x=  \frac{d^2}{dx^2} + V(x)
+	\end{equation}
+	We recall that is not possible to write down a general expression of the solution for both the complete equation $L_x\left[u(x)\right] = f(x)$ and the associated homogeneous equation. It is therefore not possible to determine the most general $G(x\vert \xi)$.
+	On the other hand is it possible to the determine the advanced and retarded Green operator when it is known a pair of linearly independent solutions.
+	\begin{proposition}
+		The advaced/retared Green operators $G^\pm$ associated to the operator $L_x$ of Eq. \ref{Eq:CanonicalSecondOrderLODO},
+		are the Hilbert-Schmidt operators
+		\begin{displaymath}
+			G^\pm f(x) = \int_\Real g^\pm (x \vert \xi) f(\xi) d \xi
+		\end{displaymath}
+		with kernel functions:
+		\begin{equation}\label{Eq:AdvRetGreenFunction}
+			g^\pm ( x \vert \xi ) = 
+			\pm \frac{1}{W(x)} \theta\big( \pm ( x-\xi) \big) \big[ \varphi_1(\xi)\varphi_2(x) - \varphi_1(x)\varphi_1(\xi) \big]
+		\end{equation}
+		where $\varphi_1(x) , \varphi_2(x)$ are two linearly indipendent solutions of  the homogeneous equation $L_x[u]=0$ and $W(x)$ is the corresponding Wronskian.
+	\end{proposition}
+	\begin{proof}
+		The presence of the step-function $\theta(y)$ in \ref{Eq:AdvRetGreenFunction} guarantees the first and third condition in definition (\ref{Def:GreenOperators}). In this case the past/future-compact condition has to be understood as the requirement of bounded support below/above and $J^\pm(I)$ as the right/left extension of the interval $I \subset \Real$.
+		
+		The crucial point is to check that:
+		\begin{displaymath}
+			\big( g^\pm ( x \vert \xi) \big)'' + V(x) g^\pm ( x \vert \xi) = \delta(x - \xi)
+		\end{displaymath}
+		this can be done by direct inspection.
+		
+		First as to be recalled that the Wronskian of two linearly independent solutions $\varphi_i(x)$ is the constant:
+		\begin{displaymath}
+			W(\varphi_1 , \varphi_2) = \left\vert 
+				\begin{bmatrix}
+        			\varphi_1(x)	&	\varphi_2(x) \\
+        			\varphi_1'(x)	&	\varphi_2'(x)
+     			\end{bmatrix} 
+     		\right\vert = \varphi_1(x)\varphi_2'(x)  - \varphi_2(x)\varphi_1'(x) = W
+		\end{displaymath}
+		
+		Derivating in distributional sense we have:
+		\begin{eqnarray}
+		\frac{d}{dx}g^\pm(x \vert \xi) 	=\frac{\pm 1}{3 W} \Big\{&
+						\pm \delta(x-\xi)\left[ \varphi_1(\xi)\varphi_2(x)-\varphi_1(x)\varphi_2(\xi)\right] + \nonumber \\ 
+					&	+ \theta\big( \pm (x-\xi) \big) \left[ \varphi_1(\xi)\varphi_2'(x)-\varphi_1'(x)\varphi_2(\xi)\right]
+					\Big\}
+		\end{eqnarray}
+		where is been exploited the parity of $\delta$.		A second derivation concludes the proof
+		\begin{eqnarray*}
+		\frac{d^2}{dx^2}g^\pm(x \vert \xi) 	=&\frac{\pm 1}{3 W} \Big\{&
+						\pm \delta'(x-\xi)\left[ \varphi_1(\xi)\varphi_2(x)-\varphi_1(x)\varphi_2(\xi)\right] +  \\ 
+				&	&	\pm 2\delta(x-\xi) \left[ \varphi_1(\xi)\varphi_2'(x)-\varphi_1'(x)\varphi_2(\xi)\right] +  \\
+				& & + \theta\big( \pm (x-\xi) \big) \left[ \varphi_1(\xi)\varphi_2''(x)-\varphi_1''(x)\varphi_2(\xi)\right]
+					\Big\}=  \\
+				=&\frac{\pm 1}{3W} \Big\{&
+						\mp \delta(x-\xi)\left[ \varphi_1'(\xi)\varphi_2(x)-\varphi_1(x)\varphi_2'(\xi)\right] +  \\ 
+				&	&	\pm 2\delta(x-\xi) \left[W\right] +  \\
+				& & -V(x) \theta\big( \pm (x-\xi) \big) \left[ \varphi_1(\xi)\varphi_2(x)-\varphi_1(x)\varphi_2(\xi)\right]
+					\Big\}=  \\
+				=&\cancel{ \frac{\pm 1}{3 W}}\big\{& \cancel{\pm 3 W}\big\} \delta(x-\xi)  - V(x) g^\pm( x \vert \xi)
+		\end{eqnarray*}
+	\end{proof}
 
 \ifToninus
 	\begin{Warning}
 		Sarebbe stato carino fare un'appendice sul metodo del calcolo delle green per le ode componendo due soluzioni di omogenea \cite{Tornberg}.
+		In the specific case of second order ODE the general Green function  - solution of equation \ref{Eq:FoundamentalEquation} - can be explicitly computed as a linear combination of two linearly independent solutions $y_1$ and $y_2$ of the homogeneous problem:
+			\begin{equation}
+			\begin{cases}
+                        G( x \vert \xi) = \theta( x - \xi) \left(d_1 y_1(x) + d_2 y_2(x) \right) + \theta( x - \xi) \left(c_1 y_1(x) + c_2 y_2(x) \right) \\
+						y_1(\xi) (c_1-d_1) + y_2(\xi) ( c_2 - d_2) = 0 \\
+						\dot{y}_1(\xi) (c_1-d_1) + \dot{y}_2(\xi) ( c_2 - d_2) = -1 \\
+            \end{cases}
+			\end{equation}
+			where the two undetermined parameters depend on the eventual boundary conditions.
+		
+			(For a quick reference see for example \cite{Tornberg}.)
+			
+			 Eq. \ref{FRWJacobi1} is a linear autonomous ordinary differential equation, the advanced and retarded Green functions can be promptly computed:
+			\begin{eqnarray}\label{SimpleGreenFunction}
+				G^+_0(t \vert \xi) = \theta(t-\xi) \left(a +b t \right) \nonumber\\
+				G^-_0( t \vert \xi) = \theta(\xi -t) \left( a +b t + \xi -t\right) 
+			\end{eqnarray}
 	\end{Warning}
 \fi
 

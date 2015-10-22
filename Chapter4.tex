@@ -403,12 +403,12 @@
 			
 			Eq. \ref{FRWJacobi1} is a linear autonomous ordinary differential equation, two explicit linearly independent solutions are 
 			\begin{displaymath}
-				\varphi_1(x)=1 \qquad \varphi_2(x)=x
+				\varphi_1(x)=1 \qquad \varphi_2(t)=t
 			\end{displaymath} 
-			with $W(1,x)=1$. \\
+			with $W(1,t)=1$. \\
 			The advanced and retarded Green functions corresponding to $P_0$ can be promptly computed:
 			\begin{equation}\label{SimpleGreenFunction}
-				g^\pm_0(t \vert \xi) = \pm \frac{1}{3}\theta\big(\pm(t-\xi)\big) \left[ x -\xi\right]
+				g^\pm_0(t \vert \xi) = \pm \frac{1}{3}\theta\big(\pm(t-\xi)\big) \left[ t -\xi\right]
 			\end{equation}
 			
 			In other hand, since the coefficient $m^2 \frac{\ddot{a}(t)}{a(t)}$ is in general time dependant,  Eq. \ref{FRWJacobi2} is a non autonomous ODE and an analytical expression of its general solution does not exist.
@@ -471,14 +471,17 @@
 				\right) = \\
 			=&
 				\int_\Real dt 				\int_\Real d\xi \left(
-					-X^0(t)Y^0(\xi)\big(-\theta(\xi -t)-\theta(t-\xi )\big)\frac{x-\xi}{3} \right) +\\
+					-X^0(t)Y^0(\xi)\big(-\theta(\xi -t)-\theta(t-\xi )\big)\frac{t-\xi}{3} \right) +\\
 			&+
 					\int_\Real dt 				\int_\Real d\xi a^2(t) \left(
 					\vec{X}(t) \cdot \vec{Y}(\xi)
 						\big(-\theta(\xi -t)-\theta(t-\xi )\big) \frac{1}{6V}\left[ e^{V(t-\xi)} - e^{-V(t-\xi)}\right]
-					\right)
+					\right) = \\
+			=& \int_\Real dt 				\int_\Real d\xi \left(
+				X^0(t)Y^0(\xi)\frac{t-\xi}{3}				-
+				\vec{X}(t) \cdot \vec{Y}(\xi) \frac{a^2(t)}{6V}\left[ e^{V(t-\xi)} - e^{-V(t-\xi)}\right]
+				\right)
 			\end{align*}					
-		\danger finire finire finire
 		
 
 \section{Algebraic quantization of the Geodesic Field}
@@ -1065,19 +1068,19 @@
 			\Gamma_0 = C_0^\infty (\Real) = \{ f: \Real \rightarrow \Real \; \vert \, \textrm{ \tiny smooth, compactly supported}\}
 		\end{displaymath}
 		From the explicit computation of the Green functions (see Eq. \ref{SimpleGreenFunction}), it follows, moreover, the exact expression for the Green operators:
-		\begin{align*}
-			G^+ \psi (s) =& \int_{-\infty}^\infty \psi(\xi) \theta\big( s-\xi \big) \left( a + s b \right) d\xi 
-			=  \left( a + s b \right) \left(\int_{-\infty}^{s}  \psi(\xi) d\xi\right)	\\
-			G^- \psi (s)=& \int_{-\infty}^\infty \psi(\xi) \theta\big( \xi -s \big) \big( (a + \xi)  + s ( b  - 1) \big) d\xi 
-		\end{align*}
-		for all  $\psi \in \Sigma_0$.
-		The "advanced minus retarded" operator is:
 		\begin{displaymath}
-			( G^- -  G^+ ) \psi(s) =  \left( a + s b \right) \left(\int_{s}^{\infty} \psi(\xi) d\xi - \int_{-\infty}^{s} \psi(\xi) d\xi \right) + \int_{s}^{\infty} \psi(\xi) ( \xi -s) d\xi
+			G^\pm \psi (s) = \pm \int_\Real \frac{1}{3}\theta\big(\pm(s-\xi)\big) \left[ s  -\xi\right] \psi(\xi) d\xi
 		\end{displaymath}
-		\begin{Warning}
-			I conti non tornano:\\  $E \psi$ non è nella forma $(a +b s)$ dunque non è una soluzione.
-		\end{Warning}
+		for all  $\psi \in \Sigma_0$.
+		The effect of the "advanced minus retarded" operator results:
+		\begin{displaymath}
+			( G^- -  G^+ ) \psi(s) =  -\int_\Real \left[ s -\xi\right] \psi(\xi) d\xi = 
+			s \left[-\int_\Real\frac{\psi(\xi)}{3}d\xi \right] + \left[\int_\Real \frac{\xi \psi(\xi)}{3} d\xi \right]
+		\end{displaymath}
+		in agreement with the expected linear expression.
+		\ifToninus\begin{Warning}
+			I conti  tornano:\\  $E \psi$  è nella forma $(a +b s)$ dunque non è una soluzione.
+		\end{Warning}\fi
 
 		\begin{figure}[h!]
 			\includegraphics[width=\textwidth]{Pictures/Jacobi1D_GeometricPicturePanoramica}	

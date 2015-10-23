@@ -954,25 +954,29 @@ the retarded or the advanced Green operators obtaining:
 		
 		Derivating in distributional sense we have:
 		\begin{eqnarray}
-		\frac{d}{dx}g^\pm(x \vert \xi) 	=\frac{\pm 1}{3 W} \Big\{&
+		\frac{d}{dx}g^\pm(x \vert \xi) 	=\frac{\pm 1}{W} \Big\{&
 						\pm \delta(x-\xi)\left[ \varphi_1(\xi)\varphi_2(x)-\varphi_1(x)\varphi_2(\xi)\right] + \nonumber \\ 
 					&	+ \theta\big( \pm (x-\xi) \big) \left[ \varphi_1(\xi)\varphi_2'(x)-\varphi_1'(x)\varphi_2(\xi)\right]
 					\Big\}
 		\end{eqnarray}
 		where is been exploited the parity of $\delta$.		A second derivation concludes the proof
 		\begin{eqnarray*}
-		\frac{d^2}{dx^2}g^\pm(x \vert \xi) 	=&\frac{\pm 1}{3 W} \Big\{&
+		\frac{d^2}{dx^2}g^\pm(x \vert \xi) 	=&\frac{\pm 1}{W} \Big\{&
 						\pm \delta'(x-\xi)\left[ \varphi_1(\xi)\varphi_2(x)-\varphi_1(x)\varphi_2(\xi)\right] +  \\ 
 				&	&	\pm 2\delta(x-\xi) \left[ \varphi_1(\xi)\varphi_2'(x)-\varphi_1'(x)\varphi_2(\xi)\right] +  \\
 				& & + \theta\big( \pm (x-\xi) \big) \left[ \varphi_1(\xi)\varphi_2''(x)-\varphi_1''(x)\varphi_2(\xi)\right]
 					\Big\}=  \\
-				=&\frac{\pm 1}{3W} \Big\{&
-						\mp \delta(x-\xi)\left[ \varphi_1'(\xi)\varphi_2(x)-\varphi_1(x)\varphi_2'(\xi)\right] +  \\ 
+				=&\frac{\pm 1}{W} \Big\{&
+						\mp \delta(x-\xi)\left[ \varphi_1(\xi)\varphi_2'(x)-\varphi_1'(x)\varphi_2(\xi)\right] +  \\ 
 				&	&	\pm 2\delta(x-\xi) \left[W\right] +  \\
 				& & -V(x) \theta\big( \pm (x-\xi) \big) \left[ \varphi_1(\xi)\varphi_2(x)-\varphi_1(x)\varphi_2(\xi)\right]
 					\Big\}=  \\
-				=&\cancel{ \frac{\pm 1}{3 W}}\big\{& \cancel{\pm 3 W}\big\} \delta(x-\xi)  - V(x) g^\pm( x \vert \xi)
+				=&\cancel{ \frac{\pm 1}{W}}\big\{& \cancel{\pm W}\big\} \delta(x-\xi)  - V(x) g^\pm( x \vert \xi)
 		\end{eqnarray*}
+		in the second equation has been used the definition of derivative of a distribution:
+		\begin{displaymath}
+			\left( \partial_x \delta ( x- y \right)\left[\chi \right] =  - \delta(x-y) [ \partial_x\chi] \qquad \forall \chi \in C^\infty_0(\Real)
+		\end{displaymath}
 	\end{proof}
 
 \ifToninus

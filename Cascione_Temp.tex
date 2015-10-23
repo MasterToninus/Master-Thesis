@@ -1,0 +1,171 @@
+\documentclass[Main]{subfiles}
+\begin{document}
+\chapter{Cascione Interpretazione Geometrica}
+
+%\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/
+%						INTRODUZIONE
+%\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/
+
+	\paragraph{Visione Globale preliminare}
+		\begin{itemize}
+			\item 		è evidente che una costruzione così articolata non si presta ad un'interpretazione geometrica immediata.
+			\item 		Ciò che mi sfugge un po' è in che modo jacobi ci aiuta a dare  un'interpretazione geometrica.
+			\item		Keyword: covariant phase space...  Forger ROmero è pieno di spunti interessanti anche Khavkine... ma mi sembra chiaro che qualsiasi interpretazione geometrica non scampi da un pesante inserto di teoria dei campi classici (variational bicomplex and so on)
+			\item		Il grande open problem di questo formalismo geometrico è che molti punti sono calcolo formale tirato di peso dalla teoria a gradi finiti la cui corretta definizione matematica latita.. Analisi globali e teoria delle variazioni vera.
+		\end{itemize}
+
+	\paragraph{Organizzazione del Capitolo}
+		\begin{itemize}
+			\item Geometric Visualization\\
+				Serie di immagini per spiegare in cosa consiste l'algoritmo di Peierls
+			\item Geometric interpretation of Geodesic Bracket \\
+				Spiegare il discorso di Cd sulle motivazioni che spingono a cercare un'interpretazione geometrica al tutto. (vedi sotto)
+			\item Geometric mechanics of prequantum field theory.
+				\begin{itemize}
+					\item cos'è la meccanica geometrica in generale
+					\item si può fare per i campi?
+				\end{itemize}
+		\end{itemize}
+
+
+
+%\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/
+	\newpage
+	\section{Pitturizzazione Geometrica}
+%\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/
+		ok, manca un po' di conclusione riguardo l'ultimo punto....
+
+
+
+%\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/
+	\newpage
+	\section{Constestualizzazione Geometrica}
+%\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/
+	\begin{itemize}
+		\item 	Essenzialmene c'è da parlare del Covariant Phase space. Prima di tentare un'interpretazione geometrica penso sia utile fornire una carrellata sulla meccanica geometrica dei sistemi campo.
+		\item 	Il tentativo che vogliamo fare è quello di identificare in modo preciso la struttura geometrica delle parti coinvolte.
+		\item Questo tentativo è ancora in atto ed è stato "This approach was strongly advocated in the 1980’s by Crnkovic, Witten and Zuckerman who showed how to construct a symplectic structure on the covariant phase space of many important models of field theory" (Forger Romero)
+		\item Il tema presenta ancora notevoli aspetti controversi dal punto di vista dell'analisi globale.
+	\end{itemize}
+	
+	\begin{Warning}
+		La parola chiave è \emph{Covariant Phase Space}, Forger-ROmero danno spunti su questa idea ma io sono ancora troppo impreparato per coglierli a pieno.\\
+		Spunti interessanti sono qua \url{http://ncatlab.org/nlab/show/phase+space}
+		\\
+		Questo discorso è fortemente legato alle parentesi di Peierls. di base c'è un po' l'obbiettivo di identificare le varietà simplettiche come il fondamento un po' di tutto.. quindi anche per i sistemi tipo campo!
+		Se si decide che lo spazio simplettico è Sol allora la forma simplettica la si costruisce con  Peierls!
+	\end{Warning}	
+	
+	\begin{Warning}
+		Ricordare: in questa Tesi non sono in grado di dare lo "stato dell'arte"  sulla meccanica geometrica dei campi quindi neanche sulle Parentesi di Peierls\\
+		Il sistema campo pre quantistico più generico che si può costruire richiede due ingredienti ulteriori:
+			\begin{itemize}
+				\item Libertà di Gauge
+				\item Spin structure
+			\end{itemize}		
+			L'idea è che tutta l'immagine precedente richiederebbe una further investigation from a mathematical point of view per essere ammessa come rigorosa.
+	\end{Warning}
+		
+		
+	\subsection{Spunti degli Esperti}
+		\subsubsection{Crnkovic Witten}
+			The essence of the canonical formalism can be developed in a way that naturally preserves all natural symmetries, including Poincarè invariance.
+			
+			Let us recall the main steps in the canonical formalism of a theory with $N$ degrees of freedom.
+			\begin{itemize}
+				\item  One usually introduces coordinates $q^j$and conjugate momenta $p^i$
+				\item One defines the two-form $ \omega = dp^i \wedge dq^$
+				\item For the sake of commodity it is convenient to combine $p^i, q^j$ in a variable $Q^I , I = 1,\ldots,2N$, with $Q^i=p^i$ for $i\leq\leq N$ and $Q^i= q^{i-N}$ for $i>N$.\\
+					one can think of $\omega$ as an antisymmetric $2N \times 2N$ matrix $\omega_{I J}$ whose non-zero matrix elements are $\omega_{i, i+N} = - \omega_{i+N,i}= 1$.
+				\item One defines the Poisson bracket of any two functions $A(Q^I) , B(Q^J)$ by:
+					\begin{displaymath}
+						\left[ A , B \right] = \omega^{I J} \frac{partial A}{\partial Q^I} \frac{\partial B}{\partial Q^J}
+					\end{displaymath}
+			\end{itemize}
+	
+		\subsubsection{Forger Romero}
+			One of the most annoying flaws of the usual canonical formalism in field theory is its lack of manifest covariance, that is, its lack of explicit Lorentz invariance (in the context of special relativity) and more generally its lack of explicit invariance under space-time coordinate transformations (in the context of general relativity). 
+			
+			This defect is built into the theory from the very beginning, since the usual canonical formalism represents the dynamical variables of classical field theory by functions on some spacelike hypersurface (Cauchy data) and provides differential equations for their time evolution off this hypersurface: thus it presupposes a splitting of space-time into space and time, in the form of a foliation of space-time into Cauchy surfaces.
+			
+			As a result, canonical quantization leads to models of quantum field theory whose covariance is far from obvious and in fact constitutes a formidable problem: as a well known example, we may quote the efforts necessary to check Lorentz invariance in (perturbative) quantum electrodynamics in the Coulomb gauge. \\
+			These and similar observations have over many decades nourished attempts to develop a fully covariant formulation of the canonical formalism in classical field theory, which would hopefully serve as a starting point for alternative methods of quantization.
+			
+			Among the many ideas that have been proposed in this direction, two have come to occupy a special role. 
+			\begin{itemize}
+				\item  One of these is the “covariant functional formalism”, based on the concept 	of “covariant phase space” which is defined as the (infinite-dimensional) space of solutions of the equations of motion.
+					This approach was strongly advocated in the 1980’s by Crnkovi´c,Witten and Zuckerman [1–3] (see also [4]) who showed how to constructa symplectic structure on the covariant phase space of many important models of field theory (including gauge theories and general relativity).
+				
+					The covariant functional formalism fits neatly into the philosophy underlying the symplectic formalism in general; in particular, it admits a natural definition of the Poisson bracket (due to Peierls [16] and further elaborated by DeWitt [17–19]) that preserves the duality between canonically conjugate variables. 
+					Its main drawback is the lack of mathematical rigor, since it is often restricted to the formal extrapolation of techniques from ordinary calculus on manifolds to the infinite-dimensional setting: transforming such formal results into mathematical theorems is a separate problem, often highly complex and difficult.
+					
+				\item The other has become known as the “multisymplectic formalism”, based on the concept of “multiphase space”... (non ci interessa per questa tesi)
+			\end{itemize}			
+
+		\subsubsection{Marolf}
+			In 1952, R.E. Peierls noticed that an algebraic structure equivalent to the Poisson bracket could be defined directly from any action principle without first performing a canonical decomposition into coordinates and momenta. 
+			His essential insight was to consider the advanced and retarded “effect of one quantity (A) on another (B).” Here, A and B are to
+be functions on H. 
+
+			The advanced  and retarded  effects of A on B are then defined by comparing the original system with a new system defined by the action $S_\epsilon = S + \epsilon A$ and the same space H of histories. 
+			Under retarded (advanced) boundary conditions for which the solutions $\phi \in S$ and $\phi_\epsilon	\in S_\epsilon$ coincide to the past (future) of the support of A, the quantity $B_0 = B(\phi)$ computed using $\phi$ will in general differ from $B_\epsilon = B(\phi_\epsilon)$ computed using $\phi_\epsilon$.
+			For small epsilon, the difference between these quantities defines the retarded (advanced) effect of A on B through:
+which depends on the unperturbed solution $\phi$.
+
+	\subsection{Meccanica Geometrica per i campi}
+		Bisogna ricordare cosa si intende per meccanica geometrica per spiegare cosa si intende per meccanica geometrica per i sistemi prequantum.
+	
+	 	\subsubsection{Lessing}
+			\begin{itemize}
+				\item Geometric mechanics employs modern geometry to describe mechanical systems.\\
+					But how does geometry arise in mechanics?  (lessig)
+				\item We begin to see how geometry is an intrinsic part of mechanics and why the geometry should be respected: the space of all admissible configurations of a mechanical system has a natural geometric structure and constraints are intrinsically satisfied by the choice of the geometry. 
+				In more formal parlance, the configuration space Q of a mechanical system is a manifold, the generalization of a 2-dimensional surface in space, and its topological and geometrical structure represent all physical states.
+				The description of the configurations of a system as points on a manifold is the principal premise of geometric mechanics and it enables to illustrate the system’s structure even when the configuration space is complicated and abstract, cf. again Table 1, providing the inherent intuition of geometric mechanics.
+			\end{itemize}
+			
+		\subsubsection{Idea Mia}
+			\begin{itemize}
+				\item la scommessa della meccanica geometrica è quella di poter attribuire ad ogni sistema meccanico una varietà simplettica anche nota come spazio della fasi.
+				\item la pretesa implicita è che da tale spazio delle fasi si possa ricavare tutto, e in meccanica classica lo si fa una volta fissata la scelta di una hamiltoniana.
+				\item Vogliamo estendere questo ragionamento ai campi.. qual'è lo spazio delle fasi per un sistema campo?
+				\item Ci sono due grandi scogli
+					\begin{itemize}
+						\item mentre per il sistema classico a gradi finiti la scelta della varietà è limpida ( i vincoli determinano lo spazio delle configurazioni e da quello si costuisce lo spazio delle fasi come fibrato cotangente) per i campi non è così: Wald e peirels danno delle descrizioni diverse (che risultano equivalenti) la prima viene costruita esplicitamente come un ponte  con la meccanica geom a gradi finiti (vedere i punti dello spazio delle fasi come dati)
+						\item in mec. punti la forma simplettica è una proprietà intrinseca della costruzione dello spazio delle fasi (ogni fibrato cotangente è simplettico) e il teorema di darboux fornisce un'espressione univoca.
+							Inoltre, fissato un dato, l'hamiltoniana fissata determina una traiettoria come flusso del campo hamiltoniano.\\
+							Per i campi non ho tutti questi lussi				
+					\end{itemize}
+				\item bisogna far notare una cosa importante: in tutto questo c'è il tema di passare dallo spazio della fasi (inteso come spazio dei dati iniziali) al cosidetto spazio delle fasi covariante.\\
+					Questo dovrebbe essere SOL, ed ho mostrato come Sol esista per ogni sistema meccanico indipendentemente dalla cardinalità delle coordinate di configurazione.
+			\end{itemize}		
+
+
+%\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/
+	\newpage
+	\section{Il Problema dell'interpretazione Geometrica Vero e proprio}
+%\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/\_/
+		At this point should be clear to the reader how the Peierls constructions is tutt'altro che limpida.
+		
+
+
+		\subsection{Interpretazione Geometrica nell'accezione di CD}
+			\begin{itemize}
+				\item Abbiamo raccontato come si costruisce lo spazio simplettico per le teorie di campo secondi i due approcci alla Peierls e alla Wald.
+				\item  Abbiamo provato che i due spazi simplettici sono isomorfi ma sono simplettomorfi solo in alcuni casi particolari.
+				\item entrambe le due costruzioni sono esoteriche e calate dall'alto. 
+					Mediamente vengono utilizzate come "black box" come ricette per dare una forma simplettica utile ma:
+				\begin{itemize}
+					\item a priori non c'è nessun motivo per cui le forme simplettiche che forniscono siano quelle "giuste".
+					\item I singoli passaggi della costruzione non hanno giustificazione fisica.
+					\item 	In breve: sappiamo il come, sappiamo che funziona ma non sappiamo "perchè".
+				\end{itemize}
+				\item Perchè Jacobi è un esempio pregnante?\\
+					In questo caso la costruzione di Wald non è ambigua. Data è isomorfo a $\Real^(2n)$ e la forma $\Sigma$ che viene imposta dalla procedura di wald corrisponde all'unica scelta possibile prevista dal teorema di Darboux (notare che anche per il semplice campo scalare lo spazio data è costituto da coppie di funzioni $C_0$ tutt'altro che finito dimensionale.
+				\item l'interpretazione che cerchiamo è quasi di stampo "filosofico". Perchè la costruzione convoluta di peierls che parte dal considerare i disturbi lagrangiani è equivalente proprio all'unica forma simplettica su $Data=\Real^{2n}$ che praticamente coincide con lo spazio delle fasi classico?
+				\item il problema sfuggente è "discutere sul perchè la costruzione di Peierls fornisce proprio la giusta usuale forma simplettica (parentesi $\Omega$) sullo spazio delle fasi classico?"\\
+					( che su $\real^{2n} $ sono univocamente fornite dal teorema di Darboux)			
+		\end{itemize}
+
+
+\end{document}

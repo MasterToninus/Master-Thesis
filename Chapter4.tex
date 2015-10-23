@@ -408,7 +408,7 @@
 			with $W(1,t)=1$. \\
 			The advanced and retarded Green functions corresponding to $P_0$ can be promptly computed:
 			\begin{equation}\label{SimpleGreenFunction}
-				g^\pm_0(t \vert \xi) = \pm \frac{1}{3}\theta\big(\pm(t-\xi)\big) \left[ t -\xi\right]
+				g^\pm_0(t \vert \xi) = \pm \theta\big(\pm(t-\xi)\big) \left[ t -\xi\right]
 			\end{equation}
 			
 			In other hand, since the coefficient $m^2 \frac{\ddot{a}(t)}{a(t)}$ is in general time dependant,  Eq. \ref{FRWJacobi2} is a non autonomous ODE and an analytical expression of its general solution does not exist.
@@ -440,7 +440,7 @@
 			with $v=m H$ and Wronskian $W= 2V$.
 			The Green functions result
 			\begin{displaymath}
-								g^\pm_i(t \vert \xi) = \pm \frac{1}{6V}\theta\big(\pm(t-\xi)\big) \left[ e^{V(t-\xi)} - e^{-V(t-\xi)}\right]
+								g^\pm_i(t \vert \xi) = \pm \frac{1}{2V}\theta\big(\pm(t-\xi)\big) \left[ e^{V(t-\xi)} - e^{-V(t-\xi)}\right]
 			\end{displaymath}
 
 			Combing all these results we're able to give an explicit expression of the Peierls symplectic form $\tau$- as defined in Eq. 	\ref{Def:SymplecticTau}- for the De Sitter spacetime.
@@ -471,15 +471,15 @@
 				\right) = \\
 			=&
 				\int_\Real dt 				\int_\Real d\xi \left(
-					-X^0(t)Y^0(\xi)\big(-\theta(\xi -t)-\theta(t-\xi )\big)\frac{t-\xi}{3} \right) +\\
+					-X^0(t)Y^0(\xi)\big(-\theta(\xi -t)-\theta(t-\xi )\big)\left[t-\xi \right] \right) +\\
 			&+
 					\int_\Real dt 				\int_\Real d\xi a^2(t) \left(
 					\vec{X}(t) \cdot \vec{Y}(\xi)
-						\big(-\theta(\xi -t)-\theta(t-\xi )\big) \frac{1}{6V}\left[ e^{V(t-\xi)} - e^{-V(t-\xi)}\right]
+						\big(-\theta(\xi -t)-\theta(t-\xi )\big) \frac{1}{2V}\left[ e^{V(t-\xi)} - e^{-V(t-\xi)}\right]
 					\right) = \\
 			=& \int_\Real dt 				\int_\Real d\xi \left(
-				X^0(t)Y^0(\xi)\frac{t-\xi}{3}				-
-				\vec{X}(t) \cdot \vec{Y}(\xi) \frac{a^2(t)}{6V}\left[ e^{V(t-\xi)} - e^{-V(t-\xi)}\right]
+				X^0(t)Y^0(\xi)\left[t-\xi \right]				-
+				\vec{X}(t) \cdot \vec{Y}(\xi) \frac{a^2(t)}{2V}\left[ e^{V(t-\xi)} - e^{-V(t-\xi)}\right]
 				\right)
 			\end{align*}					
 		
@@ -1069,17 +1069,17 @@
 		\end{displaymath}
 		From the explicit computation of the Green functions (see Eq. \ref{SimpleGreenFunction}), it follows, moreover, the exact expression for the Green operators:
 		\begin{displaymath}
-			G^\pm \psi (s) = \pm \int_\Real \frac{1}{3}\theta\big(\pm(s-\xi)\big) \left[ s  -\xi\right] \psi(\xi) d\xi
+			G^\pm \psi (s) = \pm \int_\Real \theta\big(\pm(s-\xi)\big) \left[ s  -\xi\right] \psi(\xi) d\xi
 		\end{displaymath}
 		for all  $\psi \in \Sigma_0$.
 		The effect of the "advanced minus retarded" operator results:
 		\begin{displaymath}
 			( G^- -  G^+ ) \psi(s) =  -\int_\Real \left[ s -\xi\right] \psi(\xi) d\xi = 
-			s \left[-\int_\Real\frac{\psi(\xi)}{3}d\xi \right] + \left[\int_\Real \frac{\xi \psi(\xi)}{3} d\xi \right]
+			s \left[-\int_\Real \psi(\xi) d\xi \right] + \left[\int_\Real \xi \psi(\xi) d\xi \right]
 		\end{displaymath}
 		in agreement with the expected linear expression.
 		\ifToninus\begin{Warning}
-			I conti  tornano:\\  $E \psi$  è nella forma $(a +b s)$ dunque non è una soluzione.
+			I conti  tornano:\\  $E \psi$  è nella forma $(a +b s)$ dunque  è una soluzione.
 		\end{Warning}\fi
 
 		\begin{figure}[h!]
@@ -1090,59 +1090,7 @@
 		\end{figure}		
 
 
-	\subsection{Geometric interpretation of the Peierls' procedure.}
-		Intro: sulla questione della INTERPRETAZIONE GEOMETRICA come intesa da CD (vedi Cascione)
-
-
-
 	\subsection{Geometric Mechanics of Classical Fields}
-	
-\ifToninus
-	\begin{Warning}
-		Ricordare: in questa Tesi non sono in grado di dare lo "stato dell'arte" sulle Parentesi di Peierls e sulla meccanica geometrica dei campi!\\
-		Il sistema campo pre quantistico più generico che si può costruire richiede due ingredienti ulteriori:
-		\begin{itemize}
-			\item Libertà di Gauge
-			\item Spin structure
-		\end{itemize}
-
-	L'idea è che tutta l'immagine precedente richiederebbe una further investigation from a mathematical point of view per essere ammessa come rigorosa.
-	\end{Warning}
-
-	\begin{Warning}
-	Bisogna ricordare cosa si intende per meccanica geometrica per spiegare cosa si intende per meccanica geometrica per i sistemi prequantum.
-	
-	 \textbf{Lessing}
-		
-		\begin{itemize}
-		\item Geometric mechanics employs modern geometry to describe mechanical systems.\\
-		But how does geometry arise in mechanics?  (lessig)
-		\item We begin to see how geometry is an intrinsic part of mechanics and why the geometry should be respected: the space of all admissible configurations of a mechanical system has a natural geometric structure and constraints are intrinsically satisfied by the choice of the geometry. In more formal parlance, the configuration space Q of a mechanical system is a manifold, the generalization of
-a 2-dimensional surface in space, and its topological and geometrical structure represent all physical states.
-	The description of the configurations of a system as points on a manifold is the principal premise of geometric mechanics and it enables to illustrate the system’s structure even when the configuration space is complicated and abstract, cf. again Table 1, providing the inherent intuition of geometric mechanics.
-
-	\end{itemize}
-	
-	\textbf{Mia idea}
-	\begin{itemize}
-		\item la scommessa della meccanica geometrica è quella di poter attribuire ad ogni sistema meccanico una varietà simplettica anche nota come spazio della fasi.
-		\item la pretesa implicita è che da tale spazio delle fasi si possa ricavare tutto, e in meccanica classica lo si fa una volta fissata la scelta di una hamiltoniana
-		\item Vogliamo estendere questo ragionamento ai campi.. qual'è lo spazio delle fasi per un sistema campo?
-		\item Ci sono due grandi scogli
-			\begin{itemize}
-				\item mentre per il sistema classico a gradi finiti la scelta della varietà è limpida ( i vincoli determinano lo spazio delle configurazioni e da quello si costuisce lo spazio delle fasi come fibrato cotangente) per i campi non è così: Wald e peirels danno delle descrizioni diverse (che risultano equivalenti) la prima viene costruita esplicitamente come un ponte  con la meccanica geom a gradi finiti (vedere i punti dello spazio delle fasi come dati)
-				\item in mec. punti la forma simplettica è una proprietà intrinseca della costruzione dello spazio delle fasi (ogni fibrato cotangente è simplettico) e il teorema di darboux fornisce un'espressione univoca.
-					Inoltre, fissato un dato, l'hamiltoniana fissata determina una traiettoria come flusso del campo hamiltoniano.\\
-					Per i campi non ho tutti questi lussi				
-			\end{itemize}
-		\item bisogna far notare una cosa importante: in tutto questo c'è il tema di passare dallo spazio della fasi (inteso come spazio dei dati iniziali) al cosidetto spazio delle fasi covariante.\\
-			Questo dovrebbe essere SOL, ed ho mostrato come Sol esista per ogni sistema meccanico indipendentemente dalla cardinalità delle coordinate di configurazione.
-	\end{itemize}
-	
-		
-	\end{Warning}	
-\fi
-	
 	
 \begin{Warning}
 	\underline{Parte Scopiazzata dalle fonti che va parafrasata}:\\
@@ -1170,6 +1118,10 @@ The Poisson structure thus constructed on the algebra of functions on field conf
  \begin{example}
   The covariant phase space of the relativistic particle on a pseudo-Riemannian manifold X is the space of geodesics of X (in the absence of a background gauge field).
  \end{example}
+
+
+	\subsection{Geometric interpretation of the Peierls' procedure.}
+		Intro: sulla questione della INTERPRETAZIONE GEOMETRICA come intesa da CD (vedi Cascione)
 
 
 

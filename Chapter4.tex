@@ -1091,37 +1091,109 @@
 
 
 	\subsection{Geometric Mechanics of Classical Fields}
+		%-------------------------------------------------------------------------------------------------------------------
+		% La scomessa della meccanica Geometrica
+		According to Lessing\cite{Lessig2012}, we call "geometric mechanics" the mathematical discipline which employs modern geometry to describe mechanical systems.
+		It is no secret that geometry is an intrinsic part of mechanics. For example the space of all admissible configurations of a mechanical system has the natural geometric structure of a manifold.
+		Therefore the bet of geometric mechanics is that is possible to attribute to every mechanical system a  \emph{phase space} together with the implicit claim that it is possible to reconstruct from this space each physical quantity relevant to the mechanics. 
+		In the spirit of \emph{coordinate-free canonical formalism} the central object, necessary and sufficient, to encode the entire mathematical structure of a classical mechanical system is a \emph{symplectic manifold}.
+
+
+		%-------------------------------------------------------------------------------------------------------------------
+		% Il vantaggio dell'approccio geometrico dal punto di vista degli schemi di quantizzazione
+		In view of the quantization schemes this approach has proven to be winning.
+		The reason is that from the symplectic structure descends in a simple way a Poisson structure which it lends itself to be modified in order to represent  the pre-quantum versions of the canonical commutation rules.
+
+		%-------------------------------------------------------------------------------------------------------------------
+		%Si può fare una meccanica Geometrica per i campi?}	
+		Because of the relation of Poisson brackets to quantization, the problem of the quantization of fields required the translation of the canonical formalism from mechanics to field theories (multiple independent variable instead of one).
+		One of the most annoying flaws of the usual canonical formalism in field theory is its lack of manifest covariance, that is its lack of explicit invariance under space-time coordinate transformations (in the context of general relativity). 
+			
+			This defect is built into the theory from the very beginning, since the usual canonical formalism represents the dynamical variables of classical field theory by functions on some spacelike hypersurface (Cauchy data) and provides differential equations for their time evolution off this hypersurface: thus it presupposes a splitting of space-time into space and time, in the form of a foliation of space-time into Cauchy surfaces.
+			
+			As a result, canonical quantization leads to models of quantum field theory whose covariance is far from obvious and in fact constitutes a formidable problem.
+		
+		%-------------------------------------------------------------------------------------------------------------------
+		%Punto preliminare per realizzare questo progetto è il passaggio dal usual canonical formalism to the "covariant canonical formalism"
 	
-\begin{Warning}
-	\underline{Parte Scopiazzata dalle fonti che va parafrasata}:\\
 
-	The covariant phase space of a system in physics is the space of all of its solutions to its classical equations of motion, the space of classical trajectories of the system. 
- Typically these phase spaces are (locally) naturally parameterized by the suitable boundary conditions or choice of a Cauchy surface which uniquely determine the corresponding history of the physical system. This parameterization is what traditionally is just called a “phase space”. 
-	The “covariant” in “covariant phase space” is to indicated that it comes without any unnatural choices.
+		%-------------------------------------------------------------------------------------------------------------------
+		%la costruzione fatta con i dati iniziali è simile ma non covariante a vista!
+
+
+		%-------------------------------------------------------------------------------------------------------------------
+		% Ci sono diverse idee per realizzare questo programma. Il nostro lavoro si inquadra essenzialmente nel "covariant functional formalism" advocated from crinkovic witten
+		The hard part is to find a covariant description of a symplectic structure on the covariant Phase Space .
+		In the last decades nourished many attempts to develop a fully covariant formulation of such object for classical field theories.
+		
+		The “covariant functional formalism”, strongly advocated in the 1980’s by Crnkovi´c,Witten and Zuckerman [1–3] (see also [4]) who showed how to construct a symplectic structure starting from a "covariant presymplectic current density"\cite{Crnkovic1999}\cite{Khavkine2014}.
+		This approach is
+		This approach is slightly different from the construction "by initial data", a glimpse on such object can be found in example \ref{} where we have constructed a conserved current in order to prove that the symplect form $\Omega$ is independent from the choice of the cauchy surface.
+		
+		%-------------------------------------------------------------------------------------------------------------------
+		% Il nucleo del lavoro come presentato da crinkovic è il covariant phase space. di che si tratta?
+		
+
+
+
+		%-------------------------------------------------------------------------------------------------------------------
+		% Come si ricollega tutto ciò a quanto fatto da noi?
+		% senza scendere nei dettagli bisogna dire che il metodo del cov phase space si basa su un raffinamento del metodo di Wald, è covariantizzazione del metodo sui dati iniziali (notando l'isomorfismo tra dato e soluzione unica)
+		% Questo metodo fornisce una forma simplettica sullo spazio delle fasi covarianti allora il metodo di peierls va visto come se fornisse una forma di poisson su ciò che va rivisto come lo spazio degli "osservabili" nel senso di funzione che viene valutata su una configurazione
+		% l'equivalenza tra le due stutture l'abbiamo dimostrato per il campo scalare e jacobi sfruttando una corrente conservata.. proprio su un oggetto del genere è definita la costruzione di Crinko vedi crinko e khav
+		
+		
+		%-------------------------------------------------------------------------------------------------------------------
+		%In cosa si differenzia il mio lavoro da quello di crinkovic khavkine forger romero?
+		% IO ho cercato di fare un espressione generale per il sistema astratto per cui si applica il metodo di Peierls nel modo in cui lo racconta lui ( al netto di strutture di spin, vincoli e gauge)
+		% Crnkovic da un espessione generale del metodo dei dati iniziali. La sua costruzione passa per l'identificazione di una corrente conservata (la stessa che io ho esibito nel caso di campo scalare e jacobi per dimostrare l'indipendenza dalla scelta di sigma per il caso di campo scalare (% Lui non parla di peierls!). L'articolo preliminare è fatto assieme a Witten ( nel 300 years of gravitation), esegue questa costruzione in vari casi specifici. 
+		%
+			
+		
+		%-------------------------------------------------------------------------------------------------------------------
+		% Disclaimer importante 1: siamo stati sul semplice riguardo i sistemi campo considerati, sono 3 le complicazioni interessanti ad esempio addressate da Khavkine
+		
+		
+		%-------------------------------------------------------------------------------------------------------------------
+		% Questo argomento è ancora di frontiera per quanto riguarda il rigore matematico complessivo. serve analisi globale per esprimere la geometria differenziale per queste varietà infinito dimensionale
+		%nel linguaggio di crnkovic e khavkine si può proporre una formal diffential geometry of the covariant phase space.
+		
+		Its main drawback is the lack of mathematical rigor, since it is often restricted to the formal extrapolation of techniques from ordinary calculus on manifolds to the infinite-dimensional setting: transforming such formal results into mathematical theorems is a separate problem, often highly complex and difficult.
+		\begin{Warning}
+			\underline{Khavkine}\cite{Khavkine2014}\\
+			(It is needed) a serious functional analytical effort to describe the infinite dimensional spaces of field configurations and algebras of observables using infinite dimensional differential geometry.
+		\end{Warning}				
+
+
+
+
+
+	\subsection{The quandary of a geometric interpretation of the Peierls' procedure.}
+		%-------------------------------------------------------------------------------------------------------------------
+		% Ok, abbiamo visto la pitturizzazione dell'algoritmo di Peierls e inquadrato il ruolo della forma simplettica (x, Ey) costruita a partire da esso all'interno della pittura geometrica della meccanica.
+		%questa però non si può dire ontologicamente un'interpretazione geometrica dell'algoritmo
+		\begin{Warning}
+			\underline{Khavkine}\cite{Khavkine2014}\\
+			It is likely that Peierls was guided by experience. Having seen the unequal time Poisson bracket (or rather the quantum commutator) of point fields in many examples, computed using the canonical method, but expressed in relativistically invariant form, he was probably lead to a guess for its general formula. 
+			He showed that this formula is in fact antisymmetric and is equivalent to the canonical bracket for equal time fields, in the non-singular case (without gauge invariance). 
+		\end{Warning}		
+
 	
- For instance for a non-relativistic particle propagating on a Riemannian manifold $X$ with the usual action functional, a trajectory is uniquely fixed by the position $x_i \in X$ and the momentum $p\in T^*_x X$ of the particle at a given time. 
- Correspondingly the space of all solutions and hence the (covariant) phase space of the system may be identified with the cotangent bundle $T^*X$ of $X$.
-
- The covariant phase space can be embedded into the space of field configurations as a subspace of the set of solutions that intersects transversely gauge orbits.  
- This embedding is characterized as the zero locus of the equations of motion and some gauge fixing conditions. The non-degenerate Poisson structure on the algebra of functions on the covariant phase space is given by the Peierls bracket.
-
- The Peierls bracket between two functions $A$ and $B$ is the antisymmetrized influence on $B$ of an infinitesimal perturbation of a gauge-fixed action by a function that restricts to A on the embedding. 
- The algebra of functions on the space of field configurations becomes a Poisson algebra in the following way. Pick a set of functions on the space of field configurations that restrict to a non-degenerate coordinate system on the embedded covariant phase space. 
- These functions, together with the equations of motion and gauge fixing conditions define a Poisson bivector by being declared canonical, so that the kernel of the bivector coincides with the ideal generated by the equations of motion and the gauge fixing conditions. 
-The Poisson structure thus constructed on the algebra of functions on field configurations is not unique and depends on the above choice of coordinates; the same non-uniqueness may be parametrized instead by a choice of a connection on the space of field configurations. 
- The embedded covariant phase space becomes a leaf of the symplectic foliation of the space of field configurations.
-
- However, even reduced phase spaces are not all cotangent bundles, for instance, if they are obtained by symplectic reduction. 
- In this way a finite-dimensional phase space can sometimes describe continuous systems (e.g. in hydrodynamics) which have infinitely many degrees of freedom; that phase space is however not a cotangent bundle in general.
-\end{Warning}
-
- \begin{example}
-  The covariant phase space of the relativistic particle on a pseudo-Riemannian manifold X is the space of geodesics of X (in the absence of a background gauge field).
- \end{example}
+		
+		%-------------------------------------------------------------------------------------------------------------------
+		%  Cosa interpretiamo per geometric interpretations che manco o meglio cosa vorremmo fosse un'interpetazione geometrica convincente?
 
 
-	\subsection{Geometric interpretation of the Peierls' procedure.}
-		Intro: sulla questione della INTERPRETAZIONE GEOMETRICA come intesa da CD (vedi Cascione)
+		%-------------------------------------------------------------------------------------------------------------------
+		%  è da porsi la domanda di cosa ha aggiunto  alla nostra comprensione lo studio del caso del campo di Jacobi
+
+
+		%-------------------------------------------------------------------------------------------------------------------
+		%  Purtroppo non abbiamo trovato un confronto immediato
+		
+
+		%-------------------------------------------------------------------------------------------------------------------
+		%  Ciò che può emergere dalla nostra analisi è il ruolo centrale dello spazio geometrico delle lagrangiane che soggiace a tutto il discorso (vs il ruolo maggiore di Dati e soluzione che si ha nel caso di Cov Pha Spa).
 
 
 

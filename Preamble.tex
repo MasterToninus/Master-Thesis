@@ -78,3 +78,15 @@
 %Formato di Pdf archiviabile espressamente espresso da Unimi
 \usepackage[a-1b]{pdfx}
 
+% Attaccare il frontespizio come pdf a parte
+\usepackage{pdfpages} 
+
+% Blank Page http://tex.stackexchange.com/questions/36880/insert-a-blank-page-after-current-page
+\usepackage{afterpage}
+
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage}
+

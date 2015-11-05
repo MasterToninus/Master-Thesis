@@ -1,41 +1,60 @@
-%Flag di Debug.
-%che toggla il mio stile e le mie osservazioni..era una cose che andava pensata prima! ora mi tocca rimettere a mano le mie osservazioni (messe nel cascione e il mio stile lasciato nella cartella "pre correzione"
+%Flag di Debug. (toggle mio stile e osservazioni) (idea implementata un po' tardi, molti commenti sono nel cascione)
 \newif\ifToninus
-\Toninustrue  %Commentare per ottenere la versione da stampare
-%---------------------------------------------------------------------------------------------------------------------------------------------------------------------
-\documentclass[a4paper,12pt,openright,twoside]{report}  %Per La Stampa
+%\Toninustrue  %Commentare per ottenere la versione da stampare
+
+%-------- Document Class  ------------------------------------------------------------------------------------------------------------------------------------------------
+\ifToninus
+	\documentclass{report}
+\else
+	\documentclass[a4paper,12pt,openright,twoside]{report}  %Per La Stampa
+	\usepackage[margin=3.75cm,twoside]{geometry}
+\fi
+
+%-------- Multi-file  ---------------------------------------------------------------------------------------------------------------------------------------------------------
 \usepackage{subfiles}%---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-
-%---------------------------------------------------------------------------------------------------------------------------------------------------------------------
-%		Preambolo
+%-------- Preambolo  --------------------------------------------------------------------------------------------------------------------------------------------------
 	\input{./Preamble.tex}
 	\input{./SymbolsGlossary.tex}
 %---------------------------------------------------------------------------------------------------------------------------------------------------------------------
-\Toninusfalse
-
-
 \title{Interpretazione Geometrica delle parentesi di Peierls nella quantizzazione algebrica del campo Geodetico. }
 \author{Antonio Michele Miti}
 	\date{\today}
 
 %\renewcommand\thesection{\arabic{section}}%alleggerire la notazione dei paragrafi
 
+
+
+
+%\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+%				Cominciamo!
+%\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 \begin{document}
 
+%-------- FronteSpizio  ------------------------------------------------------------------------------------------------------------------------------------------------
 %  Titolo
 %\maketitle
-\input{Frontespizio.tex}
+\ifToninus
+	\input{Frontespizio.tex}
+\else
+	 \includepdf{Frontespizio_StandAlone.pdf}
+\fi
 
-
-\pagenumbering{roman}
-\newpage
+%-------- Parte Prelimanare  ---------------------------------------------------------------------------------------------------------------------------------------------
+\blankpage
+\clearpage
 
 % Abstract
 \subfile{Abstract.tex}
 
+%Acknowledgements
+\subfile{Acknowledgements.tex}
+
+\blankpage
+\clearpage
 %List of symbols
+\pagenumbering{roman}
 \addcontentsline{toc}{chapter}{List of symbols}
 \glossarystyle{long}
 \printnoidxglossary[sort=def,title={List of Symbols},nonumberlist]
@@ -44,7 +63,7 @@
 \tableofcontents
 
 
-%% my document content
+%-------- Documents Content  ----------------------------------------------------------------------------------------------------------------------------------------
 \clearpage
 \pagenumbering{arabic}
 \subfile{Introduction}

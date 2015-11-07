@@ -691,25 +691,25 @@ specify the support properties of the sections of a vector bundle with base a gl
 
 			In what follows we will make extensive use of the following properties:
 			\begin{proposition}\label{Prop:GreenKernel}
-				Let $M$ be a globally hyperbolic spacetime. Consider a vector bundle $E$ over $M$, Green-hyperbolic operator $P: \Gamma(E)\rightarrow \Gamma(E)$ and a time-compact section $f\in \Gamma_{tc}(E)$.
-				Let $G^\pm$ be retarded and advanced Green operators for $P$ and denote with $E$ the corresponding advanced-minus-retarded operator.\\
+				Let $M$ be a globally hyperbolic spacetime. Consider a vector bundle $E$ over $M$, a Green-hyperbolic operator $P: \Gamma(E)\rightarrow \Gamma(E)$ and a time-compact section $f\in \Gamma_{tc}(E)$.
+				Let $G^\pm$ be the retarded and advanced Green operators for $P$ and denote with $E$ the corresponding advanced-minus-retarded operator.\\
 				Then:
 					\begin{enumerate}
 						\item $E f = 0 \; \Leftrightarrow \; \exists h \in \Gamma_{tc}(E) \; \vert \; f=P h $.
 						\item $P f = 0 \; \Leftrightarrow \; f=0$.
-						\item $\forall h \in \Gamma(E)\quad \exists h \in \Gamma(E)\quad \vert P h = f$.
+						\item $\forall f \in \Gamma(E)\quad \exists h \in \Gamma(E)\quad \vert P h = f$.
 					\end{enumerate}
 			\end{proposition}
 			\begin{proof}
 			(Th. 1)\\
-			Inverse implication follows slavishly from the definition of causal propagator:
+			Assuming that $h\in \Gamma_{tc} = \dom(\GreenAdv) \cap \dom(\GreenRet)$, the converse implication follows slavishly from the definition of the causal propagator:
 			\begin{displaymath}
 				E f= (\GreenAdv - \GreenRet) P h = h -h
 			\end{displaymath}
-			since $h\in \Gamma_{tc} = \dom(\GreenAdv) \cap \dom(\GreenRet)$ .
 			\\
-			Regarding the direct implication, let $f \in \Gamma_{tc}(E)$ such that $E f = 0$.
-			That implies $\GreenRet f = \GreenAdv f $, the support properties of the retarded and advanced Green operators entail that
+			\ifToninus Regarding the direct implication, let $f \in \Gamma_{tc}(E)$ be such that $E f = 0$.
+			\else In the other hand, assume that $f \in \Gamma_{tc}(E)$ be such that $E f = 0$.
+			It implies $\GreenRet f = \GreenAdv f $, while the support properties of the retarded and advanced Green operators entail that
 			\begin{displaymath}
 				\supp (\GreenRet f ) \subset \mathbf{J}^+ (\supp f) \cap \mathbf{J}^- (\supp f)
 			\end{displaymath}
@@ -720,12 +720,12 @@ specify the support properties of the sections of a vector bundle with base a gl
 			 \end{displaymath}
 			
 			[Th. 2]\\
-			Suppose now that there exists $f \in \Gamma_{tc}(E)$ such that $Pf = 0$. Since a linear partial differential operator does not extend the support condition (Remark \ref{Obs:EnlargeSupport}), can be applied either
+			Suppose now that there exists $f \in \Gamma_{tc}(E)$ such that $Pf = 0$. Since a linear partial differential operator does not enlarge the support (Remark \ref{Obs:EnlargeSupport}), one can apply either
 the retarded or the advanced Green operators obtaining:
 			\begin{displaymath}
 				h = G^\pm P h = 0
 			\end{displaymath}
-			Inverse implication is trivial.
+			The converse implication is trivial.
 			
 			[Th. 3]\\
 			Consider a pair of function (partition of unity of $M$) $\{\chi_\pm: M \rightarrow [0,1] \}$ such that:
@@ -745,7 +745,7 @@ the retarded or the advanced Green operators obtaining:
 			
 			
 			\begin{corollary}\label{Corol:GreenKernel}
-				Let $M$ be a globally hyperbolic spacetime. Consider a vector bundle $E$ over $M$, Green-hyperbolic operator $P: \Gamma(E)\rightarrow \Gamma(E)$ and a compact supported section $f\in \Gamma_{0}(E)$.
+				Let $M$ be a globally hyperbolic spacetime. Consider a vector bundle $E$ over $M$, the Green-hyperbolic operator $P: \Gamma(E)\rightarrow \Gamma(E)$ and a compactly supported section $f\in \Gamma_{0}(E)$.
 				Let $G^\pm$ be retarded and advanced Green operators for $P$ and denote with $E$ the corresponding advanced-minus-retarded operator.\\
 				Then the following statements hold true:
 					\begin{enumerate}
@@ -831,9 +831,9 @@ the retarded or the advanced Green operators obtaining:
 	
 	\subsection{Green Functions}\label{Section:GreenFunctions}
 	In chapter four we will need the explicit expression of the Green operators in the case of linear \textit{ordinary } differential operators (l.o.d.o.). 	
-	We can see them as a trivial case of l.p.d.o. on $\Gamma(E) = C^\infty(\Real)$ over the trivial globally hyperbolic manifold $M=\Real$.
+	Let us consider them as a trivial case of l.p.d.o. on $\Gamma(E) = C^\infty(\Real)$ over the trivial globally hyperbolic manifold $M=\Real$.
 	
-	Let us call $L_x$ the linear operator associated to the inhomogeneous ordinary differential equation (O.d.e)
+	We call $L_x$ the linear operator associated to the inhomogeneous ordinary differential equation (o.d.e.)
 	\begin{displaymath}
 		L_x [u] = \left[ A_n(x) \frac{d^n}{dx^n} + A_{n-1}(x) \frac{d^{n-1}}{dx^{n-1}} + \ldots + A_0(x) \right] u(x) = f(x)
 	\end{displaymath}
@@ -843,16 +843,16 @@ the retarded or the advanced Green operators obtaining:
 		Vedi Gaeta \cite{Gaeta2014}, c'è una condizione ulteriore di regolarità sui coefficienti
 	\end{Warning} \fi
 	
-	In this context is more common to talk about Green \textit{functions} instead of Green \textit{operators}.
+	In this context it is more common to talk about Green \textit{functions} instead of Green \textit{operators}.
 	\begin{definition}[Green function]
 	We call \emph{Green function} associated to the l.o.d.o. $L_x$ the solution $G(x \vert \xi)$ of the fundamental distributional equation:
 	\begin{equation}\label{Eq:FundamentalGreen}
 		L_x G(x\vert\xi) = \delta(x-\xi)
 	\end{equation}
 	\end{definition}
-	The main reason to introduce this object is that it provides a criterion to construct a solution of a non-homogeneous O.d.e. independently of the datum $f$:
+	The main reason to introduce this structure is that it provides a criterion to construct a solution of a non-homogeneous o.d.e. independently of the datum $f$:
 	\begin{proposition}
-		Let $G(x \vert \xi)$ be a green function of the l.o.d.o. $L_x$.\\
+		Let $G(x \vert \xi)$ be a Green function of the l.o.d.o. $L_x$.\\
 		The function
 		\begin{displaymath}
 			u = \int_\Real G( x \vert \xi) f(\xi) d\xi
@@ -861,14 +861,14 @@ the retarded or the advanced Green operators obtaining:
 	\end{proposition}
 	\begin{proof}
 		\begin{displaymath}
-			L_x[u] = \int_\Real L_x\left[ G(x \vert \xi ) \right] f(\xi) d\xi = \int_\real \delta(x -\xi) f(\xi) d\xi = f(x)
+			L_x[u] = \int_\Real L_x\left[ G(x \vert \xi ) \right] f(\xi) d\xi = \int_\Real \delta(x -\xi) f(\xi) d\xi = f(x)
 		\end{displaymath}
 	\end{proof}
 	Accordingly to this result , we can define the \emph{Green operator} $\hat{G}$ associated to the Green function $G(x \vert \xi)$ as the \emph{Hilbert-Schmidt} integral operator 
 			\begin{displaymath}
 				\hat{G} f = \int_\Real G( x \vert \xi ) f(\xi) d\xi
 			\end{displaymath}	
-	where the Green function takes the role of kernel function.
+	where the Green function takes the role of the \emph{integral kernel} distribution.
 	Let us recall that this operator is to be understood as a \emph{"formal operator"} until the domain is not specified.
 	
 	\begin{remark}
@@ -876,31 +876,39 @@ the retarded or the advanced Green operators obtaining:
 		\begin{equation}\label{Eq:MostGeneralGreenFunc}
 		G( x \vert \xi) = g(x \vert \xi) + \sum_{k=1}^{n} C_k(\xi) \varphi_k(x,\xi)
 		\end{equation}
-		where $g(x \vert \xi)$ is a particular solution of \ref{Eq:FundamentalGreen} called \emph{singular part} and the $\varphi_k(x,\xi)$ are $n$ linearly independent solutions of the associated homogeneous :
+		where $g(x \vert \xi)$ is a particular solution of \ref{Eq:FundamentalGreen} called \emph{singular part} and the $\varphi_k(x,\xi)$ are $n$ linearly independent solutions of the associated homogeneous equation:
 		\begin{displaymath}
 			L_x \varphi(x , \xi) = 0
 		\end{displaymath}
 		Here $n$ is the order of $L_x$ as a linear differential operator.
 		
 		\vspace{1mm}
-		The role of the non-singular part is to take in account the different boundary condition that can be eventually imposed to the problem.
-		More precisely, if operator $L_x$ acts on a space of function determined by boundary conditions
+		The role of the non-singular part is to take in account the different boundary conditions that can be eventually imposed to the problem.
+		\\
+		%More precisely, if the operator $L_x$ acts on a space of functions determined by boundary conditions
+%		\begin{displaymath}
+%			D = \{ f \in C^n \big( \left[a,b\right] \big) \; \vert \; f(a)= \alpha , f(b)=\beta \in \Real\}
+%		\end{displaymath}
+%		this constraint sets the coefficients $C_k(\xi)$ appearing in Eq. \ref{Eq:MostGeneralGreenFunc}.
+		More precisely, the domain restriction of $L_x$ to the space 	
 		\begin{displaymath}
 			D = \{ f \in C^n \big( \left[a,b\right] \big) \; \vert \; f(a)= \alpha , f(b)=\beta \in \Real\}
 		\end{displaymath}
-		this constraint sets the coefficients $C_k(\xi)$ appearing in Eq. \ref{Eq:MostGeneralGreenFunc}.
+		of regular functions satisfying a boundary condition,
+		sets univocally the coefficients $C_k(\xi)$ appearing in Eq. \ref{Eq:MostGeneralGreenFunc}.		
 	\end{remark}
 	
-	According to Eq. \ref{Eq:NormallyHyperbolicRepresentation}, all the normally hyperbolic ordinary differential operators are the regular second order ones:
+	According to Eq. \ref{Eq:NormallyHyperbolicRepresentation}, all normally hyperbolic ordinary differential operators are of second order:
 	\begin{displaymath}
 		L_x = a(x) \frac{d^2}{d x^2} + b(x) \frac{d}{d x} + c(x)	
 	\end{displaymath}
-	An useful property of such operators is that they can always be rewritten in "canonical form": 
+	with regular coefficients.
+	An useful property of these operators is that they can always be rewritten in "canonical form": 
 	
 	\begin{proposition}
 	If $u(x)$ is a solution of the non-homogeneous equation:
 	\begin{displaymath}
-		L_x[u] \equiv a(x) u''(x) + b(c) u'(x) + c(x) u(x) = f(x)
+		L_x[u] \equiv a(x) u''(x) + b(x) u'(x) + c(x) u(x) = f(x)
 	\end{displaymath}
 	then $v(x) =  \dfrac{u(x)}{\phi(x)}$ solves:
 	\begin{displaymath}
@@ -914,14 +922,14 @@ the retarded or the advanced Green operators obtaining:
 		\Phi(x) = \frac{f(x)}{a(x) \phi(x)}}
 	\end{displaymath}
 	\end{proposition}
-	The problem of the calculation of the general Green function for an ordinary normally hyperbolic differential operator it is reduced to that of calculating the singular part of the Green function of the differential operator in canonical form:
+	The problem of the calculation of the generic Green function for an ordinary normally hyperbolic differential operator it is reduced to that of calculating the singular part of the Green function of the differential operator in a canonical form:
 	\begin{equation}\label{Eq:CanonicalSecondOrderLODO}
 		L_x=  \frac{d^2}{dx^2} + V(x)
 	\end{equation}
-	We recall that is not possible to write down a general expression of the solution for both the complete equation $L_x\left[u(x)\right] = f(x)$ and the associated homogeneous equation. It is therefore not possible to determine the most general $G(x\vert \xi)$.
+	We recall that it is not possible to write down a general expression of the solution for both the complete equation $L_x\left[u(x)\right] = f(x)$ and the associated homogeneous equation. It is therefore not possible to determine the most general $G(x\vert \xi)$.
 	On the other hand is it possible to the determine the advanced and retarded Green operator when it is known a pair of linearly independent solutions.
 	\begin{proposition}
-		The advaced/retared Green operators $G^\pm$ associated to the operator $L_x$ of Eq. \ref{Eq:CanonicalSecondOrderLODO},
+		The advanced/retarded Green operators $G^\pm$ associated to the operator $L_x$ of Eq. \ref{Eq:CanonicalSecondOrderLODO},
 		are the Hilbert-Schmidt operators
 		\begin{displaymath}
 			G^\pm f(x) = \int_\Real g^\pm (x \vert \xi) f(\xi) d \xi
@@ -931,18 +939,26 @@ the retarded or the advanced Green operators obtaining:
 			g^\pm ( x \vert \xi ) = 
 			\pm \frac{1}{W(x)} \theta\big( \pm ( x-\xi) \big) \big[ \varphi_1(\xi)\varphi_2(x) - \varphi_1(x)\varphi_1(\xi) \big]
 		\end{equation}
-		where $\varphi_1(x) , \varphi_2(x)$ are two linearly indipendent solutions of  the homogeneous equation $L_x[u]=0$ and $W(x)$ is the corresponding Wronskian.
+		where $\varphi_1(x) , \varphi_2(x)$ are two linearly indipendent solutions of  the homogeneous equation $L_x[u]=0$ and $W(x)$ is the corresponding Wronskian
+		\begin{displaymath}
+			W(\varphi_1 , \varphi_2) \coloneqq \left\vert 
+				\begin{bmatrix}
+        			\varphi_1(x)	&	\varphi_2(x) \\
+        			\varphi_1'(x)	&	\varphi_2'(x)
+     			\end{bmatrix} 
+     		\right\vert
+		\end{displaymath}
 	\end{proposition}
 	\begin{proof}
-		The presence of the step-function $\theta(y)$ in \ref{Eq:AdvRetGreenFunction} guarantees the first and third condition in definition (\ref{Def:GreenOperators}). In this case the past/future-compact condition has to be understood as the requirement of bounded support below/above and $J^\pm(I)$ as the right/left extension of the interval $I \subset \Real$.
+		The presence of the step-function $\theta(y)$ in \ref{Eq:AdvRetGreenFunction} guarantees the first and third condition in definition (\ref{Def:GreenOperators}). In this case the past/future-compact condition has to be understood as the requirement of left/right -bounded support  and $J^\pm(I)$ as the right/left extension of the interval $I \subset \Real$.
 		
-		The crucial point is to check that:
+		The crucial point, namely that:
 		\begin{displaymath}
 			\big( g^\pm ( x \vert \xi) \big)'' + V(x) g^\pm ( x \vert \xi) = \delta(x - \xi)
 		\end{displaymath}
-		this can be done by direct inspection.
+		can be checked by direct inspection.
 		
-		First as to be recalled that the Wronskian of two linearly independent solutions $\varphi_i(x)$ is the constant:
+		Recall that the Wronskian of two linearly independent solutions $\varphi_i(x)$ is constant:
 		\begin{displaymath}
 			W(\varphi_1 , \varphi_2) = \left\vert 
 				\begin{bmatrix}
@@ -952,14 +968,15 @@ the retarded or the advanced Green operators obtaining:
      		\right\vert = \varphi_1(x)\varphi_2'(x)  - \varphi_2(x)\varphi_1'(x) = W
 		\end{displaymath}
 		
-		Derivating in distributional sense we have:
+		Taking the distributional derivative we have:
 		\begin{eqnarray}
 		\frac{d}{dx}g^\pm(x \vert \xi) 	=\frac{\pm 1}{W} \Big\{&
 						\pm \delta(x-\xi)\left[ \varphi_1(\xi)\varphi_2(x)-\varphi_1(x)\varphi_2(\xi)\right] + \nonumber \\ 
 					&	+ \theta\big( \pm (x-\xi) \big) \left[ \varphi_1(\xi)\varphi_2'(x)-\varphi_1'(x)\varphi_2(\xi)\right]
 					\Big\}
 		\end{eqnarray}
-		where is been exploited the parity of $\delta$.		A second derivation concludes the proof
+		where it has been exploited that $\delta(-x) = \delta(x)$.
+		Taking the second derivative concludes the proof
 		\begin{eqnarray*}
 		\frac{d^2}{dx^2}g^\pm(x \vert \xi) 	=&\frac{\pm 1}{W} \Big\{&
 						\pm \delta'(x-\xi)\left[ \varphi_1(\xi)\varphi_2(x)-\varphi_1(x)\varphi_2(\xi)\right] +  \\ 
@@ -973,7 +990,7 @@ the retarded or the advanced Green operators obtaining:
 					\Big\}=  \\
 				=&\cancel{ \frac{\pm 1}{W}}\big\{& \cancel{\pm W}\big\} \delta(x-\xi)  - V(x) g^\pm( x \vert \xi)
 		\end{eqnarray*}
-		in the second equation has been used the definition of derivative of a distribution:
+		Notice that in the second equation it has been used the definition of derivative of a distribution:
 		\begin{displaymath}
 			\left( \partial_x \delta ( x- y) \right)\left[\chi \right] =  - \delta(x-y) [ \partial_x\chi] \qquad \forall \chi \in C^\infty_0(\Real)
 		\end{displaymath}
@@ -986,7 +1003,7 @@ the retarded or the advanced Green operators obtaining:
 
 \ifToninus
 	\begin{Warning}
-		Sarebbe stato carino fare un'appendice sul metodo del calcolo delle green per le ode componendo due soluzioni di omogenea \cite{Tornberg}.
+		Sarebbe stato carino fare un'appendice sul metodo del calcolo delle Green per le ode componendo due soluzioni di omogenea \cite{Tornberg}.
 		In the specific case of second order ODE the general Green function  - solution of equation \ref{Eq:FoundamentalEquation} - can be explicitly computed as a linear combination of two linearly independent solutions $y_1$ and $y_2$ of the homogeneous problem:
 			\begin{equation}
 			\begin{cases}

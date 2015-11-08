@@ -375,7 +375,7 @@ In this chapter we will take advantage of the language developed in the first ch
 
 
 
-		\subsection{Finite Degree systems as a Field}\label{MechanicsAsAField}
+		\subsection{Finite Degrees systems as a Field}\label{MechanicsAsAField}
 			With a little more effort it is possible to realize every ordinary mechanic system  -with discrete degrees of freedom- as a special case of classical field.
 			
 			Consider a Lagrangian system $(Q, L)$ with configuration space $Q$ and Lagrangian function $L: TQ\rightarrow \Real$.
@@ -422,7 +422,7 @@ In this chapter we will take advantage of the language developed in the first ch
 			Lagrangian Density		&	$\Lagrangian  [\gamma] \coloneqq \big( L \circ	\gamma^\uparrow \big) dt  = L(t,\gamma^i,\dot{\gamma}^i) dt$\\
 			\hline
 			Motion Operator			&  $P=Q_\Lagrangian \equiv \frac{d}{dt}\big(\frac{\partial}{\partial \dot{x}^i}L\big)-\frac{\partial}{\partial x^i}L $\\
-													& normally hyperbolic operator (\danger ?)\\
+													& Green hyperbolic operator \\
 			\hline
 			\end{tabular}\end{center}
 			
@@ -434,7 +434,7 @@ In this chapter we will take advantage of the language developed in the first ch
 		
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_
 %\newpage
-	\section{Hamiltonian Mechanics of Finite Degree systems}
+	\section{Hamiltonian Mechanics of Finite Degrees systems}
 		The picture of the systems with discrete degrees of freedom as a field brings out only a part of the typical mathematical ingredients proper of the \emph{Geometric} approach to the classical mechanics
 
 		\begin{figure}[h!]
@@ -668,7 +668,7 @@ In this chapter we will take advantage of the language developed in the first ch
 	
 	\subsection{Peierls' construction.}\label{Section:PeierlsConstruction}
 			%Classe di applicabilità naturale del metodo di Peierls
-	The Peierls's construction algorithm is well defined for a specific class of systems:
+	The Peierls' construction algorithm is well defined for a specific class of systems:
 		\begin{enumerate}[(A)]
 			\item\label{HpPeierls1} Linear field theory: $E=(E,\pi,M)$ is a vector bundle.
 			%\item  Lagragian dynamics: $P=Q_\Lagrangian$ is a L.P.D.O.
@@ -687,7 +687,7 @@ In this chapter we will take advantage of the language developed in the first ch
 	Let us review each step in details.
 	
 	\subsubsection{Disturbance and Disturbed motion operator }
-		By \emph{"disturbance"} we mean a time-compact supported Lagrangian density $\chi \in \Lag$\footnote{I.e. the top form $\chi(\phi)$ is time-compact supported for all $\phi \in \Conf$.} which acts as a perturbation on the system's Lagrangian:
+		By \emph{"disturbance"} we mean a time-compact supported Lagrangian density $\chi \in \Lag$\footnote{I.e. the top form $\chi(\phi)$ is time-compact supported for all $\phi \in \Conf$.} which acts as a perturbation on the Lagrangian of the system:
 		\begin{displaymath}
 			\Lagrangian \rightsquigarrow \Lagrangian' = \Lagrangian + \epsilon\cdot \chi
 		\end{displaymath}
@@ -738,7 +738,7 @@ In this chapter we will take advantage of the language developed in the first ch
 			\Rightarrow P \eta = - Q_\chi \phi(x)
 		\end{equation}
 		called \emph{Jacobi Equation}.
-		This equation is a non homogeneous P.D.E. with inhomogeneous term $ (- Q_\chi \phi(x))$ fixed by the solution $\phi\in \Sol$ to be perturbed.
+		This equation is a non homogeneous PDE with inhomogeneous term $ (- Q_\chi \phi(x))$ fixed by the solution $\phi\in \Sol$ to be perturbed.
 
 		It follows from the definition of Green hyperbolicity that the domain restrictions of $P$ to $\Gamma^\infty_{\textrm{pc}}$ or $\Gamma^\infty_{\textrm{fc}}$ admit a unique inverse $G^+$ and $G^-$ respectively.
    		Therefore, equation \ref{PeierlJacobiEqLin} admits a unique past compact solution $\eta_+$, called retarded perturbation of $\phi\in \Sol$, and a unique future compact solution $\eta_-$, called advanced perturbation:

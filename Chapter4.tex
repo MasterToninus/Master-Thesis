@@ -67,7 +67,7 @@
 	\end{displaymath}
 	\end{definition}
 	
-		In local charts, a Jacobi field along the geodesic $\gamma$ is solution of a linear O.D.E.:
+		In local charts, a Jacobi field along the geodesic $\gamma$ is solution of a linear ODE:
 		\begin{equation}\label{JacobiEquationComponents}
 			\big( X''\big)^\mu + R^\mu_{i \alpha \j} T^i X^\alpha T^j =0
 		\end{equation}
@@ -284,8 +284,8 @@
 			\item Do espressione in coordinate per il campo di Jacobi
 			\item Verifico che trovo 4 equazioni Disaccoppiate (credo che sarà necessario mettersi nelle coordinate che dice Wiki)
 			\item calcolo le 2 soluzioni omogenee per ogni componente
-			\item ricordare cos'è l'operatore di green in generale, se l'op è diagonale ricordare come si semplifica (cioè ho 4 op di green per ogni ode), ricordare cos'è l'op di green per una ode (cioè operatore  a nucleo integrale, il nucleo è detto 
-			\item Criterio per il calcolo delle green per delle ode lineari di secondo ordine
+			\item ricordare cos'è l'operatore di green in generale, se l'op è diagonale ricordare come si semplifica (cioè ho 4 op di green per ogni ode), ricordare cos'è l'op di green per una ODE (cioè operatore  a nucleo integrale, il nucleo è detto 
+			\item Criterio per il calcolo delle green per delle ODE lineari di secondo ordine
 			\item realizzo il calcolo per ogni componente di jacobi
 			\item realizzo l'op di green (dovrebbe dipendere dalla geodetica da cui sono partito ) è dico come va inserito per ottenere il disturbo
 			\item limitandosi al caso di densità lagrangiane lineari trovo il disturbo e le peierls
@@ -294,21 +294,28 @@
 \fi	
 	Let us compute the Peierls' bracket for the single special case of geodesic motion on Friedmann–Lemaître–Robertson–Walker spacetimes (FRW).
 	
-	We recall that the FRW spacetimes are homogeneous and isotropic solutions of Einstein’s equations.
-	These manifold are endowed with a line element of the form:
+	We recall that the FRW spacetimes are homogeneous and isotropic solutions of Einstein's equations.
+	These manifolds are endowed with a line element of the form:
 	\begin{equation}\label{EQ: metrica FRW}
 		ds^2 = -dt^2 + a^2(t) \left( \frac{dr^2}{1-k r^2} + r^2 d\theta^2 + sin^2\theta d\phi^2\right)
 	\end{equation}
 		where $0 < a(t) \in C^\infty	(I)$ is said \emph{scale factor}, $I \subset \Real$ is the time domain and $k$ is a constant normalizable to $\pm 1$ or $0$.
-		The assumptions of homogeneity and isotropy alone determine the spacetime metric up to the value of the scale factor $a$ and three discrete possibilities of spatial geometry.
-		The simply connected spacetimes compatibile with \ref{EQ: metrica FRW} are topological equivalent (homeomorphic) to $\Real \times \Sigma$ where $\Sigma$ is a 3D manifold which depends on the value of $k$:
+		The assumptions of homogeneity and isotropy alone determine the spacetime metric up to the value of the scale factor $a$ and up to three possibilities of spatial geometry.
+		The simply connected spacetimes compatibile with \ref{EQ: metrica FRW} are topologically equivalent (diffeomorphic) 		
+		to $\Real \times \Sigma$ where $\Sigma$ is a 3D manifold which depends on the value of $k$:
 		\begin{center}\begin{tabular}{l l}
 			$k = 1$ & $\Sigma \simeq S^3$ (3-sphere)\\
 			$k = 0$ & $\Sigma \simeq \Real^3$ (three-dimensional Euclidean space)\\
 			$k = -1$ & $\Sigma \simeq H^3$ ( three-dimensional hyperboloid)\\		
 		\end{tabular}\end{center}
 		\vspace{2mm}
-		
+\ifToninus
+		\begin{Warning}
+		CD:
+		\emph{veramente sono equivalenti come varietà differenziabile e non solo topologica}
+		\end{Warning}
+\fi
+
 		For the sake of simplicity let us reduce ourselves to the case of \emph{flat} spatial geometry, \textit{i.e.}:
 		\begin{displaymath}
 			ds^2 = -dt^2 + a^2(t) \left( dx^2 + dy^2 + dz^2\right) = g_{\mu \nu} dx^\mu dx^\nu
@@ -321,18 +328,18 @@
 \fi
 
 
-		In order to express the geodesic equations we have to compute the Christoffel symbols. According to the basic definition:
+		In order to write explicitly the geodesic equation we have to compute the Christoffel symbols. According to the basic definition:
 		\begin{displaymath}
 			\Gamma^\lambda_{\, \mu \nu} = \frac{1}{2} g^{\lambda \sigma } \left( \partial_\mu g_{\sigma \nu} + \partial_\nu g_{\mu \sigma} - \partial_{\sigma}g_{\mu \nu} \right)
 		\end{displaymath}
 		we find that the non-vanishing components of $\Gamma^\lambda_{\, \mu \nu}$ are : %merely:
-			\begin{eqnarray}
+			\begin{align}
 				\Gamma^0_{\, i i} &= a \dot{a} \\
 				\Gamma^i_{\, i 0} &= \Gamma^i_{\, 0 i} = \dfrac{\dot{a}}{a}
-			\end{eqnarray}
-			where we have used the usual convention to express with latin indices the spatial coordinates, with $0$ the time coordinate and with greek indices all the spacetimes coordinates.
+			\end{align}
+			where we have used the usual convention to express with latin indices the spatial coordinates, with $0$ the time coordinate and with Greek indices all the spacetime coordinates.
 			
-			In the cosmological coordinate chart the geodesic equations are:
+			In the cosmological coordinate chart the geodesic equation reads:
 			\begin{eqnarray}
 				\frac{d^2}{d \tau^2} \gamma^0 &= - a \dot{a} \left( \frac{d}{d \tau} \gamma^i \frac{d}{d \tau}\gamma_i \right) \label{FRWGeo1}\\
 				\frac{d^2}{d \tau^2} \gamma^i &= - 2 \dfrac{\dot{a}}{a} \left( \frac{d}{d \tau} \gamma^0 \frac{d}{d \tau}\gamma^i \right) 		\label{FRWGeo2}	
@@ -387,11 +394,11 @@
 			\begin{displaymath}
 				G^\pm =
 				 \begin{bmatrix}  
-				 G\pm_0 & 0 \\
+				 G^\pm_0 & 0 \\
 				 0 & G^\pm_i
 				 \end{bmatrix}
 			\end{displaymath}		
-			where $G^\pm_0$ and $G^\pm_i$ are the Green operators of the only two ODE involved:
+			where $G^\pm_0$ and $G^\pm_i$ are the Green operators of the only two ODEs involved:
 			\begin{displaymath}
 				P_0 = \left(\frac{d}{dt}\right)^2 \qquad P_i=\left( \frac{d^2}{dt^2} - m^2 \frac{\ddot{a}}{a} \right)
 			\end{displaymath}
@@ -411,39 +418,39 @@
 				g^\pm_0(t \vert \xi) = \pm \theta\big(\pm(t-\xi)\big) \left[ t -\xi\right]
 			\end{equation}
 			
-			In other hand, since the coefficient $m^2 \frac{\ddot{a}(t)}{a(t)}$ is in general time dependant,  Eq. \ref{FRWJacobi2} is a non autonomous ODE and an analytical expression of its general solution does not exist.
+			At the same time, since the coefficient $m^2 \frac{\ddot{a}(t)}{a(t)}$ is in general time dependant,  Eq. \ref{FRWJacobi2} is a non autonomous ODE and an analytical expression of its general solution does not exist.
 \ifToninus
 	\begin{Warning}	
 		Anche un'appendice sul calcolo delle green sfruttando lo sviluppo di Dyson e quello di Magnus ( Partendo come spunto dall'articolo \cite{Dappiaggi2014}) non sarebbe stata male. ma è venuto il tempo di concludere.
 	\end{Warning}
 \fi	
-			However it is possible to express the corresponding Green function as a convergent Dyson expansion\cite{Dappiaggi2014}.
+			It is possible, however, to express the corresponding Green function as a convergent Dyson expansion\cite{Dappiaggi2014}.
 			The idea is to consider the non-autonomous term $V(t) = -m^2 \frac{\ddot{a}(t)}{a(t)}$ as if it were a perturbing potential.\\
 			Remembering that $G^\pm_0 (t \vert \xi)$ is the Green function of operator \ifToninus$P_{0}=\left(\frac{d}{dt}\right)^2$\else$P_0$\fi, which can be seen as the time-independent part of differential operator \ifToninus$P_{i i}=\left( \left(\frac{d}{dt}\right)^2 - m^2 \frac{\ddot{a}}{a} \right)$\else$P_i$\fi, we can formally express the Green function of $P_{i}$ as follow:
 			
 			\begin{align*}
 				G^+_i ( \tau \vert \tau' ) = G^+_0( \tau \vert \tau' ) + \sum_{n=1}^\infty (-)^n 
 				\int_{-\infty}^\tau dt_1 \cdots \int_{-\infty}^{t_{n-1}} dt_{n-1} 
-				& \times	  G^+_0(\tau \vert t_1) G^+_0(t_1\vert t_2) \cdots G^+_0(t_{n-1} \vert t_n) \times \\
+				& \,  G^+_0(\tau \vert t_1) G^+_0(t_1\vert t_2) \cdots G^+_0(t_{n-1} \vert t_n) \times \\
 				& \times  V(t_1) V(t_2) \cdots V(t_n) \times \\
 				& \times  G^+_0 (t_n \vert \tau' ) \\
 			\end{align*}		
-			similarly $G^-_i$  can be obtained considering the anticipated Green function $G^-_0$ and integrating from $t$ to $+\infty$.
+			similarly $G^-_i$  can be obtained considering the advanced Green function $G^-_0$ and integrating from $t$ to $+\infty$.
 			In both cases the convergence of the series is not guaranteed and should be verified for each explicit expression of the scale function $a (t)$.
 			
 			\vspace{2mm}
-			\ifToninus Anyway all this machinery it is not necessary \fi In the special case of \emph{De Sitter} spacetime, where $ a(t) = \exp(H t)$ and the coefficient $\ddot{a}/a=H^2$ is a positive constant  \cite{Wald1984}.
-			Two linearly independent solutions are given by
+			\ifToninus Anyway all this machinery it is not necessary \fi In the special case of \emph{De Sitter} spacetime, where $ a(t) = \exp(H t)$ and the coefficient $\ddot{a}/a=H^2$ is a positive constant  \cite{Wald1984}, 
+			two linearly independent solutions are given by
 			\begin{displaymath}
 				\varphi_1(x) = e^{-V t} \qquad \varphi_2(x)= e^{Vt}
 			\end{displaymath}
-			with $v=m H$ and Wronskian $W= 2V$.
-			The Green functions result
+			with $V=m H$ and Wronskian $W= 2V$.
+			The Green functions are
 			\begin{displaymath}
 								g^\pm_i(t \vert \xi) = \pm \frac{1}{2V}\theta\big(\pm(t-\xi)\big) \left[ e^{V(t-\xi)} - e^{-V(t-\xi)}\right]
 			\end{displaymath}
 
-			Combing all these results we're able to give an explicit expression of the Peierls symplectic form $\tau$- as defined in Eq. 	\ref{Def:SymplecticTau}- for the De Sitter spacetime.
+			Combing all these results we are able to give an explicit expression of the Peierls symplectic form $\tau$- as defined in Eq. 	\ref{Def:SymplecticTau}- for the De Sitter spacetime.
 			For any pair $(X, Y)$ of compactly supported fields over $\gamma(t)$ we have:
 			\begin{align*}
 			\{X ,Y \} =&\int \left\langle X, \left(\GreenAdv - \GreenRet \right)Y \right\rangle dt =	\\
@@ -643,7 +650,7 @@
 		We have proved in section \ref{Section:LinkBetweenQuantization} (Theorem \ref{Teo:IsomorphismBetweenTheTwoSymplectic}) that the two vector spaces are isomorphic through the map $\Xi$ realized with the causal propagator $E$ .
 		Furthermore, in this case it can be proved that $\Xi$ preserves the symplectic form.
 		\\
-		Once again we mimic what has been done for the case of a scalar field (ex \ref{Ex:SimplettomorphismPhaseSpace}).
+		Once again we mimic what has been done for the case of a scalar field (Ex \ref{Ex:SimplettomorphismPhaseSpace}).
 		Consider two compactly supported vector fields $f,h \in \Gamma_0(E)$ along $\gamma_0$	and call $X= Ef,\: T = Eh$ the corresponding Jacobi field.
 		In fact from the definition of $\tau$ it follows:
 		\begin{align}
@@ -657,23 +664,24 @@
 		where the integral has been decomposed by splitting the domain of integration into two subsets whose intersection has zero measure and we have exploited the properties of the retarded and advanced operators.\\
 		Considering the explicit representation of the operator $P$, we can integrate by parts twice:
 		\begin{align}
-			&\int_\Sigma^\infty (P \GreenAdv f)^\mu g_{\mu \nu} Y^\nu dt = \int_\Sigma^\infty \left( D_t^{\,2} \GreenAdv f +R(\GreenAdv f,T)T \right)^\mu g_{\mu \nu} Y^\nu dt = \nonumber \\
+			&\int_\Sigma^\infty (P \GreenAdv f)^\mu g_{\mu \nu} Y^\nu dt = \int_\Sigma^\infty \left( D_t^{\,2} \GreenAdv f +R(\GreenAdv f,T)T \right)^\mu g_{\mu \nu} Y^\nu dt \quad = \nonumber \\
 			&= 
 			 \int_\Sigma^\infty D_t \left( \left(D_t  \GreenAdv f \right)^\mu g_{\mu \nu} Y^\nu \right)dt -
-			 \int_\Sigma^\infty \left( D_t  \GreenAdv f \right)^\mu g_{\mu \nu} \left( D_t Y \right)^\nu dt +
-			 \int_\Sigma^\infty \left( R( \GreenAdv f,T)T \right)^\mu g_{\mu \nu} Y^\nu dt = \nonumber \\
+			 \int_\Sigma^\infty \left( D_t  \GreenAdv f \right)^\mu g_{\mu \nu} \left( D_t Y \right)^\nu dt \quad + \nonumber \\
+			 &\quad + \int_\Sigma^\infty \left( R( \GreenAdv f,T)T \right)^\mu g_{\mu \nu} Y^\nu dt \quad = \nonumber \\
 			&= 
 			 - \left. D_t( \GreenAdv f)^\mu g_{\mu \nu} Y^\nu \right\vert_\Sigma -
-			 \int_\Sigma^\infty D_t \left( \left( \GreenAdv f \right)^\mu g_{\mu \nu} \left( D_t Y \right)^\nu \right)dt + \int_\Sigma^\infty \big(
+			 \int_\Sigma^\infty D_t \left( \left( \GreenAdv f \right)^\mu g_{\mu \nu} \left( D_t Y \right)^\nu \right)dt \quad + \nonumber \\
+			 &\quad + \int_\Sigma^\infty \big(
 			 (\GreenAdv f)^\mu g_{\mu \nu} (D_t^{\, 2}Y)^\nu + 
 			 \left(R( \GreenAdv f,T)T \right)^\mu g_{\mu \nu} Y^\nu
-			 \big) dt	=	 \nonumber \\
+			 \big) dt	\quad =	 \nonumber \\
 			 &=
 			 -   \left. D_t( \GreenAdv f)^\mu g_{\mu \nu} Y^\nu \right\vert_\Sigma
 			 +  \left. ( \GreenAdv f)^\mu g_{\mu \nu} (D_t Y)^\nu \right\vert_\Sigma
 			 + \int_\Sigma^\infty \big(
 			 (\GreenAdv f)^\mu g_{\mu \nu} (P Y)^\nu 
-			 \big) dt =\nonumber \\
+			 \big) dt \quad =\nonumber \\
 			 &= 
 			 -   \left. D_t( \GreenAdv f)^\mu g_{\mu \nu} Y^\nu \right\vert_\Sigma
 			 +  \left. ( \GreenAdv f)^\mu g_{\mu \nu} (D_t Y)^\nu \right\vert_\Sigma
@@ -684,14 +692,14 @@
 		\begin{align}
 		\tau\big( [f], [g] \big) =& 
 			 -   \left. D_t( \GreenAdv f)^\mu g_{\mu \nu} Y^\nu \right\vert_\Sigma
-			 +  \left. ( \GreenAdv f)^\mu g_{\mu \nu} (D_t Y)^\nu \right\vert_\Sigma		+
+			 +  \left. ( \GreenAdv f)^\mu g_{\mu \nu} (D_t Y)^\nu \right\vert_\Sigma \quad +
 		\nonumber \\
 			&+ \left. D_t( \GreenRet f)^\mu g_{\mu \nu} Y^\nu \right\vert_\Sigma
 			   -  \left. ( \GreenRet f)^\mu g_{\mu \nu} (D_t Y)^\nu \right\vert_\Sigma		
-		 =  \nonumber\\
+		 \quad =  \nonumber\\
 		=&\left. \left( E f \right)^\mu g_{\mu \nu} ( D_t Y)^\nu\right\vert_\Sigma	 
-		-  \left.\left(D_t E f \right)^\mu g_{\mu \nu}  Y^\nu \right\vert_\Sigma	= \nonumber \\
-		=& X_\mu(\Sigma) \left( D_t Y (\Sigma)\right)^\mu - \left(D_t X(\Sigma)\right)_\mu Y^\mu(\Sigma) \equiv \sigma( X, Y)
+		-  \left.\left(D_t E f \right)^\mu g_{\mu \nu}  Y^\nu \right\vert_\Sigma	\quad = \nonumber \\
+		=& X_\mu(\Sigma) \left( D_t Y (\Sigma)\right)^\mu - \left(D_t X(\Sigma)\right)_\mu Y^\mu(\Sigma) \quad \equiv \sigma( X, Y)
 		\end{align}
 		$(\Obs, \tau)$ and $(\Sol, \sigma)$ are isomorphic not only as vector spaces but also as symplectic spaces.
 
@@ -801,14 +809,14 @@
 		\begin{displaymath}
 			\{\chi, \omega \}(\phi_0) \coloneqq \EffectOp_\chi^- \mathcal{O}_\omega (\phi_0) - \EffectOp_\chi^+ \mathcal{O}_\omega(\phi_0)
 		\end{displaymath}
-		According to our \ifToninus (\danger graphical? \danger)\fi geometric picture we can conclude that the Peierls brackets compute the difference between the slopes of the two function $\mathcal{O}_\omega ( \phi_\epsilon^\pm)$, which can be seen as real function on the single variable $\epsilon$, calculated in $\epsilon=0$.
-		We stress again that $ \phi_\epsilon^\pm$ are not arbitrary but they are the specific two variations associated to $\chi$ according to the Peierls' procedure.
+		According to our \ifToninus (\danger graphical? \danger)\fi geometric picture we can conclude that the Peierls brackets compute the difference between the slopes of the two function $\mathcal{O}_\omega ( \phi_\epsilon^\pm)$, which can be seen as a real function on the single variable $\epsilon$, calculated in $\epsilon=0$.
+		We stress again that $ \phi_\epsilon^\pm$ are not arbitrary but they are two specific variations associated to $\chi$ according to the Peierls' procedure.
 		
-		Thus, the brackets between $\chi$ and $\omega$ are null in three cases:
+		Thus, the brackets between $\chi$ and $\omega$ vanish in three cases:
 		\begin{enumerate}
 			\item The two curves $\mathcal{O}_\omega ( \phi_\epsilon^+)$ and $\mathcal{O}_\omega ( \phi_\epsilon^-)$ have the same derivative when evaluated in $\phi_0$.
 			\item The starting solution $\phi_0$ is also a solution of $Q_\omega$.\\
-				In this case to $\phi_0$ corresponds an extremal of $\mathcal{O}_\omega$ thus its derivative is null according to each variation passing trough $\phi_0$.
+				In this case to $\phi_0$ corresponds an extremum of $\mathcal{O}_\omega$ thus its derivative vanishes according to each variation passing trough $\phi_0$.
 			\item The starting solution $\phi_0$ is also a solution of $Q_\chi$.\\
 				In this case the two perturbation $\phi_\epsilon^\pm$ are degenerate since they correspond to a transformation along a symmetry of the system and $ \eta_\pm = 0$.
 		\end{enumerate}
@@ -827,7 +835,7 @@
 		Thus the  quantity \ref{GlobalPeierls} is the difference between the change in the value of the Lagrangian functional $\mathcal{O}_\omega$ evaluated along  the perturbation propagating backward and forward.
 		
 		\begin{remark}
-		All of the above could be generalized to non linear systems regarding it as a "Linearization".\\
+		The above procedure could be generalized to non linear systems regarding it as a "Linearization".\\
 		The plane $\Conf$ depicted above can be seen as a formal tangent space to the non-linear manifold of the kinematic configurations.
 		While in the case of linear fields the manifold $\Conf$ is flat and essentially coincides with its unique tangent space, for general field systems  this correspondence can be admitted only locally.
 		\end{remark}		
@@ -839,7 +847,7 @@
 		
 		
 		\subsubsection{Peierls brackets role in second quantization.}
-		The prequantum structure, in the procedure of quantization via Peierls brackets, require to restrict ourselves from the set $\Conf$ of all the global section to the space $\Gamma_0$ of compactly supported sections.
+		The prequantum structure, in the procedure of quantization via Peierls brackets, requires to restrict ourselves from the set $\Conf$ of all the global sections to the space $\Gamma_0$ of compactly supported sections.
 
 		\vspace{1mm}		
 		\begin{minipage}{0.5\textwidth}
@@ -879,7 +887,7 @@
 			\begin{displaymath}
 				Q_{f}(\gamma) = - f \qquad \gamma \in \Conf
 			\end{displaymath}
-			which maps every kinematic configuration in $-f \in \Gamma_0$.
+			which maps every kinematic configuration to $-f \in \Gamma_0$.
 	\end{enumerate}
 	In virtue of these correspondences, the Peierls' procedure allows us to equip the space $\Gamma_0$ with a pre-symplectic structure
 	\begin{displaymath}
@@ -905,7 +913,7 @@
 		\end{minipage}
 		\vspace{1mm}
 		
-		Remembering that the solutions of a inhomogeneous differential problem can be made out superposing solutions of the homogeneous problem with a "particular solution", 
+		Remembering that the solutions of a inhomogeneous differential problem can be built superposing solutions of the homogeneous problem with a "particular solution", 
 		we can affirm that
 		\begin{displaymath}
 			\Sol_\epsilon = \left\lbrace \phi + \epsilon G^\pm \chi \quad \vert \phi \in \Sol \quad  \right\rbrace =
@@ -953,7 +961,7 @@
 		\end{minipage}
 		\vspace{1mm}\\	
 	
-		In conclusion, according to our visualization, the brackets between $\chi$ and $\omega$ are null when:
+		In conclusion, according to our visualization, the brackets between $\chi$ and $\omega$ vanish when:
 		\begin{displaymath}
 		 \omega \perp E \chi \Longleftrightarrow \chi \perp E \omega
 		\end{displaymath}
@@ -1022,7 +1030,7 @@
 			 \left( \SolMap \left(\substack{a\\b}\right) \right)\in \Sol \quad \xmapsto{E^{-1}} \quad 
 			 \left( E^{-1}\SolMap \left(\substack{a\\b}\right) \right) \in \Gamma_0
 		\end{displaymath}
-		are symplecto-morphism. This allows us to compare the symplectic form $\tau$ on $\Obs$ with the symplectic form $\Omega$ on $\Data(\Sigma)$.
+		are symplectomorphism. This allows us to compare the symplectic form $\tau$ on $\Obs$ with the symplectic form $\Omega$ on $\Data(\Sigma)$.
 		
 		\vspace{2mm}
 		In order to obtain a more intuitive representation we limit ourselves to the most simple case of one-dimensional Riemannian manifolds.
@@ -1065,14 +1073,14 @@
 		\end{displaymath}
 		therefore $\Sol \simeq \Real^2$ is a two dimensional linear subspace of the linear manifold:
 		\begin{displaymath}
-			\Gamma_0 = C_0^\infty (\Real) = \{ f: \Real \rightarrow \Real \; \vert \, \textrm{ \tiny smooth, compactly supported}\}
+			\Gamma_0 = C_0^\infty (\Real) \ifToninus= \{ f: \Real \rightarrow \Real \; \vert \, \textrm{ \tiny smooth, compactly supported}\}\fi
 		\end{displaymath}
-		From the explicit computation of the Green functions (see Eq. \ref{SimpleGreenFunction}), it follows, moreover, the exact expression for the Green operators:
+		From the explicit computation of the Green functions (see Eq. \ref{SimpleGreenFunction}), it follows, moreover, that the exact expression for the Green operators is:
 		\begin{displaymath}
 			G^\pm \psi (s) = \pm \int_\Real \theta\big(\pm(s-\xi)\big) \left[ s  -\xi\right] \psi(\xi) d\xi
 		\end{displaymath}
 		for all  $\psi \in \Sigma_0$.
-		The effect of the "advanced minus retarded" operator results:
+		The effect of the "advanced minus retarded" operator is:
 		\begin{displaymath}
 			( G^- -  G^+ ) \psi(s) =  -\int_\Real \left[ s -\xi\right] \psi(\xi) d\xi = 
 			s \left[-\int_\Real \psi(\xi) d\xi \right] + \left[\int_\Real \xi \psi(\xi) d\xi \right]
@@ -1094,7 +1102,7 @@
 		%-------------------------------------------------------------------------------------------------------------------
 		% La scomessa della meccanica Geometrica
 		According to Lessing\cite{Lessig2012}, we call "geometric mechanics" the mathematical discipline which employs modern geometry to describe mechanical systems.
-		It is no secret that geometry is an intrinsic part of mechanics. For example the space of all admissible configurations of a odrinary mechanical system has the natural geometric structure of a manifold.
+		It is no secret that geometry is an intrinsic part of mechanics. For example the space of all admissible configurations of a ordinary mechanical system has the natural geometric structure of a manifold.
 		Therefore the bet of geometric mechanics is that is possible to attribute to every mechanical system a  \emph{phase space} together with the implicit claim that it is possible to reconstruct from this space each physically relevant quantity.% relevant to the mechanics. 
 		In the spirit of \emph{coordinate-free canonical formalism} the central object, necessary and sufficient, to encode the entire mathematical structure of a classical mechanical system is a \emph{symplectic manifold}.
 
@@ -1102,7 +1110,7 @@
 		%-------------------------------------------------------------------------------------------------------------------
 		% Il vantaggio dell'approccio geometrico dal punto di vista degli schemi di quantizzazione
 		In view of the quantization schemes this approach has proven to be winning.
-		The reason is that from the symplectic structure descends in a simple way a Poisson structure which it lends itself to be modified in order to encompass the pre-quantum version of the canonical commutation rules.
+		The reason is that from the symplectic structure descends in a simple way a Poisson structure which can be modified in order to encompass the pre-quantum version of the canonical commutation rules.
 
 
 		%-------------------------------------------------------------------------------------------------------------------
@@ -1111,23 +1119,23 @@
 		One of the most annoying flaws of the usual canonical formalism in field theory is its lack of manifest covariance, that is its lack of explicit invariance under space-time coordinate transformations (in the context of general relativity). 
 			
 			This defect is built into the theory from the very beginning, since the usual \emph{Hamiltonian} canonical formalism represents the dynamical variables of classical field theory by functions on some spacelike hypersurface (Cauchy data) and provides differential equations for their time evolution off this hypersurface: 
-			thus it presupposes a splitting of space-time into space and time, in the form of a foliation of space-time into Cauchy surfaces.	
+			it presupposes a splitting of space-time into space and time, in the form of a foliation of space-time into Cauchy surfaces.	
 			As a result, canonical quantization leads to models of quantum field theory whose covariance is far from obvious and in fact constitutes a formidable problem.
 		
 		%-------------------------------------------------------------------------------------------------------------------
 		%Punto preliminare per realizzare questo progetto è il passaggio dal usual canonical formalism to the "covariant canonical formalism"
 		Luckily, the essence of the canonical formalism can be developed in a way that manifestly preserves all the relevant symmetries called "covariant canonical formalism.
-		The key idea are two:
+		The key ideas are two:
 		\begin{itemize}
 			\item  for any "sufficently well behaved" system there is a one-to-one correspondence between solutions and initial data.
 			\item the point $(q^i,p^i)$ of the phase of an ordinary Hamiltonian system can be seen as initial data of a motion.
-						To each point in the phase space corresponds one and only one direction of the Hamiltonian flow.
+						To each point in the phase space it corresponds one and only one direction of the Hamiltonian flow.
 		\end{itemize}
 		This leads us to the central concept proposed by Crnkovic and Witten\cite{Crnkovic1999}
 		
 		\begin{definition}
-			We call \emph{Covariant Phase Space} of a system the space $( \Sol )$ of all of its solutions to its classical equations of motion. 
-			In other words the space of classical trajectories of the system. 
+			We call \emph{Covariant Phase Space} of a system the space $( \Sol )$ of all of its solutions to the classical equations of motion,
+			in other words the space of classical trajectories of the system. 
 		\end{definition}
 		
 		\begin{example}
@@ -1145,12 +1153,12 @@
 		%la costruzione fatta con i dati iniziali è simile ma non covariante a vista!
 		Since these phase spaces are (locally) naturally parameterized by the suitable boundary conditions or choice of a Cauchy surface (which uniquely determine the corresponding history of the physical system), 
 		this construction is strictly related to the pre-symplectic structure proposed in the quantization "by initial data".
-		The “covariant” in “covariant phase space” is to indicate that it comes without any particular choices of Cauchy surface.
+		The “covariant” in “covariant phase space” is to indicate that it comes without any particular choice of Cauchy surface.
 
 		%-------------------------------------------------------------------------------------------------------------------
 		% Ci sono diverse idee per realizzare questo programma. Il nostro lavoro si inquadra essenzialmente nel "covariant functional formalism" advocated from crinkovic witten
 		The hard part is to find a covariant description of a symplectic structure on the covariant Phase Space .
-		In the last decades nourished many attempts to develop a fully covariant formulation of such object for classical field theories.
+		In the last decades there were many attempts to develop a fully covariant formulation of such object for classical field theories.
 		%-------------------------------------------------------------------------------------------------------------------
 		% Il nucleo del lavoro come presentato da crinkovic è il covariant phase space. di che si tratta?
 		% Ricordare che l'approccio di crinkovic porta alla definizione di una forma simplettica equivalente con quella costruita con il metodo di wald ma covariante.
@@ -1165,23 +1173,23 @@
 		\vspace{2mm}
 		%-------------------------------------------------------------------------------------------------------------------
 		% Come si ricollega tutto ciò a quanto fatto da noi?
-		A problem to address is how it is framed the Peierls' construction inside the covariant Phase space formalism.
+		A problem to address is how to frame the Peierls' construction inside the covariant Phase space formalism.
 		We have seen in Chapter 2 how the covariant phase space $\Sol$ can be embedded into the space of field configurations $\Conf$.
 			This embedding is characterized as the zero locus of the equations of motion. 
-			While the bracket ${\cdot,\cdot}$ defined by Wald\cite{Wald1994}(see Def \ref{Def:InitialDataSymplecticForm}) and its covariant version on $\Sol$ (see \cite{Khavkine2014}) can be essentially be view as the \emph{symplectic form} of a phase space,
+			While the bracket $\{\cdot,\cdot\}$ defined by Wald\cite{Wald1994}(see Def \ref{Def:InitialDataSymplecticForm}) and its covariant version on $\Sol$ (see \cite{Khavkine2014}) can be essentially be view as the \emph{symplectic form} of a phase space,
 			the Peierls algorithm is a recipe which provide a binary form on the space of Lagrangians.
 			Identificating $\Lag$ to the space of the Lagrangian functionals on $\Conf$ is easy to relate the Lagrangian densities to Hamiltonian functions of ordinary mechanics.			
-			In this term is more correct to state that the form constructed by the Peierls'algorithm is indeed a non-degenerate Poisson structure on the algebra of functions on the covariant phase space is given by the Peierls bracket.
+			In this term is more correct to state that the form constructed by the Peierls' algorithm is indeed a non-degenerate Poisson structure on the algebra of functions on the covariant phase space is given by the Peierls bracket.
 		
 			While symplectic and Poisson structures are obviously related, the two covariant formalisms that we have described naturally appear in somewhat different problems. 
-			Only recently has been formalized the equivalence conditions for covariant constructions of the symplectic and Poisson structures in an elegant and fully covariant way, thus without using the canonical formalism as an intermediary \cite{Forger2005a}\cite{Khavkine2014}.
+			Only recently has been formalized the equivalence conditions for covariant constructions of the symplectic and Poisson structures in an elegant and fully covariant way, thus without using the canonical formalism as an intermediary \cite{Forger2005}\cite{Khavkine2014}.
 				
 		%-------------------------------------------------------------------------------------------------------------------
 		% Questo argomento è ancora di frontiera per quanto riguarda il rigore matematico complessivo. serve analisi globale per esprimere la geometria differenziale per queste varietà infinito dimensionale
 		%nel linguaggio di crnkovic e khavkine si può proporre una formal diffential geometry of the covariant phase space.	
 		The main drawback of this geometric point of view is the lack of mathematical rigor, since it is often restricted to the formal extrapolation of techniques from ordinary calculus on manifolds to the infinite dimensional setting.
 		Transforming such formal results into mathematical theorems is a separate problem, often highly complex and difficult.
-		In other a further investigation from the mathematical point of view and a serious functional analytical effort are still needed to describe the infinite dimensional spaces of field configurations and algebras of observables using infinite dimensional differential geometry.
+		A further investigation from the mathematical point of view and a serious functional analytical effort are still needed to describe the infinite dimensional spaces of field configurations and algebras of observables using infinite dimensional differential geometry.
 
 		\vspace{2mm}
 		%-------------------------------------------------------------------------------------------------------------------
@@ -1189,7 +1197,7 @@
 		% IO ho cercato di fare un espressione generale per il sistema astratto per cui si applica il metodo di Peierls nel modo in cui lo racconta lui ( al netto di strutture di spin, vincoli e gauge)
 		% Crnkovic da un espessione generale del metodo dei dati iniziali. La sua costruzione passa per l'identificazione di una corrente conservata (la stessa che io ho esibito nel caso di campo scalare e jacobi per dimostrare l'indipendenza dalla scelta di sigma per il caso di campo scalare (% Lui non parla di peierls!). L'articolo preliminare è fatto assieme a Witten ( nel 300 years of gravitation), esegue questa costruzione in vari casi specifici. 
 		
-		We want to remark that in the course of this work we concentrate on the analysis of the steps that make up the Peierls' algorithm.
+		We want to remark that in the course of this work we focused on the analysis of the steps that make up the Peierls' algorithm.
 		It is costumary to refer to the Peierls brackets as the bilinear form $\tau$ acting on $\Obs$ (see Definition \ref{Def:SymplecticTau}) but its original procedure is way more general as it is defined on the whole space of Lagrangian densities, modulo a technical condition on the support.
 		
 		%-------------------------------------------------------------------------------------------------------------------
@@ -1201,18 +1209,18 @@
 			\item Spin structure.
 			\item Constraints.
 		\end{itemize}
-		An earnest approach to this matters would require an important insight on the mathematical foundations of the classical field systems based on the \emph{Variational Bicomplex}.\cite{G.Sardanashvily2013,Giachetta2009,Khavkine2014a}
+		An earnest approach to this matters would require an important insight on the mathematical foundations of the classical field systems based on the \emph{Variational Bicomplex}.\cite{G.Sardanashvily2013,Giachetta2009,Khavkine2014}
 
 
 	\subsection{The quandary of a geometric interpretations}
 		%-------------------------------------------------------------------------------------------------------------------
 		% Ok, abbiamo visto la pitturizzazione dell'algoritmo di Peierls e inquadrato il ruolo della forma simplettica (x, Ey) costruita a partire da esso all'interno della pittura geometrica della meccanica.
 		%questa però non si può dire ontologicamente un'interpretazione geometrica dell'algoritmo
-		A this point the reader should have realized that the construction proposed by Peierls' is anything but straightforward.
+		At this point the reader should have realized that the construction proposed by Peierls' is anything but straightforward.
 		It is likely that the author was guided by experience, deducting its general formula from many examples of unequal time Poisson bracket (or rather the quantum commutator) of point fields , computed using the canonical method.
 		
 		In the course of this section we have provided a geometric visualization of the Peierls construction and identified the role of the corresponding "Poisson form" $(\cdot, E \cdot )$  within the framework of geometric mechanics.
-		However this can't be considered by any means a \emph{geometric interpretation}.
+		However this can not be considered by any means a \emph{geometric interpretation}.
 
 				
 				

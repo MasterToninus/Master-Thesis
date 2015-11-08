@@ -665,7 +665,7 @@ In the next sections we review two of the possible realizations of the algebraic
 \fi
    			
 			\begin{remark}
-			Under suitable conditions( namely after the choice of a Poincaré vacuum state) our quantization procedure perfectly agrees with the standard textbook quantization involving creation and annihilation operators ( see for example \cite{Mandl}). 
+			Under suitable conditions( namely after the choice of a Poincaré vacuum state) our quantization procedure perfectly agrees with the standard textbook quantization involving creation and annihilation operators ( see for example \cite{Mandl2013}). 
 			In fact, assuming that $M$ is Minkowski spacetime, one can relate directly our algebraic approach to the one more commonly used by means of an expansion in Fourier modes of the fundamental quantum fields $\Phi([ f ])$, which generate the algebra $A$.
 			\end{remark}   			
    			
@@ -687,13 +687,13 @@ In the next sections we review two of the possible realizations of the algebraic
 					\end{itemize}
 				\end{theorem}
 				\begin{proof}
-					We omit the proof, see for example \cite{benini}[Theorem 4]
+					We omit the proof, see for example \cite{Benini2013}[Theorem 4]
 				\end{proof}
 	
    		\paragraph{Algebraic State and Hilbert state representation} 
 			The power of the algebraic approach lies in its ability to separate the algebraic relations of quantum fields from the Hilbert space representations of these relations and thus in some sense to treat all possible Hilbert space representations at once. \\
-			However the usual interpretation of the physical observables as linear operators on a suitable Hilbert space is not lost.
-			We can recover the probabilistic interpretation of a quantum theory through the introduction of the notion of \emph{algebraic state} taking advance of the GNS theorem. 
+			The usual interpretation of the physical observables as linear operators on a suitable Hilbert space is, however, not lost.
+			We can recover the probabilistic interpretation of a quantum theory through the introduction of the notion of \emph{algebraic state} taking advantage of the GNS theorem. 
 			Further conditions are necessary in order to select the physically meaningful states among all possible ones .
 			
 			\subparagraph{GNS reconstruction}
@@ -709,10 +709,11 @@ In the next sections we review two of the possible realizations of the algebraic
 					\end{itemize}									
 				\end{definition}
 							
-				These object are important inasmuch the %The importance of these objects is that the 
-				selection of one of such algebraic state allows us to recover, via the GNS theorem, the standard probabilistic interpretation of quantum theories, \textit{i.e.} the representation elements of $\ObsAlg$ as linear operators on a suitable Hilbert space.
+				%These object are important inasmuch the
+				 %The importance of these objects is that the 
+				Selecting an algebraic state allows us to recover, via the GNS theorem, the standard probabilistic interpretation of quantum theories, \textit{i.e.} the representation of elements of $\ObsAlg$ as linear operators on a suitable Hilbert space.
 				
-				To make this statement clear we have to recall the definition of representation of $\ast$-algebras:
+				To make this statement clear we have to recall the definition of a representation of a $\ast$-algebra:
 				\begin{definition}
 					We call \emph{$\ast-$representation of $\ObsAlg$} on the Hilbert space $H$ a  linear map $\pi: \ObsAlg \rightarrow \mathcal{L}(D)$ , where $D\subset H$ is a linear dense subspace and $\mathcal{L}(D)$ is the space of linear operator, such that:
 					\begin{itemize}
@@ -726,13 +727,15 @@ In the next sections we review two of the possible realizations of the algebraic
 					\end{itemize}
 				\end{definition}
 %				\begin{notationfix}
-				A representation is said \emph{faithful}, if the mapping $\pi$ is bijective.			
+				A representation is said to be \emph{faithful}, if the map $\pi$ is bijective.			
 %				\end{notationfix}
 
-				As a preliminary result, we can show that, whenever we represent a $\ast-$algebra on a Hilbert space via linear bounded operators, we can automatically associate an algebraic state to any unit vector in $H$\footnote{We donete the scalar product on the Hilbert space as $\langle \cdot \vert \rangle$.}
+				As a preliminary result, we can show that, whenever we represent a $\ast-$algebra on a Hilbert space via linear bounded operators, we can automatically associate an algebraic state to any unit vector in $H$\footnote{We denote the scalar product on the Hilbert space as $\langle \cdot \vert \rangle$.}
 				\begin{proposition}
-					Let $\ObsAlg$ be any topological unital $\ast-$algebra and $\pi$ a faithful strongly continuous %( \textit{i.e.} in the operator norm topology) no! è la convergenza in norma della successione delle immagini $A_n (y)$ con $ y \in D$
-					$\pi: \ObsAlg \rightarrow \mathcal{B}(H)$ , where $ \mathcal{B}(H)$ is the space of bounded operator on $H$.\\
+					Let $\ObsAlg$ be any topological unital $\ast-$algebra and 
+					%a faithful strongly continuous %( \textit{i.e.} in the operator norm topology) no! è la convergenza in norma della successione delle immagini $A_n (y)$ con $ y \in D$
+					let $\pi: \ObsAlg \rightarrow \mathcal{B}(H)$ be a faithful, strongly continuous $\ast$-representation,
+					where $ \mathcal{B}(H)$ is the space of bounded operator on $H$.\\
 					Then for any $\psi \in H$ of unit norm, the functional $\omega_\psi : \ObsAlg \rightarrow \Complex$ defined by:
 					\begin{displaymath}
 						\omega_\psi ( a) \coloneqq  \langle \psi \vert \pi( a ) \psi \rangle
@@ -748,14 +751,23 @@ In the next sections we review two of the possible realizations of the algebraic
 				\end{displaymath}
 					exploiting the $\ast-$algebra product preserving properties of $\pi$.
 				\end{proof}
-				The key role is played by the following theorem:
+				A key role is played by the following theorem:
+
+\ifToninus 
+				\begin{Warning}
+					Valter e Igor lo definiscono come una quadrupla $\left( H_\omega, D_\omega, \pi_\omega, \Psi_\omega \right)$.
+					Io mi attengo alla notazione di CD per cui mettere sia H che D è ridondante!.\\
+					\emph{od H o D, tutti e due sono ridondanti. Sì lo so che Valter & Igor lo scrivono, ma sono ridondanti :-)}
+				\end{Warning}
+\fi
+
 				\begin{theorem}[GNS construction.]
 					Let $\ObsAlg$ be a complex unital $\ast-$algebra and $\omega: \ObsAlg \rightarrow \Complex$ is a state, then:
 					\begin{enumerate}
-						\item There exists a quadruple $\left( H_\omega, D_\omega, \pi_\omega, \Psi_\omega \right)$, where:
+						\item There exists a triple $\left( D_\omega, \pi_\omega, \Psi_\omega \right)$, where:
 							\begin{itemize}
-								\item $H_\omega$ is a complex Hilbert space.
-								\item $D_\omega \subset H$ is a dense linear subspace.
+								%\item $H_\omega$ is a complex Hilbert space.
+								\item $D_\omega \subset H_\omega$ is a dense linear subspace of a complex Hilbert space.
 								\item $\pi_\omega:\ObsAlg \rightarrow  \mathcal{L}(D_\omega)$ is a $\ast-$representation of $\ObsAlg$ on $H_\omega$ with domain $D_\omega$.
 								\item $\Psi_\omega \in D_\omega$ is a unit vector.
 							\end{itemize}
@@ -765,7 +777,7 @@ In the next sections we review two of the possible realizations of the algebraic
 								$\Psi_\omega ( \ObsAlg) = \left\lbrace \pi_\omega ( a) \Psi_\omega \: \vert \: a \in \ObsAlg \right\rbrace$ is dense in $H_\omega$.
 								\item $\omega (a) = \left\langle \Psi_\omega \vert \pi_\omega ( a) \Psi_\omega \right\rangle \qquad \forall a \in \ObsAlg$
 							\end{enumerate}
-							\item The GNS quadruple is determined up to an equivalence. \\Namely, if $\left( H'_\omega, D'_\omega, \pi'_\omega, \Psi'_\omega \right)$ is a second quadruple satisfying the preceding conditions, there exists a surjective isometry $U: H_\omega \rightarrow H'_\omega$ such that:
+							\item The GNS triple is determined up to an equivalence, \\namely, if $\left( D'_\omega, \pi'_\omega, \Psi'_\omega \right)$ is a second quadruple satisfying the preceding conditions, there exists a surjective isometry $U: H_\omega \rightarrow H'_\omega$ such that:
 							\begin{enumerate}
 								\item $U \Psi_\omega = \Psi'_\omega$
 								\item $U D_\omega = D'_\omega$
@@ -774,18 +786,20 @@ In the next sections we review two of the possible realizations of the algebraic
 					\end{enumerate}							
 				\end{theorem}
 				\begin{proof}
-					We omit the proof, see for example \cite{Khavkine2014a}[Theorem 1] or \cite{benini2013}[Theorem 4.4] for the stronger version of the theorem regarding the case where $\ObsAlg$ is a C$\ast-$algebra,  \textit{i.e.} a $\ast-$algebra endowed with a multiplicatively compatible norm.
+					We omit the proof, see for example \cite{Khavkine2014a}[Theorem 1] or \cite{Benini2013}[Theorem 4.4] for the stronger version of the theorem regarding the case where $\ObsAlg$ is a C$^\ast-$algebra,  \textit{i.e.} a $\ast-$algebra endowed with a norm compatible with multiplication.
 				\end{proof}
 				
 				\subparagraph{Hadamard condition}
-					 The definition of an algebraic state we reviewed in the previous subsection is too general.
-					 In fact the most of the positive, normalized, linear functional on the algebra are not even physically acceptable as they does not allow a proper definition of the Wick polynomials, which constitute the basic objects of perturbation theory.
+					 The definition of an algebraic state reviewed in the previous subsection is too general.
+					 In fact most of the algebraic states
+					 \ifToninus (positive, normalized, linear functional on the algebra )\fi
+					 cannot be considered physically acceptable as they do not allow a proper definition of the Wick polynomials, which constitute the basic objects of perturbation theory.
 					 
 					 It is possible to identify , therefore, a distinguished subclass of states, called \emph{Hadamard states}, which avoid these pathologies and are unanimously recognized as being the only physically significant ones.
 					 The Hadamard condition seems to be the natural generalisation of the energy-positivity condition of the Minkowski vacuum state which encodes the UV properties of physical states in QFT. Is then a good selection criterion for physical states in quantum field theory  in order  to discuss perturbatively interacting theories. 
 					 	
-				Considering the scope of this thesis, we will not discussed further the details of this important subclass of physical states.
-				For a brief account on the formulation of this property in terms of  \emph{microlocal analysis} see for example Ref. \cite{Benini2013} \cite{Khavkine2014a}.
+				Considering the scope of this thesis, we will not discuss further the details of this important subclass of physical states.
+				For a brief account on the formulation of this property in terms of  \emph{microlocal analysis}, see for example Ref. \cite{Benini2013} \cite{Khavkine2014a}.
 				
 				
 
@@ -1062,7 +1076,7 @@ In the next sections we review two of the possible realizations of the algebraic
 	\end{proof}
 
 	In some cases the two symplectic spaces coincide completely.	
-		\begin{example}\ref{Ex:SimplettomorphismPhaseSpace}
+		\begin{example}\label{Ex:SimplettomorphismPhaseSpace}
 		Consider the Klein-Gordon scalar field $(E,P)$.
 		We have already proved the independence of the phase space construction from the choice of $\Sigma$.
 		Let be $(\Obs,\tau)$ and $(\Obs_{Lin},\Omega)$ the two classical symplectic spaces according to the initial data quantization and to the Peierls quantization, where

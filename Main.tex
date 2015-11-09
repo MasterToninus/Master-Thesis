@@ -7,7 +7,7 @@
 	\documentclass[a4paper,12pt]{report}  %Per La Stampa
 	\usepackage[a4paper, margin=3.5cm]{geometry}
 \else
-	\documentclass[a4paper,12pt,openright,twoside]{report}  %Per La Stampa
+	\documentclass[a4paper,12pt,twoside,openright]{report}  %Per La Stampa
 	%\documentclass[a4paper,12pt,openright,twoside]{book}
 	\usepackage[]{layaureo}
 	%	\usepackage[a4paper, inner=5cm,outer=2.5cm,top=2cm,bottom=4cm,twoside,]{geometry}			% Reduce white margin
@@ -48,17 +48,17 @@
 
 %-------- Parte Prelimanare  ---------------------------------------------------------------------------------------------------------------------------------------------
 \blankpage
-\clearpage
+
 
 % Abstract
 \subfile{Abstract.tex}
 \blankpage
 
 %Acknowledgements
+\pagenumbering{gobble}
 \subfile{Acknowledgements.tex}
+\clearpage\thispagestyle{empty}\blankpage
 
-\blankpage
-\clearpage
 %List of symbols
 \pagenumbering{roman}
 \addcontentsline{toc}{chapter}{List of symbols}
@@ -66,7 +66,7 @@
 \printnoidxglossary[sort=def,title={List of Symbols},nonumberlist]
 
 %  Indice
-\clearpage\thispagestyle{empty}\blankpage
+\blankpage
 \tableofcontents
 \clearpage\thispagestyle{empty}
 \blankpage

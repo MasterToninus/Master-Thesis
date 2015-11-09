@@ -6,17 +6,111 @@
 
 \begin{document}
 
+%\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+%				Intro
+%\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 	\begin{frame}
 		\maketitle
 	\end{frame}
 	
 	\begin{frame}
-		\frametitle{Un esempio}
-		\begin{itemize}
-			\item<1-> Mane
-			\item<2-> Tekel
-			\item<3-> Fares
-		\end{itemize}
+		\frametitle{Intro}
+		(struttura della tesi vs struttura della presentazione)
+	\end{frame}
+	
+
+%\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+%				Parte 1 : 	"Foundations of Mechanics"
+%\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/		
+	\part{Meccanica Geometrica}
+		\frame{\partpage}
+	
+		\begin{frame}
+		\frametitle{IDEA Meccanica Geometrica:}
+			\begin{itemize}
+				\item<1-> Raccontare l'approccio canonico coordinate free alla meccanica classica a finiti gradi
+					\begin{itemize}
+						\item Lo spazio delle fasi
+						\item La forma simplettica
+						\item lagrangiana hamiltoniana legendre
+						\item struttura di Poisson
+					\end{itemize}
+				\item<1-> Dire che un suo aspetto importante è che funge da base per le teorie di quantizzazione
+				\item<1-> Ci interessa quantizzare i campi quindi ci interessa il formalismo canonico per i campi
+				\item<2-> Presentare l'approccio al formalismo canonico dei campi in 2 step:
+					\begin{itemize}
+						\item Passaggio Canonico Ordinario a Canonico Covariante (a finiti gradi)
+						\item Passaggio Canonico Covariante a Finiti Gradi a Canonico Covarianti a gradi continuo
+						\item (extra) Recupare il formalismo canonico non covariante anche per i campi costruendo il dato su una superficie di Cauchy (ricordare che al continuo ci sono controesempi che darboux non vale)
+					\end{itemize}
+				\item<3-> Ok, fin qui abbiamo un insieme. Come lo doto di una struttura simplettica?
+			\end{itemize}
+	\end{frame}
+	
+	\begin{frame}
+	\frametitle{Formalismo canonico}
+		(usually approach) I passi principali per la costruzione del formalismo canonico per teorie con $N$ gradi di libertà
+
+		\end{frame}
+		
+		\begin{frame}
+			\frametitle{Formalismo Canonico Covariante}
+		
+		\end{frame}
+	
+
+
+
+%\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+%				Parte 2 : 	"L'algoritmo di Peierls"
+%\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/		
+	\part{Costruzione della struttura simplettica nel caso dei campi classici}
+	\frame{\partpage}
+	
+	\begin{frame}
+		\frametitle{ IDEA La forma simpettica per i sistemi campo Classico }
+			\begin{itemize}
+				\item semplificare: usare i grafici già fatti e considerare solo i campi scalari
+			\end{itemize}
+	\end{frame}
+	
+	
+%\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+%				Parte 3 : 	"Realizzazione Specifica del campo di Jacobi"
+%\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/		
+	\part{Realizzazione per il Caso specifico dei campi di Jacobi}
+	\frame{\partpage}
+
+	\begin{frame}
+		\frametitle{ IDEA }
+			\begin{itemize}
+				\item ricordare le basi, varietà riemmaniana, metrica ,geodetiche jacobi
+			\end{itemize}
+	\end{frame}
+
+
+%\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+%				Fine	!!!
+%\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/		
+	\begin{frame}
+		\frametitle{ Conclusioni }
+			\begin{itemize}
+				\item Interpretazione geometrica: punto chiave: ci sono 2 spazi la cui geometria soggiace al discorso: spazio delle soluzioni e spazio delle lagrangiane
+			\end{itemize}
 	\end{frame}
 	
 \end{document}
+
+
+		\begin{enumerate}
+			\item si introducono la coordinate di configuazione $q^j$ e i momenti canonici coniugati $p^j$
+			\item si definisce la 2-forma $\omega = dp^i \wedge dq^i$
+			\item combinando $p^i,q^j$ in un'unica variablie $Q^I , I = 1,\ldots,2N$, con $Q^i=p^i$ per $i\leq\leq N$ e $Q^i= q^{i-N}$ per $i>N$. E' possibile riguardare $\omega$ come una matrice $2N\times \N$ antisimmetrica i cui elementi non nulli sono
+				\begin{displaymath}
+					\omega_{i , i+N} = -\omega_{i+N,i} = 1
+				\end{displaymath}
+			\item le parentesi di poisson per 2 funzioni $A(Q^I) , B(Q^J)$ vengono definite come:
+				\begin{displaymath}
+						\left[ A , B \right] = \omega^{I J} \frac{partial A}{\partial Q^I} \frac{\partial B}{\partial Q^J}					
+				\end{displaymath}
+		\end{enumerate}

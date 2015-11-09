@@ -27,9 +27,8 @@
 					\item[-] $E,M,Q$ :  smooth manifolds called respectively \emph{Total Space}, \emph{Base Space}, \emph{Typical Fiber}.
 					\item[-] $\pi : E \rightarrow M $ smooth function (called \emph{Bundle Projection})
 				\end{itemize}
-				Endowed with a \emph{Local Trivialization}:
-				\begin{itemize}
-					\item $\forall x \in M \; \exists$ a couple $(U, \chi)$ (called \emph{local trivialization})
+				Endowed with a \emph{Local Trivialization}, that is:\\
+				$\forall x \in M \; \exists$ a couple $(U, \chi)$ (called \emph{local trivialization})
 					\begin{itemize}
 						\item $U$ : neighbourhood of $x$
 						\item $\chi$ :$\pi^{-1}(U) \rightarrow U \times Q$ : diffeomorphism
@@ -37,7 +36,7 @@
  							\footnote{surjectivity $\Rightarrow$ $\pi^{-1}(U) \neq \emptyset$.} 
  							\footnote{cartesian product of topological space is a topological space with the direct product topology.}
 					\end{itemize}
-					such that the natural projection $p_1 : U \times F \rightarrow U$ satisfies the following equation: $$p_1 \cdot \chi = \pi \vert_{\pi^{-1}(p)}$$
+				such that the natural projection $p_1 : U \times F \rightarrow U$ satisfies the following equation: $$p_1 \cdot \chi = \pi \vert_{\pi^{-1}(p)}$$
 
 					\textit{i.e.}: the following graph commutes:
 					
@@ -53,16 +52,7 @@
 					\end{tikzpicture}					
 					\end{center}
 
-
-				\end{itemize}
 			\end{definition}
-
-			\begin{figure}[h!]
-  				\caption{The complete fiber bundle Structure.}
-  				\includegraphics[width=0.5\textwidth]{Pictures/fiberbundle}				
-%  				\includegraphics[width=0.5\textwidth]{Pictures/FiberBundle}
-  				\centering
-			\end{figure}
 %			\begin{notationfix}
 				It is customary to refer to a vector bundle specifying only its total space:
 				\begin{displaymath}
@@ -70,7 +60,20 @@
 				\end{displaymath}
 			 	In the following we adopt this convention whenever this does not lead to misunderstandings.
 %			\end{notationfix}
-			
+
+\ifToninus
+			\begin{mdframed}
+				\centering
+  				\includegraphics[width=0.8\textwidth]{Pictures/fiberbundle}		
+  				\captionof{figure}{The complete fiber bundle Structure.}					
+			\end{mdframed}
+\else
+			\begin{figure}[h!]
+				\centering
+  				\includegraphics[width=0.8\textwidth]{Pictures/fiberbundle}		
+  				\captionof{figure}{The complete fiber bundle Structure.}					
+			\end{figure}
+\fi		
 			\vspace{2mm}
 %			\begin{observation}
 				For all $p\in M$ we refer to the submanifold $E_{p} := \pi_{-1}(p) \subset E $ as \emph{fiber over the point p}.
@@ -90,7 +93,7 @@
 			When a smooth fiber bundle $(E,\pi,M;Q)$ is considered, in addition to the typical functions of the bundle $(\pi, \chi_{\alpha})$ also the local charts $(U_{\alpha_k}, \phi_{\alpha_k})_{k = E,M,Q}$, provided by the atlases of E, M and Q, should be provided.
 			%should be taken in account also  the local charts $(U_{\alpha_k}, \phi_{\alpha_k})_{k = E,M,Q}$ provided by the atlases of $E,M$ and $Q$:
 			\begin{definition}[Bundle atlas]
-				We calla a \emph{Bundle Atlas} a collection of local charts which trivializes $E$. I.e. triples  $(U_\alpha, \psi_\alpha, \chi_\alpha)$ where:
+				We call a \emph{Bundle Atlas} a collection of local charts which trivializes $E$. I.e. triples  $(U_\alpha, \psi_\alpha, \chi_\alpha)$ where:
 				\begin{itemize}
 					\item $U_\alpha$ is a open set in $M$ such that $\bigcup_{\alpha} U_{\alpha} \supseteq M$.
 					\item $\chi_\alpha$  is a local trivialization.
@@ -272,12 +275,21 @@
 						\end{displaymath}
 					where $T$ is the \emph{tangent map}, namely the bundle-morphism which act on each fiber as the differential map $d (\tau^*_Q)$.
 					\end{definition}
+
+\ifToninus
+					\begin{mdframed}
+					  	\centering	
+   						\includegraphics[width=0.7\textwidth]{Pictures/Tautological1Form} 
+ 						\captionof{figure}{The definition of tautological 1-form is achieved exploiting the concept of \emph{Tangent map} and remembering that $\alpha_p: T_p \Phase \rightarrow \Phase$ is a linear functional.} 
+					\end{mdframed}
+\else
 					\begin{figure}[h!]
-						\centering
-   						\includegraphics[width=0.5\textwidth]{Pictures/Tautological1Form} 
- 						\caption{The definition of tautological 1-form is achieved exploiting the concept of \emph{Tangent map} and remembering that $\alpha_p: T_p \Phase \rightarrow \Phase$ is a linear functional.} 
-  						\centering
-					\end{figure}	
+					  	\centering	
+   						\includegraphics[width=0.7\textwidth]{Pictures/Tautological1Form} 
+ 						\caption{The definition of tautological 1-form is achieved exploiting the concept of \emph{Tangent map} and remembering that $\alpha_p: T_p \Phase \rightarrow \Phase$ is a linear functional.} 				
+					\end{figure}
+\fi
+
 %					\begin{remark}	
 %					\begin{notationfix}
 						In the context of classical mechanics we define a  special set of coordinates on the cotangent bundle of a manifold called \emph{canonical coordinates}.

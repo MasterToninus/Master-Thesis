@@ -4,10 +4,14 @@
 
 %-------- Document Class  ------------------------------------------------------------------------------------------------------------------------------------------------
 \ifToninus
-	\documentclass{report}
+	\documentclass[a4paper,12pt]{report}  %Per La Stampa
+	\usepackage[a4paper, margin=3.5cm]{geometry}
 \else
 	\documentclass[a4paper,12pt,openright,twoside]{report}  %Per La Stampa
-	\usepackage[margin=3.75cm,twoside]{geometry}
+	%\documentclass[a4paper,12pt,openright,twoside]{book}
+	\usepackage[]{layaureo}
+	%	\usepackage[a4paper, inner=5cm,outer=2.5cm,top=2cm,bottom=4cm,twoside,]{geometry}			% Reduce white margin
+	\geometry{top=3.5cm,bottom=3.5cm,}
 \fi
 
 %-------- Multi-file  ---------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -48,6 +52,7 @@
 
 % Abstract
 \subfile{Abstract.tex}
+\blankpage
 
 %Acknowledgements
 \subfile{Acknowledgements.tex}
@@ -61,23 +66,31 @@
 \printnoidxglossary[sort=def,title={List of Symbols},nonumberlist]
 
 %  Indice
+\clearpage\thispagestyle{empty}\blankpage
 \tableofcontents
-
+\clearpage\thispagestyle{empty}
+\blankpage
 
 %-------- Documents Content  ----------------------------------------------------------------------------------------------------------------------------------------
 \clearpage
 \pagenumbering{arabic}
 \subfile{Introduction}
+\clearpage\thispagestyle{empty}
 
 \subfile{Chapter1}
+\clearpage\thispagestyle{empty}
 
 \subfile{Chapter2}
+\clearpage\thispagestyle{empty}
 
 \subfile{Chapter3}
+\clearpage\thispagestyle{empty}
 
 \subfile{Chapter4}
+\clearpage\thispagestyle{empty}
 
 \subfile{Conclusions}
+\clearpage\thispagestyle{empty}
 
 
 %-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_

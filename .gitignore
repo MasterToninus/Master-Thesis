@@ -59,6 +59,8 @@ Temporary Items
 *.sbl
 *.log
 *.sta
+*.nav
+*.snm
 
 #Ignore all pdf file in main folder
 /*.pdf

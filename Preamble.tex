@@ -87,6 +87,24 @@
 % Attaccare il frontespizio come pdf a parte
 \usepackage{pdfpages} 
 
+% Comprimere le liste (per farle entrare bene nelle definizioni
+\usepackage{enumitem}
+
+\newenvironment{compactitemize}
+	{ 	
+		\begin{itemize}[nosep,itemsep=0.5mm,topsep=0.7mm]%nosep
+			\renewcommand\labelitemi{$\cdot$}
+	}
+	{ \end{itemize} }
+	
+\newenvironment{compactdisplaymath}
+	{ 	
+		\vspace{-3mm}
+		\begin{displaymath}
+	}
+	{ \end{displaymath}  }
+
+
 % Blank Page http://tex.stackexchange.com/questions/36880/insert-a-blank-page-after-current-page
 \usepackage{afterpage}
 \usepackage{emptypage}
@@ -96,4 +114,7 @@
     \thispagestyle{empty}%
     \addtocounter{page}{-1}%
     \newpage}
+    
+
+ 
 

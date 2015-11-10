@@ -28,18 +28,17 @@
 					\item[-] $\pi : E \rightarrow M $ smooth function (called \emph{Bundle Projection})
 				\end{itemize}
 				Endowed with a \emph{Local Trivialization}, that is:\\
-				$\forall x \in M \; \exists$ a couple $(U, \chi)$ (called \emph{local trivialization})
-					\begin{itemize}
+				$\forall x \in M \quad \exists$ a pair $(U, \chi)$ (called \emph{local trivialization}) where:
+					\begin{compactitemize}
 						\item $U$ : neighbourhood of $x$
 						\item $\chi$ :$\pi^{-1}(U) \rightarrow U \times Q$ : diffeomorphism
 							%DaRivedere
  							\footnote{surjectivity $\Rightarrow$ $\pi^{-1}(U) \neq \emptyset$.} 
  							\footnote{cartesian product of topological space is a topological space with the direct product topology.}
-					\end{itemize}
+					\end{compactitemize}
 				such that the natural projection $p_1 : U \times F \rightarrow U$ satisfies the following equation: $$p_1 \cdot \chi = \pi \vert_{\pi^{-1}(p)}$$
-
 					\textit{i.e.}: the following graph commutes:
-					
+					\vspace{-2mm}		
 					\begin{center}
 					\begin{tikzpicture}
 						 \matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em] {
@@ -84,21 +83,22 @@
 			\vspace{2mm}
 %			\begin{notationfix}
 				Since  Definition \ref{Def:SmoothBundle}  prescribes the existence of local trivializations only,
-				we say that a smooth bundle E is \emph{(globally) trivial} if $E \simeq M \times Q$ i.e there exists a trivialization of $E$ which is defined everywhere.
+				we say that a smooth bundle E is \emph{(globally) trivial} if $E \simeq M \times Q$, \textit{i.e.} there exists a trivialization of $E$ which is defined everywhere.
 %				\\
 %				Note that Definition \ref{Def:SmoothBundle}  prescribes the existence of local trivializations only.
 %			\end{notationfix}
 			\vspace{3mm}
 			
-			When a smooth fiber bundle $(E,\pi,M;Q)$ is considered, in addition to the typical functions of the bundle $(\pi, \chi_{\alpha})$ also the local charts $(U_{\alpha_k}, \phi_{\alpha_k})_{k = E,M,Q}$, provided by the atlases of E, M and Q, should be provided.
+			When a smooth fiber bundle $(E,\pi,M;Q)$ is considered, in addition to the typical functions of the bundle $(\pi, \chi_{\alpha})$ also the local charts $(U_{\alpha_k}, \phi_{\alpha_k})_{k = E,M,Q}$, provided by the atlases of $E$, $M$ and $Q$, should be provided.
 			%should be taken in account also  the local charts $(U_{\alpha_k}, \phi_{\alpha_k})_{k = E,M,Q}$ provided by the atlases of $E,M$ and $Q$:
 			\begin{definition}[Bundle atlas]
-				We call a \emph{Bundle Atlas} a collection of local charts which trivializes $E$. I.e. triples  $(U_\alpha, \psi_\alpha, \chi_\alpha)$ where:
-				\begin{itemize}
+				We call \emph{Bundle Atlas} a collection of local charts which trivializes $E$.\\
+				\textit{I.e.} a set of triples  $(U_\alpha, \psi_\alpha, \chi_\alpha)$ where:
+				\begin{compactitemize}
 					\item $U_\alpha$ is a open set in $M$ such that $\bigcup_{\alpha} U_{\alpha} \supseteq M$.
 					\item $\chi_\alpha$  is a local trivialization.
 					\item $(U_\alpha,\psi_\alpha)$ is a local chart on $M$.
-				\end{itemize}		
+				\end{compactitemize}		
 			\end{definition}
 %			\begin{observation}
 
@@ -112,17 +112,17 @@
 			Endowing the bundle manifolds with other additional structures, we can introduce important subclasses of smooth bundles:
 			\begin{definition}[Vector Bundle]
 				We call \emph{Vector Bundle} a smooth bundle $E=(E,\pi,M;V)$ such that:
-				\begin{itemize}
+				\begin{compactitemize}
 					\item The typical fiber $V$ is a finite dimensional vector space.	
 					\item All trivializations $\chi_{\alpha} $ are diffeomorphisms such that:
-						\begin{displaymath}
-							\chi_{\alpha}\vert_{\pi^{-1}(p)} \in \mathbb{GL}(n, \mathbb{R})
-						\end{displaymath}
-				\end{itemize}
+						\begin{compactdisplaymath}
+							\left.\chi_{\alpha}\right\vert_{\pi^{-1}(p)} \in \mathbb{GL}(n, \mathbb{R})
+						\end{compactdisplaymath}
+				\end{compactitemize}
 			\end{definition}
 
 		\subsection{Cross Sections}
-			Sections represent the natural mathematical object to encode a $Q-$ valued classical field over the space $M$:			
+			Sections represent the natural mathematical object to encode a $Q-$valued classical field over the space $M$:			
 %			\begin{definition}[Smooth Section]
 %				We call \emph{Smooth Section} a function $\phi : M \rightarrow E$ such that:
 %					\begin{itemize}
@@ -131,7 +131,10 @@
 %					\end{itemize}
 %			\end{definition}
 			\begin{definition}[Smooth Section]
-				We call \emph{Smooth Section} 	any $\phi\in C^\infty(M;E)$ such that $$\pi\circ\phi = id|_M$$		
+				We call \emph{Smooth Section} 	any $\phi\in C^\infty(M;E)$ such that 
+				\begin{compactdisplaymath}
+					\pi\circ\phi = id|_M
+				\end{compactdisplaymath}
 			\end{definition}
 %			\begin{notationfix}
 				We refer to:
@@ -167,11 +170,12 @@
 			Consider two smooth bundles $E=(E,\pi,M; Q)$ and $E'=(E',\pi',M; Q')$ on the same base space $M$.
 			\begin{definition}[Bundle map (\emph{Fiber Preserving map})]\label{Def:BundleMap}
 				We call \emph{bundle map} a smooth function $\phi: E \rightarrow E'$ such that:			
-			 	\begin{displaymath}
+			 	\begin{compactdisplaymath}
 			 		\phi(E_{x})= F_{x} \qquad \forall x \in M.
-			 	\end{displaymath}
-				i.e.:
-				
+			 	\end{compactdisplaymath}
+				\textit{i.e.} the following graph commutes:
+
+				\vspace{-2mm}			
 				\centering
 				\begin{tikzpicture}
 					 \matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em] {
@@ -187,14 +191,15 @@
 				Definition \ref{Def:BundleMap} is a special case of \emph{bundle-morphism}. (see for example \cite{G.Sardanashvily2013})
 %			\end{observation}
 
+			\vspace{3mm}	
 			%pullback bundle
 			Consider a smooth manifold $N$, a (smooth) fiber bundle $E=(E,\pi,M;Q)$, and a smooth function $f: N \rightarrow M$. it is possible to induce\cite{Husemoller} a bundle structure from $M$ to $N$:
 			\begin{definition}[Pull-Back Bundle]
 				We call \emph{pull-back bundle} of E a triple $f^* (E) = (f^* (E) , \pi^*,N)$ such that:
-				\begin{itemize}
+				\begin{compactitemize}
 					\item $f^* (E) =  \big\{ (b',e) \in N \times E \quad \big\vert \; f(b') = \pi(e) \big\} $
 					\item $\pi^*:f^* (E) \rightarrow N $ such that $ \pi^* (b',e) = \textrm{pr}_1 (b',e)= b' $
-				\end{itemize}
+				\end{compactitemize}
 				where $p_1 : U \times F \rightarrow U$ is the natural projection  on the first entry.
 			\end{definition}
 			\begin{proposition}
@@ -227,12 +232,12 @@
 						
 			\begin{definition}[Tangent Bundle]
 				We call \emph{tangent bundle of M} the smooth vector bundle $TM=(TM,\tau,M;\Real^m)$ such that:
-				\begin{itemize}
+				\begin{compactitemize}
 					\item The total space is the union of all tangent spaces to 
 						$$TM \coloneqq \underset{p \in M}{\sqcup} T_pM  \equiv \bigcup_{x\in M} {x}\times T_x M$$
 					\item The bundle projection maps each tangent vector $v\in  T_pM$ to the correspondent base point  $p$;
 						$$\tau : (p,v_p) \mapsto p $$
-				\end{itemize}
+				\end{compactitemize}
 			\end{definition}			
 			In a similar fashion it is possible to construct a structure dual to $TM$:
 			\begin{definition}[Cotangent Bundle]
@@ -293,7 +298,7 @@
 %					\begin{remark}	
 %					\begin{notationfix}
 						In the context of classical mechanics we define a  special set of coordinates on the cotangent bundle of a manifold called \emph{canonical coordinates}.
-						They are usually written as a set of $(q^i,p_j)$ where ${q_i}$ are denoting the coordinates on the underlying manifold and the ${p_j}$ are denoting the conjugate momenta, which are decompositions of 1-forms in $T_p^*M$ on the dual natural basis $d q^J$ in the cotangent bundle at the point $q$ in the manifold.
+						They are usually written as a set of $(q^i,p_j)$ where ${q_i}$ are denoting the coordinates on the underlying manifold and the ${p_j}$ are denoting the conjugate momenta, which are decompositions of 1-forms in $T_p^*M$ on the dual natural basis $d q^j$ computed in the cotangent space at the point $q$ on the manifold.
 %					\end{notationfix}
 %					\end{remark}
 	
@@ -323,7 +328,7 @@
 			The jet bundle is a %certain 
 			construction that makes a new smooth fiber bundle out of a given bundle. The first step is to identify the typical fiber for this construction.
 
-			Suppose $M$ is an m-dimensional manifold and that $(E, \pi, M)$ is a fiber bundle. 
+			Suppose $M$ is an m-dimensional manifold and that $E =(E,\pi,M,Q)$ is a smooth fiber bundle. 
 			Consider the set of all the local sections whose domain contains $p$:
 			\begin{displaymath}
 				\Gamma^\infty (p) \coloneqq \big\{ \sigma \in \Gamma^\infty(E) \quad \big\vert\:  p \in \dom(\sigma)  \big\}
@@ -369,22 +374,22 @@
 			The integer $r$ is also called the order of the jet, $p$ is its source and $\sigma(p)$ is its target.
 		\end{notationfix}
 	
-		Glueing together all the jet fibers $J^r_p (E)$ together for all the base points $p\in M$, as done for the tangent bundle,  we obtain the desired bundle:
+		Glueing together all the jet fibers $J^r_p (E)$ for all the base points $p\in M$, as done for the tangent bundle,  we obtain the desired bundle:
 		\begin{definition}[r-th Jet Bundle of $E$]
 			We call \emph{r-th Jet Bundle of $E$} the smooth bundle $(J^r(E), \pi_r, M)$	where:
-			\begin{itemize}
+			\begin{compactitemize}
 				\item $J^r(E) \coloneqq \underset{p \in M}{\sqcup} J^r_p (E)
 					 \equiv \big\{j^r_p\sigma \quad \vert \; p\in M, \; \sigma \in \Gamma^\infty(p) \big\}$
 				\item $\pi_r: J^r(E) \rightarrow M$ such that $j^{r}_{p}\sigma \mapsto p $
-			\end{itemize}
+			\end{compactitemize}
 		\end{definition}
 
 %\_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_%
 %\_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_%
-	\section{Globally Hyperbolic Space-times}
+	\section{Globally Hyperbolic Spacetimes}
 		Rigorously speaking, configurations of a field system are encoded by sections based on a \emph{spacetime} manifold.
 		From a physical point of view, we are interested in those spacetimes which allow to set a well-posed initial value problem for hyperbolic partial differential equations, such as the wave equation.
-		 In particular we need to ensure that the spacetime we consider possesses at least one distinguished codimension 1 hypersurface on which we can assign the initial data needed to construct a solution of such an equation.
+		 In particular we need to ensure that the spacetime we consider possess at least one distinguished codimension 1 hypersurface on which we can assign the initial data needed to construct a solution of such an equation.
 	 	\\
 	 	For this purpose we have to  introduce \emph{globally hyperbolic spacetimes}.
 
@@ -399,13 +404,13 @@
 			
 			\begin{definition}[Pseudo-Riemannian Manifold]
 				We call \emph{Pseudo-Riemannian manifold} a pair $(M, g)$ such that:
-				\begin{itemize}
+				\begin{compactitemize}
 					\item $M$ is a n-dimensional $(n\geq2)$, Hausdorff, second countable, connected, orientable smooth manifold.
 					\item $g$ is a Lorentzian metric.
-				\end{itemize}
+				\end{compactitemize}
 			\end{definition}		
 %			\begin{notationfix}
-				A Pseudo-Riemannian manifold $(M,g)$ is called:
+			A Pseudo-Riemannian manifold $(M,g)$ is called:
 				 \begin{itemize}
 				 	\item \emph{Riemannian} if the sign of $g$ is positive definite.%, \emph{Pseudo-Riemman} otherwise.
 				 	\item \emph{Lorentzian} if the signature is $(+, -, \ldots,- )$ or equivalently $(-,+,\ldots,+)$.
@@ -417,11 +422,11 @@
 			\begin{notationfix}
 
 				$\forall p \in M, \quad \forall X \in T_pM$,  we call a vector:
-				\begin{itemize}
+				\begin{compactitemize}
 					\item \emph{time-like} if $g(X,X)<0$.
 					\item \emph{light-like} if $g(X,X)=0$.
 					\item \emph{space-like} if $g(X,X)>0$.
-				\end{itemize}
+				\end{compactitemize}
 			\end{notationfix}
 		
 			\begin{observation}%[Local Time Orientability]
@@ -438,22 +443,22 @@
 			\begin{definition}[Time-orientation]
 				We call \emph{time-orientation} a global tangent vector field  $\mathfrak{t}\in \Gamma^\infty(TM)$ over the Lorenzian manifold $M$ 
 				such that:
-				\begin{itemize}
+				\begin{compactitemize}
 					\item $\supp(\mathfrak{t}) = M$
 					\item $\mathfrak{t}(p)$ is time-like $\forall p \in M$.
-				\end{itemize}
+				\end{compactitemize}
 			\end{definition}
 %			\begin{observation}
 				Can be noted that fixing of a time-orientation is equivalent to a consistent smooth choice of a local time-direction.
 %			\end{observation}	
 	
-			\begin{definition}[Space-Time]
+			\begin{definition}[Spacetime]
 				We call \emph{spacetime} a quadruple $(M, g, \mathfrak{o}, \mathfrak{t})$ such that:
-				\begin{itemize}
+				\begin{compactitemize}
 					\item $(M,g)$ is a time-orientable\footnote{Manifold for which such \emph{time-orientation} exists.} n-dimensional manifold $(n>2)$
 					\item $\mathfrak{o}$ is a choice of orientation
 					\item $\mathfrak{t}$ is a choice of time-orientation
-				\end{itemize}
+				\end{compactitemize}
 			\end{definition}	
 		
 			In a spacetime $M$ it is quite important to identify particular classes of subsets. The main tool are the \emph{parametrized curves}:
@@ -461,11 +466,11 @@
 
 %				Consider 
 				A piece-wise smooth curve $\gamma: \Real\supset I \rightarrow M$ is called:
-				\begin{itemize}
+				\begin{compactitemize}
 					\item \emph{time-like} (resp. light-like, space-like) iff $\dot{\gamma}(p)$ is time-like (resp. light-like, space-like) $\forall p \in M$.
 					\item \emph{causal} iff $\dot{\gamma}(p)$ is nowhere spacelike.
 					\item \emph{future directed} (resp. past directed) iff it is causal and  $\dot{\gamma}(p)$ is future (resp. past) directed $\forall p \in M$.
-				\end{itemize}
+				\end{compactitemize}
 			\end{notationfix}
 
 			\begin{definition}[Chronological $\substack{\textrm{ future}\\ \textrm{past } }$ of a point]
@@ -544,7 +549,7 @@
 				\end{itemize}
 			\end{theorem}
 			
-			The class of globally hyperbolic spacetimes includes most of the physically interesting examples, e.g.: Minkowski spacetime, Friedman-Robertson-Walker spacetime and Kerr spacetimes, the two-parameter family of rotating black holes, solutions to the vacuum Einstein's equations. 
+			The class of globally hyperbolic spacetimes includes most of the physically interesting examples, \textit{e.g.}: Minkowski spacetime, Friedman-Robertson-Walker spacetime and Kerr spacetimes, the two-parameter family of rotating black holes, solutions to the vacuum Einstein's equations. 
 			\\
 			In what follows we will make primary use of the most trivial example:
 			\begin{example}
@@ -560,6 +565,7 @@ specify the support properties of the sections of a vector bundle with base a gl
 				Let $M$ be a globally hyperbolic spacetime and $E=(E,\pi,M;V)$ a vector bundle of typical fiber $V$.\\
 				We denote:
 				\begin{itemize}
+							\renewcommand\labelitemi{$\cdot$}
 					\item $\Gamma_0(E)$ the space of \emph{compactly supported} smooth sections.
 					\item $\Gamma_{sc}(E)$  the space of \emph{spacelike compact} smooth sections.\\
 						$\big(\; f\in \Gamma_{sc}(E)$ if there exists a compact subset $K \subset M$  such that $\supp f \subset \mathbf{J}_M(K)$. $\big)$
@@ -643,11 +649,11 @@ specify the support properties of the sections of a vector bundle with base a gl
 			\begin{definition}[$\substack{\textrm{ retarded}\\ \textrm{advanced } } (\pm)$ Green Operators]\label{Def:GreenOperators}
 				We call \emph{$\substack{\textrm{ retarded}\\ \textrm{advanced } } (\pm)$ Green Operator} of $L$ a 
 				l.p.d.o. $G^\pm : \Gamma (E) \rightarrow \Gamma(E)$ such that:
-				\begin{itemize}
+				\begin{compactitemize}
 					\item $\dom(G^+) = \Gamma_{pc}(E) \qquad \dom(G^-) = \Gamma_{fc}(E)$
 					\item $LG^\pm f=G^\pm Lf = f \qquad \forall f\in \dom(G^\pm)$
 					\item $\supp(G^\pm f) \subset \mathbf{J}^\pm_M (\supp(f)) \qquad \forall f\in \dom(G^\pm)$
-				\end{itemize}
+				\end{compactitemize}
 			\end{definition}
 %			\begin{observation}
 %				From the definition it follows that 
@@ -713,7 +719,8 @@ specify the support properties of the sections of a vector bundle with base a gl
 					\end{enumerate}
 			\end{proposition}
 			\begin{proof}
-			(Th. 1)\\
+
+			[Th. 1]\\
 			Assuming that $h\in \Gamma_{tc} = \dom(\GreenAdv) \cap \dom(\GreenRet)$, the converse implication follows slavishly from the definition of the causal propagator:
 			\begin{displaymath}
 				E f= (\GreenAdv - \GreenRet) P h = h -h
@@ -742,10 +749,10 @@ the retarded or the advanced Green operators obtaining:
 			
 			[Th. 3]\\
 			Consider a pair of function (partition of unity of $M$) $\{\chi_\pm: M \rightarrow [0,1] \}$ such that:
-			\begin{itemize}
+			\begin{compactitemize}
 				\item $\chi_\pm = 1$ on a past / future compact region.
 				\item $\chi_+(x) + \chi_-(x) = 1 \qquad \forall x\in M$.
-			\end{itemize}
+			\end{compactitemize}
 			For any $f \in 	\Gamma(E)$ we define the function:
 			\begin{displaymath}
 				h \coloneqq \GreenRet \big( \chi_+ f \big) + \GreenAdv \big( \chi_- f \big)
@@ -764,7 +771,7 @@ the retarded or the advanced Green operators obtaining:
 					\begin{enumerate}
 						\item $E f = 0 \; \Leftrightarrow \;  \exists h \in \Gamma_{0}(E) \; \vert \; f=P h $.
 						\item $P f = 0 \; \Leftrightarrow \; f=0$.
-						\item $\forall h \in \Gamma_{sc}(E)\quad \exists h \in \Gamma_{sc}(E)\quad \vert P h = f$.
+						\item $\forall h \in \Gamma_{sc}(E)\quad \exists h \in \Gamma_{sc}(E)\quad \; \vert \; P h = f$.
 					\end{enumerate}
 			\end{corollary}
 					
@@ -785,7 +792,7 @@ the retarded or the advanced Green operators obtaining:
 			\\
 			Consider a globally hyperbolic operator $P$ for all $p \in M$ a trivializing chart $(U, \varphi, \chi)$ centered in $p$. 
 			There exist a collection $\big\{A, A^\mu \vert \mu\in \{0, \ldots ,m-1\}\big\}$ of smooth 
-			$\Hom(V,V)-$valued maps on $U$ such that, $P$ reads as follows:
+			$\Hom(V,V)-$ valued maps on $U$, such that $P$ reads as follows:
 			\begin{equation}\label{Eq:NormallyHyperbolicRepresentation}
 				\chi \circ ( P \sigma) \circ \varphi^{-1} =
 				\big( g^{\mu \nu} \IdMap_V \partial_\mu \partial_\nu + A^\mu \partial_\mu + A\big)
@@ -793,7 +800,7 @@ the retarded or the advanced Green operators obtaining:
 				\qquad \forall \sigma \in \dom(P) \subset \Gamma(E)
 			\end{equation}
 		where both the chart and the vector bundle trivializations are understood. 
-		One immediately notices that locally this expression agrees- up to terms of lower order in the derivatives with the one for the d'Alembert operator acting on sections of $E$  constructed out of a covariant derivative $\nabla$ on $E$, that is the operator:
+		One immediately notices that locally this expression agrees  - up to terms of lower order in the derivatives  - with the one for the d'Alembert operator acting on sections of $E$  constructed out of a covariant derivative $\nabla$ on $E$, that is the operator:
 		\begin{displaymath}
 			\square_\nabla = g^{\mu \nu} \nabla_\mu \nabla_\nu : \Gamma(E) \rightarrow \Gamma(E)
 		\end{displaymath}

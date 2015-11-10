@@ -27,6 +27,7 @@
 			\ddot{\gamma}^i + \Gamma^i_{\, j k} \dot{\gamma}^j \dot{\gamma}^k = 0
 		\end{equation}
 		where $ \Gamma^i_{\, j k}$ is the coordinate representation of the Christoffel symbols of the connection.
+		
 		Equation (\ref{GeodesicEquation}) admits a well-posed Cauchy problem.
 		\begin{theorem}
 			Let $M$ be a smooth manifold, $p\in M$, $v \in T_p M$. 
@@ -44,14 +45,14 @@
 	\vspace{4mm}
 	%Definizione metrica di geodetica su varietà riemmaniana( con connessione di levi civita)	
 	In presence of a pseudo-Riemannian metric it is possible to present the geodesic %in a metric sense i.e. 
-	as the curve extremizing the \emph{Energy Functional}\footnote{Remember that for arc-length parametrized curves the Energy functional coincides with the length functional.\cite[Lemma $1.4.2$ ]{Jost2005}}:
+	as the curve extremizing the \emph{energy Functional}\footnote{Remember that for arc-length parametrized curves the Energy functional coincides with the length functional.\cite[Lemma $1.4.2$ ]{Jost2005}}:
 	\begin{definition}[Energy functional]
   	\begin{equation}\label{EnergyFunctional}
   		H: C^1\left(\left[a,b\right],Q\right) \rightarrow \Real \qquad
  		H(\gamma) \coloneqq \int_a^b \left\Vert \frac{d \gamma}{dt} (t)\right\Vert^2 dt
  	\end{equation}
 \end{definition} 	
-	Considering only the proper variations (that keep the end-point fixed), the extremum condition corresponds to equation \ref{GeodesicEquation} where $\nabla$ is the unique Levi-Civita connection (torsion-free and metric-compatible).
+	Considering only the proper variations (that keep the end-point fixed), the extremum condition corresponds to equation \ref{GeodesicEquation} where $\nabla$ is the unique Levi-Civita connection (torsion-free and metric-compatible).\cite{Jost2005}
 
 	\vspace{4mm}
 		%Problema di Jacobi, deviazione geodetica e legame alla curvatura
@@ -61,7 +62,7 @@
 	 a central role. \footnote{Usually in this context takes the name of \emph{Geodesic deviation} problem\cite[pag. 46]{Wald1984} inasmuch Jacobi field describes the difference between the geodesic and an "infinitesimally close" geodesic.}
 	
 	\begin{definition}[Jacobi Field]
-	We call a \emph{Jacobi field} along the geodesic $\gamma$ the tangent vector field over the submanifold $\gamma(t,\tau)$, determined by  a smooth one parameter family of geodesics$ \gamma_\tau$ ( with $\gamma_0=\gamma$), in respect to the$\tau$ coordinate. \textit{i.e.}:
+	We call a \emph{Jacobi field} along the geodesic $\gamma$ the tangent vector field over the submanifold $\gamma(t,\tau)$, determined by  a smooth one parameter family of geodesics $ \gamma_\tau$ ( with $\gamma_0=\gamma$), in respect to the $\tau$ coordinate. \textit{i.e.}:
 	\begin{displaymath}
 	 J = \left. \frac{\partial \gamma_\tau (t)}{\partial \tau}\right\rvert_{\tau=0}
 	\end{displaymath}
@@ -155,7 +156,7 @@
 		It is a simple application of the correspondence seen in chapter \ref{MechanicsAsAField}.
 	\end{proof}
 	
-	From this perspective it is clear that the Energy Functional corresponds to the action of the geodesic field dynamics and equation \ref{GeodesicEquation} is nothing more than the equations of motion according to the \emph{least action principle}.
+	From this perspective it is clear that the energy functional corresponds to the action of the geodesic field dynamics and equation \ref{GeodesicEquation} is nothing more than the equations of motion according to the \emph{least action principle}.
 
 % \danger aggiungere!!!
 %		\begin{figure}[h!]
@@ -175,7 +176,7 @@
 	It is explicitly is quadratic in the velocity components $\dot{\gamma}^i$ and implicitly, through $g_{\mu\nu}(\gamma^i(t))$, is non-polynomial in the %curve 
 	coordinates $\gamma^i$.
 	
-	As show in section \ref{Section:NonLinearPeierls}, for this type of systems the calculation of the Peierls bracket can be realized only locally around a predetermined solution.
+	As show in section \ref{Section:NonLinearPeierls}, for this type of systems the calculation of the Peierls bracket can be realized only locally around a predetermined solution.\\
 	Let us repeat the Peierls' procedure for the system under investigation.
 
 	As a consequence of our introduction on the geodesic as a field, we can state the unperturbed dynamic as a L.P.D.O :
@@ -207,7 +208,7 @@
 
 	
 	\begin{proposition}
-		The differential equation $$P^\mu_{\: \alpha} \eta^\alpha=0$$ corresponding to the l.p.d.o $P$ defined in equation \ref{GeodesicJacobation1} corresponds to equation \ref{JacobiEquationComponents} defining  the \emph{Jacobi fields} along the geodesic $\gamma_0$.
+		The differential equation $$P^\mu_{\: \alpha} \eta^\alpha=0$$ corresponding to the l.p.d.o. $P$ defined in equation \ref{GeodesicJacobation1} corresponds to equation \ref{JacobiEquationComponents} defining  the \emph{Jacobi fields} along the geodesic $\gamma_0$.
 	\end{proposition}
 	\begin{proof}
 		For convenience, we adopt the following notation:
@@ -265,7 +266,7 @@
 	
 	
 
-\subsection{Example: Geodesic field on FRW space-time.}
+\subsection{Example: Geodesic field on FRW spacetime}
 \ifToninus
 	\begin{Warning}
 	% qui i conti li devo ancora fare, 
@@ -299,7 +300,7 @@
 	\begin{equation}\label{EQ: metrica FRW}
 		ds^2 = -dt^2 + a^2(t) \left( \frac{dr^2}{1-k r^2} + r^2 d\theta^2 + sin^2\theta d\phi^2\right)
 	\end{equation}
-		where $0 < a(t) \in C^\infty	(I)$ is said \emph{scale factor}, $I \subset \Real$ is the time domain and $k$ is a constant normalizable to $\pm 1$ or $0$.
+		where $0 < a(t) \in C^\infty	(I)$ is said \emph{scale factor}, $I \subset \Real$ is the time domain and $k$ is a constant normalizable to $\pm 1$ or $0$.\\
 		The assumptions of homogeneity and isotropy alone determine the spacetime metric up to the value of the scale factor $a$ and up to three possibilities of spatial geometry.
 		The simply connected spacetimes compatibile with \ref{EQ: metrica FRW} are topologically equivalent (diffeomorphic) 		
 		to $\Real \times \Sigma$ where $\Sigma$ is a 3D manifold which depends on the value of $k$:
@@ -424,6 +425,7 @@
 		Anche un'appendice sul calcolo delle green sfruttando lo sviluppo di Dyson e quello di Magnus ( Partendo come spunto dall'articolo \cite{Dappiaggi2014}) non sarebbe stata male. ma è venuto il tempo di concludere.
 	\end{Warning}
 \fi	
+			\\
 			It is possible, however, to express the corresponding Green function as a convergent Dyson expansion\cite{Dappiaggi2014}.
 			The idea is to consider the non-autonomous term $V(t) = -m^2 \frac{\ddot{a}(t)}{a(t)}$ as if it were a perturbing potential.\\
 			Remembering that $G^\pm_0 (t \vert \xi)$ is the Green function of operator \ifToninus$P_{0}=\left(\frac{d}{dt}\right)^2$\else$P_0$\fi, which can be seen as the time-independent part of differential operator \ifToninus$P_{i i}=\left( \left(\frac{d}{dt}\right)^2 - m^2 \frac{\ddot{a}}{a} \right)$\else$P_i$\fi, we can formally express the Green function of $P_{i}$ as follow:
@@ -450,7 +452,7 @@
 								g^\pm_i(t \vert \xi) = \pm \frac{1}{2V}\theta\big(\pm(t-\xi)\big) \left[ e^{V(t-\xi)} - e^{-V(t-\xi)}\right]
 			\end{displaymath}
 
-			Combing all these results we are able to give an explicit expression of the Peierls symplectic form $\tau$- as defined in Eq. 	\ref{Def:SymplecticTau}- for the De Sitter spacetime.
+			Combing all these results we are able to give an explicit expression of the Peierls symplectic form $\tau$- as defined in Eq. 	\ref{Def:SymplecticTau} for the De Sitter spacetime.
 			For any pair $(X, Y)$ of compactly supported fields over $\gamma(t)$ we have:
 			\begin{align*}
 			\{X ,Y \} =&\int \left\langle X, \left(\GreenAdv - \GreenRet \right)Y \right\rangle dt =	\\
@@ -562,7 +564,7 @@
 				where $f$ is a representative of the equivalence class $[f]\in \Obs$.
 			
 			\paragraph{Symplectic Structure}
-				The geodesic motion is a particular case of a system with finite degrees of freedom, thus the Peierls brackets between two Lagrangian functionals $\chi, \omega$ around a geodesic $\gamma_0$ tested on a function $f \in C_0^\infty(\Real)$ are given by \ref{EspressionePeierlsCampiCurve}.
+				The geodesic motion is a particular case of a system with finite degrees of freedom, thus the Peierls brackets between two Lagrangian functionals $\chi, \omega$ around a geodesic $\gamma_0$ tested on a function $f \in C_0^\infty(\Real)$ are given by Eq.  \ref{EspressionePeierlsCampiCurve}.\\
 				Restricting the definition to the simplest Lagrangian functionals constructible from the classical observables:
 				\begin{displaymath}
 					\chi [\phi] \coloneqq (\chi, \phi) \qquad \chi \in \Obs,\, \phi \in \Sol
@@ -635,7 +637,7 @@
 			In others words:
 			\begin{displaymath}
 				\sigma_\Sigma (X, Y) = \sigma_{\Sigma'} (X, Y) 
-				\qquad \forall X, Y \in \Sol \; \forall \Sigma, \Sigma' \in \CauchyClass(M)= \Real
+				\qquad \forall X, Y \in \Sol \; ; \; \forall \Sigma, \Sigma' \in \CauchyClass(M)= \Real
 			\end{displaymath}
 			
 				\vspace{3.5mm}
@@ -649,8 +651,8 @@
 		The two procedures yield two different classical symplectic spaces: $(\Obs,\tau)$ and $(\Sol, \sigma)$.
 		We have proved in section \ref{Section:LinkBetweenQuantization} (Theorem \ref{Teo:IsomorphismBetweenTheTwoSymplectic}) that the two vector spaces are isomorphic through the map $\Xi$ realized with the causal propagator $E$ .
 		Furthermore, in this case it can be proved that $\Xi$ preserves the symplectic form.
-		\\
-		Once again we mimic what has been done for the case of a scalar field (Ex \ref{Ex:SimplettomorphismPhaseSpace}).
+		
+		Once again we mimic what has been done for the case of a scalar field (Ex \ref{Ex:SimplettomorphismPhaseSpace}).\\
 		Consider two compactly supported vector fields $f,h \in \Gamma_0(E)$ along $\gamma_0$	and call $X= Ef,\: T = Eh$ the corresponding Jacobi field.
 		In fact from the definition of $\tau$ it follows:
 		\begin{align}
@@ -661,7 +663,8 @@
 			=& \int_\Sigma^\infty (P \GreenAdv f)^\mu g_{\mu \nu} Y^\nu dt	 + 
 					\int_{-\infty}^\Sigma (P \GreenRet f)^\mu g_{\mu \nu} Y^\nu dt
 		\end{align}
-		where the integral has been decomposed by splitting the domain of integration into two subsets whose intersection has zero measure and we have exploited the properties of the retarded and advanced operators.\\
+		where the integral has been decomposed by splitting the domain of integration into two subsets whose intersection has zero measure and we have exploited the properties of the retarded and advanced operators.
+
 		Considering the explicit representation of the operator $P$, we can integrate by parts twice:
 		\begin{align}
 			&\int_\Sigma^\infty (P \GreenAdv f)^\mu g_{\mu \nu} Y^\nu dt = \int_\Sigma^\infty \left( D_t^{\,2} \GreenAdv f +R(\GreenAdv f,T)T \right)^\mu g_{\mu \nu} Y^\nu dt \quad = \nonumber \\
@@ -687,7 +690,7 @@
 			 +  \left. ( \GreenAdv f)^\mu g_{\mu \nu} (D_t Y)^\nu \right\vert_\Sigma
 		\end{align}
 		where \emph{Stokes theorem} and property \ref{Eq:CurvatureSimmetry} have been used.
-		\\
+
 		Combining the two above equations one concludes that:
 		\begin{align}
 		\tau\big( [f], [g] \big) =& 
@@ -1116,10 +1119,10 @@
 		%-------------------------------------------------------------------------------------------------------------------
 		%Si può fare una meccanica Geometrica per i campi?}	
 		Because of the relation of Poisson brackets to quantization, the problem of the quantization of fields required the translation of the canonical formalism from mechanics to field theories (multiple independent variable instead of one).
-		One of the most annoying flaws of the usual canonical formalism in field theory is its lack of manifest covariance, that is its lack of explicit invariance under space-time coordinate transformations (in the context of general relativity). 
+		One of the most annoying flaws of the usual canonical formalism in field theory is its lack of manifest covariance, that is its lack of explicit invariance under spacetime coordinate transformations (in the context of general relativity). 
 			
 			This defect is built into the theory from the very beginning, since the usual \emph{Hamiltonian} canonical formalism represents the dynamical variables of classical field theory by functions on some spacelike hypersurface (Cauchy data) and provides differential equations for their time evolution off this hypersurface: 
-			it presupposes a splitting of space-time into space and time, in the form of a foliation of space-time into Cauchy surfaces.	
+			it presupposes a splitting of spacetime into space and time, in the form of a foliation of spacetime into Cauchy surfaces.	
 			As a result, canonical quantization leads to models of quantum field theory whose covariance is far from obvious and in fact constitutes a formidable problem.
 		
 		%-------------------------------------------------------------------------------------------------------------------

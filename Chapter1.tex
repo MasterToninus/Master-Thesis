@@ -719,48 +719,50 @@ specify the support properties of the sections of a vector bundle with base a gl
 					\end{enumerate}
 			\end{proposition}
 			\begin{proof}
+			\forcenewline
+				\begin{itemize}
+				\item[[Th. 1]]
+					Assuming that $h\in \Gamma_{tc} = \dom(\GreenAdv) \cap \dom(\GreenRet)$, the converse implication follows slavishly from the definition of the causal propagator:
+					\begin{displaymath}
+						E f= (\GreenAdv - \GreenRet) P h = h -h
+					\end{displaymath}
+					\\
+					\ifToninus Regarding the direct implication, let $f \in \Gamma_{tc}(E)$ be such that $E f = 0$.
+					\else In the other hand, assume that $f \in \Gamma_{tc}(E)$ be such that $E f = 0$.
+					\fi
+					It implies $\GreenRet f = \GreenAdv f $, while the support properties of the retarded and advanced Green operators entail that
+					\begin{displaymath}
+						\supp (\GreenRet f ) \subset \mathbf{J}^+ (\supp f) \cap \mathbf{J}^- (\supp f)
+					\end{displaymath}
+					 In other words $h = \GreenRet f \in \Gamma_{tc}(E)$. 
+					 If we apply the operator $P$, it holds 
+					 \begin{displaymath}
+					 	P h = P \GreenRet f = f
+					 \end{displaymath}
 
-			[Th. 1]\\
-			Assuming that $h\in \Gamma_{tc} = \dom(\GreenAdv) \cap \dom(\GreenRet)$, the converse implication follows slavishly from the definition of the causal propagator:
-			\begin{displaymath}
-				E f= (\GreenAdv - \GreenRet) P h = h -h
-			\end{displaymath}
-			\\
-			\ifToninus Regarding the direct implication, let $f \in \Gamma_{tc}(E)$ be such that $E f = 0$.
-			\else In the other hand, assume that $f \in \Gamma_{tc}(E)$ be such that $E f = 0$.
-			\fi
-			It implies $\GreenRet f = \GreenAdv f $, while the support properties of the retarded and advanced Green operators entail that
-			\begin{displaymath}
-				\supp (\GreenRet f ) \subset \mathbf{J}^+ (\supp f) \cap \mathbf{J}^- (\supp f)
-			\end{displaymath}
-			 In other words $h = \GreenRet f \in \Gamma_{tc}(E)$. 
-			 If we apply the operator $P$, it holds 
-			 \begin{displaymath}
-			 	P h = P \GreenRet f = f
-			 \end{displaymath}
-			
-			[Th. 2]\\
-			Suppose now that there exists $f \in \Gamma_{tc}(E)$ such that $Pf = 0$. Since a linear partial differential operator does not enlarge the support (Remark \ref{Obs:EnlargeSupport}), one can apply either
+				\item[[Th. 2]]
+					Suppose now that there exists $f \in \Gamma_{tc}(E)$ such that $Pf = 0$. Since a linear partial differential operator does not enlarge the support (Remark \ref{Obs:EnlargeSupport}), one can apply either
 the retarded or the advanced Green operators obtaining:
-			\begin{displaymath}
-				h = G^\pm P h = 0
-			\end{displaymath}
-			The converse implication is trivial.
-			
-			[Th. 3]\\
-			Consider a pair of function (partition of unity of $M$) $\{\chi_\pm: M \rightarrow [0,1] \}$ such that:
-			\begin{compactitemize}
-				\item $\chi_\pm = 1$ on a past / future compact region.
-				\item $\chi_+(x) + \chi_-(x) = 1 \qquad \forall x\in M$.
-			\end{compactitemize}
-			For any $f \in 	\Gamma(E)$ we define the function:
-			\begin{displaymath}
-				h \coloneqq \GreenRet \big( \chi_+ f \big) + \GreenAdv \big( \chi_- f \big)
-			\end{displaymath}
-			Then
-			\begin{displaymath}
-				P h = (\chi_+ + \chi_-)f = f
-			\end{displaymath}
+					\begin{displaymath}
+						h = G^\pm P h = 0
+					\end{displaymath}
+					The converse implication is trivial.
+
+				\item[	[Th. 3]]			
+					Consider a pair of function (partition of unity of $M$) $\{\chi_\pm: M \rightarrow [0,1] \}$ such that:
+					\begin{compactitemize}
+						\item $\chi_\pm = 1$ on a past / future compact region.
+						\item $\chi_+(x) + \chi_-(x) = 1 \qquad \forall x\in M$.
+					\end{compactitemize}
+					For any $f \in 	\Gamma(E)$ we define the function:
+					\begin{displaymath}
+						h \coloneqq \GreenRet \big( \chi_+ f \big) + \GreenAdv \big( \chi_- f \big)
+					\end{displaymath}
+					Then
+					\begin{displaymath}
+						P h = (\chi_+ + \chi_-)f = f
+					\end{displaymath}
+				\end{itemize}
 			\end{proof}
 			
 			

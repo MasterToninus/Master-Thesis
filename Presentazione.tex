@@ -1,16 +1,51 @@
-\documentclass{beamer}
-	\title{La mia prima presentazione}
+% ------- Flag di Debug  ---------------------------------------------------------------------------
+\newif\ifToninus
+\newcommand{\comment}[1]{\ifToninus\textcolor{gray}{\small{\textit{#1}}}\fi}
+\Toninustrue
+
+%- D0cum3nt ----------------------------------------------------------------------------------------------------------------------------------
+\ifToninus
+\documentclass[8pt,handout]{beamer}
+\else
+\documentclass[9pt]{beamer}
+\fi
+
+%- T1tle--------------------------------------------------------------------------------------------------------------------------
+	\title{ Approccio Geometrico al metodo di Peierls e (Pre-)Quantizzazione del campo di Jacobi.}
 	\author{Antonio Michele Miti}
 	\date{20 novembre 2015}
 
-% Packages ---------------------------------------------------------------------------------------------------------------------------
+%- Packages ---------------------------------------------------------------------------------------------------------------------------
 %			Standalone non funziona ancora bene con beamer.
 \usepackage[mode=buildnew]{standalone}				%\includestandalone[width=\textwidth]{Pictures/GeometricPicture0}
 \usepackage{tikz}
 \usepackage{pgfplots}
 \pgfplotsset{compat=newest}
 \usepackage{amsmath}
-%------------------------------------------------------------------------------------------------------------------------------------------------------------
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+%\usepackage{fourier}							%\bomb \danger symbol
+%\usepackage{arev}								%\smileface \sadface
+\usepackage{animate}
+
+%--Beamer Style--------------------------------------------------------------------------------------------------------------------------------
+\usetheme{Copenhagen}
+
+% FootLine
+\setbeamertemplate{footline}[frame number]
+
+%Headline
+\setbeamertemplate{headline}{%
+\leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=\paperwidth,ht=2.5ex,dp=1.125ex]{palette quaternary}%
+    \insertsectionnavigationhorizontal{\paperwidth}{}{\hskip0pt plus1filll}
+    \end{beamercolorbox}%
+  }
+}
+
+%Navigation Bar
+\beamertemplatenavigationsymbolsempty
 
 
 
@@ -30,15 +65,23 @@
 %\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 %				Intro
 %\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
-	\begin{frame} %Titolo
-		\maketitle
-	\end{frame}
+%\section*{Intro}	
 
-%	\section*{Intro}	
-	\begin{frame}{Overview}
-		(struttura della tesi vs struttura della presentazione)
-		\tableofcontents
-	\end{frame}
+\ifToninus
+%	\frame{\titlepage}
+\else
+	\frame{\titlepage}
+\fi
+
+\ifToninus
+%	
+\else
+%	\begin{frame}{Overview}
+%		(struttura della tesi vs struttura della presentazione)
+%		\tableofcontents
+%	\end{frame}
+\fi
+
 
 	
 
@@ -46,234 +89,253 @@
 %				Parte 1 : 	"Foundations of Mechanics"
 %\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/		
 	\section{Meccanica Geometrica}
-		\frame{\sectionpage}
-	
-		\begin{frame}{Meccanica Geometrica}
-  			\begin{columns}[T]
-    			\begin{column}{.5\textwidth}		
-					\begin{itemize}
-						\item L'idea
-						\item La scommessa				
-					\end{itemize}
-    			\end{column}
-    		   	\begin{column}{.5\textwidth}
-							\includegraphics[width=\textwidth]{Presentazione/GeoMec_Crop} 				
-    			\end{column}
-  			\end{columns}	
-	\end{frame}
-	
-	\begin{frame}
-		\frametitle{Formalismo canonico}
+\ifToninus
+%
+\else
+%		\frame{\sectionpage}
+\fi
+		
+	\begin{frame}	% \danger : manca immagine
+		\frametitle{Formalismo canonico Ordinario (Finiti Gradi di Libertà)}
   			\begin{columns}[T]
     			\begin{column}{.5\textwidth}
-     				\begin{block}{Your textblock}
-						% Your text here
-						(usual approach) I passi principali per la costruzione del formalismo canonico per teorie con $N$ gradi di libertà
 						\begin{enumerate}
-							\item si introducono la coordinate di configuazione $q^j$ e i momenti canonici coniugati $p^j$
-							\item si definisce la 2-forma $\omega = dp^i \wedge dq^i$
-							\item combinando $p^i,q^j$ in un'unica variablie $Q^I , I = 1,\ldots,2N$, con $Q^i=p^i$ per $i\leq\leq N$ e $Q^i= q^{i-N}$ per $i>N$. E' possibile riguardare $\omega$ come una matrice $2N \times N$  antisimmetrica i cui elementi non nulli sono
+							\item\emph{Coordinate di Configurazione} $q^j$.
+							\item\emph{Momenti Canonici Coniugati}  $p^j$.
+							\item \emph{Matrice Simplettica} \comment{(combinando $p^i,q^j$ in un'unica variabile $Q^I=\{q_1,\ldots, q_N ;p^1, \ldots, p^N\}$)}
 								\begin{displaymath}
-									\omega_{i , i+N} = -\omega_{i+N,i} = 1
+									\Omega=\begin{bmatrix}
+										\begin{matrix}0 & 1\\ -1 & 0\end{matrix} & & 0 \\
+											 & \ddots & \\
+											 0 & & \begin{matrix}0 & 1 \\ -1 & 0
+										\end{matrix}
+									\end{bmatrix}
 								\end{displaymath}
-							\item le parentesi di poisson per 2 funzioni $A(Q^I) , B(Q^J)$ vengono definite come:
+							\item \emph{Parentesi di Poisson}: \comment{per 2 funzioni $A(Q^I) , B(Q^J)$}
 								\begin{displaymath}
-									\left[ A , B \right] = \omega^{I J} \frac{\partial A}{\partial Q^I} \frac{\partial B}{\partial Q^J}					
+									\left[ A , B \right] = \Omega^{I J} \frac{\partial A}{\partial Q^I} \frac{\partial B}{\partial Q^J}					
 								\end{displaymath}
+							\item \emph{Dinamica}
+								\begin{displaymath}
+									H(q,p) =  q \dot{q}(q,p)-L\left(q, \dot{q}(q,p)\right)
+								\end{displaymath}
+								
+								
 						\end{enumerate}
-    				\end{block}
     			\end{column}
     		   	\begin{column}{.5\textwidth}
-			    	\begin{block}{Your image}
-						% Your image included here
+					\parbox[c][.7\textheight][c]{\columnwidth}{%
+						\comment{Animazione Pendolo con orbita rappresentata nel piano simplettico}
+						\animategraphics[autoplay,loop,width=\textwidth]{3}{./Presentazione/SimpleHarmonicMotion/o_2830a51e4d07c739-}{0}{19}
+ 
+  					}	
+    			\end{column}
+  			\end{columns}	
+		\end{frame}
+
+	\begin{frame}	% \danger : manca overlay: popup graduale degli elementi
+		\frametitle{Formalismo canonico Intrinseco}
+  			\begin{columns}[T]
+    			\begin{column}{.5\textwidth}
+    				\comment{Il formalismo a cui siamo abituati può essere visto in modo intrinsecamente generale globale usando gli strumenti  della geometria differenziale, varietà e spazi tangenti}
+						\begin{enumerate}
+							\item Spazio di configurazione $Q$. \comment{(le coordinate di configurazione sono un sistema di coordinate (non dire "carte locali".)}
+							\item Spazio delle velocità generalizzate $TQ$. \comment{incollando tutti gli spazi tangenti}
+							\item Spazio delle fasi $T^*Q$. \comment{l'analogo per gli spazi duali, $Q^I$ sono una trivializzazione locale naturale)}
+							\item $T^*Q$ è naturalmente simplettico $\omega = dp^i \wedge dq^i$.
+							\item Dinamica codificata nelle funzioni $L$, $H$.\comment{Su TM è ambientata la dinamica lagrangiana e su T*M hamiltoniana.\\ sotto opportune condizioni sono equivalenti, }
+						\end{enumerate}
+    			\end{column}
+    		   	\begin{column}{.5\textwidth}
+    		   		\parbox[c][.7\textheight][c]{\columnwidth}{%
 						\includegraphics[width=\textwidth]{Presentazione/GeoMecFrameA} 
-    				\end{block}
+					}
     			\end{column}
   			\end{columns}	
 		\end{frame}
 		
-		\begin{frame}
+		\begin{frame}	
 			\frametitle{Formalismo Canonico Covariante}
   			\begin{columns}[T]
     			\begin{column}{.5\textwidth}
-     				\begin{block}{Your textblock}
-						% Your text here
-						Passaggio Canonico Ordinario a Canonico Covariante (a finiti gradi)
-						\\
-						Parlare di Conf Sol e S
-    				\end{block}
+    				\comment{ Facciamo un Cambio di prospettiva: non più conformazioni "statiche" ma considero tutti i moti possibili}
+					\begin{itemize}
+						\item Spazio delle configurazioni cinematiche $\Conf$. \comment{è l'insieme di tutte i moti compatibili con la cinematica}
+						\item Dinamica codificata dall'azione $S:\Conf \rightarrow \Real$. \comment{l'azione la rivediamo come una mappa definita sui moti}
+						\item Equazioni differenziali del moto $ P$. \comment{ dal principio di minima azione discende un'equazione differenziale su $\Conf$}
+						\item Spazio delle configurazioni dinamiche $\Sol$. \comment{Insieme delle equazioni del moto}		
+					\end{itemize}
+
     			\end{column}
+
     		   	\begin{column}{.5\textwidth}
-			    	\begin{block}{Your image}
-						% Your image included here
-						\includegraphics<1> [width=\textwidth]{Presentazione/GeoMecFrameA} 
-						\includegraphics<2> [width=\textwidth]{Presentazione/GeoMecFrameB} 
-						\includegraphics<3>[width=\textwidth]{Presentazione/GeoMecFrameC} 
-    				\end{block}
+					\parbox[c][.7\textheight][c]{\columnwidth}{%
+						\includegraphics [width=\textwidth]{Presentazione/GeoMecFrameB} 
+					}
     			\end{column}
   			\end{columns}		
 		\end{frame}
 	
-		\begin{frame}
-			\frametitle{Formalismo Covariante esteso}
+		\begin{frame}	% \danger : manca overlay: popup graduale degli elementi
+			\frametitle{Formalismo Covariante esteso ai Campi}
   			\begin{columns}[T]
     			\begin{column}{.5\textwidth}
-     				\begin{block}{Your textblock}
-						% Your text here
-						Il formalismo covariante si estende facilmente a sistemi più generali! ad esempio  i campi intesi come sistemi fisici con un set continuo di gradi \\
-						Passaggio Canonico Covariante a Finiti Gradi a Canonico Covarianti a gradi continuo \\
-						Parlare di Conf Sol e S	per i campi, notare che la definizione della lagrangiana è più delicate
+    				\comment{Il formalismo covariante intrinseco si estende facilmente a sistemi più generali!\\}
+    				L'idea:
+    					\begin{itemize}
+    						\item Insieme delle configurazioni:
+    						    \begin{displaymath}
+    								\underset{(\textrm{Spazio})}{Q} \quad \mapsto \quad 
+    								\underset{(\textrm{Fibrato})}{\Real \times Q}
+    							\end{displaymath}
+    						\comment{La cinematica non viene più fondata su  $Q$ ma su $\Real \times Q$ (fibrato di configurazione) 	triviale nel caso dei sistemi ordinari}
+    						\item Le configurazioni cinematiche: 
+    							\begin{displaymath}
+    								\underset{(\textrm{curve})}{\gamma: \Real \rightarrow Q} \quad \mapsto \quad 
+    								\underset{(\textrm{sezioni})}{\gamma: \Real \rightarrow Q\times \Real}
+    							\end{displaymath}
+    					\end{itemize}	
+
+    				\begin{block}<2->{Per  i campi}
+ 						\begin{itemize}
+ 							\item La varietà base è generico spaziotempo $M$.
+ 							\comment{La varietà base non è più $\Real$ ma un generico spaziotempo}
+							\item Le configurazioni cinematiche sono mappe $\gamma: M \rightarrow M \times F$.
+								\comment{$F$ è lo spazio target dei possibili valori che può assumere il campo}
+							\item Equazioni del moto $P$ si rivacano da una \emph{Densità Lagrangiana} $\Lagrangian$ \comment{ingloba la struttura dinamica}
+							\item Le configurazioni dinamiche sono le soluzioni di $P$
+						\end{itemize}   				
     				\end{block}
     			\end{column}
+    		 
     		   	\begin{column}{.5\textwidth}
-			    	\begin{block}{Your image}
-						% Your image included here
-						\includegraphics<1> [width=\textwidth]{Pictures/FieMecFrame} 
-						\includegraphics<2> [width=\textwidth]{Pictures/AbstractFieldTheory} 
-    				\end{block}
+					\comment{Evidenziare uno alla volta gli oggetti che introduco}
+						\includegraphics<1-> [width=\textwidth]{Pictures/FieMecFrame} \\
+						\includegraphics<2-> [width=\textwidth]{Presentazione/AbstractFieldTheory(pezzotta)} 
     			\end{column}
   			\end{columns}		
-
-
 		\end{frame}
 		
-		\begin{frame}
-			\frametitle{Recuperare il formalismo canonico non covariante}		
-			(extra) Recupare il formalismo canonico non covariante anche per i campi costruendo il dato su una superficie di Cauchy (ricordare che al continuo ci sono controesempi che darboux non vale)
-			\\
-			Lo si fa per sistemi su spazitempi globalmenente iperbolici. in breve sono varietà molto generali in cui è possibile definire per bene i problemi di cauchy
-		\end{frame}
-
-		\begin{frame}
-			\frametitle{A che punto siamo?}		
-			Fin qui abbiamo degli spazi canditati ad essere lo spazio delle fasi.
-			Ciò che manca è la loro dotazione di una forma simplettica o di un algebra di Poisson di osservabili.
-
-		\end{frame}
-
-
+		
 %\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 %				Parte 2 : 	"L'algoritmo di Peierls"
 %\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/		
 %	\part{	Costruzione della struttura simplettica nel caso dei campi classici}
 	\section{Metodo di Peierls}
-	\frame{\sectionpage}
+\ifToninus
+%
+\else
+%		\frame{\sectionpage}
+\fi
 	
-	\begin{frame}
-		\frametitle{Cappello sul Metodo di Peierls }
+	\begin{frame}{Il metodo di Peierls}
+	    \begin{block}{Di cosa si tratta}
 			\begin{itemize}
-				\item semplificare: usare i grafici già fatti e considerare solo i campi scalari
+				\item Ricetta per definire forma bilineare sulle Lagrangiane.
+					\comment{è una ricetta che permette di definire una forma bilineare sullo spazio delle Lagrangiane di un sistema lineare.}
+				\item Ristretta ad un insieme opportuno risulta una buona forma simplettica.
+					\comment{Fa discendere su un opportuno spazio di osservabili classici una struttura di poisson detta "parentesi di Peierls"}
 			\end{itemize}
-			His essential insight was to consider the advanced and retarded “effect of one quantity (A) on another (B).” Here, A and B are to
-be functions on H. 
-
-			The advanced  and retarded  effects of A on B are then defined by comparing the original system with a new system defined by the action $S_\epsilon = S + \epsilon A$ and the same space H of histories. 
-			Under retarded (advanced) boundary conditions for which the solutions $\phi \in S$ and $\phi_\epsilon	\in S_\epsilon$ coincide to the past (future) of the support of A, the quantity $B_0 = B(\phi)$ computed using $\phi$ will in general differ from $B_\epsilon = B(\phi_\epsilon)$ computed using $\phi_\epsilon$.
-			For small epsilon, the difference between these quantities defines the retarded (advanced) effect of A on B through:
-which depends on the unperturbed solution $\phi$.
+		\end{block}
+	    \begin{block}{Prerequisiti \comment{Applicabilità del metodo di Peierls}}
+			\begin{itemize}
+				\item Teorie di Campo lineari
+					\comment{:	$E=(E,\pi,M;Q)$ è un fibrato vettoriale, le equazioni del moto sono lineari.}
+				\item Equazioni del moto ammettono funzioni di Green
+					\comment{La dinamica è Lagrangiana con operatore del moto \emph{Green iperbolico} $P=Q_\Lagrangian$}
+				\item Problema ai dati iniziali ben posto.
+					\comment{ Lo spaziotempo sottostante permette di descrivere le soluzioni come un usuale problema sui dati iniziali (Lo spaziotempo sottostante è \emph{Globalmente iperbolico})}
+			\end{itemize}
+		\end{block}		
 	\end{frame}
 	
 	\begin{frame}
-		\frametitle{I passi del metodo di Peierls}
-		The procedure can be summarized in a few steps:
-		\begin{enumerate}
-			\item Consider a \emph{disturbance} $\chi$ that is a time-compact Lagrangian density .
-			\item Construct the \emph{perturbation of a solution under the action of $\chi$}.
-			%\emph{perturbation of a solution under the disturbance}. (correzione CD
-			\item Define the \emph{effect of the disturbance} on a second Lagrangian functional.
-			\item Assemble the mutual effects of two different Lagrangian densities to give a \emph{brackets}.
-		\end{enumerate}	
-	\end{frame}
+		\frametitle{ Concetto chiave dell'algoritmo di Peierls}
+			\comment{Le densità lagrangiane compatibili sono tante!\\Costituiscono uno spazio vettoriale di distribuzioni $\Lag$\\}
+			Le densità Lagrangiane compatibili con la dinamica formano un insieme $\Lag$.\\
+			Ognuna di esse possiede due statuti
+			\comment{Ognuna di esse possiede essenzialmente due statuti}
+			\begin{itemize}
+				\item Può essere \emph{Motore della dinamica} \comment{(Determina l'operatore delle equazioni del moto)}
+					\begin{displaymath}
+						Q_\chi (\gamma) = \Biggr( \nabla_\mu \biggr( \frac{\partial \chi}{\partial(\partial_\mu \phi)} \biggr\vert_\gamma \biggr) - \frac{\partial \chi}{\partial \phi}\biggr\vert_\gamma \Biggr) \qquad \forall \gamma \in \Conf
+					\end{displaymath}
+				\item E' una quantità che può essere \emph{valutata} su una qualsiasi configurazione del sistema \comment{(Determina un funzionale Lagrangiano)}
+					\begin{displaymath}
+						\mathcal{O}_\Lagrangian [\phi] (f) = \int_M \Lagrangian [\phi] f \textrm{d}\mu
+					\end{displaymath}	
+			\end{itemize}
+		\vfill
+		\begin{exampleblock}{Ci chiediamo:}
+			Come si modificano le configurazioni dinamiche del sistema quando la Lagrangiana viene disturbata da una seconda densità  $\chi$
+			\begin{displaymath}
+				\Lagrangian \rightsquigarrow \Lagrangian' = \Lagrangian + \epsilon\cdot \chi
+			\end{displaymath}
+		\end{exampleblock}
+		\comment{Possiamo chiederci: \\
+			Se la lagrangiana di un sistema fissato $(E,\Lag)$ viene alterata per un intervallo di tempo definito \comment{(supporto "time-compact")} da una seconda quantità che chiamiamo \emph{"Disturbo Lagrangiano"}
+			\begin{displaymath}
+				\Lagrangian \rightsquigarrow \Lagrangian' = \Lagrangian + \epsilon\cdot \chi
+			\end{displaymath}
+			come cambiano le configurazioni dinamiche del sistema?}
+		\end{frame}
 	
-	
-	\begin{frame}
-		\frametitle{ Concetto chiave dell'algoritmo di peierls}
+		\begin{frame}{L'effetto del Disturbo Lagrangiano}
 		  	\begin{columns}[T]
     			\begin{column}{.5\textwidth}
-     				\begin{block}{Your textblock}
-						% Your text here
-							Sono le \emph{disturbance lagrangiane}
-    				\end{block}
+						\begin{itemize}
+							\item Fissata una soluzione $\gamma_0$ del sistema imperturbato \comment{ $(E, \Lagrangian)$}
+							\item Un disturbo Lagrangiano determina univocamente due soluzioni \emph{"disturbate"}
+								\begin{displaymath}
+									\phi^\pm_\epsilon = \phi + \epsilon \eta_\pm
+								\end{displaymath}
+								dove:
+								 \begin{displaymath}
+   									\eta_\pm = G^\pm \big( - Q_\chi \phi \big)
+   								\end{displaymath}
+   								\comment{Dove $G^\pm$ sono gli unici operatori di green avanzati/ritardati associati all'operatore $P$ delle equazioni del moto imperturbate}
+   						\item L'\emph{effetto} di un disturbo Lagrangiano su un funzionale lineare $B$ è:
+   							\begin{displaymath}		
+								\EffectOp_\chi^\pm B ( \phi_0) 
+								= \lim_{\epsilon \rightarrow 0}
+								 \biggr( \frac{B(\phi_\epsilon^\pm) - B (\phi_0)}{\epsilon} \biggr)
+   							\end{displaymath}			
+						\end{itemize}
     			\end{column}
     		   	\begin{column}{.5\textwidth}
-			    	\begin{block}{Your image}
+							\vfill
 						% Your image included here
-							\includegraphics[width=0.5\textwidth]{Pictures/AdvRetSol}
-    				\end{block}
+							\includegraphics[width=\textwidth]{Pictures/AdvRetSol}
+							\vfill
     			\end{column}
     		\end{columns}
 	\end{frame}
-	
-	
-		\begin{frame}
-		\frametitle{I Passi dell'algoritmo}
+
+	\begin{frame}
+		\frametitle{I passi del metodo di Peierls}
+			Per semplicità rappresentiamo lo spazio infinito dimensionale $\Conf$ come un piano.
 		  	\begin{columns}[T]
     			\begin{column}{.5\textwidth}
-     				\begin{block}{Your textblock}
-						\begin{itemize}
-							\item
-						\end{itemize}
-    				\end{block}
+						\begin{enumerate}
+							\item<2->  Alla  Lagrangiana disturbata corrisponde un proprio spazio di soluzioni.
+							\item<3-> Si determinano tra tutte le possibili variazioni $\phi_\epsilon$ di $\phi_0$ quelle che ricadono in $\Sol_\epsilon$ al primo ordine in $\epsilon$
+							\item<4-> L'effetto è la derivata del valore di un funzionale $B$ lungo le variazioni appena trovate.
+							\item<5-> La parentesi di Peierls si ottiene per confronto dei due effetti anticipato e ritardato:
+								\begin{displaymath}
+									\{\chi, \omega \}(\phi_0) =
+									 \EffectOp_\chi^- \mathcal{O}_\omega (\phi_0) - \EffectOp_\chi^+ \mathcal{O}_\omega(\phi_0)
+								\end{displaymath}
+						\end{enumerate}
     			\end{column}
     		   	\begin{column}{.5\textwidth}
-			    	\begin{block}{Your image}
-						% Your image included here
 								\includegraphics<1>[width=\textwidth]{Pictures/GeometricPicture0}
 								\includegraphics<2>[width=\textwidth]{Pictures/GeometricPicture1}
 								\includegraphics<3>[width=\textwidth]{Pictures/GeometricPicture2}								
-								\includegraphics<4>[width=\textwidth]{Pictures/GeometricPicture3}
-								\includegraphics<5>[width=\textwidth]{Pictures/GeometricPictureLinear1}
-								
-    				\end{block}
+								\includegraphics<4-5>[width=\textwidth]{Pictures/GeometricPicture3}
     			\end{column}
     		\end{columns}
 	\end{frame}
-	
-	\begin{frame}
-		\frametitle{Dalle Parentesi di Peierls alla struttura di Poisson}
-		  	\begin{columns}[T]
-    			\begin{column}{.5\textwidth}
-     				\begin{block}{Your textblock}
-						\begin{itemize}
-							\item
-						\end{itemize}
-    				\end{block}
-    			\end{column}
-    		   	\begin{column}{.5\textwidth}
-			    	\begin{block}{Your image}
-						\includegraphics<1>[width=\textwidth]{Pictures/compsupp_GeometricPicture0}
-						\includegraphics<2>[width=\textwidth]{Pictures/compsupp_GeometricPicture1}
-						\includegraphics<3>[width=\textwidth]{Pictures/compsupp_GeometricPicture2}
-						\includegraphics<4>[width=\textwidth]{Pictures/compsupp_GeometricPictureLinear}
-    				\end{block}
-    			\end{column}
-    		\end{columns}
-	\end{frame}
-	
-	
-	\begin{frame}
-		\frametitle{Algebra di Poison realizzata tramite il metodo di Peierls}
-		
-	\end{frame}
-	
-	\begin{frame}
-		\frametitle{Applicabilità del metodo di Peierls}	
-			The Peierls' construction algorithm is well defined for a specific class of systems:
-		\begin{enumerate}[A)]
-			\item\label{HpPeierls1} Linear field theory: $E=(E,\pi,M;Q)$ is a vector bundle.
-			%\item  Lagragian dynamics: $P=Q_\Lagrangian$ is a L.P.D.O.
-			\item\label{HpPeierls2} $P=Q_\Lagrangian$ is a Green-hyperbolic linear partial differential operator.
-			\item\label{HpPeierls3} $M$ is a globally hyperbolic spacetime.
-			%\item Motion operator $P$ is a Green-hyperbolic.
-		\end{enumerate}	
-	\end{frame}
-	
-	\begin{frame}
-		\frametitle{Peierls non è l'unica soluzione}
-		Ci sono altri metodi provati essere equivalenti a peierls:
-			Quello di wald sugli initial data e la sua versione covariante di Crnkovic riferita usualmente Covariant Phase space.
-	
-	\end{frame}
+
 	
 	
 %\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
@@ -281,151 +343,212 @@ which depends on the unperturbed solution $\phi$.
 %\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/		
 	%\part{Realizzazione per il Caso specifico dei campi di Jacobi}
 	\section{Campo di Jacobi}
-	\frame{\sectionpage}
+\ifToninus
+%
+\else
+%		\frame{\sectionpage}
+\fi
 
 	\begin{frame}
-		\frametitle{ Ricordiamo il problema geodetico }
+		\frametitle{ Ricordiamo il problema di Jacobi }
 		  	\begin{columns}[T]
     			\begin{column}{.5\textwidth}
-     				\begin{block}{Your textblock}
-						\begin{itemize}
-							\item<1-> Una varietà : una generalizzazione del piano cartesiano i.e. coordinatizzabile
-							\item<2-> una Varietà (pseudo riemmaniana): è dotata di una metrica
-							\item<3-> in presenza di una metrica posso formulare il problema geodetico
-						\end{itemize}
-    				\end{block}
+					\begin{itemize}
+							\item<1-> Varietà \comment{una generalizzazione del piano cartesiano i.e. coordinatizzabile}
+							\item<2-> Pseudo-Riemmanian \comment{Dotata di una metrica= forma bilineare simmetrica su ogni spazio tangente}
+							\item<3-> \comment{in presenza di una metrica posso formulare il problema geodetico}
+								Le geodetiche \comment{sono curve che} soddisfano l'equazione di lunghezza estremale \comment{ autoparallela rispetto la connessione di levi-civita\\}
+								\begin{displaymath}
+									\nabla_{\dot{\gamma}}\dot{\gamma} = \ddot{\gamma}^i + \Gamma^i_{\, j k} \dot{\gamma}^j \dot{\gamma}^k =0
+								\end{displaymath}
+							\item<4-> La variazione regolare di una curva $\gamma_0$ determina un campo lungo la curva.
+							\item<5-> Una variazione geodetica determina un campo che soddisfa le equazioni di \emph{Jacobi}
+								\comment{\\Catchword: campi di Jacobi come il moto di attrazione apparente di due gravi in caduta libera (fenomeno della deviazione geodetica)}
+								\begin{displaymath}
+									\big( X''\big)^\mu + R^\mu_{i \alpha \j} T^i X^\alpha T^j =0
+								\end{displaymath}
+					\end{itemize}
     			\end{column}
     		   	\begin{column}{.5\textwidth}
-			    	\begin{block}{Your image}
+    		   		\parbox[c][.7\textheight][c]{\columnwidth}{%
 						\includegraphics<1>[width=\textwidth]{Presentazione/LocalChart}
-						\only<1>{\footnote{credit \url{http://kahrstrom.com/}}}
-						\includegraphics<2>[width=\textwidth]{Presentazione/Sfera}
-						\only<2>{\footnote{Wip: esibire la presenza di una distanza (come lunghezza della curva di minima lunghezza?)}}
-						\includegraphics<3>[width=\textwidth]{Presentazione/Sfera}
-						\only<3>{\footnote{Wip: esibire il problema geodeca come circonferenze massimali}}
-    				\end{block}
+						\only<1>{\comment{credit \url{http://kahrstrom.com/}}}
+						\includegraphics<2>[width=\textwidth]{Presentazione/Sfera_Tangent}
+						\only<2>{\comment{\\Wip: esibire la presenza di una distanza (come lunghezza della curva di minima lunghezza?)}}
+						\includegraphics<3>[width=\textwidth]{Presentazione/Sfera_Main}
+						\only<3>{\comment{\\Wip: esibire il problema geodetica come circonferenze massimali}}
+						\only<4>{\animategraphics[autoplay,loop,width=\textwidth]{6}{./Presentazione/ParallelVariation}{}{}}
+						\only<4>{\comment{\\Wip: esibireUn campo tangente lungo un meridiano}}
+						\only<5>{\animategraphics[autoplay,loop,width=\textwidth]{6}{./Presentazione/GeodesicVariation}{}{}}
+						\only<5>{\comment{\\Wip: animazione di una variazione Geodetica con campo Jacobi tangente alla variazione}}
+					}
     			\end{column}
     		\end{columns}
 	\end{frame}
 	
-	\begin{frame}
-		\frametitle{I Campi di Jacobi}
-		  	\begin{columns}[T]
-    			\begin{column}{.5\textwidth}
-     				\begin{block}{Your textblock}
-						\begin{itemize}
-							\item<1-> Tra tutti i campi lungo una fissata geodetica
-							\item<2-> sono quelli che forniscono la variazione geodetica
-							\item<3-> Catchword: campi di Jacobi come il moto di attrazione apparente di due gravi in caduta libera (fenomeno della deviazione geodetica)
-						\end{itemize}
-    				\end{block}
-    			\end{column}
-    		   	\begin{column}{.5\textwidth}
-			    	\begin{block}{Your image}
-						\includegraphics<1>[width=\textwidth]{Presentazione/Sfera}
-						\only<1>{\footnote{Wip: Un campo tangente lungo un meridiano}}
-						\includegraphics<2>[width=\textwidth]{Presentazione/Sfera}
-						\only<2>{\footnote{Wip: animazione di una variazione Geodetica}}
-						\includegraphics<3>[width=\textwidth]{Presentazione/Sfera}
-						\only<3>{\footnote{Wip: Il campo di Jacobi è tangente alla variazione}}
-    				\end{block}
-    			\end{column}
-    		\end{columns}
-	\end{frame}
-
 	\begin{frame}
 		\frametitle{I Campi di Jacobi visti come un sistema fisico}
-		  	\begin{columns}[T]
-    			\begin{column}{.5\textwidth}
-  						\begin{itemize}
-							\item<1-> Il fibrato di Configurazione è..
-							\item<2-> Le equazioni del moto sono ...
-							\item<3-> Il metodo di Pierls è applicabile
-						\end{itemize}
-    			\end{column}
-    		   	\begin{column}{.5\textwidth}
-					bu
-    			\end{column}
-    		\end{columns}
-	\end{frame}
-	
-	
-	\begin{frame}
-		\frametitle{Calcolo della formula di Peierls}
-		  	\begin{columns}[T]
-    			\begin{column}{.5\textwidth}
-					bu
-    			\end{column}
-    		   	\begin{column}{.5\textwidth}
-					\includegraphics[width=\textwidth]{Pictures/Jacobi_GeometricPicturePanoramica}	
-    			\end{column}
-    		\end{columns}
-	\end{frame}
-	
-	
-	\begin{frame}
-		\frametitle{Un esempio: I Campi di Jacobi su flat FRW}
-		  	\begin{columns}[T]
-    			\begin{column}{.5\textwidth}
-					bu
-    			\end{column}
-    		   	\begin{column}{.5\textwidth}
-					bu
-    			\end{column}
-    		\end{columns}
-	\end{frame}	
-	
-	\begin{frame}
-		\frametitle{Un altro esempio: Il campo di Jacobi 1D}
-		  	\begin{columns}[T]
-    			\begin{column}{.5\textwidth}
-					bu
-    			\end{column}
-    		   	\begin{column}{.5\textwidth}
-					\includegraphics<1>[width=\textwidth]{Pictures/Jacobi1D_GeometricPicture0}
-					\includegraphics<2>[width=\textwidth]{Pictures/Jacobi1D_GeometricPicturePanoramica}	
-    			\end{column}
-    		\end{columns}
-	\end{frame}	
-	
-	\begin{frame}
-		\frametitle{ Qual'è l'interesse attorno al campo di Jacobi?}
+			\begin{block}{Cinematica}
+				\comment{Il fibrato di configurazione $E$ corrisponde al \emph{fibrato pull-back} $\gamma_0^*(TQ)$ del fibrato tangente lungo la geodetica$\gamma_0$.\\
+					 $E$ è un fibrato sulla retta $\Real$				
+					}
 					\begin{itemize}
-				\item Abbiamo raccontato come si costruisce lo spazio simplettico per le teorie di campo secondi i due approcci alla Peierls e alla Wald.
-				\item  Abbiamo provato che i due spazi simplettici sono isomorfi ma sono simplettomorfi solo in alcuni casi particolari.
-				\item entrambe le due costruzioni sono esoteriche e calate dall'alto. 
-					Mediamente vengono utilizzate come "black box" come ricette per dare una forma simplettica utile ma:
-						\begin{itemize}
-							\item a priori non c'è nessun motivo per cui le forme simplettiche che forniscono siano quelle "giuste".
-							\item I singoli passaggi della costruzione non hanno giustificazione fisica.
-							\item 	In breve: sappiamo il come, sappiamo che funziona ma non sappiamo "perchè".
-						\end{itemize}
-		\end{itemize}
-	\end{frame}
+						\item La varietà di base è $\Real$ 
+							\comment{\\ è uno spazio globalmente iperbolico "triviale". \\ $\CauchyClass(\Real) = \Real$.}
+				\item La varietà di target \comment{Le fibre} sono $E_p = T_{\gamma_0(p)}Q$
+				\item $\Conf = \Gamma^\infty(E) = \mathfrak{X}(\gamma_0)$ è costituito da campi lungo la curva $\gamma_0$.
+					\end{itemize}
+			\end{block}
+			\begin{block}{Dinamica}
 
-	\begin{frame}
-		\frametitle{ Qual'è l'interesse attorno al campo di Jacobi?}
-					 Perchè Jacobi è un esempio pregnante
-		\begin{itemize}
-				\item
-					In questo caso la costruzione di Wald non è ambigua. Data è isomorfo a $\Real^(2n)$ e la forma $\Sigma$ che viene imposta dalla procedura di wald corrisponde all'unica scelta possibile prevista dal teorema di Darboux (notare che anche per il semplice campo scalare lo spazio data è costituto da coppie di funzioni $C_0$ tutt'altro che finito dimensionale.
-				\item l'interpretazione che cerchiamo è quasi di stampo "filosofico". Perchè la costruzione convoluta di peierls che parte dal considerare i disturbi lagrangiani è equivalente proprio all'unica forma simplettica su $Data=\Real^{2n}$ che praticamente coincide con lo spazio delle fasi classico?
-				il problema sfuggente è "discutere sul perchè la costruzione di Peierls fornisce proprio la giusta usuale forma simplettica (parentesi $\Omega$) sullo spazio delle fasi classico?"\\
-					( che su $\Real^{2n} $ sono univocamente fornite dal teorema di Darboux)			
-		\end{itemize}
+				\begin{itemize}
+					\item Equazioni del moto: $ \left( P X \right)^\mu = (X'')^\mu + R^\mu_{\, i \alpha j } T^i T^j X^\alpha$ 
+						\comment{				Dove $X\in \Conf$ e $T^i = \dot{\gamma_0}^i$.}
+						\comment{ 					L'operatore del moto è \emph{Normalmente Iperbolico}}
+				\end{itemize}
+			\comment{\emph{Normalmente Iperbolico} è una condizione più forte di Green-hyperbolico. in questo caso sia la costruzione di Peierls che quella di Wald sono ben definite}
+
+			\end{block}
+	
+
+			\begin{block}{Metodo di Peierls}
+				\begin{itemize}
+					\item Spazio degli osservabili classici:  $	\Obs \simeq \frac{\Gamma_0}{P \Gamma_0}$
+					\item Funzionali associati: $ F_{[f]}(X) = F_f (X)= \int_\Real <X, f>_t dt \qquad \forall X \in \Sol $
+					\item Parentesi di Peirels: 
+						$ \left\lbrace\chi , \omega \right\rbrace (\gamma_0) [f] = 
+							\int f(t) \left\langle\chi, \left(\GreenAdv - \GreenRet \right)\omega \right\rangle dt
+						$
+				\end{itemize}
+			\end{block}
 	\end{frame}
+	
+
+
+
+\begin{frame}{Lo spazio delle Fasi Classico}
+					\includegraphics[width=\textwidth]{Pictures/Jacobi_GeometricPicturePanoramica}	
+
+\end{frame}	
+
+	
+
 
 %\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 %				Fine	!!!
 %\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/		
-\section*{Conclusioni}
+\section*{Conclusioni e Prospettive}
 
 	\begin{frame}
-		\frametitle{ Conclusioni }
+		\frametitle{ Prospettive}
 			\begin{itemize}
-				\item cosa abbiamo capito dal caso di Jacobi?
-				\item Interpretazione geometrica: punto chiave: ci sono 2 spazi la cui geometria soggiace al discorso: spazio delle soluzioni e spazio delle lagrangiane
+				\item Tali costruzioni sono formali. E' possibile dare un fondamento rigoroso a tali costruzioni sviluppando il \emph{calcolo differenziale sulle varietà infinito dimensionali} \comment{Analisi Globale}
+				\item E' possibile estendere ulteriormente la procedura di Peierls a teorie di campo più articolate?
+					\begin{itemize}
+						\item Libertà di Gauge
+						\item Equazioni di Vincolo
+						\item Strutture di Spin
+					\end{itemize}
+				\item Al discorso soggiace la geometria di 2 spazi: lo spazio delle soluzioni $\Sol$ e lo spazio delle Lagrangiane $\Lag$.\\
+					E' possibile fornire un'interpretazione geometrica alle parentesi di Peierls formalizzando lo spazio delle Lagrangiane?
 			\end{itemize}
 	\end{frame}
+
+
+%\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
+%				Parte 4 : 	Extra Backup Eliminata
+%\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/		
+	\section{Extra}
+	\frame{\sectionpage}	
+
+		\begin{frame}{Meccanica Geometrica}
+  			\begin{columns}[T]
+    			\begin{column}{.5\textwidth}		
+					\begin{itemize}
+						\item \textbf{L'Idea:} Fare uso della geometria per codificare tutte le proprietà meccaniche di un sistema indipendentemente dalle coordinate di configurazione.(Lessig)
+						\item \textbf{La scommessa:} Saper ricostruire da questi oggetti matematici astratti tutte le osservabili di interesse fisico.
+						\item \textbf{Il vantaggio:} Base formale su cui definire la Quantizzazione.
+					\end{itemize}
+    			\end{column}
+    		   	\begin{column}{.5\textwidth}
+							\includegraphics[width=\textwidth]{Presentazione/GeoMec_Crop} 				
+    			\end{column}
+  			\end{columns}	
+	\end{frame}
+
+	\begin{frame}
+		\frametitle{I passi del metodo di Peierls (1)}	
+			La procedura può essere riassunta in pochi passi:
+		\begin{enumerate}
+			\item Si considera un disturbo Lagrangiano$\chi$. \comment{that is a time-compact Lagrangian density}
+			\item Si costruiscono le soluzioni perturbate dall'azione di $\chi$.
+			\item Si calcolo l'effetto del disturbo $\chi$ sul funzionale Lagrangiano relativo ad un secondo disurbo $\omega$.
+			\item Si assembla l'effetto reciproco dei due disturbi a costruire una funzione binaria.
+		\end{enumerate}	
+	\end{frame}
+
+	\begin{frame}{Dalle Parentesi di Peierls alla struttura simplettica \comment{sarebbe più corretto dire di Poisson}}
+		\comment{Per semplicità mi riferisco ad un campo scalare}
+		  	\begin{columns}[T]
+    			\begin{column}{.5\textwidth}
+						\begin{enumerate}
+							\item Considero solo le Lagrangiane costruibili a partire da una configurazione cinematica. \comment{ osservabile sono le configurazioni a supporto compatto $\Gamma_0$.}
+								\comment{la valutazione dell'osservabile $\chi \in \Gamma_0$ risulta:}
+								\begin{align*}
+									Q_\chi (\psi) &= -\chi \\
+									\mathcal{O}_\chi (\psi) &= \int_M \chi(x) \psi(x) d\mu(x) = \left(\chi , \psi \right)
+								\end{align*}
+							\item<2-> Le soluzioni dell'equazione del moto disturbato
+								\begin{displaymath}
+									\Sol_\epsilon = \Sol + \epsilon \GreenAdv \chi =  \Sol + \epsilon \GreenRet \chi
+								\end{displaymath}
+							\item<3->	\comment{In questo caso i vettori delle variazioni su una soluzione $\phi_0 \in \Sol $ sono indipendenti dalla soluzione di partenza}
+								Le variazioni $\eta_\pm$ sono indipendenti dalla soluzione di partenza
+								\begin{displaymath}
+									\eta_\pm = G^\pm (- Q_\chi \phi_0 ) = G^\pm \chi
+								\end{displaymath}
+							\item<4-> Le parentesi risultano
+								\begin{displaymath}
+									 \{ \omega , \chi \} = \left( \omega ,(\GreenAdv - \GreenRet) Q_\chi \phi_0\right)  = \left( \omega , E \chi \right)
+								\end{displaymath}	
+						\end{enumerate}
+    			\end{column}
+    		   	\begin{column}{.5\textwidth}
+    		   		    \parbox[c][.7\textheight][c]{\columnwidth}{%
+						\includegraphics<1-2>[width=\textwidth]{Pictures/compsupp_GeometricPicture1}
+						\includegraphics<3>[width=\textwidth]{Pictures/compsupp_GeometricPicture2}
+						\includegraphics<4->[width=\textwidth]{Pictures/compsupp_GeometricPictureLinear}
+						}
+    			\end{column}
+    		\end{columns}
+	\end{frame}
+
+	\begin{frame}{L'Algebra di Poison realizzata tramite il metodo di Peierls}
+		Risultato:\\
+		Alla generica teoria lagrangiana di campo $(E, \Lagrangian)$\\
+		Viene associato lo spazio simplettico  $(\Obs, \tau)$ 
+		\begin{itemize}
+			\item $\Obs \simeq \frac{\Gamma_0}{P \Gamma_0} $
+			\item $\tau( [\chi], [\omega]) = \{\chi , \omega \} =\int_M \left\langle\chi, \left(\GreenAdv - \GreenRet \right)\omega \right\rangle 
+			d\mu(x) = ( \chi, E \omega) \qquad \forall \chi,\omega \in \Gamma_0(E)$
+		\end{itemize}
+		\comment{SI prende il quoziente per garantire che la forma sia non degenere\\} 		
+
+		\vfill
+
+		Gli elementi di $\Obs$ agiscono come osservabili:
+				\begin{displaymath}
+				 F_{[f]}(X) = F_f (X)= \int_M <X, f>_x d\mu(x) \qquad \forall X \in \Sol
+				\end{displaymath}
+		La forma $\tau$ può essere rivista come una parentesi di Poisson
+				\begin{displaymath}
+				 \left\{ F_{[f]},  F_{[g]} \right\} (X) = F_{[???]}(X)
+				\end{displaymath}
+				\comment{adesso mi sfugge}
+			
+	\end{frame}
+
+
 	
 \end{document}
+

@@ -1,0 +1,36 @@
+%\begin{tikzpicture}[scale=1,every node/.style={minimum size=1cm}]
+
+	%% some definitions
+			\def\R{4} % sphere radius
+			\def\angEl{25} % elevation angle
+			\def\angAz{-100} % azimuth angle
+	
+	%% working planes
+	
+	\pgfmathsetmacro\H{\R*cos(\angEl)} % distance to north pole
+	\LongitudePlane[xzplane]{\angEl}{\angAz}
+	\fill[ball color=white!10] (0,0) circle (\R); % 3D lighting effect
+
+	% Asse di rotazione
+	\coordinate (O) at (0,0);
+	\coordinate[mark coordinate] (N) at (0,\H);
+	\coordinate[mark coordinate] (S) at (0,-\H);
+	\path[xzplane] (\R,0) coordinate (XE);
+	\draw[-,dashed] (N) -- (S);
+
+
+	%Geodetiche
+	\DrawLatitudeCircle[\R]{\anglePar}
+    \DrawLatitudeCircleFancy[\R]{0} % equator
+    
+    \DrawLongitudeCircle[\R]{\angleMer} % qzplane
+    \DrawLongitudeCircleFancy[\R]{-120} % pzplane
+
+	% sovrascrittura poli
+	\coordinate[mark coordinate]  (Nup) at (0,\H);
+	\node[above=8pt] at (N) {$\mathbf{N}$};
+	\node[below=8pt] at (S) {$\mathbf{S}$};
+
+
+    	
+%\end{tikzpicture}

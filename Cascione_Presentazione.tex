@@ -43,8 +43,40 @@
 				\item Presentare l'approccio al formalismo canonico dei campi in 2 step:
 				\item Ok, fin qui abbiamo un insieme. Come lo doto di una struttura simplettica?
 			\end{itemize}
+			
+	\subsection{Formalismo canonico ordinario finiti gradi}
+				(usual approach) I passi principali per la costruzione del formalismo canonico per teorie con $N$ gradi di libertà
+						\begin{enumerate}
+							\item si introducono la coordinate di configuazione $q^j$ e i momenti canonici coniugati $p^j$
+							\item si definisce la 2-forma $\omega = dp^i \wedge dq^i$
+							\item combinando $p^i,q^j$ in un'unica variablie $Q^I , I = 1,\ldots,2N$, con $Q^i=p^i$ per $i\leq\leq N$ e $Q^i= q^{i-N}$ per $i>N$. E' possibile riguardare $\omega$ come una matrice $2N \times N$  antisimmetrica i cui elementi non nulli sono
+								\begin{displaymath}
+									\omega_{i , i+N} = -\omega_{i+N,i} = 1
+								\end{displaymath}
+							\item le parentesi di poisson per 2 funzioni $A(Q^I) , B(Q^J)$ vengono definite come:
+								\begin{displaymath}
+									\left[ A , B \right] = \omega^{I J} \frac{\partial A}{\partial Q^I} \frac{\partial B}{\partial Q^J}					
+								\end{displaymath}
+						\end{enumerate}
 
+	\subsection{Recuperare il formalismo canonico non covariante}
+			(extra) Recupare il formalismo canonico non covariante anche per i campi costruendo il dato su una superficie di Cauchy (ricordare che al continuo ci sono controesempi che darboux non vale)
+			\\
+			Lo si fa per sistemi su spazitempi globalmenente iperbolici. in breve sono varietà molto generali in cui è possibile definire per bene i problemi di cauchy
+			\\
+			\comment{Osservazione chiave di questo punto : spazio delle fasi ordinario è spazio dei dati.. quindi parliamo di Data e Sol}
 
+\subsection{Cappello sul Metodo di Peirls}
+{Cappello sul Metodo di Peierls }
+			\begin{itemize}
+				\item semplificare: usare i grafici già fatti e considerare solo i campi scalari
+			\end{itemize}
+			His essential insight was to consider the advanced and retarded “effect of one quantity (A) on another (B).” Here, A and B are to
+be functions on H. 
 
+			The advanced  and retarded  effects of A on B are then defined by comparing the original system with a new system defined by the action $S_\epsilon = S + \epsilon A$ and the same space H of histories. 
+			Under retarded (advanced) boundary conditions for which the solutions $\phi \in S$ and $\phi_\epsilon	\in S_\epsilon$ coincide to the past (future) of the support of A, the quantity $B_0 = B(\phi)$ computed using $\phi$ will in general differ from $B_\epsilon = B(\phi_\epsilon)$ computed using $\phi_\epsilon$.
+			For small epsilon, the difference between these quantities defines the retarded (advanced) effect of A on B through:
+which depends on the unperturbed solution $\phi$.
 
 \end{document}

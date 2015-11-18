@@ -1,0 +1,43 @@
+% Author: http://tex.stackexchange.com/questions/261408/sphere-tangent-to-plane
+
+\documentclass[12pt]{article}
+\usepackage{tikz}
+
+%%%<
+\usepackage{verbatim}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{5pt}%
+%%%>
+
+\input{Sfera_Preamble}
+
+%Animation
+\usepackage{animate}
+
+%Counter
+
+
+
+\begin{document}
+	\def\boundb{(-5,5) rectangle (5,-5)}
+	\def\anglePar{0}
+	\def\angleMer{-120}
+		\begin{tikzpicture}[scale=1,every node/.style={minimum size=1cm}]
+		    \draw \boundb;
+			\input{Sfera_Draw_Tangent}
+%			 \DrawLongitudeField[\R]{-90} % pzplane
+
+	 
+ 
+
+
+
+		\end{tikzpicture}
+
+
+
+
+
+
+\end{document} 

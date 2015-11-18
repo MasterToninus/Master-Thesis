@@ -1,0 +1,57 @@
+%\begin{tikzpicture}[scale=1,every node/.style={minimum size=1cm}]
+
+	%% some definitions
+			\def\R{4} % sphere radius
+			\def\angEl{25} % elevation angle
+			\def\angAz{-100} % azimuth angle
+	
+	%% working planes
+	
+	\pgfmathsetmacro\H{\R*cos(\angEl)} % distance to north pole
+	\LongitudePlane[xzplane]{\angEl}{\angAz}
+	\fill[ball color=white!10] (0,0) circle (\R); % 3D lighting effect
+
+	% Asse di rotazione
+	\coordinate (O) at (0,0);
+	\coordinate[mark coordinate] (N) at (0,\H);
+	\coordinate[mark coordinate] (S) at (0,-\H);
+	\path[xzplane] (\R,0) coordinate (XE);
+	\draw[-,dashed] (N) -- (S);
+
+%% draw xy shifted plane and sphere
+	%Punto P
+	\def\angPhiOne{-120} % longitude of point P
+	\def\angBeta{45} % latitude of point P
+	\LongitudePlane[pzplane]{\angEl}{\angPhiOne} %per il piano tangente
+	\path[pzplane] (\angBeta:\R) coordinate (P);%fino alla sfera
+	\draw[-,dashed] (O) -- (P);
+	\draw (P) node {$\bullet$};
+	\node[below=0.25pt] at (P) {$P$};
+
+	%Working Plane %è aggiustato ad occhio! la geometria che c'è sotto mi è ancora oscura...
+	\def\angTheta{45} 
+	\def\angPhi{60}
+	\def\angPsi{45}
+	\tikzset{
+		xyplane/.style={
+			cm={cos(\angTheta),sin(\angTheta)*sin(\angPhi),-sin(\angPsi),sin(\angTheta)*cos(\angPhi),(P)}
+  		}
+	}		
+
+	%Tangent Plane
+	\filldraw[xyplane,shift={(P)},fill=red!10,opacity=0.3] 
+  		(-0.6*\R,-0.7*\R) rectangle (0.7*\R, 0.6*\R)node [pos=0.7](labello) {};;
+  		\node[,black,thick,opacity=1,pin={100:$T_pM$}] at (labello) {};
+  		
+  	\draw[xyplane,->]  (0,0) --  (1,2) node[below] {$\scriptstyle\vec{V_1}$} ;
+  	\draw[xyplane,->]  (0,0) -- (2,0) node[below] {$\scriptstyle\vec{V_2}$} ;
+  	\draw[xyplane,bend left,->]  (0.75,1.5) to node [auto] {$\scriptstyle\alpha$} (1.5,0);
+  	
+ 	% sovrascrittura poli
+	\coordinate[mark coordinate]  (Nup) at (0,\H);
+	\node[above=8pt] at (N) {$\mathbf{N}$};
+	\node[below=8pt] at (S) {$\mathbf{S}$};
+
+
+    	
+%\end{tikzpicture}

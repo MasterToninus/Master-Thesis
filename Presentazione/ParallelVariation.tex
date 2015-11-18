@@ -1,0 +1,32 @@
+%http://www.texample.net/tikz/examples/animated-set-intersection/
+
+
+\documentclass[12pt]{beamer}
+\usepackage{tikz}
+
+%%%<
+%\usepackage{verbatim}
+\usepackage[active,tightpage]{preview}
+\PreviewEnvironment{tikzpicture}
+\setlength\PreviewBorder{5pt}%
+%%%>
+
+\input{Sfera_Preamble}
+
+
+\begin{document}
+
+% define the bounding box
+\def\boundb{(-5,5) rectangle (5,-5)}
+% Create n frames with \xb as parameter
+\foreach \xb in {0,1.2,...,60}{
+	\def\anglePar{\xb}
+	\def\angleMer{-120}
+
+    \begin{tikzpicture}
+        \draw \boundb;
+		\input{Sfera_Draw}
+	\end{tikzpicture}
+}
+
+ \end{document} 

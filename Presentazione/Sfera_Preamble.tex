@@ -1,0 +1,99 @@
+\usetikzlibrary{positioning}
+%% helper macros
+
+% The 3D code is based on The drawing is based on Tomas M. Trzeciak's 
+% `Stereographic and cylindrical map projections example`: 
+% http://www.texample.net/tikz/examples/map-projections/
+\newcommand\pgfmathsinandcos[3]{%
+  \pgfmathsetmacro#1{sin(#3)}%
+  \pgfmathsetmacro#2{cos(#3)}%
+}
+\newcommand\LongitudePlane[3][current plane]{%
+  \pgfmathsinandcos\sinEl\cosEl{#2} % elevation
+  \pgfmathsinandcos\sint\cost{#3} % azimuth
+  \tikzset{#1/.style={cm={\cost,\sint*\sinEl,0,\cosEl,(0,0)}}}
+}
+\newcommand\LatitudePlane[3][current plane]{%
+  \pgfmathsinandcos\sinEl\cosEl{#2} % elevation
+  \pgfmathsinandcos\sint\cost{#3} % latitude
+  \pgfmathsetmacro\yshift{\cosEl*\sint}
+  \tikzset{#1/.style={cm={\cost,0,0,\cost*\sinEl,(0,\yshift)}}} %
+}
+
+\newcommand\DrawLongitudeCircle[2][1]{
+  \LongitudePlane{\angEl}{#2}
+  \tikzset{current plane/.prefix style={scale=#1}}
+   % angle of "visibility"
+  \pgfmathsetmacro\angVis{atan(sin(#2)*cos(\angEl)/sin(\angEl))} %
+  \draw[current plane,thin,black] (\angVis:1) arc (\angVis:\angVis+180:1);
+  \draw[current plane,thin,dashed] (\angVis-180:1) arc (\angVis-180:\angVis:1);
+}
+
+\newcommand\DrawLongitudeCircleFancy[2][1]{
+  \LongitudePlane{\angEl}{#2}
+  \tikzset{current plane/.prefix style={scale=#1}}
+   % angle of "visibility"
+  \pgfmathsetmacro\angVis{atan(sin(#2)*cos(\angEl)/sin(\angEl))} %
+  \draw[current plane,thick,red] (\angVis:1) arc (\angVis:\angVis+180:1);
+  \draw[current plane,thick,dashed,red] (\angVis-180:1) arc (\angVis-180:\angVis:1);
+}
+
+\newcommand\DrawLongitudeField[2][1]{
+  \LongitudePlane{\angEl}{#2}
+  \tikzset{current plane/.prefix style={scale=#1}}
+   % angle of "visibility"
+  \pgfmathsetmacro\angVis{atan(sin(#2)*cos(\angEl)/sin(\angEl))} %
+  \draw[current plane,thick,orange] (\angVis:1) arc (\angVis:\angVis+180:1)
+		\foreach \p in {0,10,...,100} {
+			node[sloped,pos=\p*0.01]
+			(N \p){}
+    	}
+  		;
+  \pgfmathsetmacro\angVisB{atan(sin(#2+10)*cos(\angEl)/sin(\angEl))} %
+  \draw[current plane,thick,green] (\angVisB:1) arc (\angVisB:\angVisB+180:1)
+		\foreach \p in {0,10,...,100} {
+			node[sloped,pos=\p*0.01]
+			(M \p){}
+    	}
+  		;
+
+
+		\foreach \p in {0,10,...,100} {
+      		\draw[-latex,color=red] (N \p.center) -- (M \p.center);
+ 		}	
+	 \draw[current plane,thick,dashed,orange] (\angVis-180:1) arc (\angVis-180:\angVis:1);
+}
+
+
+\newcommand\DrawLatitudeCircle[2][1]{
+  \LatitudePlane{\angEl}{#2}
+  \tikzset{current plane/.prefix style={scale=#1}}
+  \pgfmathsetmacro\sinVis{sin(#2)/cos(#2)*sin(\angEl)/cos(\angEl)}
+  % angle of "visibility"
+  \pgfmathsetmacro\angVis{asin(min(1,max(\sinVis,-1)))}
+  \draw[current plane,thin,black] (\angVis:1) arc (\angVis:-\angVis-180:1);
+  \draw[current plane,thin,dashed] (180-\angVis:1) arc (180-\angVis:\angVis:1);
+}
+
+\newcommand\DrawLatitudeCircleFancy[2][1]{
+  \LatitudePlane{\angEl}{#2}
+  \tikzset{current plane/.prefix style={scale=#1}}
+  \pgfmathsetmacro\sinVis{sin(#2)/cos(#2)*sin(\angEl)/cos(\angEl)}
+  % angle of "visibility"
+  \pgfmathsetmacro\angVis{asin(min(1,max(\sinVis,-1)))}
+  \draw[current plane,thick,green] (\angVis:1) arc (\angVis:-\angVis-180:1);
+  \draw[current plane,thick,dashed,green] (180-\angVis:1) arc (180-\angVis:\angVis:1);
+}
+
+\tikzset{%
+  >=latex,
+  inner sep=0pt,%
+  outer sep=2pt,%
+  mark coordinate/.style={inner sep=0pt,outer sep=0pt,minimum size=3pt,
+    fill=black,circle}%
+}
+\usepackage{amsmath}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\usepackage{pgfplots}
+\usetikzlibrary{calc,fadings,decorations.pathreplacing}

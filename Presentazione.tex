@@ -1,13 +1,13 @@
 % ------- Flag di Debug  ---------------------------------------------------------------------------
 \newif\ifToninus
 \newcommand{\comment}[1]{\ifToninus\textcolor{gray}{\small{\textit{#1}}}\fi}
-\Toninustrue
+%\Toninustrue
 
 %- D0cum3nt ----------------------------------------------------------------------------------------------------------------------------------
 \ifToninus
 \documentclass[8pt,handout]{beamer}
 \else
-\documentclass[9pt]{beamer}
+\documentclass[9pt,handout]{beamer}
 \fi
 
 %- T1tle--------------------------------------------------------------------------------------------------------------------------
@@ -21,7 +21,7 @@
 \usepackage{tikz}
 \usepackage{pgfplots}
 \pgfplotsset{compat=newest}
-\usepackage{amsmath}
+\usepackage{amsfonts}
 \usepackage{xcolor}
 \usepackage[utf8]{inputenc}
 %\usepackage{fourier}							%\bomb \danger symbol
@@ -113,12 +113,14 @@
 								\end{displaymath}
 							\item \emph{Parentesi di Poisson}: \comment{per 2 funzioni $A(Q^I) , B(Q^J)$}
 								\begin{displaymath}
-									\left[ A , B \right] = \Omega^{I J} \frac{\partial A}{\partial Q^I} \frac{\partial B}{\partial Q^J}					
+									\left\{A , B \right\} = \Omega^{I J} \frac{\partial A}{\partial Q^I} \frac{\partial B}{\partial Q^J}					
 								\end{displaymath}
 							\item \emph{Dinamica}
 								\begin{displaymath}
-									H(q,p) =  q \dot{q}(q,p)-L\left(q, \dot{q}(q,p)\right)
+									\left\{Q^I, H \right\} = \dot{Q}^I
 								\end{displaymath}
+							
+								\comment{$$H(q,p) =  q \dot{q}(q,p)-L\left(q, \dot{q}(q,p)\right)$$}
 								
 								
 						\end{enumerate}
@@ -192,7 +194,7 @@
     						\item Le configurazioni cinematiche: 
     							\begin{displaymath}
     								\underset{(\textrm{curve})}{\gamma: \Real \rightarrow Q} \quad \mapsto \quad 
-    								\underset{(\textrm{sezioni})}{\gamma: \Real \rightarrow Q\times \Real}
+    								\underset{(\textrm{sezioni})}{\gamma: \Real \rightarrow \Real\times Q}
     							\end{displaymath}
     					\end{itemize}	
 
@@ -250,9 +252,9 @@
 	\end{frame}
 	
 	\begin{frame}
-		\frametitle{ Concetto chiave dell'algoritmo di Peierls}
+		\frametitle{ Concetto chiave dell'algoritmo di Peierls : \underline{Disturbo Lagrangiano}}
 			\comment{Le densità lagrangiane compatibili sono tante!\\Costituiscono uno spazio vettoriale di distribuzioni $\Lag$\\}
-			Le densità Lagrangiane compatibili con la dinamica formano un insieme $\Lag$.\\
+			Le densità Lagrangiane compatibili con la cinematica formano un insieme $\Lag$.\\
 			Ognuna di esse possiede due statuti
 			\comment{Ognuna di esse possiede essenzialmente due statuti}
 			\begin{itemize}
@@ -284,17 +286,17 @@
 		  	\begin{columns}[T]
     			\begin{column}{.5\textwidth}
 						\begin{itemize}
-							\item Fissata una soluzione $\gamma_0$ del sistema imperturbato \comment{ $(E, \Lagrangian)$}
-							\item Un disturbo Lagrangiano determina univocamente due soluzioni \emph{"disturbate"}
+							\item Fissata una soluzione $\phi_0$ del sistema imperturbato \comment{ $(E, \Lagrangian)$}
+							\item Un disturbo Lagrangiano $\chi$ determina univocamente due soluzioni \emph{"disturbate"}
 								\begin{displaymath}
-									\phi^\pm_\epsilon = \phi + \epsilon \eta_\pm
+									\phi^\pm_\epsilon = \phi_0 + \epsilon \eta_\pm
 								\end{displaymath}
 								dove:
 								 \begin{displaymath}
-   									\eta_\pm = G^\pm \big( - Q_\chi \phi \big)
+   									\eta_\pm = G^\pm \big( - Q_\chi \phi_0 \big)
    								\end{displaymath}
    								\comment{Dove $G^\pm$ sono gli unici operatori di green avanzati/ritardati associati all'operatore $P$ delle equazioni del moto imperturbate}
-   						\item L'\emph{effetto} di un disturbo Lagrangiano su un funzionale lineare $B$ è:
+   						\item L'\emph{effetto} di un disturbo Lagrangiano su un funzionale $B:\Conf\rightarrow \Real$ è:
    							\begin{displaymath}		
 								\EffectOp_\chi^\pm B ( \phi_0) 
 								= \lim_{\epsilon \rightarrow 0}
@@ -303,10 +305,10 @@
 						\end{itemize}
     			\end{column}
     		   	\begin{column}{.5\textwidth}
-							\vfill
+					\parbox[c][.7\textheight][c]{\columnwidth}{%
 						% Your image included here
-							\includegraphics[width=\textwidth]{Pictures/AdvRetSol}
-							\vfill
+							\includegraphics[width=\textwidth]{Presentazione/AdvRetSol(pezzotta)}
+					}
     			\end{column}
     		\end{columns}
 	\end{frame}
@@ -395,7 +397,7 @@
 					\begin{itemize}
 						\item La varietà di base è $\Real$ 
 							\comment{\\ è uno spazio globalmente iperbolico "triviale". \\ $\CauchyClass(\Real) = \Real$.}
-				\item La varietà di target \comment{Le fibre} sono $E_p = T_{\gamma_0(p)}Q$
+				\item Le varietà di target \comment{Le fibre} sono $E_p = T_{\gamma_0(p)}Q$
 				\item $\Conf = \Gamma^\infty(E) = \mathfrak{X}(\gamma_0)$ è costituito da campi lungo la curva $\gamma_0$.
 					\end{itemize}
 			\end{block}
@@ -416,9 +418,9 @@
 					\item Spazio degli osservabili classici:  $	\Obs \simeq \frac{\Gamma_0}{P \Gamma_0}$
 					\item Funzionali associati: $ F_{[f]}(X) = F_f (X)= \int_\Real <X, f>_t dt \qquad \forall X \in \Sol $
 					\item Parentesi di Peirels: 
-						$ \left\lbrace\chi , \omega \right\rbrace (\gamma_0) [f] = 
-							\int f(t) \left\langle\chi, \left(\GreenAdv - \GreenRet \right)\omega \right\rangle dt
-						$
+						$ \left\lbrace\chi , \omega \right\rbrace = \int \left\langle\chi, \left(\GreenAdv - \GreenRet \right)\omega \right\rangle dt  
+							= (\chi, E \omega)$
+						\comment{$$ \left\lbrace\chi , \omega \right\rbrace (\gamma_0) [f] = \int f(t) \left\langle\chi, \left(\GreenAdv - \GreenRet \right)\omega \right\rangle dt $$}
 				\end{itemize}
 			\end{block}
 	\end{frame}
@@ -439,19 +441,26 @@
 %\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/		
 \section*{Conclusioni e Prospettive}
 
-	\begin{frame}
-		\frametitle{ Prospettive}
-			\begin{itemize}
-				\item Tali costruzioni sono formali. E' possibile dare un fondamento rigoroso a tali costruzioni sviluppando il \emph{calcolo differenziale sulle varietà infinito dimensionali} \comment{Analisi Globale}
-				\item E' possibile estendere ulteriormente la procedura di Peierls a teorie di campo più articolate?
-					\begin{itemize}
-						\item Libertà di Gauge
-						\item Equazioni di Vincolo
-						\item Strutture di Spin
-					\end{itemize}
-				\item Al discorso soggiace la geometria di 2 spazi: lo spazio delle soluzioni $\Sol$ e lo spazio delle Lagrangiane $\Lag$.\\
-					E' possibile fornire un'interpretazione geometrica alle parentesi di Peierls formalizzando lo spazio delle Lagrangiane?
-			\end{itemize}
+		\begin{frame}
+		\frametitle{ Conclusioni}
+			\begin{block}{Risultati}
+				\begin{itemize}
+					\item Riformulazione in linguaggio geometrico dell'algoritmo di Peierls.
+					\item Estensione dell'algoritmo di Peierls da campi scalari a teorie di campo Lagrangiane su spaziotempo curvo.
+				\end{itemize}
+			\end{block}
+			\begin{block}{Prospettive}
+				\begin{itemize}
+					\item Cercare un interpretazione geometrica ai singoli passaggi che costituiscono il metodo di Peierls.
+					\comment{Ci si può porre il problema di trovare un interpretazione geometrica ai singoli passaggi che costituiscono il metodo di \emph{Peierls}.\\
+				 Perché la costruzione di Peierls fornisce proprio la giusta usuale forma simplettica ($\Omega$) sullo spazio delle fasi classico ?}
+					\item Riformulazione rigorosa delle costruzioni formali sviluppando un \emph{calcolo differenziale sulle varietà infinito dimensionali}.\comment{ con gli strumenti dell'\emph{analisi globale}.}
+					\item Estensione ulteriore della procedura di Peierls a teorie più elaborate\\
+					(Libertà di Gauge, Equazioni di Vincolo, Strutture di Spin).
+					\item 	Formulazione della struttura geometrica che soggiace allo spazio delle Lagrangiane
+						\comment{E' possibile fornire un'interpretazione geometrica alle parentesi di Peierls formalizzando lo spazio delle Lagrangiane?}
+					\end{itemize}				 
+			\end{block}
 	\end{frame}
 
 
@@ -549,6 +558,56 @@
 	\end{frame}
 
 
+	\begin{frame}{Che c'entra tutto ciò con la quantizzazione?}
+		Una volta determinato lo spazio simplettico classico della teoria di campo lo schema di quantizzazione si completa in due passi:
+		\begin{enumerate}
+			\item Si associa a $(\Obs, \tau)$ un'opportuna  "unital $\ast-$algebra". \comment{encoding the structural relations between the observables, such as causality and locality}
+			\item Si seleziona uno stato algebrico \comment{ that is a positive, normalized, linear functional on the algebra which allows us to recover the standard probabilistic interpretation of quantum theories via the Gelfand-Neimark-Segal (GNS) theorem.} 
+		\end{enumerate}
+	\end{frame}
+	
+	\begin{frame}{L'algebra degli osservabili quantistici}
+			We call \emph{algebra of quantum observables} associated to the classical field system $(\Obs, \tau)$ the unital $\ast-$algebra 
+			$	\ObsAlg	= \big( (\ObsAlg, \Complex),\cdot,*\big)$ generated over $\Complex$ by the symbols 
+			\begin{displaymath}
+				\big\{\mathbf{1}\big\}\bigcup \big\{\mathbf{\Phi}\big( [f]\big) \; \big\vert \;  [f] \in \Obs \big\}
+			\end{displaymath}
+			such that:
+			\begin{enumerate}
+				\item The generators are linearly independent:
+					\begin{equation}\label{Ip:GenIndip}
+						\mathbf{\Phi} \big(a [f] + b [s] \big) = 
+						a \mathbf{\Phi} ([f]) + b \mathbf{\Phi} ([s]) \qquad \forall [f],[s] \in \Obs,\: \forall a,b \in \Real
+					\end{equation}
+				\item The generators are \emph{formally self-adjoint} in the sense that:
+					\begin{equation}\label{Ip:GenSelfAd}
+						\big( \mathbf{\Phi}([f]) \big)^* = \mathbf{\Phi}([f]) \qquad \forall [f] \in \Obs
+					\end{equation}
+				\item The (anti-) commutation relations extrapolated from %....The rules of (anti-) commutation given from 
+					the classical $\tau$ are replicated on $\ObsAlg$:
+					\begin{equation}\label{Ip:ImplementCCR}
+						\big[ \mathbf{\Phi}([f]), \mathbf{\Phi}([g]) \big]_\mp = \mathbf{\Phi}([f]) \cdot \mathbf{\Phi}([g]) \mp \mathbf{\Phi}([g]) \cdot \mathbf{\Phi}([f]) = i \tau\big( [f], [g] \big) \mathbf{1}
+					\end{equation}
+					where the sign $\mp$ depend respectively on the anti-symmetry and symmetry of the form $\tau$.
+			\end{enumerate}
+	\end{frame}
+	
+	\begin{frame}
+		\frametitle{ Prospettive}
+			\begin{itemize}
+				\item Ci si può porre il problema di trovare un interpretazione geometrica ai singoli passaggi che costituiscono il metodo di \emph{Peierls}.\\
+				 Perché la costruzione di Peierls fornisce proprio la giusta usuale forma simplettica ($\Omega$) sullo spazio delle fasi classico ?
+				\item Tali costruzioni sono formali. E' possibile dare un fondamento rigoroso a tali costruzioni sviluppando il \emph{calcolo differenziale sulle varietà infinito dimensionali} \comment{Analisi Globale}
+				\item E' possibile estendere ulteriormente la procedura di Peierls a teorie di campo più articolate?
+					\begin{itemize}
+						\item Libertà di Gauge
+						\item Equazioni di Vincolo
+						\item Strutture di Spin
+					\end{itemize}
+				\item Al discorso soggiace la geometria di 2 spazi: lo spazio delle soluzioni $\Sol$ e lo spazio delle Lagrangiane $\Lag$.\\
+					E' possibile fornire un'interpretazione geometrica alle parentesi di Peierls formalizzando lo spazio delle Lagrangiane?
+			\end{itemize}
+	\end{frame}	
 	
 \end{document}
 

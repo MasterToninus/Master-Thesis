@@ -1,21 +1,12 @@
-%--------
-% Old Main File:
 %Flag di Debug. (toggle mio stile e osservazioni) (idea implementata un po' tardi, molti commenti sono nel cascione)
 \newif\ifToninus
 %\Toninustrue  %Commentare per ottenere la versione da stampare
-%--------
 
 %-------- Document Class  ------------------------------------------------------------------------------------------------------------------------------------------------
-\ifToninus
-	\documentclass[a4paper,12pt]{report}  %Per La Stampa
-	\usepackage[a4paper, margin=3.5cm]{geometry}
-\else
 	\documentclass[a4paper,12pt,twoside,openright]{report}  %Per La Stampa
-	%\documentclass[a4paper,12pt,openright,twoside]{book}
 	\usepackage[]{layaureo}
-	%	\usepackage[a4paper, inner=5cm,outer=2.5cm,top=2cm,bottom=4cm,twoside,]{geometry}			% Reduce white margin
 	\geometry{top=3.5cm,bottom=3.5cm,}
-\fi
+
 
 %-------- Multi-file  ---------------------------------------------------------------------------------------------------------------------------------------------------------
 \usepackage{subfiles}
@@ -29,11 +20,8 @@
 	\input{./Hyphenation.tex}
 
 	%Temporaneo, Aggiunta della mia classe teorem... Deve diventare un pacchetto!
-	\ifToninus
-		\input{../Latex-Theorem/TheoremTemplateToninus.tex}
-	\else
-		\input{../Latex-Theorem/TheoremTemplateToninus_plain.tex}
-	\fi
+	\input{../Latex-Theorem/TheoremTemplateToninus_plain.tex}
+
 %---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 \title{Interpretazione Geometrica delle parentesi di Peierls nella quantizzazione algebrica del campo Geodetico. }
 \author{Antonio Michele Miti}

@@ -17,7 +17,7 @@
 
 %- Packages ---------------------------------------------------------------------------------------------------------------------------
 %			Standalone non funziona ancora bene con beamer.
-\usepackage[mode=buildnew]{standalone}				%\includestandalone[width=\textwidth]{Pictures/GeometricPicture0}
+\usepackage[mode=buildnew]{standalone}				%\includestandalone[width=\textwidth]{../Pictures/GeometricPicture0}
 \usepackage{tikz}
 \usepackage{pgfplots}
 \pgfplotsset{compat=newest}
@@ -50,7 +50,7 @@
 
 
 %Common symbols
-\input{../Math-Symbols-List/CommonSymbols.tex}
+\input{../../Math-Symbols-List/CommonSymbols.tex}
 %---------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 %\usetheme{CambridgeUs}
@@ -128,7 +128,7 @@
     		   	\begin{column}{.5\textwidth}
 					\parbox[c][.7\textheight][c]{\columnwidth}{%
 						\comment{Animazione Pendolo con orbita rappresentata nel piano simplettico}
-						\animategraphics[autoplay,loop,width=\textwidth]{3}{./Presentazione/SimpleHarmonicMotion/o_2830a51e4d07c739-}{0}{19}
+						\animategraphics[autoplay,loop,width=\textwidth]{3}{./Pic/SimpleHarmonicMotion/o_2830a51e4d07c739-}{0}{19}
  						\center \footnote{Fonte: 
  							\href{https://en.wikibooks.org/wiki/A-level_Physics_(Advancing_Physics)/Simple_Harmonic_Motion}{en.wikibooks.org}}
   					}	
@@ -151,7 +151,7 @@
     			\end{column}
     		   	\begin{column}{.5\textwidth}
     		   		\parbox[c][.7\textheight][c]{\columnwidth}{%
-						\includegraphics[width=\textwidth]{Presentazione/GeoMecFrameA} 
+						\includegraphics[width=\textwidth]{Pic/GeoMecFrameA} 
 					}
     			\end{column}
   			\end{columns}	
@@ -173,7 +173,7 @@
 
     		   	\begin{column}{.5\textwidth}
 					\parbox[c][.7\textheight][c]{\columnwidth}{%
-						\includegraphics [width=\textwidth]{Presentazione/GeoMecFrameB} 
+						\includegraphics [width=\textwidth]{Pic/GeoMecFrameB} 
 					}
     			\end{column}
   			\end{columns}		
@@ -213,8 +213,8 @@
     		 
     		   	\begin{column}{.5\textwidth}
 					\comment{Evidenziare uno alla volta gli oggetti che introduco}
-						\includegraphics<1-> [width=\textwidth]{Pictures/FieMecFrame} \\
-						\includegraphics<2-> [width=\textwidth]{Presentazione/AbstractFieldTheory(pezzotta)} 
+						\includegraphics<1-> [width=\textwidth]{../Pictures/FieMecFrame} \\
+						\includegraphics<2-> [width=\textwidth]{Pic/AbstractFieldTheory(pezzotta)} 
     			\end{column}
   			\end{columns}		
 		\end{frame}
@@ -308,7 +308,7 @@
     		   	\begin{column}{.5\textwidth}
 					\parbox[c][.7\textheight][c]{\columnwidth}{%
 						% Your image included here
-							\includegraphics[width=\textwidth]{Presentazione/AdvRetSol(pezzotta)}
+							\includegraphics[width=\textwidth]{Pic/AdvRetSol(pezzotta)}
 					}
     			\end{column}
     		\end{columns}
@@ -331,10 +331,10 @@
 						\end{enumerate}
     			\end{column}
     		   	\begin{column}{.5\textwidth}
-								\includegraphics<1>[width=\textwidth]{Pictures/GeometricPicture0}
-								\includegraphics<2>[width=\textwidth]{Pictures/GeometricPicture1}
-								\includegraphics<3>[width=\textwidth]{Pictures/GeometricPicture2}								
-								\includegraphics<4-5>[width=\textwidth]{Pictures/GeometricPicture3}
+								\includegraphics<1>[width=\textwidth]{../Pictures/GeometricPicture0}
+								\includegraphics<2>[width=\textwidth]{../Pictures/GeometricPicture1}
+								\includegraphics<3>[width=\textwidth]{../Pictures/GeometricPicture2}								
+								\includegraphics<4-5>[width=\textwidth]{../Pictures/GeometricPicture3}
     			\end{column}
     		\end{columns}
 	\end{frame}
@@ -374,17 +374,17 @@
     			\end{column}
     		   	\begin{column}{.5\textwidth}
     		   		\parbox[c][.7\textheight][c]{\columnwidth}{%
-						\includegraphics<1>[width=\textwidth]{Presentazione/LocalChart}
+						\includegraphics<1>[width=\textwidth]{Pic/LocalChart}
 						 	\center \footnote<1>{Fonte: \href{http://kahrstrom.com/mathematics/illustrations.php}{http://kahrstrom.com/}}
 
 						\only<1>{\comment{credit \url{http://kahrstrom.com/}}}
-						\includegraphics<2>[width=\textwidth]{Presentazione/Sfera_Tangent}
+						\includegraphics<2>[width=\textwidth]{Pic/Sfera_Tangent}
 						\only<2>{\comment{\\Wip: esibire la presenza di una distanza (come lunghezza della curva di minima lunghezza?)}}
-						\includegraphics<3>[width=\textwidth]{Presentazione/Sfera_Main}
+						\includegraphics<3>[width=\textwidth]{Pic/Sfera_Main}
 						\only<3>{\comment{\\Wip: esibire il problema geodetica come circonferenze massimali}}
-						\only<4>{\animategraphics[autoplay,loop,width=\textwidth]{6}{./Presentazione/ParallelVariation}{}{}}
+						\only<4>{\animategraphics[autoplay,loop,width=\textwidth]{6}{./Pic/ParallelVariation}{}{}}
 						\only<4>{\comment{\\Wip: esibireUn campo tangente lungo un meridiano}}
-						\only<5>{\animategraphics[autoplay,loop,width=\textwidth]{6}{./Presentazione/GeodesicVariation}{}{}}
+						\only<5>{\animategraphics[autoplay,loop,width=\textwidth]{6}{./Pic/GeodesicVariation}{}{}}
 						\only<5>{\comment{\\Wip: animazione di una variazione Geodetica con campo Jacobi tangente alla variazione}}
 					}
     			\end{column}
@@ -432,7 +432,7 @@
 
 
 \begin{frame}{Lo spazio delle Fasi Classico}
-					\includegraphics[width=\textwidth]{Pictures/Jacobi_GeometricPicturePanoramica}	
+					\includegraphics[width=\textwidth]{../Pictures/Jacobi_GeometricPicturePanoramica}	
 
 \end{frame}	
 
@@ -483,7 +483,7 @@
 					\end{itemize}
     			\end{column}
     		   	\begin{column}{.5\textwidth}
-							\includegraphics[width=\textwidth]{Presentazione/GeoMec_Crop} 		
+							\includegraphics[width=\textwidth]{Pic/GeoMec_Crop} 		
 							 \center \footnote{Fonte: 
  								\href{http://arxiv.org/abs/1206.3302}{\emph{A Primer on Geometric Mechanics} - C. Lessig}
   							}	
@@ -530,9 +530,9 @@
     			\end{column}
     		   	\begin{column}{.5\textwidth}
     		   		    \parbox[c][.7\textheight][c]{\columnwidth}{%
-						\includegraphics<1-2>[width=\textwidth]{Pictures/compsupp_GeometricPicture1}
-						\includegraphics<3>[width=\textwidth]{Pictures/compsupp_GeometricPicture2}
-						\includegraphics<4->[width=\textwidth]{Pictures/compsupp_GeometricPictureLinear}
+						\includegraphics<1-2>[width=\textwidth]{../Pictures/compsupp_GeometricPicture1}
+						\includegraphics<3>[width=\textwidth]{../Pictures/compsupp_GeometricPicture2}
+						\includegraphics<4->[width=\textwidth]{../Pictures/compsupp_GeometricPictureLinear}
 						}
     			\end{column}
     		\end{columns}

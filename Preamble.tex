@@ -37,7 +37,7 @@
 %Usare bibiliografia biblatex
 %\usepackage[style=numeric,natbib=true]{biblatex}
 %\addbibresource{ThesisBiblio.bib}
-
+\bibliographystyle{alpha}  
 
 
 %Danger sign
@@ -55,19 +55,11 @@
 %subsection numbering
  \setcounter{tocdepth}{3} % if you want all the levels in your table of contents
 
-%Common symbols
-\input{../Math-Symbols-List/CommonSymbols.tex}
+
 
 %Accented Letters  (lot of stuff... got problems with dieresys)
 \usepackage[utf8]{inputenc}
 
-
-%Temporaneo, Aggiunta della mia classe teorem... Deve diventare un pacchetto!
-\ifToninus
-\input{../Latex-Theorem/TheoremTemplateToninus.tex}
-\else
-\input{../Latex-Theorem/TheoremTemplateToninus_plain.tex}
-\fi
 
 %Fancyhdr http://tex.stackexchange.com/questions/118647/line-under-chapter-name-at-top-of-the-page
 \usepackage{fancyhdr}
@@ -114,9 +106,17 @@
     \null
     \thispagestyle{empty}%
     \addtocounter{page}{-1}%
-    \newpage}
+    \newpage
+}
  
-\newcommand\forcenewline{\hfill \break \vspace{-3mm}}
+\newcommand\forcenewline{
+	\hfill \break \vspace{-3mm}
+}
+
+\newcommand\myVspace{
+
+	\vspace{2mm}
+}
     
 
  

@@ -64,3 +64,4 @@ Temporary Items
 
 #Ignore all pdf file in main folder
 /*.pdf
+/Note/*.pdf

@@ -147,18 +147,19 @@ In this chapter we will take advantage of the language developed above in order 
 	\begin{definition}[Lagrangian Densities on the bundle $E$]\label{Def:LagrangianDensities}
 		We denote the set of all \emph{Lagrangian densities} (of $r-$th order) on the bundle $E$ as:
 		\begin{displaymath}
-			\gls{Lag}^r (E) \coloneqq \hom\biggr(J^r E,\quad \bigwedge^m( T^*M)\biggr)  \cong \big\{f:\Gamma^\infty(J^r E) \rightarrow \Omega^m(M)  \big\}
+			\gls{Lag}^r (E) \coloneqq \Gamma \left( \Hom\biggr(J^r E,\quad \bigwedge^m( T^*M)\biggr) \right) \cong \big\{f:\Gamma^\infty(J^r E) \rightarrow \Omega^m(M)  \big\}
 		\end{displaymath}
-	(where $\Omega^m(M)$ is the common name for $\Gamma^\infty \big( \bigwedge^m( T^*M) \big)$ in the context of Grassmann algebras.)\\
-	The equivalence states the fact that a bundle-morphism induces a map between the sections.
+	where $\Hom$ is the bundle of smooth bundle-morphism (see definition \ref{Def:HomBundle}), $m$ is the dimension of $M$ and $\Omega^m(M)$ is the common name for $\Gamma^\infty \big( \bigwedge^m( T^*M) \big)$ in the context of Grassmann algebras.)\\
 	\end{definition}
+	The equivalence in Definition \ref{Def:LagrangianDensities} states the fact that the sections of the bundle of morphism ($\Hom$),  corresponding to the bundle map between the two bundles $J^r E$ and $\bigwedge^m( T^*M)$,  induce a map between the sections of the two bundles.
+	This mapping from sections of the Jet Bundle and top-forms sections is the key property of a Lagrangian density.
 	 %this choice fix the "Dynamical identity" of the considered system. (Correzione CD)
 	\begin{proposition}
 		$\Lag^r(E)$ has an vector space structure inherited by the linear structure of $\Omega(M)$.
 	\end{proposition}
 	
 	
-	Thanks to the correspondence between a section $\phi \in \Conf$ and his r-th jet, it is possible to consider the Lagrangian as acting directly on the kinematic configurations.
+	Thanks to the correspondence between a section $\phi \in \Conf$ and its r-th jet, it is possible to consider the Lagrangian as acting directly on the kinematic configurations.
 	%	In layman terms the image  $\Lagrangian [ \phi ] \textrm{d}\mu$ , where $\textrm{d}\mu$ is the measure associated to the orientation $\mathfrak{o}$, is something that can be measured over the whole base space.  (Correzione CD: Non proprio... integrare e misurare sono due cose diverse)
 	\\
 	This property suggests the introduction of the class of associated functionals:
@@ -178,12 +179,15 @@ In this chapter we will take advantage of the language developed above in order 
 	%(Correzione CD)Quando si parla di distribuzioni, si tende a sottolineare che sono funzionali lineari sullo spazio delle test-funzioni. In realtà questo non basta, il funzionale deve essere anche continuo. E' questa la vera proprietà dominante e mi premeva sottolinearti di sottolinearla.
 	%(COntestazione CD) A voler essere pignoli, il problema non è la linearità, ma la continuità rispetto alla topologia di D'(M). Le distribuzioni sono funzionali lineari e continui. Siamo sicuri che siano tutti continui e che non ci sia una drastica riduzione a chiedere una mappa in D'(M)?
 	Notice that $\mathcal{O}_\Lagrangian [\phi] (f)$, as a distribution, 
-	%by definition
-	is necessarily continuous and linear in the test-functions entry  but not in the configurations entry.	
-%	\end{proposition}	
+	%by definition of distribution
+	is necessarily continuous and linear in the test-functions entry  but not in the configurations entry. 
+	\footnote{We are not asking for a continuity condition between $\Conf$ and $D'$, we have not made clear what are the topologies to be considered in the aforementioned spaces.}
+%	\end{proposition}
+	We have a \emph{Linear Lagrangian Functional} when $\Lagrangian$ is linear, this is not generally guaranteed by definition \ref{Def:LagrangianDensities} even if $E$ is a vector bundle. Has to be stressed that are not morphism between vector bundles but only between smooth bundles.
+
 	
 	\vspace{3mm}
-%	\begin{observation}
+	\begin{observation}
 		The choice of the image of $\mathcal{O}_\Lagrangian$ as a distribution is a necessary precaution to ensure the \emph{convergence} of the functional, whatever is the configuration on which it is evaluated.
 		In fact, despite $\Lagrangian [ \phi ]$  being integrable with respect to the measure $\textrm{d}\mu$, it is not necessary summable if the support of the configuration $\phi$ becomes arbitrarily large.
 		\\
@@ -201,9 +205,15 @@ In this chapter we will take advantage of the language developed above in order 
 			\mathcal{O}_\Lagrangian [\phi]= \int_{\supp(\phi)} \Lagrangian [\phi] \textrm{d}\mu
 		\end{displaymath}
 		is well defined for all $\Lagrangian \in \Lag^r(E)$ only over the compactly supported sections. 
+		\\
 		To take account of the global sections it is sufficient to control the integral smearing the integrand with an arbitrary test-function.
 	%il funzionale lagrangiana totale e azione
-%	\end{observation}
+	\\
+	However, when we restrict the domain of such operators from $\Conf$ to $\Gamma_0^\infty(E)$ this subtlety is no longer needed and we can regards the Lagrangian functional as real-valued functions:
+	\begin{displaymath}
+			\mathcal{O}_\Lagrangian (\phi) = \int_M \Lagrangian (\phi) \textrm{d}\mu \qquad \forall \phi \in \Gamma_0^\infty(E)
+	\end{displaymath}
+	\end{observation}
 	
 %	\begin{notationfix}	% Correzione CD: nomenclatura non standard
 %		The functional $\mathcal{O}_\Lagrangian$, when calculated for the specific Lagrangian of the system, takes the name of \emph{Action} or \emph{Total Lagrangian}. 
@@ -580,6 +590,23 @@ In this chapter we will take advantage of the language developed above in order 
 		We omit the proof, see for example Ref. \cite{Abraham1978}[Prop. 3.3.17].
 	\end{proof}
 	
+	In other words, $\Obs$ is a \emph{Poisson Algebra}
+	\begin{definition}
+A Poisson algebra is a Triple $\left(V, \cdot ,\{ , \} \right)$  where:
+\begin{itemize}
+	\item $V$ is a vector space of field $K$
+	\item $ \cdot : V \times V \rightarrow \Real$  and $\{ , \} : V \times V \rightarrow \Real$ are bilinear products
+\end{itemize}
+such that:
+\begin{itemize}
+\item The product $ \cdot $ forms an  associative $K-$algebra.
+\item The product $\{ , \}$, called the \emph{Poisson Brackets}  is anti-symmetric, obeys the\emph{Jacobi Identity} (i.e. forms a Lie Algebra)
+\item The Poisson bracket acts as a derivation of the associative product $ \cdot $, i.e. for any three elements $x,y,z$ in the algebra, one has
+\begin{displaymath}
+	\{x, y \cdot z \} = { x , y } \cdot z + y \cdot { x , z }
+\end{displaymath}
+\end{itemize}
+\end{definition}
 	
 	\vspace{2mm}
 	In the canonical coordinates provided  by  Darboux theorem, the  Poisson brackets assume the typical expression:
@@ -801,7 +828,7 @@ In this chapter we will take advantage of the language developed above in order 
 %		\end{observation}
 		
 		\vspace{2mm}
-		In conclusion, for any but fixed $\phi\in \Sol$ and perturbation $\chi$, there exist two uniquely perturbed solutions:
+		In conclusion, for any fixed $\phi\in \Sol$ and disturbance $\chi$, there exist two uniquely perturbed solutions:
 		%In conclusion,fixed a solution $\phi\in \Sol$ and a perturbation $\chi$, are uniquely determined two perturbed solution: (Correzione CD)
    		\begin{equation}\label{PerturbedSolution}
    			\phi^\pm_\epsilon = \phi + \epsilon \eta_\pm
@@ -818,14 +845,16 @@ In this chapter we will take advantage of the language developed above in order 
 			
    		
 		\subsubsection{Effect Operator}
-		Considering an arbitrary continuous\footnote{The precise notion of continuity require the specification of a (infinite dimensional) manifold structure on $\Conf$.} functional $B: \Conf \rightarrow \Real$ (not necessarily linear) we can define the effect of a perturbation on the values of $B$\cite[pag. 5]{Marolf1993} as a map:
+		Considering an arbitrary differentiable\footnote{Concepts of continuity and differentiability are to be intended purely formally  in this infinite dimensional context.
+		Any precise notion would require the specification of a (infinite dimensional) manifold structure on $\Conf$.} functional $B: \Conf \rightarrow D'(M)$ (not necessarily linear) we can define the effect of a perturbation on the values of $B$\cite[pag. 5]{Marolf1993} as a map:
 		\begin{displaymath}
-			\gls{EffectOp} : C^1(\Conf,\Real) \rightarrow C^1(\Conf,\Real)
+			\gls{EffectOp} : C^1(\Conf,D'(M)) \rightarrow C^1(\Sol,D'(M))
 		\end{displaymath}
 		\begin{equation}\label{EffectOperator}
 		\EffectOp_\chi^\pm B ( \phi_0) 
 		\coloneqq \lim_{\epsilon \rightarrow 0}
 		 \biggr( \frac{B(\phi_\epsilon^\pm) - B (\phi_0)}{\epsilon} \biggr)
+		 \qquad \forall \phi_0 \in \Sol
 		\end{equation}
 \ifToninus
 	\begin{Warning}
@@ -846,14 +875,18 @@ In this chapter we will take advantage of the language developed above in order 
 		
 		\subsubsection{The Brackets}
 		%Remembering
-		Recalling that every Lagrangian density defines a continuous functional (\ifToninus (the "Action")\fi, see Def. \ref{Def:LagrangianFunctionals}), it is than possible to build a binary function:
+		Recalling that every Lagrangian density defines a continuous functional (\ifToninus (the "Action")\fi see Def. \ref{Def:LagrangianFunctionals}) it is than possible to build a binary function:
 		\begin{displaymath}
-			\{\cdot,\cdot\}:\Lag_{\textrm{tc}} \times \Lag_{\textrm{tc}} \rightarrow \Real 	
+			\{\cdot,\cdot\}:\Lag_{\textrm{tc}} \times \Lag_{\textrm{tc}} \rightarrow D'(M)
 		\end{displaymath}
 		as follow:
 		\begin{equation}\label{AbstractPeierlsBracket}
 				\{\chi, \omega \}(\phi_0) \coloneqq \EffectOp_\chi^- \mathcal{O}_\omega (\phi_0) - \EffectOp_\chi^+ \mathcal{O}_\omega(\phi_0)
 		\end{equation}
+		
+		\vspace{2mm}	
+		Note that all this machinery takes a rather simpler forms restricting ourselves to functional over $\Gamma_0^\infty$. 
+		In this case, we can avoid the subtlety of considering distribution valued functional and all the previous occurrences of $D'(M)$ could be substituted by $\Real$ (as explained under definition \ref{Def:LagrangianFunctionals}).
 
 		\begin{proposition}[Bilinearity]
 			When restricted to Linear Lagrangian densities $\{\cdot,\cdot\}$ is a bilinear form
@@ -872,7 +905,7 @@ In this chapter we will take advantage of the language developed above in order 
 		\begin{figure}[h!]
 				  \centering
 			   	\includegraphics[width=0.5\textwidth]{Pictures/Linearization} 
-   	  			\caption{Intrinsically, searching a variation of a solution $\gamma_0\in \Sol$ which solve the disturbed motion equation is equivalent to find the intersection of the perturbed solution with a local neighbourhood of $\Gamma_0$ : $U_{\gamma_0}\cap\ker(P_\epsilon)$ .}
+   	  			\caption{Intrinsically, searching a variation of a solution $\phi_0\in \Sol$ which solve the disturbed motion equation is equivalent to find the intersection $U_{\gamma_0}\cap\ker(P_\epsilon)$ of the perturbed solutions with a local neighbourhood of $\gamma_0$.}
 		\end{figure}		
 		
 		The crucial point of the Peierls' procedure  is to select among all the possible solutions of the perturbed motion $P_\epsilon$ that configuration which can be constructed by a variation of a given solution of the non-perturbed dynamics $\gamma_0 \in \Sol$.

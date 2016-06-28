@@ -20,17 +20,17 @@
 		\end{equation}
 		where $\dot{\gamma}^\mu \coloneqq \frac{d \gamma^\mu}{d t}$ is the tangent vector to the curve.
 	\end{definition}
-	
+
 
 		In local chart the previous equation assumes the well-known expression:
 		\begin{equation}\label{GeodesicEquation}
 			\ddot{\gamma}^i + \Gamma^i_{\, j k} \dot{\gamma}^j \dot{\gamma}^k = 0
 		\end{equation}
 		where $ \Gamma^i_{\, j k}$ is the coordinate representation of the Christoffel symbols of the connection.
-		
+
 		Equation (\ref{GeodesicEquation}) admits a well-posed Cauchy problem.
 		\begin{theorem}
-			Let $M$ be a smooth manifold, $p\in M$, $v \in T_p M$. 
+			Let $M$ be a smooth manifold, $p\in M$, $v \in T_p M$.
 			Then there exist $\epsilon>0$ and precisely one geodesic
 			\begin{displaymath}
 				c: [0,\epsilon]\rightarrow M
@@ -43,31 +43,31 @@
 		\end{proof}
 
 	\vspace{4mm}
-	%Definizione metrica di geodetica su varietà riemmaniana( con connessione di levi civita)	
-	In presence of a pseudo-Riemannian metric it is possible to present the geodesic %in a metric sense i.e. 
+	%Definizione metrica di geodetica su varietà riemmaniana( con connessione di levi civita)
+	In presence of a pseudo-Riemannian metric it is possible to present the geodesic %in a metric sense i.e.
 	as the curve extremizing the \emph{Energy Functional}\footnote{Remember that for arc-length parametrized curves the Energy functional coincides with the length functional.\cite[Lemma $1.4.2$ ]{Jost2005}}:
 	\begin{definition}[Energy Functional]
   	\begin{equation}\label{EnergyFunctional}
   		H: C^1\left(\left[a,b\right],Q\right) \rightarrow \Real \qquad
  		H(\gamma) \coloneqq \int_a^b \left\Vert \frac{d \gamma}{dt} (t)\right\Vert^2 dt
  	\end{equation}
-\end{definition} 	
+\end{definition}
 	Considering only the proper variations (that keep the end-point fixed), the extremum condition corresponds to equation \ref{GeodesicEquation} where $\nabla$ is the unique Levi-Civita connection (torsion-free and metric-compatible).\cite{Jost2005}
 
 	\vspace{4mm}
 		%Problema di Jacobi, deviazione geodetica e legame alla curvatura
-	In general relativity the problem of the 
+	In general relativity the problem of the
 	linearization of the geodesic equation yields the Jacobi equation which takes
 	%geodesic equation linearization, named \emph{Jacobi equations} takes
 	 a central role. \footnote{Usually in this context takes the name of \emph{Geodesic deviation} problem\cite[pag. 46]{Wald1984} inasmuch Jacobi field describes the difference between the geodesic and an "infinitesimally close" geodesic.}
-	
+
 	\begin{definition}[Jacobi Field]
 	We call a \emph{Jacobi field} along the geodesic $\gamma$ the tangent vector field over the submanifold $\gamma(t,\tau)$, determined by  a smooth one parameter family of geodesics $ \gamma_\tau$ ( with $\gamma_0=\gamma$), in respect to the $\tau$ coordinate. \textit{i.e.}:
 	\begin{displaymath}
 	 J = \left. \frac{\partial \gamma_\tau (t)}{\partial \tau}\right\rvert_{\tau=0}
 	\end{displaymath}
 	\end{definition}
-	
+
 		In local charts, a Jacobi field along the geodesic $\gamma$ is solution of a linear ODE:
 		\begin{equation}\label{JacobiEquationComponents}
 			\big( X''\big)^\mu + R^\mu_{i \alpha \j} T^i X^\alpha T^j =0
@@ -78,22 +78,22 @@
 			\item $T \equiv \dot{\gamma}(t)$ stands for the tangent vector to $\gamma$.
 			\item $R^\mu_{i \alpha \j}$ are the representation in components of the Riemann curvature tensor,
 		\end{itemize}
-	
+
 	The rest of this chapter will be devoted to discussing geodesic and Jacobi fields
-	% the presentation of the approach to geodesic and Jacobi problem 
+	% the presentation of the approach to geodesic and Jacobi problem
 	as a physical system.
 
 
 \section{Geodesic Problem as a Mechanical Systems}\label{GeodesicMechanics}
 	% Da quanto detto in introduzione ha un odore molto forte il legame  dell'equazione geodetica con l'equazione del moto di un punto su una varietà e dell' funzionale lunghezza come versione con il prinicpio di minima azione
 	The basic idea is very simple, to portray the geodesic curve as the natural motion of a free point particle constrained on the Pseudo-Riemannian manifold $Q$.
-	
+
 	\begin{remark}
 	In terms of general relativity this problem can be instantly recognized as the derivation of the motion of free-falling particles.
 	\\
 	However, there is no lack of alternative viewpoints .
 	The framework of the classical \emph{geometric mechanics} taught us to picture the "static" configurations of a constrained, complex, classical system as a point on the \emph{Configuration space}.
-	% manifold. 
+	% manifold.
 	According to that, the geodesic motion can be seen as a realization of a particular dynamics on a mechanical system with a pseudo-Riemannian configuration space\footnote{Such systems can be depicted as "geodesic" even in presence of a position-dependant potential.\cite[Cap 3.7]{Abraham1978}}.
 	\end{remark}
 
@@ -105,7 +105,7 @@
 		\begin{equation}
 			L(V_q) \coloneqq \frac{1}{2} g_q(V,V)
 		\end{equation}
-	\end{proposition}	
+	\end{proposition}
 	\begin{proof}
 		%	 The Euler-Lagrange equation of $L$ coincides with the geodesic equation \ref{GeodesicEquation}.
 		%	 \danger.. è sul quaderno non so se metterla (ho dovuto staccare i foglio per portarmeli a lecce!) ora sono pinzati al quanderno 2
@@ -126,7 +126,7 @@
 		\end{displaymath}
 		Multiplying for the inverse of the metric we find:
 		\begin{displaymath}
-			g^{l k} g_{k j } \ddot{q}^j \equiv \ddot{q}^l = \frac{1}{2} g^{l k} \left( \frac{\partial g_{i j}}{\partial q^k} - \frac{\partial g_{k j}}{\partial q^i}- \frac{\partial g_{k i}}{\partial q^j}\right) \dot{q}^i \dot{q}^j 
+			g^{l k} g_{k j } \ddot{q}^j \equiv \ddot{q}^l = \frac{1}{2} g^{l k} \left( \frac{\partial g_{i j}}{\partial q^k} - \frac{\partial g_{k j}}{\partial q^i}- \frac{\partial g_{k i}}{\partial q^j}\right) \dot{q}^i \dot{q}^j
 			= - \Gamma^l_{\, i j} \dot{q}^i \dot{q}^j
 		\end{displaymath}
 		where in the last equation we have recognized the expression of Christoffel symbols in term of the Riemannian metric.
@@ -152,29 +152,29 @@
 	\begin{proof}
 		It is a simple application of the correspondence seen in chapter \ref{MechanicsAsAField}.
 	\end{proof}
-	
+
 	From this perspective it is clear that the energy functional corresponds to the action of the geodesic field dynamics and equation \ref{GeodesicEquation} is nothing more than the equations of motion according to the \emph{least action principle}.
 
 % \danger aggiungere!!!
 %		\begin{figure}[h!]
 %		 \centering
-   	%\includegraphics[width=0.5\textwidth]{Pictures/Linearization} 
+   	%\includegraphics[width=0.5\textwidth]{Pictures/Linearization}
    	% (credo sia la figura pagina 1 del quaderno 2)
 %	 	 \caption{Impressionistic view of the geometric mechanics structure.}
-%		\end{figure}		
+%		\end{figure}
 
 
 \section{Peierls Bracket of the Geodesic field}
 	The local coordinate expression for the Lagrangian density of the geodesic field is:
 	\begin{equation}
 		\Lagrangian\big(t,\gamma^i(t), \dot{\gamma}^i(t) \big)\coloneqq \frac{1}{2}g_{\mu,\nu}\left(\gamma^i\left(t\right)\right)\dot{\gamma}^\mu \dot{\gamma}^\nu
-	\end{equation}		
+	\end{equation}
 	which is highly non-linear. \\
-	It is explicitly quadratic in the velocity components $\dot{\gamma}^i$ and implicitly, through $g_{\mu\nu}(\gamma^i(t))$, non-polynomial in the %curve 
+	It is explicitly quadratic in the velocity components $\dot{\gamma}^i$ and implicitly, through $g_{\mu\nu}(\gamma^i(t))$, non-polynomial in the %curve
 	coordinates $\gamma^i$.
 	\\
 	As shown in section \ref{Section:NonLinearPeierls}, for this type of systems the calculation of the Peierls bracket can be realized only locally around a predetermined solution.
-	
+
 	\myVspace
 	Let us repeat the Peierls' procedure for the system under investigation.
 	\\
@@ -183,7 +183,7 @@
 			Q_\Lagrangian \big(q^\mu 	\big)= \biggr[\ddot{q}^\mu + \Gamma^\mu_{\, i j}\dot{q}^i \dot{q}^j	\biggr]
 		\end{equation}
 	where $\dot{q}^\mu = \frac{d}{dt}q^\mu(t)=\dot{q}^i\partial_i q^\mu$.
-	
+
 	A linear variation of $q_0^\mu +\epsilon \eta^\mu$ constructed from the coordinate representation $q_0^\mu$ of the geodesic $\gamma_0 \in \Sol$, solves the original equations of motion when
 	\begin{equation}\label{GeodesicJacobation1}
 		Q_\Lagrangian \big( q_0^\mu +\epsilon \eta^\mu \big) = \frac{d^2}{dt^2}\biggr( q_0^\mu +\epsilon \eta^\mu \biggr) +
@@ -193,19 +193,19 @@
 	\begin{displaymath}
 		\biggr[ \Gamma^\mu_{\, i j}\big( \vec{q_0} + \epsilon \vec{\eta}\big) \biggr] =
 		\biggr[ \Gamma^\mu_{\, i j}( \vec{q_0}) + \epsilon \eta^\alpha\big( \partial_\alpha  \Gamma^\mu_{\, i j} \big)\biggr\vert_{\vec{q_0}} + o(\epsilon) \biggr]
-	\end{displaymath}	 
-	
+	\end{displaymath}
+
 	Collecting all the terms in equation \ref{GeodesicJacobation1} up to the first order in $\epsilon$ it follows a condition on the perturbation:
 	\begin{align}\label{Eq:JacobiPeierlsEquation}
 	0 &= \ddot{\eta}^\mu + \eta^\alpha\big( \partial_\alpha  \Gamma^\mu_{\, i j} \big)\biggr\vert_{\vec{q_0}} \dot{q_0}^i \dot{q_0}^j  +  \Gamma^\mu_{\, i j} \big(\dot{\eta}^i \dot{q_0}^j + \dot{q_0}^i \dot{\eta}^j \big)= \nonumber \\
 	&=\biggr\{ g^\mu_{\,\alpha} \frac{d^2}{dt^2} +
-	 \Gamma^\mu_{\, i \alpha}(\vec{q_0})\big[2 \dot{q_0}^i \frac{d}{dt} \big] + 
+	 \Gamma^\mu_{\, i \alpha}(\vec{q_0})\big[2 \dot{q_0}^i \frac{d}{dt} \big] +
 \big[ \partial_\alpha \Gamma^\mu_{\, i j}(\vec{q_0}) \dot{q_0}^i \dot{q_0}^j  \big] \biggr\} \eta^\alpha	= P^\mu_{\: \alpha} \eta^\alpha
-	\end{align}		
+	\end{align}
 	where $ P^\mu_{\: \alpha}$ is a linear partial differential operator acting on the \emph{variations} \textit{,i.e.,} the components of a field along the geodesic $\gamma_0$.\\
 	As showed in section \ref{Section:NonLinearPeierls}, equating the linearized dynamics operator with the term $-\left(Q_\chi(\gamma_0)\right)(x)$ 	(see equation \ref{PeierlJacobiEqNonLin}) leads to the inhomogeneous \emph{Jacobi operator} from which all the standard construction of the brackets Peierls follows.
 
-	
+
 	\begin{proposition}
 		The differential equation $$P^\mu_{\: \alpha} \eta^\alpha=0$$ corresponding to the l.p.d.o. $P$ defined in equation \ref{GeodesicJacobation1} corresponds to equation \ref{JacobiEquationComponents} defining  the \emph{Jacobi fields} along the geodesic $\gamma_0$.
 	\end{proposition}
@@ -237,10 +237,10 @@
 			X^\alpha\left(\partial_\alpha\Gamma^{\mu}_{\, i j}\right)T^i T^j + \Gamma^\mu_{\, \alpha i}\left(2 T^i \dot{X}^\alpha \right)
 			- \frac{d}{dt}\left( \Gamma^\mu_{i \alpha} T^i X^\alpha \right) - T^j \Gamma^\mu_{\, j s} \Gamma^s_{\, i \alpha} T^i X^\alpha
 			\right) =\\
-			&=			
+			&=
 			-\left(
 			X^\alpha\left(\partial_\alpha\Gamma^{\mu}_{\, i j}\right)T^i T^j - \dot{\Gamma}^\mu_{i \alpha} T^i X^\alpha
-			- \Gamma^\mu_{i \alpha} \dot{T}^i X^\alpha  - T^j \Gamma^\mu_{\, j s} \Gamma^s_{\, i \alpha} T^i X^\alpha				
+			- \Gamma^\mu_{i \alpha} \dot{T}^i X^\alpha  - T^j \Gamma^\mu_{\, j s} \Gamma^s_{\, i \alpha} T^i X^\alpha
 			\right)
 		\end{align*}
 		remembering that the geodesic condition is still to be met:
@@ -253,23 +253,23 @@
 			- \left(
 			  X^\alpha\left( \partial_\alpha\Gamma^\mu_{\, i j}\right)T^i T^j
 			- T^j \left( \partial_j \Gamma^\mu_{\, i \alpha}\right) T^i X^\alpha
-			+X^\alpha \Gamma^\mu_{\, \alpha s} \Gamma^s_{\, i j}T^i T^j 
+			+X^\alpha \Gamma^\mu_{\, \alpha s} \Gamma^s_{\, i j}T^i T^j
 			- T^j \Gamma^\mu_{\, j s} \Gamma^s_{\, i \alpha} T^i X^\alpha
 			\right) =\\
-			&=	-\left( R^\mu_{\, i \alpha j}T^i X^\alpha T^j\right)		
+			&=	-\left( R^\mu_{\, i \alpha j}T^i X^\alpha T^j\right)
 		\end{align*}
 	\end{proof}
-	
-	
 
-	
-	
+
+
+
+
 
 \subsection{Example: Geodesic field on FRW spacetime}
 \ifToninus
 	\begin{Warning}
-	% qui i conti li devo ancora fare, 
-	l'idea è che per scelta di metrica e geodetica semplici le equazioni di jacobi possono essere disaccoppiate a dare 4 ode di cui in linea di principio posso calcolare la funzione di green	
+	% qui i conti li devo ancora fare,
+	l'idea è che per scelta di metrica e geodetica semplici le equazioni di jacobi possono essere disaccoppiate a dare 4 ode di cui in linea di principio posso calcolare la funzione di green
 
 	\myVspace
 	Per Ripasso di FRW: \url{http://universeinproblems.com/index.php/Friedman-Lemaitre-Robertson-Walker_(FLRW)_metric#Problem_1:_expanding_baloon}
@@ -284,16 +284,16 @@
 			\item Do espressione in coordinate per il campo di Jacobi
 			\item Verifico che trovo 4 equazioni Disaccoppiate (credo che sarà necessario mettersi nelle coordinate che dice Wiki)
 			\item calcolo le 2 soluzioni omogenee per ogni componente
-			\item ricordare cos'è l'operatore di green in generale, se l'op è diagonale ricordare come si semplifica (cioè ho 4 op di green per ogni ode), ricordare cos'è l'op di green per una ODE (cioè operatore  a nucleo integrale, il nucleo è detto 
+			\item ricordare cos'è l'operatore di green in generale, se l'op è diagonale ricordare come si semplifica (cioè ho 4 op di green per ogni ode), ricordare cos'è l'op di green per una ODE (cioè operatore  a nucleo integrale, il nucleo è detto
 			\item Criterio per il calcolo delle green per delle ODE lineari di secondo ordine
 			\item realizzo il calcolo per ogni componente di jacobi
 			\item realizzo l'op di green (dovrebbe dipendere dalla geodetica da cui sono partito ) è dico come va inserito per ottenere il disturbo
 			\item limitandosi al caso di densità lagrangiane lineari trovo il disturbo e le peierls
 		\end{enumerate}
 	\end{Warning}
-\fi	
+\fi
 	Let us compute the Peierls' bracket for the single special case of geodesic motion on Friedmann–Lemaître–Robertson–Walker spacetimes (FRW).
-	
+
 	We recall that the FRW spacetimes are homogeneous and isotropic solutions of Einstein's equations.
 	These manifolds are endowed with a line element of the form:
 	\begin{equation}\label{EQ: metrica FRW}
@@ -301,12 +301,12 @@
 	\end{equation}
 		where $0 < a(t) \in C^\infty	(I)$ is said \emph{scale factor}, $I \subset \Real$ is the time domain and $k$ is a constant normalizable to $\pm 1$ or $0$.\\
 		The assumptions of homogeneity and isotropy alone determine the spacetime metric up to the value of the scale factor $a$ and up to three possibilities of spatial geometry.
-		The simply connected spacetimes compatibile with \ref{EQ: metrica FRW} are topologically equivalent (diffeomorphic) 		
+		The simply connected spacetimes compatibile with \ref{EQ: metrica FRW} are topologically equivalent (diffeomorphic)
 		to $\Real \times \Sigma$ where $\Sigma$ is a 3D manifold which depends on the value of $k$:
 		\begin{center}\begin{tabular}{l l}
 			$k = 1$ & $\Sigma \simeq S^3$ (3-sphere)\\
 			$k = 0$ & $\Sigma \simeq \Real^3$ (three-dimensional Euclidean space)\\
-			$k = -1$ & $\Sigma \simeq H^3$ ( three-dimensional hyperboloid)\\		
+			$k = -1$ & $\Sigma \simeq H^3$ ( three-dimensional hyperboloid)\\
 		\end{tabular}\end{center}
 		\myVspace
 \ifToninus
@@ -338,14 +338,14 @@
 				\Gamma^i_{\, i 0} &= \Gamma^i_{\, 0 i} = \dfrac{\dot{a}}{a}
 			\end{align}
 			where we have used the usual convention to express with latin indices the spatial coordinates, with $0$ the time coordinate and with Greek indices all the spacetime coordinates.
-			
+
 			In the cosmological coordinate chart the geodesic equation reads:
 			\begin{eqnarray}
 				\frac{d^2}{d \tau^2} \gamma^0 &= - a \dot{a} \left( \frac{d}{d \tau} \gamma^i \frac{d}{d \tau}\gamma_i \right) \label{FRWGeo1}\\
-				\frac{d^2}{d \tau^2} \gamma^i &= - 2 \dfrac{\dot{a}}{a} \left( \frac{d}{d \tau} \gamma^0 \frac{d}{d \tau}\gamma^i \right) 		\label{FRWGeo2}	
+				\frac{d^2}{d \tau^2} \gamma^i &= - 2 \dfrac{\dot{a}}{a} \left( \frac{d}{d \tau} \gamma^0 \frac{d}{d \tau}\gamma^i \right) 		\label{FRWGeo2}
 			\end{eqnarray}
-			
-			Jacobi fields are dependant on the choice of a base geodesic. 
+
+			Jacobi fields are dependant on the choice of a base geodesic.
 			Let us consider a simple time-like geodesic, namely the \emph{cosmological} free-falling observer:
 			\begin{displaymath}
 				\gamma^\mu (t) = \begin{bmatrix}  a_0 + m t \\  a_1 \\ a_2 \\ a_3  \end{bmatrix}
@@ -363,41 +363,41 @@
 				  {\partial{\Gamma^\sigma}_{\mu\nu} \over \partial x^\kappa} -
 				  {\partial{\Gamma^\sigma}_{\mu\kappa} \over \partial x^\nu} +
 				  {\Gamma^\lambda}_{\mu\nu}{\Gamma^\sigma}_{\kappa\lambda} -
-				  {\Gamma^\lambda}_{\mu\kappa}{\Gamma^\sigma}_{\nu\lambda}		
-			\end{displaymath}			 
+				  {\Gamma^\lambda}_{\mu\kappa}{\Gamma^\sigma}_{\nu\lambda}
+			\end{displaymath}
 			we find by direct computation  that the non vanishing components are:
 			\begin{equation}
 				R^0_{\: i 0 i}= - R^{0}_{\: i i 0}= a \ddot{a} \qquad
 				R^i_{\: 0 0 i}=-R^i_{\: 0 i 0}=	\dfrac{\ddot{a}}{a}\qquad
-				R^i_{\: j i j} = - R^i_{\: j j i} = \dot{a}^2				
+				R^i_{\: j i j} = - R^i_{\: j j i} = \dot{a}^2
 			\end{equation}
 			Since we have parametrized the curve with $x^0 = t$ the covariant derivative in Eq. \ref{JacobiEquationComponents}  corresponds to an ordinary derivative, then a Jacobi $X^\mu(t)$ along the time-like geodesic $\gamma(t)$ satisfies the following uncoupled homogeneous equations:
 			\begin{eqnarray}
 				\frac{d^2}{d t^2} X^0  &=& 0 \label{FRWJacobi1}\\
-				\frac{d^2}{d t^2} X^i &= &- m^2 R^{\mu}_{\: 0 \nu 0} X^\nu = \left( m^2 \frac{\ddot{a}}{a}\right) X^i 	\label{FRWJacobi2}	
-			\end{eqnarray}			
+				\frac{d^2}{d t^2} X^i &= &- m^2 R^{\mu}_{\: 0 \nu 0} X^\nu = \left( m^2 \frac{\ddot{a}}{a}\right) X^i 	\label{FRWJacobi2}
+			\end{eqnarray}
 			\myVspace
-			
+
 			Regarding this problem as a field system, we can say that the operator $P$ ruling the dynamics is diagonal:
 			\begin{displaymath}
 				P X =
-				 \begin{bmatrix}  
+				 \begin{bmatrix}
 				 \left(\frac{d}{dt}\right)^2 & 0 \\
 				 0 & \IdOp \left( \left(\frac{d}{dt}\right)^2 - m^2 \frac{\ddot{a}}{a} \right)
 				 \end{bmatrix}
 				 \begin{bmatrix} X^0 \\ X^i  \end{bmatrix}
 				 = 0
 			\end{displaymath}
-			
+
 			The main difficulty to face in the explicit Peierls bracket construction is the computation of the Green operator of $P$.
 			In this case we can say with certainty that both Green operators are diagonal:
 			\begin{displaymath}
 				G^\pm =
-				 \begin{bmatrix}  
+				 \begin{bmatrix}
 				 G^\pm_0 & 0 \\
 				 0 & G^\pm_i
 				 \end{bmatrix}
-			\end{displaymath}		
+			\end{displaymath}
 			where $G^\pm_0$ and $G^\pm_i$ are the Green operators of the only two ODEs involved:
 			\begin{displaymath}
 				P_0 = \left(\frac{d}{dt}\right)^2 \qquad P_i=\left( \frac{d^2}{dt^2} - m^2 \frac{\ddot{a}}{a} \right)
@@ -407,40 +407,40 @@
 				G^\pm_\mu f(t) = \int_\Real g^\pm_\mu( t \vert \xi ) f(\xi) d\xi
 			\end{displaymath}
 			where the integral kernel function is given by  Equation \ref{Eq:AdvRetGreenFunction}.
-			
-			Eq. \ref{FRWJacobi1} is a linear autonomous ordinary differential equation, two explicit linearly independent solutions are 
+
+			Eq. \ref{FRWJacobi1} is a linear autonomous ordinary differential equation, two explicit linearly independent solutions are
 			\begin{displaymath}
 				\varphi_1(x)=1 \qquad \varphi_2(t)=t
-			\end{displaymath} 
+			\end{displaymath}
 			with $W(1,t)=1$. \\
 			The advanced and retarded Green functions corresponding to $P_0$ can be promptly computed:
 			\begin{equation}\label{SimpleGreenFunction}
 				g^\pm_0(t \vert \xi) = \pm \theta\big(\pm(t-\xi)\big) \left[ t -\xi\right]
 			\end{equation}
-			
+
 			At the same time, since the coefficient $m^2 \frac{\ddot{a}(t)}{a(t)}$ is in general time dependant,  Eq. \ref{FRWJacobi2} is a non autonomous ODE and an analytical expression of its general solution does not exist.
 \ifToninus
-	\begin{Warning}	
+	\begin{Warning}
 		Anche un'appendice sul calcolo delle green sfruttando lo sviluppo di Dyson e quello di Magnus ( Partendo come spunto dall'articolo \cite{Dappiaggi2014}) non sarebbe stata male. ma è venuto il tempo di concludere.
 	\end{Warning}
-\fi	
+\fi
 			\\
 			It is possible, however, to express the corresponding Green function as a convergent Dyson expansion\cite{Dappiaggi2014}.
 			The idea is to consider the non-autonomous term $V(t) = -m^2 \frac{\ddot{a}(t)}{a(t)}$ as if it were a perturbing potential.\\
 			Remembering that $G^\pm_0 (t \vert \xi)$ is the Green function of operator \ifToninus$P_{0}=\left(\frac{d}{dt}\right)^2$\else$P_0$\fi, which can be seen as the time-independent part of differential operator \ifToninus$P_{i i}=\left( \left(\frac{d}{dt}\right)^2 - m^2 \frac{\ddot{a}}{a} \right)$\else$P_i$\fi, we can formally express the Green function of $P_{i}$ as follow:
-			
+
 			\begin{align*}
-				G^+_i ( \tau \vert \tau' ) = G^+_0( \tau \vert \tau' ) + \sum_{n=1}^\infty (-)^n 
-				\int_{-\infty}^\tau dt_1 \cdots \int_{-\infty}^{t_{n-1}} dt_{n-1} 
+				G^+_i ( \tau \vert \tau' ) = G^+_0( \tau \vert \tau' ) + \sum_{n=1}^\infty (-)^n
+				\int_{-\infty}^\tau dt_1 \cdots \int_{-\infty}^{t_{n-1}} dt_{n-1}
 				& \,  G^+_0(\tau \vert t_1) G^+_0(t_1\vert t_2) \cdots G^+_0(t_{n-1} \vert t_n) \times \\
 				& \times  V(t_1) V(t_2) \cdots V(t_n) \times \\
 				& \times  G^+_0 (t_n \vert \tau' ) \\
-			\end{align*}		
+			\end{align*}
 			similarly $G^-_i$  can be obtained considering the advanced Green function $G^-_0$ and integrating from $t$ to $+\infty$.
 			In both cases the convergence of the series is not guaranteed and should be verified for each explicit expression of the scale function $a (t)$.
-			
+
 			\myVspace
-			\ifToninus Anyway all this machinery it is not necessary \fi In the special case of \emph{De Sitter} spacetime, where $ a(t) = \exp(H t)$ and the coefficient $\ddot{a}/a=H^2$ is a positive constant  \cite{Wald1984}, 
+			\ifToninus Anyway all this machinery it is not necessary \fi In the special case of \emph{De Sitter} spacetime, where $ a(t) = \exp(H t)$ and the coefficient $\ddot{a}/a=H^2$ is a positive constant  \cite{Wald1984},
 			two linearly independent solutions are given by
 			\begin{displaymath}
 				\varphi_1(x) = e^{-V t} \qquad \varphi_2(x)= e^{Vt}
@@ -456,21 +456,21 @@
 			\begin{align*}
 			\{X ,Y \} =&\int \left\langle X, \left(\GreenAdv - \GreenRet \right)Y \right\rangle dt =	\\
 			=&
-			\int_\Real dt  
-				 \begin{bmatrix}  
+			\int_\Real dt
+				 \begin{bmatrix}
 					 X^0(t) & \vec{X}(t) \\
 				 \end{bmatrix}
-				 \begin{bmatrix}  
+				 \begin{bmatrix}
 				 	-1 & 0 \\
 				 	0 & a^2(t)\IdOp
-				 \end{bmatrix}			
-				 \begin{bmatrix}  
+				 \end{bmatrix}
+				 \begin{bmatrix}
 				 	(G^-_0 - G^+_0) & 0 \\
 				 	0 & (G^-_i - G^+_i)
-				 \end{bmatrix}	
-				 \begin{bmatrix}  
+				 \end{bmatrix}
+				 \begin{bmatrix}
 				 	Y^0(t) \\ \vec{Y}(t)
-				 \end{bmatrix}	
+				 \end{bmatrix}
 				 = \\
 			=&
 				\int_\Real dt  \left(
@@ -489,17 +489,17 @@
 				X^0(t)Y^0(\xi)\left[t-\xi \right]				-
 				\vec{X}(t) \cdot \vec{Y}(\xi) \frac{a^2(t)}{2V}\left[ e^{V(t-\xi)} - e^{-V(t-\xi)}\right]
 				\right)
-			\end{align*}					
-		
+			\end{align*}
+
 
 \section{Algebraic quantization of the Geodesic Field}
 	The algebraic quantization scheme applies only to %linear field systems.
 	systems of linear fields.
 	Since equation\ref{GeodesicEquation} is highly non linear,  it is not the geodesic system that can actually be quantized but rather its linearization, the Jacobi field along a fixed geodesic $\gamma_0$.
-	
+
 		\subsubsection{Classical Framework}
 			The basic idea is that, chosen a geodesic $\gamma_0$, the kinematical configurations of the Jacobi fields are tangent fields along the fixed curves.
-			\paragraph{Kinematics}	
+			\paragraph{Kinematics}
 			The configuration bundle $E$ corresponds to the \emph{Pull-back bundle} $\gamma_0^*(TQ)$ of the tangent bundle along the geodesic $\gamma_0$.
 			Then:
 			\begin{itemize}
@@ -508,7 +508,7 @@
 				\item the fibers are $E_p \coloneqq T_{\gamma_0(p)}Q$
 				\item $\Conf = \Gamma^\infty(E) = \mathfrak{X}(\gamma_0)$ is constituted by vector fields along the curve $\gamma_0$.
 			\end{itemize}
-			
+
 			\paragraph{Dynamics}
 				The coordinate representation of the motion equation is:
 				\begin{displaymath}
@@ -516,7 +516,7 @@
 				\end{displaymath}
 				where $X\in \Conf$ and $T^i = \dot{\gamma_0}^i$.
 				According to equation \ref{Eq:NormallyHyperbolicRepresentation} this operator falls exactly in the class of \emph{normally hyperbolic} operators hence it is quantizable both by  means of Peierls procedure and by means of initial data.
-		
+
 		\subsection{PreQuantum Framework}
 		\subsubsection{Peierls Approach}
 			\paragraph{Pairing}
@@ -526,19 +526,19 @@
 					\left\langle X,Y \right\rangle_t \coloneqq g\left( X\left(\gamma_0(t) \right),Y\left(\gamma_0(t) \right)\right)
 					\qquad \forall X,Y \in E_t
 				\end{equation}
-				
+
 				It follows slavishly the definition of a pairing:
 				\begin{equation}
 					\left( X, Y \right) = \int_\Real \left\langle X,Y \right\rangle_t dt
 				\end{equation}
 				well-defined for every pair $X,Y \in \Conf$ such that $\supp(X) \cap \supp(Y)$ is compact.
-				
+
 				The operator $P$ ruling the dynamics is formally self-adjoint:
 				\begin{align*}
-				 ( Y, PX) &= \int Y_\mu PX^\mu dt= 
+				 ( Y, PX) &= \int Y_\mu PX^\mu dt=
 				 \int\left( Y_\mu \ddot{X}^\mu + Y_\mu R^\mu_{\, i \alpha j}T^i T^j X^\alpha \right)dt = \\
  				 &= \int\left( \ddot{Y}_\mu X^\mu + X_\mu R^\mu_{\, i \alpha j}T^i T^j Y^\alpha \right)dt =
-				 \int P Y_\mu X^\mu dt=( PY, X) 				 				 
+				 \int P Y_\mu X^\mu dt=( PY, X)
 				\end{align*}
 				where we have integrated by parts twice (the boundary value being null since the integrand is compactly supported) and we have exploited the curvature tensor identity:
 				\begin{equation}\label{Eq:CurvatureSimmetry}
@@ -546,7 +546,7 @@
 				\end{equation}
 
 			\paragraph{Classical Observables}
-				Replicating what has been done in the general case, 
+				Replicating what has been done in the general case,
 				we construct the \emph{pre-observables} as the functionals $F_f:\Conf \rightarrow \Real$ for all $f \in \Gamma_0(E)$ compactly supported fields along the geodesic $\gamma_0$:
 				\begin{equation}
 					F_f(X) = \int_\Real <X, f>_t dt \qquad \forall X \in \Conf
@@ -561,7 +561,7 @@
 				 F_{[f]}(X) = F_f (X) \qquad \forall X \in \Sol
 				\end{displaymath}
 				where $f$ is a representative of the equivalence class $[f]\in \Obs$.
-			
+
 			\paragraph{Symplectic Structure}
 				The geodesic motion is a particular case of a system with finite degrees of freedom, thus the Peierls brackets between two Lagrangian functionals $\chi, \omega$ around a geodesic $\gamma_0$ tested on a function $f \in C_0^\infty(\Real)$ are given by Eq.  \ref{EspressionePeierlsCampiCurve}.\\
 				Restricting the definition to the simplest Lagrangian functionals constructible from the classical observables:
@@ -584,8 +584,8 @@
 				\begin{displaymath}
 					\tau( [\chi], [\omega]) = \{\chi , \omega \} =\int \left\langle\chi, \left(\GreenAdv - \GreenRet \right)\omega \right\rangle dt = ( \chi, E \omega) \qquad \forall \chi,\omega \in \Gamma_0(E)
 				\end{displaymath}
-				
-				
+
+
 		\subsubsection{Initial data Approach}
 			\paragraph{Classical Phase Space}
 				The base manifold for the configuration bundle under examination is the real line $\Real$ that can be seen as a degenerate globally hyperbolic spacetime.
@@ -600,18 +600,18 @@
 					\Phase \simeq \Sol
 				\end{displaymath}
 				using the map which yields the unique solution starting from an initial data.
-				
-			\paragraph{Symplectic Structure on the Phase Space}		
+
+			\paragraph{Symplectic Structure on the Phase Space}
 				The general definition \ref{Def:InitialDataSymplecticForm} of the symplectic form on the classical phase space reduces to:
 				\begin{displaymath}
-					\Omega: \Phase(p) \times \Phase(p) \rightarrow \Complex \qquad : \qquad 					
-					\Omega \biggr\{ [V_0,V_1] , [W_0, W_1] \biggr\} = g(V_1,W_0)  - g( V_0, W_1) 
+					\Omega: \Phase(p) \times \Phase(p) \rightarrow \Complex \qquad : \qquad
+					\Omega \biggr\{ [V_0,V_1] , [W_0, W_1] \biggr\} = g(V_1,W_0)  - g( V_0, W_1)
 				\end{displaymath}
 				where $g$ is the inner product on $Q$.
 				\\
 				This formula can be transferred to the space of solutions:
 				\begin{displaymath}
-					\sigma_p: \Sol \times \Sol \rightarrow \Complex \qquad : \qquad 					
+					\sigma_p: \Sol \times \Sol \rightarrow \Complex \qquad : \qquad
 					\sigma_p \biggr\{X, Y  \biggr\} = \Omega \biggr\{ [Y(t), D_t Y(t)] , [X(t), D_t X(t)] \biggr\}
 				\end{displaymath}
 				\myVspace
@@ -619,8 +619,8 @@
 				Taken $X,Y \in \Sol$ two Jacobi fields on $\gamma_0(t)$, a scalar field over $\Real$ can be defined:
 				\begin{displaymath}
 					J(t) \coloneqq \Omega \biggr\{ [Y(t), D_t Y(t)] , [X(t), D_t X(t)] \biggr\}
-					= X^\alpha(t) g_{\alpha \beta} D_t Y^\beta(t) - 
-					Y^\alpha(t) g_{\alpha \beta} D_t X^\beta(t) 					
+					= X^\alpha(t) g_{\alpha \beta} D_t Y^\beta(t) -
+					Y^\alpha(t) g_{\alpha \beta} D_t X^\beta(t)
 				\end{displaymath}
 				where $D_t = T^\mu \nabla_\mu$ as usual.
 				This is clearly a conserved current:
@@ -635,10 +635,10 @@
 				\end{displaymath}
 			In others words:
 			\begin{displaymath}
-				\sigma_\Sigma (X, Y) = \sigma_{\Sigma'} (X, Y) 
+				\sigma_\Sigma (X, Y) = \sigma_{\Sigma'} (X, Y)
 				\qquad \forall X, Y \in \Sol \; ; \; \forall \Sigma, \Sigma' \in \CauchyClass(M)= \Real
 			\end{displaymath}
-			
+
 				\vspace{3.5mm}
 				In conclusion, according to the initial data procedure,  the classical symplectic space is the pair $(\Sol, \sigma)$ such that:
 				\begin{displaymath}
@@ -650,16 +650,16 @@
 		The two procedures yield two different classical symplectic spaces: $(\Obs,\tau)$ and $(\Sol, \sigma)$.
 		We have proved in section \ref{Section:LinkBetweenQuantization} (Theorem \ref{Teo:IsomorphismBetweenTheTwoSymplectic}) that the two vector spaces are isomorphic through the map $\Xi$ realized with the causal propagator $E$ .
 		Furthermore, in this case it can be proved that $\Xi$ preserves the symplectic form.
-		
+
 		Once again we mimic what has been done for the case of a scalar field (Ex \ref{Ex:SimplettomorphismPhaseSpace}).\\
 		Consider two compactly supported vector fields $f,h \in \Gamma_0(E)$ along $\gamma_0$	and call $X= Ef,\: T = Eh$ the corresponding Jacobi field.
 		From the definition of $\tau$ it follows:
 		\begin{align}
 			\tau\big( [f], [g] \big) =& (f, Eh) = \int_\Real f^\mu g_{\mu \nu} ( E h)^\nu dt =
-					\int_\Sigma^\infty  f^\mu g_{\mu \nu} Y^\nu dt	 + 
+					\int_\Sigma^\infty  f^\mu g_{\mu \nu} Y^\nu dt	 +
 					\int_{-\infty}^\Sigma  f^\mu g_{\mu \nu} Y^\nu dt
 			\nonumber \\
-			=& \int_\Sigma^\infty (P \GreenAdv f)^\mu g_{\mu \nu} Y^\nu dt	 + 
+			=& \int_\Sigma^\infty (P \GreenAdv f)^\mu g_{\mu \nu} Y^\nu dt	 +
 					\int_{-\infty}^\Sigma (P \GreenRet f)^\mu g_{\mu \nu} Y^\nu dt
 		\end{align}
 		where the integral has been decomposed by splitting the domain of integration into two subsets whose intersection has zero measure and we have exploited the properties of the retarded and advanced operators.
@@ -667,24 +667,24 @@
 		Considering the explicit representation of the operator $P$, we can integrate by parts twice:
 		\begin{align}
 			&\int_\Sigma^\infty (P \GreenAdv f)^\mu g_{\mu \nu} Y^\nu dt = \int_\Sigma^\infty \left( D_t^{\,2} \GreenAdv f +R(\GreenAdv f,T)T \right)^\mu g_{\mu \nu} Y^\nu dt \quad = \nonumber \\
-			&= 
+			&=
 			 \int_\Sigma^\infty D_t \left( \left(D_t  \GreenAdv f \right)^\mu g_{\mu \nu} Y^\nu \right)dt -
 			 \int_\Sigma^\infty \left( D_t  \GreenAdv f \right)^\mu g_{\mu \nu} \left( D_t Y \right)^\nu dt \quad + \nonumber \\
 			 &\quad + \int_\Sigma^\infty \left( R( \GreenAdv f,T)T \right)^\mu g_{\mu \nu} Y^\nu dt \quad = \nonumber \\
-			&= 
+			&=
 			 - \left. D_t( \GreenAdv f)^\mu g_{\mu \nu} Y^\nu \right\vert_\Sigma -
 			 \int_\Sigma^\infty D_t \left( \left( \GreenAdv f \right)^\mu g_{\mu \nu} \left( D_t Y \right)^\nu \right)dt \quad + \nonumber \\
 			 &\quad + \int_\Sigma^\infty \big(
-			 (\GreenAdv f)^\mu g_{\mu \nu} (D_t^{\, 2}Y)^\nu + 
+			 (\GreenAdv f)^\mu g_{\mu \nu} (D_t^{\, 2}Y)^\nu +
 			 \left(R( \GreenAdv f,T)T \right)^\mu g_{\mu \nu} Y^\nu
 			 \big) dt	\quad =	 \nonumber \\
 			 &=
 			 -   \left. D_t( \GreenAdv f)^\mu g_{\mu \nu} Y^\nu \right\vert_\Sigma
 			 +  \left. ( \GreenAdv f)^\mu g_{\mu \nu} (D_t Y)^\nu \right\vert_\Sigma
 			 + \int_\Sigma^\infty \big(
-			 (\GreenAdv f)^\mu g_{\mu \nu} (P Y)^\nu 
+			 (\GreenAdv f)^\mu g_{\mu \nu} (P Y)^\nu
 			 \big) dt \quad =\nonumber \\
-			 &= 
+			 &=
 			 -   \left. D_t( \GreenAdv f)^\mu g_{\mu \nu} Y^\nu \right\vert_\Sigma
 			 +  \left. ( \GreenAdv f)^\mu g_{\mu \nu} (D_t Y)^\nu \right\vert_\Sigma
 		\end{align}
@@ -692,51 +692,52 @@
 
 		Combining the two above equations one concludes that:
 		\begin{align}
-		\tau\big( [f], [g] \big) =& 
+		\tau\big( [f], [g] \big) =&
 			 -   \left. D_t( \GreenAdv f)^\mu g_{\mu \nu} Y^\nu \right\vert_\Sigma
 			 +  \left. ( \GreenAdv f)^\mu g_{\mu \nu} (D_t Y)^\nu \right\vert_\Sigma \quad +
 		\nonumber \\
 			&+ \left. D_t( \GreenRet f)^\mu g_{\mu \nu} Y^\nu \right\vert_\Sigma
-			   -  \left. ( \GreenRet f)^\mu g_{\mu \nu} (D_t Y)^\nu \right\vert_\Sigma		
+			   -  \left. ( \GreenRet f)^\mu g_{\mu \nu} (D_t Y)^\nu \right\vert_\Sigma
 		 \quad =  \nonumber\\
-		=&\left. \left( E f \right)^\mu g_{\mu \nu} ( D_t Y)^\nu\right\vert_\Sigma	 
+		=&\left. \left( E f \right)^\mu g_{\mu \nu} ( D_t Y)^\nu\right\vert_\Sigma
 		-  \left.\left(D_t E f \right)^\mu g_{\mu \nu}  Y^\nu \right\vert_\Sigma	\quad = \nonumber \\
 		=& X_\mu(\Sigma) \left( D_t Y (\Sigma)\right)^\mu - \left(D_t X(\Sigma)\right)_\mu Y^\mu(\Sigma) \quad \equiv \sigma( X, Y)
 		\end{align}
 		$(\Obs, \tau)$ and $(\Sol, \sigma)$ are isomorphic not only as vector spaces but also as symplectic spaces.
 
-\section{Geometric approach}
 
+\FloatBarrier 
+\section{Geometric approach}
 
 	\subsection{Geometric picture of Peierls brackets}
 		%Prima dell'interpretazione vediamo l'illustrazione
 		Before addressing the formalization as geometric objects of the constituent parts of the Peierls' algorithm, let us provide a geometric visualization of the procedure explained in Section \ref{Section:PeierlsBrackets}.
-		
+
 		\subsubsection{General Construction on Linear system.}
 		As a starting point we consider a linear field system:
 
-		\vspace{1mm}		
+		\vspace{1mm}
 		\begin{minipage}{0.5\textwidth}
 			\includegraphics[width=\textwidth]{Pictures/GeometricPicture0}
 		\end{minipage}
 		\begin{minipage}{0.5\textwidth}
 			\begin{itemize}
-				\item The set $\Conf$, space of kinematic configurations, is a linear submanifold.\\
+				\item The set $\Conf$, space of kinematic configurations, is a linear space.\\
 					For the sake of simplicity we depict it as a plane, neglecting the complexities related to infinite-dimensional manifods.
 				\item Consequently, the space of solutions $ \Sol$ is a linear submanifolds, in our picture a line, containing the section $0$.
 			\end{itemize}
 		\end{minipage}
 		\vspace{1mm}\\
-			
-		We recall that the main character of the Peierls' procedure are the \emph{Lagrangian densities}, elements in $\Lag(E)$.
+
+		We recall that the main characters of the Peierls' procedure are the \emph{Lagrangian densities}, elements in $\Lag(E)$.
 		Abstractly, they are maps from kinematic configurations to volume forms on the spacetime. From a more practical point of view we are interested in its twofold nature:
 		\begin{itemize}
 			\item As the object ruling the dynamics, through the correspondence $\Lagrangian \mapsto Q_\Lagrangian$, or, eventually, as a disturbance on the fixed unperturbed Lagrangian.
 			\item As a quantity evaluable on the conformations of the system, through the correspondence  $\Lagrangian \mapsto  \mathcal{O}_\Lagrangian$.
 		\end{itemize}
-		
+
 		In the first instance, the Peierl's procedure considers a not necessarily linear fixed Lagrangian density $\chi\in \Lag(E)$. The only constraint is imposed on the support condition of $\chi$.\\
-		\vspace{1mm}		
+		\vspace{1mm}
 		\begin{minipage}{0.5\textwidth}
 			\includegraphics[width=\textwidth]{Pictures/GeometricPicture1}
 		\end{minipage}
@@ -752,7 +753,7 @@
 		\\
 		We have proved in Section \ref{Section:PeierlsConstruction} that such choice determines two particular variations of any fixed solution $\phi_0 \in \Sol$.
 
-		\vspace{1mm}		
+		\vspace{1mm}
 		\begin{minipage}{0.5\textwidth}
 			\includegraphics[width=\textwidth]{Pictures/GeometricPicture2}
 		\end{minipage}
@@ -765,18 +766,18 @@
 					determined by the fixed perturbation $\chi$.
 			\end{itemize}
 		\end{minipage}
-		\vspace{1mm}\\		
-	
+		\vspace{1mm}\\
+
 		In layman terms we can say that the quantity $Q_\chi \phi_0$ quantifies how much $\phi_0$ fails to be a solution of the disturbed equations of motion.
 		More explicitly :
 		\begin{displaymath}
 			P_\epsilon \phi_0 =  \cancel{P \phi_0} + \epsilon Q_\chi \phi_0
 		\end{displaymath}
-		
-		The subsequent step in the Peierls' procedure is the introduction of the effect operator. 
-		This object can be seen as a function, associated to the disturbance $\chi$, which maps any continuous fuctional $B$ on $\Conf$ to a functional $\EffectOp_\chi^\pm B$ on $\Sol$. 
 
-		\vspace{1mm}		
+		The subsequent step in the Peierls' procedure is the introduction of the effect operator.
+		This object can be seen as a function, associated to the disturbance $\chi$, which maps any continuous fuctional $B$ on $\Conf$ to a functional $\EffectOp_\chi^\pm B$ on $\Sol$.
+
+		\vspace{1mm}
 		\begin{minipage}{0.5\textwidth}
 			\includegraphics[width=\textwidth]{Pictures/GeometricPicture3}
 		\end{minipage}
@@ -788,10 +789,10 @@
 					We depict such quantity as a tangent vector to the surface $B$ but, more properly, it corresponds to the value of the inclination of this vector.
 			\end{itemize}
 		\end{minipage}
-		\vspace{1mm}\\	
+		\vspace{1mm}\\
 		All of this machinery has a rather simpler picture when the functional $B$ is linear.
 
-		\vspace{1mm}		
+		\vspace{1mm}
 		\begin{minipage}{0.5\textwidth}
 			\includegraphics[width=\textwidth]{Pictures/GeometricPictureLinear1}
 		\end{minipage}
@@ -804,16 +805,16 @@
 					In this case the dependence on the initial solution $\phi_0$ is accounted implicitly in the construction of perturbation $\eta_\pm(\phi_0)$.
 			\end{itemize}
 		\end{minipage}
-		\vspace{1mm}\\	
+		\vspace{1mm}\\
 
-		Finally, 
+		Finally,
 		considering two Lagrangian densities $\chi, \omega$ and the corresponding Lagrangian functional $ \mathcal{O}_\omega$, we achieve the Peierls brackets as:
 		\begin{displaymath}
 			\{\chi, \omega \}(\phi_0) \coloneqq \EffectOp_\chi^- \mathcal{O}_\omega (\phi_0) - \EffectOp_\chi^+ \mathcal{O}_\omega(\phi_0)
 		\end{displaymath}
 		According to our \ifToninus (\danger graphical? \danger)\fi geometric picture we can conclude that the Peierls brackets compute the difference between the slopes of the two function $\mathcal{O}_\omega ( \phi_\epsilon^\pm)$, which can be seen as a real function on the single variable $\epsilon$, calculated in $\epsilon=0$.
 		We stress again that $ \phi_\epsilon^\pm$ are not arbitrary but they are two specific variations associated to $\chi$ according to the Peierls' procedure.
-		
+
 		Thus, the brackets between $\chi$ and $\omega$ vanish in three cases:
 		\begin{enumerate}
 			\item The two curves $\mathcal{O}_\omega ( \phi_\epsilon^+)$ and $\mathcal{O}_\omega ( \phi_\epsilon^-)$ have the same derivative when evaluated in $\phi_0$.
@@ -827,7 +828,7 @@
 			Osservazione colta: nel punto 2 le Peierls sono nulle in quanto sto perturbando lungo una simmetria del sistema ( è qualcosa che ha a che fare con le costanti del moto della perturbazione.
 		\end{Warning}
 \fi
-		
+
 		In conclusion the Peierls brackets compute the quantity:
 		\begin{equation}\label{GlobalPeierls}
 			\mathcal{O}_\omega ( \phi_{\tiny \epsilon\chi}^+)  - \mathcal{O}_\omega ( \phi_{\tiny \epsilon\chi}^-) \simeq  \{\chi, \omega \}(\phi_0)  + o(\epsilon)
@@ -835,23 +836,23 @@
 		up to the first order, in the \ifToninus "small" \fi expansion parameter $\epsilon$, of a formal Taylor expansion.
 		The section $\phi_{\tiny \epsilon\chi}^\pm$ can be seen as the variation of a fixed unperturbed solution $\phi_0$ induced by a perturbation term $\epsilon \chi$ in the Lagrangian ruling the dynamics depending on whether such disturbance propagates forward or backward in time.
 		Thus the  quantity \ref{GlobalPeierls} is the difference between the change in the value of the Lagrangian functional $\mathcal{O}_\omega$ evaluated along  the perturbation propagating backward and forward.
-		
+
 		\begin{remark}
 		The above procedure could be generalized to non linear systems regarding it as a "Linearization".\\
 		The plane $\Conf$ depicted above can be seen as a formal tangent space to the non-linear manifold of the kinematic configurations.
 		While in the case of linear fields the manifold $\Conf$ is flat and essentially coincides with its unique tangent space, for general field systems  this correspondence can be admitted only locally.
-		\end{remark}		
+		\end{remark}
 \ifToninus
 	\begin{Warning}
 				In all of that calculus of variation will assume a pivotal role since the variations could be seen as tangent vectors over the manifold of  kinematic configurations.
 	\end{Warning}
-\fi	
-		
-		
+\fi
+
+
 		\subsubsection{Peierls brackets role in second quantization.}
 		The prequantum structure, in the procedure of quantization via Peierls brackets, requires to restrict ourselves from the set $\Conf$ of all the global sections to the space $\Gamma_0$ of compactly supported sections.
 
-		\vspace{1mm}		
+		\vspace{1mm}
 		\begin{minipage}{0.5\textwidth}
 			\includegraphics[width=\textwidth]{Pictures/compsupp_GeometricPicture0}
 		\end{minipage}
@@ -860,9 +861,9 @@
 				\item  For linear fields $\Gamma_0$ is still a linear space, we can keep the same representation of the preceding paragraph.
 			\end{itemize}
 		\end{minipage}
-		\vspace{1mm}\\					
+		\vspace{1mm}\\
 
-	In our picture, the  choice of a pairing 
+	In our picture, the  choice of a pairing
 	\begin{displaymath}
 		( \cdot , \cdot ) : \Gamma_0 \times \Gamma_0 \rightarrow \Real^+
 	\end{displaymath}
@@ -871,7 +872,7 @@
 
 	To summarize, to each $f\in \Gamma_0$ we associate:
 	\begin{enumerate}
-		\item a continuous linear functional 
+		\item a continuous linear functional
 				\footnote{ One should not be misled by the extreme simplification of our geometric visualization.
 				It must kept in mind that all the spaces involved are, at best, manifolds with uncountable dimensions.
 				Important results as the theorem of Riesz-Fréchet can not be taken in account.}
@@ -898,8 +899,8 @@
 	%
 	\vspace{2mm}\\
 	Let us visualize this construction in details.
-	
-		\vspace{1mm}		
+
+		\vspace{1mm}
 		\begin{minipage}{0.5\textwidth}
 			\includegraphics[width=\textwidth]{Pictures/compsupp_GeometricPicture1}
 		\end{minipage}
@@ -914,8 +915,8 @@
 			\end{itemize}
 		\end{minipage}
 		\vspace{1mm}
-		
-		Remembering that the solutions of a inhomogeneous differential problem can be built superposing solutions of the homogeneous problem with a "particular solution", 
+
+		Remembering that the solutions of a inhomogeneous differential problem can be built superposing solutions of the homogeneous problem with a "particular solution",
 		we can affirm that
 		\begin{displaymath}
 			\Sol_\epsilon = \left\lbrace \phi + \epsilon G^\pm \chi \quad \vert \phi \in \Sol \quad  \right\rbrace =
@@ -923,9 +924,9 @@
 		\end{displaymath}
 		and we can depict this space as a line parallel to $\Sol$.
 
-		
-		
-		\vspace{1mm}		
+
+
+		\vspace{1mm}
 		\begin{minipage}{0.5\textwidth}
 			\includegraphics[width=\textwidth]{Pictures/compsupp_GeometricPicture2}
 		\end{minipage}
@@ -939,19 +940,19 @@
 				This has been proved in Theorem:	\ref{Teo:IsomorphismBetweenTheTwoSymplectic} through the definition of the isomorphism $\Xi$.
 			\end{itemize}
 		\end{minipage}
-		\vspace{1mm}\\		
-	
+		\vspace{1mm}\\
+
 		The effect of disturbance $\chi$ on an arbitrary continuous linear functional is:
 		\begin{displaymath}
 			\EffectOp_\chi^\pm B (\phi_0)=B (\eta_\pm) = B ( G^\pm \chi) \qquad \forall \phi_0 \in Sol
-		\end{displaymath}		
+		\end{displaymath}
 		Considering instead the Lagrangian functional relative to $\omega \in \Gamma_0$ we find
 		\begin{displaymath}
 			\EffectOp_\chi^\pm F_\omega (\phi_0) = \left( \omega , G^\pm \chi \right)
 		\end{displaymath}
 		which leads to the pre-symplectic form $\tau$.
-		
-		\vspace{1mm}		
+
+		\vspace{1mm}
 		\begin{minipage}{0.5\textwidth}
 			\includegraphics[width=\textwidth]{Pictures/compsupp_GeometricPictureLinear}
 		\end{minipage}
@@ -961,14 +962,14 @@
 				\item The Lagrangian functional $B_\omega (\cdot) = (\omega, \cdot)$ correspondent to  $\omega \in \Gamma_0$  can be depicted as a plane which intersects plane $ x y$ along the normal to $\omega$.
 			\end{itemize}
 		\end{minipage}
-		\vspace{1mm}\\	
-	
+		\vspace{1mm}\\
+
 		In conclusion, according to our visualization, the brackets between $\chi$ and $\omega$ vanish when:
 		\begin{displaymath}
 		 \omega \perp E \chi \Longleftrightarrow \chi \perp E \omega
 		\end{displaymath}
 		where the perpendicularity condition is meant with respect to the inner product on $\Gamma_0$ induced by the pairing \ref{Def:Pairing}.
-		
+
 		\vspace{2mm}
 		Looking at the picture we can deduce that if $\omega$ is orthogonal to $\Sol_0$ the brackets are necessary null:
 			\begin{displaymath}
@@ -976,14 +977,14 @@
 			\end{displaymath}
 		Since $E\omega \in \Sol_0$ the equivalence above is met only if:
 		\begin{displaymath}
-		(\GreenAdv - \GreenRet) Q_\omega \phi_0= E \omega = 0 
+		(\GreenAdv - \GreenRet) Q_\omega \phi_0= E \omega = 0
 		\end{displaymath}
 		This is guaranteed from the condition $\ker(\mathcal{O}_\omega) \supset \Sol$.
 		In fact, when the functional $\mathcal{O}_\omega (\cdot) = ( \omega, \cdot): \Conf \rightarrow \Real$ is domain restricted to $\Sol$, it provides degenerate Euler-Lagrange equations: $\left. Q_\omega \right\vert_\Sol = 0$.
 
 \ifToninus
 		\begin{Warning}
-			Osservando la figura si potrebbe dedurre che 
+			Osservando la figura si potrebbe dedurre che
 			\begin{displaymath}
 				\omega \perp \Sol_0 \quad \Rightarrow \qquad \{\omega, \chi\} = ( \omega , E \chi)=0 \qquad \forall \chi \in \Gamma_0
 			\end{displaymath}
@@ -996,48 +997,48 @@
 				 0 = ( \omega , E \chi)=-( E\omega ,  \chi)\neq 0
 			\end{displaymath}
 			?\\
-			Non necessariamente! 0 è una soluzione e se 
+			Non necessariamente! 0 è una soluzione e se
 			\begin{displaymath}
 				E\omega= 0   \qquad \forall \omega \perp \Sol_0
 			\end{displaymath}
-			o in altre parole: 
+			o in altre parole:
 			\begin{displaymath}
-				(\omega, \phi) = 0 \quad \forall \phi \in \Sol_0  \qquad \Rightarrow  \quad(\GreenAdv - \GreenRet) Q_\omega \phi_0= 0 
+				(\omega, \phi) = 0 \quad \forall \phi \in \Sol_0  \qquad \Rightarrow  \quad(\GreenAdv - \GreenRet) Q_\omega \phi_0= 0
 			\end{displaymath}
 			Questo è ragionevole perchè il funzionale $\mathcal{O}_\omega (\cdot) = ( \omega, \cdot): \Conf \rightarrow \Real$ se ridotto di domino a $\Sol$ è identicamente nullo ( $\ker(\mathcal{O}_\omega) \supset \Sol$) e  dovrebbe dare $\left. Q_\omega \right\vert_\Sol = 0$.
-			\\ non sono sicuro che si possa fare così... 
+			\\ non sono sicuro che si possa fare così...
 		\end{Warning}
-\fi	
-	
+\fi
+
 		\subsubsection{Peierls Brackets of the Jacobi field}
 		Now we take a step further considering the Peierls brackets in the case of a Jacobi Fields.
 		\begin{figure}[h!]
-			\includegraphics[width=\textwidth]{Pictures/Jacobi_GeometricPicturePanoramica}	
-			\caption{ 
+			\includegraphics[width=\textwidth]{Pictures/Jacobi_GeometricPicturePanoramica}
+			\caption{
 			%Impressionistic representation of the Jacobi field system on a  2-dimensional Riemannian manifold $M$.\\
 			Below: the geometric structures encoding the "pre-quantum" Jacobi field.
 			\\
 			Above: a local chart representation of a Jacobi field $\vec{X}$ along a fixed geodesic $\gamma_0$ on a  2-dimensional Riemannian manifold $M$.
-			}	
-		\end{figure}				
+			}
+		\end{figure}
 
 		This example provides a testing ground to compare the two pre-quantization procedures showed in Chapter 3.\\
 		The crucial point is that the following correspondences:
 		\begin{displaymath}
-			(\chi) \in \Gamma_0 \quad \xmapsto{\Xi} \quad (E \chi) \in \Sol \quad \xmapsto{\vert_\Sigma} \quad 
+			(\chi) \in \Gamma_0 \quad \xmapsto{\Xi} \quad (E \chi) \in \Sol \quad \xmapsto{\vert_\Sigma} \quad
 			 \left(\left. E\chi \right\vert_\Sigma , D_t\left.\left( E \chi \right)\right\vert_\Sigma \right) \in\Data(\Sigma)
 		\end{displaymath}
 		\begin{displaymath}
 			 \left(\substack{a\\b}\right) \in\Data(\Sigma) \quad \xmapsto{\SolMap} \quad
-			 \left( \SolMap \left(\substack{a\\b}\right) \right)\in \Sol \quad \xmapsto{E^{-1}} \quad 
+			 \left( \SolMap \left(\substack{a\\b}\right) \right)\in \Sol \quad \xmapsto{E^{-1}} \quad
 			 \left( E^{-1}\SolMap \left(\substack{a\\b}\right) \right) \in \Gamma_0
 		\end{displaymath}
 		are symplectomorphism. This allows us to compare the symplectic form $\tau$ on $\Obs$ with the symplectic form $\Omega$ on $\Data(\Sigma)$.
-		
+
 		\vspace{2mm}
 		In order to obtain a more intuitive representation we limit ourselves to the most simple case of one-dimensional Riemannian manifolds.
 
-		\vspace{1mm}		
+		\vspace{1mm}
 		\begin{minipage}{0.5\textwidth}
 			\includegraphics[width=\textwidth]{Pictures/Jacobi1D_GeometricPicture0}
 		\end{minipage}
@@ -1049,8 +1050,8 @@
 				\item The tangent space to $T_P M$ corresponds to the tangent line to $M$ in $P$.
 			\end{itemize}
 		\end{minipage}
-		\vspace{1mm}\\	
-		
+		\vspace{1mm}\\
+
 		Briefly, to each smooth curve $\gamma$ we associate the ordinary smooth function $f(s) = \Psi \cdot \gamma (s)$.\\
 		In this case the metric is simply a smooth, non vanishing, function $g: M \rightarrow \Real$. The inner product between two "tangent vectors" is:
 		\begin{displaymath}
@@ -1084,7 +1085,7 @@
 		for all  $\psi \in \Sigma_0$.
 		The effect of the "advanced minus retarded" operator is:
 		\begin{displaymath}
-			( G^- -  G^+ ) \psi(s) =  -\int_\Real \left[ s -\xi\right] \psi(\xi) d\xi = 
+			( G^- -  G^+ ) \psi(s) =  -\int_\Real \left[ s -\xi\right] \psi(\xi) d\xi =
 			s \left[-\int_\Real \psi(\xi) d\xi \right] + \left[\int_\Real \xi \psi(\xi) d\xi \right]
 		\end{displaymath}
 		in agreement with the expected linear expression.
@@ -1093,20 +1094,20 @@
 		\end{Warning}\fi
 
 		\begin{figure}[h!]
-			\includegraphics[width=\textwidth]{Pictures/Jacobi1D_GeometricPicturePanoramica}	
-			\caption{ 
-			%Impressionistic representation of the Jacobi field system on a  2-dimensional Riemannian manifold $M$.\\
-			}	
-		\end{figure}		
+			\includegraphics[width=\textwidth]{Pictures/Jacobi1D_GeometricPicturePanoramica}
+			\caption{
+			Impressionistic representation of the PreQuantum structures associated to the Jacobi field system on a  2-dimensional Riemannian manifold $M$.
+			}
+		\end{figure}
 
-
+\FloatBarrier 
 	\subsection{Geometric Mechanics of Classical Fields}
 		%-------------------------------------------------------------------------------------------------------------------
 		% La scomessa della meccanica Geometrica
 		According to Lessing\cite{Lessig2012}, we call "geometric mechanics" the mathematical discipline which employs modern geometry to describe mechanical systems.
 		It is no secret that geometry is an intrinsic part of mechanics. For example the space of all admissible configurations of a ordinary mechanical system has the natural geometric structure of a manifold.
 		Therefore the bet of geometric mechanics is that is possible to attribute to every mechanical system a  \emph{phase space} together with the implicit claim that it is possible to reconstruct from this space each physically relevant quantity.
-		% relevant to the mechanics. 
+		% relevant to the mechanics.
 		In the spirit of \emph{coordinate-free canonical formalism}, the central object necessary and sufficient to encode the entire mathematical structure of a classical mechanical system is a \emph{symplectic manifold}.
 
 
@@ -1117,15 +1118,15 @@
 
 
 		%-------------------------------------------------------------------------------------------------------------------
-		%Si può fare una meccanica Geometrica per i campi?}	
+		%Si può fare una meccanica Geometrica per i campi?}
 		Because of the relation of Poisson brackets to quantization, the problem of the quantization of fields required the translation of the canonical formalism from mechanics to field theories (multiple independent variable instead of one).
-		One of the most annoying flaws of the usual canonical formalism in field theory is its lack of manifest covariance, that is the lack of explicit invariance under spacetime coordinate transformations (in the context of general relativity). 
-			
+		One of the most annoying flaws of the usual canonical formalism in field theory is its lack of manifest covariance, that is the lack of explicit invariance under spacetime coordinate transformations (in the context of general relativity).
+
 			This defect is built into the theory from the very beginning.
 			Since the usual \emph{Hamiltonian} canonical formalism represents the dynamical variables of classical field theory by functions on some spacelike hypersurface (Cauchy data) and provides differential equations for their time evolution off this hypersurface;
-			it presupposes a splitting of spacetime into space and time in the form of a foliation of spacetime into Cauchy surfaces.	
+			it presupposes a splitting of spacetime into space and time in the form of a foliation of spacetime into Cauchy surfaces.
 			As a result, canonical quantization leads to models of quantum field theory whose covariance is far from obvious and in fact constitutes a formidable problem.
-		
+
 		%-------------------------------------------------------------------------------------------------------------------
 		%Punto preliminare per realizzare questo progetto è il passaggio dal usual canonical formalism to the "covariant canonical formalism"
 		Luckily, the essence of the canonical formalism can be developed in a way that manifestly preserves all the relevant symmetries called "covariant canonical formalism.
@@ -1136,17 +1137,17 @@
 						To each point in the phase space it corresponds one and only one direction of the Hamiltonian flow.
 		\end{itemize}
 		This leads us to the central concept proposed by Crnkovic and Witten\cite{Crnkovic1999}
-		
+
 		\begin{definition}
 			We call \emph{Covariant Phase Space} of a system the space $( \Sol )$ of all of its solutions to the classical equations of motion,
-			in other words the space of classical trajectories of the system. 
+			in other words the space of classical trajectories of the system.
 		\end{definition}
-		
+
 		\begin{example}
 			Consider a non-relativistic particle propagating on a Riemannian manifold $X$ with the usual action functional.
 			A trajectory is uniquely fixed by the position $x_i \in X$ and the momentum $p\in T^*_x X$ of the particle at a given time, the ordinary Phase space is thus constituted by the pair $(x_i, p_i)$.
 			Correspondingly the space of all solutions and hence the (covariant) phase space of the system may be identified with the cotangent bundle $T^*X$ of $X$.
-			
+
 			Similarly, the covariant phase space of the relativistic particle on a (pseudo-) Riemannian manifold X is the space of geodesics of X (in the absence of a background gauge field).
 		\end{example}
 		Identifying points of the phase space with whole solutions of the equations of motion requires a conceptual shift in thinking about the time development of the system.
@@ -1155,7 +1156,7 @@
 
 		%-------------------------------------------------------------------------------------------------------------------
 		%la costruzione fatta con i dati iniziali è simile ma non covariante a vista!
-		Since these phase spaces are (locally) naturally parameterized by the suitable boundary conditions or choice of a Cauchy surface (which uniquely determine the corresponding history of the physical system), 
+		Since these phase spaces are (locally) naturally parameterized by the suitable boundary conditions or choice of a Cauchy surface (which uniquely determine the corresponding history of the physical system),
 		this construction is strictly related to the pre-symplectic structure proposed in the quantization "by initial data".
 		The “covariant” in “covariant phase space” is to indicate that it comes without any particular choice of Cauchy surface.
 
@@ -1166,32 +1167,32 @@
 		%-------------------------------------------------------------------------------------------------------------------
 		% Il nucleo del lavoro come presentato da crinkovic è il covariant phase space. di che si tratta?
 		% Ricordare che l'approccio di crinkovic porta alla definizione di una forma simplettica equivalente con quella costruita con il metodo di wald ma covariante.
-		% Il metodo di Peierls fornisce una seconda forma di Poisson e l'equivalenza ma tra le due non è ovvia. Khav l'ha provata per sistemi molto generali		
+		% Il metodo di Peierls fornisce una seconda forma di Poisson e l'equivalenza ma tra le due non è ovvia. Khav l'ha provata per sistemi molto generali
 		The “covariant functional formalism”, strongly advocated in the 1980’s by Crnkovic,Witten and Zuckerman,
 		is based on the constuction of a symplectic structure starting from a "covariant presymplectic current density"\cite{Crnkovic1999}\cite{Khavkine2014}.
 		This approach is slightly different from the construction "by initial data". A glimpse of such construction can be found in Example \ref{Ex:IndipendentPhaseSpace} where we have exhibited a conserved current in order to prove that the symplectic definited in \ref{Def:InitialDataSymplecticForm} is independent from the choice of the Cauchy surface
 		% senza scendere nei dettagli bisogna dire che il metodo del cov phase space si basa su un raffinamento del metodo di Wald, è covariantizzazione del metodo sui dati iniziali (notando l'isomorfismo tra dato e soluzione unica)
 		% Questo metodo fornisce una forma simplettica sullo spazio delle fasi covarianti allora il metodo di peierls va visto come se fornisse una forma di poisson su ciò che va rivisto come lo spazio degli "osservabili" nel senso di funzione che viene valutata su una configurazione
-		% l'equivalenza tra le due stutture l'abbiamo dimostrato per il campo scalare e jacobi sfruttando una corrente conservata.. proprio su un oggetto del genere è definita la costruzione di Crinko vedi crinko e khav	
+		% l'equivalenza tra le due stutture l'abbiamo dimostrato per il campo scalare e jacobi sfruttando una corrente conservata.. proprio su un oggetto del genere è definita la costruzione di Crinko vedi crinko e khav
 
 		\vspace{2mm}
 		%-------------------------------------------------------------------------------------------------------------------
 		% Come si ricollega tutto ciò a quanto fatto da noi?
 		A problem to address is how to frame the Peierls' construction inside the covariant Phase space formalism.
 		We have seen in Chapter 2 how the covariant phase space $\Sol$ can be embedded into the space of field configurations $\Conf$.
-			This embedding is characterized as the zero locus of the equations of motion. 
+			This embedding is characterized as the zero locus of the equations of motion.
 			While the bracket $\{\cdot,\cdot\}$ defined by Wald\cite{Wald1994}(see Def \ref{Def:InitialDataSymplecticForm}) and its covariant version on $\Sol$ (see \cite{Khavkine2014}) can be essentially be view as the \emph{symplectic form} of a phase space,
 			the Peierls algorithm is a recipe which provide a binary form on the space of Lagrangians.
-			Identificating $\Lag$ to the space of the Lagrangian functionals on $\Conf$ is easy to relate the Lagrangian densities to Hamiltonian functions of ordinary mechanics.			
+			Identificating $\Lag$ to the space of the Lagrangian functionals on $\Conf$ is easy to relate the Lagrangian densities to Hamiltonian functions of ordinary mechanics.
 			In this term is more correct to state that the form constructed by the Peierls' algorithm is indeed a non-degenerate Poisson structure on the algebra of functions defined on the covariant phase space.
 			% is given by the Peierls bracket.
-		
-			While symplectic and Poisson structures are obviously related, the two covariant formalisms that we have described naturally appear in somewhat different problems. 
+
+			While symplectic and Poisson structures are obviously related, the two covariant formalisms that we have described naturally appear in somewhat different problems.
 			Only recently has been formalized the equivalence conditions for covariant constructions of the symplectic and Poisson structures in an elegant and fully covariant way, thus without using the canonical formalism as an intermediary \cite{Forger2005}\cite{Khavkine2014}.
-				
+
 		%-------------------------------------------------------------------------------------------------------------------
 		% Questo argomento è ancora di frontiera per quanto riguarda il rigore matematico complessivo. serve analisi globale per esprimere la geometria differenziale per queste varietà infinito dimensionale
-		%nel linguaggio di crnkovic e khavkine si può proporre una formal diffential geometry of the covariant phase space.	
+		%nel linguaggio di crnkovic e khavkine si può proporre una formal diffential geometry of the covariant phase space.
 		The main drawback of this geometric point of view is the lack of mathematical rigor, since it is often restricted to the formal extrapolation of techniques from ordinary calculus on manifolds to the infinite dimensional setting.
 		Transforming such formal results into mathematical theorems is a separate problem, often highly complex and difficult.
 		A further investigation from the mathematical point of view and a serious functional analytical effort are still needed to describe the infinite dimensional spaces of field configurations and algebras of observables using infinite dimensional differential geometry.
@@ -1200,11 +1201,11 @@
 		%-------------------------------------------------------------------------------------------------------------------
 		%In cosa si differenzia il mio lavoro da quello di crinkovic khavkine forger romero?
 		% IO ho cercato di fare un espressione generale per il sistema astratto per cui si applica il metodo di Peierls nel modo in cui lo racconta lui ( al netto di strutture di spin, vincoli e gauge)
-		% Crnkovic da un espessione generale del metodo dei dati iniziali. La sua costruzione passa per l'identificazione di una corrente conservata (la stessa che io ho esibito nel caso di campo scalare e jacobi per dimostrare l'indipendenza dalla scelta di sigma per il caso di campo scalare (% Lui non parla di peierls!). L'articolo preliminare è fatto assieme a Witten ( nel 300 years of gravitation), esegue questa costruzione in vari casi specifici. 
-		
+		% Crnkovic da un espessione generale del metodo dei dati iniziali. La sua costruzione passa per l'identificazione di una corrente conservata (la stessa che io ho esibito nel caso di campo scalare e jacobi per dimostrare l'indipendenza dalla scelta di sigma per il caso di campo scalare (% Lui non parla di peierls!). L'articolo preliminare è fatto assieme a Witten ( nel 300 years of gravitation), esegue questa costruzione in vari casi specifici.
+
 		We want to remark that in the course of this work we focused on the analysis of the steps that make up the Peierls' algorithm.
 		It is costumary to refer to the Peierls brackets as the bilinear form $\tau$ acting on $\Obs$ (see Definition \ref{Def:SymplecticTau}) but its original procedure is way more general as it is defined on the whole space of Lagrangian densities, modulo a technical condition on the support.
-		
+
 		%-------------------------------------------------------------------------------------------------------------------
 		% Disclaimer importante 1: siamo stati sul semplice riguardo i sistemi campo considerati, sono 3 le complicazioni interessanti ad esempio addressate da Khavkine
 		In addition, we acknowledge that the abstract take to mechanical systems proposed in Chapter 2 is by no mean the "state of the art"  on the mathematical theory of classical field systems.
@@ -1223,19 +1224,19 @@
 		%questa però non si può dire ontologicamente un'interpretazione geometrica dell'algoritmo
 		At this point the reader should have realized that the construction proposed by Peierls' is anything but straightforward.
 		It is likely that the author was guided by experience, deducting his general formula from many examples of unequal time Poisson bracket (or rather the quantum commutator) of point fields , computed using the canonical method.
-		
+
 		In the course of this section we have provided a geometric visualization of the Peierls construction and identified the role of the corresponding "Poisson form" $(\cdot, E \cdot )$  within the framework of geometric mechanics.
 		However this can not be considered by any means a \emph{geometric interpretation}.
 
-				
-				
+
+
 		%-------------------------------------------------------------------------------------------------------------------
 		%  Cosa interpretiamo per geometric interpretations che manco o meglio cosa vorremmo fosse un'interpetazione geometrica convincente?
 		Despite this both the Peierls' construction and the "initial data" construction (including its covariant version proposed by Crnković) appear quite esoteric and out of the blue.
 		Basically these are treated as "black box" which provide a satisfactory symplectic form  from the point of view of quantization schemes.
 		They are not justified a priori and each individual steps of both the constructions lack a geometric and physical interpretation.
-		
-		
+
+
 		%-------------------------------------------------------------------------------------------------------------------
 		%  è da porsi la domanda di cosa ha aggiunto  alla nostra comprensione lo studio del caso del campo di Jacobi
 		At this point one could wonders what we have learned to the application of the Peierls method to the Jacobi Fields.
@@ -1247,8 +1248,7 @@
 %
 		%-------------------------------------------------------------------------------------------------------------------
 		%  Ciò che può emergere dalla nostra analisi è il ruolo centrale dello spazio geometrico delle lagrangiane che soggiace a tutto il discorso (vs il ruolo maggiore di Dati e soluzione che si ha nel caso di Cov Pha Spa).
-		%		Purtroppo si è evidenziato che il confronto dei due metodi non è così immediato come uno potesse sperare in quanto entra in gioco anche la perturbazione nello "spazio delle lagrangiane" la cui interpretazione geometrica non è così diretta. 
-		In order to expand the geometrical understanding of Peierls method, we believe would be necessary not only to formalize the mathematical structure of the manifolds $\Data$ and $\Sol$ (which are the basis of the canonical phase space formalism), 
+		%		Purtroppo si è evidenziato che il confronto dei due metodi non è così immediato come uno potesse sperare in quanto entra in gioco anche la perturbazione nello "spazio delle lagrangiane" la cui interpretazione geometrica non è così diretta.
+		In order to expand the geometrical understanding of Peierls method, we believe would be necessary not only to formalize the mathematical structure of the manifolds $\Data$ and $\Sol$ (which are the basis of the canonical phase space formalism),
 		but in particular has to be determined the geometric structure of the space of Lagrangian densities which underlies the concept of "disturbance" on which the whole method is based.
 \end{document}
-

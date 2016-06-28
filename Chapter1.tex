@@ -6,7 +6,7 @@
 %\_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_%
 	The interaction between mathematics and Quantum Field Theory are complex and highly not trivial.
 	Since contemporary quantum field theory is mainly developed as a quantization of classical fields, the mathematical foundation of classical field theory represents a necessary step towards the understanding of the foundations of field theory.
-	
+
 	%Goal of this section is to introduce the three  building blocks of classical field theory, namely \emph{vector bundles}, \emph{globally hyperbolic spacestimes} and \emph{Green hyperbolic operators}.
 	Goal of this section is to introduce the three  building blocks of \emph{"pre-quantum" field theory} , by this we mean the theory that describes the classical analogue of quantum theory that, in turn, describes the elementary particles.
 	Namely these are the \emph{vector bundles}, \emph{globally hyperbolic spacestimes} and \emph{Green hyperbolic operators}.
@@ -19,7 +19,7 @@
 		\emph{Fiber bundles} are the stage for the kinematics of classical and quantum fields.
 		Its main role is to encode the kinematic configurations of an arbitrary field theory through the concept of
 		\emph{sections}.
-		
+
 		\subsection{Formal Definition}
 			Although it would be possible to present the concept of \emph{bundle} in a more general way through the language of categories, for the sake of this work it will be sufficient to consider only the case of \emph{smooth bundles}.
 			\begin{definition}[Fiber Bundle]\label{Def:SmoothBundle}
@@ -34,12 +34,12 @@
 						\item $U$ : neighbourhood of $x$
 						\item $\chi$ :$\pi^{-1}(U) \rightarrow U \times Q$ : diffeomorphism
 							%DaRivedere
- 							\footnote{surjectivity $\Rightarrow$ $\pi^{-1}(U) \neq \emptyset$.} 
+ 							\footnote{surjectivity $\Rightarrow$ $\pi^{-1}(U) \neq \emptyset$.}
  							\footnote{cartesian product of topological space is a topological space with the direct product topology.}
 					\end{compactitemize}
 				such that the natural projection $p_1 : U \times F \rightarrow U$ satisfies the following equation: $$p_1 \cdot \chi = \pi \vert_{\pi^{-1}(p)}$$
 					\textit{i.e.}: the following graph commutes:
-					\vspace{-2mm}		
+					\vspace{-2mm}
 					\begin{center}
 					\begin{tikzpicture}
 						 \matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em] {
@@ -49,7 +49,7 @@
  							(m-1-1) edge node [left] {$\pi$} (m-2-1)
             				edge [right] node [above] {$\chi$} (m-1-2)
     						(m-1-2) edge [right] node [below] {$p_{1}$} (m-2-1);;
-					\end{tikzpicture}					
+					\end{tikzpicture}
 					\end{center}
 
 			\end{definition}
@@ -64,22 +64,22 @@
 \ifToninus
 			\begin{mdframed}
 				\centering
-  				\includegraphics[width=0.8\textwidth]{Pictures/fiberbundle}		
-  				\captionof{figure}{The complete fiber bundle Structure.}					
+  				\includegraphics[width=0.8\textwidth]{Pictures/fiberbundle}
+  				\captionof{figure}{The complete fiber bundle Structure.}
 			\end{mdframed}
 \else
 			\begin{figure}[h!]
 				\centering
-  				\includegraphics[width=0.8\textwidth]{Pictures/fiberbundle}		
-  				\captionof{figure}{The complete fiber bundle Structure.}					
+  				\includegraphics[width=0.8\textwidth]{Pictures/fiberbundle}
+  				\captionof{figure}{The complete fiber bundle Structure.}
 			\end{figure}
-\fi		
+\fi
 			\vspace{2mm}
 %			\begin{observation}
 				For all $p\in M$ we refer to the submanifold $E_{p} := \pi_{-1}(p) \subset E $ as \emph{fiber over the point p}.
 				\\
 				Every fiber $E_p$ is diffeomorphic to the typical fiber $Q$ through the local trivialization charts.
-%			\end{observation}		
+%			\end{observation}
 
 			\vspace{2mm}
 %			\begin{notationfix}
@@ -89,7 +89,7 @@
 %				Note that Definition \ref{Def:SmoothBundle}  prescribes the existence of local trivializations only.
 %			\end{notationfix}
 			\vspace{3mm}
-			
+
 			When on a smooth fiber bundle $(E,\pi,M;Q)$ are also considered the local charts $(U_{\alpha_k}, \phi_{\alpha_k})_{k = E,M,Q}$ provided by the atlases, in addition to the typical functions of the bundle $(\pi, \chi_{\alpha})$,  could be useful to define a compatibility condition between all of these mappings:
 			%should be taken in account also  the local charts $(U_{\alpha_k}, \phi_{\alpha_k})_{k = E,M,Q}$ provided by the atlases of $E,M$ and $Q$:
 			\begin{definition}[Bundle atlas]
@@ -99,22 +99,22 @@
 					\item $U_\alpha$ is a open set in $M$ such that $\bigcup_{\alpha} U_{\alpha} \supseteq M$.
 					\item $(U_\alpha,\chi_\alpha)$  is a local trivialization.
 					\item $(U_\alpha,\psi_\alpha)$ is a local chart on $M$.
-				\end{compactitemize}		
+				\end{compactitemize}
 			\end{definition}
 %			\begin{observation}
 
-			Notice that when are given a local chart $(U_\alpha, \psi_\alpha^{(M)} )$ on M and a local chart $(U_\alpha^{(Q)}, \psi_\alpha^{(Q)})$ on the fiber manifold it is possible to construct a chart on the total space:	
+			Notice that when are given a local chart $(U_\alpha, \psi_\alpha^{(M)} )$ on M and a local chart $(U_\alpha^{(Q)}, \psi_\alpha^{(Q)})$ on the fiber manifold it is possible to construct a chart on the total space:
 				\begin{displaymath}
 							\psi^{(E)}_\alpha = \psi_\alpha^{(M)} \times  \psi_\alpha^{(Q)} \circ \chi_\alpha
-				\end{displaymath}	
+				\end{displaymath}
 %			\end{observation}
-			\vspace{3mm}			
-			
+			\vspace{3mm}
+
 			Endowing the bundle manifolds with other additional structures, we can introduce important subclasses of smooth bundles:
 			\begin{definition}[Vector Bundle]
 				We call \emph{Vector Bundle} a smooth bundle $E=(E,\pi,M;V)$ such that:
 				\begin{compactitemize}
-					\item The typical fiber $V$ is a finite dimensional vector space.	
+					\item The typical fiber $V$ is a finite dimensional vector space.
 					\item All trivializations $\chi_{\alpha} $ are diffeomorphisms such that:
 						\begin{compactdisplaymath}
 							\left.\chi_{\alpha}\right\vert_{\pi^{-1}(p)} \in \mathbb{GL}(n, \mathbb{R})
@@ -125,12 +125,12 @@
 			For such bundles each fiber over any points of the base space is isomorphic to the vector space $V$.
 
 		\subsection{Cross Sections}
-			Sections represent the natural mathematical object to encode a $Q-$valued classical field over the space $M$:			
+			Sections represent the natural mathematical object to encode a $Q-$valued classical field over the space $M$:
 %			\begin{definition}[Smooth Section]
 %				We call \emph{Smooth Section} a function $\phi : M \rightarrow E$ such that:
 %					\begin{itemize}
 %						\item $\phi$ smooth.
-%						\item $\pi \cdot \phi = \IdMap_M$ 
+%						\item $\pi \cdot \phi = \IdMap_M$
 %					\end{itemize}
 %			\end{definition}
 			\begin{definition}[Smooth (cross) Section]
@@ -153,7 +153,7 @@
 %			\end{notationfix}
 \ifToninus
 		\begin{observation}
-			In general, \gls{Sections} is an infinite dimensional manifold. 
+			In general, \gls{Sections} is an infinite dimensional manifold.
 			\\
 				In case of vector bundles it is also a linear Frechet space\cite{Kriegl}.
 			\\
@@ -167,19 +167,19 @@
 			In case of vector bundles it is also a linear Frechet space\cite{Kriegl}.
 \fi
 
-			
-			
+
+
 		\subsection{Mapping between Bundles}
 			%Bundle morphism
 			Consider two smooth bundles $E=(E,\pi,M; Q)$ and $E'=(E',\pi',M; Q')$ on the same base space $M$.
 			\begin{definition}[Bundle map (\emph{Fiber Preserving map})]\label{Def:BundleMap}
-				We call \emph{bundle map} a smooth function $\phi: E \rightarrow E'$ such that:			
+				We call \emph{bundle map} a smooth function $\phi: E \rightarrow E'$ such that:
 			 	\begin{compactdisplaymath}
 			 		\phi(E_{x})= F_{x} \qquad \forall x \in M.
 			 	\end{compactdisplaymath}
 				\textit{i.e.} the following graph commutes:
 
-				\vspace{-2mm}			
+				\vspace{-2mm}
 				\centering
 				\begin{tikzpicture}
 					 \matrix (m) [matrix of math nodes,row sep=3em,column sep=4em,minimum width=2em] {
@@ -192,10 +192,17 @@
 				\end{tikzpicture}
 			\end{definition}
 %			\begin{observation}
-				Definition \ref{Def:BundleMap} is a special case of \emph{bundle-morphism}. (see for example \cite{G.Sardanashvily2013})
+				Definition \ref{Def:BundleMap} is a special case of \emph{bundle-morphism} ( see for example \cite{G.Sardanashvily2013}).
 %			\end{observation}
+				Since a bundle-morphism maps fiber into fiber it has also the property to map section into another section through the definition of the \emph{Push-forward of section}.
+				\ifToninus
+				\begin{warning}
+					Questa cosa l'ho annotata su onenote!				
+				\end{warning}
+				
+				\fi
 
-			\vspace{3mm}	
+			\vspace{3mm}
 			%pullback bundle
 			Consider a smooth manifold $N$, a (smooth) fiber bundle $E=(E,\pi,M;Q)$, and a smooth function $f: N \rightarrow M$. it is possible to induce\cite{Husemoller} a bundle structure from $M$ to $N$:
 			\begin{definition}[Pull-Back Bundle]
@@ -217,23 +224,27 @@
 				Then $(f^{-1}(U),\psi)$ is a local trivialization of the pull-back bundle and the fiber of $f^*E$ over a point $b'\in B'$  is just the fiber of E over $f(b')$.
 			\end{proof}
 
-			
+
 			%mor bundle
 			It is also noteworthy that, given any two vector bundles $E =(E,\pi,M,Q)$ and $E =(E',\pi',M',Q')$, we can construct 	naturally a third fiber bundle.\\
-			Consider $\Hom(E,E')$ the set of all the fiber preserving map between the two bundles:
-			\begin{definition}[Bundle of homomorphisms]
-				We call \emph{bundle of homomorphisms} a fiber bundle $\Hom(E,E')$ over the base space $M$ such that the fiber over a base point $p\in M$ is the infinite dimensional manifold $\Hom(E_p,E'_p)$ isomorphic to $\Hom(Q,Q')$.
+			Consider $\mor(E,E')$ the set of all the fiber preserving bundle map between \footnote{In other words the set of morphism between the two object $E$ and $E'$ in the concrete category of smooth bundles.} the two bundles:
+			\begin{definition}[Bundle of homomorphisms]\label{Def:HomBundle}
+				We call \emph{bundle of homomorphisms} a fiber bundle $\Hom(E,E')$ over the base space $M$ such that the fiber over a base point $p\in M$ is the infinite dimensional manifold $\mor(E_p,E'_p)$ isomorphic to $\mor(Q,Q')$.
 			\end{definition}
+			Observe that there is a bijective correspondence between $\Gamma\left(\Hom(E,E')\right)$ and the bundle map between the two bundle.
+			
+			
+			
 %			\begin{notationfix}
 				We shall write $End(E)$ for $\Hom(E,E)$ and we call it bundle of endomorphism, whose typical fiber is $\textrm{End}(Q)$.
 %			\end{notationfix}
 			\begin{remark}
-				If $F,F'$ are vector bundle then the fiber of  $\Hom(F,F')$ over a base point $p\in M$ is $\Hom(F_p,F'_p)$, which is a vector space isomorphic to the vector space $\Hom(V,V')$ of linear applications from $V$ to $V'$
+				If $F,F'$ are vector bundle then the fiber of  $\mor(F,F')$ over a base point $p\in M$ is $\mor(F_p,F'_p)$, which is a vector space isomorphic to the vector space $\mor(V,V')$ of linear applications from $V$ to $V'$
 			\end{remark}
-	
+
 		\subsection{Tangent Bundles}
 			The \emph{tangent} bundle is a natural structure defined on any smooth manifold, it represents the canonical example of  non-trivial vector bundle.
-						
+
 			\begin{definition}[Tangent Bundle]
 				We call \emph{tangent bundle of M} the smooth vector bundle $TM=(TM,\tau,M;\Real^m)$ such that:
 				\begin{compactitemize}
@@ -242,14 +253,14 @@
 					\item The bundle projection maps each tangent vector $v\in  T_pM$ to the correspondent base point  $p$;
 						$$\tau : (p,v_p) \mapsto p $$
 				\end{compactitemize}
-			\end{definition}			
+			\end{definition}
 			In a similar fashion it is possible to construct a structure dual to $TM$:
 			\begin{definition}[Cotangent Bundle]
 				We call \emph{cotangent bundle} the vector bundle $T^*M$ builded by disjoint union of the dual tangent space $T_p^*M $.
 			\end{definition}
 			Furthermore, this construction can be repeated for any tensor product of the tangent and cotangent spaces, \textit{i.e.}:
 				\begin{itemize}
-%					\item \emph{Cotangent Bundle} $T^*M$ is build by 
+%					\item \emph{Cotangent Bundle} $T^*M$ is build by
 					\item The \emph{Tensor Bundle} $T^{(k,l)}M$ is build by disjoint unions of the tensor product of tangent space with itself:
 					\begin{displaymath}
 						T^{(k,l)}_ p M = \underbrace{T^*_pM \otimes \cdots \otimes T^*_pM}_{\textrm{k-times}} \otimes
@@ -258,8 +269,8 @@
 					\item The \emph{k-form Bundle} $ \bigwedge^m( T^*M)$ is build by disjoint unions of the antisimmetrized tensor product of the dual tangent space with itself.
 				\end{itemize}
 %			\end{observation}
-			
-			
+
+
 			\subsubsection{Tautological one-form and symplectic form}
 					\begin{remark}
 %					\begin{notationfix}
@@ -269,7 +280,7 @@
 
 					Since $TQ$ and $T^*Q$ are diffeomorphic , it might seem that there is no particular reason in treating these two spaces separately, but this is not the case.
 					There are certain geometrical objects that live naturally on $T^*Q$  but not on $TQ$.
-					Of greatest interest % in mathematical-physics 
+					Of greatest interest % in mathematical-physics
 					are the Poincaré forms\cite{Frankel2003}.\\
 					Consider a smooth manifold $Q$ and call $\Phase=T^*Q$ the corresponding cotangent bundle.
 					\begin{definition}[Tautological (Poincaré) 1-form]
@@ -286,25 +297,25 @@
 
 \ifToninus
 					\begin{mdframed}
-					  	\centering	
-   						\includegraphics[width=0.7\textwidth]{Pictures/Tautological1Form} 
- 						\captionof{figure}{The definition of tautological 1-form is achieved exploiting the concept of \emph{Tangent map} and remembering that $\alpha_p: T_p \Phase \rightarrow \Phase$ is a linear functional.} 
+					  	\centering
+   						\includegraphics[width=0.7\textwidth]{Pictures/Tautological1Form}
+ 						\captionof{figure}{The definition of tautological 1-form is achieved exploiting the concept of \emph{Tangent map} and remembering that $\alpha_p: T_p \Phase \rightarrow \Phase$ is a linear functional.}
 					\end{mdframed}
 \else
 					\begin{figure}[h!]
-					  	\centering	
-   						\includegraphics[width=0.7\textwidth]{Pictures/Tautological1Form} 
- 						\caption{The definition of tautological 1-form is achieved exploiting the concept of \emph{Tangent map} and remembering that $\alpha_p: T_p \Phase \rightarrow \Phase$ is a linear functional.} 				
+					  	\centering
+   						\includegraphics[width=0.7\textwidth]{Pictures/Tautological1Form}
+ 						\caption{The definition of tautological 1-form is achieved exploiting the concept of \emph{Tangent map} and remembering that $\alpha_p: T_p \Phase \rightarrow \Phase$ is a linear functional.}
 					\end{figure}
 \fi
 
-%					\begin{remark}	
+%					\begin{remark}
 %					\begin{notationfix}
 						In the context of classical mechanics we define a  special set of coordinates on the cotangent bundle of a manifold called \emph{canonical coordinates}.
 						They are usually written as a set of $(q^i,p_j)$ where ${q_i}$ are denoting the coordinates on the underlying manifold and the ${p_j}$ are denoting the conjugate momenta, which are decompositions of 1-forms in $T_p^*M$ on the dual natural basis $d q^j$ computed in the cotangent space at the point $q$ on the manifold.
 %					\end{notationfix}
 %					\end{remark}
-	
+
 %					\begin{observation}
 						In canonical coordinates the tautological one-form assumes the famous expression:
 						\begin{displaymath}
@@ -313,7 +324,7 @@
 						(note that $d q^i$ is a 1-form on $T^*M$ calculated with respect to the coordinate on the bundle. One should not confuse it with the 1-natural form $d q^i \in T^*_p M$.)
 %					\end{observation}
 
-	
+
 %					The claim is proved by the following definition:
 					This allows us to define a natural symplectic structure on any phase space:
 					\begin{definition}[Canonical (Poincarè)  symplectic form]\label{Def:NatSymForm}
@@ -326,12 +337,12 @@
 							\omega_0 \coloneqq \sum_{i=1}^n  d q^i \wedge d p_i
 						\end{displaymath}
 					\end{definition}
-					
+
 		\subsection{Jet Bundles}\label{Sect:JetBundles}
-			The jet bundle is a %certain 
+			The jet bundle is a %certain
 			construction that makes a new smooth fiber bundle out of a given bundle. The first step is to identify the typical fiber for this construction.
 
-			Suppose $M$ is an m-dimensional manifold and that $E =(E,\pi,M,Q)$ is a smooth fiber bundle. 
+			Suppose $M$ is an m-dimensional manifold and that $E =(E,\pi,M,Q)$ is a smooth fiber bundle.
 			Consider the set of all the local sections whose domain contains $p$:
 			\begin{displaymath}
 				\Gamma^\infty (p) \coloneqq \big\{ \sigma \in \Gamma^\infty(E) \quad \big\vert\:  p \in \dom(\sigma)  \big\}
@@ -342,13 +353,13 @@
 				Two sections $\sigma, \eta \in \Gamma^\infty(p)$ have the \underline{same \emph{r-jet} at $p$} $(\sigma \sim \eta)$ iff:
 				\begin{displaymath}
 					\left.\frac{\partial^{|I|} \sigma^{\alpha}}{\partial x^{I}}\right|_{p} = \left.\frac{\partial^{|I|} \eta^{\alpha}}{\partial x^{I}}\right|_{p} \quad \forall I\in \Natural^m_0 \, \vert \, 0 \leq |I| \leq r.
-				\end{displaymath}	
-				where $I$ is a \emph{multi-index} ,see Remark \ref{MultiIndex}.	
+				\end{displaymath}
+				where $I$ is a \emph{multi-index} ,see Remark \ref{MultiIndex}.
 		\end{definition}
 		\begin{remark}\label{MultiIndex}
 			(multi-index notation)
 			\\
-			A multi-index is a %natural valued 
+			A multi-index is a %natural valued
 			finite dimensional vector  $I=(i_1, i_2, \ldots, i_m)\: \in \Natural^m_0$ with $m<\infty$.
 			\\
 			On $\Real^n$ a differential operator can be identified by a multi-index:
@@ -362,7 +373,7 @@
 				|I| := \sum_{i=1}^{m} I(i)
 			\end{displaymath}
 		\end{remark}
-	
+
 		We define the \emph{r-th Jet in p} as the equivalence class under this relation.
 		\begin{definition}[Space of r-th Jet in p]
 			We call \emph{space of the r-th jet in p} the set:
@@ -371,12 +382,12 @@
 			\end{displaymath}
 			where $\sim$ is the r-Jet equivalence.
 		\end{definition}
-		\begin{notationfix} 
-			A r-jet with representative $\sigma$ is denoted as $j^r_p\sigma$ . 
+		\begin{notationfix}
+			A r-jet with representative $\sigma$ is denoted as $j^r_p\sigma$ .
 			\\
 			The integer $r$ is also called the order of the jet, $p$ is its source and $\sigma(p)$ is its target.
 		\end{notationfix}
-	
+
 		Glueing together all the jet fibers $J^r_p (E)$ for all the base points $p\in M$, as done for the tangent bundle,  we obtain the desired bundle:
 		\begin{definition}[r-th Jet Bundle of $E$]
 			We call \emph{r-th Jet Bundle of $E$} the smooth bundle $(J^r(E), \pi_r, M)$	where:
@@ -386,6 +397,14 @@
 				\item $\pi_r: J^r(E) \rightarrow M$ such that $j^{r}_{p}\sigma \mapsto p $
 			\end{compactitemize}
 		\end{definition}
+		
+	\ifToninus
+	Notare che così come $T_pM$ era l'insieme delle classi di equivalenza di curve con la stessa derivata prima in p,\\
+	$J_p^rM$ è l'insieme delle sezioni locali che in p coincidono all'r-simo ordine.	
+	\fi
+
+	Note that, inasmuch that $T_pM$  could be seen as the set of equivalence classes of curve with the same first order derivative in p,
+	$J_p^rM$ is the set of equivalence classes of local cross sections which coincide up to $r-$th order.
 
 %\_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_%
 %\_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_%
@@ -398,20 +417,20 @@
 
 		\subsection{Reprise in Lorentzian Geometry}
 			Consider a differential manifold $M$.
-			
+
 			\begin{definition}[(Pseudo-Riemannian) Metric]
-				We call \emph{(Pseudo-Riemannian) Metric} a map on the bundle product of $TM$ with itself: 
-				$$g: TM \times_M TM \rightarrow \Real$$ 
+				We call \emph{(Pseudo-Riemannian) Metric} a map on the bundle product of $TM$ with itself:
+				$$g: TM \times_M TM \rightarrow \Real$$
 				such that the restriction on each fiber $$g_p: T_pM \times T_pM \rightarrow \Real $$ is a non-degenerate bilinear form.
 			\end{definition}
-			
+
 			\begin{definition}[Pseudo-Riemannian Manifold]
 				We call \emph{Pseudo-Riemannian manifold} a pair $(M, g)$ such that:
 				\begin{compactitemize}
 					\item $M$ is a n-dimensional $(n\geq2)$, Hausdorff, second countable, connected, orientable smooth manifold.
 					\item $g$ is a Pseudo-Riemannian metric.
 				\end{compactitemize}
-			\end{definition}		
+			\end{definition}
 %			\begin{notationfix}
 			A Pseudo-Riemannian manifold $(M,g)$,as well as the metric of which it is endowed with, is called:
 				 \begin{itemize}
@@ -419,9 +438,9 @@
 				 	\item \emph{Lorentzian} if the signature is $(+, -, \ldots,- )$ or equivalently $(-,+,\ldots,+)$.
 				 \end{itemize}
 %			\end{notationfix}
-		
+
 		\subsection{Time Orientation}
-			If a smooth manifold is endowed with a Lorentzian metric ( with signature $(-,+++)$), then the tangent vectors at each point in the manifold can be classified into three different types. 
+			If a smooth manifold is endowed with a Lorentzian metric ( with signature $(-,+++)$), then the tangent vectors at each point in the manifold can be classified into three different types.
 			\begin{notationfix}
 
 				$\forall p \in M, \quad \forall X \in T_pM$,  we call a vector:
@@ -431,9 +450,9 @@
 					\item \emph{space-like} if $g(X,X)>0$.
 				\end{compactitemize}
 			\end{notationfix}
-		
+
 			\begin{observation}%[Local Time Orientability]
-			
+
 				$\forall p\in M$ the timelike tangent vectors in $p$ can be divided into two equivalence classes taking
 				\begin{displaymath}
 					X \sim Y \; \textrm{iff} \; g(X,Y)>0 \qquad \forall X,Y \in T^\textrm{time-like}_pM:
@@ -442,9 +461,9 @@
 				\\
 				The future- and past-directed designations can be extended to null vectors at a point by continuity.
 			\end{observation}
-	
+
 			\begin{definition}[Time-orientation]
-				We call \emph{time-orientation} a global tangent vector field  $\mathfrak{t}\in \Gamma^\infty(TM)$ over the Lorenzian manifold $M$ 
+				We call \emph{time-orientation} a global tangent vector field  $\mathfrak{t}\in \Gamma^\infty(TM)$ over the Lorenzian manifold $M$
 				such that:
 				\begin{compactitemize}
 					\item $\supp(\mathfrak{t}) = M$
@@ -453,8 +472,8 @@
 			\end{definition}
 %			\begin{observation}
 				Can be noted that fixing of a time-orientation is equivalent to a consistent smooth choice of a local time-direction.
-%			\end{observation}	
-	
+%			\end{observation}
+
 			\begin{definition}[Spacetime]
 				We call \emph{spacetime} a quadruple $(M, g, \mathfrak{o}, \mathfrak{t})$ such that:
 				\begin{compactitemize}
@@ -462,12 +481,12 @@
 					\item $\mathfrak{o}$ is a choice of orientation
 					\item $\mathfrak{t}$ is a choice of time-orientation
 				\end{compactitemize}
-			\end{definition}	
-		
+			\end{definition}
+
 			In a spacetime $M$ it is quite important to identify particular classes of subsets. The main tool are the \emph{parametrized curves}:
 			\begin{notationfix}
 
-%				Consider 
+%				Consider
 				A piece-wise smooth curve $\gamma: \Real\supset I \rightarrow M$ is called:
 				\begin{compactitemize}
 					\item \emph{time-like} (resp. light-like, space-like) iff $\dot{\gamma}(p)$ is time-like (resp. light-like, space-like) $\forall p \in M$.
@@ -482,13 +501,13 @@
 					\gls{ChronoPM}\coloneqq \big\{ q \in M \big\vert \; \exists \gamma \in C^\infty\big((0,1), M\big)\;  \textrm{\footnotesize time-like } \substack{\textrm{future}\\ \textrm{past} } -\textrm{\footnotesize directed }:\; \gamma(0)=p,\; \gamma(1)=q  \big\}
 				\end{displaymath}
 			\end{definition}
-	
+
 			\begin{definition}[Causal $\substack{\textrm{ future}\\ \textrm{past } } $ of a point]
 				We call \emph{Causal $\substack{\textrm{ future}\\ \textrm{past } }$}  of a point $p$ the two subsets :
 				\begin{displaymath}
 					\gls{CausalPM} \coloneqq \big\{ q \in M \big\vert \; \exists \gamma \in C^\infty\big((0,1), M\big)\; \textrm{\footnotesize causal } \substack{\textrm{future}\\ \textrm{past} } -\textrm{\footnotesize directed }:
 					\; \gamma(0)=p,\; \gamma(1)=q  \big\}
-				\end{displaymath}		
+				\end{displaymath}
 			\end{definition}
 %			\begin{notationfix}
 				These concepts can be naturally extended to any subset $A \subset M$:
@@ -504,18 +523,18 @@
 
 			\begin{definition}[$\substack{\textrm{ future}\\ \textrm{past } } $ Domain of dependence of an Achronal set]
 				We call \emph{$\substack{\textrm{ future}\\ \textrm{past } } $ domain of dependence} of an achronal set  $\Sigma \subset M$, the two subset:
-				\begin{displaymath}		
+				\begin{displaymath}
 					\mathbf{D}_M^\pm(\Sigma) \coloneqq \big\{ q \in M \big\vert \; \forall \gamma \substack{\textrm{ past}\\ \textrm{ future} }\textrm{\footnotesize inextensible causal curve passing through }q : \; \gamma(I) \cap \Sigma \neq \emptyset  \big\}
-				\end{displaymath}		
+				\end{displaymath}
 			\end{definition}
 %			\begin{notationfix}
 			We call \emph{total domain of dependence} the union of the two domain of dependence:
-			$$\mathbf{D}_M(\Sigma)  \coloneqq \mathbf{D}_M^+(\Sigma) \cup \mathbf{D}_M^-(\Sigma)$$ 
+			$$\mathbf{D}_M(\Sigma)  \coloneqq \mathbf{D}_M^+(\Sigma) \cup \mathbf{D}_M^-(\Sigma)$$
 %			\end{notationfix}
-		
+
 		\subsection{Globally Hyperbolicity}
 			Finally we come to the key concept of our treatment:
-			
+
 			\begin{definition}[Cauchy Surface]
 				We call \emph{Cauchy surface} a closed, achronal subset $\Sigma \subset M$ such that:
 				\begin{displaymath}
@@ -535,23 +554,26 @@
 			We call a spacetime $M$ \emph{globally hyperbolic} if it contains at least one \emph{Cauchy Surface}.
 		\end{definition}
 
-			According to Definition \ref{Def:GHSP}, only the existence of a single Cauchy hypersurface is guaranteed. 
+			According to Definition \ref{Def:GHSP}, only the existence of a single Cauchy hypersurface is guaranteed.
 			This is slightly disturbing since there is no reason a priori why an initial value hypersurface for a certain partial differential equation should be distinguished from another.
 			This quandary has been overcome proving (see \cite{Baer2008}[section 1.3]) that, if a spacetime $(M,g)$ is globally hyperbolic, there exists a foliation of $M$ by Cauchy surfaces:
 			\begin{theorem}[Globally hyperbolic  space characterization]\label{Teo:GHSC_character}
 				Let $(M,g)$ be any time-oriented spacetime. The following two statements are equivalent:
 				\begin{itemize}
 					\item $(M,g)$ is globally hyperbolic.
-					\item $(M,g)$ is isometric to $ \Real \times \Sigma $ 
-						endowed with the line element $ds^2 = \beta dt^2 - h_t$ 
-						where $t : \Real \times \Sigma \rightarrow \Real$ is the projection on the first factor, 
-						$\beta$ is a smooth and strictly positive function on $\Real \times \Sigma$ 
+					\item $(M,g)$ is isometric to $ \Real \times \Sigma $
+						endowed with the line element $ds^2 = \beta dt^2 - h_t$
+						where $t : \Real \times \Sigma \rightarrow \Real$ is the projection on the first factor,
+						$\beta$ is a smooth and strictly positive function on $\Real \times \Sigma$
 						and $t \mapsto h_t , t \in \Real$, yields a one-parameter family of smooth Riemannian metrics.\\
 						Furthermore, for all $t\in \Real$, $\{t\}\times \Sigma$ is an (n-1)-dimensional, spacelike, smooth Cauchy surface in M.
 				\end{itemize}
 			\end{theorem}
-			
-			The class of globally hyperbolic spacetimes includes most of the physically interesting examples, \textit{e.g.}: Minkowski spacetime, Friedman-Robertson-Walker spacetime, Kerr spacetimes (the two-parameter family of rotating black holes) and solutions to the vacuum Einstein's equations. 
+			\begin{proof}
+			See for example \cite{Baer2008}[Theorem 1.3.10].
+			\end{proof}
+
+			The class of globally hyperbolic spacetimes includes most of the physically interesting examples, \textit{e.g.}: Minkowski spacetime, Friedman-Robertson-Walker spacetime, Kerr spacetimes (the two-parameter family of rotating black holes) and solutions to the vacuum Einstein's equations.
 			\\
 			In what follows we will make primary use of the most trivial example:
 			\begin{example}
@@ -563,7 +585,7 @@
 			To conclude this section, we introduce some terms which will be often used in the following in order to
 specify the support properties of the sections of a vector bundle with base a globally hyperbolic spacetime.
 			\begin{notationfix}
-			
+
 				Let $M$ be a globally hyperbolic spacetime and $E=(E,\pi,M;V)$ a vector bundle of typical fiber $V$.\\
 				We denote:
 				\begin{itemize}
@@ -577,19 +599,19 @@ specify the support properties of the sections of a vector bundle with base a gl
 						$\big(\; f\in \Gamma_{pc}(E) $ if  $\supp(f) \cap  \mathbf{J}^-_M(K)$ is compact for all $p\in M$.$\big)$
 					\item $\Gamma_{tc}(E) \coloneqq \Gamma_{pc}(E) \cap \Gamma_{fc}(E) $ the space of \emph{timelike compact} smooth sections.
 				\end{itemize}
-			\end{notationfix}				
-			
+			\end{notationfix}
 
-		
+
+
 
 %\_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_%
 %\_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_%
 		\section{Green Hyperbolic Operators}
 					\emph{Green Hyperbolic Operators} are the suitable object to represent a \emph{wave-like propagation} dynamics.
-					
+
 		Consider $E=(E,\pi,M;V), E'=(E',\pi',M;V')$ two linear vector bundles over $M$ (with different typical fiber), we define:
 		\begin{definition}[Linear Partial Differential operator \footnotesize( of order at most $s\in \Natural_0$)]\label{Def:LPDO}
-			We call \emph{linear partial differential operator} a 
+			We call \emph{linear partial differential operator} a
 			linear map $L:\Gamma(E)\rightarrow \Gamma(E')$ such that $\forall p \in M$ there exists:
 		\begin{itemize}
 			%\item open set $U \ni p$.
@@ -602,13 +624,13 @@ specify the support properties of the sections of a vector bundle with base a gl
 					\item $(U, \chi)$ local trivialization of $F$
 					\item $(U, \chi')$ local trivialization of $F'$
 				\end{itemize}
-			\item $\{A_\alpha :U \rightarrow \Hom(V,V')\; \vert \: \alpha \in \Natural_0^n, \vert \alpha \vert \leq s \}$ 
+			\item $\{A_\alpha :U \rightarrow \Hom(V,V')\; \vert \: \alpha \in \Natural_0^n, \vert \alpha \vert \leq s \}$
 			a collection of smooth maps labeled by multi-indices where $s$ is a fixed integer said \emph{order of the operator}.
 		\end{itemize}
 		which allows to express $L$ locally:
 		\begin{displaymath}
 			\chi' \circ ( L \sigma) \circ \varphi^{-1} =
-			\sum_{\vert \alpha \vert \leq s} A_\alpha \partial^\alpha (\chi \circ \sigma \circ \varphi^{-1} ) 
+			\sum_{\vert \alpha \vert \leq s} A_\alpha \partial^\alpha (\chi \circ \sigma \circ \varphi^{-1} )
 			\qquad \forall \sigma \in \dom(L) \subset \Gamma(E)
 		\end{displaymath}
 		(where we have make use of the multi-index notation\ref{MultiIndex})
@@ -616,18 +638,18 @@ specify the support properties of the sections of a vector bundle with base a gl
 		\begin{remark}\label{Obs:EnlargeSupport}
 			Notice that linear partial differential operators cannot enlarge the support of a section.
 		\end{remark}
-		
+
 		Definition \ref{Def:LPDO} accounts for a large class of operators, most of which are not typically used in the framework of field theory.\\
 		In order to characterize a relevant subset we introduce two auxiliary concepts:
-		
+
 			Consider a Linear differential operator $L: \Gamma(E) \rightarrow \Gamma(E')$:
 			\begin{definition}[Principal Symbol]
 			 	We call \emph{principal symbol} the map $\sigma_L: T^*M \rightarrow \Hom(E,E') $locally defined as follows: \\
 			 	For a given $p\in M$, consider a coordinate chart $(U, x^i)$ around $p$ and local trivializations of $E$ and of $E'$ (as precribed in Definition \ref{Def:LPDO}).
-			 	\\ 
+			 	\\
 			 	For all $\xi = \xi_i dx^i \in T^*_pM$ set:
 			 	\begin{displaymath}
-			 		\sigma_L \big(\xi \big) = \sum_{|\alpha|=s}  \xi^\alpha A_\alpha (p) 
+			 		\sigma_L \big(\xi \big) = \sum_{|\alpha|=s}  \xi^\alpha A_\alpha (p)
 			 	\end{displaymath}
 			 	where $ \xi^\alpha = \prod_{\mu=0}^{m-1} \xi^{\alpha_\mu}$
 			 \end{definition}
@@ -635,21 +657,21 @@ specify the support properties of the sections of a vector bundle with base a gl
 				We call \emph{formal dual operator} of $L$
 				the unique linear partial differential operator $L^\star: \Gamma(G^*) \rightarrow \Gamma(E^*)$ such that:
 				\begin{displaymath}
-					<L^\star g' , f > = <g', L f> 
+					<L^\star g' , f > = <g', L f>
 				\end{displaymath}
 				$\forall f\in \Gamma(E),\; g' \in \Gamma(G^*)$ which have supports with compact overlap.
 				\\
 				($<\cdot,\cdot>$ denotes the 1-form evaluation: $<\alpha,v>= \alpha(v) \quad \forall v\in E_p, \alpha \in E^*_p$.)
 			\end{definition}
 			\begin{NB}
-			
+
 				From now on we will consider only bundles with globally-hyperbolic spacetimes as base spaces.
-			\end{NB}			
-		
-		\subsection{Green Hyperbolic Operators}	
+			\end{NB}
+
+		\subsection{Green Hyperbolic Operators}
 			Let $M$ be a globally hyperbolic spacetime, consider a vector bundle $E$ over $M$ and a L.p.d.o. $L: \Gamma(E) \rightarrow \Gamma(E)$:
 			\begin{definition}[$\substack{\textrm{ retarded}\\ \textrm{advanced } } (\pm)$ Green Operators]\label{Def:GreenOperators}
-				We call \emph{$\substack{\textrm{ retarded}\\ \textrm{advanced } } (\pm)$ Green Operator} of $L$ a 
+				We call \emph{$\substack{\textrm{ retarded}\\ \textrm{advanced } } (\pm)$ Green Operator} of $L$ a
 				l.p.d.o. $G^\pm : \Gamma (E) \rightarrow \Gamma(E)$ such that:
 				\begin{compactitemize}
 					\item $\dom(G^+) = \Gamma_{pc}(E) \qquad \dom(G^-) = \Gamma_{fc}(E)$
@@ -658,24 +680,24 @@ specify the support properties of the sections of a vector bundle with base a gl
 				\end{compactitemize}
 			\end{definition}
 %			\begin{observation}
-%				From the definition it follows that 
-				In others words we can say that 
+%				From the definition it follows that
+				In others words we can say that
 				$G^\pm$ is the left-right inverse of the restriction of $L$ to $\dom(G^\pm)$.
 %			\end{observation}
 			\begin{notationfix}
-			
+
 				We call \emph{Advanced minus Retarded operator} or \emph{Causal Propagator}\cite{Benini2013} the operator:
 				\begin{displaymath}
 					E \coloneqq G^-  - G^+ : \Gamma_{tc}(E) \rightarrow \Gamma(E)
 				\end{displaymath}
-			\end{notationfix}		
-		
+			\end{notationfix}
+
 			Green operators are not necessarily unique. For this we introduce the following definition:
 			\begin{definition}[Green hyperbolic operator]
 				We call \emph{Green hyperbolic} a
-%				The 
-				linear partial differential operator $P$ 
-%				is be called Green hyperbolic if 
+%				The
+				linear partial differential operator $P$
+%				is be called Green hyperbolic if
 				such that $P$ and $P^\star$ have advanced and retarded Green’s operators.
 			\end{definition}
 			For these operators uniqueness of Green's operators is guaranteed:
@@ -685,9 +707,9 @@ specify the support properties of the sections of a vector bundle with base a gl
 					Let be:
 					\begin{itemize}
 						\item $E=(E,\pi,M)$ a vector bundle over a globally hyperbolic spacetime $M$.
-						\item $P:\Gamma(E) \rightarrow \Gamma(E)$ a Green hyperbolic operator, $G^\pm$ its Green's operators and $G_\star^\pm$ the Green's operators of the dual.					
+						\item $P:\Gamma(E) \rightarrow \Gamma(E)$ a Green hyperbolic operator, $G^\pm$ its Green's operators and $G_\star^\pm$ the Green's operators of the dual.
 					\end{itemize}
-%				\end{hypothesis}		
+%				\end{hypothesis}
 %				\begin{thesis}
 					Then:
 					\begin{itemize}
@@ -697,7 +719,7 @@ specify the support properties of the sections of a vector bundle with base a gl
 %				\end{thesis}
 			\end{theorem}
 			\begin{proof}
-			See for example \cite{Benini}[proposition 2]
+			See for example \cite{Benini}[proposition 2].
 			\end{proof}
 
 \ifToninus
@@ -736,8 +758,8 @@ specify the support properties of the sections of a vector bundle with base a gl
 					\begin{displaymath}
 						\supp (\GreenRet f ) \subset \mathbf{J}^+ (\supp f) \cap \mathbf{J}^- (\supp f)
 					\end{displaymath}
-					 In other words $h = \GreenRet f \in \Gamma_{tc}(E)$. 
-					 If we apply the operator $P$, it holds 
+					 In other words $h = \GreenRet f \in \Gamma_{tc}(E)$.
+					 If we apply the operator $P$, it holds
 					 \begin{displaymath}
 					 	P h = P \GreenRet f = f
 					 \end{displaymath}
@@ -750,7 +772,7 @@ the retarded or the advanced Green operators obtaining:
 					\end{displaymath}
 					The converse implication is trivial.
 
-				\item[	[Th. 3]]			
+				\item[	[Th. 3]]
 					Consider a pair of function (partition of unity of $M$) $\{\chi_\pm: M \rightarrow [0,1] \}$ such that:
 					\begin{compactitemize}
 						\item $\chi_\pm = 1$ on a past / future compact region.
@@ -766,8 +788,8 @@ the retarded or the advanced Green operators obtaining:
 					\end{displaymath}
 				\end{itemize}
 			\end{proof}
-			
-			
+
+
 			\begin{corollary}\label{Corol:GreenKernel}
 				Let $M$ be a globally hyperbolic spacetime. Consider a vector bundle $E$ over $M$, the Green-hyperbolic operator $P: \Gamma(E)\rightarrow \Gamma(E)$ and a compactly supported section $f\in \Gamma_{0}(E)$.
 				Let $G^\pm$ be retarded and advanced Green operators for $P$ and denote with $E$ the corresponding advanced-minus-retarded operator.\\
@@ -778,7 +800,7 @@ the retarded or the advanced Green operators obtaining:
 						\item $\forall h \in \Gamma_{sc}(E)\quad \exists h \in \Gamma_{sc}(E)\quad \; \vert \; P h = f$.
 					\end{enumerate}
 			\end{corollary}
-					
+
 		\subsection{Normally Hyperbolic Operators}
 			Green-hyperbolic operators are not necessarily hyperbolic in any PDE-sense and that they cannot be characterized in general by well-posedness\footnote{I.e. exists an unique solution.} of a Cauchy problem.
 			However  for the large class of the \emph{Normally-Hyperbolic Operators} hyperbolicity is guaranteed both in PDE and Green sense.
@@ -790,20 +812,20 @@ the retarded or the advanced Green operators obtaining:
 				\sigma_P(\xi) = g(\xi,\xi) \IdOp_{E_p} \qquad \forall p\in M, \xi \in T^*_pM
 			\end{displaymath}
 		\end{definition}
-		
+
 %		\begin{observation}%In coordinate questi operatori hanno un'espressione molto familiare ...
-			Making explicit the coordinate expression of a normally hyperbolic operator $P$, one realizes how such operators  provide the natural generalization of the usual Wave operator. 
+			Making explicit the coordinate expression of a normally hyperbolic operator $P$, one realizes how such operators  provide the natural generalization of the usual Wave operator.
 			\\
-			Consider a globally hyperbolic operator $P$ for all $p \in M$ a trivializing chart $(U, \varphi, \chi)$ centered in $p$. 
-			There exist a collection $\big\{A, A^\mu \vert \mu\in \{0, \ldots ,m-1\}\big\}$ of smooth 
+			Consider a globally hyperbolic operator $P$ for all $p \in M$ a trivializing chart $(U, \varphi, \chi)$ centered in $p$.
+			There exist a collection $\big\{A, A^\mu \vert \mu\in \{0, \ldots ,m-1\}\big\}$ of smooth
 			$\Hom(V,V)-$ valued maps on $U$, such that $P$ reads as follows:
 			\begin{equation}\label{Eq:NormallyHyperbolicRepresentation}
 				\chi \circ ( P \sigma) \circ \varphi^{-1} =
 				\big( g^{\mu \nu} \IdMap_V \partial_\mu \partial_\nu + A^\mu \partial_\mu + A\big)
-				(\chi \circ \sigma \circ \varphi^{-1} ) 
+				(\chi \circ \sigma \circ \varphi^{-1} )
 				\qquad \forall \sigma \in \dom(P) \subset \Gamma(E)
 			\end{equation}
-		where both the chart and the vector bundle trivializations are understood. 
+		where both the chart and the vector bundle trivializations are understood.
 		One immediately notices that locally this expression agrees  - up to terms of lower order in the derivatives  - with the one for the d'Alembert operator acting on sections of $E$  constructed out of a covariant derivative $\nabla$ on $E$, that is the operator:
 		\begin{displaymath}
 			\square_\nabla = g^{\mu \nu} \nabla_\mu \nabla_\nu : \Gamma(E) \rightarrow \Gamma(E)
@@ -817,11 +839,11 @@ the retarded or the advanced Green operators obtaining:
 				\item	$P^\star$ is a normally hyperbolic operator.
 				\item $P$ is Green hyperbolic.
 			\end{itemize}
-		\end{proposition}	
+		\end{proposition}
 		\begin{proof}
 			We omit the proof, see for example \cite{Baer2008}[Corollary 3.4.3].
 		\end{proof}
-		
+
 	\begin{theorem}[Normally hyperbolic operators properties.]
 	$ $
 %		\begin{hypothesis}
@@ -836,9 +858,9 @@ the retarded or the advanced Green operators obtaining:
 		\begin{itemize}
 			\item The Cauchy problem;
 				\begin{displaymath}
-					\begin{cases} 
-						P u = J & \textrm{on $M$} \\ 
-						u = u_0 & \textrm{on $\Sigma$}\\ 
+					\begin{cases}
+						P u = J & \textrm{on $M$} \\
+						u = u_0 & \textrm{on $\Sigma$}\\
 						\nabla_{\vec{n}}u= u_1  & \textrm{on $\Sigma$}
 					\end{cases}
 				\end{displaymath}
@@ -847,16 +869,16 @@ the retarded or the advanced Green operators obtaining:
 			\item $P$ is Green-hyperbolic.
 		\end{itemize}
 %		\end{thesis}
-	\end{theorem}	
+	\end{theorem}
 	\begin{proof}
 		First proposition has been proved in different forms in several books, e.g. \cite{Bar2009}[Corollary 5].
 		For the second proposition see\cite{Baer2008}[Corollary 3.4.3]
 	\end{proof}
-	
+
 	\subsection{Green Functions}\label{Section:GreenFunctions}
-	In chapter four we will need the explicit expression of the Green operators in the case of linear \textit{ordinary } differential operators (l.o.d.o.). 	
+	In chapter four we will need the explicit expression of the Green operators in the case of linear \textit{ordinary } differential operators (l.o.d.o.).
 	Let us consider them as a trivial case of l.p.d.o. on $\Gamma(E) = C^\infty(\Real)$ over the trivial globally hyperbolic manifold $M=\Real$.
-	
+
 	We call $L_x$ the linear operator associated to the inhomogeneous ordinary differential equation (ODE.)
 	\begin{displaymath}
 		L_x [u] = \left[ A_n(x) \frac{d^n}{dx^n} + A_{n-1}(x) \frac{d^{n-1}}{dx^{n-1}} + \ldots + A_0(x) \right] u(x) = f(x)
@@ -866,7 +888,7 @@ the retarded or the advanced Green operators obtaining:
 	\ifToninus \begin{Warning}
 		Vedi Gaeta \cite{Gaeta2014}, c'è una condizione ulteriore di regolarità sui coefficienti
 	\end{Warning} \fi
-	
+
 	In this context it is more common to talk about Green \textit{functions} instead of Green \textit{operators}.
 	\begin{definition}[Green function]
 	We call \emph{Green function} associated to the l.o.d.o. $L_x$ the solution $G(x \vert \xi)$ of the fundamental distributional equation:
@@ -888,13 +910,13 @@ the retarded or the advanced Green operators obtaining:
 			L_x[u] = \int_\Real L_x\left[ G(x \vert \xi ) \right] f(\xi) d\xi = \int_\Real \delta(x -\xi) f(\xi) d\xi = f(x)
 		\end{displaymath}
 	\end{proof}
-	Accordingly to this result , we can define the \emph{Green operator} $\hat{G}$ associated to the Green function $G(x \vert \xi)$ as the \emph{Hilbert-Schmidt} integral operator 
+	Accordingly to this result , we can define the \emph{Green operator} $\hat{G}$ associated to the Green function $G(x \vert \xi)$ as the \emph{Hilbert-Schmidt} integral operator
 			\begin{displaymath}
 				\hat{G} f = \int_\Real G( x \vert \xi ) f(\xi) d\xi
-			\end{displaymath}	
+			\end{displaymath}
 	where the Green function takes the role of the \emph{integral kernel} distribution.
 	Let us recall that this operator is to be understood as a \emph{"formal operator"} until the domain is not specified.
-	
+
 	\begin{remark}
 		The most general solution of Equation 	\ref{Eq:FundamentalGreen} can be written as:
 		\begin{equation}\label{Eq:MostGeneralGreenFunc}
@@ -905,7 +927,7 @@ the retarded or the advanced Green operators obtaining:
 			L_x \varphi(x , \xi) = 0
 		\end{displaymath}
 		Here $n$ is the order of $L_x$ as a linear differential operator.
-		
+
 		\vspace{1mm}
 		The role of the non-singular part is to take in account the different boundary conditions that can be eventually imposed to the problem.
 		\\
@@ -914,21 +936,21 @@ the retarded or the advanced Green operators obtaining:
 %			D = \{ f \in C^n \big( \left[a,b\right] \big) \; \vert \; f(a)= \alpha , f(b)=\beta \in \Real\}
 %		\end{displaymath}
 %		this constraint sets the coefficients $C_k(\xi)$ appearing in Eq. \ref{Eq:MostGeneralGreenFunc}.
-		More precisely, the domain restriction of $L_x$ to the space 	
+		More precisely, the domain restriction of $L_x$ to the space
 		\begin{displaymath}
 			D = \{ f \in C^n \big( \left[a,b\right] \big) \; \vert \; f(a)= \alpha , f(b)=\beta \in \Real\}
 		\end{displaymath}
 		of regular functions satisfying a boundary condition,
-		sets univocally the coefficients $C_k(\xi)$ appearing in Eq. \ref{Eq:MostGeneralGreenFunc}.		
+		sets univocally the coefficients $C_k(\xi)$ appearing in Eq. \ref{Eq:MostGeneralGreenFunc}.
 	\end{remark}
-	
+
 	According to Eq. \ref{Eq:NormallyHyperbolicRepresentation}, all normally hyperbolic ordinary differential operators are of second order:
 	\begin{displaymath}
-		L_x = a(x) \frac{d^2}{d x^2} + b(x) \frac{d}{d x} + c(x)	
+		L_x = a(x) \frac{d^2}{d x^2} + b(x) \frac{d}{d x} + c(x)
 	\end{displaymath}
 	with regular coefficients.
-	An useful property of these operators is that they can always be rewritten in "canonical form": 
-	
+	An useful property of these operators is that they can always be rewritten in "canonical form":
+
 	\begin{proposition}
 	If $u(x)$ is a solution of the non-homogeneous equation:
 	\begin{displaymath}
@@ -960,42 +982,42 @@ the retarded or the advanced Green operators obtaining:
 		\end{displaymath}
 		with kernel functions:
 		\begin{equation}\label{Eq:AdvRetGreenFunction}
-			g^\pm ( x \vert \xi ) = 
+			g^\pm ( x \vert \xi ) =
 			\pm \frac{1}{W(x)} \theta\big( \pm ( x-\xi) \big) \big[ \varphi_1(\xi)\varphi_2(x) - \varphi_1(x)\varphi_1(\xi) \big]
 		\end{equation}
 		where $\varphi_1(x) , \varphi_2(x)$ are two linearly indipendent solutions of  the homogeneous equation $L_x[u]=0$ and $W(x)$ is the corresponding Wronskian
 		\begin{displaymath}
-			W(\varphi_1 , \varphi_2) \coloneqq \left\vert 
+			W(\varphi_1 , \varphi_2) \coloneqq \left\vert
 				\begin{bmatrix}
         			\varphi_1(x)	&	\varphi_2(x) \\
         			\varphi_1'(x)	&	\varphi_2'(x)
-     			\end{bmatrix} 
+     			\end{bmatrix}
      		\right\vert
 		\end{displaymath}
 	\end{proposition}
 	\begin{proof}
 		The presence of the step-function $\theta(y)$ in \ref{Eq:AdvRetGreenFunction} guarantees the first and third condition in definition (\ref{Def:GreenOperators}). In this case the past/future-compact condition has to be understood as the requirement of left/right -bounded support  and $J^\pm(I)$ as the right/left extension of the interval $I \subset \Real$.
-		
+
 		The crucial point, namely that:
 		\begin{displaymath}
 			\big( g^\pm ( x \vert \xi) \big)'' + V(x) g^\pm ( x \vert \xi) = \delta(x - \xi)
 		\end{displaymath}
 		can be checked by direct inspection.
-		
+
 		Recall that the Wronskian of two linearly independent solutions $\varphi_i(x)$ is constant:
 		\begin{displaymath}
-			W(\varphi_1 , \varphi_2) = \left\vert 
+			W(\varphi_1 , \varphi_2) = \left\vert
 				\begin{bmatrix}
         			\varphi_1(x)	&	\varphi_2(x) \\
         			\varphi_1'(x)	&	\varphi_2'(x)
-     			\end{bmatrix} 
+     			\end{bmatrix}
      		\right\vert = \varphi_1(x)\varphi_2'(x)  - \varphi_2(x)\varphi_1'(x) = W
 		\end{displaymath}
-		
+
 		Taking the distributional derivative we have:
 		\begin{eqnarray}
 		\frac{d}{dx}g^\pm(x \vert \xi) 	=\frac{\pm 1}{W} \Big\{&
-						\pm \delta(x-\xi)\left[ \varphi_1(\xi)\varphi_2(x)-\varphi_1(x)\varphi_2(\xi)\right] + \nonumber \\ 
+						\pm \delta(x-\xi)\left[ \varphi_1(\xi)\varphi_2(x)-\varphi_1(x)\varphi_2(\xi)\right] + \nonumber \\
 					&	+ \theta\big( \pm (x-\xi) \big) \left[ \varphi_1(\xi)\varphi_2'(x)-\varphi_1'(x)\varphi_2(\xi)\right]
 					\Big\}
 		\end{eqnarray}
@@ -1003,12 +1025,12 @@ the retarded or the advanced Green operators obtaining:
 		Taking the second derivative concludes the proof
 		\begin{eqnarray*}
 		\frac{d^2}{dx^2}g^\pm(x \vert \xi) 	=&\frac{\pm 1}{W} \Big\{&
-						\pm \delta'(x-\xi)\left[ \varphi_1(\xi)\varphi_2(x)-\varphi_1(x)\varphi_2(\xi)\right] +  \\ 
+						\pm \delta'(x-\xi)\left[ \varphi_1(\xi)\varphi_2(x)-\varphi_1(x)\varphi_2(\xi)\right] +  \\
 				&	&	\pm 2\delta(x-\xi) \left[ \varphi_1(\xi)\varphi_2'(x)-\varphi_1'(x)\varphi_2(\xi)\right] +  \\
 				& & + \theta\big( \pm (x-\xi) \big) \left[ \varphi_1(\xi)\varphi_2''(x)-\varphi_1''(x)\varphi_2(\xi)\right]
 					\Big\}=  \\
 				=&\frac{\pm 1}{W} \Big\{&
-						\mp \delta(x-\xi)\left[ \varphi_1(\xi)\varphi_2'(x)-\varphi_1'(x)\varphi_2(\xi)\right] +  \\ 
+						\mp \delta(x-\xi)\left[ \varphi_1(\xi)\varphi_2'(x)-\varphi_1'(x)\varphi_2(\xi)\right] +  \\
 				&	&	\pm 2\delta(x-\xi) \left[W\right] +  \\
 				& & -V(x) \theta\big( \pm (x-\xi) \big) \left[ \varphi_1(\xi)\varphi_2(x)-\varphi_1(x)\varphi_2(\xi)\right]
 					\Big\}=  \\
@@ -1037,13 +1059,13 @@ the retarded or the advanced Green operators obtaining:
             \end{cases}
 			\end{equation}
 			where the two undetermined parameters depend on the eventual boundary conditions.
-		
+
 			(For a quick reference see for example \cite{Tornberg}.)
-			
+
 			 Eq. \ref{FRWJacobi1} is a linear autonomous ordinary differential equation, the advanced and retarded Green functions can be promptly computed:
 			\begin{eqnarray}\label{SimpleGreenFunction}
 				G^+_0(t \vert \xi) = \theta(t-\xi) \left(a +b t \right) \nonumber\\
-				G^-_0( t \vert \xi) = \theta(\xi -t) \left( a +b t + \xi -t\right) 
+				G^-_0( t \vert \xi) = \theta(\xi -t) \left( a +b t + \xi -t\right)
 			\end{eqnarray}
 	\end{Warning}
 \fi

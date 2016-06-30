@@ -79,7 +79,7 @@ In this chapter we will take advantage of the language developed above in order 
 	\\
 	The process is trivial:
 	\begin{equation}\label{Def:LocalChartRepresentation}
-		\gamma \in \Conf \mapsto \{f_{A,U}=\psi_U \circ \gamma \circ \psi_A^{-1} \vert (A,\psi_A) \in \Atlas(M), (U,\psi_U)\in \Atlas(E)   \}
+		\gamma \in \Conf \mapsto \biggr\{f_{A,U}=\psi_U \circ \gamma \circ \psi_A^{-1} \quad \biggr\vert \quad (A,\psi_A) \in \Atlas(M), (U,\psi_U)\in \Atlas(E)   \biggr\}
 	\end{equation}
 	%	$\forall (A,\psi_A)$ local chart on $M$ and $(U,\psi_U)$ local chart on $E$ such that $\gamma(A) \cap U \neq \emptyset$ $f_{A,U}=\psi_U \circ \gamma \circ \psi_A^{-1}$
 	Since the whole section is quite difficult to handle  as a global object, is customary in field theory to work in the more practical local representation. 
@@ -147,7 +147,7 @@ In this chapter we will take advantage of the language developed above in order 
 	\begin{definition}[Lagrangian Densities on the bundle $E$]\label{Def:LagrangianDensities}
 		We denote the set of all \emph{Lagrangian densities} (of $r-$th order) on the bundle $E$ as:
 		\begin{displaymath}
-			\gls{Lag}^r (E) \coloneqq \Gamma \left( \Hom\biggr(J^r E,\quad \bigwedge^m( T^*M)\biggr) \right) \cong \big\{f:\Gamma^\infty(J^r E) \rightarrow \Omega^m(M)  \big\}
+			\gls{Lag}^r (E) \coloneqq \Gamma^\infty \left( \Hom\biggr(J^r E,\quad \bigwedge^m( T^*M)\biggr) \right) \cong \big\{f:\Gamma^\infty(J^r E) \rightarrow \Omega^m(M)  \big\}
 		\end{displaymath}
 	where $\Hom$ is the bundle of smooth bundle-morphism (see definition \ref{Def:HomBundle}), $m$ is the dimension of $M$ and $\Omega^m(M)$ is the common name for $\Gamma^\infty \big( \bigwedge^m( T^*M) \big)$ in the context of Grassmann algebras.)\\
 	\end{definition}
@@ -828,10 +828,10 @@ such that:
 %		\end{observation}
 		
 		\vspace{2mm}
-		In conclusion, for any fixed $\phi\in \Sol$ and disturbance $\chi$, there exist two uniquely perturbed solutions:
+		In conclusion, for any fixed $\phi_0 \in \Sol$ and disturbance $\chi$, there exist two uniquely perturbed solutions:
 		%In conclusion,fixed a solution $\phi\in \Sol$ and a perturbation $\chi$, are uniquely determined two perturbed solution: (Correzione CD)
    		\begin{equation}\label{PerturbedSolution}
-   			\phi^\pm_\epsilon = \phi + \epsilon \eta_\pm
+   			\phi^\pm_\epsilon = \phi_0 + \epsilon \eta_\pm
    		\end{equation}
    		such that:
  		\begin{center}   \begin{tabular}{|c|c|c|c|}
@@ -848,7 +848,7 @@ such that:
 		Considering an arbitrary differentiable\footnote{Concepts of continuity and differentiability are to be intended purely formally  in this infinite dimensional context.
 		Any precise notion would require the specification of a (infinite dimensional) manifold structure on $\Conf$.} functional $B: \Conf \rightarrow D'(M)$ (not necessarily linear) we can define the effect of a perturbation on the values of $B$\cite[pag. 5]{Marolf1993} as a map:
 		\begin{displaymath}
-			\gls{EffectOp} : C^1(\Conf,D'(M)) \rightarrow C^1(\Sol,D'(M))
+			\gls{EffectOp} : C^1(\Conf,D'(M)) \rightarrow C^0(\Sol,D'(M))
 		\end{displaymath}
 		\begin{equation}\label{EffectOperator}
 		\EffectOp_\chi^\pm B ( \phi_0) 
@@ -875,7 +875,7 @@ such that:
 		
 		\subsubsection{The Brackets}
 		%Remembering
-		Recalling that every Lagrangian density defines a continuous functional (\ifToninus (the "Action")\fi see Def. \ref{Def:LagrangianFunctionals}) it is than possible to build a binary function:
+		Recalling that every Lagrangian density defines a continuous functional (\ifToninus (the "Action")\fi see Def. \ref{Def:LagrangianFunctionals}) it is than possible to build a binary operator:
 		\begin{displaymath}
 			\{\cdot,\cdot\}:\Lag_{\textrm{tc}} \times \Lag_{\textrm{tc}} \rightarrow D'(M)
 		\end{displaymath}

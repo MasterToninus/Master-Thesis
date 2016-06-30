@@ -1,6 +1,9 @@
 %-------- Document Class  ------------------------------------------------------------------------------------------------------------------------------------------------
-\documentclass[a4paper,10pt]{report}
-\usepackage[a4paper, margin=2.25cm]{geometry}
+\documentclass[a4paper,10pt,smallheadings]{scrartcl}
+\usepackage[margin=1cm
+%,showframe% <- only to show the page layout
+]{geometry}
+\usepackage[utf8]{inputenc}
 
 %-------- Multi-file  ---------------------------------------------------------------------------------------------------------------------------------------------------------
 \usepackage{subfiles}
@@ -23,6 +26,7 @@
 %\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 \begin{document} %\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 
+\section{Fiber Bundles}
 \begin{definition}[Fiber Bundle]\label{Def:SmoothBundle}
 				We call a \emph{Smooth (Fiber) Bundle}  a quadruple $E = (E,M,Q,\pi)$ where:
 				\begin{itemize}
@@ -64,18 +68,6 @@
   				\captionof{figure}{The complete fiber bundle Structure.}
 			\end{figure}
 			
-			\begin{definition}[Vector Bundle]
-				We call \emph{Vector Bundle} a smooth bundle $E=(E,\pi,M;V)$ such that:
-				\begin{compactitemize}
-					\item The typical fiber $V$ is a finite dimensional vector space.
-					\item All trivializations $\chi_{\alpha} $ are diffeomorphisms such that:
-						\begin{compactdisplaymath}
-							\left.\chi_{\alpha}\right\vert_{\pi^{-1}(p)} \in \mathbb{GL}(n, \mathbb{R})
-							\quad : \; \pi^{-1}(p) \rightarrow \{p\}\times V \simeq V
-						\end{compactdisplaymath}
-				\end{compactitemize}
-			\end{definition}
-
 			\begin{definition}[Smooth (cross) Section]
 				We call \emph{Smooth (cross) Section} a smooth right-inverse function of $\pi$.\\
 				I.e. any $\phi\in C^\infty(M;E)$ such that:
@@ -106,6 +98,26 @@
 			
 			\begin{definition}[Bundle of homomorphisms]
 				We call \emph{bundle of homomorphisms} a fiber bundle $\Hom(E,E')$ over the base space $M$ such that the fiber over a base point $p\in M$ is the infinite dimensional manifold $\Hom(E_p,E'_p)$ isomorphic to $\Hom(Q,Q')$.
+			\end{definition}
+
+			\begin{definition}[Vector Bundle]
+				We call \emph{Vector Bundle} a smooth bundle $E=(E,\pi,M;V)$ such that:
+				\begin{compactitemize}
+					\item The typical fiber $V$ is a finite dimensional vector space.
+					\item All trivializations $\chi_{\alpha} $ are diffeomorphisms such that:
+						\begin{compactdisplaymath}
+							\left.\chi_{\alpha}\right\vert_{\pi^{-1}(p)} \in \mathbb{GL}(n, \mathbb{R})
+							\quad : \; \pi^{-1}(p) \rightarrow \{p\}\times V \simeq V
+						\end{compactdisplaymath}
+				\end{compactitemize}
+			\end{definition}
+
+			\begin{definition}[Fibrewise inner product]
+				We call \emph{inner product} of the vector bundle $E$ a smooth map:
+				\begin{displaymath}
+					<\cdot,\cdot> : E \times_M E \rightarrow \Real
+				\end{displaymath}
+				such that the restriction of $<\cdot,\cdot>$ to any fiber $E_p\times E_p$ is a non-degenerate bilinear form.
 			\end{definition}
 			
 			\begin{definition}[Tangent Bundle]

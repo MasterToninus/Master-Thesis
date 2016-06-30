@@ -1,5 +1,5 @@
 %-------- Document Class  ------------------------------------------------------------------------------------------------------------------------------------------------
-\documentclass[a4paper,10pt,smallheadings]{scrartcl}
+\documentclass[a4paper,10pt]{scrartcl}
 \usepackage[margin=1cm
 %,showframe% <- only to show the page layout
 ]{geometry}
@@ -25,8 +25,12 @@
 
 %\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
 \begin{document} %\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/
-
-\section{Fiber Bundles}
+\newpage
+\section*{Fiber Bundles}
+	\begin{minipage}{0.5\textwidth}
+			\includegraphics[width=\textwidth]{../Pictures/fiberbundle}
+		\end{minipage}
+		\begin{minipage}{0.5\textwidth}
 \begin{definition}[Fiber Bundle]\label{Def:SmoothBundle}
 				We call a \emph{Smooth (Fiber) Bundle}  a quadruple $E = (E,M,Q,\pi)$ where:
 				\begin{itemize}
@@ -34,9 +38,9 @@
 					\item[-] $\pi : E \rightarrow M $ smooth, everywhere defined, surjective function (called \emph{Bundle Projection})
 				\end{itemize}
 				Such that $\forall x \in M \quad \exists$ a \emph{local trivialization}) $(U, \chi)$.
-				
-	\end{definition}
-	
+	\end{definition}	
+		\end{minipage}
+
 	\begin{definition}[Local Trivialization of the Fiber Bundle $E$]				
 		A Pair $(U, \chi)$ where:
 					\begin{compactitemize}
@@ -61,12 +65,6 @@
 					\end{tikzpicture}
 					\end{center}
 			\end{definition}
-
-			\begin{figure}[h!]
-				\centering
-  				\includegraphics[width=0.8\textwidth]{../Pictures/fiberbundle}
-  				\captionof{figure}{The complete fiber bundle Structure.}
-			\end{figure}
 			
 			\begin{definition}[Smooth (cross) Section]
 				We call \emph{Smooth (cross) Section} a smooth right-inverse function of $\pi$.\\
@@ -140,6 +138,7 @@
 					\item The \emph{k-form Bundle} $ \bigwedge^m( T^*M)$ is build by disjoint unions of the antisimmetrized tensor product of the dual tangent space with itself.
 				\end{itemize}
 
+		\begin{minipage}{0.5\textwidth}
 				\begin{definition}[Tautological (Poincaré) 1-form]
 						We call \emph{tautological form} the 1-form over $\Phase= T^*Q$:
 						\begin{displaymath}
@@ -151,12 +150,12 @@
 						\end{displaymath}
 					where $T$ is the \emph{tangent map}, namely the bundle-morphism which act on each fiber as the differential map $d (\tau^*_Q)$.
 					\end{definition}
+		\end{minipage}
+			\begin{minipage}{0.5\textwidth}
+   						\includegraphics[width=0.8\textwidth]{../Pictures/Tautological1Form}
+ 						\footnote{The definition of tautological 1-form is achieved exploiting the concept of \emph{Tangent map} and remembering that $\alpha_p: T_p \Phase \rightarrow \Phase$ is a linear functional.}
+		\end{minipage}
 
-					\begin{figure}[h!]
-					  	\centering
-   						\includegraphics[width=0.7\textwidth]{../Pictures/Tautological1Form}
- 						\caption{The definition of tautological 1-form is achieved exploiting the concept of \emph{Tangent map} and remembering that $\alpha_p: T_p \Phase \rightarrow \Phase$ is a linear functional.}
-					\end{figure}
 
 					\begin{definition}[Canonical (Poincarè)  symplectic form]\label{Def:NatSymForm}
 						We call \emph{Canonical (Poincarè)} form the symplectic:
@@ -170,7 +169,7 @@
 					\end{definition}
 					
 					
-		\subsection{Jet Bundles}\label{Sect:JetBundles}
+		\subsection*{Jet Bundles}\label{Sect:JetBundles}
 			The jet bundle is a %certain
 			construction that makes a new smooth fiber bundle out of a given bundle. 
 			
@@ -220,8 +219,8 @@
 				\item $\pi_r: J^r(E) \rightarrow M$ such that $j^{r}_{p}\sigma \mapsto p $
 			\end{compactitemize}
 		\end{definition}					
-					
-
+	\newpage				
+	\section*{Globally hyperbolic spacetime}
 			\begin{definition}[(Pseudo-Riemannian) Metric]
 				We call \emph{(Pseudo-Riemannian) Metric} a map on the bundle product of $TM$ with itself:
 				$$g: TM \times_M TM \rightarrow \Real$$
@@ -296,6 +295,8 @@
 				\end{itemize}
 			\end{notationfix}
 
+	\newpage
+	\section*{Green hyperbolic Operators}
 		\begin{definition}[Linear Partial Differential operator \footnotesize( of order at most $s\in \Natural_0$)]\label{Def:LPDO}
 			We call \emph{linear partial differential operator} a
 			linear map $L:\Gamma(E)\rightarrow \Gamma(E')$ such that $\forall p \in M$ there exists:
@@ -375,7 +376,10 @@
 					\end{itemize}
 				\end{thesis}
 			\end{theorem}
-	
+
+\newpage
+\section*{Miscellanea}
+
 \begin{definition}
 A Poisson algebra is a Triple $\left(V, \cdot ,\{ , \} \right)$ space]]  where:
 \begin{itemize}

@@ -17,7 +17,7 @@
 
 
 %---------------------------------------------------------------------------------------------------------------------------------------------------------------------
-\title{Demystification of Peierels Brackets construction}
+\title{Demystification of Peierls Brackets construction}
 \author{\vspace{-5ex}}
 \date{\vspace{-5ex}} % workaround to omit the Date !
 
@@ -31,13 +31,13 @@
     \section{Introduction}
     \begin{itemize}
         \item Good Morning.
-        \item Today I want to talk you about the Peierls brackets construction.
+        \item Today I would like to talk you about the Peierls brackets construction.
         \item This is an effective, but rather convoluted, recipe to prescribe a pre-symplectic structure to any classical field system.
-        \item This algorithm (intended as a step-by-step set of operations to be performed) was proposed by Rudolph Peierls in a seminal paper by Rudolph Peierls (more than sixty years ago!) \\
+        \item This algorithm (intended as a step-by-step set of operations to be performed) was proposed by Rudolph Peierls in a seminal paper in year 1952(more than sixty years ago!) \\
         but never received a particular attention.
-        (even though its byproduct as been proposed as a postulate by Witten and Crincovic)
+        (although its final product can be seen proposed as a postulate by Witten and Crincovic)
         \item Part of my master thesis has been devoted to reviewing the literature on this subject in order to adapt the original procedure to a more rigorous and modern mathematical framework.
-        \item as a result, we were able to develop the algorithm, as intended by the author, on a larger class of systems.
+        \item as a result, we were able to develop the algorithm, as intended by the author, on a larger class of systems.\\
         Thus extending the case of scalar fields contained in the paper.
     \end{itemize}
 
@@ -45,7 +45,7 @@
     \section{Mathematical FrameWork}
     %Opening
     \begin{itemize}
-        \item First of all, let's review the basic mathematical framework.
+        \item First of all, let me briefly review the basic mathematical framework.
     \end{itemize}
     \subsection{Abstract Mechanical Systems}
     \begin{itemize}
@@ -60,20 +60,20 @@
     \begin{itemize}
         \item the configuration bundle encompasses all the kinematical structure of the system
         \item (definition) we call \emph{Space of kinematic configurations (off-shell)}
-        $$ \Conf := \Sigma^\infty(M,E)$$
+        $$ \Conf := \Gamma^\infty(M,E)$$
         "Capital C"  space of smooth global section.
         \item A section is not a statical conformation (that is equivalent to a specific point in the configuration space of ordinary classical mechanics) \\
-        But has rather to be seen as a specific realization of the dynamic in the sense of a complete description of the possible motion
+        But has rather to be seen as a specific realization of the dynamic in the sense of a complete description of a possible motion
         \item it is an infinite dimensional manifold:\\
         Chosing atlases on $E$ and $M$ (which are finite dimensional smooth manifolds) we can associate $\forall \gamma \in \Conf$ the collection of all the section representation:
         $$ \gamma \in \Conf \mapsto \biggr\{f_{A,U}=\psi_U \circ \gamma \circ \psi_A^{-1} \quad \biggr\vert \quad (A,\psi_A) \in \Atlas(M), (U,\psi_U)\in \Atlas(E)   \biggr\} $$
-        this object are quit difficult to handle globally!
+        however those objects are quite difficult to handle globally!
         \item additional structure on the configuration bundle are to be prescribed in order to specify a physical model.
         \item for example a linear vector field would have a vector bundle bundle and P would be a linear partial differential operator
     \end{itemize}
     \subsubsection*{Dynamics}
     \begin{itemize}
-        \item while $E$ encompass the kinematic $P$ contains all the information (the gist) about the dynamical evolution of the system.
+        \item while $E$ encompass the kinematic, $P$ contains all the information (the gist) about the dynamical evolution of the system.
         \item it has the role to select the dynamically compatible configuration among all the admissible kinematic one.
         \item (definition) we call \emph{Space of Dynamics Configurations} (on-shell)
         $$             \Sol \coloneqq \ker(P) = \left\{\left. \gamma \in \Conf \quad\right\vert  R(P)\left(f\right) = 0 \quad \forall \textrm{local chart representation}\right\}$$
@@ -82,22 +82,22 @@
     \end{itemize}
     \subsection{Lagragian Systems}
     \begin{itemize}
-        \item It is the most interesting for our purposes to consider a subclass of such systems:
+        \item For our purposes, it's necessary to consider a subclass of such systems:
         \item (definition) we call \emph{Lagrangian System} (of order $r$) a pair $$(E,\Lagrangian)$$ where:
         \begin{itemize}
             \item $E$ is a smooth bundle on an oriented pseudo-riemmanian manifold $(M,g, \mathfrak{o})$ of dimension $m$
-            \item $ \gls{Lagrangian} : J^r E \rightarrow \wedge^m T^*M$ is a bundle morphism from the Jet Bundle of order $r$ of $E$ to the space of top dimensional forms upon $M$ \\
-            called \emph{Lagrangian Density}
+            \item $ \gls{Lagrangian} : J^r E \rightarrow \wedge^m T^*M$ is a bundle morphism from the Jet Bundle of order $r$ of $E$ to the bundle of top dimensional forms upon $M$ \footnote{aka totally asymmetric covariant tensor}\\
+            called \emph{Lagrangian Density} (Curly L)
         \end{itemize}
-        \item according to the phenomenon of Ostrogadsky instability\\
+        \item according to the phenomenon of Ostrogradsky instability\\
         (that is to say that any lagrangian dependent by a derivative of order greater than one correspond a linear unstable dynamic)\\
-        we will only consider Lagrangian defined on the first jet bundle.
+        From now on we will only consider Lagrangian defined on the first jet bundle.
     \end{itemize}
     \subsubsection*{Space of Lagrangian Densities}
     \begin{itemize}
         \item it this case is the Lagrangian to contain all the information about the dynamics of the system.
-        \item has to be note that this function is a particular choice among infinite possibilities.\\
-        We denote the set of Lagrangean compatible with the kinematics as:
+        \item has to be noted that this function is a particular choice among infinite possibilities ( of lagrangians compatible with the kinematics).\\
+        We denote the set of Lagrangian compatible with the kinematics as:
         $$ \Lag^r (E) \coloneqq \Gamma^\infty \left( \Hom\biggr(J^r E,\quad \bigwedge^m( T^*M)\biggr) \right) \cong \big\{f:\Gamma^\infty(J^r E) \rightarrow \Omega^m(M)  \big\} $$
         where:
         \begin{itemize}
@@ -106,20 +106,22 @@
             \item I've denoted with capital $\Omega$ the space of top-forms on the manifold $M$\\
             these are the most general objects that can be integrated on an oriented manifold.
         \end{itemize}
-        \item this space as a linear structure inherited from the structure of the codomain capital omega $\Omega^m(M)$
+        \item this space has a linear structure inherited from the structure of the codomain capital omega $\Omega^m(M)$
+        \item to any lagrangian density we associate 2 objects: a lagrangian functionals and a Euler-Lagrange operator.
     \end{itemize}
     \subsubsection*{Lagrangian Functionals}
     \begin{itemize}
         \item recalling the correspondence between differential sections and jets
         $$ \phi \in \Gamma^\infty (E) \mapsto (\phi, \partial_\mu \phi, \partial_{\mu, \nu} \phi , \ldots \partial_{\vec{\alpha}}\phi) $$
         it is possibile to regard the Lagrangian as acting directly on $\Conf$
-        \item according to that we define (definition) a \emph{Lagrangian functional} associated to $\Lagrangian$ the map
+        \item according to that we define (definition) a \emph{Lagrangian functional} associated to $\Lagrangian$ as the map
         $$ \mathcal{O}_\Lagrangian : \Conf \rightarrow D'(M)  $$
-        such that:
+        such that : (computed on a section $\Phi\in \Conf$ and tested on a test-function $f$)
         $$ \mathcal{O}_\Lagrangian [\phi] (f) = \int_M \Lagrangian [\phi] f \textrm{d}\mu \qquad \forall \phi \in \Conf $$
-        where $\phi\in \Conf$ and $f$ is a test function.
+        where $D'(M)= \left(C^\infty_0(M)\right)^*$ is the space of distribution on $M$\\
+        and $d\mu$ is the measure compatible with the orientation and the metric.
         \item Considering distribution was a necessary precaution in order to keep under control sections regardless the largeness of the support. (with arbitrary large support
-        \item When restricted to a more well-behaving domain, namely the space of compactly supported sections, these functional could take a simpler expression:
+        \item When restricted to a more well-behaving domain, namely the space of compactly supported sections, these functionals could take a simpler expression:
         $$ \mathcal{O}_\Lagrangian : \Gamma_0^\infty \rightarrow \Real  $$
         such that:
         $$ \mathcal{O}_\Lagrangian [\phi] (f) = \int_M \Lagrangian [\phi] \textrm{d}\mu  \qquad \forall \phi \in  \Gamma_0^\infty  $$
@@ -130,15 +132,15 @@
          we have to prescribe a dynamical principle which allows us to associate unambigously a dynamical operator $P$ on $\Conf$ related to the chosen $\Lagrangian$
          \item this is the well-known \emph{least action principle}
          \item a rigorous treatment of this principle would require the formalization of a differential calculus on the infinite dimensional  manifold $\Conf$.
-         \item jumping directly to the conclusions we can postulate which allows us to make correspond to each lagrangian a motion operator on $\Conf$
+         \item jumping directly to the conclusions, we can make a postulate which allows us to make correspond to each lagrangian a motion operator on $\Conf$
          \item (definition) we call \emph{Euler-Lagrange} operator associated to $\chi \in \Lag^1(E)$ the differential operator:
          $$ Q_\chi : \Conf \rightarrow \Conf $$
          such that
          $$     Q_\chi (\gamma) = \Biggr( \nabla_\mu \biggr( \frac{\partial \chi}{\partial(\partial_\mu \phi)} \biggr\vert_\gamma \biggr) - \frac{\partial \chi}{\partial \phi}\biggr\vert_\gamma \Biggr) \qquad \forall \gamma \in \Conf $$
         Where 
         \begin{itemize}
-            \item $\nabla_\mu$ is the covariant derivative corresponding to the background metric $g$
-            \item $\frac{\partial \chi}{\partial(\partial_\mu \phi)}$ has the be intended as the Lagrangian density constructed differentiating $\chi(\phi, \partial_\mu)$ as an ordinary function, treating its functional entries as an usual scalar variable
+            \item $\nabla_\mu$ is the covariant derivative corresponding to the background metric $g$ (here intervene the pseudo-riemannian request)
+            \item $\frac{\partial \chi}{\partial \phi} , \frac{\partial \chi}{\partial(\partial_\mu \phi)}$ have the be intended as the Lagrangian densities constructed differentiating $\chi(\phi, \partial_\mu \phi)$ as an ordinary function, treating its functional entries as an usual scalar variable.
         \end{itemize}
     \end{itemize}
     \subsubsection*{Observations}
@@ -181,7 +183,7 @@
     \section{Peierls Construction}
     %Opening
     \begin{itemize}
-        \item Let's finally come to the protagonist of the talk-
+        \item Let's finally come to the main point  of the talk-
         \item Precisely the Peierls construction is a recipe for defying a binary operator on the linear space of time-compact Lagrangian.
         \item This object yields the searched symplectic structure when restricted to a suitable quotient space.
     \end{itemize}
@@ -194,17 +196,20 @@
             \item (GH) Euler lagrange operator $Q_\Lagrangian$ is a Green Hyperbolic linear partial differential operator
         \end{itemize}
     \end{itemize}
-    \subsection{Disturbances}
+    \emph{the algorithm consist in 4 part}
+    \subsection{(A) Disturbances}
     \begin{itemize}
-        \item the key concept of the Peierls procedure is the disturbance
+        \item the starting point of the Peierls procedure is the concept of disturbance
         \item (definition) we call \emph{Disturbance} any time-compact Lagrangian density\\
-        that means that the top form $\chi(\phi) $ is time-compact $\forall \phi \in \Conf$
-        \item the name is due to the fact that it will be usually considered as a perturbation on the Lagrangian of the considered system
+        that means that the top form $\chi(\phi) $ is time-compact supported  $\forall \phi \in \Conf$
+        \item the name is due to the fact that it will be usually regarded as a perturbation on the Lagrangian of the considered system
         $$ \Lagrangian \rightsquigarrow \Lagrangian' = \Lagrangian + \epsilon\cdot \chi$$
+        acting for a limited amount of time.
         \item on top of its interpretation as dynamic generator and evaluable quantity.
     \end{itemize}
-    \subsection{Perturbed Solutions and Jacobi Equations}
+    \subsection{(B) Perturbed Solutions and Jacobi Equations}
     \begin{itemize}
+    	\item Peierls prompt us to consider the perturbed solution under a disturbance.
         \item the gist of the Peierls procedure is the observation that, \\
         for any but fixed  solution $\phi_0\in\Sol$ of the aforementioned system,\\
         are uniquely associated two linear variations for each distubance $\chi \in \Lag_{tc}$
@@ -218,7 +223,7 @@
                \emph{advanced perturbation} &$\eta_- \in \Gamma^\infty_{fc}$ & $(\eta_-, \nabla_n \eta_- ) \big \vert_{\Sigma_{+}} = (0,0)$ & "propagating backward" \\
                \hline
            \end{tabular}
-           \item The corresponding variation $\eta_+ \in \Gamma_{pc}$ and $\eta_- \in \Gamma_{fc}$ are defined as the unique solutions of Jacobi equation
+           \item The corresponding perturbation  $\eta_+ \in \Gamma_{pc}$ and $\eta_- \in \Gamma_{fc}$ are defined as the unique solutions of the so-called Jacobi equation
            $$ P \eta = -Q_\chi \: \phi(x) $$
            fulfilling the support condition.
        \end{itemize}
@@ -253,7 +258,14 @@
                        & \Downarrow \\
              P \eta &= - Q_\chi \phi(x)
            \end{align*}
-        Since the linearity condition of operator $P$ does not hold true in general for $Q_\chi$ we have to consider the linearization of $Q_\chi$ around the unperturbed solution $\phi(x)$.
+           
+           \item where $\big[Q_\chi^{lin}(\phi) \big]$ is the unique linear operator such that:
+            $$             \big[Q_\chi \big]( \phi(x) + \epsilon \eta(x)\big)= \big[Q_\chi \big]( \phi(x)) + \epsilon \big[Q_\chi^{lin}(\phi)  \big]( \eta(x)) + o(\epsilon) $$
+        which can be seen as the first term of a \emph{formal} Taylor expansion of operator $Q_\chi$ around $\phi$.
+        \footnote{If $\Conf$ is a Frechet manifold the expansion could be stated rigorously by defining $\big[Q_\chi^{lin}(\phi_0) . \big] = \big[\frac{\partial Q_\chi}{\partial \phi} (\phi_0)\big] $ in terms of the Gateaux derivative.}
+           
+        \item Since the linearity condition of operator $P$ does not hold true in general for $Q_\chi$ we had to consider the linearization of $Q_\chi$ around the unperturbed solution $\phi(x)$.\\
+        (According to imprs liepzig the existence of such linearization in not guaranteed! (weak point!))
         \item that is the unique linear operator $\big[Q_\chi^{lin}(\phi) \big]$ such that:
             $$             \big[Q_\chi \big]( \phi(x) + \epsilon \eta(x)\big)= \big[Q_\chi \big]( \phi(x)) + \epsilon \big[Q_\chi^{lin}(\phi)  \big]( \eta(x)) + o(\epsilon) $$
         which can be seen as the first term of a \emph{formal} Taylor expansion of operator $Q_\chi$ around $\phi$.
@@ -265,10 +277,11 @@
            \item Green Hyperbolicity of $P$ implies that each of the domain restrictions of $P$ to 
            $\Gamma_{\textrm{tc}}$ and $\Gamma_{\textrm{pc}}$
            admit an unique left-right inverse. Namely unique advanced and retarded Green Op. $G^\pm$
-           \item so, Jacobi admits unique past compat and future compact solutions
+           \item so, Jacobi admits unique past compact and future compact solutions of the form
            $$ \eta_\pm = G^\pm \big( - Q_\chi \phi \big) $$
            \item time compactness of the disturbance guarantees that  $Q_\chi \phi$ lays in the domain of $G^\pm$
     \end{itemize}
+    \emph{this complete the discussion of how a disturbance affect the solutions of the original system in the Peierls algorithm}
             \subsubsection*{Why we like this kind of variations?}
         \begin{itemize}
             \item these object clarify the following question:\\
@@ -282,14 +295,15 @@
                %MANCA: PERCHè PROPRIO QUESTE EQUAZIONI? (per il fatto che cerco variazioni che matchano le equazioni del moto disturbate)
                   %MANCA: perchè time-compact? perchè disturbo solo per intervallo definito di tempo
            \end{itemize}
-    \subsection{Effect Operator}
+    \subsection{(C) Effect Operator}
+    \emph{cibsuder the effect of a disturbance on a fixed functional.}
     \begin{itemize}
         \item Once we have defined (described?) how a disturbance affect unperturbed solutions we can compute the effect of this perturbation on the value of any continuous functional.
         \item be
         $$B: \Conf \rightarrow D'(M)$$
         a (formally) continuous differentiable functional (not necesseraly linear)\\
         note that these concepts would require the proper definition of a topology and a differentiable structure on the infinite dimensional manifold $\Conf$
-        \item we call \emph{Effect operator} the map
+        \item (definition) we call \emph{Effect operator} the map
         $$\EffectOp : C^1(\Conf,D'(M)) \rightarrow C^0(\Sol,D'(M))$$
         such that
         $$    \EffectOp_\chi^\pm B ( \phi_0) \coloneqq \lim_{\epsilon \rightarrow 0} \biggr( \frac{B(\phi_\epsilon^\pm) - B (\phi_0)}{\epsilon} \biggr)  \qquad \forall \phi_0 \in \Sol $$
@@ -297,15 +311,16 @@
         \item note that this expression simplifies when $B$ is linear:
         $$ \EffectOp_\chi^\pm B ( \phi_0) =  B(\eta_\pm) $$
         \item the expression of the effect operator (defined on distribution to assure the convergence on section with not limited support)
-        could be easily estrapolated to real valued  functional
+        could be easily extrapolated to real valued  functional
 
     \end{itemize}
     \subsection{Peierls Bracket}
     \begin{itemize}
         \item finally we are coming to the much anticipated binary operator.
-        \item the key concept is to recall that to each disturbance $\chi \in \Lag_{tc} $ is univocally associated a Lagrangian functional $\mathcal{O}_\chi$.
-        \item we call \emph{Peierls Brackets} the binary operator:
-        $$ \{\cdot,\cdot\}:\Lag_{\textrm{tc}} \times \Lag_{\textrm{tc}} \rightarrow D'(M) $$
+        \item the key concept is to recall that to each disturbance $\chi \in \Lag_{tc} $ is univocally associated a Lagrangian functional $\mathcal{O}_\chi$. (other than a motion operator and a perturbation)
+        \item (definition) we call \emph{Peierls Brackets}(between a pair of disturbances) the binary operator:
+        $$ \{\cdot,\cdot\}:\Lag_{\textrm{tc}} \times \Lag_{\textrm{tc}} ( \times \Sol) \rightarrow D'(M) $$
+        (note the spurious dependency from a starting solution!)
         such that:
         $$
                 \{\chi, \omega \}(\phi_0) \coloneqq \EffectOp_\chi^- \mathcal{O}_\omega (\phi_0) - \EffectOp_\chi^+ \mathcal{O}_\omega(\phi_0)
@@ -325,7 +340,7 @@
         \begin{minipage}{0.5\textwidth}
             \begin{itemize}
                 \item in this case the set $\Conf$, space of kinematic configurations, is a linear space and 
-                    For the sake of simplicity we depict it as a plane, neglecting the complexities related to infinite-dimensional manifolds.
+                    ,for the sake of simplicity, we depict it as a plane, neglecting the complexities related to infinite-dimensional manifolds.
                 \item Consequently, the space of solutions $ \Sol$ is a linear submanifold, in our picture a line, containing the section $0$.
                 \item a variation is a parametrized curve on $\Conf$
             \end{itemize}
@@ -386,6 +401,15 @@
     \begin{itemize}
     \item In other words the PB compute how change the value of a Lagrangian functional when the dynamic configuration on which it's evalutated get shifted.\\
     The shift is  not arbitrary but it's determined by an infinitesimal change in the Lagrangian of the (unperturbed) system.
+    \item how are the PB related to the Poisson brackets?
+    	\begin{compactitemize}
+    		\item both implement a comparison relation between two "observable" quantities
+    		\item while Poisson B. determine how one quantity $a$ change the evaluation of another quantity $b$ when it acts at the hamiltonian of the system ( and viceversa and then computing the difference between the two quantities).
+    		\item the PB compute how one quantity affect another when acting as a disturbance.\\
+    		 \emph{i.e.} when the trajectory get shifted (by a shift that is not arbitrary but is determined by a shift in $\Lagrangian$.)
+    		 \item in the end the Poisson B. are not dependant on the existence of a ruling hamiltonian \\
+    		 while PB depend from a specific trajectory defined by a chosed lagrangian.
+    	\end{compactitemize}
     \end{itemize}
     \newpage
     \section{Extension to Non-Linear Theories}
@@ -393,7 +417,7 @@
         \item in what shown is clear that green-hyperbolicity of motion operator $P$ plays a mayor role.
         \item however, the procedure can be stated even in presence of non-linear fields.\\
         that is when the motion operator and the configuration bundle are not necessarily linear.
-        \item the crucial point of the procedure was to select, among all the possible solutions of perturbed motion $P_\epsilon$, those configurations which can be constructed by a variation of a given solution of the non-perturbed dynamics
+        \item the crucial point of the procedure was to select, among all the possible solutions of perturbed motion $P_\epsilon$, those configurations which can be constructed from a variation of a given solution of the non-perturbed dynamics
         \item in this sense the problem of searching such variations in $\Conf$ results in a linearization\\
         \begin{minipage}{0.4\textwidth}
                    \includegraphics[width=\textwidth]{../Pictures/Linearization} 
@@ -417,25 +441,25 @@
     \section{Symplectic Structure derived by Peierls Brackets}
     \begin{itemize}
         \item How do we come from the PB to the claimed symplectic structure of the linear field system?
-        \item let me first remark that the system under examination: is $$(E,\Lagrangian)$$ Linear lagrangian systems with $E$ vector bundle on globally hyperbolic spacetime.
+        \item let me first remark that the system under examination: is $$(E,\Lagrangian)$$ Linear lagrangian systems with $E$ vector bundle on globally hyperbolic spacetime and dynamic operator $P$ is Green-hyperbolic
         
         \item in order to complete the construction we have to ask for some technical requirements. 
     \end{itemize}
     \subsection{Pairing}
     \begin{itemize}
         \item a further technical requirement is the definition of an inner product on the configuration bundle.
-        \item such that the induced pairing on the compactly supported sections
+        \item (definition) we call the induced pairing  on the compactly supported sections the bilinear form
         \begin{itemize}
             \item         that is the bilinear function
-            $$ (X,Y) = \int_M <X,Y>_x d\mu(x)$$
+            $$ (X,Y) = \int_M <X,Y>_x d\mu(x) \qquad \forall X, Y \in \Gamma_0(E)$$
                where $d\mu = d\textrm{Vol}_\mu$ is the volume form induced by the metric and the orientation on $M$
             \item minimal domain in which this definition makes sense is
             $$ \dom\big( (\cdot, \cdot) \big) =
                        \big\{(X,Y) \in \Gamma^\infty(E) \times \Gamma^\infty(E) \; \big\vert \,  <X,Y>_x \in L^1(M,\mu)\big \} $$
         \end{itemize}
-        \item (according to this pairing) the dynamics operator $P$  is formally self-adjoint
+        \item Such pairing can not be arbitrary but has to be such that the dynamics operator $P$  is formally self-adjoint
         $$(X,PY) = (PX,Y) \qquad \forall X,Y \in \Gamma_0$$
-        \item the reason is that we will need the property of existence of uniqueness of the Green Operators $G^\pm$ and furthermore of the  causal propagator $E$ (\emph{Advanced minus Retarded operator}) the operator:
+        \item the reason is that we will need the property of existence of uniqueness of the Green Operators $G^\pm$ (of $P$) and furthermore of the  causal propagator $E$ (\emph{Advanced minus Retarded operator}) the operator:
                 $$
                     E \coloneqq G^-  - G^+ : \Gamma_{tc}(E) \rightarrow \Gamma(E)
                 $$
@@ -451,7 +475,7 @@
         I said that i'm looking for a symplectic space then why am I starting form observables? \\
         (that are commonly related to the poisson structure?)
         \item The answer is that we are mimicking what happens in linear ordinary mechanical systems.
-        \item in that case the symplectic structure is exactly reproduced from the phase space to the sub Poisson Algebra of the linear functional constructed from the(dual) correspondence
+        \item in that case (recalling what happens for a linear system for discrete degrees of freedom) the symplectic structure is exactly reproduced from the phase space to the sub Poisson Algebra of the linear functional constructed from the(dual) correspondence
         $$ y \in \Phase \quad \mapsto \quad \omega(y,\cdot) \in \Obs_{\textrm{lin}} = \Phase^* $$
         \item from that should be clear the pivotal role of the Pairing
         \item (JUMPING STRAIGHT TO THE CONCLUSION)\\
@@ -496,10 +520,10 @@
             \end{itemize}
         \item
             \begin{itemize}
-                \item due to the degeneracy of this map $F^\Sol(\Gamma_0)$ could not be a good set of observable.
+                \item due to the degeneracy of this map, $F^\Sol(\Gamma_0)$ could not be a good set of observable.
                 \item the simplest way to overcome this problem is to identify all those elements determining the same observable functional on $\Sol$.
                 \item that is considering the quotient space $$\frac{\Gamma_0}{P \Gamma_0}$$
-                and transporting the mapping $F$ yelding the functional of thi space.
+                and transporting the mapping $F$ yelding the functional onto this space.
                 \item that is defining
                 $$F: \frac{\Gamma_0}{P \Gamma_0} \rightarrow \Obs \qquad 
                 \textrm{s.t.} \qquad
@@ -512,7 +536,7 @@
         \item (Conclusions)
             \begin{itemize}
                 \item Thus we can identify the space of classical observables with that quotient space
-                $$ \Obs \simeq \frac{\Gamma_0^\infty}{P \gamma_0^\infty} $$
+                $$ \Obs \simeq \frac{\Gamma_0^\infty}{P \gamma_0^\infty} \coloneqq \Phase$$
                 \item through the UNIQUE operator $E$ can be proved a further one-to-one correspondence between this quotient space $\Gamma_0 / P \Gamma_0$ and the space of dynamics configurations $\Sol$.\\
                 Namely:
                 \begin{itemize}
@@ -526,7 +550,7 @@
                 this quotient space is a great candidate  to be the phase space of the system
             \end{itemize}
     \end{enumerate}
-    \subsection{Symplectic form on $\Obs$}
+    \subsection{Symplectic form on $\Obs$ (derived by Peierls)}
     \begin{itemize}
         \item Ok, we have pointed out the set.\\
         Now we have to equip it with a suitable symplectic structure.\\
@@ -535,17 +559,18 @@
         \begin{itemize}
             \item The Lagrangian functionals on $\Conf$ was defined through a distribution in order to keep under control the behaviour on configurations with unlimited support.
             \item restricting ourselves to the compact-supported configurations (from $\Sol$ to $\Gamma_0$) we can consider the symplified form of the functional:
-            $$ \mathcal{O}_\Lagrangian ( \phi_0) ) \int_M \Lagrangian(\phi_0) d \mu \qquad \forall \phi \in \Gamma_0$$
+            $$ \mathcal{O}_\Lagrangian ( \phi_0) ) =  \int_M \Lagrangian(\phi_0) d \mu \qquad \forall \phi \in \Gamma_0$$
             \item the effect could now be defined as the limit of the incremental ratio (it is no more necessary to consider derivative in distributional sense) and the Peirels takes the same form as before:
             $$\{\chi, \omega \}(\phi_0) \coloneqq \EffectOp_\chi^- \mathcal{O}_\omega (\phi_0) - \EffectOp_\chi^+ \mathcal{O}_\omega(\phi_0) $$
         \end{itemize}
-        \item the key idea , in order to transport this construction to the space $\Obs$, is that any compactely supported section $\phi \in \Gamma_0$ can be made to correspond a particular class of Lagrangian densities
+        \item the key idea , in order to transport this construction to the space $\Obs$, is that to any compactly supported section $\phi \in \Gamma_0$ corresponds a particular class of Lagrangian densities
         $$ \phi \in \Gamma_0^\infty \quad \mapsto \Lagrangian_\phi \big[\cdot \big] ( x ) = <\phi, \cdot>_x $$
         exploiting again the bundle inner product
         \item thus, the associated lagrangian functional on $\Gamma_0$ is simply
         $$                             \mathcal{O}_{\Lagrangian_\phi} (\cdot ) = \int_M  <\phi, \cdot>_x d\mu(x) = (\phi, \cdot) = F_\phi (\cdot)$$
         \item and the corresponding Eul-Lag operator results
         $$Q_{\Lagrangian_\phi}= \biggr( \nabla_\mu \big( \frac{\partial \Lagrangian}{\partial ( \partial_\mu \phi)} \big) - \frac{\partial \Lagrangian}{\partial \varphi} \biggr) = - \frac{\partial \Lagrangian_\varphi}{\partial \varphi} = -\frac{\partial}{\partial \varphi} (\phi, \varphi) = -\phi$$
+        (last equation follows from the foundamental theorem of calculus)\\
         (the operator mapping the whole space $\Conf$ to  "minus $\phi$")
         \item the effect operator computed on a pair of this very particular Lagrangians results ( $\forall     \phi_0\in \Sol$):
         \begin{align}
@@ -561,13 +586,13 @@
         \end{align}
         \begin{footnotesize}\begin{itemize}
             \item    (a) Lagrangian functional coincide with $F_\alpha$
-            \item (b) explotiing linearity and continuity of F
-            \item (c) exploting difinition of disturbed solutions and $F$
-            \item (d) exploiting the unieques of $\eta$ which follows from the green-hyperbolicity
+            \item (b) exploiting linearity and continuity of F
+            \item (c) exploiting definition of disturbed solutions and $F$
+            \item (d) exploiting the uniqueness of $\eta$ which follows from the green-hyperbolicity
             \item (e) using explicit expression of $Q_{\Lagrangian_\alpha}$
         \end{itemize}\end{footnotesize}
         \item Notice that the dependency from test solution $\phi_0 \in \Sol$ has disappeared!
-        \item Thus, considering only lagrangian constructed from compact supported sections, the peierls brackets have induced a bilinear map on $\Gamma_0$
+        \item Thus, considering only lagrangian constructed from compact supported sections, the PB have induced a bilinear map on $\Gamma_0$
         $$                             \tau\left( [f] , [h]\right) = \{\Lagrangian_f , \Lagrangian_h\} = \big( f , (\GreenAdv - \GreenRet)h \big) = \big(f, E h\big) \qquad \forall f,h \: \Gamma_0^\infty (E)$$
         \item notice that at this point the condition of lagrangian system is become completely ancillary.\\
         In fact it's customary in the modern literature (see DeWitt for example) to overlook at the origin of this object jumping directly to this expression as a postulate.
@@ -599,9 +624,16 @@
         \item as Claimed the pair $$(\Obs, \tau)$$ is a proper symplectic space associated to the linear field system with a symplectic form induced by the Peierls procedure.
         \item from this point the algebraic quantization scheme can be easily applied (construction of algebra of observables and Hadamard state)
         \item    Within my thesis I've tried to keep my mathematical formalization to an intermediate degree of sophistication.\\
-        Currently are under examining further extensions of the Peierls construction to non-Lagrangian fields or to systems with Gauge freedom, all of these are based on the variational bi-complex formalism. \\
+        Currently are under examining further extensions of the Peierls construction to 
+        \begin{compactitemize}
+        	\item non-Lagrangian fields 
+        	\item systems with Gauge freedom
+        	\item spin structures
+        	\item constrained fields
+        \end{compactitemize}
+		all of these should be more correctly based on the variational bi-complex formalism. \\
     We have preferred to keep my discussion to this level since the current lack of bibliography on the theme is hindering the recognition of the role of the Peierls often relegating it to a mere "mathematical trick".
-        \item Its main drawback is a lack of mathematical rigor when we have used formal extrapolation of techniques from ordinary calculus on manifolds to the infinite-dimensional setting
+        \item Its main drawback is a lack of mathematical rigor when we have used formal extrapolation of techniques from ordinary calculus on manifolds to the infinite-dimensional setting, even though this is a problem of the variational calculus in general.
         \item transforming such formal results into mathematical theorems is a separate problem\\
         applications to this topic of modern results in non-linear global analysis are currently not extensively investigated.
     \end{itemize}

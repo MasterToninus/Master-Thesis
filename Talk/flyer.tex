@@ -85,7 +85,7 @@
 		$\Lag^r(E)$ has an vector space structure inherited by the linear structure of $\Omega(M)$.
 	\end{proposition}
 
-	\begin{definition}[Lagrangian functional]\label{Def:LagrangianFunctionals}
+	\begin{definition}[Lagrangian functional associated to $\Lagrangian \in \Lag^r(E)$]\label{Def:LagrangianFunctionals}
 		The map :
 		\begin{displaymath}
 			\mathcal{O}_\Lagrangian : \Conf \rightarrow D'(M)
@@ -111,12 +111,12 @@
 	\subsection*{Peirels Constuction}
 
 	\begin{definition}[Disturbance]
-		By \emph{"disturbance"} we mean a time-compact supported Lagrangian density $\chi \in \Lag$,\\
-		I.e. the top form $\chi(\phi)$ is time-compact supported for all $\phi \in \Conf$.
+		A time-compact supported Lagrangian density $\chi \in \Lag$, \emph{i.e.}
+		such that the top form $\chi(\phi)$ is time-compact supported for all $\phi \in \Conf$.
 	\end{definition}
 
 	\begin{remark}
-	 Disturbance is usually seen as a perturbation on the Lagrangian of the system:
+	Named "Disturbance" because is usually seen as a perturbation on the Lagrangian of the system:
 		\begin{displaymath}
 			\Lagrangian \rightsquigarrow \Lagrangian' = \Lagrangian + \epsilon\cdot \chi
 		\end{displaymath}
@@ -133,7 +133,7 @@
 	\end{definition}
 	
 	\begin{proposition}
-		To find a solution of the Jacobi equations is equivalent to find the solution of 
+		To find a solution of the Jacobi equation is equivalent to find the solution of 
    			\begin{displaymath}
    			   	\begin{cases} 
   					& P_\epsilon \phi'(x) = (P + \epsilon Q_\chi ) \phi'(x) = o(\epsilon)  \\ 
@@ -141,7 +141,7 @@
 					& \phi' = \phi + \epsilon \eta
 				\end{cases} 			
    			\end{displaymath}		
-		i.e. the solutions of the disturbed (by a disturbance $\chi$) Motion equation obtainable by a small perturbation of $\Sol$ moduled by the fixed disturbance $chi$
+		i.e. the solutions of the disturbed (by a disturbance $\chi$) Motion equation obtainable by a small perturbation of $\Sol$ moduled by the fixed disturbance $\chi$
 	\end{proposition}	
 	Let be $B:\Conf \rightarrow D'(M)$ a differentiable functional \footnote{The precise notion of continuity require the specification of a (infinite dimensional) manifold structure on $\Conf$.}
 	\begin{definition}[Effect Operator ( of a disturbance $\chi$ on B )]
@@ -152,7 +152,7 @@
 	\end{definition}
 	\begin{definition}[Peierls Bracket]
  		The binary operator
-		$$ \{\cdot,\cdot\}:\Lag_{\textrm{tc}} \times \Lag_{\textrm{tc}} \rightarrow \Real 	$$
+		$$ \{\cdot,\cdot\}:\Lag_{\textrm{tc}} \times \Lag_{\textrm{tc}} ( \times \Sol ) \rightarrow \Real 	$$
 		such that:
 		$$ \{\chi, \omega \}(\phi_0) \coloneqq \EffectOp_\chi^- \mathcal{O}_\omega (\phi_0) - \EffectOp_\chi^+ \mathcal{O}_\omega(\phi_0) $$
 	\end{definition}
@@ -205,8 +205,8 @@
 	\end{definition}
 	\begin{proposition}
 	The mapping
-	$$ F: frac{\Gamma_0}{P \Gamma_0} \rightarrow \Obs $$ in one-to-one. So:
-	$$ \Obs \simeq frac{\Gamma_0}{P \Gamma_0}$$
+	$$ F: \frac{\Gamma_0}{P \Gamma_0} \rightarrow \Obs $$ in one-to-one. So:
+	$$ \Obs \simeq \frac{\Gamma_0}{P \Gamma_0}$$
 	\end{proposition}
 	
 	\begin{definition}[Field-Theoretic (PreQuantum) Symplectic Space]

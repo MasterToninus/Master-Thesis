@@ -135,7 +135,7 @@
 %			\end{definition}
 			\begin{definition}[Smooth (cross) Section]
 				We call \emph{Smooth (cross) Section} a smooth right-inverse function of $\pi$.\\
-				I.e. any $\phi\in C^\infty(M;E)$ such that:
+				\textit{I.e.} any $\phi\in C^\infty(M;E)$ such that:
 				\begin{compactdisplaymath}
 					\pi\circ\phi = id|_M
 				\end{compactdisplaymath}
@@ -518,7 +518,11 @@
 %			\end{notationfix}
 
 			\begin{definition}[Achronal Set]
-				We call \emph{achronal set} a subset $\Sigma \subset M$ such that every inextensible timelike curve intersects $\Sigma$ at most once.
+				We call \emph{achronal set} a subset $\Sigma \subset M$ such that every inextensible\footnote{Every possible extension of the curve coincides with the curve itself.}
+				 timelike curve intersects $\Sigma$ at most once, \textit{i.e.}
+				 \begin{displaymath}
+				 	\ChronoPM ( \Sigma) \cap \Sigma = \emptyset
+				 \end{displaymath}
 			\end{definition}
 
 			\begin{definition}[$\substack{\textrm{ future}\\ \textrm{past } } $ Domain of dependence of an Achronal set]
@@ -588,15 +592,20 @@ specify the support properties of the sections of a vector bundle with base a gl
 
 				Let $M$ be a globally hyperbolic spacetime and $E=(E,\pi,M;V)$ a vector bundle of typical fiber $V$.\\
 				We denote:
+				\ifToninus
+					\begin{Warning}
+					$*$compact if the support of $f$ is a $*-$compact region.
+					\end{Warning}
+				\fi
 				\begin{itemize}
 							\renewcommand\labelitemi{$\cdot$}
 					\item $\Gamma_0(E)$ the space of \emph{compactly supported} smooth sections.
-					\item $\Gamma_{sc}(E)$  the space of \emph{spacelike compact} smooth sections.\\
+					\item $\Gamma_{sc}(E)$  the space of \emph{spacelike compact supported} smooth sections.\\
 						$\big(\; f\in \Gamma_{sc}(E)$ if there exists a compact subset $K \subset M$  such that $\supp f \subset \mathbf{J}_M(K)$. $\big)$
-					\item  $\Gamma_{fc}(E) $ the space of \emph{future- compact} smooth sections.\\
-						$\big(\; f\in \Gamma_{fc}(E) $ if  $\supp(f) \cap  \mathbf{J}^+_M(K)$ is compact for all $p\in M$.$\big)$
-					\item  $\Gamma_{pc}(E) $ the space of \emph{past- compact} smooth sections.\\
-						$\big(\; f\in \Gamma_{pc}(E) $ if  $\supp(f) \cap  \mathbf{J}^-_M(K)$ is compact for all $p\in M$.$\big)$
+					\item  $\Gamma_{fc}(E) $ the space of \emph{future- compact supported} smooth sections.\\
+						$\big(\; f\in \Gamma_{fc}(E) $ if  $\supp(f) \cap  \mathbf{J}^+_M(p)$ is compact for all $p\in M$.$\big)$
+					\item  $\Gamma_{pc}(E) $ the space of \emph{past- compact supported} smooth sections.\\
+						$\big(\; f\in \Gamma_{pc}(E) $ if  $\supp(f) \cap  \mathbf{J}^-_M(p)$ is compact for all $p\in M$.$\big)$
 					\item $\Gamma_{tc}(E) \coloneqq \Gamma_{pc}(E) \cap \Gamma_{fc}(E) $ the space of \emph{timelike compact} smooth sections.
 				\end{itemize}
 			\end{notationfix}

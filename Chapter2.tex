@@ -183,7 +183,7 @@ In this chapter we will take advantage of the language developed above in order 
 	is necessarily continuous and linear in the test-functions entry  but not in the configurations entry. 
 	\footnote{We are not asking for a continuity condition between $\Conf$ and $D'$, we have not made clear what are the topologies to be considered in the aforementioned spaces.}
 %	\end{proposition}
-	We have a \emph{Linear Lagrangian Functional} when $\Lagrangian$ is linear, this is not generally guaranteed by definition \ref{Def:LagrangianDensities} even if $E$ is a vector bundle. Has to be stressed that are not morphism between vector bundles but only between smooth bundles.
+	We have a \emph{Linear Lagrangian Functional} when $\Lagrangian$ is linear, this is not generally guaranteed by definition \ref{Def:LagrangianDensities} even if $E$ is a vector bundle. Has to be stressed that those are not morphism between vector bundles but only between smooth bundles.
 
 	
 	\vspace{3mm}
@@ -237,7 +237,9 @@ In this chapter we will take advantage of the language developed above in order 
 			Q_\chi (\gamma) = \Biggr( \nabla_\mu \biggr( \frac{\partial \chi}{\partial(\partial_\mu \phi)} \biggr\vert_\gamma \biggr) - \frac{\partial \chi}{\partial \phi}\biggr\vert_\gamma \Biggr) \qquad \forall \gamma \in \Conf
 		\end{equation}
 		Where $\nabla_\mu$ is the covariant derivative corresponding to the background metric $g$.
-		\footnote{$\frac{\partial \chi}{\partial(\partial_\mu \phi)}$ has the be intended as the Lagrangian density constructed differentiating $\chi(\phi, \partial_\mu)$ as an ordinary function, treating its functional entries as an usual scalar variable.}
+		\footnote{
+		 $\frac{\partial \chi}{\partial \phi} , \frac{\partial \chi}{\partial(\partial_\mu \phi)}$ have the be intended as the Lagrangian densities constructed differentiating $\chi(\phi, \partial_\mu \phi)$ as an ordinary function, treating its functional entries as an usual scalar variable.
+		}
 	\end{definition}
 
 	\begin{remark}	
@@ -390,6 +392,9 @@ In this chapter we will take advantage of the language developed above in order 
 													& curved background: $M$ is globally hyperbolic\\
 			\hline
 			Kinematic Configurations & $\Conf = C^\infty(M,\Real)$\\
+			\hline
+			Lagrangian Density &  $\Lagrangian[\phi] = \sqrt{-g} \left[ \partial_\mu \phi \; \partial_\nu \phi \; g^{\mu \nu} \right]$ \\
+			% non sono sicurissimo di questa formula! non ho fatto i conti
 			\hline
 			Motion Operator			&  $P=\square_M + m^2 + \xi R$ \\
 													& normally hyperbolic operator\\
@@ -875,9 +880,9 @@ such that:
 		
 		\subsubsection{The Brackets}
 		%Remembering
-		Recalling that every Lagrangian density defines a continuous functional (\ifToninus (the "Action")\fi see Def. \ref{Def:LagrangianFunctionals}) it is than possible to build a binary operator:
+		Recalling that every Lagrangian density defines a continuous functional (\ifToninus (the "Action")\fi see Def. \ref{Def:LagrangianFunctionals}) it is than possible to build a binary operator (still dependant from the choice of a fixed solution):
 		\begin{displaymath}
-			\{\cdot,\cdot\}:\Lag_{\textrm{tc}} \times \Lag_{\textrm{tc}} \rightarrow D'(M)
+			\{\cdot,\cdot\}:\Lag_{\textrm{tc}} \times \Lag_{\textrm{tc}} ( \times \Sol )  \rightarrow D'(M)
 		\end{displaymath}
 		as follow:
 		\begin{equation}\label{AbstractPeierlsBracket}

@@ -1,0 +1,130 @@
+\documentclass[a4paper,10pt]{amsart}
+%\documentclass[a4paper,11pt]{scrartcl}
+\usepackage[margin=2cm
+%,showframe% <- only to show the page layout
+]{geometry}
+\usepackage[english]{babel} % Explicitly load the babel package to stop an error occurring on some LaTeX installations
+\usepackage[utf8]{inputenc} %Dieresis
+\usepackage{hyperref} %ur
+\usepackage{amssymb}
+%-------------------------------------------------------------------------------
+
+\title{ALGEBRAIC QUANTIZATION OF JACOBI FIELDS 
+		 \emph{and}
+		 GEOMETRIC APPROACH TO PEIERLS BRACKETS }
+\author{Antonio Michele Miti}
+\date{}
+
+
+\begin{document}
+\maketitle
+
+\begin{center}
+\begin{tabular}{l c l}
+Supervisor & : & Claudio Dappiaggi \\
+Internal Referee & : & Livio Pizzocchero \\
+\end{tabular}
+
+\end{center}
+
+
+\section{Motivation of the Thesis}
+
+Quantum Field Theory (QFT)  is the synthesis of Quantum Mechanics and Special Relativity and it is the general framework for the description of the physics of relativistic quantum systems.
+Its most direct applications, quantum electrodynamics and the standard model of particles, are both been experimentally verified to an outstanding degree of precision and they allowed us to have an almost fully satisfactory and unified description of the electro-weak forces.
+
+In any case it is by no mean a definitive theory. It is clear that the intrinsic quantum description of elementary particles clashes with the structure of a deterministic theory, as general relativity. 
+It is almost unanimously accepted that a quantum theory of gravity is needed in order to reconcile general relativity with the principles of quantum mechanics. Yet, despite countless efforts, a quantum theory of the gravitational interaction remains an open problem.
+
+While quantum field theory has been a well-established topic for the past 50 years, the quest of finding a \emph{theory of everything} has often lead the community to neglect the role of two important aspects concerning the QFT.\\
+The first is the existence of an intermediate regime, going under the name of \emph{QFT in curved background}, which is expected to provide an accurate description of quantum phenomena in regions where the effects of curved spacetime may be significant, but effects of quantum gravity itself may be neglected. \\
+The second is the construction of a mathematically rigorous description of quantum fields, in particular of their non-perturbative aspects,  based on a sound and shared set of first principles. In other words an \emph{axiomatic foundation of QFT}.
+
+At the moment, \emph{algebraic quantum field theory} (AQFT) is 
+a way to complete the picture of the quantum theory of fields regarding the above two aspects.
+Its aim is to reach a general and mathematical rigorous description of the foundations of quantum fields on a  sufficiently large class of curved, but fixed, backgrounds.
+
+The algebraic approach, as the majority of contemporary quantum field theory, is developed as a quantization of classical fields.
+As a starting point, a mathematically rigorous \emph{classical field theory}  is thus a necessary step towards the understanding of the foundations of  the theory.
+What is essential to determine is a proper definition of the (pre-quantum) classical analogous of the "fundamental" fields.
+Particularly, it is crucial the identification of the field-theoretic equivalent of the geometric structures underlying the canonical formalism of classical mechanics, namely the \emph{phase space} and an \emph{algebra of classical observables}. 
+From an abstract point of view,  the first is a symplectic manifold, namely a smooth manifold endowed with a non-degenerate 2-form, while the second is a Poisson algebra constituted by functionals on the phase space.
+
+It is important to emphasize that the algebraic quantization is not a unique and well-defined algorithm that reads in a system of classical mechanics and returns a corresponding quantum mechanical system.
+Rather it should be seen as a \emph{quantization scheme} which can be realized by several specific procedures.
+All of them are based on a set of first principles, essentially proposed by Dimock \cite{Dimock1980} as an extension of the axioms of Haag and Kastler formulated on Minkowski spacetime, by prescribing the mathematical structure of the quantum observables algebra.
+What in which such realizations of the algebraic scheme essentially differ, is in the different identification of the suitable symplectic manifold  to be associated with the pre-quantum version of the field under examination.
+
+The most common way to building these structures requires an explicit choice of \emph{Cauchy surface} in the underlying spacetime.     
+This leads to a  realization of the algebraic quantization known as \emph{quantization via initial data}.
+    
+Of much greater interest is the, fully covariant, construction based on the so-called \emph{covariant phase space} and on the \emph{Peierls brackets}.
+    The first is defined as the \emph{space of dynamical configurations}, \textit{i.e.}  the infinite-dimensional space of solutions of the equations of motion, while the second is a particular choice of Poisson brackets.% attributable to a field system.
+        
+    The construction of such Poisson brackets is achieved following what we call the \emph{Peierls' algorithm}, a procedure originally proposed by Rudolf E. Peierls in a seminal paper dated 1952 \cite{Peierls}. 
+    This is an effective, but rather convoluted, "recipe"  to prescribe a pre-symplectic structure on the space of dynamical configurations. 
+    Browsing through the literature, it is clear that the Peierls' construction never received particular attention since its formulation.
+This can be ascribed mainly to the lack of a convincing geometric interpretation
+which had the effect of limiting its reception often relegating its role to that of a mere  "mathematical trick".
+
+\vspace{2mm}
+The aim of this thesis is to review the original Peierls' procedure in every single aspect adapting it to a more rigorous and modern mathematical formalism and addressing at the same time the quandary of the geometric interpretation of the corresponding symplectic structure.
+
+\section{Methodology}
+This work took place on the interface between theoretical physics and mathematical physics.
+From that follows that the research methodology could not be other than purely theoretical.
+
+
+
+\section{Final Results}
+The thesis yields essentially two results.
+
+The first result is that we were able to propose an extension of the original Peierls' algorithm combining the construction proposed in his paper\cite{Peierls} with some recent references, mainly \cite{Marolf}\cite{DeWitt}\cite{Forger}\cite{Sharan2010}\cite{Khavkine2014}.
+Instead of limiting ourselves  to the case of a scalar field theory only, this expression of the Peierls procedure is well-defined on a large class of abstract mechanical systems, not necessarily linear.
+\\
+        This result is of great importance from the point of view of geometric mechanics because represents a unified language for treating discrete and continuous degrees mechanicals system on a same common ground.
+        \\
+        On the other hand, such construction is also particularly interesting  from what concerns the algebraic quantum field theory since 
+        the identification of this "pre-quantum" symplectic space takes a pivotal role in the realization of the related scheme of quantization.
+        \\
+        Its main drawback is the lack of mathematical rigor, since it is often restricted to the formal extrapolation of techniques from ordinary calculus on manifolds to the infinite-dimensional setting: transforming such formal results into mathematical theorems is a separate problem, often highly complex and difficult.
+        The application of the modern results in non-linear global analysis to this topic are currently not extensively investigated.
+
+
+The second results is an explicit computation of the Peierls brackets in the concrete example of Jacobi fields on a FRW spacetime with flat spatial sections.
+\\
+Essentially this example is noteworthy from two aspects:
+\begin{enumerate}
+    \item It is a system with discrete degrees of freedom. 
+    Its "field configurations" are parametrized curves on a Riemannian manifold and in this sense it represents an example complementary to the basic real scalar field.
+    \item This system is dynamically ruled by the well-known \emph{geodesic equation}.
+        A typical realization of the algebraic scheme requires to go through the linearization of these, highly non-linear, equations of motion which take the name of \emph{Jacobi equations}.
+        The solutions of these linearized equations, named  \emph{Jacobi fields}, are extensively studied from the point of view of differential geometry  ( where they are introduced as a tangent field over a geodesic variation) but they are rarely analysed as a field-like dynamical system.
+\end{enumerate}
+Since the Jacobi fields can be quantized both according to the \emph{Peierls procedure} and according the \emph{initial data procedure}, we were able to construct two equivalent pre-quantum symplectic spaces related to the geodesic system.
+\\
+The aim of this calculation was to take a step closer to the comprehension of the Peierls' construction in fact we have proposed at last a  geometric interpretation of the whole Peierls' construction.
+
+\begin{thebibliography}{}
+
+  \bibitem{Peierls} Peierls, R. E. (1952). The Commutation Laws of Relativistic Field Theory. Proceedings of the Royal Society A: Mathematical, Physical and Engineering Sciences, 214(1117), 143–157. 
+	
+	\bibitem{DeWitt} Dewitt, B. (1999). The Peierls Bracket. 	In Quantum Field Theory: Perspective and Prospective SE  - 5 (Vol. 530, pp. 111–136). Springer Netherlands. 
+	
+	\bibitem{Forger}  Forger, M., Romero, S. V. (2005). Physics Covariant Poisson Brackets in Geometric Field Theory, 410, 375–410.
+	
+	\bibitem{Dimock1980} Dimock, J. Algebras of local observables on a manifold. Commun. Math. Phys. 77, 219–228 (1980).
+	
+	\bibitem{Marolf} Marolf, D. The Generalized Peierls Bracket. 30 (1993). doi:10.1006/aphy.1994.1117
+	
+	\bibitem{Sharan2010} Sharan, P. Causality and Peierls Bracket in Classical Mechanics. 6 (2010). at <http://arxiv.org/abs/1002.3092>
+	
+	\bibitem{Khavkine2014} Khavkine, I. Covariant phase space, constraints, gauge and the Peierls formula. 73 (2014). doi:10.1142/S0217751X14300099
+	
+	
+  \end{thebibliography}
+
+\end{document}
+
+
+

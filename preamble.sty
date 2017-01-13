@@ -1,0 +1,147 @@
+\ProvidesPackage{preamble}[2013/01/13 Custom Package]
+
+ %%-----
+ %	Global option
+ %%-----
+
+
+%Flag di Debug. (toggle mio stile e osservazioni) (idea implementata un po' tardi, molti commenti sono nel cascione)
+\newif\ifToninus\Toninusfalse
+\DeclareOption{debug}{
+  \Toninustrue
+}
+ \ProcessOptions\relax
+
+%% Traditional LaTeX or TeX follows...
+% ...
+
+
+\RequirePackage{lmodern}
+
+%Per le Figure
+\usepackage{graphicx}
+
+%Hint CD: per lo spelling corretto negli a capo
+\RequirePackage[italian,english]{babel}
+\RequirePackage[utf8]{inputenc}
+
+%simboli matematici strani quali unione disgiunta
+\RequirePackage{amssymb}
+
+%Scrivere Sotto i simboli
+\RequirePackage{amsmath}
+
+%Diagrammi Commutativi
+\RequirePackage{tikz}
+\usetikzlibrary{matrix}
+
+%Pacchetto standalone per implementare in modo ordinato le figure tikz
+\RequirePackage[subpreambles]{standalone}
+
+
+%Per riflettere i simboli...
+\RequirePackage{graphicx}
+
+
+%link iNTERNET
+\RequirePackage{hyperref}
+
+%Enumerate with letters
+\RequirePackage{enumerate}
+
+%Slash over letter
+\RequirePackage{cancel}
+
+%Usare bibiliografia biblatex
+%\RequirePackage[style=numeric,natbib=true]{biblatex}
+%\addbibresource{ThesisBiblio.bib}
+\bibliographystyle{alpha}  
+
+
+%Danger sign
+\RequirePackage{fourier}
+
+%:=
+\RequirePackage{mathtools}
+
+%http://tex.stackexchange.com/questions/8625/force-figure-placement-in-text
+\RequirePackage{caption}
+
+%inline fraction
+%\RequirePackage{nicefrac}
+
+%subsection numbering
+ \setcounter{tocdepth}{3} % if you want all the levels in your table of contents
+
+
+
+%Accented Letters  (lot of stuff... got problems with dieresys)
+\RequirePackage[utf8]{inputenc}
+
+
+%Fancyhdr http://tex.stackexchange.com/questions/118647/line-under-chapter-name-at-top-of-the-page
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[EL]{\nouppercase\leftmark}
+\fancyhead[OR]{\nouppercase\rightmark}
+\cfoot{\thepage}
+\fancyhead[ER,OL]{\thepage}
+
+
+%Fancy Chapter Title
+\RequirePackage[Lenny]{fncychap}
+
+%Formato di Pdf archiviabile espressamente espresso da Unimi
+\RequirePackage[a-1b]{pdfx}
+
+% Attaccare il frontespizio come pdf a parte
+\RequirePackage{pdfpages} 
+
+% Comprimere le liste (per farle entrare bene nelle definizioni
+\RequirePackage{enumitem}
+
+\newenvironment{compactitemize}
+	{ 	
+		\begin{itemize}[nosep,itemsep=0.5mm,topsep=0.7mm]%nosep
+			\renewcommand\labelitemi{$\cdot$}
+	}
+	{ \end{itemize} }
+	
+\newenvironment{compactdisplaymath}
+	{ 	
+		\vspace{-3mm}
+		\begin{displaymath}
+	}
+	{ \end{displaymath}  }
+
+
+% Blank Page http://tex.stackexchange.com/questions/36880/insert-a-blank-page-after-current-page
+\RequirePackage{afterpage}
+\RequirePackage{emptypage}
+
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \newpage
+}
+ 
+\newcommand\forcenewline{
+	\hfill \break \vspace{-3mm}
+}
+
+\newcommand\myVspace{
+
+	\vspace{2mm}
+}
+
+\RequirePackage{placeins} %\FloatBarrier 
+  
+
+    
+    
+    
+\endinput
+ 
+

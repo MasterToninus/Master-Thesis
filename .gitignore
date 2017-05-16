@@ -62,6 +62,7 @@ Temporary Items
 *.nav
 *.snm
 pdfa.xmpi
+*.bak
 
 #Ignore all pdf file in main folder
 /*.pdf

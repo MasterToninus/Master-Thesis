@@ -1,0 +1,6 @@
+[submodule "Math-Symbols-List"]
+	path = Math-Symbols-List
+	url = https://github.com/MasterToninus/Math-Symbols-List
+[submodule "Latex-Theorem"]
+	path = Latex-Theorem
+	url = https://github.com/MasterToninus/Latex-Theorem

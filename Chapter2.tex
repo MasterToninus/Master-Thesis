@@ -23,9 +23,9 @@ In this chapter we will take advantage of the language developed above in order 
 		\begin{compactitemize}
 			\item $E \xrightarrow{\pi} M$ \\
 			smooth fiber bundle of typical fiber $Q$ on  manifold $M$, called \emph{"configuration bundle"}.
-			\item	$ P : \Gamma^\infty(E) \rightarrow \Gamma^\infty(E)$ \\
-			differential operator %\\  operator called \emph{"motion operator"} 
-			in the sense that it is represented by a linear combination of partial derivative in every local chart.
+			\item	$ P : \Gamma^\infty(E) \rightarrow \Gamma^\infty(J^kE)$ \\
+			differential operator of order $k$,%\\  operator called \emph{"motion operator"} 
+			in the sense that it is represented by a linear combination of partial derivative in every local chart up to order $k$.
 			%In cascione ho raccolto la discussione su questo punto
 		\end{compactitemize}
 	\end{definition}
@@ -102,7 +102,7 @@ In this chapter we will take advantage of the language developed above in order 
 		where we have denoted respectively as $R(P)$ and $f$ the local chart representation (as in Eq. \ref{Def:LocalChartRepresentation}) of $P$ and $\gamma$ on the same chart.\\
 		This is the subset of $\Conf$ containing all the smooth solutions of the motion equations corresponding to the  dynamical operator:	
 		\begin{displaymath}
-			P: \Conf \rightarrow \Conf
+			P: \Conf \rightarrow \Conf \qquad\footnote{ More precisely, the target space to be considered should be the space of holonomic jets. For the sake of simplicity, we always assume to be able to select a section contained in $\Conf$ as a suitable representative of the jet section.}
 		\end{displaymath}
 	\end{definition}
 	Notice that in case of a linear dynamical system $\ker(P)$ is a proper \emph{kernel} subspace in the sense of liner operator theory.

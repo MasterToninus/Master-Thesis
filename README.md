@@ -11,6 +11,9 @@ Main file: MasterThesis_Fancy.tex
 * The dependencies from other latex file are implemented awfully! I've hardcoded in the source files relatived path to some file found in different repositories!
 
 # Todo
-- [ ] squash significant commit together to
+- [ ] Implement a Package for symbols and theorem style
+- [ ] the current state of the bibliography is unacceptable
+- [ ] Reduce the number of tex.file (the usage of multiple files is ok but it is better not to exaggerate
+- [ ] squash significant commit together
 - [ ] deal with the dependency problem in a more professional way.
 - [ ] (big one): find an efficient way to encapsulate latex code. e.g. store the definitions in a database.

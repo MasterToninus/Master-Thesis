@@ -63,6 +63,7 @@ Temporary Items
 *.snm
 pdfa.xmpi
 *.bak
+**/build
 
 #Ignore all pdf file in main folder
 /*.pdf
